@@ -228,7 +228,7 @@ public class SafeLinkTitlePrinter
 		}
 		else
 		{
-			String linkTarget = n.getTarget().getContent();
+			String linkTarget = n.getTarget().getAsString();
 			PageTitle target;
 			try
 			{

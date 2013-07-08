@@ -29,7 +29,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Alabama State Defense Force"),
+				target = WtPageName[ [0] = "Alabama State Defense Force" ],
 				title = -
 			),
 			[2] = ", a military entity"
@@ -41,7 +41,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Alaska State Defense Force"),
+				target = WtPageName[ [0] = "Alaska State Defense Force" ],
 				title = -
 			),
 			[2] = ", a military entity"
@@ -53,7 +53,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Another System Definition Facility"),
+				target = WtPageName[ [0] = "Another System Definition Facility" ],
 				title = -
 			),
 			[2] = ", the most commonly used build system for Common Lisp"
@@ -65,7 +65,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Association of Synchronous Data Formats"),
+				target = WtPageName[ [0] = "Association of Synchronous Data Formats" ],
 				title = -
 			),
 			[2] = ", an organization that advances the use of synchronous data transmission technology"
@@ -77,7 +77,7 @@ WtParsedWikitextPage(
 				{P} postfix = "s"
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
-				target = WtPageName("pitch detection algorithm"),
+				target = WtPageName[ [0] = "pitch detection algorithm" ],
 				title = -
 			)
 		),
@@ -88,7 +88,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("home row"),
+				target = WtPageName[ [0] = "home row" ],
 				title = -
 			),
 			[2] = " on a ",
@@ -96,7 +96,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("QWERTY"),
+				target = WtPageName[ [0] = "QWERTY" ],
 				title = -
 			),
 			[4] = " keyboard"
@@ -108,7 +108,7 @@ WtParsedWikitextPage(
 				{P} postfix = "s"
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
-				target = WtPageName("viral video"),
+				target = WtPageName[ [0] = "viral video" ],
 				title = -
 			)
 		),
@@ -134,7 +134,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Hoverboard ASDF"),
+						target = WtPageName[ [0] = "Hoverboard ASDF" ],
 						title = -
 					)
 				),
@@ -145,7 +145,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Japan Air Self-Defense Force"),
+						target = WtPageName[ [0] = "Japan Air Self-Defense Force" ],
 						title = -
 					)
 				),
@@ -156,7 +156,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("QWERTY"),
+						target = WtPageName[ [0] = "QWERTY" ],
 						title = -
 					)
 				)
@@ -167,7 +167,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Category:Initialisms"),
+					target = WtPageName[ [0] = "Category:Initialisms" ],
 					title = -
 				),
 				[1] = "\n",
@@ -184,7 +184,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("de:ASDF"),
+					target = WtPageName[ [0] = "de:ASDF" ],
 					title = -
 				),
 				[1] = "\n",
@@ -192,7 +192,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("fr:ASDF"),
+					target = WtPageName[ [0] = "fr:ASDF" ],
 					title = -
 				)
 			],

@@ -58,14 +58,14 @@ private inline String RedirectKeyword =
 ;
 
 private inline RedirectLink RedirectLink =
-  "[[" target:LinkTargetString garbage:RedirectLinkGarbageString? "]]"
+  "[[" target:LinkTarget garbage:RedirectLinkGarbageString? "]]"
   {
     if (garbage == null)
       garbage = "";
 
     yyValue = new RedirectLink();
     yyValue.rt0 = "[[";
-    yyValue.target = nf.pageName(target);
+    yyValue.target = target;
     yyValue.rt1 = garbage + "]]";
   }
 ;

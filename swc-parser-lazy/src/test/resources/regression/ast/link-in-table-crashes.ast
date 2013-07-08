@@ -8,7 +8,7 @@ WtParsedWikitextPage(
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("X"),
+		target = WtPageName[ [0] = "X" ],
 		title = -
 	),
 	[1] = WtTable(

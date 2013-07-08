@@ -6,7 +6,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo"),
+			target = WtPageName[ [0] = "Hallo" ],
 			title = -
 		)
 	],
@@ -16,7 +16,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo %0 Hallo"),
+			target = WtPageName[ [0] = "Hallo %0 Hallo" ],
 			title = -
 		)
 	],
@@ -50,7 +50,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo %20 Hallo"),
+			target = WtPageName[ [0] = "Hallo %20 Hallo" ],
 			title = -
 		)
 	],
@@ -60,7 +60,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo %7E Hallo"),
+			target = WtPageName[ [0] = "Hallo %7E Hallo" ],
 			title = -
 		)
 	],
@@ -70,7 +70,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo &amp; Hallo"),
+			target = WtPageName[ [0] = "Hallo &amp; Hallo" ],
 			title = -
 		)
 	],
@@ -108,7 +108,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo %61 Hallo"),
+			target = WtPageName[ [0] = "Hallo %61 Hallo" ],
 			title = -
 		)
 	],
@@ -118,7 +118,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo &%61mp; Hallo"),
+			target = WtPageName[ [0] = "Hallo &%61mp; Hallo" ],
 			title = -
 		)
 	],
@@ -141,7 +141,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo+Hallo"),
+			target = WtPageName[ [0] = "Hallo+Hallo" ],
 			title = -
 		)
 	],
@@ -151,7 +151,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo%20Hallo+Hallo"),
+			target = WtPageName[ [0] = "Hallo%20Hallo+Hallo" ],
 			title = -
 		)
 	],

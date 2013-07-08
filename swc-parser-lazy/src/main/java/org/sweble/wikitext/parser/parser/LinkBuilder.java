@@ -79,8 +79,12 @@ public class LinkBuilder
 	public LinkBuilder(ParserConfig parserConfig, WtPageName target)
 	{
 		this.target = target;
-		this.targetType = parserConfig.classifyTarget(target.getContent());
 		this.parserConfig = parserConfig;
+		
+		LinkType targetType = LinkType.INVALID;
+		if (target.isResolved())
+			targetType = parserConfig.classifyTarget(target.getAsString());
+		this.targetType = targetType;
 		
 		this.title = null;
 		this.width = -1;

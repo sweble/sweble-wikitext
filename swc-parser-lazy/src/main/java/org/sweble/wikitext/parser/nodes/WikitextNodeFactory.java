@@ -263,6 +263,8 @@ public interface WikitextNodeFactory
 	
 	WtLctRuleText lctRuleText(WtNodeList content);
 	
+	WtPageName pageName(WtNodeList wtNodeList);
+	
 	// -- String Node ----------------------------------------------------------
 	
 	WtIgnored ignored(String content);
@@ -270,8 +272,6 @@ public interface WikitextNodeFactory
 	WtLinkOptionGarbage loGarbage(String content);
 	
 	WtNewline newline(String content);
-	
-	WtPageName pageName(String content);
 	
 	WtTagExtensionBody tagExtBody(String content);
 	

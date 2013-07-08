@@ -27,9 +27,9 @@ import org.apache.log4j.Logger;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitorNoReturn;
-import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngNowiki;
 import org.sweble.wikitext.engine.nodes.EngPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
@@ -229,10 +229,16 @@ public class HtmlRenderer
 	
 	public void visit(WtImageLink n)
 	{
+		if (!n.getTarget().isResolved())
+		{
+			printAsWikitext(n);
+			return;
+		}
+		
 		PageTitle target;
 		try
 		{
-			target = PageTitle.make(wikiConfig, n.getTarget().getContent());
+			target = PageTitle.make(wikiConfig, n.getTarget().getAsString());
 		}
 		catch (LinkTargetException e)
 		{
@@ -333,13 +339,20 @@ public class HtmlRenderer
 			case PAGE:
 			{
 				WtPageName pageName = (WtPageName) n.getLink().getTarget();
-				try
+				if (pageName.isResolved())
 				{
-					linkTarget = PageTitle.make(wikiConfig, pageName.getContent());
+					try
+					{
+						linkTarget = PageTitle.make(wikiConfig, pageName.getAsString());
+					}
+					catch (LinkTargetException e)
+					{
+						throw new VisitingException(e);
+					}
 				}
-				catch (LinkTargetException e)
+				else
 				{
-					throw new VisitingException(e);
+					linkTarget = null;
 				}
 				break;
 			}
@@ -545,12 +558,18 @@ public class HtmlRenderer
 	
 	public void visit(WtInternalLink n)
 	{
+		if (!n.getTarget().isResolved())
+		{
+			printAsWikitext(n);
+			return;
+		}
+		
 		p.indentAtBol();
 		
 		PageTitle target;
 		try
 		{
-			target = PageTitle.make(wikiConfig, n.getTarget().getContent());
+			target = PageTitle.make(wikiConfig, n.getTarget().getAsString());
 		}
 		catch (LinkTargetException e)
 		{
@@ -1235,7 +1254,7 @@ public class HtmlRenderer
 	
 	private String makeTitleFromTarget(PageTitle target, WtPageName title)
 	{
-		String targetStr = title.getContent();
+		String targetStr = title.getAsString();
 		if (target.hasInitialColon() && !targetStr.isEmpty() && targetStr.charAt(0) == ':')
 			targetStr = targetStr.substring(1);
 		return targetStr;

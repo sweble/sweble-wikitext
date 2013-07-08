@@ -2,7 +2,7 @@ WtParsedWikitextPage(
 	{P} entityMap = {
 		[0] = WtRedirect(
 				{P} rtd = RTD[ "#REDIRECT [[" <o> "]]" ]
-				target = WtPageName("Wohin auch immer")
+				target = WtPageName[ [0] = "Wohin auch immer" ]
 			)
 	}
 	{P} warnings = C[]
@@ -12,7 +12,7 @@ WtParsedWikitextPage(
 	),
 	[1] = WtRedirect(
 		{P} rtd = RTD[ "#REDIRECT [[" <o> "]]" ]
-		target = WtPageName("Wohin auch immer")
+		target = WtPageName[ [0] = "Wohin auch immer" ]
 	),
 	[2] = WtImEndTag(
 		{P} name = "@p"

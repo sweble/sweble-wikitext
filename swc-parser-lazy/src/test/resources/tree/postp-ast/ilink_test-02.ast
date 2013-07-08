@@ -11,7 +11,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo"),
+			target = WtPageName[ [0] = "Hallo" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Mit ",
@@ -43,7 +43,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Hallo"),
+					target = WtPageName[ [0] = "Hallo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "aber der Titel "
@@ -55,7 +55,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hallo"),
+			target = WtPageName[ [0] = "Hallo" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = " ist nur so halb-halb"
@@ -76,7 +76,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Hallo"),
+					target = WtPageName[ [0] = "Hallo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "mit voll kursivem Titel"

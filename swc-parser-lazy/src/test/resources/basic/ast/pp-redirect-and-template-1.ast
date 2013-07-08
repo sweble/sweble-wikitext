@@ -2,7 +2,7 @@ WtParsedWikitextPage(
 	{P} entityMap = {
 		[0] = WtRedirect(
 				{P} rtd = RTD[ "#ReDiReCt[[" <o> "|garbage]]" ]
-				target = WtPageName("link")
+				target = WtPageName[ [0] = "link" ]
 			),
 		[1] = WtTemplate(
 				{P} precededByNewline = true
@@ -39,7 +39,7 @@ WtParsedWikitextPage(
 	[0] = WtParagraph[
 		[0] = WtRedirect(
 			{P} rtd = RTD[ "#ReDiReCt[[" <o> "|garbage]]" ]
-			target = WtPageName("link")
+			target = WtPageName[ [0] = "link" ]
 		),
 		[1] = "\n",
 		[2] = WtTemplate(

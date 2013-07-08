@@ -269,13 +269,13 @@ private inline WtNode InternalLinkAutoCorrect =
       {
         setRtd(
           yyValue,
-          "[[", rt0, target.getContent(), SEP, SEP);
+          "[[", rt0, target, SEP, SEP);
       }
       else
       {
         setRtd(
           yyValue,
-          "[[", rt0, target.getContent(), SEP);
+          "[[", rt0, target, SEP);
       }
 
       fileLooksLikeWarning(

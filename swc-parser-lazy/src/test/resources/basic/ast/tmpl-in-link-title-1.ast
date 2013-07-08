@@ -1,0 +1,24 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "TMPL" ],
+				args = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtText(
+			{A} warnings = C[ Warning (none): /basic/wikitext/tmpl-in-link-title-1.wikitext:1:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing. ]
+			{P} content = "[["
+		),
+		[1] = WtTemplate(
+			{P} precededByNewline = false
+			{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+			name = WtName[ [0] = "TMPL" ],
+			args = WtTemplateArguments[]
+		),
+		[2] = "|Title]]"
+	]
+)

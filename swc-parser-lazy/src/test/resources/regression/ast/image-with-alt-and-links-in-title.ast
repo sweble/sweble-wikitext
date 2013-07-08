@@ -16,7 +16,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("File:X"),
+		target = WtPageName[ [0] = "File:X" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionKeyword(
 				{P} keyword = "thumb"
@@ -33,7 +33,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Z"),
+				target = WtPageName[ [0] = "Z" ],
 				title = -
 			)
 		)

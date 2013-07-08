@@ -25,7 +25,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("target"),
+			target = WtPageName[ [0] = "target" ],
 			title = -
 		),
 		[1] = "\n]]"

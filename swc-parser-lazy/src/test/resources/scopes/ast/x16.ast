@@ -28,7 +28,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("target"),
+						target = WtPageName[ [0] = "target" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = " d "
@@ -40,7 +40,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("target"),
+				target = WtPageName[ [0] = "target" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = " e "

@@ -118,6 +118,11 @@ public class WtPrettyPrinter
 			case URL:
 				dispatch(n.getTarget());
 				break;
+			case DEFAULT:
+				// This should NOT happen ...
+				throw new InternalError();
+			case NO_LINK:
+				break;
 		}
 	}
 	
@@ -776,7 +781,7 @@ public class WtPrettyPrinter
 	
 	public void visit(WtPageName n)
 	{
-		p.print(n.getContent());
+		iterate(n);
 	}
 	
 	public void visit(WtLinkTarget.WtNoLink n)

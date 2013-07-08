@@ -7,7 +7,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("unitary state"),
+		target = WtPageName[ [0] = "unitary state" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "unitary"
@@ -18,7 +18,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("semi-presidential system"),
+		target = WtPageName[ [0] = "semi-presidential system" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "semi-presidential"
@@ -29,7 +29,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("republic"),
+		target = WtPageName[ [0] = "republic" ],
 		title = -
 	),
 	[6] = " with its main ideals expressed in the ",
@@ -37,7 +37,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("Declaration of the Rights of Man and of the Citizen"),
+		target = WtPageName[ [0] = "Declaration of the Rights of Man and of the Citizen" ],
 		title = -
 	),
 	[8] = ". France is one of the most ",
@@ -45,7 +45,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("developed country"),
+		target = WtPageName[ [0] = "developed country" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "developed countries"
@@ -62,7 +62,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("List of countries by GDP (nominal)"),
+		target = WtPageName[ [0] = "List of countries by GDP (nominal)" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "nominal GDP"
@@ -79,7 +79,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("List of countries by GDP (PPP)"),
+		target = WtPageName[ [0] = "List of countries by GDP (PPP)" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "purchasing power parity"
@@ -97,7 +97,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("standard of living"),
+		target = WtPageName[ [0] = "standard of living" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "high standard of living"
@@ -108,7 +108,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("Education Index"),
+		target = WtPageName[ [0] = "Education Index" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "high public education level"
@@ -119,7 +119,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("List of countries by life expectancy"),
+		target = WtPageName[ [0] = "List of countries by life expectancy" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "life expectancies"
@@ -150,7 +150,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("United Nations"),
+		target = WtPageName[ [0] = "United Nations" ],
 		title = -
 	),
 	[30] = ", and a member of the ",
@@ -158,7 +158,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("Francophonie"),
+		target = WtPageName[ [0] = "Francophonie" ],
 		title = -
 	),
 	[32] = ", the ",
@@ -166,7 +166,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("G8"),
+		target = WtPageName[ [0] = "G8" ],
 		title = -
 	),
 	[34] = ", ",
@@ -174,7 +174,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("G-20 major economies"),
+		target = WtPageName[ [0] = "G-20 major economies" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "G20"
@@ -185,7 +185,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("NATO"),
+		target = WtPageName[ [0] = "NATO" ],
 		title = -
 	),
 	[38] = ", ",
@@ -193,7 +193,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("OECD"),
+		target = WtPageName[ [0] = "OECD" ],
 		title = -
 	),
 	[40] = ", ",
@@ -201,7 +201,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("World Trade Organisation"),
+		target = WtPageName[ [0] = "World Trade Organisation" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "WTO"
@@ -212,7 +212,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("Latin Union"),
+		target = WtPageName[ [0] = "Latin Union" ],
 		title = -
 	),
 	[44] = ". It is one of the five ",
@@ -220,7 +220,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("United Nations Security Council#Permanent members"),
+		target = WtPageName[ [0] = "United Nations Security Council#Permanent members" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "permanent members of the UN Security Council"
@@ -231,7 +231,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("List of countries with nuclear weapons"),
+		target = WtPageName[ [0] = "List of countries with nuclear weapons" ],
 		title = WtLinkTitle(
 			{P} rtd = RTD[ "|" <o> "" ]
 			[0] = "nuclear weapons stockpile"
@@ -249,7 +249,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("Human Development Index"),
+		target = WtPageName[ [0] = "Human Development Index" ],
 		title = -
 	),
 	[52] = " and 24th on the ",
@@ -257,7 +257,7 @@ WtParagraph[
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-		target = WtPageName("Corruption Perception Index"),
+		target = WtPageName[ [0] = "Corruption Perception Index" ],
 		title = -
 	),
 	[54] = "."
@@ -281,7 +281,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Gaul"),
+				target = WtPageName[ [0] = "Gaul" ],
 				title = -
 			),
 			[2] = ", which was inhabited by ",
@@ -289,7 +289,7 @@ WtSection(
 				{P} postfix = "ic"
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]ic" ]
-				target = WtPageName("Celt"),
+				target = WtPageName[ [0] = "Celt" ],
 				title = -
 			),
 			[4] = " ",
@@ -302,7 +302,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Roman Empire"),
+				target = WtPageName[ [0] = "Roman Empire" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Rome"
@@ -313,7 +313,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Julius Caesar"),
+				target = WtPageName[ [0] = "Julius Caesar" ],
 				title = -
 			),
 			[10] = " in the 1st century BC,",
@@ -328,7 +328,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Romance languages"),
+				target = WtPageName[ [0] = "Romance languages" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Roman"
@@ -339,7 +339,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Latin"),
+				target = WtPageName[ [0] = "Latin" ],
 				title = -
 			),
 			[16] = ", from which the ",
@@ -347,7 +347,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("French language"),
+				target = WtPageName[ [0] = "French language" ],
 				title = -
 			),
 			[18] = " evolved) and Roman culture. ",
@@ -355,7 +355,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("History of Christianity"),
+				target = WtPageName[ [0] = "History of Christianity" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Christianity"
@@ -366,7 +366,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("St. Jerome"),
+				target = WtPageName[ [0] = "St. Jerome" ],
 				title = -
 			),
 			[22] = " wrote that Gaul was the only region \u201Cfree from heresy\u201D. "
@@ -384,7 +384,7 @@ WtSection(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("File:Map France 1477-fr.svg"),
+			target = WtPageName[ [0] = "File:Map France 1477-fr.svg" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionKeyword(
 					{P} keyword = "thumb"
@@ -402,7 +402,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Hundred Years War"),
+					target = WtPageName[ [0] = "Hundred Years War" ],
 					title = -
 				),
 				[2] = ". Red line: Boundary of the ",
@@ -410,7 +410,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Kingdom of France"),
+					target = WtPageName[ [0] = "Kingdom of France" ],
 					title = -
 				),
 				[4] = "; Light blue: the directly held royal domain"
@@ -421,7 +421,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Rhine"),
+			target = WtPageName[ [0] = "Rhine" ],
 			title = -
 		),
 		[7] = " was overrun by ",
@@ -429,7 +429,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Germanic peoples"),
+			target = WtPageName[ [0] = "Germanic peoples" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Germanic tribes"
@@ -440,7 +440,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Franks"),
+			target = WtPageName[ [0] = "Franks" ],
 			title = -
 		),
 		[11] = ", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ",
@@ -448,7 +448,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("House of Capet"),
+			target = WtPageName[ [0] = "House of Capet" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Capetian"
@@ -459,7 +459,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Catholic Church"),
+			target = WtPageName[ [0] = "Catholic Church" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Catholic"
@@ -470,7 +470,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Arianism"),
+			target = WtPageName[ [0] = "Arianism" ],
 			title = -
 		),
 		[17] = " (their King ",
@@ -478,7 +478,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Clovis I"),
+			target = WtPageName[ [0] = "Clovis I" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Clovis"
@@ -509,7 +509,7 @@ WtSection(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("File:Francois Dubois 001.jpg"),
+			target = WtPageName[ [0] = "File:Francois Dubois 001.jpg" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionKeyword(
 					{P} keyword = "right"
@@ -527,7 +527,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("St. Bartholomew's Day massacre"),
+					target = WtPageName[ [0] = "St. Bartholomew's Day massacre" ],
 					title = -
 				),
 				[2] = " (1572) during the ",
@@ -535,7 +535,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("French Wars of Religion"),
+					target = WtPageName[ [0] = "French Wars of Religion" ],
 					title = -
 				),
 				[4] = "."
@@ -553,7 +553,7 @@ WtSection(
 			{P} upright = true
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("File:Ingres, Napoleon on his Imperial throne.jpg"),
+			target = WtPageName[ [0] = "File:Ingres, Napoleon on his Imperial throne.jpg" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionKeyword(
 					{P} keyword = "thumb"
@@ -570,7 +570,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Napoleon I"),
+					target = WtPageName[ [0] = "Napoleon I" ],
 					title = -
 				),
 				[1] = ", ",
@@ -583,7 +583,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("First French Empire"),
+					target = WtPageName[ [0] = "First French Empire" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Great Empire"
@@ -604,7 +604,7 @@ WtSection(
 			{P} upright = true
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("File:Jeanne d Arc Orleanide.jpg"),
+			target = WtPageName[ [0] = "File:Jeanne d Arc Orleanide.jpg" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionKeyword(
 					{P} keyword = "thumb"
@@ -625,7 +625,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Jeanne d'Arc"),
+					target = WtPageName[ [0] = "Jeanne d'Arc" ],
 					title = -
 				),
 				[1] = " by ",
@@ -633,7 +633,7 @@ WtSection(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Philippe-Alexandre Le Brun de Charmettes"),
+					target = WtPageName[ [0] = "Philippe-Alexandre Le Brun de Charmettes" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Le Brun de Charmettes"
@@ -647,7 +647,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Treaty of Verdun"),
+			target = WtPageName[ [0] = "Treaty of Verdun" ],
 			title = -
 		),
 		[32] = " (843), with the division of ",
@@ -655,7 +655,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Charlemagne"),
+			target = WtPageName[ [0] = "Charlemagne" ],
 			title = -
 		),
 		[34] = "'s ",
@@ -663,7 +663,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Carolingian Empire"),
+			target = WtPageName[ [0] = "Carolingian Empire" ],
 			title = -
 		),
 		[36] = " into ",
@@ -671,7 +671,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("East Francia"),
+			target = WtPageName[ [0] = "East Francia" ],
 			title = -
 		),
 		[38] = ", ",
@@ -679,7 +679,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Middle Francia"),
+			target = WtPageName[ [0] = "Middle Francia" ],
 			title = -
 		),
 		[40] = " and ",
@@ -687,7 +687,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("West Francia"),
+			target = WtPageName[ [0] = "West Francia" ],
 			title = -
 		),
 		[42] = ". Western Francia approximated the area occupied by modern France and was the precursor to modern France.",
@@ -702,7 +702,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Carolingian dynasty"),
+			target = WtPageName[ [0] = "Carolingian dynasty" ],
 			title = -
 		),
 		[46] = " ruled France until 987, when ",
@@ -710,7 +710,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("Hugh Capet of France"),
+			target = WtPageName[ [0] = "Hugh Capet of France" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Hugh Capet"
@@ -721,7 +721,7 @@ WtSection(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("King of France"),
+			target = WtPageName[ [0] = "King of France" ],
 			title = -
 		),
 		[50] = ".",
@@ -738,7 +738,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("House of Capet"),
+				target = WtPageName[ [0] = "House of Capet" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Direct Capetians"
@@ -749,7 +749,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("House of Valois"),
+				target = WtPageName[ [0] = "House of Valois" ],
 				title = -
 			),
 			[4] = " and the ",
@@ -757,7 +757,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("House of Bourbon"),
+				target = WtPageName[ [0] = "House of Bourbon" ],
 				title = -
 			),
 			[6] = ", progressively unified the country through a series of wars and dynastic inheritance into a ",
@@ -765,7 +765,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("centralised kingdom"),
+				target = WtPageName[ [0] = "centralised kingdom" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Kingdom of France"
@@ -776,7 +776,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Albigensian Crusade"),
+				target = WtPageName[ [0] = "Albigensian Crusade" ],
 				title = -
 			),
 			[10] = " was launched in 1209 to eliminate the heretical ",
@@ -784,7 +784,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Cathars"),
+				target = WtPageName[ [0] = "Cathars" ],
 				title = -
 			),
 			[12] = " of ",
@@ -792,7 +792,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Occitania"),
+				target = WtPageName[ [0] = "Occitania" ],
 				title = -
 			),
 			[14] = " (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.",
@@ -807,7 +807,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("William the Conqueror"),
+				target = WtPageName[ [0] = "William the Conqueror" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Duke of Normandy"
@@ -822,7 +822,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("List of English monarchs"),
+				target = WtPageName[ [0] = "List of English monarchs" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "English Kings"
@@ -833,7 +833,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Wars of the Roses"),
+				target = WtPageName[ [0] = "Wars of the Roses" ],
 				title = -
 			),
 			[4] = ", won back mainland territory until only ",
@@ -841,7 +841,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Calais"),
+				target = WtPageName[ [0] = "Calais" ],
 				title = -
 			),
 			[6] = " remained. Under ",
@@ -849,7 +849,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Mary I of England"),
+				target = WtPageName[ [0] = "Mary I of England" ],
 				title = -
 			),
 			[8] = " this was lost to the ",
@@ -857,7 +857,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Spanish Netherlands"),
+				target = WtPageName[ [0] = "Spanish Netherlands" ],
 				title = -
 			),
 			[10] = "."
@@ -882,7 +882,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Salic Law"),
+				target = WtPageName[ [0] = "Salic Law" ],
 				title = -
 			),
 			[4] = " adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.",
@@ -903,7 +903,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Philip IV of France"),
+				target = WtPageName[ [0] = "Philip IV of France" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Philip of Valois"
@@ -927,7 +927,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Black Death"),
+				target = WtPageName[ [0] = "Black Death" ],
 				title = -
 			),
 			[12] = ",",
@@ -953,7 +953,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Hundred Years' War"),
+				target = WtPageName[ [0] = "Hundred Years' War" ],
 				title = -
 			),
 			[16] = ".",
@@ -971,7 +971,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("French Wars of Religion"),
+				target = WtPageName[ [0] = "French Wars of Religion" ],
 				title = -
 			),
 			[2] = " (1562\u201398), thousands of ",
@@ -979,7 +979,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Huguenots"),
+				target = WtPageName[ [0] = "Huguenots" ],
 				title = -
 			),
 			[4] = " were murdered in the ",
@@ -987,7 +987,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("St. Bartholomew's Day massacre"),
+				target = WtPageName[ [0] = "St. Bartholomew's Day massacre" ],
 				title = -
 			),
 			[6] = " of 1572.",
@@ -1005,7 +1005,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Louis XIV of France"),
+				target = WtPageName[ [0] = "Louis XIV of France" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Louis XIV"
@@ -1016,7 +1016,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Demographics of France"),
+				target = WtPageName[ [0] = "Demographics of France" ],
 				title = -
 			),
 			[4] = ") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ",
@@ -1024,7 +1024,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("French language"),
+				target = WtPageName[ [0] = "French language" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "French"
@@ -1042,7 +1042,7 @@ WtSection(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Age of Enlightenment"),
+				target = WtPageName[ [0] = "Age of Enlightenment" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Enlightenment"

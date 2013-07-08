@@ -26,9 +26,9 @@ import java.util.Map;
 import org.joda.time.DateTime;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitor;
-import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngNowiki;
 import org.sweble.wikitext.engine.nodes.EngPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtBold;
@@ -582,7 +582,8 @@ public class AstToWomVisitor
 	public WomNode visit(WtRedirect n)
 	{
 		WomPage page = (WomPage) stack.getLast();
-		page.setRedirect(new RedirectImpl(n.getTarget().getContent()));
+		// TODO: getAsString can fail with Exception!
+		page.setRedirect(new RedirectImpl(n.getTarget().getAsString()));
 		return null;
 	}
 	
@@ -613,7 +614,8 @@ public class AstToWomVisitor
 		PageTitle target;
 		try
 		{
-			target = PageTitle.make(config, n.getTarget().getContent());
+			// TODO: getAsString can fail with Exception!
+			target = PageTitle.make(config, n.getTarget().getAsString());
 		}
 		catch (LinkTargetException e)
 		{
@@ -637,7 +639,8 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtImageLink n)
 	{
-		ImageImpl img = new ImageImpl(n.getTarget().getContent());
+		// TODO: getAsString can fail with Exception!
+		ImageImpl img = new ImageImpl(n.getTarget().getAsString());
 		img.setFormat(mapImgFormat(n.getFormat()));
 		img.setBorder(n.getBorder());
 		img.setHAlign(mapImgHAlign(n.getHAlign()));
@@ -672,7 +675,8 @@ public class AstToWomVisitor
 				img.setIntLink("");
 				break;
 			case PAGE:
-				img.setIntLink(((WtPageName) link.getTarget()).getContent());
+				// TODO: getAsString can fail with Exception!
+				img.setIntLink(((WtPageName) link.getTarget()).getAsString());
 				break;
 			case URL:
 				img.setExtLink(urlNodeToUrl((WtUrl) link.getTarget()));

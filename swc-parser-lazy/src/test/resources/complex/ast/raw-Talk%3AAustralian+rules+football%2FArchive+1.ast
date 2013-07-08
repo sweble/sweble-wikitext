@@ -48,7 +48,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Pippu d'angelo"),
+						target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "pippudoz"
@@ -59,7 +59,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName(":scn:User talk:Pippu d'angelo"),
+						target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = WtXmlElement(
@@ -80,7 +80,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("GAA"),
+								target = WtPageName[ [0] = "GAA" ],
 								title = -
 							),
 							[2] = " was not founded until the late 1880s and I know that Archbishop ",
@@ -88,7 +88,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Thomas Croke"),
+								target = WtPageName[ [0] = "Thomas Croke" ],
 								title = -
 							),
 							[4] = ", one of the founders, was in New Zealand in the 1870s, where he had the opportunity to see \"Australasian rules\" being played. So maybe it was a \"two way street\". I will have to get hold of a history of Gaelic football one of these days.   ",
@@ -96,7 +96,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Grant65"),
+								target = WtPageName[ [0] = "User:Grant65" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Grant65"
@@ -132,7 +132,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Pippu d'angelo"),
+						target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "pippudoz"
@@ -143,7 +143,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName(":scn:User talk:Pippu d'angelo"),
+						target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = WtXmlElement(
@@ -168,7 +168,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Grant65"),
+								target = WtPageName[ [0] = "User:Grant65" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Grant65"
@@ -179,7 +179,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User talk:Grant65"),
+								target = WtPageName[ [0] = "User talk:Grant65" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Talk"
@@ -209,7 +209,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Cambridge Rules"),
+								target = WtPageName[ [0] = "Cambridge Rules" ],
 								title = -
 							),
 							[4] = " and ",
@@ -217,7 +217,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Sheffield Rules"),
+								target = WtPageName[ [0] = "Sheffield Rules" ],
 								title = -
 							),
 							[6] = ".  These are basically the rules of Aussie rules as they were codified in 1859!  So don't just rely on the superficial similarity of Gaelic football and aussie rules - dig a little deeper and look at the prevailing environment of the 1840s and 1850s - aussie rules, indeed all the modern football codes, can only be truly understood in that context.  ",
@@ -225,7 +225,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Pippu d'angelo"),
+								target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -236,7 +236,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":scn:User talk:Pippu d'angelo"),
+								target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = WtXmlElement(
@@ -310,7 +310,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("hurling"),
+								target = WtPageName[ [0] = "hurling" ],
 								title = -
 							),
 							[6] = " before any of these codes of football exited. Cambridge had an offside rule. And not quite enough time elapsed between the Sheffield rules (1857) and Wills' experiments of 1858, for the former to have influenced the latter. So I suspect that it was either a case of parallel evolution or they were both influenced by a common \"ancestor\". ",
@@ -325,7 +325,7 @@ WtParsedWikitextPage(
 								{P} upright = false
 								{P} vAlign = MIDDLE
 								{P} width = 30
-								target = WtPageName("Image:NonFreeImageRemoved.svg"),
+								target = WtPageName[ [0] = "Image:NonFreeImageRemoved.svg" ],
 								options = WtLinkOptions[
 									[0] = WtLinkOptionResize(
 										{P} height = -1
@@ -340,7 +340,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Grant65"),
+								target = WtPageName[ [0] = "User:Grant65" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Grant65"
@@ -351,7 +351,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User talk:Grant65"),
+								target = WtPageName[ [0] = "User talk:Grant65" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Talk"
@@ -387,7 +387,7 @@ WtParsedWikitextPage(
 										{P} upright = false
 										{P} vAlign = MIDDLE
 										{P} width = 40
-										target = WtPageName("Image:Flag of Sicily.svg"),
+										target = WtPageName[ [0] = "Image:Flag of Sicily.svg" ],
 										options = WtLinkOptions[
 											[0] = WtLinkOptionResize(
 												{P} height = -1
@@ -402,7 +402,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Pippu d'angelo"),
+										target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -413,7 +413,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName(":scn:User talk:Pippu d'Angelo"),
+										target = WtPageName[ [0] = ":scn:User talk:Pippu d'Angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = WtXmlElement(
@@ -452,7 +452,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -487,7 +487,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Mark Ryan"),
+					target = WtPageName[ [0] = "User:Mark Ryan" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Mark Ryan"
@@ -505,7 +505,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Robert Merkel"),
+					target = WtPageName[ [0] = "User:Robert Merkel" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Robert Merkel"
@@ -536,7 +536,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Daniel Quinlan"),
+					target = WtPageName[ [0] = "User:Daniel Quinlan" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Daniel Quinlan"
@@ -565,7 +565,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Error"),
+					target = WtPageName[ [0] = "User:Error" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Error"
@@ -583,7 +583,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Factoid Killer"),
+								target = WtPageName[ [0] = "User:Factoid Killer" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Factoid Killer"
@@ -599,7 +599,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Stevage"),
+										target = WtPageName[ [0] = "User:Stevage" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Stevage"
@@ -683,7 +683,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:RoyalDave"),
+					target = WtPageName[ [0] = "User:RoyalDave" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "RoyalDave"
@@ -713,7 +713,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Mintguy"),
+					target = WtPageName[ [0] = "User:Mintguy" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Mintguy"
@@ -724,7 +724,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk: Mintguy"),
+					target = WtPageName[ [0] = "User talk: Mintguy" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "(T)"
@@ -739,7 +739,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Talk:Football"),
+					target = WtPageName[ [0] = "Talk:Football" ],
 					title = -
 				),
 				[2] = ", I think fullpointsfooty.net is wrong on the early history. In fact, a lot of the histories of Aussie rules available on the web seem to be terrible and contradictory. We have a great opportunity to do better :-) Anyway, I've expanded and updated the history section. In particular, I've addressed some inaccuracies, such as (1) the role of H.C.A. Harrison, which seems to be exaggerated by almost everyone except serious historians; (2) the previous omission of the experiments at the Richmond Paddock, and (3) the \"significance\" of the game between Melbourne Grammar and Scotch College in 1858. To name a few. ",
@@ -747,7 +747,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -799,7 +799,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Football#The Establishment of Modern Codes of Football"),
+					target = WtPageName[ [0] = "Football#The Establishment of Modern Codes of Football" ],
 					title = -
 				),
 				[4] = ".) Hess ",
@@ -812,7 +812,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Football Association"),
+					target = WtPageName[ [0] = "Football Association" ],
 					title = -
 				),
 				[8] = " rules of 1863 had been by influenced by the Melbourne FC rules! ",
@@ -820,7 +820,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -835,7 +835,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Mintguy"),
+					target = WtPageName[ [0] = "User:Mintguy" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Mintguy"
@@ -846,7 +846,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk: Mintguy"),
+					target = WtPageName[ [0] = "User talk: Mintguy" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "(T)"
@@ -861,7 +861,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -882,7 +882,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:B.d.mills"),
+					target = WtPageName[ [0] = "User:B.d.mills" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "B.d.mills"
@@ -907,7 +907,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Abigail-II"),
+					target = WtPageName[ [0] = "User:Abigail-II" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Abigail"
@@ -932,7 +932,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Mintguy"),
+					target = WtPageName[ [0] = "User:Mintguy" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Mintguy"
@@ -943,7 +943,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk: Mintguy"),
+					target = WtPageName[ [0] = "User talk: Mintguy" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "(T)"
@@ -966,7 +966,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:Deadlock"),
+							target = WtPageName[ [0] = "User:Deadlock" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "Deadlock"
@@ -983,7 +983,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Pippu d'angelo"),
+								target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "pippudoz"
@@ -994,7 +994,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":scn:User talk:Pippu d'angelo"),
+								target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = WtXmlElement(
@@ -1015,7 +1015,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Deadlock"),
+										target = WtPageName[ [0] = "User:Deadlock" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Deadlock"
@@ -1049,7 +1049,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Rugby League"),
+					target = WtPageName[ [0] = "Rugby League" ],
 					title = -
 				),
 				[2] = ", because Aussie Rules was invented long before there was any such thing as \"Rugby League\" and before there was even much ",
@@ -1057,7 +1057,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Rugby Football"),
+					target = WtPageName[ [0] = "Rugby Football" ],
 					title = -
 				),
 				[4] = " outside ",
@@ -1065,7 +1065,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Rugby School"),
+					target = WtPageName[ [0] = "Rugby School" ],
 					title = -
 				),
 				[6] = ". Neither would it be accurate to describe Aussie Rules as an offshoot of Rugby. See ",
@@ -1073,7 +1073,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Football#The_Establishment_of_Modern_Codes_of_Football"),
+					target = WtPageName[ [0] = "Football#The_Establishment_of_Modern_Codes_of_Football" ],
 					title = -
 				),
 				[8] = ". ",
@@ -1081,7 +1081,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -1091,7 +1091,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk: Grant65"),
+					target = WtPageName[ [0] = "User talk: Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = " (Talk)"
@@ -1111,7 +1111,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Australian Rules Football"),
+				target = WtPageName[ [0] = "Australian Rules Football" ],
 				title = -
 			),
 			[2] = " <-> ",
@@ -1119,7 +1119,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Australian Football League"),
+				target = WtPageName[ [0] = "Australian Football League" ],
 				title = -
 			),
 			[4] = " "
@@ -1132,7 +1132,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Australian Football League"),
+					target = WtPageName[ [0] = "Australian Football League" ],
 					title = -
 				),
 				[2] = " article.  However I figured if this was right, someone would have done it already.  Ideas anyone?  -- ",
@@ -1140,7 +1140,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Chuq"),
+					target = WtPageName[ [0] = "User:Chuq" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Chuq"
@@ -1157,7 +1157,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Grant65"),
+						target = WtPageName[ [0] = "User:Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Grant65"
@@ -1167,7 +1167,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk: Grant65"),
+						target = WtPageName[ [0] = "User talk: Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = " (Talk)"
@@ -1183,7 +1183,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Australian Football League"),
+								target = WtPageName[ [0] = "Australian Football League" ],
 								title = -
 							),
 							[2] = ". I beleive that the Hall of Fame does not belong because it is the ",
@@ -1196,7 +1196,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Bjmurph"),
+								target = WtPageName[ [0] = "User:Bjmurph" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Bjmurph"
@@ -1219,7 +1219,7 @@ WtParsedWikitextPage(
 										{P} upright = false
 										{P} vAlign = MIDDLE
 										{P} width = 30
-										target = WtPageName("Image:Flag_of_Australia.svg"),
+										target = WtPageName[ [0] = "Image:Flag_of_Australia.svg" ],
 										options = WtLinkOptions[
 											[0] = WtLinkOptionResize(
 												{P} height = -1
@@ -1234,7 +1234,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Plattopus"),
+										target = WtPageName[ [0] = "User:Plattopus" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "plattopus"
@@ -1254,7 +1254,7 @@ WtParsedWikitextPage(
 														{P} postfix = ""
 														{P} prefix = ""
 														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-														target = WtPageName("User_talk:Plattopus"),
+														target = WtPageName[ [0] = "User_talk:Plattopus" ],
 														title = WtLinkTitle(
 															{P} rtd = RTD[ "|" <o> "" ]
 															[0] = "talk"
@@ -1274,7 +1274,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Bjmurph"),
+												target = WtPageName[ [0] = "User:Bjmurph" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Bjmurph"
@@ -1297,7 +1297,7 @@ WtParsedWikitextPage(
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 30
-														target = WtPageName("Image:Flag_of_Australia.svg"),
+														target = WtPageName[ [0] = "Image:Flag_of_Australia.svg" ],
 														options = WtLinkOptions[
 															[0] = WtLinkOptionResize(
 																{P} height = -1
@@ -1312,7 +1312,7 @@ WtParsedWikitextPage(
 														{P} postfix = ""
 														{P} prefix = ""
 														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-														target = WtPageName("User:Plattopus"),
+														target = WtPageName[ [0] = "User:Plattopus" ],
 														title = WtLinkTitle(
 															{P} rtd = RTD[ "|" <o> "" ]
 															[0] = "plattopus"
@@ -1332,7 +1332,7 @@ WtParsedWikitextPage(
 																		{P} postfix = ""
 																		{P} prefix = ""
 																		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-																		target = WtPageName("User_talk:Plattopus"),
+																		target = WtPageName[ [0] = "User_talk:Plattopus" ],
 																		title = WtLinkTitle(
 																			{P} rtd = RTD[ "|" <o> "" ]
 																			[0] = "talk"
@@ -1360,7 +1360,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Chris Tarrant"),
+					target = WtPageName[ [0] = "Chris Tarrant" ],
 					title = -
 				),
 				[2] = " etc.) ",
@@ -1368,7 +1368,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -1378,7 +1378,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk: Grant65"),
+					target = WtPageName[ [0] = "User talk: Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = " (Talk)"
@@ -1393,7 +1393,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:The Brain of Morbius"),
+					target = WtPageName[ [0] = "User:The Brain of Morbius" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "The Brain of Morbius"
@@ -1410,7 +1410,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Grant65"),
+						target = WtPageName[ [0] = "User:Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Grant65"
@@ -1420,7 +1420,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk: Grant65"),
+						target = WtPageName[ [0] = "User talk: Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = " (Talk)"
@@ -1440,7 +1440,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Squilibob"),
+								target = WtPageName[ [0] = "User:Squilibob" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Squilibob"
@@ -1468,7 +1468,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Roisterer"),
+					target = WtPageName[ [0] = "User:Roisterer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Roisterer"
@@ -1492,7 +1492,7 @@ WtParsedWikitextPage(
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = 30
-						target = WtPageName("Image:Flag_of_Australia.svg"),
+						target = WtPageName[ [0] = "Image:Flag_of_Australia.svg" ],
 						options = WtLinkOptions[
 							[0] = WtLinkOptionResize(
 								{P} height = -1
@@ -1509,7 +1509,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Plattopus"),
+						target = WtPageName[ [0] = "User:Plattopus" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "plattopus"
@@ -1529,7 +1529,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User_talk:Plattopus"),
+										target = WtPageName[ [0] = "User_talk:Plattopus" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "is this thing on?"
@@ -1549,7 +1549,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Grant65"),
+								target = WtPageName[ [0] = "User:Grant65" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Grant65"
@@ -1559,7 +1559,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User talk: Grant65"),
+								target = WtPageName[ [0] = "User talk: Grant65" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = " (Talk)"
@@ -1587,7 +1587,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:The Brain of Morbius"),
+					target = WtPageName[ [0] = "User:The Brain of Morbius" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "The Brain of Morbius"
@@ -1616,7 +1616,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:The Brain of Morbius"),
+						target = WtPageName[ [0] = "User:The Brain of Morbius" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "The Brain of Morbius"
@@ -1645,7 +1645,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:DrHow"),
+					target = WtPageName[ [0] = "User:DrHow" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "DrHow"
@@ -1669,7 +1669,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:The Brain of Morbius"),
+						target = WtPageName[ [0] = "User:The Brain of Morbius" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "The Brain of Morbius"
@@ -1689,7 +1689,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Pippu d'angelo"),
+								target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "pippudoz"
@@ -1700,7 +1700,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":scn:User talk:Pippu d'angelo"),
+								target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = WtXmlElement(
@@ -1733,7 +1733,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Pippu d'angelo"),
+					target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "pippudoz"
@@ -1744,7 +1744,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName(":scn:User talk:Pippu d'angelo"),
+					target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = WtXmlElement(
@@ -1766,7 +1766,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Wikipedia:Be bold in updating pages"),
+						target = WtPageName[ [0] = "Wikipedia:Be bold in updating pages" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Be bold"
@@ -1777,7 +1777,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Ianbrown"),
+						target = WtPageName[ [0] = "User:Ianbrown" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Ian"
@@ -1794,7 +1794,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User_talk:Ianbrown"),
+						target = WtPageName[ [0] = "User_talk:Ianbrown" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "talk"
@@ -1820,7 +1820,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Pippu d'angelo"),
+					target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "pippudoz"
@@ -1831,7 +1831,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName(":scn:User talk:Pippu d'angelo"),
+					target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = WtXmlElement(
@@ -1869,7 +1869,7 @@ WtParsedWikitextPage(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName("Melbourne"),
+									target = WtPageName[ [0] = "Melbourne" ],
 									title = -
 								),
 								[2] = ", is the predominant ",
@@ -1877,7 +1877,7 @@ WtParsedWikitextPage(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName("winter sport"),
+									target = WtPageName[ [0] = "winter sport" ],
 									title = -
 								),
 								[4] = " in all states of ",
@@ -1885,7 +1885,7 @@ WtParsedWikitextPage(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName("Australia"),
+									target = WtPageName[ [0] = "Australia" ],
 									title = -
 								),
 								[6] = " in which it is played",
@@ -1896,7 +1896,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Queensland"),
+										target = WtPageName[ [0] = "Queensland" ],
 										title = -
 									),
 									[2] = ", ",
@@ -1904,7 +1904,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("New South Wales"),
+										target = WtPageName[ [0] = "New South Wales" ],
 										title = -
 									),
 									[4] = " and the ",
@@ -1912,7 +1912,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Australian Capital Territory"),
+										target = WtPageName[ [0] = "Australian Capital Territory" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "ACT"
@@ -1923,7 +1923,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Rugby league"),
+										target = WtPageName[ [0] = "Rugby league" ],
 										title = -
 									),
 									[8] = " is the predominant sport"
@@ -1955,7 +1955,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:The Brain of Morbius"),
+						target = WtPageName[ [0] = "User:The Brain of Morbius" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "The Brain of Morbius"
@@ -1977,7 +1977,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Pippu d'angelo"),
+										target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "pippudoz"
@@ -1988,7 +1988,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName(":scn:User talk:Pippu d'angelo"),
+										target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = WtXmlElement(
@@ -2004,7 +2004,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName(":scn:p\u00E0ggina principali"),
+										target = WtPageName[ [0] = ":scn:p\u00E0ggina principali" ],
 										title = -
 									),
 									[6] = "!  All invited!"
@@ -2075,7 +2075,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Western Force"),
+					target = WtPageName[ [0] = "Western Force" ],
 					title = -
 				),
 				[2] = " smash the Brumbies, expect union to decline in the ACT as well ;-) Seriously, with a population of 300,000, it's not a bad effort to get 10,000+ to both league and AFL games. According to the Governor-General the Brumbies get an average crowd of 22,500.",
@@ -2093,7 +2093,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -2103,7 +2103,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk: Grant65"),
+					target = WtPageName[ [0] = "User talk: Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = " (Talk)"
@@ -2127,7 +2127,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:The Brain of Morbius"),
+						target = WtPageName[ [0] = "User:The Brain of Morbius" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "The Brain of Morbius"
@@ -2151,7 +2151,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:*Paul*"),
+								target = WtPageName[ [0] = "User:*Paul*" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Paul"
@@ -2173,7 +2173,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Pippu d'angelo"),
+								target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "pippudoz"
@@ -2184,7 +2184,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":scn:User talk:Pippu d'angelo"),
+								target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = WtXmlElement(
@@ -2231,7 +2231,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Biatch"),
+								target = WtPageName[ [0] = "User:Biatch" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Biatch"
@@ -2258,7 +2258,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Sport in Australia"),
+					target = WtPageName[ [0] = "Sport in Australia" ],
 					title = -
 				),
 				[2] = " article is the current ",
@@ -2266,7 +2266,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Wikipedia:Australian Collaboration of the Fortnight"),
+					target = WtPageName[ [0] = "Wikipedia:Australian Collaboration of the Fortnight" ],
 					title = -
 				),
 				[4] = " - just wondering if anyone here would be interested in adding to the ",
@@ -2274,7 +2274,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Sport_in_Australia#Australian rules football"),
+					target = WtPageName[ [0] = "Sport_in_Australia#Australian rules football" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Aussie rules"
@@ -2285,7 +2285,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Astrokey44"),
+					target = WtPageName[ [0] = "User:Astrokey44" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Astrokey44"
@@ -2312,7 +2312,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Bjmurph"),
+					target = WtPageName[ [0] = "User:Bjmurph" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Bjmurph"
@@ -2329,7 +2329,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Pippu d'angelo"),
+						target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "pippudoz"
@@ -2340,7 +2340,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName(":scn:User talk:Pippu d'angelo"),
+						target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = WtXmlElement(
@@ -2365,7 +2365,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Bjmurph"),
+								target = WtPageName[ [0] = "User:Bjmurph" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Bjmurph"
@@ -2389,7 +2389,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:JPD"),
+										target = WtPageName[ [0] = "User:JPD" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "JPD"
@@ -2400,7 +2400,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User talk:JPD"),
+										target = WtPageName[ [0] = "User talk:JPD" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "(talk)"
@@ -2422,7 +2422,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:JPD"),
+						target = WtPageName[ [0] = "User:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "JPD"
@@ -2433,7 +2433,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk:JPD"),
+						target = WtPageName[ [0] = "User talk:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "(talk)"
@@ -2453,7 +2453,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Laws of Australian Football"),
+								target = WtPageName[ [0] = "Laws of Australian Football" ],
 								title = -
 							),
 							[2] = ". Probably still needs a good short paragraph in this article ",
@@ -2461,7 +2461,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Astrokey44"),
+								target = WtPageName[ [0] = "User:Astrokey44" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Astrokey44"
@@ -2503,7 +2503,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Factoid Killer"),
+					target = WtPageName[ [0] = "User:Factoid Killer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Factoid Killer"
@@ -2528,7 +2528,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:JPD"),
+					target = WtPageName[ [0] = "User:JPD" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "JPD"
@@ -2547,7 +2547,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Factoid Killer"),
+								target = WtPageName[ [0] = "User:Factoid Killer" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Factoid Killer"
@@ -2576,7 +2576,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2609,7 +2609,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2642,7 +2642,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2675,7 +2675,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2708,7 +2708,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2741,7 +2741,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2774,7 +2774,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("Straw Man Fallacy"),
+												target = WtPageName[ [0] = "Straw Man Fallacy" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Straw Man"
@@ -2785,7 +2785,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2807,7 +2807,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2835,7 +2835,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:JPD"),
+										target = WtPageName[ [0] = "User:JPD" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "JPD"
@@ -2851,7 +2851,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:Factoid Killer"),
+												target = WtPageName[ [0] = "User:Factoid Killer" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "Factoid Killer"
@@ -2873,7 +2873,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Factoid Killer"),
+					target = WtPageName[ [0] = "User:Factoid Killer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Factoid Killer"
@@ -2900,7 +2900,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:JPD"),
+						target = WtPageName[ [0] = "User:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "JPD"
@@ -2924,7 +2924,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Factoid Killer"),
+					target = WtPageName[ [0] = "User:Factoid Killer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Factoid Killer"
@@ -3038,7 +3038,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Grant65"),
+						target = WtPageName[ [0] = "User:Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Grant65"
@@ -3049,7 +3049,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk:Grant65"),
+						target = WtPageName[ [0] = "User talk:Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Talk"
@@ -3113,7 +3113,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Factoid Killer"),
+					target = WtPageName[ [0] = "User:Factoid Killer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Factoid Killer"
@@ -3141,7 +3141,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Bjmurph"),
+					target = WtPageName[ [0] = "User:Bjmurph" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "bjmurph"
@@ -3152,7 +3152,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk:Bjmurph"),
+					target = WtPageName[ [0] = "User talk:Bjmurph" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = WtXmlElement(
@@ -3178,7 +3178,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Bjmurph"),
+										target = WtPageName[ [0] = "User:Bjmurph" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "bjmurph"
@@ -3189,7 +3189,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User talk:Bjmurph"),
+										target = WtPageName[ [0] = "User talk:Bjmurph" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = WtXmlElement(
@@ -3322,7 +3322,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Grant65"),
+						target = WtPageName[ [0] = "User:Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Grant65"
@@ -3333,7 +3333,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk:Grant65"),
+						target = WtPageName[ [0] = "User talk:Grant65" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Talk"
@@ -3349,7 +3349,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Bjmurph"),
+								target = WtPageName[ [0] = "User:Bjmurph" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "bjmurph"
@@ -3360,7 +3360,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User talk:Bjmurph"),
+								target = WtPageName[ [0] = "User talk:Bjmurph" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = WtXmlElement(
@@ -3450,7 +3450,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Factoid Killer"),
+					target = WtPageName[ [0] = "User:Factoid Killer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Factoid Killer"
@@ -3479,7 +3479,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Bjmurph"),
+						target = WtPageName[ [0] = "User:Bjmurph" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "bjmurph"
@@ -3490,7 +3490,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk:Bjmurph"),
+						target = WtPageName[ [0] = "User talk:Bjmurph" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = WtXmlElement(
@@ -3528,7 +3528,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Factoid Killer"),
+					target = WtPageName[ [0] = "User:Factoid Killer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Factoid Killer"
@@ -3545,7 +3545,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:JPD"),
+						target = WtPageName[ [0] = "User:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "JPD"
@@ -3578,7 +3578,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:JPD"),
+										target = WtPageName[ [0] = "User:JPD" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "JPD"
@@ -3627,7 +3627,7 @@ WtParsedWikitextPage(
 														{P} postfix = ""
 														{P} prefix = ""
 														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-														target = WtPageName("WP:FAITH"),
+														target = WtPageName[ [0] = "WP:FAITH" ],
 														title = WtLinkTitle(
 															{P} rtd = RTD[ "|" <o> "" ]
 															[0] = "assume good faith"
@@ -3638,7 +3638,7 @@ WtParsedWikitextPage(
 														{P} postfix = ""
 														{P} prefix = ""
 														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-														target = WtPageName("User:JPD"),
+														target = WtPageName[ [0] = "User:JPD" ],
 														title = WtLinkTitle(
 															{P} rtd = RTD[ "|" <o> "" ]
 															[0] = "JPD"
@@ -3686,7 +3686,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:JPD"),
+							target = WtPageName[ [0] = "User:JPD" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "JPD"
@@ -3700,7 +3700,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:JPD"),
+					target = WtPageName[ [0] = "User:JPD" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "JPD"
@@ -3735,7 +3735,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User Talk:Stevage"),
+								target = WtPageName[ [0] = "User Talk:Stevage" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Stevage"
@@ -3783,7 +3783,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:220.245.178.140"),
+							target = WtPageName[ [0] = "User:220.245.178.140" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "220.245.178.140"
@@ -3794,7 +3794,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:220.245.178.140"),
+							target = WtPageName[ [0] = "User:220.245.178.140" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "220.245.178.140"
@@ -3809,7 +3809,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:Factoid Killer"),
+							target = WtPageName[ [0] = "User:Factoid Killer" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "Factoid Killer"
@@ -3826,7 +3826,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:JPD"),
+								target = WtPageName[ [0] = "User:JPD" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "JPD"
@@ -3846,7 +3846,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Factoid Killer"),
+										target = WtPageName[ [0] = "User:Factoid Killer" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Factoid Killer"
@@ -3887,7 +3887,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:62.254.168.102"),
+										target = WtPageName[ [0] = "User:62.254.168.102" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "62.254.168.102"
@@ -3903,7 +3903,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:JPD"),
+												target = WtPageName[ [0] = "User:JPD" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "JPD"
@@ -3938,7 +3938,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:62.254.168.102"),
+										target = WtPageName[ [0] = "User:62.254.168.102" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "62.254.168.102"
@@ -4003,7 +4003,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Biatch"),
+										target = WtPageName[ [0] = "User:Biatch" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Biatch"
@@ -4060,7 +4060,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:Bjmurph"),
+							target = WtPageName[ [0] = "User:Bjmurph" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "bjmurph"
@@ -4071,7 +4071,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User talk:Bjmurph"),
+							target = WtPageName[ [0] = "User talk:Bjmurph" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = WtXmlElement(
@@ -4116,7 +4116,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:Factoid Killer"),
+							target = WtPageName[ [0] = "User:Factoid Killer" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "Factoid Killer"
@@ -4131,7 +4131,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:Factoid Killer"),
+							target = WtPageName[ [0] = "User:Factoid Killer" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "Factoid Killer"
@@ -4174,7 +4174,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:Bjmurph"),
+							target = WtPageName[ [0] = "User:Bjmurph" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "bjmurph"
@@ -4185,7 +4185,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User talk:Bjmurph"),
+							target = WtPageName[ [0] = "User talk:Bjmurph" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = WtXmlElement(
@@ -4215,7 +4215,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:JPD"),
+								target = WtPageName[ [0] = "User:JPD" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "JPD"
@@ -4233,7 +4233,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Factoid Killer"),
+								target = WtPageName[ [0] = "User:Factoid Killer" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Factoid Killer"
@@ -4249,7 +4249,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User:JPD"),
+							target = WtPageName[ [0] = "User:JPD" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "JPD"
@@ -4276,7 +4276,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Biatch"),
+								target = WtPageName[ [0] = "User:Biatch" ],
 								title = -
 							)
 						)
@@ -4300,7 +4300,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Ianbrown"),
+					target = WtPageName[ [0] = "User:Ianbrown" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Ian"
@@ -4311,7 +4311,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User_talk:Ianbrown"),
+					target = WtPageName[ [0] = "User_talk:Ianbrown" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "talk"
@@ -4328,7 +4328,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Australian Football League"),
+						target = WtPageName[ [0] = "Australian Football League" ],
 						title = -
 					),
 					[2] = ").  ",
@@ -4336,7 +4336,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Pippu d'angelo"),
+						target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -4347,7 +4347,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName(":scn:User talk:Pippu d'angelo"),
+						target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = WtXmlElement(
@@ -4368,7 +4368,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Ianbrown"),
+								target = WtPageName[ [0] = "User:Ianbrown" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Ian"
@@ -4385,7 +4385,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User_talk:Ianbrown"),
+								target = WtPageName[ [0] = "User_talk:Ianbrown" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "talk"
@@ -4406,7 +4406,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Pippu d'angelo"),
+										target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -4417,7 +4417,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName(":scn:User talk:Pippu d'angelo"),
+										target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = WtXmlElement(
@@ -4437,7 +4437,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:The Brain of Morbius"),
+										target = WtPageName[ [0] = "User:The Brain of Morbius" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "The Brain of Morbius"
@@ -4463,7 +4463,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Factoid Killer"),
+						target = WtPageName[ [0] = "User:Factoid Killer" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Factoid Killer"
@@ -4481,7 +4481,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:JPD"),
+						target = WtPageName[ [0] = "User:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "JPD"
@@ -4497,7 +4497,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Pippu d'angelo"),
+								target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -4508,7 +4508,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":scn:User talk:Pippu d'angelo"),
+								target = WtPageName[ [0] = ":scn:User talk:Pippu d'angelo" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = WtXmlElement(
@@ -4536,7 +4536,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:JPD"),
+										target = WtPageName[ [0] = "User:JPD" ],
 										title = -
 									),
 									[2] = ". ie. leave as is.  I apologise for bringing this up. -- ",
@@ -4544,7 +4544,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Ianbrown"),
+										target = WtPageName[ [0] = "User:Ianbrown" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Ian"
@@ -4561,7 +4561,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User_talk:Ianbrown"),
+										target = WtPageName[ [0] = "User_talk:Ianbrown" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "talk"
@@ -4591,7 +4591,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("cricket"),
+					target = WtPageName[ [0] = "cricket" ],
 					title = -
 				),
 				[2] = " have been deliberately kept at a much smaller number, so maybe someone should do a bit of a cull here? ",
@@ -4599,7 +4599,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:JPD"),
+					target = WtPageName[ [0] = "User:JPD" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "JPD"
@@ -4614,7 +4614,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Cinephobia"),
+					target = WtPageName[ [0] = "User:Cinephobia" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Cinephobia"
@@ -4639,7 +4639,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:*Paul*"),
+					target = WtPageName[ [0] = "User:*Paul*" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Paul"
@@ -4656,7 +4656,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Association football"),
+						target = WtPageName[ [0] = "Association football" ],
 						title = -
 					),
 					[2] = ": have only high-level links in the main article, and place other links in more relevant articles (e.g. the articles on the actual organisations the refer to). --",
@@ -4664,7 +4664,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Daveb"),
+						target = WtPageName[ [0] = "User:Daveb" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Daveb"
@@ -4694,7 +4694,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Talk:Australian rules football/padding"),
+							target = WtPageName[ [0] = "Talk:Australian rules football/padding" ],
 							title = -
 						),
 						[2] = "; to see it in its original context prior to the move ",
@@ -4727,7 +4727,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Pippu d'angelo"),
+					target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -4738,7 +4738,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName(":scn:User talk:Pippu d'Angelo"),
+					target = WtPageName[ [0] = ":scn:User talk:Pippu d'Angelo" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = WtXmlElement(
@@ -4776,7 +4776,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("WP:AFL"),
+										target = WtPageName[ [0] = "WP:AFL" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "R"
@@ -4799,7 +4799,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Special:Contributions/Rogerthat"),
+										target = WtPageName[ [0] = "Special:Contributions/Rogerthat" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "o"
@@ -4822,7 +4822,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Rogerthat"),
+										target = WtPageName[ [0] = "User:Rogerthat" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "gerthat"
@@ -4855,7 +4855,7 @@ WtParsedWikitextPage(
 											{P} postfix = ""
 											{P} prefix = ""
 											{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-											target = WtPageName("User_talk:Rogerthat"),
+											target = WtPageName[ [0] = "User_talk:Rogerthat" ],
 											title = WtLinkTitle(
 												{P} rtd = RTD[ "|" <o> "" ]
 												[0] = "Talk"
@@ -4910,7 +4910,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Joshd"),
+								target = WtPageName[ [0] = "User:Joshd" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Joshd"
@@ -4941,7 +4941,7 @@ WtParsedWikitextPage(
 										{P} upright = false
 										{P} vAlign = MIDDLE
 										{P} width = -1
-										target = WtPageName(":Image:Footybanner.jpg"),
+										target = WtPageName[ [0] = ":Image:Footybanner.jpg" ],
 										options = WtLinkOptions[],
 										title = -
 									),
@@ -4950,7 +4950,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:JPD"),
+										target = WtPageName[ [0] = "User:JPD" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "JPD"
@@ -4961,7 +4961,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User talk:JPD"),
+										target = WtPageName[ [0] = "User talk:JPD" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "talk"
@@ -4991,7 +4991,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Forever young"),
+					target = WtPageName[ [0] = "User:Forever young" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Forever young"
@@ -5008,7 +5008,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Pippu d'angelo"),
+						target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -5019,7 +5019,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName(":scn:User talk:Pippu d'Angelo"),
+						target = WtPageName[ [0] = ":scn:User talk:Pippu d'Angelo" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = WtXmlElement(
@@ -5040,7 +5040,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:*Paul*"),
+								target = WtPageName[ [0] = "User:*Paul*" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Paul"
@@ -5056,7 +5056,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Pippu d'angelo"),
+										target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -5067,7 +5067,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName(":scn:User talk:Pippu d'Angelo"),
+										target = WtPageName[ [0] = ":scn:User talk:Pippu d'Angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = WtXmlElement(
@@ -5087,7 +5087,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User:Pippu d'angelo"),
+										target = WtPageName[ [0] = "User:Pippu d'angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211"
@@ -5098,7 +5098,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName(":scn:User talk:Pippu d'Angelo"),
+										target = WtPageName[ [0] = ":scn:User talk:Pippu d'Angelo" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = WtXmlElement(
@@ -5119,7 +5119,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User:JPD"),
+												target = WtPageName[ [0] = "User:JPD" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "JPD"
@@ -5130,7 +5130,7 @@ WtParsedWikitextPage(
 												{P} postfix = ""
 												{P} prefix = ""
 												{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-												target = WtPageName("User talk:JPD"),
+												target = WtPageName[ [0] = "User talk:JPD" ],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
 													[0] = "talk"
@@ -5169,7 +5169,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -5180,7 +5180,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk:Grant65"),
+					target = WtPageName[ [0] = "User talk:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Talk"
@@ -5197,7 +5197,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:JPD"),
+						target = WtPageName[ [0] = "User:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "JPD"
@@ -5208,7 +5208,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk:JPD"),
+						target = WtPageName[ [0] = "User talk:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "talk"
@@ -5234,7 +5234,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Australian Rules slang"),
+					target = WtPageName[ [0] = "Australian Rules slang" ],
 					title = -
 				),
 				[2] = " and ",
@@ -5242,7 +5242,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName(":Category:Australian rules football terminology"),
+					target = WtPageName[ [0] = ":Category:Australian rules football terminology" ],
 					title = -
 				),
 				[4] = ". Any thoughts or suggestions on this? ",
@@ -5266,7 +5266,7 @@ WtParsedWikitextPage(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName("WP:AFL"),
+									target = WtPageName[ [0] = "WP:AFL" ],
 									title = WtLinkTitle(
 										{P} rtd = RTD[ "|" <o> "" ]
 										[0] = "R"
@@ -5289,7 +5289,7 @@ WtParsedWikitextPage(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName("Special:Contributions/Rogerthat"),
+									target = WtPageName[ [0] = "Special:Contributions/Rogerthat" ],
 									title = WtLinkTitle(
 										{P} rtd = RTD[ "|" <o> "" ]
 										[0] = "o"
@@ -5312,7 +5312,7 @@ WtParsedWikitextPage(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName("User:Rogerthat"),
+									target = WtPageName[ [0] = "User:Rogerthat" ],
 									title = WtLinkTitle(
 										{P} rtd = RTD[ "|" <o> "" ]
 										[0] = "gerthat"
@@ -5345,7 +5345,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("User_talk:Rogerthat"),
+										target = WtPageName[ [0] = "User_talk:Rogerthat" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Talk"
@@ -5367,7 +5367,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:JPD"),
+						target = WtPageName[ [0] = "User:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "JPD"
@@ -5378,7 +5378,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk:JPD"),
+						target = WtPageName[ [0] = "User talk:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "talk"
@@ -5404,7 +5404,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Talk:Football#Poll_on_content_relating_to_Australian_rules_football.2Frugby"),
+					target = WtPageName[ [0] = "Talk:Football#Poll_on_content_relating_to_Australian_rules_football.2Frugby" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "poll on references to Aussie rules in the ",
@@ -5419,7 +5419,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Grant65"),
+					target = WtPageName[ [0] = "User:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Grant65"
@@ -5430,7 +5430,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk:Grant65"),
+					target = WtPageName[ [0] = "User talk:Grant65" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Talk"
@@ -5455,7 +5455,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Chuq"),
+					target = WtPageName[ [0] = "User:Chuq" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Chuq"
@@ -5472,7 +5472,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Wikipedia:External links"),
+						target = WtPageName[ [0] = "Wikipedia:External links" ],
 						title = -
 					),
 					[2] = ". ",
@@ -5480,7 +5480,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:JPD"),
+						target = WtPageName[ [0] = "User:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "JPD"
@@ -5491,7 +5491,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User talk:JPD"),
+						target = WtPageName[ [0] = "User talk:JPD" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "talk"
@@ -5507,7 +5507,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Chuq"),
+								target = WtPageName[ [0] = "User:Chuq" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Chuq"
@@ -5530,7 +5530,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:Chuq"),
+					target = WtPageName[ [0] = "User:Chuq" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "Chuq"

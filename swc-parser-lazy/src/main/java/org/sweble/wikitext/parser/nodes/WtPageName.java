@@ -17,11 +17,11 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.Uninitialized;
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
 
 public class WtPageName
 		extends
-			WtStringNodeImpl
+			WtContentNodeImpl
 		implements
 			WtLinkTarget
 {
@@ -34,10 +34,9 @@ public class WtPageName
 	 */
 	protected WtPageName()
 	{
-		super(Uninitialized.X);
 	}
 	
-	protected WtPageName(String content)
+	protected WtPageName(WtNodeList content)
 	{
 		super(content);
 	}
@@ -52,5 +51,19 @@ public class WtPageName
 	public LinkTargetType getTargetType()
 	{
 		return LinkTargetType.PAGE;
+	}
+	
+	// =========================================================================
+	
+	public boolean isResolved()
+	{
+		return (size() == 1) && get(0).isNodeType(NT_TEXT);
+	}
+	
+	public String getAsString()
+	{
+		if (!isResolved())
+			throw new IllegalStateException("Cannot return unresolved link target as string.");
+		return ((WtText) get(0)).getContent();
 	}
 }

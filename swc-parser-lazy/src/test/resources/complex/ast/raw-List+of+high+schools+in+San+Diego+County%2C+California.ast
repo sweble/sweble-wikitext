@@ -34,7 +34,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("San Diego County, California"),
+				target = WtPageName[ [0] = "San Diego County, California" ],
 				title = -
 			)
 		),
@@ -66,7 +66,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Borrego Springs High School"),
+								target = WtPageName[ [0] = "Borrego Springs High School" ],
 								title = -
 							),
 							[1] = ", Borrego Springs"
@@ -94,7 +94,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Coronado High School (Coronado, California)"),
+								target = WtPageName[ [0] = "Coronado High School (Coronado, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Coronado High School"
@@ -118,7 +118,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Escondido Union School District"),
+						target = WtPageName[ [0] = "Escondido Union School District" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Escondido Union High School District"
@@ -142,7 +142,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Escondido High School"),
+								target = WtPageName[ [0] = "Escondido High School" ],
 								title = -
 							),
 							[1] = ", Escondido"
@@ -153,7 +153,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Orange Glen High School"),
+								target = WtPageName[ [0] = "Orange Glen High School" ],
 								title = -
 							),
 							[1] = ", Escondido"
@@ -164,7 +164,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("San Pasqual High School"),
+								target = WtPageName[ [0] = "San Pasqual High School" ],
 								title = -
 							),
 							[1] = ", Escondido"
@@ -179,7 +179,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("The Classical Academy High School (California)"),
+								target = WtPageName[ [0] = "The Classical Academy High School (California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Classical Academy High School"
@@ -205,7 +205,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Fallbrook Union High School"),
+								target = WtPageName[ [0] = "Fallbrook Union High School" ],
 								title = -
 							),
 							[1] = ", Fallbrook\t"
@@ -230,7 +230,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Grossmont Union High School District"),
+						target = WtPageName[ [0] = "Grossmont Union High School District" ],
 						title = -
 					)
 				),
@@ -243,7 +243,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Chaparral High School (El Cajon)"),
+								target = WtPageName[ [0] = "Chaparral High School (El Cajon)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Chaparral High School"
@@ -257,7 +257,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("El Cajon Valley High School"),
+								target = WtPageName[ [0] = "El Cajon Valley High School" ],
 								title = -
 							),
 							[1] = ", El Cajon"
@@ -268,7 +268,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("El Capitan High School"),
+								target = WtPageName[ [0] = "El Capitan High School" ],
 								title = -
 							),
 							[1] = ", Lakeside"
@@ -279,7 +279,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Granite Hills High School (El Cajon, California)"),
+								target = WtPageName[ [0] = "Granite Hills High School (El Cajon, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Granite Hills High School"
@@ -293,7 +293,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Grossmont High School"),
+								target = WtPageName[ [0] = "Grossmont High School" ],
 								title = -
 							),
 							[1] = ", La Mesa/El Cajon"
@@ -304,7 +304,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Grossmont Middle College High School"),
+								target = WtPageName[ [0] = "Grossmont Middle College High School" ],
 								title = -
 							),
 							[1] = ", El Cajon"
@@ -315,7 +315,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Helix High School"),
+								target = WtPageName[ [0] = "Helix High School" ],
 								title = -
 							),
 							[1] = ", La Mesa"
@@ -326,7 +326,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Monte Vista High School (Spring Valley, California)"),
+								target = WtPageName[ [0] = "Monte Vista High School (Spring Valley, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Monte Vista High School"
@@ -340,7 +340,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Mount Miguel High School"),
+								target = WtPageName[ [0] = "Mount Miguel High School" ],
 								title = -
 							),
 							[1] = ", Spring Valley"
@@ -351,7 +351,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Santana High School"),
+								target = WtPageName[ [0] = "Santana High School" ],
 								title = -
 							),
 							[1] = ", Santee"
@@ -362,7 +362,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Steele Canyon High School"),
+								target = WtPageName[ [0] = "Steele Canyon High School" ],
 								title = -
 							),
 							[1] = ", Spring Valley"
@@ -373,7 +373,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Valhalla High School (El Cajon, California)"),
+								target = WtPageName[ [0] = "Valhalla High School (El Cajon, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Valhalla High School"
@@ -387,7 +387,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("West Hills High School"),
+								target = WtPageName[ [0] = "West Hills High School" ],
 								title = -
 							),
 							[1] = ", Santee"
@@ -411,7 +411,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Julian High School"),
+								target = WtPageName[ [0] = "Julian High School" ],
 								title = -
 							),
 							[1] = ", Julian"
@@ -443,7 +443,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("River Valley Charter School"),
+								target = WtPageName[ [0] = "River Valley Charter School" ],
 								title = -
 							),
 							[1] = ", Lakeside"
@@ -467,7 +467,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Mountain Empire High School"),
+								target = WtPageName[ [0] = "Mountain Empire High School" ],
 								title = -
 							),
 							[1] = ", Pine Valley"
@@ -491,7 +491,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("El Camino High School (Oceanside)"),
+								target = WtPageName[ [0] = "El Camino High School (Oceanside)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "El Camino High School"
@@ -505,7 +505,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Oceanside High School"),
+								target = WtPageName[ [0] = "Oceanside High School" ],
 								title = -
 							),
 							[1] = ", Oceanside"
@@ -530,7 +530,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Poway Unified School District"),
+						target = WtPageName[ [0] = "Poway Unified School District" ],
 						title = -
 					)
 				),
@@ -543,7 +543,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Del Norte High School (San Diego, California)"),
+								target = WtPageName[ [0] = "Del Norte High School (San Diego, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Del Norte High School"
@@ -557,7 +557,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Mount Carmel High School (San Diego, California)"),
+								target = WtPageName[ [0] = "Mount Carmel High School (San Diego, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Mount Carmel High School"
@@ -571,7 +571,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Poway High School"),
+								target = WtPageName[ [0] = "Poway High School" ],
 								title = -
 							),
 							[1] = ", Poway"
@@ -582,7 +582,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Rancho Bernardo High School"),
+								target = WtPageName[ [0] = "Rancho Bernardo High School" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -593,7 +593,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Westview High School (San Diego)"),
+								target = WtPageName[ [0] = "Westview High School (San Diego)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Westview High School"
@@ -628,7 +628,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Ramona High School (Ramona, California)"),
+								target = WtPageName[ [0] = "Ramona High School (Ramona, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Ramona High School"
@@ -648,7 +648,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("San Diego City Schools"),
+						target = WtPageName[ [0] = "San Diego City Schools" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "San Diego Unified School District"
@@ -676,7 +676,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("San Dieguito Union High School District"),
+						target = WtPageName[ [0] = "San Dieguito Union High School District" ],
 						title = -
 					)
 				),
@@ -689,7 +689,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Canyon Crest Academy"),
+								target = WtPageName[ [0] = "Canyon Crest Academy" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -700,7 +700,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("La Costa Canyon High School"),
+								target = WtPageName[ [0] = "La Costa Canyon High School" ],
 								title = -
 							),
 							[1] = ", Carlsbad"
@@ -715,7 +715,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("San Dieguito Academy"),
+								target = WtPageName[ [0] = "San Dieguito Academy" ],
 								title = -
 							),
 							[1] = ", Encinitas"
@@ -730,7 +730,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Torrey Pines High School"),
+								target = WtPageName[ [0] = "Torrey Pines High School" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -762,7 +762,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Mission Hills High School"),
+								target = WtPageName[ [0] = "Mission Hills High School" ],
 								title = -
 							),
 							[1] = ", San Marcos"
@@ -773,7 +773,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("San Marcos High School (San Marcos, California)"),
+								target = WtPageName[ [0] = "San Marcos High School (San Marcos, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "San Marcos High School"
@@ -797,7 +797,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Sweetwater Union High School District"),
+						target = WtPageName[ [0] = "Sweetwater Union High School District" ],
 						title = -
 					)
 				),
@@ -810,7 +810,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Bonita Vista High School"),
+								target = WtPageName[ [0] = "Bonita Vista High School" ],
 								title = -
 							),
 							[1] = ", Chula Vista"
@@ -821,7 +821,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Castle Park High School"),
+								target = WtPageName[ [0] = "Castle Park High School" ],
 								title = -
 							),
 							[1] = ", Chula Vista"
@@ -832,7 +832,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Chula Vista High School"),
+								target = WtPageName[ [0] = "Chula Vista High School" ],
 								title = -
 							),
 							[1] = ", Chula Vista"
@@ -843,7 +843,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Eastlake High School (Chula Vista, California)"),
+								target = WtPageName[ [0] = "Eastlake High School (Chula Vista, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Eastlake High School"
@@ -857,7 +857,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Hilltop High School"),
+								target = WtPageName[ [0] = "Hilltop High School" ],
 								title = -
 							),
 							[1] = ", Chula Vista"
@@ -872,7 +872,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Mar Vista High School"),
+								target = WtPageName[ [0] = "Mar Vista High School" ],
 								title = -
 							),
 							[1] = ", Imperial Beach"
@@ -883,7 +883,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Montgomery High School, San Diego"),
+								target = WtPageName[ [0] = "Montgomery High School, San Diego" ],
 								title = -
 							)
 						),
@@ -893,7 +893,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Olympian High School"),
+								target = WtPageName[ [0] = "Olympian High School" ],
 								title = -
 							),
 							[1] = ", Chula Vista"
@@ -904,7 +904,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Options Secondary School"),
+								target = WtPageName[ [0] = "Options Secondary School" ],
 								title = -
 							),
 							[1] = ", Chula Vista"
@@ -915,7 +915,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Otay Ranch High School"),
+								target = WtPageName[ [0] = "Otay Ranch High School" ],
 								title = -
 							),
 							[1] = ", Chula Vista"
@@ -930,7 +930,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("San Ysidro High School"),
+								target = WtPageName[ [0] = "San Ysidro High School" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -941,7 +941,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Southwest Senior High School"),
+								target = WtPageName[ [0] = "Southwest Senior High School" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -952,7 +952,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Sweetwater High School"),
+								target = WtPageName[ [0] = "Sweetwater High School" ],
 								title = -
 							),
 							[1] = ", National City"
@@ -963,7 +963,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("High School of Roque"),
+								target = WtPageName[ [0] = "High School of Roque" ],
 								title = -
 							),
 							[1] = ",San Diego"
@@ -987,7 +987,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Valley Center High School"),
+								target = WtPageName[ [0] = "Valley Center High School" ],
 								title = -
 							),
 							[1] = ", Valley Center"
@@ -1044,7 +1044,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Guajome Park Academy"),
+								target = WtPageName[ [0] = "Guajome Park Academy" ],
 								title = -
 							),
 							[2] = " (charter), Vista"
@@ -1056,7 +1056,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Rancho Buena Vista High School"),
+								target = WtPageName[ [0] = "Rancho Buena Vista High School" ],
 								title = -
 							),
 							[2] = ", Vista"
@@ -1068,7 +1068,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Vista High School (Vista, California)"),
+								target = WtPageName[ [0] = "Vista High School (Vista, California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Vista High School"
@@ -1099,7 +1099,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Warner Middle / High School"),
+								target = WtPageName[ [0] = "Warner Middle / High School" ],
 								title = -
 							),
 							[1] = ", Warner Springs"
@@ -1138,7 +1138,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Roman Catholic Diocese of San Diego"),
+						target = WtPageName[ [0] = "Roman Catholic Diocese of San Diego" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Catholic"
@@ -1173,7 +1173,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("The Bishop's School (California)"),
+								target = WtPageName[ [0] = "The Bishop's School (California)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "The Bishop's School"
@@ -1200,7 +1200,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("San Diego Jewish Academy"),
+								target = WtPageName[ [0] = "San Diego Jewish Academy" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -1211,7 +1211,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Southern California Yeshiva High School"),
+								target = WtPageName[ [0] = "Southern California Yeshiva High School" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -1222,7 +1222,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Torah High Schools of San Diego"),
+								target = WtPageName[ [0] = "Torah High Schools of San Diego" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -1246,7 +1246,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Lutheran High School of San Diego"),
+								target = WtPageName[ [0] = "Lutheran High School of San Diego" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -1260,7 +1260,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Escondido Adventist Academy"),
+								target = WtPageName[ [0] = "Escondido Adventist Academy" ],
 								title = -
 							),
 							[1] = ", Escondido"
@@ -1271,7 +1271,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("San Diego Academy"),
+								target = WtPageName[ [0] = "San Diego Academy" ],
 								title = -
 							),
 							[1] = ", National City"
@@ -1299,7 +1299,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Calvin Christian School (Escondido, California)"),
+								target = WtPageName[ [0] = "Calvin Christian School (Escondido, California)" ],
 								title = -
 							)
 						)
@@ -1343,7 +1343,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Francis W. Parker School (San Diego)"),
+								target = WtPageName[ [0] = "Francis W. Parker School (San Diego)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Francis W. Parker School"
@@ -1357,7 +1357,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Grauer School"),
+								target = WtPageName[ [0] = "Grauer School" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "The Grauer School"
@@ -1371,7 +1371,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Halstrom High School"),
+								target = WtPageName[ [0] = "Halstrom High School" ],
 								title = -
 							),
 							[1] = ", Oceanside"
@@ -1382,7 +1382,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Halstrom High School"),
+								target = WtPageName[ [0] = "Halstrom High School" ],
 								title = -
 							),
 							[1] = ", San Diego"
@@ -1393,7 +1393,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("La Jolla Country Day School"),
+								target = WtPageName[ [0] = "La Jolla Country Day School" ],
 								title = -
 							),
 							[1] = ", La Jolla"
@@ -1454,7 +1454,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("List of high schools in California"),
+						target = WtPageName[ [0] = "List of high schools in California" ],
 						title = -
 					)
 				),
@@ -1464,7 +1464,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("List of school districts in California"),
+						target = WtPageName[ [0] = "List of school districts in California" ],
 						title = -
 					)
 				),
@@ -1474,7 +1474,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Lists of school districts in California by county"),
+						target = WtPageName[ [0] = "Lists of school districts in California by county" ],
 						title = -
 					)
 				),
@@ -1484,7 +1484,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("List of school districts in San Diego County, California"),
+						target = WtPageName[ [0] = "List of school districts in San Diego County, California" ],
 						title = -
 					)
 				),
@@ -1494,7 +1494,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Primary and secondary schools in San Diego, California"),
+						target = WtPageName[ [0] = "Primary and secondary schools in San Diego, California" ],
 						title = -
 					)
 				),
@@ -1504,7 +1504,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("List of closed secondary schools in California"),
+						target = WtPageName[ [0] = "List of closed secondary schools in California" ],
 						title = -
 					)
 				)
@@ -1572,7 +1572,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Category:High schools in San Diego County, California"),
+					target = WtPageName[ [0] = "Category:High schools in San Diego County, California" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "*"
@@ -1583,7 +1583,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Category:Lists of schools in California"),
+					target = WtPageName[ [0] = "Category:Lists of schools in California" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "California, San Diego County"

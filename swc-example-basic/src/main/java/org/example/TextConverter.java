@@ -241,9 +241,12 @@ public class TextConverter
 	{
 		try
 		{
-			PageTitle page = PageTitle.make(config, link.getTarget().getContent());
-			if (page.getNamespace().equals(config.getNamespace("Category")))
-				return;
+			if (link.getTarget().isResolved())
+			{
+				PageTitle page = PageTitle.make(config, link.getTarget().getAsString());
+				if (page.getNamespace().equals(config.getNamespace("Category")))
+					return;
+			}
 		}
 		catch (LinkTargetException e)
 		{
@@ -252,7 +255,7 @@ public class TextConverter
 		write(link.getPrefix());
 		if (!link.hasTitle())
 		{
-			write(link.getTarget().getContent());
+			iterate(link.getTarget());
 		}
 		else
 		{

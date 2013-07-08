@@ -15,7 +15,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = 225
-			target = WtPageName("file:Saxby Chambliss.jpg"),
+			target = WtPageName[ [0] = "file:Saxby Chambliss.jpg" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionResize(
 					{P} height = -1

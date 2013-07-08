@@ -973,7 +973,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Help:Wikitable"),
+				target = WtPageName[ [0] = "Help:Wikitable" ],
 				title = -
 			),
 			[2] = ". For style considerations, see ",
@@ -981,7 +981,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Wikipedia:Manual of Style (tables)"),
+				target = WtPageName[ [0] = "Wikipedia:Manual of Style (tables)" ],
 				title = -
 			),
 			[4] = "."
@@ -1041,7 +1041,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Wikipedia:Cheatsheet"),
+										target = WtPageName[ [0] = "Wikipedia:Cheatsheet" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Basic markup"
@@ -1057,7 +1057,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Help:Wiki markup"),
+										target = WtPageName[ [0] = "Help:Wiki markup" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Text, links, and talk pages"
@@ -1073,7 +1073,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Help:Visual file markup"),
+										target = WtPageName[ [0] = "Help:Visual file markup" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Visual files"
@@ -1089,7 +1089,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Help:Sound file markup"),
+										target = WtPageName[ [0] = "Help:Sound file markup" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Sound files"
@@ -1105,7 +1105,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Help:Table"),
+										target = WtPageName[ [0] = "Help:Table" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Tables"
@@ -1121,7 +1121,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Help:Template"),
+										target = WtPageName[ [0] = "Help:Template" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Template editing"
@@ -1137,7 +1137,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Help:HTML in wikitext"),
+										target = WtPageName[ [0] = "Help:HTML in wikitext" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Using HTML"
@@ -1181,7 +1181,7 @@ WtParsedWikitextPage(
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
-				target = WtPageName("File:Advanced toolbar of vector skin.png"),
+				target = WtPageName[ [0] = "File:Advanced toolbar of vector skin.png" ],
 				options = WtLinkOptions[
 					[0] = WtLinkOptionKeyword(
 						{P} keyword = "frame"
@@ -1209,7 +1209,7 @@ WtParsedWikitextPage(
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
-				target = WtPageName("File:Toolbar2.PNG"),
+				target = WtPageName[ [0] = "File:Toolbar2.PNG" ],
 				options = WtLinkOptions[
 					[0] = WtLinkOptionKeyword(
 						{P} keyword = "frame"
@@ -1239,7 +1239,7 @@ WtParsedWikitextPage(
 					{P} upright = false
 					{P} vAlign = MIDDLE
 					{P} width = -1
-					target = WtPageName("File:Vector toolbar insert table button.png"),
+					target = WtPageName[ [0] = "File:Vector toolbar insert table button.png" ],
 					options = WtLinkOptions[],
 					title = -
 				),
@@ -1255,7 +1255,7 @@ WtParsedWikitextPage(
 					{P} upright = false
 					{P} vAlign = MIDDLE
 					{P} width = -1
-					target = WtPageName("File:Button insert table.png"),
+					target = WtPageName[ [0] = "File:Button insert table.png" ],
 					options = WtLinkOptions[],
 					title = -
 				),
@@ -1264,7 +1264,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Help:Edit toolbar"),
+					target = WtPageName[ [0] = "Help:Edit toolbar" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "edit toolbar"
@@ -1275,7 +1275,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("mw:Customizing edit toolbar"),
+					target = WtPageName[ [0] = "mw:Customizing edit toolbar" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "these directions"
@@ -1591,7 +1591,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("wikicode"),
+					target = WtPageName[ [0] = "wikicode" ],
 					title = -
 				),
 				[2] = " can be used as a shortcut to create a table.  The pipe (",
@@ -1599,7 +1599,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("w:vertical bar"),
+					target = WtPageName[ [0] = "w:vertical bar" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "vertical bar"
@@ -1610,7 +1610,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("w:HTML table"),
+					target = WtPageName[ [0] = "w:HTML table" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "HTML table"
@@ -1789,7 +1789,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("row"),
+							target = WtPageName[ [0] = "row" ],
 							title = -
 						)
 					),
@@ -1798,7 +1798,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("w:hyphen"),
+						target = WtPageName[ [0] = "w:hyphen" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "hyphen"
@@ -1911,7 +1911,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("w:cell"),
+							target = WtPageName[ [0] = "w:cell" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "cell"
@@ -2838,7 +2838,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("w:HTML"),
+				target = WtPageName[ [0] = "w:HTML" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "HTML"
@@ -2855,7 +2855,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("w:Table (HTML)"),
+				target = WtPageName[ [0] = "w:Table (HTML)" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "Table (HTML)"
@@ -2901,7 +2901,7 @@ WtParsedWikitextPage(
 				{P} postfix = ""
 				{P} prefix = ""
 				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName("Help:HTML in wikitext#Permitted HTML"),
+				target = WtPageName[ [0] = "Help:HTML in wikitext#Permitted HTML" ],
 				title = WtLinkTitle(
 					{P} rtd = RTD[ "|" <o> "" ]
 					[0] = "supported in MediaWiki"
@@ -2914,7 +2914,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("meta:Template talk:Square 8x8 pentomino example"),
+					target = WtPageName[ [0] = "meta:Template talk:Square 8x8 pentomino example" ],
 					title = -
 				),
 				[2] = ".  An \"image\" in the form of a table is much more convenient to edit than an uploaded image."
@@ -2978,7 +2978,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Help:Table#M\u00E9lange"),
+					target = WtPageName[ [0] = "Help:Table#M\u00E9lange" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "M\u00E9lange"
@@ -2989,7 +2989,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("help:sorting"),
+					target = WtPageName[ [0] = "help:sorting" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "sorting"
@@ -3145,7 +3145,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Help:User style"),
+								target = WtPageName[ [0] = "Help:User style" ],
 								title = -
 							)
 						),
@@ -3473,7 +3473,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Wikipedia:Colours"),
+							target = WtPageName[ [0] = "Wikipedia:Colours" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "color"
@@ -3761,7 +3761,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Help:User style"),
+							target = WtPageName[ [0] = "Help:User style" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = WtXmlElement(
@@ -3796,7 +3796,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("w:style"),
+							target = WtPageName[ [0] = "w:style" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = " style"
@@ -3807,7 +3807,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("w:background"),
+							target = WtPageName[ [0] = "w:background" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "background"
@@ -3818,7 +3818,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("w:list of colors"),
+							target = WtPageName[ [0] = "w:list of colors" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "list of colors"
@@ -3829,7 +3829,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("w:web colors"),
+							target = WtPageName[ [0] = "w:web colors" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "web colors"
@@ -4030,7 +4030,7 @@ WtParsedWikitextPage(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName("word wrap"),
+									target = WtPageName[ [0] = "word wrap" ],
 									title = WtLinkTitle(
 										{P} rtd = RTD[ "|" <o> "" ]
 										[0] = "wrap-around of text"
@@ -4627,7 +4627,7 @@ WtParsedWikitextPage(
 																			{P} postfix = ""
 																			{P} prefix = ""
 																			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-																			target = WtPageName("Lorem ipsum"),
+																			target = WtPageName[ [0] = "Lorem ipsum" ],
 																			title = -
 																		),
 																		[1] = " dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -5011,7 +5011,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 120
-															target = WtPageName("File:StarIconBronze.png"),
+															target = WtPageName[ [0] = "File:StarIconBronze.png" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -5042,7 +5042,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 120
-															target = WtPageName("File:StarIconGold.png"),
+															target = WtPageName[ [0] = "File:StarIconGold.png" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -5076,7 +5076,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 120
-															target = WtPageName("File:StarIconGreen.png"),
+															target = WtPageName[ [0] = "File:StarIconGreen.png" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -5246,7 +5246,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 120
-															target = WtPageName("File:StarIconBronze.png"),
+															target = WtPageName[ [0] = "File:StarIconBronze.png" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -5283,7 +5283,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 120
-															target = WtPageName("File:StarIconGold.png"),
+															target = WtPageName[ [0] = "File:StarIconGold.png" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -5323,7 +5323,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 120
-															target = WtPageName("File:StarIconGreen.png"),
+															target = WtPageName[ [0] = "File:StarIconGreen.png" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -5726,7 +5726,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("m:Template talk:Table demo"),
+							target = WtPageName[ [0] = "m:Template talk:Table demo" ],
 							title = -
 						),
 						[2] = ". Prior to April 2009, using \"float\" to position a table was discouraged; however, it no longer always breaks page rendering at large font sizes. See a floated image, below, under \"",
@@ -5734,7 +5734,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("#Floating images in the center"),
+							target = WtPageName[ [0] = "#Floating images in the center" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "Floating images in the center"
@@ -5761,7 +5761,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Wikipedia:Manual of Style (accessibility)"),
+								target = WtPageName[ [0] = "Wikipedia:Manual of Style (accessibility)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "accessible"
@@ -5777,7 +5777,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("help:sorting"),
+							target = WtPageName[ [0] = "help:sorting" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "sorting"
@@ -6058,7 +6058,7 @@ WtParsedWikitextPage(
 																									{P} upright = false
 																									{P} vAlign = MIDDLE
 																									{P} width = -1
-																									target = WtPageName("File:Wiki.png"),
+																									target = WtPageName[ [0] = "File:Wiki.png" ],
 																									options = WtLinkOptions[],
 																									title = -
 																								)
@@ -6089,7 +6089,7 @@ WtParsedWikitextPage(
 																									{P} upright = false
 																									{P} vAlign = MIDDLE
 																									{P} width = -1
-																									target = WtPageName("File:Wiki.png"),
+																									target = WtPageName[ [0] = "File:Wiki.png" ],
 																									options = WtLinkOptions[],
 																									title = -
 																								)
@@ -6422,7 +6422,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 180
-															target = WtPageName("File:DuraEuropos-TempleOfBel.jpg"),
+															target = WtPageName[ [0] = "File:DuraEuropos-TempleOfBel.jpg" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -6448,7 +6448,7 @@ WtParsedWikitextPage(
 															{P} postfix = ""
 															{P} prefix = ""
 															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-															target = WtPageName("Bel (mythology)"),
+															target = WtPageName[ [0] = "Bel (mythology)" ],
 															title = WtLinkTitle(
 																{P} rtd = RTD[ "|" <o> "" ]
 																[0] = "Bel"
@@ -6509,7 +6509,7 @@ WtParsedWikitextPage(
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = -1
-														target = WtPageName("File:DuraEuropos-TempleOfBel.jpg"),
+														target = WtPageName[ [0] = "File:DuraEuropos-TempleOfBel.jpg" ],
 														options = WtLinkOptions[
 															[0] = WtLinkOptionKeyword(
 																{P} keyword = "thumb"
@@ -6597,7 +6597,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 105
-															target = WtPageName("File:DuraEuropos-TempleOfBel.jpg"),
+															target = WtPageName[ [0] = "File:DuraEuropos-TempleOfBel.jpg" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -6670,7 +6670,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 105
-															target = WtPageName("File:DuraEuropos-TempleOfBel.jpg"),
+															target = WtPageName[ [0] = "File:DuraEuropos-TempleOfBel.jpg" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -6743,7 +6743,7 @@ WtParsedWikitextPage(
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 105
-															target = WtPageName("File:DuraEuropos-TempleOfBel.jpg"),
+															target = WtPageName[ [0] = "File:DuraEuropos-TempleOfBel.jpg" ],
 															options = WtLinkOptions[
 																[0] = WtLinkOptionResize(
 																	{P} height = -1
@@ -6791,7 +6791,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Wikipedia:Manual_of_Style_(accessibility)#Tables"),
+								target = WtPageName[ [0] = "Wikipedia:Manual_of_Style_(accessibility)#Tables" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "accessibility issues"
@@ -8069,7 +8069,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("HTML"),
+							target = WtPageName[ [0] = "HTML" ],
 							title = -
 						),
 						[2] = ", a table has always forced an implicit line-wrap (or ",
@@ -8720,7 +8720,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Help:User style"),
+							target = WtPageName[ [0] = "Help:User style" ],
 							title = -
 						),
 						[2] = "."
@@ -8734,7 +8734,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("w:Cascading Style Sheets"),
+					target = WtPageName[ [0] = "w:Cascading Style Sheets" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "CSS"
@@ -8751,7 +8751,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("#Sorting"),
+						target = WtPageName[ [0] = "#Sorting" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "sortable"
@@ -8766,7 +8766,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("MediaWiki:Common.css"),
+						target = WtPageName[ [0] = "MediaWiki:Common.css" ],
 						title = -
 					),
 					[2] = " (for example, on this and some other projects there is or was the class wikitable, later moved to ",
@@ -8788,7 +8788,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("MediaWiki:Monobook.css"),
+						target = WtPageName[ [0] = "MediaWiki:Monobook.css" ],
 						title = -
 					),
 					[2] = " etc."
@@ -9600,7 +9600,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("MediaWiki:Common.css"),
+					target = WtPageName[ [0] = "MediaWiki:Common.css" ],
 					title = -
 				),
 				[6] = " contains a number of ",
@@ -9613,7 +9613,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("w:CSS"),
+					target = WtPageName[ [0] = "w:CSS" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "CSS"
@@ -10118,7 +10118,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("meta:Help:Sorting"),
+							target = WtPageName[ [0] = "meta:Help:Sorting" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "Help:Sorting"
@@ -10143,7 +10143,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Help:Sorting"),
+						target = WtPageName[ [0] = "Help:Sorting" ],
 						title = -
 					)
 				),
@@ -10847,7 +10847,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Help:Sorting"),
+						target = WtPageName[ [0] = "Help:Sorting" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "sorting"
@@ -10869,7 +10869,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("m:help:table/example row template"),
+					target = WtPageName[ [0] = "m:help:table/example row template" ],
 					title = -
 				),
 				[2] = " (",
@@ -10877,7 +10877,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("m:help talk:table/example row template"),
+					target = WtPageName[ [0] = "m:help talk:table/example row template" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "talk"
@@ -10888,7 +10888,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("m:Special:Whatlinkshere/help:table/example row template"),
+					target = WtPageName[ [0] = "m:Special:Whatlinkshere/help:table/example row template" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "backlinks"
@@ -11246,7 +11246,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("w:HTML element#Tables"),
+					target = WtPageName[ [0] = "w:HTML element#Tables" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "HTML element#Tables"
@@ -11292,7 +11292,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Help:HTML in wikitext#Permitted HTML"),
+					target = WtPageName[ [0] = "Help:HTML in wikitext#Permitted HTML" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "supported in MediaWiki"
@@ -11979,7 +11979,7 @@ WtParsedWikitextPage(
 																{P} postfix = ""
 																{P} prefix = ""
 																{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-																target = WtPageName("Template:!"),
+																target = WtPageName[ [0] = "Template:!" ],
 																title = -
 															),
 															[2] = " to pass a \"|\" in a parameter."
@@ -11991,7 +11991,7 @@ WtParsedWikitextPage(
 																{P} postfix = ""
 																{P} prefix = ""
 																{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-																target = WtPageName("Help:Newlines and spaces"),
+																target = WtPageName[ [0] = "Help:Newlines and spaces" ],
 																title = -
 															),
 															[2] = "."
@@ -12059,7 +12059,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Template talk:For#Tables"),
+							target = WtPageName[ [0] = "Template talk:For#Tables" ],
 							title = -
 						),
 						[2] = "."
@@ -12083,7 +12083,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("m:User: Magnus Manske"),
+					target = WtPageName[ [0] = "m:User: Magnus Manske" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = " Magnus Manske"
@@ -12134,7 +12134,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("w:Table (HTML)"),
+							target = WtPageName[ [0] = "w:Table (HTML)" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "table"
@@ -12554,7 +12554,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Help:Table Caption"),
+						target = WtPageName[ [0] = "Help:Table Caption" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Captions"
@@ -12669,7 +12669,7 @@ WtParsedWikitextPage(
 							{P} postfix = "s"
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
-							target = WtPageName("screen reader"),
+							target = WtPageName[ [0] = "screen reader" ],
 							title = -
 						),
 						[2] = " to give visually impaired readers the overall gist of the table, without having to listen to the entire table. For example:\n",
@@ -12723,7 +12723,7 @@ WtParsedWikitextPage(
 														{P} upright = true
 														{P} vAlign = MIDDLE
 														{P} width = -1
-														target = WtPageName("File:Philipp Veit 008.jpg"),
+														target = WtPageName[ [0] = "File:Philipp Veit 008.jpg" ],
 														options = WtLinkOptions[
 															[0] = WtLinkOptionKeyword(
 																{P} keyword = "thumb"
@@ -12770,7 +12770,7 @@ WtParsedWikitextPage(
 														{P} upright = true
 														{P} vAlign = MIDDLE
 														{P} width = -1
-														target = WtPageName("File:Image Germania (painting).jpg"),
+														target = WtPageName[ [0] = "File:Image Germania (painting).jpg" ],
 														options = WtLinkOptions[
 															[0] = WtLinkOptionKeyword(
 																{P} keyword = "thumb"
@@ -12817,7 +12817,7 @@ WtParsedWikitextPage(
 														{P} upright = true
 														{P} vAlign = MIDDLE
 														{P} width = -1
-														target = WtPageName("File:Niederwald memorial 2.JPG"),
+														target = WtPageName[ [0] = "File:Niederwald memorial 2.JPG" ],
 														options = WtLinkOptions[
 															[0] = WtLinkOptionKeyword(
 																{P} keyword = "thumb"
@@ -12918,7 +12918,7 @@ WtParsedWikitextPage(
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
-												target = WtPageName("File:Some_window_blinds.JPG"),
+												target = WtPageName[ [0] = "File:Some_window_blinds.JPG" ],
 												options = WtLinkOptions[
 													[0] = WtLinkOptionResize(
 														{P} height = 155
@@ -12958,7 +12958,7 @@ WtParsedWikitextPage(
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
-												target = WtPageName("File:Vert-blinds-2145-rs.jpg"),
+												target = WtPageName[ [0] = "File:Vert-blinds-2145-rs.jpg" ],
 												options = WtLinkOptions[
 													[0] = WtLinkOptionResize(
 														{P} height = 170
@@ -12998,7 +12998,7 @@ WtParsedWikitextPage(
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
-												target = WtPageName("File:Gardine.jpg"),
+												target = WtPageName[ [0] = "File:Gardine.jpg" ],
 												options = WtLinkOptions[
 													[0] = WtLinkOptionResize(
 														{P} height = 155
@@ -13062,7 +13062,7 @@ WtParsedWikitextPage(
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
-												target = WtPageName("File:Vorhang.jpg"),
+												target = WtPageName[ [0] = "File:Vorhang.jpg" ],
 												options = WtLinkOptions[
 													[0] = WtLinkOptionResize(
 														{P} height = 155
@@ -13102,7 +13102,7 @@ WtParsedWikitextPage(
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 328
-												target = WtPageName("File:Jalousie-1.jpg"),
+												target = WtPageName[ [0] = "File:Jalousie-1.jpg" ],
 												options = WtLinkOptions[
 													[0] = WtLinkOptionResize(
 														{P} height = 55
@@ -13166,7 +13166,7 @@ WtParsedWikitextPage(
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 205
-												target = WtPageName("File:Some window blinds.JPG"),
+												target = WtPageName[ [0] = "File:Some window blinds.JPG" ],
 												options = WtLinkOptions[
 													[0] = WtLinkOptionResize(
 														{P} height = -1
@@ -13211,7 +13211,7 @@ WtParsedWikitextPage(
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 388
-												target = WtPageName("File:Miniblinds detail of mechanism.jpg"),
+												target = WtPageName[ [0] = "File:Miniblinds detail of mechanism.jpg" ],
 												options = WtLinkOptions[
 													[0] = WtLinkOptionResize(
 														{P} height = -1
@@ -13305,7 +13305,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_hd_date_page.svg"),
+													target = WtPageName[ [0] = "File:wpvg_hd_date_page.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
@@ -13337,17 +13337,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia:WikiProject Video games") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_project.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_project.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia:WikiProject Video games")
+															target = WtPageName[ [0] = "Wikipedia:WikiProject Video games" ]
 														)
 													],
 													title = -
@@ -13374,17 +13374,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia talk:WikiProject Video games") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia talk:WikiProject Video games")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_talk.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_talk.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia talk:WikiProject Video games")
+															target = WtPageName[ [0] = "Wikipedia talk:WikiProject Video games" ]
 														)
 													],
 													title = -
@@ -13411,17 +13411,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Portal:Video games") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Portal:Video games")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_portal.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_portal.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Portal:Video games")
+															target = WtPageName[ [0] = "Portal:Video games" ]
 														)
 													],
 													title = -
@@ -13448,17 +13448,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia:WikiProject Video games/Article guidelines") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Article guidelines")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_article_guidelines.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_article_guidelines.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia:WikiProject Video games/Article guidelines")
+															target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Article guidelines" ]
 														)
 													],
 													title = -
@@ -13485,17 +13485,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia:WikiProject Video games/Templates") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Templates")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_templates.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_templates.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia:WikiProject Video games/Templates")
+															target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Templates" ]
 														)
 													],
 													title = -
@@ -13522,17 +13522,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia:WikiProject Video games/Sources") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Sources")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_sources.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_sources.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia:WikiProject Video games/Sources")
+															target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Sources" ]
 														)
 													],
 													title = -
@@ -13559,17 +13559,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia:WikiProject Video games/Assessment") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Assessment")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_assessment.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_assessment.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia:WikiProject Video games/Assessment")
+															target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Assessment" ]
 														)
 													],
 													title = -
@@ -13596,17 +13596,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia:WikiProject Video games/Cleanup") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Cleanup")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_cleanup.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_cleanup.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia:WikiProject Video games/Cleanup")
+															target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Cleanup" ]
 														)
 													],
 													title = -
@@ -13633,17 +13633,17 @@ WtParsedWikitextPage(
 													{P} format = UNRESTRAINED
 													{P} hAlign = UNSPECIFIED
 													{P} height = -1
-													{P} link = ImageLinkTarget[ PAGE: WtPageName("Wikipedia:WikiProject Video games/Requests") ]
+													{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Requests")] ]
 													{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = -1
-													target = WtPageName("File:wpvg_vg_requests.svg"),
+													target = WtPageName[ [0] = "File:wpvg_vg_requests.svg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionLinkTarget(
 															{P} rtd = RTD[ "|link=" <o> "" ]
 															{P} targetType = PAGE
-															target = WtPageName("Wikipedia:WikiProject Video games/Requests")
+															target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Requests" ]
 														)
 													],
 													title = -
@@ -13912,7 +13912,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 265
-													target = WtPageName("File:Worms 01.jpg"),
+													target = WtPageName[ [0] = "File:Worms 01.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = -1
@@ -13942,7 +13942,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 235
-													target = WtPageName("File:Worms Wappen 2005-05-27.jpg"),
+													target = WtPageName[ [0] = "File:Worms Wappen 2005-05-27.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = -1
@@ -13980,7 +13980,7 @@ WtParsedWikitextPage(
 													{P} postfix = ""
 													{P} prefix = ""
 													{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-													target = WtPageName("Rhine"),
+													target = WtPageName[ [0] = "Rhine" ],
 													title = -
 												)
 											],
@@ -14062,7 +14062,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 130
-													target = WtPageName("File:Worms 01.jpg"),
+													target = WtPageName[ [0] = "File:Worms 01.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = -1
@@ -14092,7 +14092,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 125
-													target = WtPageName("File:Worms Wappen 2005-05-27.jpg"),
+													target = WtPageName[ [0] = "File:Worms Wappen 2005-05-27.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = -1
@@ -14122,7 +14122,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 125
-													target = WtPageName("File:Liberty-statue-with-manhattan.jpg"),
+													target = WtPageName[ [0] = "File:Liberty-statue-with-manhattan.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = -1
@@ -14152,7 +14152,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 115
-													target = WtPageName("File:New-York-Jan2005.jpg"),
+													target = WtPageName[ [0] = "File:New-York-Jan2005.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = -1
@@ -14267,7 +14267,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:Liberty-statue-with-manhattan.jpg"),
+													target = WtPageName[ [0] = "File:Liberty-statue-with-manhattan.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 95
@@ -14297,7 +14297,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:New-York-Jan2005.jpg"),
+													target = WtPageName[ [0] = "File:New-York-Jan2005.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 95
@@ -14327,7 +14327,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:Gold star on blue.gif"),
+													target = WtPageName[ [0] = "File:Gold star on blue.gif" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 95
@@ -14357,7 +14357,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 100
-													target = WtPageName("File:Worms 01.jpg"),
+													target = WtPageName[ [0] = "File:Worms 01.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 95
@@ -14472,7 +14472,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:Liberty-statue-with-manhattan.jpg"),
+													target = WtPageName[ [0] = "File:Liberty-statue-with-manhattan.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 70
@@ -14502,7 +14502,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:Gold star on blue.gif"),
+													target = WtPageName[ [0] = "File:Gold star on blue.gif" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 70
@@ -14532,7 +14532,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:New-York-Jan2005.jpg"),
+													target = WtPageName[ [0] = "File:New-York-Jan2005.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 70
@@ -14562,7 +14562,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:Gold star on deep red.gif"),
+													target = WtPageName[ [0] = "File:Gold star on deep red.gif" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 70
@@ -14592,7 +14592,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:Worms 01.jpg"),
+													target = WtPageName[ [0] = "File:Worms 01.jpg" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 70
@@ -14622,7 +14622,7 @@ WtParsedWikitextPage(
 													{P} upright = false
 													{P} vAlign = MIDDLE
 													{P} width = 199
-													target = WtPageName("File:Gold star on blue.gif"),
+													target = WtPageName[ [0] = "File:Gold star on blue.gif" ],
 													options = WtLinkOptions[
 														[0] = WtLinkOptionResize(
 															{P} height = 70
@@ -14765,7 +14765,7 @@ WtParsedWikitextPage(
 																	{P} upright = false
 																	{P} vAlign = MIDDLE
 																	{P} width = 299
-																	target = WtPageName("File:Domtoren vanaf Brigittenstraat.jpg"),
+																	target = WtPageName[ [0] = "File:Domtoren vanaf Brigittenstraat.jpg" ],
 																	options = WtLinkOptions[
 																		[0] = WtLinkOptionResize(
 																			{P} height = 125
@@ -14806,7 +14806,7 @@ WtParsedWikitextPage(
 																		{P} upright = false
 																		{P} vAlign = MIDDLE
 																		{P} width = 299
-																		target = WtPageName("File:Utrecht 003.jpg"),
+																		target = WtPageName[ [0] = "File:Utrecht 003.jpg" ],
 																		options = WtLinkOptions[
 																			[0] = WtLinkOptionResize(
 																				{P} height = 125
@@ -14842,7 +14842,7 @@ WtParsedWikitextPage(
 																	{P} upright = false
 																	{P} vAlign = MIDDLE
 																	{P} width = 299
-																	target = WtPageName("File:Uitzicht vanaf de Domtoren.jpg"),
+																	target = WtPageName[ [0] = "File:Uitzicht vanaf de Domtoren.jpg" ],
 																	options = WtLinkOptions[
 																		[0] = WtLinkOptionResize(
 																			{P} height = 125
@@ -15012,7 +15012,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("meta:Visualizer for Wikimedia projects"),
+								target = WtPageName[ [0] = "meta:Visualizer for Wikimedia projects" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "meta:Visualizer for Wikimedia projects"
@@ -15078,7 +15078,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName(".csv"),
+							target = WtPageName[ [0] = ".csv" ],
 							title = -
 						),
 						[4] = " and use the ",
@@ -15122,7 +15122,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Help:Wikitable"),
+								target = WtPageName[ [0] = "Help:Wikitable" ],
 								title = -
 							)
 						),
@@ -15133,7 +15133,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Wikipedia:Manual of Style (tables)"),
+								target = WtPageName[ [0] = "Wikipedia:Manual of Style (tables)" ],
 								title = -
 							)
 						),
@@ -15144,7 +15144,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("Wikipedia:How to make a table in Wikipedia"),
+								target = WtPageName[ [0] = "Wikipedia:How to make a table in Wikipedia" ],
 								title = -
 							)
 						),
@@ -15155,7 +15155,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("mw:Table"),
+								target = WtPageName[ [0] = "mw:Table" ],
 								title = -
 							)
 						),
@@ -15166,7 +15166,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("mw:Simplified table syntax"),
+								target = WtPageName[ [0] = "mw:Simplified table syntax" ],
 								title = -
 							)
 						),
@@ -15177,7 +15177,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("m:Wiki markup tables"),
+								target = WtPageName[ [0] = "m:Wiki markup tables" ],
 								title = -
 							)
 						),
@@ -15188,7 +15188,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("m:Table background colors"),
+								target = WtPageName[ [0] = "m:Table background colors" ],
 								title = -
 							)
 						),
@@ -15199,7 +15199,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:Dcljr/Tables"),
+								target = WtPageName[ [0] = "User:Dcljr/Tables" ],
 								title = -
 							)
 						),
@@ -15210,7 +15210,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("w:Table (HTML)"),
+								target = WtPageName[ [0] = "w:Table (HTML)" ],
 								title = -
 							)
 						),
@@ -15221,7 +15221,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("m:Help:Template#A parameter value containing a pipe character"),
+								target = WtPageName[ [0] = "m:Help:Template#A parameter value containing a pipe character" ],
 								title = -
 							)
 						),
@@ -15232,7 +15232,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("w:Category:Table and column templates"),
+								target = WtPageName[ [0] = "w:Category:Table and column templates" ],
 								title = -
 							)
 						),
@@ -15248,7 +15248,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Template:Chess diagram"),
+										target = WtPageName[ [0] = "Template:Chess diagram" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Chess board"
@@ -15262,7 +15262,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Template:Goban"),
+										target = WtPageName[ [0] = "Template:Goban" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Go board"
@@ -15276,7 +15276,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("Monopoly (game)#Board"),
+										target = WtPageName[ [0] = "Monopoly (game)#Board" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Monopoly board"
@@ -15290,7 +15290,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName("m:Template talk:Square 8x8 pentomino example"),
+										target = WtPageName[ [0] = "m:Template talk:Square 8x8 pentomino example" ],
 										title = WtLinkTitle(
 											{P} rtd = RTD[ "|" <o> "" ]
 											[0] = "Square 8x8 pentomino example"
@@ -15306,7 +15306,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("commons:Commons:Convert tables and charts to wiki code"),
+								target = WtPageName[ [0] = "commons:Commons:Convert tables and charts to wiki code" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Commons:Convert tables and charts to wiki code"
@@ -15320,7 +15320,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("commons:Commons:Chart and graph resources"),
+								target = WtPageName[ [0] = "commons:Commons:Chart and graph resources" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "Commons:Chart and graph resources"
@@ -15341,7 +15341,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":Category:Articles requiring tables"),
+								target = WtPageName[ [0] = ":Category:Articles requiring tables" ],
 								title = -
 							)
 						)
@@ -15375,7 +15375,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":de:Wikipedia:Helferlein/VBA-Macro for EXCEL tableconversion"),
+								target = WtPageName[ [0] = ":de:Wikipedia:Helferlein/VBA-Macro for EXCEL tableconversion" ],
 								title = -
 							),
 							[2] = " published in German-Wikipediaproject (English instructions included)"
@@ -15410,7 +15410,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("w:comma-separated values"),
+								target = WtPageName[ [0] = "w:comma-separated values" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "comma-separated values"
@@ -15421,7 +15421,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName(":de:Benutzer:Duesentrieb/csv2wp (en)"),
+								target = WtPageName[ [0] = ":de:Benutzer:Duesentrieb/csv2wp (en)" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "more information"
@@ -15531,7 +15531,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Category:Wikipedia how-to"),
+							target = WtPageName[ [0] = "Category:Wikipedia how-to" ],
 							title = -
 						),
 						[1] = "\n",
@@ -15539,7 +15539,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Category:Wikipedia text help"),
+							target = WtPageName[ [0] = "Category:Wikipedia text help" ],
 							title = -
 						)
 					],
@@ -15549,7 +15549,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("ar:\u0645\u0633\u0627\u0639\u062F\u0629:\u062C\u062F\u0648\u0644"),
+							target = WtPageName[ [0] = "ar:\u0645\u0633\u0627\u0639\u062F\u0629:\u062C\u062F\u0648\u0644" ],
 							title = -
 						),
 						[1] = "\n",
@@ -15557,7 +15557,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("bg:\u0423\u0438\u043A\u0438\u043F\u0435\u0434\u0438\u044F:\u0422\u0430\u0431\u043B\u0438\u0446\u0438"),
+							target = WtPageName[ [0] = "bg:\u0423\u0438\u043A\u0438\u043F\u0435\u0434\u0438\u044F:\u0422\u0430\u0431\u043B\u0438\u0446\u0438" ],
 							title = -
 						),
 						[3] = "\n",
@@ -15565,7 +15565,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("ca:Ajuda:Taula"),
+							target = WtPageName[ [0] = "ca:Ajuda:Taula" ],
 							title = -
 						),
 						[5] = "\n",
@@ -15573,7 +15573,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("cs:N\u00E1pov\u011Bda:Tabulky"),
+							target = WtPageName[ [0] = "cs:N\u00E1pov\u011Bda:Tabulky" ],
 							title = -
 						),
 						[7] = "\n",
@@ -15581,7 +15581,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("de:Hilfe:Tabellen"),
+							target = WtPageName[ [0] = "de:Hilfe:Tabellen" ],
 							title = -
 						),
 						[9] = "\n",
@@ -15589,7 +15589,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("dsb:Pomoc:Tabela"),
+							target = WtPageName[ [0] = "dsb:Pomoc:Tabela" ],
 							title = -
 						),
 						[11] = "\n",
@@ -15597,7 +15597,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("es:Ayuda:Tablas"),
+							target = WtPageName[ [0] = "es:Ayuda:Tablas" ],
 							title = -
 						),
 						[13] = "\n",
@@ -15605,7 +15605,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("eo:Helpo:Vikitabeloj"),
+							target = WtPageName[ [0] = "eo:Helpo:Vikitabeloj" ],
 							title = -
 						),
 						[15] = "\n",
@@ -15613,7 +15613,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("fa:\u0631\u0627\u0647\u0646\u0645\u0627:\u062C\u062F\u0648\u0644\u200C\u0647\u0627"),
+							target = WtPageName[ [0] = "fa:\u0631\u0627\u0647\u0646\u0645\u0627:\u062C\u062F\u0648\u0644\u200C\u0647\u0627" ],
 							title = -
 						),
 						[17] = "\n",
@@ -15621,7 +15621,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("fr:Aide:Les tableaux pour les novices"),
+							target = WtPageName[ [0] = "fr:Aide:Les tableaux pour les novices" ],
 							title = -
 						),
 						[19] = "\n",
@@ -15629,7 +15629,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("hsb:Pomoc:Tabela"),
+							target = WtPageName[ [0] = "hsb:Pomoc:Tabela" ],
 							title = -
 						),
 						[21] = "\n",
@@ -15637,7 +15637,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("hu:Wikip\u00E9dia:T\u00E1bl\u00E1zatok"),
+							target = WtPageName[ [0] = "hu:Wikip\u00E9dia:T\u00E1bl\u00E1zatok" ],
 							title = -
 						),
 						[23] = "\n",
@@ -15645,7 +15645,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("id:Bantuan:Tabel"),
+							target = WtPageName[ [0] = "id:Bantuan:Tabel" ],
 							title = -
 						),
 						[25] = "\n",
@@ -15653,7 +15653,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("it:Aiuto:Tabelle"),
+							target = WtPageName[ [0] = "it:Aiuto:Tabelle" ],
 							title = -
 						),
 						[27] = "\n",
@@ -15661,7 +15661,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("ja:Help:\u8868\u306E\u4F5C\u308A\u65B9"),
+							target = WtPageName[ [0] = "ja:Help:\u8868\u306E\u4F5C\u308A\u65B9" ],
 							title = -
 						),
 						[29] = "\n",
@@ -15669,7 +15669,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("ka:\u10D3\u10D0\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0:\u10EA\u10EE\u10E0\u10D8\u10DA\u10D8\u10E1 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D0"),
+							target = WtPageName[ [0] = "ka:\u10D3\u10D0\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0:\u10EA\u10EE\u10E0\u10D8\u10DA\u10D8\u10E1 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D0" ],
 							title = -
 						),
 						[31] = "\n",
@@ -15677,7 +15677,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("km:\u1787\u17C6\u1793\u17BD\u1799:\u178F\u17B6\u179A\u17B6\u1784"),
+							target = WtPageName[ [0] = "km:\u1787\u17C6\u1793\u17BD\u1799:\u178F\u17B6\u179A\u17B6\u1784" ],
 							title = -
 						),
 						[33] = "\n",
@@ -15685,7 +15685,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("ko:\uC704\uD0A4\uBC31\uACFC:\uD45C"),
+							target = WtPageName[ [0] = "ko:\uC704\uD0A4\uBC31\uACFC:\uD45C" ],
 							title = -
 						),
 						[35] = "\n",
@@ -15693,7 +15693,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("lb:H\u00EBllef:Tabellen"),
+							target = WtPageName[ [0] = "lb:H\u00EBllef:Tabellen" ],
 							title = -
 						),
 						[37] = "\n",
@@ -15701,7 +15701,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("lt:Pagalba:Lentel\u0117"),
+							target = WtPageName[ [0] = "lt:Pagalba:Lentel\u0117" ],
 							title = -
 						),
 						[39] = "\n",
@@ -15709,7 +15709,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("ml:\u0D38\u0D39\u0D3E\u0D2F\u0D02:\u0D2A\u0D1F\u0D4D\u0D1F\u0D3F\u0D15"),
+							target = WtPageName[ [0] = "ml:\u0D38\u0D39\u0D3E\u0D2F\u0D02:\u0D2A\u0D1F\u0D4D\u0D1F\u0D3F\u0D15" ],
 							title = -
 						),
 						[41] = "\n",
@@ -15717,7 +15717,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("mn:\u0422\u0443\u0441\u043B\u0430\u043C\u0436:\u0425\u04AF\u0441\u043D\u044D\u0433\u0442 \u044F\u0430\u0436 \u0445\u0438\u0439\u0445 \u0432\u044D?"),
+							target = WtPageName[ [0] = "mn:\u0422\u0443\u0441\u043B\u0430\u043C\u0436:\u0425\u04AF\u0441\u043D\u044D\u0433\u0442 \u044F\u0430\u0436 \u0445\u0438\u0439\u0445 \u0432\u044D?" ],
 							title = -
 						),
 						[43] = "\n",
@@ -15725,7 +15725,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("nl:Help:Gebruik van tabellen"),
+							target = WtPageName[ [0] = "nl:Help:Gebruik van tabellen" ],
 							title = -
 						),
 						[45] = "\n",
@@ -15733,7 +15733,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("no:Hjelp:Tabeller"),
+							target = WtPageName[ [0] = "no:Hjelp:Tabeller" ],
 							title = -
 						),
 						[47] = "\n",
@@ -15741,7 +15741,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("pl:Pomoc:Tabele"),
+							target = WtPageName[ [0] = "pl:Pomoc:Tabele" ],
 							title = -
 						),
 						[49] = "\n",
@@ -15749,7 +15749,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("pt:Ajuda:Guia de edi\u00E7\u00E3o/Usar tabelas"),
+							target = WtPageName[ [0] = "pt:Ajuda:Guia de edi\u00E7\u00E3o/Usar tabelas" ],
 							title = -
 						),
 						[51] = "\n",
@@ -15757,7 +15757,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("ro:Ajutor:Tabele"),
+							target = WtPageName[ [0] = "ro:Ajutor:Tabele" ],
 							title = -
 						),
 						[53] = "\n",
@@ -15765,7 +15765,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("qu:Yanapa:Tawla"),
+							target = WtPageName[ [0] = "qu:Yanapa:Tawla" ],
 							title = -
 						),
 						[55] = "\n",
@@ -15773,7 +15773,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("sq:Ndihm\u00EB:Tabela"),
+							target = WtPageName[ [0] = "sq:Ndihm\u00EB:Tabela" ],
 							title = -
 						),
 						[57] = "\n",
@@ -15781,7 +15781,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("simple:Help:Tables"),
+							target = WtPageName[ [0] = "simple:Help:Tables" ],
 							title = -
 						),
 						[59] = "\n",
@@ -15789,7 +15789,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("sk:Pomoc:Tabu\u013Eky"),
+							target = WtPageName[ [0] = "sk:Pomoc:Tabu\u013Eky" ],
 							title = -
 						),
 						[61] = "\n",
@@ -15797,7 +15797,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("sr:\u041F\u043E\u043C\u043E\u045B:\u0422\u0430\u0431\u0435\u043B\u0430"),
+							target = WtPageName[ [0] = "sr:\u041F\u043E\u043C\u043E\u045B:\u0422\u0430\u0431\u0435\u043B\u0430" ],
 							title = -
 						),
 						[63] = "\n",
@@ -15805,7 +15805,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("fi:Ohje:Taulukot"),
+							target = WtPageName[ [0] = "fi:Ohje:Taulukot" ],
 							title = -
 						),
 						[65] = "\n",
@@ -15813,7 +15813,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("tt:\u042F\u0440\u0434\u04D9\u043C:T\u00FC\u015F\u00E4w"),
+							target = WtPageName[ [0] = "tt:\u042F\u0440\u0434\u04D9\u043C:T\u00FC\u015F\u00E4w" ],
 							title = -
 						),
 						[67] = "\n",
@@ -15821,7 +15821,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("th:\u0E27\u0E34\u0E18\u0E35\u0E43\u0E0A\u0E49:\u0E15\u0E32\u0E23\u0E32\u0E07"),
+							target = WtPageName[ [0] = "th:\u0E27\u0E34\u0E18\u0E35\u0E43\u0E0A\u0E49:\u0E15\u0E32\u0E23\u0E32\u0E07" ],
 							title = -
 						),
 						[69] = "\n",
@@ -15829,7 +15829,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("uk:\u0414\u043E\u0432\u0456\u0434\u043A\u0430:\u0422\u0430\u0431\u043B\u0438\u0446\u0456"),
+							target = WtPageName[ [0] = "uk:\u0414\u043E\u0432\u0456\u0434\u043A\u0430:\u0422\u0430\u0431\u043B\u0438\u0446\u0456" ],
 							title = -
 						),
 						[71] = "\n",
@@ -15837,7 +15837,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("vi:Tr\u1EE3 gi\u00FAp:T\u1EA1o b\u1EA3ng"),
+							target = WtPageName[ [0] = "vi:Tr\u1EE3 gi\u00FAp:T\u1EA1o b\u1EA3ng" ],
 							title = -
 						),
 						[73] = "\n",
@@ -15845,7 +15845,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("zh:Help:\u8868\u683C"),
+							target = WtPageName[ [0] = "zh:Help:\u8868\u683C" ],
 							title = -
 						)
 					],

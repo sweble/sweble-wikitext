@@ -969,6 +969,12 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
+	public WtPageName pageName(WtNodeList content)
+	{
+		return new WtPageName(content);
+	}
+	
+	@Override
 	public WtIgnored ignored(String content)
 	{
 		return new WtIgnored(content);
@@ -984,12 +990,6 @@ public class WikitextNodeFactoryImpl
 	public WtNewline newline(String content)
 	{
 		return new WtNewline(content);
-	}
-	
-	@Override
-	public WtPageName pageName(String content)
-	{
-		return new WtPageName(content);
 	}
 	
 	@Override

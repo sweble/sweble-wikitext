@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 	[1] = WtInternalLink(
 		{P} postfix = ""
 		{P} prefix = ""
-		target = WtPageName("target"),
+		target = WtPageName[ [0] = "target" ],
 		title = WtLinkTitle[]
 	),
 	[2] = WtTable(
@@ -33,7 +33,7 @@ WtParsedWikitextPage(
 	[3] = WtInternalLink(
 		{P} postfix = ""
 		{P} prefix = ""
-		target = WtPageName("target"),
+		target = WtPageName[ [0] = "target" ],
 		title = WtLinkTitle[]
 	)
 )

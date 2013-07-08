@@ -221,7 +221,10 @@ public final class ExpansionVisitor
 		if (expFrame.isNoRedirect())
 			return n;
 		
-		String target = n.getTarget().getContent();
+		if (!n.getTarget().isResolved())
+			return markError(n);
+		
+		String target = n.getTarget().getAsString();
 		
 		WtNode result = resolveRedirectWrapper(n, target);
 		if (result == null)

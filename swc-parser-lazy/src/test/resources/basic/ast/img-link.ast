@@ -13,7 +13,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[],
 			title = -
 		)
@@ -34,7 +34,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
@@ -60,7 +60,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
@@ -86,7 +86,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionLinkTarget(
 					{P} rtd = RTD[ "|link=" <o> "" ]
@@ -108,17 +108,17 @@ WtParsedWikitextPage(
 			{P} format = UNRESTRAINED
 			{P} hAlign = UNSPECIFIED
 			{P} height = -1
-			{P} link = ImageLinkTarget[ PAGE: WtPageName(" ") ]
+			{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText(" ")] ]
 			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionLinkTarget(
 					{P} rtd = RTD[ "|link=" <o> "" ]
 					{P} targetType = PAGE
-					target = WtPageName(" ")
+					target = WtPageName[ [0] = " " ]
 				)
 			],
 			title = WtLinkTitle(
@@ -140,7 +140,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionLinkTarget(
 					{P} rtd = RTD[ "|link=" <o> "" ]
@@ -166,17 +166,17 @@ WtParsedWikitextPage(
 			{P} format = UNRESTRAINED
 			{P} hAlign = UNSPECIFIED
 			{P} height = -1
-			{P} link = ImageLinkTarget[ PAGE: WtPageName("Some Page") ]
+			{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Some Page")] ]
 			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionLinkTarget(
 					{P} rtd = RTD[ "|link=" <o> "" ]
 					{P} targetType = PAGE
-					target = WtPageName("Some Page")
+					target = WtPageName[ [0] = "Some Page" ]
 				)
 			],
 			title = WtLinkTitle(
@@ -201,7 +201,7 @@ WtParsedWikitextPage(
 			{P} upright = true
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
@@ -238,7 +238,7 @@ WtParsedWikitextPage(
 		{P} upright = true
 		{P} vAlign = BOTTOM
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionAltText(
 				{P} rtd = RTD[ "|alt=" <o> "" ]
@@ -286,7 +286,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = 128
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
@@ -320,7 +320,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
@@ -354,7 +354,7 @@ WtParsedWikitextPage(
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = 128
-			target = WtPageName("Image:Test"),
+			target = WtPageName[ [0] = "Image:Test" ],
 			options = WtLinkOptions[
 				[0] = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]

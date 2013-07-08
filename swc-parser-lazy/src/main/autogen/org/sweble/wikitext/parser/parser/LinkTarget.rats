@@ -26,20 +26,29 @@
 
 module org.sweble.wikitext.parser.parser.LinkTarget;
 
+import org.sweble.wikitext.parser.utils.ParserEntity;
+
 
 
 
 // -- Target -------------------------------------------------------------------
 
 WtPageName LinkTarget =
-  target:LinkTargetString
+  target:( LinkTargetText / ParserEntityTemplateOrParameter )+
   {
-    yyValue = nf.pageName(target);
+    yyValue = nf.pageName(nf.list(target));
+  }
+;
+
+private inline WtNode LinkTargetText =
+  str:LinkTargetString
+  {
+    yyValue = nf.text(str);
   }
 ;
 
 transient String LinkTargetString =
-  ( ![\u0000-\u001F] ![\u007F\uFFFD<>{}|[\]] _ )+
+  ( ![\u0000-\u001F] ![\u007F\uFFFD<>{}|[\]] ![\uE000\uE001] _ )+
 ;
 
 

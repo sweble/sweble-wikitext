@@ -461,7 +461,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("User:Duckecho"),
+			target = WtPageName[ [0] = "User:Duckecho" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Duckecho"
@@ -472,7 +472,7 @@ WtParsedWikitextPage(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-			target = WtPageName("User talk:Duckecho"),
+			target = WtPageName[ [0] = "User talk:Duckecho" ],
 			title = WtLinkTitle(
 				{P} rtd = RTD[ "|" <o> "" ]
 				[0] = "Talk)"
@@ -514,7 +514,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Wikipedia:Signatures"),
+							target = WtPageName[ [0] = "Wikipedia:Signatures" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "unsigned"
@@ -525,7 +525,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("Special:Contributions/88.17.252.156"),
+							target = WtPageName[ [0] = "Special:Contributions/88.17.252.156" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "88.17.252.156"
@@ -536,7 +536,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("User talk:88.17.252.156"),
+							target = WtPageName[ [0] = "User talk:88.17.252.156" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "talk"
@@ -604,7 +604,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:AndyZ/peerreviewer"),
+					target = WtPageName[ [0] = "User:AndyZ/peerreviewer" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "javascript program"
@@ -627,7 +627,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Wikipedia:Only make links that are relevant to the context"),
+						target = WtPageName[ [0] = "Wikipedia:Only make links that are relevant to the context" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Wikipedia:Context"
@@ -638,7 +638,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Wikipedia:Manual of Style (dates and numbers)"),
+						target = WtPageName[ [0] = "Wikipedia:Manual of Style (dates and numbers)" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Wikipedia:Manual of Style (dates)"
@@ -649,7 +649,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("WP:CONTEXT"),
+						target = WtPageName[ [0] = "WP:CONTEXT" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "context"
@@ -665,7 +665,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:AndyZ/G#contxt"),
+								target = WtPageName[ [0] = "User:AndyZ/G#contxt" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "[?"
@@ -688,7 +688,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Wikipedia:What is a featured article?"),
+						target = WtPageName[ [0] = "Wikipedia:What is a featured article?" ],
 						title = -
 					),
 					[3] = ", ",
@@ -696,7 +696,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("WP:IMAGE"),
+						target = WtPageName[ [0] = "WP:IMAGE" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Images"
@@ -712,7 +712,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:AndyZ/G#caption"),
+								target = WtPageName[ [0] = "User:AndyZ/G#caption" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "[?"
@@ -733,7 +733,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("WP:INFOBOX"),
+						target = WtPageName[ [0] = "WP:INFOBOX" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "infobox"
@@ -749,7 +749,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:AndyZ/G#infobox"),
+								target = WtPageName[ [0] = "User:AndyZ/G#infobox" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "[?"
@@ -773,7 +773,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Wikipedia:Manual of Style (dates and numbers)"),
+						target = WtPageName[ [0] = "Wikipedia:Manual of Style (dates and numbers)" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Wikipedia:Manual of Style (dates)"
@@ -793,7 +793,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("January 30"),
+							target = WtPageName[ [0] = "January 30" ],
 							title = WtLinkTitle(
 								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = "January 30",
@@ -814,7 +814,7 @@ WtParsedWikitextPage(
 							{P} postfix = ""
 							{P} prefix = ""
 							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-							target = WtPageName("January 30"),
+							target = WtPageName[ [0] = "January 30" ],
 							title = -
 						),
 						[1] = " was a great day"
@@ -829,7 +829,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:AndyZ/G#dateth"),
+								target = WtPageName[ [0] = "User:AndyZ/G#dateth" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "[?"
@@ -852,7 +852,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("Wikipedia:Manual of Style (headings)"),
+						target = WtPageName[ [0] = "Wikipedia:Manual of Style (headings)" ],
 						title = -
 					),
 					[3] = ", headings generally do not start with articles ('the', 'a(n)'). For example, if there was a section called ",
@@ -885,7 +885,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:AndyZ/G#headingthe"),
+								target = WtPageName[ [0] = "User:AndyZ/G#headingthe" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "[?"
@@ -908,7 +908,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Tony1/How_to_satisfy_Criterion_2a#Redundancy"),
+						target = WtPageName[ [0] = "User:Tony1/How_to_satisfy_Criterion_2a#Redundancy" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "redundancies"
@@ -919,7 +919,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Tony1/How to satisfy Criterion 1a: redundancy exercises"),
+						target = WtPageName[ [0] = "User:Tony1/How to satisfy Criterion 1a: redundancy exercises" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "redundancy exercises"
@@ -1012,7 +1012,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("WP:WIAFA"),
+						target = WtPageName[ [0] = "WP:WIAFA" ],
 						title = WtLinkTitle(
 							{P} rtd = RTD[ "|" <o> "" ]
 							[0] = "Wikipedia's best work"
@@ -1023,7 +1023,7 @@ WtParsedWikitextPage(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName("User:Tony1/How to satisfy Criterion 1a"),
+						target = WtPageName[ [0] = "User:Tony1/How to satisfy Criterion 1a" ],
 						title = -
 					),
 					[4] = ".",
@@ -1036,7 +1036,7 @@ WtParsedWikitextPage(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName("User:AndyZ/G#copyedit"),
+								target = WtPageName[ [0] = "User:AndyZ/G#copyedit" ],
 								title = WtLinkTitle(
 									{P} rtd = RTD[ "|" <o> "" ]
 									[0] = "[?"
@@ -1054,7 +1054,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:AndyZ/Suggestions"),
+					target = WtPageName[ [0] = "User:AndyZ/Suggestions" ],
 					title = -
 				),
 				[2] = " for further ideas. Thanks, ",
@@ -1062,7 +1062,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User:MortimerCat"),
+					target = WtPageName[ [0] = "User:MortimerCat" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "MortimerCat"
@@ -1073,7 +1073,7 @@ WtParsedWikitextPage(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("User talk:MortimerCat"),
+					target = WtPageName[ [0] = "User talk:MortimerCat" ],
 					title = WtLinkTitle(
 						{P} rtd = RTD[ "|" <o> "" ]
 						[0] = "talk"

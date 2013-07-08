@@ -11,7 +11,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[],
 		title = -
 	),
@@ -25,7 +25,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[ [0] = WtLinkOptionAltText[ [0] = "Alt Text" ] ],
 		title = -
 	),
@@ -39,7 +39,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[ [0] = WtLinkOptionAltText[ [0] = "Alt Text" ] ],
 		title = WtLinkTitle[ [0] = "Title" ]
 	),
@@ -53,7 +53,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionLinkTarget(
 				{P} targetType = NO_LINK
@@ -68,15 +68,15 @@ WtParsedWikitextPage(
 		{P} format = UNRESTRAINED
 		{P} hAlign = UNSPECIFIED
 		{P} height = -1
-		{P} link = ImageLinkTarget[ PAGE: WtPageName(" ") ]
+		{P} link = ImageLinkTarget[ PAGE: WtPageName[] ]
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionLinkTarget(
 				{P} targetType = PAGE
-				target = WtPageName(" ")
+				target = WtPageName[]
 			)
 		],
 		title = WtLinkTitle[ [0] = "Title" ]
@@ -91,7 +91,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionLinkTarget(
 				{P} targetType = URL
@@ -109,15 +109,15 @@ WtParsedWikitextPage(
 		{P} format = UNRESTRAINED
 		{P} hAlign = UNSPECIFIED
 		{P} height = -1
-		{P} link = ImageLinkTarget[ PAGE: WtPageName("Some Page") ]
+		{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Some Page")] ]
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionLinkTarget(
 				{P} targetType = PAGE
-				target = WtPageName("Some Page")
+				target = WtPageName[ [0] = "Some Page" ]
 			)
 		],
 		title = WtLinkTitle[ [0] = "Title" ]
@@ -132,7 +132,7 @@ WtParsedWikitextPage(
 		{P} upright = true
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionAltText[ [0] = "Alt Text" ],
 			[1] = WtLinkOptionKeyword(
@@ -154,7 +154,7 @@ WtParsedWikitextPage(
 		{P} upright = true
 		{P} vAlign = BOTTOM
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionAltText[ [0] = "Alt Text" ],
 			[1] = WtLinkOptionKeyword(
@@ -185,7 +185,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = 128
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionAltText[ [0] = "Alt Text" ],
 			[1] = WtLinkOptionResize(
@@ -205,7 +205,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionAltText[ [0] = "Alt Text" ],
 			[1] = WtLinkOptionResize(
@@ -225,7 +225,7 @@ WtParsedWikitextPage(
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = 128
-		target = WtPageName("Image:Test"),
+		target = WtPageName[ [0] = "Image:Test" ],
 		options = WtLinkOptions[
 			[0] = WtLinkOptionAltText[ [0] = "Alt Text" ],
 			[1] = WtLinkOptionResize(
