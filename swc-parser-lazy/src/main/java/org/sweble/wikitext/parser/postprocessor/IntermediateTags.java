@@ -19,7 +19,7 @@ package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtImEndTag;
 import org.sweble.wikitext.parser.nodes.WtImStartTag;
@@ -45,7 +45,7 @@ public enum IntermediateTags
 				WtImEndTag c,
 				WtNodeList body)
 		{
-			WtItalics e = WikitextNodeFactoryImpl.i_(body);
+			WtItalics e = config.getNodeFactory().i(body);
 			if (config.isGatherRtData())
 			{
 				String r0 = /*(o == null || o.isSynthetic()) ? null : */"''";
@@ -55,16 +55,16 @@ public enum IntermediateTags
 			return e;
 		}
 		
-		public WtNode createOpen(boolean synthetic)
+		public WtNode createOpen(WikitextNodeFactory nf, boolean synthetic)
 		{
-			WtImStartTag tag = WikitextNodeFactoryImpl.imStartTag_(this, synthetic);
+			WtImStartTag tag = nf.imStartTag(this, synthetic);
 			tag.setRtd("''");
 			return tag;
 		}
 		
-		public WtNode createClose(boolean synthetic)
+		public WtNode createClose(WikitextNodeFactory nf, boolean synthetic)
 		{
-			WtImEndTag tag = WikitextNodeFactoryImpl.imEndTag_(this, synthetic);
+			WtImEndTag tag = nf.imEndTag(this, synthetic);
 			tag.setRtd("''");
 			return tag;
 		}
@@ -85,7 +85,7 @@ public enum IntermediateTags
 				WtImEndTag c,
 				WtNodeList body)
 		{
-			WtBold e = WikitextNodeFactoryImpl.b_(body);
+			WtBold e = config.getNodeFactory().b(body);
 			if (config.isGatherRtData())
 			{
 				String r0 = /*(o == null || o.isSynthetic()) ? null : */"'''";
@@ -95,16 +95,16 @@ public enum IntermediateTags
 			return e;
 		}
 		
-		public WtNode createOpen(boolean synthetic)
+		public WtNode createOpen(WikitextNodeFactory nf, boolean synthetic)
 		{
-			WtImStartTag tag = WikitextNodeFactoryImpl.imStartTag_(this, synthetic);
+			WtImStartTag tag = nf.imStartTag(this, synthetic);
 			tag.setRtd("'''");
 			return tag;
 		}
 		
-		public WtNode createClose(boolean synthetic)
+		public WtNode createClose(WikitextNodeFactory nf, boolean synthetic)
 		{
-			WtImEndTag tag = WikitextNodeFactoryImpl.imEndTag_(this, synthetic);
+			WtImEndTag tag = nf.imEndTag(this, synthetic);
 			tag.setRtd("'''");
 			return tag;
 		}
@@ -125,7 +125,7 @@ public enum IntermediateTags
 				WtImEndTag close,
 				WtNodeList body)
 		{
-			WtParagraph e = WikitextNodeFactoryImpl.p_(body);
+			WtParagraph e = config.getNodeFactory().p(body);
 			return e;
 		}
 	};
@@ -138,13 +138,13 @@ public enum IntermediateTags
 			WtImEndTag close,
 			WtNodeList body);
 	
-	public WtNode createOpen(boolean synthetic)
+	public WtNode createOpen(WikitextNodeFactory nf, boolean synthetic)
 	{
-		return WikitextNodeFactoryImpl.imStartTag_(this, synthetic);
+		return nf.imStartTag(this, synthetic);
 	}
 	
-	public WtNode createClose(boolean synthetic)
+	public WtNode createClose(WikitextNodeFactory nf, boolean synthetic)
 	{
-		return WikitextNodeFactoryImpl.imEndTag_(this, synthetic);
+		return nf.imEndTag(this, synthetic);
 	}
 }

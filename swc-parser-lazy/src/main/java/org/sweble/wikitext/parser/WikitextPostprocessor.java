@@ -38,7 +38,7 @@ public class WikitextPostprocessor
 	{
 		WtNode result = ast;
 		
-		result = TicksAnalyzer.process(/*config, */result);
+		result = TicksAnalyzer.process(config, result);
 		result = TreeBuilder.process(config, result);
 		
 		return result;

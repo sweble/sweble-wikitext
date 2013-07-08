@@ -23,7 +23,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
+import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -44,7 +45,23 @@ import de.fau.cs.osr.utils.StringUtils;
 
 public class TicksAnalyzer
 {
-	public static WtNode process(WtNode a)
+	public static WtNode process(ParserConfig config, WtNode a)
+	{
+		return (new TicksAnalyzer(config)).process(a);
+	}
+	
+	// =========================================================================
+	
+	private WikitextNodeFactory nf;
+	
+	// =========================================================================
+	
+	public TicksAnalyzer(ParserConfig config)
+	{
+		this.nf = config.getNodeFactory();
+	}
+	
+	public WtNode process(WtNode a)
 	{
 		LinkedList<Line> lines = new LinkedList<Line>();
 		
@@ -60,7 +77,7 @@ public class TicksAnalyzer
 	
 	// =========================================================================
 	
-	private static void analyzeOddTicksCombos(LinkedList<Line> lines)
+	private void analyzeOddTicksCombos(LinkedList<Line> lines)
 	{
 		for (Line line : lines)
 		{
@@ -133,7 +150,7 @@ public class TicksAnalyzer
 		}
 	}
 	
-	private static void apostrophize(LineEntry entry)
+	private void apostrophize(LineEntry entry)
 	{
 		--entry.tickCount;
 		
@@ -144,13 +161,13 @@ public class TicksAnalyzer
 		}
 		else
 		{
-			entry.prefix = WikitextNodeFactoryImpl.text_("'");
+			entry.prefix = nf.text("'");
 		}
 	}
 	
 	// =========================================================================
 	
-	protected final static class LineAnalyzer
+	protected final class LineAnalyzer
 			extends
 				AstVisitor<WtNode>
 	{
@@ -256,7 +273,7 @@ public class TicksAnalyzer
 					break;
 				
 				case 4:
-					ticks.add(new LineEntry(previous, WikitextNodeFactoryImpl.text_("'"), 3));
+					ticks.add(new LineEntry(previous, nf.text("'"), 3));
 					++numBold;
 					break;
 				
@@ -272,7 +289,7 @@ public class TicksAnalyzer
 					
 					String excessTicks = StringUtils.strrep('\'', tickCount - 5);
 					
-					ticks.add(new LineEntry(null, WikitextNodeFactoryImpl.text_(excessTicks), 5));
+					ticks.add(new LineEntry(null, nf.text(excessTicks), 5));
 					++numBold;
 					++numItalics;
 					break;
@@ -294,20 +311,22 @@ public class TicksAnalyzer
 	
 	// =========================================================================
 	
-	protected final static class TicksConverter
+	private static enum State
+	{
+		None,
+		Italics,
+		Bold,
+		ItalicsBold,
+		BoldItalics,
+	}
+	
+	// =========================================================================
+	
+	protected final class TicksConverter
 			extends
 				AstVisitor<WtNode>
 	{
-		private static enum State
-		{
-			None,
-			Italics,
-			Bold,
-			ItalicsBold,
-			BoldItalics,
-		}
-		
-		private Iterator<Line> lineIter;
+		private final Iterator<Line> lineIter;
 		
 		private Iterator<LineEntry> entryIter;
 		
@@ -336,7 +355,7 @@ public class TicksAnalyzer
 		{
 			LineEntry entry = nextEntry();
 			
-			WtNodeList result = WikitextNodeFactoryImpl.list_(entry.prefix);
+			WtNodeList result = nf.list(entry.prefix);
 			
 			toTag(entry, result);
 			
@@ -423,25 +442,25 @@ public class TicksAnalyzer
 					switch (state)
 					{
 						case Italics:
-							result.add(ITALICS.createClose(false));
+							result.add(ITALICS.createClose(nf, false));
 							state = State.None;
 							break;
 						case BoldItalics:
-							result.add(ITALICS.createClose(false));
+							result.add(ITALICS.createClose(nf, false));
 							state = State.Bold;
 							break;
 						case ItalicsBold:
-							result.add(BOLD.createClose(true));
-							result.add(ITALICS.createClose(false));
-							result.add(BOLD.createOpen(true));
+							result.add(BOLD.createClose(nf, true));
+							result.add(ITALICS.createClose(nf, false));
+							result.add(BOLD.createOpen(nf, true));
 							state = State.Bold;
 							break;
 						case Bold:
-							result.add(ITALICS.createOpen(false));
+							result.add(ITALICS.createOpen(nf, false));
 							state = State.BoldItalics;
 							break;
 						case None:
-							result.add(ITALICS.createOpen(false));
+							result.add(ITALICS.createOpen(nf, false));
 							state = State.Italics;
 							break;
 					}
@@ -451,25 +470,25 @@ public class TicksAnalyzer
 					switch (state)
 					{
 						case Bold:
-							result.add(BOLD.createClose(false));
+							result.add(BOLD.createClose(nf, false));
 							state = State.None;
 							break;
 						case BoldItalics:
-							result.add(ITALICS.createClose(true));
-							result.add(BOLD.createClose(false));
-							result.add(ITALICS.createOpen(true));
+							result.add(ITALICS.createClose(nf, true));
+							result.add(BOLD.createClose(nf, false));
+							result.add(ITALICS.createOpen(nf, true));
 							state = State.Italics;
 							break;
 						case ItalicsBold:
-							result.add(BOLD.createClose(false));
+							result.add(BOLD.createClose(nf, false));
 							state = State.Italics;
 							break;
 						case Italics:
-							result.add(BOLD.createOpen(false));
+							result.add(BOLD.createOpen(nf, false));
 							state = State.ItalicsBold;
 							break;
 						case None:
-							result.add(BOLD.createOpen(false));
+							result.add(BOLD.createOpen(nf, false));
 							state = State.Bold;
 							break;
 					}
@@ -479,28 +498,28 @@ public class TicksAnalyzer
 					switch (state)
 					{
 						case Italics:
-							result.add(ITALICS.createClose(false));
-							result.add(BOLD.createOpen(false));
+							result.add(ITALICS.createClose(nf, false));
+							result.add(BOLD.createOpen(nf, false));
 							state = State.Bold;
 							break;
 						case Bold:
-							result.add(BOLD.createClose(false));
-							result.add(ITALICS.createOpen(false));
+							result.add(BOLD.createClose(nf, false));
+							result.add(ITALICS.createOpen(nf, false));
 							state = State.Italics;
 							break;
 						case BoldItalics:
-							result.add(ITALICS.createClose(false));
-							result.add(BOLD.createClose(false));
+							result.add(ITALICS.createClose(nf, false));
+							result.add(BOLD.createClose(nf, false));
 							state = State.None;
 							break;
 						case ItalicsBold:
-							result.add(BOLD.createClose(false));
-							result.add(ITALICS.createClose(false));
+							result.add(BOLD.createClose(nf, false));
+							result.add(ITALICS.createClose(nf, false));
 							state = State.None;
 							break;
 						case None:
-							result.add(ITALICS.createOpen(false));
-							result.add(BOLD.createOpen(false));
+							result.add(ITALICS.createOpen(nf, false));
+							result.add(BOLD.createOpen(nf, false));
 							state = State.ItalicsBold;
 							break;
 					}
@@ -514,22 +533,24 @@ public class TicksAnalyzer
 			switch (state)
 			{
 				case Italics:
-					result = WikitextNodeFactoryImpl.list_();
-					result.add(ITALICS.createClose(true));
+					result = nf.list();
+					result.add(ITALICS.createClose(nf, true));
 					break;
 				case Bold:
-					result = WikitextNodeFactoryImpl.list_();
-					result.add(BOLD.createClose(true));
+					result = nf.list();
+					result.add(BOLD.createClose(nf, true));
 					break;
 				case BoldItalics:
-					result = WikitextNodeFactoryImpl.list_();
-					result.add(ITALICS.createClose(true));
-					result.add(BOLD.createClose(true));
+					result = nf.list();
+					result.add(ITALICS.createClose(nf, true));
+					result.add(BOLD.createClose(nf, true));
 					break;
 				case ItalicsBold:
-					result = WikitextNodeFactoryImpl.list_();
-					result.add(BOLD.createClose(true));
-					result.add(ITALICS.createClose(true));
+					result = nf.list();
+					result.add(BOLD.createClose(nf, true));
+					result.add(ITALICS.createClose(nf, true));
+					break;
+				case None:
 					break;
 			}
 			return result;
