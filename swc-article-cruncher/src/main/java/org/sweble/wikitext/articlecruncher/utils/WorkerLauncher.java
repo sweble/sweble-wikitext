@@ -109,19 +109,21 @@ public class WorkerLauncher
 					state = WorkerState.POISONED;
 					future.cancel(true);
 					break;
+				/*
+				case POISONED:
+					logger.warn("Already sent stop signal to worker " + workerName);
+					break;
+
+				case STOPPED:
+					logger.warn("Worker " + workerName + " already terminated");
+					break;
+
+				case INITIALIZED:
+					throw new IllegalStateException("stop() can only be called after start()");
+				*/
+				default:
+					break;
 			
-			/*
-			case POISONED:
-			logger.warn("Already sent stop signal to worker " + workerName);
-			break;
-			
-			case STOPPED:
-			logger.warn("Worker " + workerName + " already terminated");
-			break;
-			
-			case INITIALIZED:
-			throw new IllegalStateException("stop() can only be called after start()");
-			*/
 			}
 		}
 	}
@@ -136,11 +138,8 @@ public class WorkerLauncher
 		Future<?> f;
 		synchronized (state)
 		{
-			switch (state)
-			{
-				case INITIALIZED:
-					throw new IllegalStateException("await() can only be called after start()");
-			}
+			if (state == WorkerState.INITIALIZED)
+				throw new IllegalStateException("await() can only be called after start()");
 			
 			f = future;
 		}
