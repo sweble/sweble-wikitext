@@ -63,13 +63,13 @@ noinline memoized WtNode TableCaptionMemoized =
 // -- Table Caption ------------------------------------------------------------
 
 noinline transient WtNode TableCaptionTransient =
-    rt0:pExtSpaceStar "|+" attributes:Attributes body:InlineContentStar garbage:Garbage &FollowUpSanityCheck
+    rt0:pExtSpaceStar "|+" attributes:Attributes body:InlineContentStar garbage:Garbage &ExpectedFollowUp
     {
       yyValue = setRtd(
         nf.caption(attributes.attrs, body),
         rt0, "|+", SEP, attributes.rt1, SEP, garbage);
     }
-  / rt0:pExtSpaceStar "|+" attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
+  / rt0:pExtSpaceStar "|+" attributes:Attributes body:BlockContentStar &ExpectedFollowUp
     {
       yyValue = setRtd(
         nf.caption(attributes.attrs, body),
@@ -86,10 +86,6 @@ private inline String Garbage =
 
 private transient String GarbageStar =
   ( !( slEol pExtSpaceStar [|!] ) _ )*
-;
-
-private inline void FollowUpSanityCheck =
-  ExpectedFollowUp / ShouldNotBeHere
 ;
 
 private inline void ExpectedFollowUp =

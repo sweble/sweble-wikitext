@@ -95,16 +95,12 @@ private inline WtTableCell TableInlineCell =
 // -- Table Block Cell ---------------------------------------------------------
 
 private inline WtTableCell TableBlockCell =
-  rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
+  rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:BlockContentStar &ExpectedFollowUp
   {
     yyValue = setRtd(
       nf.td(attributes.attrs, body),
       rt0, prefix, SEP, attributes.rt1, SEP);
   }
-;
-
-private inline void FollowUpSanityCheck =
-  ExpectedFollowUp / ShouldNotBeHere
 ;
 
 private inline void ExpectedFollowUp =

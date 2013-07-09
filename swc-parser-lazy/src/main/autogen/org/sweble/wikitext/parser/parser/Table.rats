@@ -140,7 +140,6 @@ private inline WtTable TableBody =
         nf.table(head.attrs),
         head.rt0, "{|", SEP, head.rt1, SEP);
     }
-  / &ShouldNotBeHere SantiyCheckEnd { yyValue = null; }
 ;
 
 private inline TableHead TableHead =
@@ -157,15 +156,14 @@ private transient stateful WtBody TableContentStar =
   {
     enter(ParserScopes.TABLE_ELEMENTS);
   }
-  garbage:InlineBlockContent content:TableElement*
+  garbage:InlineBlockContent content:TableElement* &TableDoneSanityCheck
   {
     yyValue = nf.body(nf.list(garbage, content));
   }
 ;
 
 private transient WtNode TableElement =
-    &TableElementPrefix ( TableCaption / TableRow / TableCell / TableHeader )
-  / &( TableDoneSanityCheck / ShouldNotBeHere ) SantiyCheckEnd
+  &TableElementPrefix ( TableCaption / TableRow / TableCell / TableHeader )
 ;
 
 private inline void TableElementPrefix =
