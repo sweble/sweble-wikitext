@@ -16,7 +16,6 @@
  */
 package org.sweble.wikitext.wom.utils;
 
-import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,9 +24,16 @@ import java.util.Map.Entry;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
-import org.apache.xml.serialize.OutputFormat;
-import org.apache.xml.serialize.XMLSerializer;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wom.WomAttribute;
 import org.sweble.wom.WomNode;
@@ -41,17 +47,16 @@ public class WomPrettyPrinter
 	
 	// =========================================================================
 	
-	public static void print(WikiConfig config, Writer out, WomNode wom) throws ParserConfigurationException, IOException
+	public static void print(WikiConfig config, Writer out, WomNode wom) throws ParserConfigurationException, TransformerFactoryConfigurationError, TransformerException
 	{
 		Document doc = new WomPrettyPrinter(config).womToDom(wom);
+		Source source = new DOMSource(doc);
+		Result result = new StreamResult(out);
 		
-		OutputFormat format = new OutputFormat(doc);
-		format.setLineWidth(80);
-		format.setIndenting(true);
-		format.setIndent(2);
-		
-		XMLSerializer serializer = new XMLSerializer(out, format);
-		serializer.serialize(doc);
+		Transformer tf = TransformerFactory.newInstance().newTransformer();
+		tf.setOutputProperty(OutputKeys.INDENT, "yes");
+		tf.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+		tf.transform(source, result);
 	}
 	
 	// =========================================================================
@@ -60,7 +65,7 @@ public class WomPrettyPrinter
 	
 	private final Map<String, String> reverseEntityMap;
 	
-	private final StringSetMatcher reverseEntityMatcher;
+	// =========================================================================
 	
 	public WomPrettyPrinter(WikiConfig config) throws ParserConfigurationException
 	{
@@ -69,11 +74,12 @@ public class WomPrettyPrinter
 		this.doc = docBuilder.newDocument();
 		
 		Map<String, String> entities = config.getParserConfig().getXmlEntities();
-		reverseEntityMatcher = new StringSetMatcher(entities.values());
 		reverseEntityMap = new HashMap<String, String>();
 		for (Entry<String, String> e : entities.entrySet())
 			reverseEntityMap.put(e.getValue(), e.getKey());
 	}
+	
+	// =========================================================================
 	
 	public Document womToDom(WomNode wom)
 	{
@@ -109,7 +115,6 @@ public class WomPrettyPrinter
 	{
 		Element elem = doc.createElement(n.getNodeName());
 		elem.setAttribute("xmlns", SWC_WOM_URI);
-		//elem.setAttribute("xmlns:" + SWC_WOM_PREFIX, SWC_WOM_URI);
 		transformElement(n, elem);
 		parent.appendChild(elem);
 	}
@@ -138,65 +143,14 @@ public class WomPrettyPrinter
 	
 	private void transformText(Node parent, WomNode n)
 	{
-		String text = n.getText();
-		
-		if (true)
-		{
-			Element elem = doc.createElement(n.getNodeName());
-			elem.setAttribute("xml:space", "preserve");
-			if (true)
-			{
-				appendEntitifiedText(elem, text);
-			}
-			else
-			{
-				elem.setTextContent(text);
-			}
-			parent.appendChild(elem);
-		}
-		else
-		{
-			appendEntitifiedText(parent, text);
-		}
-	}
-	
-	private void appendEntitifiedText(Node parent, String text)
-	{
-		parent.appendChild(doc.createTextNode(text));
-		
-		/*
-		int len = text.length();
-		int from = 0;
-		int to = 0;
-		while (from < len)
-		{
-			Match m = reverseEntityMatcher.find(text, from);
-			to = (m == null) ? len : m.getPos();
-			if (to > from)
-			{
-				String part = text.substring(from, to);
-				parent.appendChild(doc.createTextNode(part));
-			}
-			if (m != null)
-			{
-				String name = reverseEntityMap.get(m.getMatch());
-				parent.appendChild(doc.createEntityReference(name));
-				to += m.getMatch().length();
-			}
-			from = to;
-		}
-		*/
+		Element elem = doc.createElement(n.getNodeName());
+		elem.setAttribute("xml:space", "preserve");
+		elem.appendChild(doc.createTextNode(n.getText()));
+		parent.appendChild(elem);
 	}
 	
 	private void transformComment(Node parent, WomNode n)
 	{
-		/*
-		Element elem = doc.createElement("comment");
-		//elem.setAttribute("xml:space", "preserve");
-		elem.setTextContent(n.getValue());
-		return elem;
-		*/
-		
 		parent.appendChild(doc.createComment(n.getValue()));
 	}
 }

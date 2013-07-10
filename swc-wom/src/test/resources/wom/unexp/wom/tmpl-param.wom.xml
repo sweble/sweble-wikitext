@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<page title="Tmpl-param" version="1.0" xmlns="http://sweble.org/schema/wom">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<page xmlns="http://sweble.org/schema/wom" title="Tmpl-param" version="1.0">
   <body>
     <param>
       <name>

@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.io.Writer;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wom.WomNode;
@@ -52,6 +54,14 @@ public class TypedWomPrettyPrinter
 			WomPrettyPrinter.print(config, out, (WomNode) wom);
 		}
 		catch (ParserConfigurationException e)
+		{
+			throw new WrappedException(e);
+		}
+		catch (TransformerFactoryConfigurationError e)
+		{
+			throw new WrappedException(e);
+		}
+		catch (TransformerException e)
 		{
 			throw new WrappedException(e);
 		}
