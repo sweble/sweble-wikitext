@@ -72,7 +72,7 @@ import de.fau.cs.osr.utils.visitor.VisitorLogic;
  * Mozilla Foundation, and Opera Software ASA. However, we are granted a license
  * to use, reproduce and create derivative works of this document.
  * 
- * TODO: Round trip information has get fixed!
+ * TODO: Round trip information has to get fixed!
  */
 public class TreeBuilder
 {
@@ -294,6 +294,9 @@ public class TreeBuilder
 					// 15. If last is true, then switch the insertion mode to "in body" and
 					// abort these steps. (fragment case)
 					*/
+					
+				default:
+					break;
 			}
 		}
 	}

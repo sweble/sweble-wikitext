@@ -29,49 +29,20 @@ import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 
-/**
- * TODO: Überarbeiten
- * 
- * @deprecated
- */
 public class PreprocessorToParserTransformer
 {
 	public static PreprocessedWikitext transform(
-			WtPreproWikitextPage preprocessedArticle,
-			WtEntityMap entityMap)
-	{
-		return new PreprocessedWikitext(
-				(String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
-				entityMap);
-	}
-	
-	public static PreprocessedWikitext transform(
 			WtPreproWikitextPage preprocessedArticle)
 	{
-		WtEntityMap entityMap = preprocessedArticle.getEntityMap();
-		return new PreprocessedWikitext(
-				(String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
-				entityMap);
-	}
-	
-	public static PreprocessedWikitext transform(
-			WtPreproWikitextPage preprocessedArticle,
-			WtEntityMap entityMap,
-			boolean trim)
-	{
-		return new PreprocessedWikitext(
-				(String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
-				entityMap);
+		return transform(preprocessedArticle, false);
 	}
 	
 	public static PreprocessedWikitext transform(
 			WtPreproWikitextPage preprocessedArticle,
 			boolean trim)
 	{
-		WtEntityMap entityMap = preprocessedArticle.getEntityMap();
-		return new PreprocessedWikitext(
-				(String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
-				entityMap);
+		TransformVisitor tv = new TransformVisitor(trim);
+		return (PreprocessedWikitext) tv.go(preprocessedArticle);
 	}
 	
 	// =========================================================================
@@ -86,9 +57,10 @@ public class PreprocessorToParserTransformer
 		
 		private final boolean trim;
 		
-		public TransformVisitor(WtEntityMap entityMap, boolean trim)
+		// =====================================================================
+		
+		public TransformVisitor(boolean trim)
 		{
-			this.entityMap = entityMap;
 			this.trim = trim;
 		}
 		
@@ -102,36 +74,17 @@ public class PreprocessorToParserTransformer
 		}
 		
 		@Override
-		protected String after(WtNode node, Object result)
+		protected PreprocessedWikitext after(WtNode node, Object result)
 		{
-			return builder.toString();
+			return new PreprocessedWikitext(builder.toString(), entityMap);
 		}
 		
 		// =====================================================================
 		
 		public void visit(WtPreproWikitextPage n)
 		{
+			entityMap = n.getEntityMap();
 			iterate(n);
-		}
-		
-		public void visit(WtNode n)
-		{
-			makeParserEntity(n);
-		}
-		
-		/*
-		public void visit(WtProtectedText n)
-		{
-			makeParserEntity(n);
-		}
-		*/
-		
-		private void makeParserEntity(WtNode n)
-		{
-			int id = entityMap.registerEntity(n);
-			builder.append('\uE000');
-			builder.append(id);
-			builder.append('\uE001');
 		}
 		
 		public void visit(WtNodeList n)
@@ -149,20 +102,33 @@ public class PreprocessorToParserTransformer
 			builder.append(n.getContent());
 		}
 		
+		// =====================================================================
+		
+		public void visit(WtNode n)
+		{
+			makeParserEntity(n);
+		}
+		
 		public void visit(WtIgnored n)
 		{
 			if (!trim)
-			{
-				visit((WtNode) n);
-			}
+				makeParserEntity(n);
 		}
 		
 		public void visit(WtXmlComment n)
 		{
 			if (!trim)
-			{
-				visit((WtNode) n);
-			}
+				makeParserEntity(n);
+		}
+		
+		// =====================================================================
+		
+		private void makeParserEntity(WtNode n)
+		{
+			int id = entityMap.registerEntity(n);
+			builder.append('\uE000');
+			builder.append(id);
+			builder.append('\uE001');
 		}
 	}
 }

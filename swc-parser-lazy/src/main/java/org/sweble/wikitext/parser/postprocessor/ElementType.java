@@ -238,8 +238,10 @@ public enum ElementType
 				// case WBR:
 				// case XMP:
 				return true;
+				
+			default:
+				return false;
 		}
-		return false;
 	}
 	
 	public boolean isFormatting()
@@ -265,8 +267,10 @@ public enum ElementType
 			case TT:
 			case U:
 				return true;
+				
+			default:
+				return false;
 		}
-		return false;
 	}
 	
 	// =========================================================================
@@ -370,7 +374,8 @@ public enum ElementType
 			case NT_HEADING:
 				return SECTION_HEADING;
 			case NT_BODY:
-				// FIXME: Pretending that body can only be a section body might be dangerous?
+				// FIXME: Pretending that body can only be a section body might 
+				//        be dangerous?
 				return SECTION_BODY;
 				
 			case NT_DEFINITION_LIST:
@@ -419,9 +424,6 @@ public enum ElementType
 				return EXT_LINK;
 			case NT_URL:
 				return URL;
-				/*
-				return A;
-				*/
 				
 			case NT_XML_START_TAG:
 			case NT_IM_START_TAG:
@@ -433,9 +435,10 @@ public enum ElementType
 				
 			case NT_LCT_VAR_CONV:
 				return LCT_VAR_CONV;
+				
+			default:
+				throw new InternalError();
 		}
-		
-		throw new InternalError();
 	}
 	
 	public static ElementType getType(WtNamedXmlElement e)

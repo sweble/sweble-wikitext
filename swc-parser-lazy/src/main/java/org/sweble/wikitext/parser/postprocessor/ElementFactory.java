@@ -32,7 +32,6 @@ import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtTable;
@@ -49,10 +48,8 @@ import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
-// TODO: Remove all that commented code
 public class ElementFactory
 {
-	
 	private final TreeBuilder tb;
 	
 	private final WikitextNodeFactory nf;
@@ -70,12 +67,6 @@ public class ElementFactory
 	public WtText text(String content)
 	{
 		return nf.text(content);
-	}
-	
-	// TODO: Remove me?
-	private WtNodeList list()
-	{
-		return nf.list();
 	}
 	
 	// =========================================================================
@@ -98,7 +89,11 @@ public class ElementFactory
 						if (node.getBooleanAttribute("implicit"))
 							return createImplicitTableBody();
 						break;
+					
+					default:
+						// FALL THROUGH
 				}
+				// FALL THROUGH
 			case NT_XML_EMPTY_TAG:
 			case NT_XML_ELEMENT:
 				return create(nodeType, (WtNamedXmlElement) node, synthetic);
@@ -235,13 +230,6 @@ public class ElementFactory
 				newNode = nf.p(nf.list());
 				break;
 			
-			/*
-			case A:
-			switch (node.getNodeType())
-			{
-				case NT_INTERNAL_LINK:
-				{
-				*/
 			case INT_LINK:
 			{
 				WtInternalLink n = (WtInternalLink) node;
@@ -255,9 +243,6 @@ public class ElementFactory
 				}
 				break;
 			}
-			/*
-			case NT_EXTERNAL_LINK:
-			*/
 			case EXT_LINK:
 			{
 				WtExternalLink n = (WtExternalLink) node;
@@ -270,22 +255,12 @@ public class ElementFactory
 				}
 				break;
 			}
-			/*
-			case NT_URL:
-			*/
 			case URL:
 			{
 				WtUrl n = (WtUrl) node;
 				newNode = nf.url(n.getProtocol(), n.getPath());
 				break;
 			}
-			/*
-			default:
-				throw new InternalError();
-			}
-			break;
-			*/
-			
 			case B:
 				newNode = nf.b(nf.list());
 				break;
