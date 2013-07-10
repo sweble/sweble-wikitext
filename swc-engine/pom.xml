@@ -83,46 +83,6 @@
 
     <plugins>
 
-      <!-- Add various source directories -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>src/main/autogen</source>
-                <source>src/main/generated</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Compile schema files -->
-      <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <configuration>
-          <schemaDirectory>${basedir}/src/main/autogen</schemaDirectory>
-          <generatePackage>org.sweble.wikitext.engine.utils</generatePackage>
-          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
-          <schemaIncludes>
-            <include>SimpleWikiConfiguration.xsd</include>
-          </schemaIncludes>
-          <!--
-          <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-           -->
-          <forceRegenerate>true</forceRegenerate>
-          <strict>true</strict>
-        </configuration>
-      </plugin>
-
       <!-- Check and format license headers -->
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
@@ -164,20 +124,6 @@
           <execution>
             <id>git-commit-info-disabled</id>
             <phase>none</phase>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Generate PlantUML diagrams -->
-      <plugin>
-        <groupId>com.github.jeluard</groupId>
-        <artifactId>maven-plantuml-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>pre-site</phase>
-            <goals>
-              <goal>generate</goal>
-            </goals>
           </execution>
         </executions>
       </plugin>
