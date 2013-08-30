@@ -262,21 +262,6 @@
         </configuration>
       </plugin>
 
-      <!-- Make Git information available as properties -->
-      <plugin>
-        <groupId>pl.project13.maven</groupId>
-        <artifactId>git-commit-id-plugin</artifactId>
-        <executions>
-          <!-- Disabled until problem
-            https://github.com/ktoso/maven-git-commit-id-plugin/issues/19
-            is resolved -->
-          <execution>
-            <id>git-commit-info-disabled</id>
-            <phase>none</phase>
-          </execution>
-        </executions>
-      </plugin>
-
       <!-- Maven site generation -->
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
