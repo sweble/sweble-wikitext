@@ -79,11 +79,11 @@ public interface WtNode
 	
 	public static final int NT_REDIRECT /* ..................... */= NT_PREPROC_BITS + 8;
 	
-	public static final int NT_TEMPLATE_NAME/* ................. */= NT_PREPROC_BITS + 9;
+	public static final int NT_NAME/* .......................... */= NT_PREPROC_BITS + 9;
 	
 	public static final int NT_TEMPLATE_ARGUMENTS/* ............ */= NT_PREPROC_BITS + 10;
 	
-	public static final int NT_TEMPLATE_VALUE/* ................ */= NT_PREPROC_BITS + 11;
+	public static final int NT_VALUE/* ......................... */= NT_PREPROC_BITS + 11;
 	
 	public static final int NT_TAG_EXTENSION_BODY /* ........... */= NT_PREPROC_BITS + 12;
 	

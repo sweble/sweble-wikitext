@@ -42,7 +42,7 @@ public interface WtName
 		@Override
 		public int getNodeType()
 		{
-			return NT_TEMPLATE_NAME;
+			return NT_NAME;
 		}
 		
 		@Override
@@ -55,11 +55,23 @@ public interface WtName
 		{
 			return WtName.NO_NAME;
 		}
+		
+		// =====================================================================
+		
+		public boolean isResolved()
+		{
+			return false;
+		}
+		
+		public String getAsString()
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
 	}
 	
 	// =========================================================================
 	
-	public static final class WtNameImpl
+	public static class WtNameImpl
 			extends
 				WtContentNodeImpl
 			implements
@@ -81,13 +93,27 @@ public interface WtName
 		@Override
 		public int getNodeType()
 		{
-			return NT_TEMPLATE_NAME;
+			return NT_NAME;
 		}
 		
 		@Override
 		public String getNodeName()
 		{
 			return WtName.class.getSimpleName();
+		}
+		
+		// =====================================================================
+		
+		public boolean isResolved()
+		{
+			return (size() == 1) && get(0).isNodeType(NT_TEXT);
+		}
+		
+		public String getAsString()
+		{
+			if (!isResolved())
+				throw new IllegalStateException("Cannot return unresolved name as string.");
+			return ((WtText) get(0)).getContent();
 		}
 	}
 }

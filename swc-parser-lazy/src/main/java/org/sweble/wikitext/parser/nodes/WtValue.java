@@ -42,7 +42,7 @@ public interface WtValue
 		@Override
 		public int getNodeType()
 		{
-			return NT_TEMPLATE_VALUE;
+			return NT_VALUE;
 		}
 		
 		@Override
@@ -81,7 +81,7 @@ public interface WtValue
 		@Override
 		public int getNodeType()
 		{
-			return NT_TEMPLATE_VALUE;
+			return NT_VALUE;
 		}
 		
 		@Override
