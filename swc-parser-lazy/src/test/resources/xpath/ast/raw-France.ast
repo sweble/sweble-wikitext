@@ -138,8 +138,8 @@ WtParagraph[
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 		xmlAttributes = WtXmlAttributes[
 			[0] = WtXmlAttribute(
-				{P} name = "name"
-				{P} rtd = RTD[ " name=\"" <o> "\"" ]
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[ [0] = "name" ],
 				value = WtValue[ [0] = "tourism.stat" ]
 			)
 		],
@@ -870,8 +870,8 @@ WtSection(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "guerard" ]
 					)
 				],
@@ -891,8 +891,8 @@ WtSection(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "guerard" ]
 					)
 				],
@@ -915,8 +915,8 @@ WtSection(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "guerard" ]
 					)
 				],
@@ -936,13 +936,13 @@ WtSection(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name =" <o> "" ]
+						{P} rtd = RTD[ " " <o> " =" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "Encarta"
-						{P} rtd = RTD[ " Encarta" <o> "" ]
+						{P} rtd = RTD[ " " <o> "" <o> "" ]
+						name = WtName[ [0] = "Encarta" ],
 						value = -
 					)
 				],

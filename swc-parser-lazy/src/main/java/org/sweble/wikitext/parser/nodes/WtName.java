@@ -27,6 +27,12 @@ public interface WtName
 	
 	// =========================================================================
 	
+	public boolean isResolved();
+	
+	public String getAsString();
+	
+	// =========================================================================
+	
 	public static final class WtNoName
 			extends
 				WtAbsentContentNode

@@ -6,8 +6,8 @@ WtParsedWikitextPage(
 		{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 		xmlAttributes = WtXmlAttributes[
 			[0] = WtXmlAttribute(
-				{P} name = "x"
-				{P} rtd = RTD[ " x=" <o> "" ]
+				{P} rtd = RTD[ " " <o> "=" <o> "" ]
+				name = WtName[ [0] = "x" ],
 				value = WtValue[]
 			)
 		],

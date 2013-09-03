@@ -320,13 +320,13 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
-	public WtXmlAttribute attr(String name)
+	public WtXmlAttribute attr(WtName name)
 	{
 		return new WtXmlAttribute(name);
 	}
 	
 	@Override
-	public WtXmlAttribute attr(String name, WtValue value)
+	public WtXmlAttribute attr(WtName name, WtValue value)
 	{
 		return new WtXmlAttribute(name, value);
 	}

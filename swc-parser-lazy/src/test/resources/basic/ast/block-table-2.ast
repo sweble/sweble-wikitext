@@ -5,8 +5,8 @@ WtParsedWikitextPage(
 		{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 		xmlAttributes = WtXmlAttributes[
 			[0] = WtXmlAttribute(
-				{P} name = "border"
-				{P} rtd = RTD[ " border=\"" <o> "\"" ]
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[ [0] = "border" ],
 				value = WtValue[ [0] = "1" ]
 			)
 		],
@@ -21,8 +21,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ " !" <o> " |" <o> "" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "class"
-										{P} rtd = RTD[ " class=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "bar" ]
 									)
 								],
@@ -49,8 +49,8 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "border"
-								{P} rtd = RTD[ " border=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "border" ],
 								value = WtValue[ [0] = "2" ]
 							)
 						],

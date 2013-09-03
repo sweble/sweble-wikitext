@@ -11,8 +11,8 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "<source" <o> ">" <o> "" ]
 			xmlAttributes = WtXmlAttributes[
 				[0] = WtXmlAttribute(
-					{P} name = "lang"
-					{P} rtd = RTD[ " lang=\"" <o> "\"" ]
+					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+					name = WtName[ [0] = "lang" ],
 					value = WtValue[ [0] = "xml" ]
 				)
 			],
@@ -55,8 +55,8 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<a" <o> ">" <o> "</a>" ]
 					xmlAttributes = WtXmlAttributes[
 						[0] = WtXmlAttribute(
-							{P} name = "href"
-							{P} rtd = RTD[ " href=\"" <o> "\"" ]
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "href" ],
 							value = WtValue[ [0] = "http://example.com/" ]
 						)
 					],

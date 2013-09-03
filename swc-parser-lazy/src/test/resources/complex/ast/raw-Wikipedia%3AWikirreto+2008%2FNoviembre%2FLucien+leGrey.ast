@@ -66,8 +66,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
-						{P} rtd = RTD[ " class=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "sortable wikitable" ]
 					)
 				],
@@ -53173,8 +53173,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
-						{P} rtd = RTD[ " class=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "sortable wikitable" ]
 					)
 				],

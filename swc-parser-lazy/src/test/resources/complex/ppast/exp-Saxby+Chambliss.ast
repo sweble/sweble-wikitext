@@ -4,11 +4,11 @@ WtParsedWikitextPage(
 	[0] = WtTable(
 		xmlAttributes = WtXmlAttributes[
 			[0] = WtXmlAttribute(
-				{P} name = "class"
+				name = WtName[ [0] = "class" ],
 				value = WtValue[ [0] = "infobox vcard" ]
 			),
 			[1] = WtXmlAttribute(
-				{P} name = "style"
+				name = WtName[ [0] = "style" ],
 				value = WtValue[ [0] = "width: 22em; font-size: 90%; text-align: left" ]
 			)
 		],
@@ -22,15 +22,15 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "class"
+										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "n" ]
 									),
 									[2] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align: center; font-size: 125%; font-weight: bold" ]
 									)
 								],
@@ -39,7 +39,7 @@ WtParsedWikitextPage(
 										{P} name = "span"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "fn" ]
 											)
 										],
@@ -56,11 +56,11 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align: center" ]
 									)
 								],
@@ -106,11 +106,11 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center; font-size:110%;" ]
 									)
 								],
@@ -124,7 +124,7 @@ WtParsedWikitextPage(
 										{P} name = "div"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:lavender; font-weight:bold;" ]
 											)
 										],
@@ -160,11 +160,11 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center; background:lavender;" ]
 									)
 								],
@@ -188,11 +188,11 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center;" ]
 									)
 								],
@@ -285,11 +285,11 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center; font-size:110%;" ]
 									)
 								],
@@ -303,7 +303,7 @@ WtParsedWikitextPage(
 										{P} name = "div"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:lavender; font-weight:bold;" ]
 											)
 										],
@@ -365,11 +365,11 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "border-bottom:none; text-align:center;" ]
 									)
 								],
@@ -461,7 +461,7 @@ WtParsedWikitextPage(
 										{P} name = "ref"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "name"
+												name = WtName[ [0] = "name" ],
 												value = WtValue[ [0] = "sucessessordistrict" ]
 											)
 										],
@@ -478,11 +478,11 @@ WtParsedWikitextPage(
 							[0] = WtTableHeader(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center; font-size:110%;" ]
 									)
 								],
@@ -496,7 +496,7 @@ WtParsedWikitextPage(
 										{P} name = "div"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:lavender;" ]
 											)
 										],
@@ -521,11 +521,11 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "border-bottom:none; text-align:center;" ]
 									)
 								],
@@ -684,7 +684,7 @@ WtParsedWikitextPage(
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "colspan"
+										name = WtName[ [0] = "colspan" ],
 										value = WtValue[ [0] = "2" ]
 									)
 								],
@@ -714,7 +714,7 @@ WtParsedWikitextPage(
 										{P} name = "span"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "display:none" ]
 											)
 										],
@@ -724,7 +724,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "class"
+														name = WtName[ [0] = "class" ],
 														value = WtValue[ [0] = "bday" ]
 													)
 												],
@@ -737,7 +737,7 @@ WtParsedWikitextPage(
 										{P} name = "span"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "noprint" ]
 											)
 										],
@@ -825,7 +825,7 @@ WtParsedWikitextPage(
 							[1] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "class"
+										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "label" ]
 									)
 								],
@@ -994,7 +994,7 @@ WtParsedWikitextPage(
 				{P} name = "ref"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "BRC" ]
 					)
 				],
@@ -1061,7 +1061,7 @@ WtParsedWikitextPage(
 				{P} name = "ref"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "BRC" ]
 					)
 				],
@@ -1368,11 +1368,11 @@ WtParsedWikitextPage(
 						{P} name = "sup"
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "class"
+								name = WtName[ [0] = "class" ],
 								value = WtValue[ [0] = "Template-Fact" ]
 							),
 							[1] = WtXmlAttribute(
-								{P} name = "title"
+								name = WtName[ [0] = "title" ],
 								value = WtValue[
 									[0] = "This claim needs references to reliable sources",
 									[1] = WtTagExtension(
@@ -1384,7 +1384,7 @@ WtParsedWikitextPage(
 								]
 							),
 							[2] = WtXmlAttribute(
-								{P} name = "style"
+								name = WtName[ [0] = "style" ],
 								value = WtValue[ [0] = "white-space:nowrap;" ]
 							)
 						],
@@ -1445,7 +1445,7 @@ WtParsedWikitextPage(
 								{P} name = "div"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "class"
+										name = WtName[ [0] = "class" ],
 										value = WtValue[
 											[0] = "rellink",
 											[1] = WtTagExtension(
@@ -1576,7 +1576,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "anncoulter.com" ]
 									)
 								],
@@ -1593,7 +1593,7 @@ WtParsedWikitextPage(
 								{P} name = "div"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "class"
+										name = WtName[ [0] = "class" ],
 										value = WtValue[
 											[0] = "rellink",
 											[1] = WtTagExtension(
@@ -1619,11 +1619,11 @@ WtParsedWikitextPage(
 								{P} name = "table"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "class"
+										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "metadata mbox-small plainlinks" ]
 									),
 									[1] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "border:1px solid #aaa; background-color:#f9f9f9;" ]
 									)
 								],
@@ -1638,7 +1638,7 @@ WtParsedWikitextPage(
 														{P} name = "td"
 														xmlAttributes = WtXmlAttributes[
 															[0] = WtXmlAttribute(
-																{P} name = "class"
+																name = WtName[ [0] = "class" ],
 																value = WtValue[ [0] = "mbox-image" ]
 															)
 														],
@@ -1673,11 +1673,11 @@ WtParsedWikitextPage(
 														{P} name = "td"
 														xmlAttributes = WtXmlAttributes[
 															[0] = WtXmlAttribute(
-																{P} name = "class"
+																name = WtName[ [0] = "class" ],
 																value = WtValue[ [0] = "mbox-text" ]
 															),
 															[1] = WtXmlAttribute(
-																{P} name = "style"
+																name = WtName[ [0] = "style" ],
 																value = WtValue[]
 															)
 														],
@@ -1733,7 +1733,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "secretaryofstate" ]
 									)
 								],
@@ -1745,7 +1745,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "runoffreturns" ]
 									)
 								],
@@ -1755,7 +1755,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "Georgia Election Results" ]
 									)
 								],
@@ -1869,7 +1869,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "economist" ]
 									)
 								],
@@ -1887,7 +1887,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "economist" ]
 									)
 								],
@@ -2087,7 +2087,7 @@ WtParsedWikitextPage(
 				{P} name = "div"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[
 							[0] = "rellink",
 							[1] = WtTagExtension(
@@ -2112,11 +2112,11 @@ WtParsedWikitextPage(
 			[1] = WtTable(
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "wikitable" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = "margin:0.5em ; font-size:95%" ]
 					)
 				],
@@ -2135,7 +2135,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "clerkresults" ]
 									)
 								],
@@ -2213,7 +2213,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2222,11 +2222,11 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2235,7 +2235,7 @@ WtParsedWikitextPage(
 									[4] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2248,7 +2248,7 @@ WtParsedWikitextPage(
 									[6] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2257,11 +2257,11 @@ WtParsedWikitextPage(
 									[7] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2270,7 +2270,7 @@ WtParsedWikitextPage(
 									[8] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2304,7 +2304,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2313,11 +2313,11 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2326,7 +2326,7 @@ WtParsedWikitextPage(
 									[4] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2339,7 +2339,7 @@ WtParsedWikitextPage(
 									[6] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2348,11 +2348,11 @@ WtParsedWikitextPage(
 									[7] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2361,7 +2361,7 @@ WtParsedWikitextPage(
 									[8] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2395,7 +2395,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2404,11 +2404,11 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2417,7 +2417,7 @@ WtParsedWikitextPage(
 									[4] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2430,7 +2430,7 @@ WtParsedWikitextPage(
 									[6] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2439,11 +2439,11 @@ WtParsedWikitextPage(
 									[7] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2452,7 +2452,7 @@ WtParsedWikitextPage(
 									[8] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2486,7 +2486,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2502,11 +2502,11 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2515,7 +2515,7 @@ WtParsedWikitextPage(
 									[4] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2528,7 +2528,7 @@ WtParsedWikitextPage(
 									[6] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2537,11 +2537,11 @@ WtParsedWikitextPage(
 									[7] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2550,7 +2550,7 @@ WtParsedWikitextPage(
 									[8] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2569,11 +2569,11 @@ WtParsedWikitextPage(
 			[2] = WtTable(
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "wikitable" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = "margin:0.5em ; font-size:95%" ]
 					)
 				],
@@ -2592,7 +2592,7 @@ WtParsedWikitextPage(
 								{P} name = "ref"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "clerkresults" ]
 									)
 								],
@@ -2690,7 +2690,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2706,11 +2706,11 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2719,7 +2719,7 @@ WtParsedWikitextPage(
 									[4] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#B0CEFF" ]
 											)
 										],
@@ -2732,7 +2732,7 @@ WtParsedWikitextPage(
 									[6] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2741,7 +2741,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "white-space:nowrap;" ]
 													)
 												],
@@ -2752,11 +2752,11 @@ WtParsedWikitextPage(
 									[7] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2765,7 +2765,7 @@ WtParsedWikitextPage(
 									[8] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#FFB6B6" ]
 											)
 										],
@@ -2778,7 +2778,7 @@ WtParsedWikitextPage(
 									[10] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#ffff66" ]
 											)
 										],
@@ -2787,7 +2787,7 @@ WtParsedWikitextPage(
 									[11] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#ffff66" ]
 											)
 										],
@@ -2803,11 +2803,11 @@ WtParsedWikitextPage(
 									[12] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#ffff66" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2816,11 +2816,11 @@ WtParsedWikitextPage(
 									[13] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#ffff66" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "right" ]
 											)
 										],
@@ -2839,19 +2839,19 @@ WtParsedWikitextPage(
 			[3] = WtTable(
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "border"
+						name = WtName[ [0] = "border" ],
 						value = WtValue[ [0] = "1" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "cellpadding"
+						name = WtName[ [0] = "cellpadding" ],
 						value = WtValue[ [0] = "4" ]
 					),
 					[2] = WtXmlAttribute(
-						{P} name = "cellspacing"
+						name = WtName[ [0] = "cellspacing" ],
 						value = WtValue[ [0] = "0" ]
 					),
 					[3] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = "margin: 1em 1em 1em 0; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;" ]
 					)
 				],
@@ -2862,7 +2862,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "background-color:#E9E9E9" ]
 									)
 								],
@@ -2870,7 +2870,7 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "6" ]
 											)
 										],
@@ -2880,7 +2880,7 @@ WtParsedWikitextPage(
 												{P} name = "ref"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "name"
+														name = WtName[ [0] = "name" ],
 														value = WtValue[ [0] = "Georgia Election Results" ]
 													)
 												],
@@ -2894,7 +2894,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "background-color:#E9E9E9" ]
 									)
 								],
@@ -2902,11 +2902,11 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "2" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "width: 130px" ]
 											)
 										],
@@ -2915,7 +2915,7 @@ WtParsedWikitextPage(
 									[1] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "width: 17em" ]
 											)
 										],
@@ -2924,7 +2924,7 @@ WtParsedWikitextPage(
 									[2] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "width: 5em" ]
 											)
 										],
@@ -2933,7 +2933,7 @@ WtParsedWikitextPage(
 									[3] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "width: 3.5em" ]
 											)
 										],
@@ -2942,7 +2942,7 @@ WtParsedWikitextPage(
 									[4] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "width: 3.5em" ]
 											)
 										],
@@ -2959,7 +2959,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "class"
+										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "vcard" ]
 									)
 								],
@@ -2967,7 +2967,7 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[
 													[0] = "background-color:",
 													[1] = WtTagExtension(
@@ -2984,11 +2984,11 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "org" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "width: 130px" ]
 											)
 										],
@@ -3004,7 +3004,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "fn" ]
 											)
 										],
@@ -3022,7 +3022,7 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3031,7 +3031,7 @@ WtParsedWikitextPage(
 									[4] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3040,7 +3040,7 @@ WtParsedWikitextPage(
 									[5] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3057,7 +3057,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "class"
+										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "vcard" ]
 									)
 								],
@@ -3065,7 +3065,7 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[
 													[0] = "background-color:",
 													[1] = WtTagExtension(
@@ -3082,11 +3082,11 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "org" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "width: 130px" ]
 											)
 										],
@@ -3102,7 +3102,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "fn" ]
 											)
 										],
@@ -3118,7 +3118,7 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3127,7 +3127,7 @@ WtParsedWikitextPage(
 									[4] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3136,7 +3136,7 @@ WtParsedWikitextPage(
 									[5] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3153,7 +3153,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "background-color:#F6F6F6" ]
 									)
 								],
@@ -3161,11 +3161,11 @@ WtParsedWikitextPage(
 									[0] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "3" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3174,7 +3174,7 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3183,7 +3183,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3192,7 +3192,7 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3209,7 +3209,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "background-color:#F6F6F6" ]
 									)
 								],
@@ -3217,11 +3217,11 @@ WtParsedWikitextPage(
 									[0] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "3" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3239,7 +3239,7 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3248,7 +3248,7 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3257,7 +3257,7 @@ WtParsedWikitextPage(
 									[3] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: right; margin-right: 0.5em" ]
 											)
 										],
@@ -3284,11 +3284,11 @@ WtParsedWikitextPage(
 				{P} name = "table"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "metadata mbox-small plainlinks" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = "border:1px solid #aaa; background-color:#f9f9f9;" ]
 					)
 				],
@@ -3303,7 +3303,7 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "mbox-image" ]
 											)
 										],
@@ -3338,11 +3338,11 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "mbox-text" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[]
 											)
 										],
@@ -3403,11 +3403,11 @@ WtParsedWikitextPage(
 				{P} name = "table"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "metadata mbox-small plainlinks" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = "border:1px solid #aaa; background-color:#f9f9f9;" ]
 					)
 				],
@@ -3422,7 +3422,7 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "mbox-image" ]
 											)
 										],
@@ -3457,11 +3457,11 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "class"
+												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "mbox-text" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[]
 											)
 										],
@@ -3629,11 +3629,11 @@ WtParsedWikitextPage(
 			[5] = WtTable(
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "wikitable succession-box" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = "margin:0.5em auto; font-size:95%;clear:both;" ]
 					)
 				],
@@ -3647,11 +3647,11 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "3" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background: #cccccc" ]
 											)
 										],
@@ -3670,7 +3670,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center;" ]
 									)
 								],
@@ -3678,15 +3678,15 @@ WtParsedWikitextPage(
 									[0] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -3706,7 +3706,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "font-weight: bold" ]
 													)
 												],
@@ -3724,15 +3724,15 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "40%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: center;" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -3805,15 +3805,15 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -3833,7 +3833,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "font-weight: bold" ]
 													)
 												],
@@ -3848,7 +3848,7 @@ WtParsedWikitextPage(
 														{P} name = "ref"
 														xmlAttributes = WtXmlAttributes[
 															[0] = WtXmlAttribute(
-																{P} name = "name"
+																name = WtName[ [0] = "name" ],
 																value = WtValue[ [0] = "sucessessordistrict" ]
 															)
 														],
@@ -3872,11 +3872,11 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "3" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background: #cccccc" ]
 											)
 										],
@@ -3895,7 +3895,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align: center;" ]
 									)
 								],
@@ -3905,7 +3905,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center;" ]
 									)
 								],
@@ -3913,15 +3913,15 @@ WtParsedWikitextPage(
 									[0] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -3941,7 +3941,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "font-weight: bold" ]
 													)
 												],
@@ -3959,15 +3959,15 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "40%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: center;" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4028,15 +4028,15 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4056,11 +4056,11 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "3" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background: #ccccff;" ]
 											)
 										],
@@ -4072,7 +4072,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center;" ]
 									)
 								],
@@ -4080,15 +4080,15 @@ WtParsedWikitextPage(
 									[0] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4108,7 +4108,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "font-weight: bold" ]
 													)
 												],
@@ -4149,15 +4149,15 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "40%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: center;" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4187,15 +4187,15 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4215,7 +4215,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "font-weight: bold" ]
 													)
 												],
@@ -4267,11 +4267,11 @@ WtParsedWikitextPage(
 									[0] = WtTableHeader(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "colspan"
+												name = WtName[ [0] = "colspan" ],
 												value = WtValue[ [0] = "3" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background: #ccffcc;" ]
 											)
 										],
@@ -4290,7 +4290,7 @@ WtParsedWikitextPage(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "style"
+										name = WtName[ [0] = "style" ],
 										value = WtValue[ [0] = "text-align:center;" ]
 									)
 								],
@@ -4298,15 +4298,15 @@ WtParsedWikitextPage(
 									[0] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4326,7 +4326,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "font-weight: bold" ]
 													)
 												],
@@ -4367,15 +4367,15 @@ WtParsedWikitextPage(
 									[1] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "40%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "text-align: center;" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4409,15 +4409,15 @@ WtParsedWikitextPage(
 									[2] = WtTableCell(
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "width"
+												name = WtName[ [0] = "width" ],
 												value = WtValue[ [0] = "30%" ]
 											),
 											[1] = WtXmlAttribute(
-												{P} name = "align"
+												name = WtName[ [0] = "align" ],
 												value = WtValue[ [0] = "center" ]
 											),
 											[2] = WtXmlAttribute(
-												{P} name = "rowspan"
+												name = WtName[ [0] = "rowspan" ],
 												value = WtValue[ [0] = "1" ]
 											)
 										],
@@ -4437,7 +4437,7 @@ WtParsedWikitextPage(
 												{P} name = "span"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "font-weight: bold" ]
 													)
 												],
@@ -4485,15 +4485,15 @@ WtParsedWikitextPage(
 				{P} name = "table"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "navbox" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "cellspacing"
+						name = WtName[ [0] = "cellspacing" ],
 						value = WtValue[ [0] = "0" ]
 					),
 					[2] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = ";" ]
 					)
 				],
@@ -4508,7 +4508,7 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "padding:2px;" ]
 											)
 										],
@@ -4517,15 +4517,15 @@ WtParsedWikitextPage(
 												{P} name = "table"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "cellspacing"
+														name = WtName[ [0] = "cellspacing" ],
 														value = WtValue[ [0] = "0" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "class"
+														name = WtName[ [0] = "class" ],
 														value = WtValue[ [0] = "nowraplinks collapsible autocollapse" ]
 													),
 													[2] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "width:100%;background:transparent;color:inherit;;" ]
 													)
 												],
@@ -4540,15 +4540,15 @@ WtParsedWikitextPage(
 																		{P} name = "th"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "colspan"
+																				name = WtName[ [0] = "colspan" ],
 																				value = WtValue[ [0] = "3" ]
 																			),
 																			[2] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-title" ]
 																			)
 																		],
@@ -4557,7 +4557,7 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "float:left;width:6em;text-align:left;" ]
 																					)
 																				],
@@ -4566,11 +4566,11 @@ WtParsedWikitextPage(
 																						{P} name = "span"
 																						xmlAttributes = WtXmlAttributes[
 																							[0] = WtXmlAttribute(
-																								{P} name = "class"
+																								name = WtName[ [0] = "class" ],
 																								value = WtValue[ [0] = "noprint plainlinks navbar" ]
 																							),
 																							[1] = WtXmlAttribute(
-																								{P} name = "style"
+																								name = WtName[ [0] = "style" ],
 																								value = WtValue[]
 																							)
 																						],
@@ -4579,7 +4579,7 @@ WtParsedWikitextPage(
 																								{P} name = "span"
 																								xmlAttributes = WtXmlAttributes[
 																									[0] = WtXmlAttribute(
-																										{P} name = "style"
+																										name = WtName[ [0] = "style" ],
 																										value = WtValue[ [0] = "white-space:nowrap;word-spacing:-.12em;" ]
 																									)
 																								],
@@ -4593,11 +4593,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "View this template" ]
 																													)
 																												],
@@ -4609,7 +4609,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -4641,11 +4641,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Discuss this template" ]
 																													)
 																												],
@@ -4657,7 +4657,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -4690,11 +4690,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Edit this template" ]
 																													)
 																												],
@@ -4712,11 +4712,11 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "class"
+																						name = WtName[ [0] = "class" ],
 																						value = WtValue[]
 																					),
 																					[1] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "font-size:110%;" ]
 																					)
 																				],
@@ -4737,7 +4737,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px;" ]
 																	)
 																],
@@ -4757,11 +4757,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-group" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";;" ]
 																			)
 																		],
@@ -4771,11 +4771,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-list navbox-odd" ]
 																			)
 																		],
@@ -4784,7 +4784,7 @@ WtParsedWikitextPage(
 																				{P} name = "div"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "padding:0em 0.25em" ]
 																					)
 																				],
@@ -5055,11 +5055,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "width:0%;padding:0px 0px 0px 2px;" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "rowspan"
+																				name = WtName[ [0] = "rowspan" ],
 																				value = WtValue[ [0] = "3" ]
 																			)
 																		],
@@ -5091,7 +5091,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px" ]
 																	)
 																],
@@ -5111,11 +5111,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-group" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";;" ]
 																			)
 																		],
@@ -5125,11 +5125,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-list navbox-even" ]
 																			)
 																		],
@@ -5138,7 +5138,7 @@ WtParsedWikitextPage(
 																				{P} name = "div"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "padding:0em 0.25em" ]
 																					)
 																				],
@@ -5360,15 +5360,15 @@ WtParsedWikitextPage(
 				{P} name = "table"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "navbox" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "cellspacing"
+						name = WtName[ [0] = "cellspacing" ],
 						value = WtValue[ [0] = "0" ]
 					),
 					[2] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = ";" ]
 					)
 				],
@@ -5383,7 +5383,7 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "padding:2px;" ]
 											)
 										],
@@ -5392,15 +5392,15 @@ WtParsedWikitextPage(
 												{P} name = "table"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "cellspacing"
+														name = WtName[ [0] = "cellspacing" ],
 														value = WtValue[ [0] = "0" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "class"
+														name = WtName[ [0] = "class" ],
 														value = WtValue[ [0] = "nowraplinks collapsible autocollapse" ]
 													),
 													[2] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "width:100%;background:transparent;color:inherit;;" ]
 													)
 												],
@@ -5415,15 +5415,15 @@ WtParsedWikitextPage(
 																		{P} name = "th"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "colspan"
+																				name = WtName[ [0] = "colspan" ],
 																				value = WtValue[ [0] = "2" ]
 																			),
 																			[2] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-title" ]
 																			)
 																		],
@@ -5432,7 +5432,7 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "float:left;width:6em;text-align:left;" ]
 																					)
 																				],
@@ -5441,11 +5441,11 @@ WtParsedWikitextPage(
 																						{P} name = "span"
 																						xmlAttributes = WtXmlAttributes[
 																							[0] = WtXmlAttribute(
-																								{P} name = "class"
+																								name = WtName[ [0] = "class" ],
 																								value = WtValue[ [0] = "noprint plainlinks navbar" ]
 																							),
 																							[1] = WtXmlAttribute(
-																								{P} name = "style"
+																								name = WtName[ [0] = "style" ],
 																								value = WtValue[]
 																							)
 																						],
@@ -5454,7 +5454,7 @@ WtParsedWikitextPage(
 																								{P} name = "span"
 																								xmlAttributes = WtXmlAttributes[
 																									[0] = WtXmlAttribute(
-																										{P} name = "style"
+																										name = WtName[ [0] = "style" ],
 																										value = WtValue[ [0] = "white-space:nowrap;word-spacing:-.12em;" ]
 																									)
 																								],
@@ -5468,11 +5468,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "View this template" ]
 																													)
 																												],
@@ -5484,7 +5484,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -5516,11 +5516,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Discuss this template" ]
 																													)
 																												],
@@ -5532,7 +5532,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -5565,11 +5565,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Edit this template" ]
 																													)
 																												],
@@ -5587,11 +5587,11 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "class"
+																						name = WtName[ [0] = "class" ],
 																						value = WtValue[]
 																					),
 																					[1] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "font-size:110%;" ]
 																					)
 																				],
@@ -5619,7 +5619,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px;" ]
 																	)
 																],
@@ -5639,11 +5639,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-group" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";vertical-align:top;;" ]
 																			)
 																		],
@@ -5660,11 +5660,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-list navbox-odd" ]
 																			)
 																		],
@@ -5673,7 +5673,7 @@ WtParsedWikitextPage(
 																				{P} name = "div"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "padding:0em 0.25em" ]
 																					)
 																				],
@@ -5702,7 +5702,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px" ]
 																	)
 																],
@@ -5722,11 +5722,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-group" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";vertical-align:top;;" ]
 																			)
 																		],
@@ -5743,11 +5743,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-list navbox-even" ]
 																			)
 																		],
@@ -5756,7 +5756,7 @@ WtParsedWikitextPage(
 																				{P} name = "div"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "padding:0em 0.25em" ]
 																					)
 																				],
@@ -5976,7 +5976,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px" ]
 																	)
 																],
@@ -5996,11 +5996,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-group" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";vertical-align:top;;" ]
 																			)
 																		],
@@ -6010,11 +6010,11 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-list navbox-odd" ]
 																			)
 																		],
@@ -6023,7 +6023,7 @@ WtParsedWikitextPage(
 																				{P} name = "div"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "padding:0em 0.25em" ]
 																					)
 																				],
@@ -6678,15 +6678,15 @@ WtParsedWikitextPage(
 				{P} name = "table"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "navbox" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "cellspacing"
+						name = WtName[ [0] = "cellspacing" ],
 						value = WtValue[ [0] = "0" ]
 					),
 					[2] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = ";" ]
 					)
 				],
@@ -6701,7 +6701,7 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "padding:2px;" ]
 											)
 										],
@@ -6710,15 +6710,15 @@ WtParsedWikitextPage(
 												{P} name = "table"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "cellspacing"
+														name = WtName[ [0] = "cellspacing" ],
 														value = WtValue[ [0] = "0" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "class"
+														name = WtName[ [0] = "class" ],
 														value = WtValue[ [0] = "nowraplinks collapsible autocollapse" ]
 													),
 													[2] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "width:100%;background:transparent;color:inherit;;" ]
 													)
 												],
@@ -6733,15 +6733,15 @@ WtParsedWikitextPage(
 																		{P} name = "th"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "colspan"
+																				name = WtName[ [0] = "colspan" ],
 																				value = WtValue[ [0] = "2" ]
 																			),
 																			[2] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-title" ]
 																			)
 																		],
@@ -6750,7 +6750,7 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "float:left;width:6em;text-align:left;" ]
 																					)
 																				],
@@ -6759,11 +6759,11 @@ WtParsedWikitextPage(
 																						{P} name = "span"
 																						xmlAttributes = WtXmlAttributes[
 																							[0] = WtXmlAttribute(
-																								{P} name = "class"
+																								name = WtName[ [0] = "class" ],
 																								value = WtValue[ [0] = "noprint plainlinks navbar" ]
 																							),
 																							[1] = WtXmlAttribute(
-																								{P} name = "style"
+																								name = WtName[ [0] = "style" ],
 																								value = WtValue[]
 																							)
 																						],
@@ -6772,7 +6772,7 @@ WtParsedWikitextPage(
 																								{P} name = "span"
 																								xmlAttributes = WtXmlAttributes[
 																									[0] = WtXmlAttribute(
-																										{P} name = "style"
+																										name = WtName[ [0] = "style" ],
 																										value = WtValue[ [0] = "white-space:nowrap;word-spacing:-.12em;" ]
 																									)
 																								],
@@ -6786,11 +6786,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "View this template" ]
 																													)
 																												],
@@ -6802,7 +6802,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -6834,11 +6834,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Discuss this template" ]
 																													)
 																												],
@@ -6850,7 +6850,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -6883,11 +6883,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Edit this template" ]
 																													)
 																												],
@@ -6905,11 +6905,11 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "class"
+																						name = WtName[ [0] = "class" ],
 																						value = WtValue[]
 																					),
 																					[1] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "font-size:110%;" ]
 																					)
 																				],
@@ -6944,7 +6944,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px;" ]
 																	)
 																],
@@ -6964,15 +6964,15 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "colspan"
+																				name = WtName[ [0] = "colspan" ],
 																				value = WtValue[ [0] = "2" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "width:100%;padding:0px;;;" ]
 																			),
 																			[2] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-list navbox-odd" ]
 																			)
 																		],
@@ -6981,7 +6981,7 @@ WtParsedWikitextPage(
 																				{P} name = "div"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "padding:0em 0.25em" ]
 																					)
 																				],
@@ -6990,15 +6990,15 @@ WtParsedWikitextPage(
 																						{P} name = "table"
 																						xmlAttributes = WtXmlAttributes[
 																							[0] = WtXmlAttribute(
-																								{P} name = "class"
+																								name = WtName[ [0] = "class" ],
 																								value = WtValue[ [0] = "navbox" ]
 																							),
 																							[1] = WtXmlAttribute(
-																								{P} name = "cellspacing"
+																								name = WtName[ [0] = "cellspacing" ],
 																								value = WtValue[ [0] = "0" ]
 																							),
 																							[2] = WtXmlAttribute(
-																								{P} name = "style"
+																								name = WtName[ [0] = "style" ],
 																								value = WtValue[ [0] = ";" ]
 																							)
 																						],
@@ -7013,7 +7013,7 @@ WtParsedWikitextPage(
 																												{P} name = "td"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = "padding:2px;" ]
 																													)
 																												],
@@ -7022,15 +7022,15 @@ WtParsedWikitextPage(
 																														{P} name = "table"
 																														xmlAttributes = WtXmlAttributes[
 																															[0] = WtXmlAttribute(
-																																{P} name = "cellspacing"
+																																name = WtName[ [0] = "cellspacing" ],
 																																value = WtValue[ [0] = "0" ]
 																															),
 																															[1] = WtXmlAttribute(
-																																{P} name = "class"
+																																name = WtName[ [0] = "class" ],
 																																value = WtValue[ [0] = "nowraplinks" ]
 																															),
 																															[2] = WtXmlAttribute(
-																																{P} name = "style"
+																																name = WtName[ [0] = "style" ],
 																																value = WtValue[ [0] = "width:100%;background:transparent;color:inherit;;" ]
 																															)
 																														],
@@ -7045,15 +7045,15 @@ WtParsedWikitextPage(
 																																				{P} name = "td"
 																																				xmlAttributes = WtXmlAttributes[
 																																					[0] = WtXmlAttribute(
-																																						{P} name = "colspan"
+																																						name = WtName[ [0] = "colspan" ],
 																																						value = WtValue[ [0] = "2" ]
 																																					),
 																																					[1] = WtXmlAttribute(
-																																						{P} name = "style"
+																																						name = WtName[ [0] = "style" ],
 																																						value = WtValue[ [0] = "width:100%;padding:0px;;;background:transparent;color:inherit;" ]
 																																					),
 																																					[2] = WtXmlAttribute(
-																																						{P} name = "class"
+																																						name = WtName[ [0] = "class" ],
 																																						value = WtValue[ [0] = "navbox-list navbox-odd" ]
 																																					)
 																																				],
@@ -7062,7 +7062,7 @@ WtParsedWikitextPage(
 																																						{P} name = "div"
 																																						xmlAttributes = WtXmlAttributes[
 																																							[0] = WtXmlAttribute(
-																																								{P} name = "style"
+																																								name = WtName[ [0] = "style" ],
 																																								value = WtValue[ [0] = "padding:0px;" ]
 																																							)
 																																						],
@@ -7071,15 +7071,15 @@ WtParsedWikitextPage(
 																																								{P} name = "table"
 																																								xmlAttributes = WtXmlAttributes[
 																																									[0] = WtXmlAttribute(
-																																										{P} name = "cellspacing"
+																																										name = WtName[ [0] = "cellspacing" ],
 																																										value = WtValue[ [0] = "0" ]
 																																									),
 																																									[1] = WtXmlAttribute(
-																																										{P} name = "class"
+																																										name = WtName[ [0] = "class" ],
 																																										value = WtValue[ [0] = "navbox-columns-table" ]
 																																									),
 																																									[2] = WtXmlAttribute(
-																																										{P} name = "style"
+																																										name = WtName[ [0] = "style" ],
 																																										value = WtValue[ [0] = "text-align:left;width:100%;" ]
 																																									)
 																																								],
@@ -7094,15 +7094,15 @@ WtParsedWikitextPage(
 																																														{P} name = "td"
 																																														xmlAttributes = WtXmlAttributes[
 																																															[0] = WtXmlAttribute(
-																																																{P} name = "class"
+																																																name = WtName[ [0] = "class" ],
 																																																value = WtValue[ [0] = "navbox-abovebelow" ]
 																																															),
 																																															[1] = WtXmlAttribute(
-																																																{P} name = "colspan"
+																																																name = WtName[ [0] = "colspan" ],
 																																																value = WtValue[ [0] = "1" ]
 																																															),
 																																															[2] = WtXmlAttribute(
-																																																{P} name = "style"
+																																																name = WtName[ [0] = "style" ],
 																																																value = WtValue[ [0] = "font-weight:bold;" ]
 																																															)
 																																														],
@@ -7112,15 +7112,15 @@ WtParsedWikitextPage(
 																																														{P} name = "td"
 																																														xmlAttributes = WtXmlAttributes[
 																																															[0] = WtXmlAttribute(
-																																																{P} name = "class"
+																																																name = WtName[ [0] = "class" ],
 																																																value = WtValue[ [0] = "navbox-abovebelow" ]
 																																															),
 																																															[1] = WtXmlAttribute(
-																																																{P} name = "colspan"
+																																																name = WtName[ [0] = "colspan" ],
 																																																value = WtValue[ [0] = "1" ]
 																																															),
 																																															[2] = WtXmlAttribute(
-																																																{P} name = "style"
+																																																name = WtName[ [0] = "style" ],
 																																																value = WtValue[ [0] = "border-left:2px solid #fdfdfd;font-weight:bold;" ]
 																																															)
 																																														],
@@ -7132,7 +7132,7 @@ WtParsedWikitextPage(
 																																												{P} name = "tr"
 																																												xmlAttributes = WtXmlAttributes[
 																																													[0] = WtXmlAttribute(
-																																														{P} name = "style"
+																																														name = WtName[ [0] = "style" ],
 																																														value = WtValue[ [0] = "height:2px;" ]
 																																													)
 																																												],
@@ -7148,7 +7148,7 @@ WtParsedWikitextPage(
 																																												{P} name = "tr"
 																																												xmlAttributes = WtXmlAttributes[
 																																													[0] = WtXmlAttribute(
-																																														{P} name = "style"
+																																														name = WtName[ [0] = "style" ],
 																																														value = WtValue[ [0] = "vertical-align:top;" ]
 																																													)
 																																												],
@@ -7157,7 +7157,7 @@ WtParsedWikitextPage(
 																																														{P} name = "td"
 																																														xmlAttributes = WtXmlAttributes[
 																																															[0] = WtXmlAttribute(
-																																																{P} name = "style"
+																																																name = WtName[ [0] = "style" ],
 																																																value = WtValue[ [0] = "padding:0px;;;;width:50%;" ]
 																																															)
 																																														],
@@ -7832,7 +7832,7 @@ WtParsedWikitextPage(
 																																														{P} name = "td"
 																																														xmlAttributes = WtXmlAttributes[
 																																															[0] = WtXmlAttribute(
-																																																{P} name = "style"
+																																																name = WtName[ [0] = "style" ],
 																																																value = WtValue[ [0] = "border-left:2px solid #fdfdfd;padding:0px;;;;width:50%;" ]
 																																															)
 																																														],
@@ -8549,15 +8549,15 @@ WtParsedWikitextPage(
 				{P} name = "table"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "navbox" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "cellspacing"
+						name = WtName[ [0] = "cellspacing" ],
 						value = WtValue[ [0] = "0" ]
 					),
 					[2] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = ";" ]
 					)
 				],
@@ -8572,7 +8572,7 @@ WtParsedWikitextPage(
 										{P} name = "td"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "padding:2px;" ]
 											)
 										],
@@ -8581,15 +8581,15 @@ WtParsedWikitextPage(
 												{P} name = "table"
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "cellspacing"
+														name = WtName[ [0] = "cellspacing" ],
 														value = WtValue[ [0] = "0" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "class"
+														name = WtName[ [0] = "class" ],
 														value = WtValue[ [0] = "nowraplinks collapsible autocollapse" ]
 													),
 													[2] = WtXmlAttribute(
-														{P} name = "style"
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "width:100%;background:transparent;color:inherit;;" ]
 													)
 												],
@@ -8604,15 +8604,15 @@ WtParsedWikitextPage(
 																		{P} name = "th"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "colspan"
+																				name = WtName[ [0] = "colspan" ],
 																				value = WtValue[ [0] = "2" ]
 																			),
 																			[2] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-title" ]
 																			)
 																		],
@@ -8621,7 +8621,7 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "float:left;width:6em;text-align:left;" ]
 																					)
 																				],
@@ -8630,11 +8630,11 @@ WtParsedWikitextPage(
 																						{P} name = "span"
 																						xmlAttributes = WtXmlAttributes[
 																							[0] = WtXmlAttribute(
-																								{P} name = "class"
+																								name = WtName[ [0] = "class" ],
 																								value = WtValue[ [0] = "noprint plainlinks navbar" ]
 																							),
 																							[1] = WtXmlAttribute(
-																								{P} name = "style"
+																								name = WtName[ [0] = "style" ],
 																								value = WtValue[]
 																							)
 																						],
@@ -8643,7 +8643,7 @@ WtParsedWikitextPage(
 																								{P} name = "span"
 																								xmlAttributes = WtXmlAttributes[
 																									[0] = WtXmlAttribute(
-																										{P} name = "style"
+																										name = WtName[ [0] = "style" ],
 																										value = WtValue[ [0] = "white-space:nowrap;word-spacing:-.12em;" ]
 																									)
 																								],
@@ -8657,11 +8657,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "View this template" ]
 																													)
 																												],
@@ -8673,7 +8673,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -8705,11 +8705,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Discuss this template" ]
 																													)
 																												],
@@ -8721,7 +8721,7 @@ WtParsedWikitextPage(
 																										{P} name = "span"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																											)
 																										],
@@ -8754,11 +8754,11 @@ WtParsedWikitextPage(
 																												{P} name = "span"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = ";;background:none transparent;border:none;font-size:100%;" ]
 																													),
 																													[1] = WtXmlAttribute(
-																														{P} name = "title"
+																														name = WtName[ [0] = "title" ],
 																														value = WtValue[ [0] = "Edit this template" ]
 																													)
 																												],
@@ -8776,11 +8776,11 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "class"
+																						name = WtName[ [0] = "class" ],
 																						value = WtValue[]
 																					),
 																					[1] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "font-size:110%;" ]
 																					)
 																				],
@@ -8801,7 +8801,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px;" ]
 																	)
 																],
@@ -8821,15 +8821,15 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "colspan"
+																				name = WtName[ [0] = "colspan" ],
 																				value = WtValue[ [0] = "2" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "width:100%;padding:0px;;;background:transparent;color:inherit;" ]
 																			),
 																			[2] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-list navbox-odd" ]
 																			)
 																		],
@@ -8838,7 +8838,7 @@ WtParsedWikitextPage(
 																				{P} name = "div"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "padding:0px;" ]
 																					)
 																				],
@@ -8847,15 +8847,15 @@ WtParsedWikitextPage(
 																						{P} name = "table"
 																						xmlAttributes = WtXmlAttributes[
 																							[0] = WtXmlAttribute(
-																								{P} name = "cellspacing"
+																								name = WtName[ [0] = "cellspacing" ],
 																								value = WtValue[ [0] = "0" ]
 																							),
 																							[1] = WtXmlAttribute(
-																								{P} name = "class"
+																								name = WtName[ [0] = "class" ],
 																								value = WtValue[ [0] = "navbox-columns-table" ]
 																							),
 																							[2] = WtXmlAttribute(
-																								{P} name = "style"
+																								name = WtName[ [0] = "style" ],
 																								value = WtValue[ [0] = "text-align:left;width:auto;margin-left:auto;margin-right:auto;" ]
 																							)
 																						],
@@ -8866,7 +8866,7 @@ WtParsedWikitextPage(
 																										{P} name = "tr"
 																										xmlAttributes = WtXmlAttributes[
 																											[0] = WtXmlAttribute(
-																												{P} name = "style"
+																												name = WtName[ [0] = "style" ],
 																												value = WtValue[ [0] = "vertical-align:top;" ]
 																											)
 																										],
@@ -8875,7 +8875,7 @@ WtParsedWikitextPage(
 																												{P} name = "td"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = "width:5em;" ]
 																													)
 																												],
@@ -8898,7 +8898,7 @@ WtParsedWikitextPage(
 																												{P} name = "td"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = "padding:0px;;;;width:25%;;" ]
 																													)
 																												],
@@ -8918,7 +8918,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -8937,7 +8937,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -8967,7 +8967,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -8986,7 +8986,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9016,7 +9016,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9035,7 +9035,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9065,7 +9065,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9084,7 +9084,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9114,7 +9114,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9133,7 +9133,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9163,7 +9163,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9182,7 +9182,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9212,7 +9212,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#cccccc" ]
 																																	)
 																																],
@@ -9231,7 +9231,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9261,7 +9261,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9280,7 +9280,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9310,7 +9310,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9329,7 +9329,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9359,7 +9359,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9378,7 +9378,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9408,7 +9408,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9427,7 +9427,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9457,7 +9457,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9476,7 +9476,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9506,7 +9506,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9525,7 +9525,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9552,7 +9552,7 @@ WtParsedWikitextPage(
 																												{P} name = "td"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = "border-left:2px solid #fdfdfd;padding:0px;;;;width:25%;;" ]
 																													)
 																												],
@@ -9572,7 +9572,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9591,7 +9591,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9621,7 +9621,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9640,7 +9640,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9670,7 +9670,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9689,7 +9689,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9719,7 +9719,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9738,7 +9738,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9768,7 +9768,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9787,7 +9787,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9817,7 +9817,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9836,7 +9836,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9866,7 +9866,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9885,7 +9885,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9915,7 +9915,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9934,7 +9934,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -9964,7 +9964,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -9983,7 +9983,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10013,7 +10013,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10032,7 +10032,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10062,7 +10062,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10081,7 +10081,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10111,7 +10111,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10130,7 +10130,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10152,7 +10152,7 @@ WtParsedWikitextPage(
 																												{P} name = "td"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = "border-left:2px solid #fdfdfd;padding:0px;;;;width:25%;;" ]
 																													)
 																												],
@@ -10172,7 +10172,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10191,7 +10191,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10221,7 +10221,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10240,7 +10240,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10270,7 +10270,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10289,7 +10289,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10319,7 +10319,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10338,7 +10338,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10368,7 +10368,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10387,7 +10387,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10417,7 +10417,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10436,7 +10436,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10466,7 +10466,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10485,7 +10485,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10515,7 +10515,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10534,7 +10534,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10564,7 +10564,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10583,7 +10583,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10613,7 +10613,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10632,7 +10632,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10662,7 +10662,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10681,7 +10681,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10711,7 +10711,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10730,7 +10730,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10752,7 +10752,7 @@ WtParsedWikitextPage(
 																												{P} name = "td"
 																												xmlAttributes = WtXmlAttributes[
 																													[0] = WtXmlAttribute(
-																														{P} name = "style"
+																														name = WtName[ [0] = "style" ],
 																														value = WtValue[ [0] = "border-left:2px solid #fdfdfd;padding:0px;;;;width:25%;;" ]
 																													)
 																												],
@@ -10772,7 +10772,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10791,7 +10791,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10821,7 +10821,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10840,7 +10840,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10870,7 +10870,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10889,7 +10889,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10919,7 +10919,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -10938,7 +10938,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10968,7 +10968,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -10987,7 +10987,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11017,7 +11017,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11036,7 +11036,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11066,7 +11066,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11085,7 +11085,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11115,7 +11115,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11134,7 +11134,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#cccccc" ]
 																																	)
 																																],
@@ -11164,7 +11164,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11183,7 +11183,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11213,7 +11213,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11232,7 +11232,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11262,7 +11262,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11281,7 +11281,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11311,7 +11311,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#B0CEFF" ]
 																																	)
 																																],
@@ -11330,7 +11330,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11360,7 +11360,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11379,7 +11379,7 @@ WtParsedWikitextPage(
 																																{P} name = "span"
 																																xmlAttributes = WtXmlAttributes[
 																																	[0] = WtXmlAttribute(
-																																		{P} name = "style"
+																																		name = WtName[ [0] = "style" ],
 																																		value = WtValue[ [0] = "background:#FFB6B6" ]
 																																	)
 																																],
@@ -11413,7 +11413,7 @@ WtParsedWikitextPage(
 																{P} name = "tr"
 																xmlAttributes = WtXmlAttributes[
 																	[0] = WtXmlAttribute(
-																		{P} name = "style"
+																		name = WtName[ [0] = "style" ],
 																		value = WtValue[ [0] = "height:2px;" ]
 																	)
 																],
@@ -11433,15 +11433,15 @@ WtParsedWikitextPage(
 																		{P} name = "td"
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "class"
+																				name = WtName[ [0] = "class" ],
 																				value = WtValue[ [0] = "navbox-abovebelow" ]
 																			),
 																			[1] = WtXmlAttribute(
-																				{P} name = "style"
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = ";" ]
 																			),
 																			[2] = WtXmlAttribute(
-																				{P} name = "colspan"
+																				name = WtName[ [0] = "colspan" ],
 																				value = WtValue[ [0] = "2" ]
 																			)
 																		],
@@ -11450,7 +11450,7 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "background:#B0CEFF" ]
 																					)
 																				],
@@ -11468,7 +11468,7 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "background:#FFB6B6" ]
 																					)
 																				],
@@ -11486,7 +11486,7 @@ WtParsedWikitextPage(
 																				{P} name = "span"
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "background:#cccccc" ]
 																					)
 																				],
@@ -11525,11 +11525,11 @@ WtParsedWikitextPage(
 				{P} name = "div"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "class"
+						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "reflist references-column-count references-column-count-2" ]
 					),
 					[1] = WtXmlAttribute(
-						{P} name = "style"
+						name = WtName[ [0] = "style" ],
 						value = WtValue[ [0] = "column-count: 2; -moz-column-count: 2; -webkit-column-count: 2; list-style-type: decimal;" ]
 					)
 				],
@@ -11538,7 +11538,7 @@ WtParsedWikitextPage(
 						{P} name = "references"
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "group"
+								name = WtName[ [0] = "group" ],
 								value = WtValue[]
 							)
 						],

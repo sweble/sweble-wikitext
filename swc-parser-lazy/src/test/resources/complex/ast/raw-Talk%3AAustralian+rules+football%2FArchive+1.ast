@@ -4766,8 +4766,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "color"
-										{P} rtd = RTD[ " color=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "color" ],
 										value = WtValue[ [0] = "darkblue" ]
 									)
 								],
@@ -4789,8 +4789,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "color"
-										{P} rtd = RTD[ " color=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "color" ],
 										value = WtValue[ [0] = "red" ]
 									)
 								],
@@ -4812,8 +4812,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "color"
-										{P} rtd = RTD[ " color=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "color" ],
 										value = WtValue[ [0] = "darkblue" ]
 									)
 								],
@@ -4845,8 +4845,8 @@ WtParsedWikitextPage(
 									{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 									xmlAttributes = WtXmlAttributes[
 										[0] = WtXmlAttribute(
-											{P} name = "color"
-											{P} rtd = RTD[ " color=\"" <o> "\"" ]
+											{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+											name = WtName[ [0] = "color" ],
 											value = WtValue[ [0] = "black" ]
 										)
 									],
@@ -5256,8 +5256,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "color"
-									{P} rtd = RTD[ " color=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "color" ],
 									value = WtValue[ [0] = "darkblue" ]
 								)
 							],
@@ -5279,8 +5279,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "color"
-									{P} rtd = RTD[ " color=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "color" ],
 									value = WtValue[ [0] = "red" ]
 								)
 							],
@@ -5302,8 +5302,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "color"
-									{P} rtd = RTD[ " color=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "color" ],
 									value = WtValue[ [0] = "darkblue" ]
 								)
 							],
@@ -5335,8 +5335,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "color"
-										{P} rtd = RTD[ " color=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "color" ],
 										value = WtValue[ [0] = "black" ]
 									)
 								],

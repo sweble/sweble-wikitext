@@ -450,8 +450,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
-										{P} rtd = RTD[ " name=" <o> "" ]
+										{P} rtd = RTD[ " " <o> "=" <o> "" ]
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "IMF" ]
 									)
 								],
@@ -475,8 +475,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
-										{P} rtd = RTD[ " name=" <o> "" ]
+										{P} rtd = RTD[ " " <o> "=" <o> "" ]
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "IMF" ]
 									)
 								],
@@ -500,8 +500,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
-										{P} rtd = RTD[ " name=" <o> "" ]
+										{P} rtd = RTD[ " " <o> "=" <o> "" ]
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "IMF" ]
 									)
 								],
@@ -530,8 +530,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
-										{P} rtd = RTD[ " name=" <o> "" ]
+										{P} rtd = RTD[ " " <o> "=" <o> "" ]
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "IMF" ]
 									)
 								],
@@ -566,8 +566,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
-										{P} rtd = RTD[ " name=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "UNDP" ]
 									)
 								],
@@ -872,8 +872,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Duden6" ]
 					)
 				],
@@ -884,8 +884,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "group"
-						{P} rtd = RTD[ " group=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "group" ],
 						value = WtValue[ [0] = "note" ]
 					)
 				],
@@ -896,8 +896,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "population" ]
 					)
 				],
@@ -920,8 +920,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "euroc" ]
 					)
 				],
@@ -1032,8 +1032,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Claster" ]
 					)
 				],
@@ -1044,8 +1044,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Cambridge ancient history" ]
 					)
 				],
@@ -1120,8 +1120,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "concise h" ]
 					)
 				],
@@ -1207,8 +1207,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "lee h" ]
 					)
 				],
@@ -1337,8 +1337,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "provisional" ]
 					)
 				],
@@ -1418,8 +1418,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "euroc" ]
 					)
 				],
@@ -1442,8 +1442,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "ARM" ]
 					)
 				],
@@ -1626,8 +1626,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "CIA" ]
 					)
 				],
@@ -1916,8 +1916,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Art 79" ]
 					)
 				],
@@ -2017,8 +2017,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "econ_factsheet_may2006" ]
 					)
 				],
@@ -2065,8 +2065,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "CIA" ]
 					)
 				],
@@ -2100,8 +2100,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Bundeswehr1" ]
 					)
 				],
@@ -2160,8 +2160,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "CIA" ]
 					)
 				],
@@ -2178,8 +2178,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "FR" ]
 					)
 				],
@@ -2243,8 +2243,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "adac" ]
 					)
 				],
@@ -2403,8 +2403,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> " />" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "population" ]
 					)
 				],
@@ -2564,8 +2564,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Eurobarometer Languages" ]
 					)
 				],
@@ -2576,8 +2576,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Many tongues, one family" ]
 					)
 				],
@@ -2640,8 +2640,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "natgeo2006" ]
 					)
 				],
@@ -2652,8 +2652,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "Eurobarometer Languages" ]
 					)
 				],
@@ -2682,8 +2682,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "ekd" ]
 					)
 				],
@@ -2700,8 +2700,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "MLD 2.1" ]
 					)
 				],
@@ -2908,8 +2908,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "MLD 2.1" ]
 					)
 				],
@@ -2920,8 +2920,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "MLD 2.2" ]
 					)
 				],
@@ -2932,8 +2932,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "ekd" ]
 					)
 				],
@@ -2962,8 +2962,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "EUROBAROMETER" ]
 					)
 				],
@@ -2992,8 +2992,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "ED" ]
 					)
 				],
@@ -3010,8 +3010,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "ED" ]
 					)
 				],
@@ -3022,8 +3022,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "ARWU" ]
 					)
 				],
@@ -3052,8 +3052,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "WHOSIS" ]
 					)
 				],
@@ -3064,8 +3064,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "DW1" ]
 					)
 				],
@@ -3076,8 +3076,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "BBC1" ]
 					)
 				],
@@ -3148,8 +3148,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "nobel" ]
 					)
 				],
@@ -3262,8 +3262,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "sports" ]
 					)
 				],
@@ -3274,8 +3274,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "sports" ]
 					)
 				],
@@ -3286,8 +3286,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "sports" ]
 					)
 				],
@@ -3388,8 +3388,8 @@ WtParsedWikitextPage(
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} name = "name"
-						{P} rtd = RTD[ " name=" <o> "" ]
+						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						name = WtName[ [0] = "name" ],
 						value = WtValue[ [0] = "gayscity" ]
 					)
 				],
@@ -4626,8 +4626,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "IMF" ]
 								)
 							],
@@ -4651,8 +4651,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "IMF" ]
 								)
 							],
@@ -4676,8 +4676,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "IMF" ]
 								)
 							],
@@ -4706,8 +4706,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "IMF" ]
 								)
 							],
@@ -4742,8 +4742,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "UNDP" ]
 								)
 							],
@@ -5064,8 +5064,8 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 			xmlAttributes = WtXmlAttributes[
 				[0] = WtXmlAttribute(
-					{P} name = "name"
-					{P} rtd = RTD[ " name=\"" <o> "\"" ]
+					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+					name = WtName[ [0] = "name" ],
 					value = WtValue[ [0] = "Duden6" ]
 				)
 			],
@@ -5076,8 +5076,8 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 			xmlAttributes = WtXmlAttributes[
 				[0] = WtXmlAttribute(
-					{P} name = "group"
-					{P} rtd = RTD[ " group=\"" <o> "\"" ]
+					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+					name = WtName[ [0] = "group" ],
 					value = WtValue[ [0] = "note" ]
 				)
 			],
@@ -5234,8 +5234,8 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 			xmlAttributes = WtXmlAttributes[
 				[0] = WtXmlAttribute(
-					{P} name = "name"
-					{P} rtd = RTD[ " name=" <o> "" ]
+					{P} rtd = RTD[ " " <o> "=" <o> "" ]
+					name = WtName[ [0] = "name" ],
 					value = WtValue[ [0] = "population" ]
 				)
 			],
@@ -5447,8 +5447,8 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 			xmlAttributes = WtXmlAttributes[
 				[0] = WtXmlAttribute(
-					{P} name = "name"
-					{P} rtd = RTD[ " name=" <o> "" ]
+					{P} rtd = RTD[ " " <o> "=" <o> "" ]
+					name = WtName[ [0] = "name" ],
 					value = WtValue[ [0] = "euroc" ]
 				)
 			],
@@ -6003,8 +6003,8 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "name"
-								{P} rtd = RTD[ " name=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "name" ],
 								value = WtValue[ [0] = "Claster" ]
 							)
 						],
@@ -6212,8 +6212,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "Cambridge ancient history" ]
 								)
 							],
@@ -6933,8 +6933,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "concise h" ]
 								)
 							],
@@ -7760,8 +7760,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "lee h" ]
 								)
 							],
@@ -8927,8 +8927,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "provisional" ]
 								)
 							],
@@ -9355,8 +9355,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "name"
-										{P} rtd = RTD[ " name=" <o> "" ]
+										{P} rtd = RTD[ " " <o> "=" <o> "" ]
+										name = WtName[ [0] = "name" ],
 										value = WtValue[ [0] = "euroc" ]
 									)
 								],
@@ -9451,8 +9451,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "ARM" ]
 								)
 							],
@@ -9879,8 +9879,8 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 					xmlAttributes = WtXmlAttributes[
 						[0] = WtXmlAttribute(
-							{P} name = "name"
-							{P} rtd = RTD[ " name=\"" <o> "\"" ]
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "name" ],
 							value = WtValue[ [0] = "CIA" ]
 						)
 					],
@@ -10032,13 +10032,13 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "style"
-								{P} rtd = RTD[ " style=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "style" ],
 								value = WtValue[ [0] = "background:none;" ]
 							),
 							[1] = WtXmlAttribute(
-								{P} name = "cellspacing"
-								{P} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "cellspacing" ],
 								value = WtValue[ [0] = "2px" ]
 							)
 						],
@@ -10058,13 +10058,13 @@ WtParsedWikitextPage(
 														{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 														xmlAttributes = WtXmlAttributes[
 															[0] = WtXmlAttribute(
-																{P} name = "class"
-																{P} rtd = RTD[ " class=\"" <o> "\"" ]
+																{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																name = WtName[ [0] = "class" ],
 																value = WtValue[ [0] = "sortable wikitable" ]
 															),
 															[1] = WtXmlAttribute(
-																{P} name = "style"
-																{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																name = WtName[ [0] = "style" ],
 																value = WtValue[ [0] = "text-align:left; font-size:90%;" ]
 															)
 														],
@@ -10076,8 +10076,8 @@ WtParsedWikitextPage(
 																		{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 																		xmlAttributes = WtXmlAttributes[
 																			[0] = WtXmlAttribute(
-																				{P} name = "style"
-																				{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																				name = WtName[ [0] = "style" ],
 																				value = WtValue[ [0] = "font-size:100%; text-align:right;" ]
 																			)
 																		],
@@ -10086,8 +10086,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "width:140px;" ]
 																					)
 																				],
@@ -10110,8 +10110,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "!!" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "width:85px;" ]
 																					)
 																				],
@@ -10121,8 +10121,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "!!" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "width:85px;" ]
 																					)
 																				],
@@ -10132,8 +10132,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "!!" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "width:85px;" ]
 																					)
 																				],
@@ -10183,8 +10183,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10194,8 +10194,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10245,8 +10245,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10256,8 +10256,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10287,8 +10287,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ "style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ "" <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10298,8 +10298,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10349,8 +10349,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10360,8 +10360,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10414,8 +10414,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10425,8 +10425,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10476,8 +10476,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ "style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ "" <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10487,8 +10487,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10538,8 +10538,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10549,8 +10549,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10600,8 +10600,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10611,8 +10611,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10662,8 +10662,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10673,8 +10673,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10724,8 +10724,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10735,8 +10735,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10786,8 +10786,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10797,8 +10797,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10848,8 +10848,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10859,8 +10859,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10910,8 +10910,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10921,8 +10921,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10972,8 +10972,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -10983,8 +10983,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -11034,8 +11034,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -11045,8 +11045,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -11096,8 +11096,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -11107,8 +11107,8 @@ WtParsedWikitextPage(
 																				{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 																				xmlAttributes = WtXmlAttributes[
 																					[0] = WtXmlAttribute(
-																						{P} name = "style"
-																						{P} rtd = RTD[ " style=\"" <o> "\"" ]
+																						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+																						name = WtName[ [0] = "style" ],
 																						value = WtValue[ [0] = "text-align:right" ]
 																					)
 																				],
@@ -11850,8 +11850,8 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 					xmlAttributes = WtXmlAttributes[
 						[0] = WtXmlAttribute(
-							{P} name = "name"
-							{P} rtd = RTD[ " name=\"" <o> "\"" ]
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "name" ],
 							value = WtValue[ [0] = "Art 79" ]
 						)
 					],
@@ -13091,8 +13091,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "econ_factsheet_may2006" ]
 								)
 							],
@@ -13351,8 +13351,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "CIA" ]
 								)
 							],
@@ -13503,8 +13503,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "Bundeswehr1" ]
 								)
 							],
@@ -13775,8 +13775,8 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 					xmlAttributes = WtXmlAttributes[
 						[0] = WtXmlAttribute(
-							{P} name = "name"
-							{P} rtd = RTD[ " name=\"" <o> "\"" ]
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "name" ],
 							value = WtValue[ [0] = "CIA" ]
 						)
 					],
@@ -13837,8 +13837,8 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 					xmlAttributes = WtXmlAttributes[
 						[0] = WtXmlAttribute(
-							{P} name = "name"
-							{P} rtd = RTD[ " name=\"" <o> "\"" ]
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "name" ],
 							value = WtValue[ [0] = "FR" ]
 						)
 					],
@@ -14176,13 +14176,13 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "class"
-								{P} rtd = RTD[ " class=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "class" ],
 								value = WtValue[ [0] = "wikitable sortable" ]
 							),
 							[1] = WtXmlAttribute(
-								{P} name = "style"
-								{P} rtd = RTD[ " style=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "style" ],
 								value = WtValue[ [0] = "text-align:right;" ]
 							)
 						],
@@ -14194,8 +14194,8 @@ WtParsedWikitextPage(
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} name = "style"
-												{P} rtd = RTD[ " style=\"" <o> "\"" ]
+												{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+												name = WtName[ [0] = "style" ],
 												value = WtValue[ [0] = "background:#efefef;" ]
 											)
 										],
@@ -14204,8 +14204,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center;" ]
 													)
 												],
@@ -14223,8 +14223,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center;" ]
 													)
 												],
@@ -14234,8 +14234,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center;" ]
 													)
 												],
@@ -14245,8 +14245,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center;" ]
 													)
 												],
@@ -14271,8 +14271,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center;" ]
 													)
 												],
@@ -14297,8 +14297,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center;" ]
 													)
 												],
@@ -14332,8 +14332,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14353,8 +14353,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14404,8 +14404,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14425,8 +14425,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14476,8 +14476,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14497,8 +14497,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14548,8 +14548,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14572,8 +14572,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14623,8 +14623,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14644,8 +14644,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14695,8 +14695,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14716,8 +14716,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14767,8 +14767,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14788,8 +14788,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14839,8 +14839,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14863,8 +14863,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14917,8 +14917,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14938,8 +14938,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -14989,8 +14989,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -15010,8 +15010,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left;" ]
 													)
 												],
@@ -15137,8 +15137,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "adac" ]
 								)
 							],
@@ -16248,8 +16248,8 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<ref" <o> " />" <o> "" ]
 					xmlAttributes = WtXmlAttributes[
 						[0] = WtXmlAttribute(
-							{P} name = "name"
-							{P} rtd = RTD[ " name=" <o> "" ]
+							{P} rtd = RTD[ " " <o> "=" <o> "" ]
+							name = WtName[ [0] = "name" ],
 							value = WtValue[ [0] = "population" ]
 						)
 					],
@@ -16808,18 +16808,18 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "width"
-								{P} rtd = RTD[ " width=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "width" ],
 								value = WtValue[ [0] = "97%" ]
 							),
 							[1] = WtXmlAttribute(
-								{P} name = "align"
-								{P} rtd = RTD[ " align=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "align" ],
 								value = WtValue[ [0] = "center" ]
 							),
 							[2] = WtXmlAttribute(
-								{P} name = "style"
-								{P} rtd = RTD[ " style=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "style" ],
 								value = WtValue[ [0] = "border: 1px solid darkgray; background: #f9f9f9" ]
 							)
 						],
@@ -16834,13 +16834,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "colspan"
-														{P} rtd = RTD[ "colspan=" <o> "" ]
+														{P} rtd = RTD[ "" <o> "=" <o> "" ]
+														name = WtName[ [0] = "colspan" ],
 														value = WtValue[ [0] = "9" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "padding:0.3em 0; font-size:120%;" ]
 													)
 												],
@@ -16860,18 +16860,18 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "rowspan"
-														{P} rtd = RTD[ " rowspan=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "rowspan" ],
 														value = WtValue[ [0] = "11" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[2] = WtXmlAttribute(
-														{P} name = "valign"
-														{P} rtd = RTD[ " valign=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "valign" ],
 														value = WtValue[ [0] = "top" ]
 													)
 												],
@@ -17024,8 +17024,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center; background:#f5f5f5;" ]
 													)
 												],
@@ -17038,8 +17038,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:#f5f5f5;" ]
 													)
 												],
@@ -17052,8 +17052,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:right; background:#f5f5f5;" ]
 													)
 												],
@@ -17066,13 +17066,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "rowspan"
-														{P} rtd = RTD[ " rowspan=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "rowspan" ],
 														value = WtValue[ [0] = "11" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "width"
-														{P} rtd = RTD[ " width=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "width" ],
 														value = WtValue[ [0] = "50" ]
 													)
 												],
@@ -17092,8 +17092,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:center; background:#f5f5f5;" ]
 													)
 												],
@@ -17106,8 +17106,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:#f5f5f5;" ]
 													)
 												],
@@ -17120,8 +17120,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:right; background:#f5f5f5;" ]
 													)
 												],
@@ -17134,18 +17134,18 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "rowspan"
-														{P} rtd = RTD[ " rowspan=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "rowspan" ],
 														value = WtValue[ [0] = "11" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[2] = WtXmlAttribute(
-														{P} name = "valign"
-														{P} rtd = RTD[ " valign=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "valign" ],
 														value = WtValue[ [0] = "top" ]
 													)
 												],
@@ -17309,13 +17309,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17325,8 +17325,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17346,8 +17346,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17360,13 +17360,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17376,8 +17376,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17397,8 +17397,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17418,13 +17418,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17434,8 +17434,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17455,8 +17455,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17469,13 +17469,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17485,8 +17485,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17506,8 +17506,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17527,13 +17527,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17543,8 +17543,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17564,8 +17564,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17578,13 +17578,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17594,8 +17594,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17615,8 +17615,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17636,13 +17636,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17652,8 +17652,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17673,8 +17673,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17687,13 +17687,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17703,8 +17703,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17724,8 +17724,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17745,13 +17745,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17761,8 +17761,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17785,8 +17785,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17799,13 +17799,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17815,8 +17815,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17836,8 +17836,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17857,13 +17857,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17873,8 +17873,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17894,8 +17894,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17908,13 +17908,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17924,8 +17924,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -17945,8 +17945,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -17966,13 +17966,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -17982,8 +17982,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18003,8 +18003,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18017,13 +18017,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -18033,8 +18033,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18054,8 +18054,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18075,13 +18075,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -18091,8 +18091,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18112,8 +18112,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18126,13 +18126,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -18142,8 +18142,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18163,8 +18163,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18184,13 +18184,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -18200,8 +18200,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18221,8 +18221,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18235,13 +18235,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -18251,8 +18251,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18272,8 +18272,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18293,13 +18293,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -18309,8 +18309,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18330,8 +18330,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18344,13 +18344,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "background:#f0f0f0;" ]
 													)
 												],
@@ -18360,8 +18360,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -18381,8 +18381,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "right" ]
 													)
 												],
@@ -18402,13 +18402,13 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "colspan"
-														{P} rtd = RTD[ " colspan=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "colspan" ],
 														value = WtValue[ [0] = "9" ]
 													),
 													[1] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -18531,8 +18531,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "Eurobarometer Languages" ]
 								)
 							],
@@ -18684,8 +18684,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "Many tongues, one family" ]
 								)
 							],
@@ -18873,8 +18873,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "natgeo2006" ]
 								)
 							],
@@ -18892,8 +18892,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "Eurobarometer Languages" ]
 								)
 							],
@@ -19012,8 +19012,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "ekd" ]
 								)
 							],
@@ -19072,8 +19072,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "MLD 2.1" ]
 								)
 							],
@@ -19406,8 +19406,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "MLD 2.1" ]
 								)
 							],
@@ -19418,8 +19418,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "MLD 2.2" ]
 								)
 							],
@@ -19455,8 +19455,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "ekd" ]
 								)
 							],
@@ -19565,8 +19565,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "EUROBAROMETER" ]
 								)
 							],
@@ -19674,8 +19674,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "ED" ]
 								)
 							],
@@ -19809,8 +19809,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "ED" ]
 								)
 							],
@@ -19885,8 +19885,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "ARWU" ]
 								)
 							],
@@ -20007,8 +20007,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "WHOSIS" ]
 								)
 							],
@@ -20109,8 +20109,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "DW1" ]
 								)
 							],
@@ -20121,8 +20121,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "BBC1" ]
 								)
 							],
@@ -20634,8 +20634,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "nobel" ]
 								)
 							],
@@ -20647,13 +20647,13 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "class"
-								{P} rtd = RTD[ " class=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "class" ],
 								value = WtValue[ [0] = "wikitable" ]
 							),
 							[1] = WtXmlAttribute(
-								{P} name = "style"
-								{P} rtd = RTD[ " style=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "style" ],
 								value = WtValue[ [0] = "text-align:right; margin-right:50px;" ]
 							)
 						],
@@ -20669,8 +20669,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -20706,8 +20706,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -20740,8 +20740,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -20774,8 +20774,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -20808,8 +20808,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -20849,8 +20849,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -20884,8 +20884,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -20918,8 +20918,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -20952,8 +20952,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -20987,8 +20987,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "left" ]
 													)
 												],
@@ -21910,13 +21910,13 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
-								{P} name = "class"
-								{P} rtd = RTD[ " class=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "class" ],
 								value = WtValue[ [0] = "wikitable" ]
 							),
 							[1] = WtXmlAttribute(
-								{P} name = "style"
-								{P} rtd = RTD[ " style=\"" <o> "\"" ]
+								{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+								name = WtName[ [0] = "style" ],
 								value = WtValue[ [0] = "text-align:right; margin-right:50px;" ]
 							)
 						],
@@ -21932,8 +21932,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -21977,8 +21977,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -22025,8 +22025,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -22070,8 +22070,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -22115,8 +22115,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -22160,8 +22160,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "align"
-														{P} rtd = RTD[ " align=" <o> "" ]
+														{P} rtd = RTD[ " " <o> "=" <o> "" ]
+														name = WtName[ [0] = "align" ],
 														value = WtValue[ [0] = "center" ]
 													)
 												],
@@ -22209,8 +22209,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:#dcdcdc;" ]
 													)
 												],
@@ -22244,8 +22244,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:#d3d3d3;" ]
 													)
 												],
@@ -22278,8 +22278,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:silver;" ]
 													)
 												],
@@ -22312,8 +22312,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:darkGrey;" ]
 													)
 												],
@@ -22347,8 +22347,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:gray;" ]
 													)
 												],
@@ -22381,8 +22381,8 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "||" <o> "|" <o> "" ]
 												xmlAttributes = WtXmlAttributes[
 													[0] = WtXmlAttribute(
-														{P} name = "style"
-														{P} rtd = RTD[ " style=\"" <o> "\"" ]
+														{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+														name = WtName[ [0] = "style" ],
 														value = WtValue[ [0] = "text-align:left; background:dimGrey;" ]
 													)
 												],
@@ -22652,8 +22652,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "sports" ]
 								)
 							],
@@ -22692,8 +22692,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "sports" ]
 								)
 							],
@@ -22854,8 +22854,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=\"" <o> "\"" ]
+									{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "sports" ]
 								)
 							],
@@ -23634,8 +23634,8 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 							xmlAttributes = WtXmlAttributes[
 								[0] = WtXmlAttribute(
-									{P} name = "name"
-									{P} rtd = RTD[ " name=" <o> "" ]
+									{P} rtd = RTD[ " " <o> "=" <o> "" ]
+									name = WtName[ [0] = "name" ],
 									value = WtValue[ [0] = "gayscity" ]
 								)
 							],

@@ -141,7 +141,7 @@ public class WtPrettyPrinter
 	public void visit(WtXmlAttribute n)
 	{
 		p.print(' ');
-		p.print(n.getName());
+		iterate(n.getName());
 		if (n.hasValue())
 		{
 			p.print("=\"");

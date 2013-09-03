@@ -15,8 +15,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "!" <o> " |" <o> "" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "S"
-										{P} rtd = RTD[ " S=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "S" ],
 										value = WtValue[]
 									)
 								],
@@ -26,8 +26,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "||" <o> " |" <o> "" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "S"
-										{P} rtd = RTD[ " S=\"" <o> "\"" ]
+										{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+										name = WtName[ [0] = "S" ],
 										value = WtValue[]
 									)
 								],

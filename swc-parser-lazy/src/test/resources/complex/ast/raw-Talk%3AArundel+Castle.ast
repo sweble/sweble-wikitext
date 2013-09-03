@@ -498,13 +498,13 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 					xmlAttributes = WtXmlAttributes[
 						[0] = WtXmlAttribute(
-							{P} name = "style"
-							{P} rtd = RTD[ " style=\"" <o> "\"" ]
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "style" ],
 							value = WtValue[ [0] = "font-size: smaller;" ]
 						),
 						[1] = WtXmlAttribute(
-							{P} name = "class"
-							{P} rtd = RTD[ " class=\"" <o> "\"" ]
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "class" ],
 							value = WtValue[ [0] = "autosigned" ]
 						)
 					],
@@ -936,8 +936,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "color"
-										{P} rtd = RTD[ " color='" <o> "'" ]
+										{P} rtd = RTD[ " " <o> "='" <o> "'" ]
+										name = WtName[ [0] = "color" ],
 										value = WtValue[ [0] = "red" ]
 									)
 								],
@@ -956,8 +956,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "color"
-										{P} rtd = RTD[ " color='" <o> "'" ]
+										{P} rtd = RTD[ " " <o> "='" <o> "'" ]
+										name = WtName[ [0] = "color" ],
 										value = WtValue[ [0] = "red" ]
 									)
 								],
@@ -980,8 +980,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} name = "color"
-										{P} rtd = RTD[ " color='" <o> "'" ]
+										{P} rtd = RTD[ " " <o> "='" <o> "'" ]
+										name = WtName[ [0] = "color" ],
 										value = WtValue[ [0] = "red" ]
 									)
 								],

@@ -155,8 +155,8 @@ WtParsedWikitextPage(
 		{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 		xmlAttributes = WtXmlAttributes[
 			[0] = WtXmlAttribute(
-				{P} name = "class"
-				{P} rtd = RTD[ " class=\"" <o> "\"" ]
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[ [0] = "class" ],
 				value = WtValue[ [0] = "wikitable" ]
 			)
 		],

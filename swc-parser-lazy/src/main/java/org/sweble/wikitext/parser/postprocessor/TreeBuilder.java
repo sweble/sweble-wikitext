@@ -525,7 +525,12 @@ public class TreeBuilder
 				continue;
 			
 			WtXmlAttribute a = (WtXmlAttribute) n;
-			m0.put(a.getName(), a.getValue());
+			
+			// TODO: This cannot handle unresolved attribute names:
+			if (!a.getName().isResolved())
+				return false;
+			
+			m0.put(a.getName().getAsString(), a.getValue());
 		}
 		
 		for (WtNode n : a1)
@@ -534,7 +539,10 @@ public class TreeBuilder
 				continue;
 			
 			WtXmlAttribute a = (WtXmlAttribute) n;
-			WtNodeList v0 = m0.remove(a.getName());
+			if (!a.getName().isResolved())
+				return false;
+			
+			WtNodeList v0 = m0.remove(a.getName().getAsString());
 			WtNodeList v1 = a.getValue();
 			
 			if (v0 == v1)
