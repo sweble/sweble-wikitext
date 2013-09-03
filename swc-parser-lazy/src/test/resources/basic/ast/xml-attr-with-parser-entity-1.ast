@@ -1,0 +1,147 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name" ],
+				args = WtTemplateArguments[]
+			),
+		[1] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name" ],
+				args = WtTemplateArguments[]
+			),
+		[2] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name" ],
+				args = WtTemplateArguments[]
+			),
+		[3] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name" ],
+				args = WtTemplateArguments[]
+			),
+		[4] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name 2" ],
+				args = WtTemplateArguments[]
+			),
+		[5] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name3" ],
+				args = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[],
+	[1] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "='" <o> "'" ]
+				name = WtName[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+						name = WtName[ [0] = "name" ],
+						args = WtTemplateArguments[]
+					)
+				],
+				value = WtValue[ [0] = "value" ]
+			)
+		],
+		body = WtBody[]
+	),
+	[2] = "\n",
+	[3] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+						name = WtName[ [0] = "name" ],
+						args = WtTemplateArguments[]
+					)
+				],
+				value = WtValue[ [0] = "value" ]
+			)
+		],
+		body = WtBody[]
+	),
+	[4] = "\n",
+	[5] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=" <o> "" ]
+				name = WtName[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+						name = WtName[ [0] = "name" ],
+						args = WtTemplateArguments[]
+					)
+				],
+				value = WtValue[ [0] = "value" ]
+			)
+		],
+		body = WtBody[]
+	),
+	[6] = "\n\n",
+	[7] = WtParagraph[],
+	[8] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "='" <o> "'" ]
+				name = WtName[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+						name = WtName[ [0] = "name" ],
+						args = WtTemplateArguments[]
+					)
+				],
+				value = WtValue[ [0] = "value" ]
+			),
+			[1] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+						name = WtName[ [0] = "name 2" ],
+						args = WtTemplateArguments[]
+					)
+				],
+				value = WtValue[ [0] = "value 2" ]
+			),
+			[2] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=" <o> "" ]
+				name = WtName[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+						name = WtName[ [0] = "name3" ],
+						args = WtTemplateArguments[]
+					)
+				],
+				value = WtValue[ [0] = "value3" ]
+			)
+		],
+		body = WtBody[]
+	),
+	[9] = "\n"
+)

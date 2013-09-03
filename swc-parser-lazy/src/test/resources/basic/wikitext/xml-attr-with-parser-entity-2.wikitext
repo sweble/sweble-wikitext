@@ -1,0 +1,3 @@
+<div {{name}}={{value}}></div>
+
+<div {{name}}={{value}} {{name2}}={{value2}}></div>
