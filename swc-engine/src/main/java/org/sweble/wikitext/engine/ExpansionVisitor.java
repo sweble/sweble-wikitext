@@ -1138,7 +1138,7 @@ public final class ExpansionVisitor
 	
 	/**
 	 * Converts the list of attributes into a map, ignoring any non-attribute
-	 * nodes.
+	 * nodes and also ignoring attributes with unresolved names.
 	 */
 	private HashMap<String, WtNodeList> prepareTagExtensionAttributes(
 			WtXmlAttributes attrs)
@@ -1150,7 +1150,8 @@ public final class ExpansionVisitor
 			if (attr.isNodeType(WtNode.NT_XML_ATTRIBUTE))
 			{
 				WtXmlAttribute a = (WtXmlAttribute) attr;
-				attrMap.put(a.getName(), nf.toList(a.getValue()));
+				if (a.getName().isResolved())
+					attrMap.put(a.getName().getAsString(), nf.toList(a.getValue()));
 			}
 		}
 		

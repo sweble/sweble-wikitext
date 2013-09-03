@@ -92,11 +92,11 @@ public final class EngineRtData
 			WtXmlAttribute a = (WtXmlAttribute) attr;
 			if (a.hasValue())
 			{
-				attr.setRtd(" ", a.getName(), "=\"", RtData.SEP, "\"");
+				attr.setRtd(" ", RtData.SEP, "=\"", RtData.SEP, "\"");
 			}
 			else
 			{
-				attr.setRtd(" ", a.getName());
+				attr.setRtd(" ");
 			}
 		}
 	}

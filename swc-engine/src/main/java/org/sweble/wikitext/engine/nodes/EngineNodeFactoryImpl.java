@@ -74,7 +74,7 @@ public final class EngineNodeFactoryImpl
 		return new EngSoftErrorNode(
 				"strong",
 				attrs(list(attr(
-						"class",
+						name(list(text("class"))),
 						value(list(text("error")))))),
 				body(list(content)));
 	}

@@ -144,7 +144,7 @@ public class CorePfnFunctionsMiscellaneous
 				WtNodeList argValueList = nf().list(nf().text(argValue));
 				
 				attrs.add(nf().attr(
-						argName,
+						nf().name(nf().list(nf().text(argName))),
 						nf().value(argValueList)));
 			}
 			

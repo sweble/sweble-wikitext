@@ -397,7 +397,8 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtXmlAttribute n)
 	{
-		return new AttributeImpl(n.getName(), stringify(n.getValue()));
+		// TODO: getAsString can fail with Exception!
+		return new AttributeImpl(n.getName().getAsString(), stringify(n.getValue()));
 	}
 	
 	@Override

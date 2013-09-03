@@ -1007,13 +1007,20 @@ public class HtmlRenderer
 	
 	public void visit(WtXmlAttribute n)
 	{
-		if (n.hasValue())
+		if (!n.getName().isResolved())
 		{
-			pt(" %s=\"%~\"", n.getName(), cleanAttribValue(n.getValue()));
+			logger.warn("Unresolved attribute name: " + RtDataPrinter.print(n));
 		}
 		else
 		{
-			pf(" %s=\"%<s\"", n.getName());
+			if (n.hasValue())
+			{
+				pt(" %s=\"%~\"", n.getName().getAsString(), cleanAttribValue(n.getValue()));
+			}
+			else
+			{
+				pf(" %s=\"%<s\"", n.getName().getAsString());
+			}
 		}
 	}
 	
@@ -1025,7 +1032,19 @@ public class HtmlRenderer
 	@Override
 	public void visit(WtXmlAttributes n)
 	{
-		iterate(n);
+		for (WtNode n1 : n)
+		{
+			switch (n1.getNodeType())
+			{
+				case WtNode.NT_XML_ATTRIBUTE:
+				case WtNode.NT_XML_ATTRIBUTE_GARBAGE:
+					dispatch(n1);
+					break;
+				default:
+					logger.warn("Non-attribute node in attributes collection: " + RtDataPrinter.print(n));
+					break;
+			}
+		}
 	}
 	
 	public void visit(WtXmlCharRef n)
@@ -1385,7 +1404,10 @@ public class HtmlRenderer
 			if (a instanceof WtXmlAttribute)
 			{
 				WtXmlAttribute attr = (WtXmlAttribute) a;
-				String name = attr.getName().toLowerCase();
+				if (!attr.getName().isResolved())
+					continue;
+				
+				String name = attr.getName().getAsString().toLowerCase();
 				if (name.equals("style"))
 				{
 					style = attr;
@@ -1414,7 +1436,10 @@ public class HtmlRenderer
 		
 		for (WtXmlAttribute a : clean)
 		{
-			String name = a.getName().toLowerCase();
+			if (!a.getName().isResolved())
+				continue;
+			
+			String name = a.getName().getAsString().toLowerCase();
 			if (name.equals("align"))
 			{
 				newStyle = String.format(
@@ -1431,7 +1456,7 @@ public class HtmlRenderer
 		}
 		
 		WtXmlAttribute newStyleAttrib = nf.attr(
-				"style",
+				nf.name(nf.list(nf.text("style"))),
 				nf.value(nf.list(nf.text(newStyle))));
 		
 		WtNodeList newAttribs = nf.attrs(nf.list());
