@@ -33,6 +33,7 @@ import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ParserInterface;
 import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.TestNameAnnotation;
 
 @RunWith(value = NamedParametrized.class)
 public class ComplexIntegrationTest
@@ -83,6 +84,7 @@ public class ComplexIntegrationTest
 	// =========================================================================
 	
 	@Test
+	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_AST_SUB_DIR)
 	public void testAstAfterPostprocessingMatchesReferenceAst() throws Exception
 	{
 		@SuppressWarnings("unchecked")
@@ -97,6 +99,7 @@ public class ComplexIntegrationTest
 	}
 	
 	@Test
+	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PP_SUB_DIR)
 	public void testPrettyPrintedWikitextMatchesReference() throws Exception
 	{
 		@SuppressWarnings("unchecked")
@@ -111,6 +114,7 @@ public class ComplexIntegrationTest
 	}
 	
 	@Test
+	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PPAST_SUB_DIR)
 	public void testParsedPrettyPrintedWikitextMatchesOriginal() throws Exception
 	{
 		WtPrettyPrintAstTest.test(

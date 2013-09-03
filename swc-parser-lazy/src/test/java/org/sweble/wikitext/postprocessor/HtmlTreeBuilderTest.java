@@ -34,6 +34,7 @@ import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ParserInterface;
 import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.TestNameAnnotation;
 
 @RunWith(value = NamedParametrized.class)
 public class HtmlTreeBuilderTest
@@ -82,6 +83,7 @@ public class HtmlTreeBuilderTest
 	// =========================================================================
 	
 	@Test
+	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_POSTP_AST_SUB_DIR)
 	public void testAstAfterPostprocessingMatchesReference() throws Exception
 	{
 		@SuppressWarnings("unchecked")
@@ -96,6 +98,7 @@ public class HtmlTreeBuilderTest
 	}
 	
 	@Test
+	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PARSED_AST_SUB_DIR)
 	public void testAstAfterParsingMatchesReference() throws Exception
 	{
 		@SuppressWarnings("unchecked")
@@ -110,6 +113,7 @@ public class HtmlTreeBuilderTest
 	}
 	
 	@Test
+	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PP_AST_SUB_DIR)
 	public void testRestoredWikitextAfterPostprocessingMatchesOriginal() throws Exception
 	{
 		@SuppressWarnings("unchecked")
@@ -124,6 +128,8 @@ public class HtmlTreeBuilderTest
 				getResources(),
 				visitors);
 	}
+
+	// =========================================================================
 	
 	public final class PostProcess
 			extends
