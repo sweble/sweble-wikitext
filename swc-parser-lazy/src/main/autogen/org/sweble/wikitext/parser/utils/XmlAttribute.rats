@@ -105,29 +105,40 @@ private inline void GarbageStringStopper =
 ;
 
 private WtXmlAttribute ValidXmlAttribute =
-    ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? ['] value:ValueSqStar ['] &AttrEnd
+    ws0:XmlAttrWs? name:XmlNameOrTemplate ws1:XmlAttrWs? '=' ws2:XmlAttrWs? ['] value:ValueSqStar ['] &AttrEnd
     {
       yyValue = setRtd(
         nf.attr(name, value),
-        ws0, name, ws1, '=', ws2, '\'', SEP, '\'');
+        ws0, SEP, ws1, '=', ws2, '\'', SEP, '\'');
     }
-  / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? '"' value:ValueDqStar '"' &AttrEnd
+  / ws0:XmlAttrWs? name:XmlNameOrTemplate ws1:XmlAttrWs? '=' ws2:XmlAttrWs? '"' value:ValueDqStar '"' &AttrEnd
     {
       yyValue = setRtd(
         nf.attr(name, value),
-        ws0, name, ws1, '=', ws2, '"', SEP, '"');
+        ws0, SEP, ws1, '=', ws2, '"', SEP, '"');
     }
-  / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' value:ValueNqStar &AttrEnd
+  / ws0:XmlAttrWs? name:XmlNameOrTemplate ws1:XmlAttrWs? '=' value:ValueNqStar &AttrEnd
     {
       yyValue = setRtd(
         nf.attr(name, value),
-        ws0, name, ws1, '=', SEP);
+        ws0, SEP, ws1, '=', SEP);
     }
-  / ws0:XmlAttrWs? name:XmlName &AttrEnd
+  / ws0:XmlAttrWs? name:XmlNameOrTemplate &AttrEnd
     {
       yyValue = setRtd(
         nf.attr(name),
-        ws0, name, SEP);
+        ws0, SEP, SEP);
+    }
+;
+
+private inline WtName XmlNameOrTemplate =
+    xmlName:XmlName
+    {
+      yyValue = nf.name(nf.list(nf.text(xmlName)));
+    }
+  / &'\uE000' entity:ParserEntityTemplateOrParameter
+    {
+      yyValue = nf.name(nf.list(entity));
     }
 ;
 
@@ -155,7 +166,7 @@ private inline WtNode ValueSqChoice =
       yyValue = nf.text(string);
     }
   / &'&' XmlReference
-  / &'\uE000' WtParserEntity
+  / &'\uE000' ParserEntity
 ;
 
 private transient String ValueSqString =
@@ -180,7 +191,7 @@ private inline WtNode ValueDqChoice =
       yyValue = nf.text(string);
     }
   / &'&' XmlReference
-  / &'\uE000' WtParserEntity
+  / &'\uE000' ParserEntity
 ;
 
 private transient String ValueDqString =
@@ -205,7 +216,7 @@ private inline WtNode ValueNqChoice =
       yyValue = nf.text(string);
     }
   / &'&' XmlReference
-  / &'\uE000' WtParserEntity
+  / &'\uE000' ParserEntity
 ;
 
 private transient String ValueNqString =

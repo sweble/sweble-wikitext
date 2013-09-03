@@ -441,7 +441,7 @@ private inline WtNode InlineContentAtom =
   / &"<"      XmlElement
   / &"&"      XmlReference
   / &"-{"     LanguageConversionTag
-  / &"\uE000" WtParserEntity
+  / &"\uE000" ParserEntity
 ;
 
 private inline void InlineContentStopper =

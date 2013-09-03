@@ -65,7 +65,7 @@ body
 
 // -- Entity -------------------------------------------------------------------
 
-WtNode WtParserEntity =
+WtNode ParserEntity =
   '\uE000' id:DecimalNumeral '\uE001'
   {
     yyValue = getEntity(Integer.parseInt(id));
@@ -73,11 +73,11 @@ WtNode WtParserEntity =
 ;
 
 inline WtNode ParserEntityXmlCommentOrIgnore =
-  entity:WtParserEntity &{ isXmlCommentOrIgnored(entity) } { yyValue = entity; }
+  entity:ParserEntity &{ isXmlCommentOrIgnored(entity) } { yyValue = entity; }
 ;
 
 inline WtNode ParserEntityTemplateOrParameter =
-  entity:WtParserEntity &{ isTemplateOrParameter(entity) } { yyValue = entity; }
+  entity:ParserEntity &{ isTemplateOrParameter(entity) } { yyValue = entity; }
 ;
 
 

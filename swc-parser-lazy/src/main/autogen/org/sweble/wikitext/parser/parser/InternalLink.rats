@@ -86,7 +86,7 @@
  *     - Ticks
  *     - XmlReference
  *     - XmlElement
- *     - WtParserEntity
+ *     - ParserEntity
  *
  *   The LinkTitleContent cannot contain:
  *     - PageSwitch
