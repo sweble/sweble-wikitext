@@ -144,9 +144,21 @@ public class WtPrettyPrinter
 		iterate(n.getName());
 		if (n.hasValue())
 		{
-			p.print("=\"");
+			boolean needQuotes = true;
+			if (n.getValue().size() == 1)
+			{
+				switch (n.getValue().get(0).getNodeType())
+				{
+					case WtNode.NT_TEMPLATE:
+					case WtNode.NT_TEMPLATE_PARAMETER:
+						needQuotes = false;
+				}
+			}
+			
+			p.print(needQuotes ? "=\"" : "=");
 			iterate(n.getValue());
-			p.print('"');
+			if (needQuotes)
+				p.print('"');
 		}
 	}
 	
@@ -745,7 +757,22 @@ public class WtPrettyPrinter
 	
 	public void visit(WtXmlAttributes n)
 	{
-		iterate(n);
+		for (WtNode a : n)
+		{
+			switch (a.getNodeType())
+			{
+				case WtNode.NT_XML_ATTRIBUTE:
+				case WtNode.NT_XML_ATTRIBUTE_GARBAGE:
+					break;
+				default:
+					// Only attributes and garbage know that it has to leave a 
+					// space in front. We have to fix this for all other 
+					// elements (e.g. templates).
+					p.print(' ');
+					break;
+			}
+			dispatch(a);
+		}
 	}
 	
 	public void visit(WtLctRules n)

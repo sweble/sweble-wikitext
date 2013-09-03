@@ -104,7 +104,7 @@ private inline void GarbageStringStopper =
   / XmlAttrWs ValidXmlAttribute
 ;
 
-private WtXmlAttribute ValidXmlAttribute =
+private WtNode ValidXmlAttribute =
     ws0:XmlAttrWs? name:XmlNameOrTemplate ws1:XmlAttrWs? '=' ws2:XmlAttrWs? ['] value:ValueSqStar ['] &AttrEnd
     {
       yyValue = setRtd(
@@ -123,11 +123,18 @@ private WtXmlAttribute ValidXmlAttribute =
         nf.attr(name, value),
         ws0, SEP, ws1, '=', SEP);
     }
-  / ws0:XmlAttrWs? name:XmlNameOrTemplate &AttrEnd
+  / ws0:XmlAttrWs? name:XmlName &AttrEnd
     {
       yyValue = setRtd(
-        nf.attr(name),
+        nf.attr(nf.name(nf.list(nf.text(name)))),
         ws0, SEP, SEP);
+    }
+  / ws0:XmlAttrWs? &'\uE000' entity:ParserEntityTemplateOrParameter &AttrEnd
+    {
+      WtRtData rtd = entity.getRtd();
+      if (isGatherRtData() && entity.getRtd() != null)
+        rtd.setField(0, ws0, rtd.getField(0));
+      yyValue = entity;
     }
 ;
 
