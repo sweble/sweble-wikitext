@@ -131,9 +131,7 @@ private WtNode ValidXmlAttribute =
     }
   / ws0:XmlAttrWs? &'\uE000' entity:ParserEntityTmplParamCommentIgnore &AttrEnd
     {
-      WtRtData rtd = entity.getRtd();
-      if (isGatherRtData() && entity.getRtd() != null)
-        rtd.setField(0, ws0, rtd.getField(0));
+      prependRtd(entity, ws0);
       yyValue = entity;
     }
 ;

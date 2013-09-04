@@ -53,7 +53,45 @@ body
   private <T extends WtNode> T prependRtd(T node, String glue)
   {
     if (isGatherRtData())
-      node.getRtd().prepend(glue);
+    {
+      WtRtData rtd = node.getRtd();
+      if (rtd == null)
+      {
+        node.setRtd();
+        rtd = node.getRtd();
+      }
+      rtd.prepend(glue);
+    }
+    return node;
+  }
+
+  private <T extends WtNode> T prependRtd(T node, Object... glue)
+  {
+    if (isGatherRtData())
+    {
+      WtRtData rtd = node.getRtd();
+      if (rtd == null)
+      {
+        node.setRtd();
+        rtd = node.getRtd();
+      }
+      rtd.prepend(glue);
+    }
+    return node;
+  }
+
+  private <T extends WtNode> T appendRtd(T node, Object... glue)
+  {
+    if (isGatherRtData())
+    {
+      WtRtData rtd = node.getRtd();
+      if (rtd == null)
+      {
+        node.setRtd();
+        rtd = node.getRtd();
+      }
+      rtd.append(glue);
+    }
     return node;
   }
 }
