@@ -1,0 +1,70 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "X" ],
+				args = WtTemplateArguments[
+					[0] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "Y" ]
+					),
+					[1] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "Z" ]
+					)
+				]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " A",
+			[1] = WtUnorderedList(
+				{P} rtd = RTD[ "\n" <o> "" ]
+				[0] = WtListItem(
+					{P} rtd = RTD[ "**" <o> "" ]
+					[0] = "B",
+					[1] = WtUnorderedList(
+						{P} rtd = RTD[ "\n" <o> "" ]
+						[0] = WtListItem(
+							{P} rtd = RTD[ "***" <o> "\n" ]
+							[0] = " C"
+						)
+					)
+				)
+			)
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "X" ],
+				args = WtTemplateArguments[
+					[0] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "Y" ]
+					),
+					[1] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "Z" ]
+					)
+				]
+			),
+			[1] = WtUnorderedList(
+				{P} rtd = RTD[ "\n" <o> "" ]
+				[0] = WtListItem(
+					{P} rtd = RTD[ "**" <o> "" ]
+					[0] = "D"
+				)
+			)
+		)
+	],
+	[1] = "\n"
+)

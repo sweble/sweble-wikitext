@@ -135,13 +135,13 @@ public class WtPrettyPrinter
 	
 	public void visit(WtTableImplicitTableBody n)
 	{
-		iterate(n.getBody());
+		dispatch(n.getBody());
 	}
 	
 	public void visit(WtXmlAttribute n)
 	{
 		p.print(' ');
-		iterate(n.getName());
+		dispatch(n.getName());
 		if (n.hasValue())
 		{
 			boolean needQuotes = true;
@@ -156,7 +156,7 @@ public class WtPrettyPrinter
 			}
 			
 			p.print(needQuotes ? "=\"" : "=");
-			iterate(n.getValue());
+			dispatch(n.getValue());
 			if (needQuotes)
 				p.print('"');
 		}
@@ -397,7 +397,7 @@ public class WtPrettyPrinter
 		scope.push(n);
 		p.print("[[");
 		dispatch(n.getTarget());
-		iterate(n.getOptions());
+		dispatch(n.getOptions());
 		if (n.hasTitle())
 			dispatch(n.getTitle());
 		p.print("]]");
@@ -596,7 +596,25 @@ public class WtPrettyPrinter
 	
 	public void visit(WtLinkOptions n)
 	{
-		iterate(n);
+		for (WtNode a : n)
+		{
+			switch (a.getNodeType())
+			{
+				case WtNode.NT_LINK_OPTION_ALT_TEXT:
+				case WtNode.NT_LINK_OPTION_GARBAGE:
+				case WtNode.NT_LINK_OPTION_KEYWORD:
+				case WtNode.NT_LINK_OPTION_LINK_TARGET:
+				case WtNode.NT_LINK_OPTION_RESIZE:
+					break;
+				default:
+					// Only link options and garbage know that it has to leave a 
+					// pipe in front. We have to fix this for all other 
+					// elements (e.g. templates).
+					p.print('|');
+					break;
+			}
+			dispatch(a);
+		}
 	}
 	
 	public void visit(WtLinkTitle n)

@@ -1,0 +1,38 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "|{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "Y" ],
+				args = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtImageLink(
+			{P} alt = -
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} link = ImageLinkTarget[ DEFAULT: --- ]
+			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "File:X.ogg" ],
+			options = WtLinkOptions[
+				[0] = WtTemplate(
+					{P} precededByNewline = false
+					{P} rtd = RTD[ "|{{" <o> "" <o> "}}" ]
+					name = WtName[ [0] = "Y" ],
+					args = WtTemplateArguments[]
+				)
+			],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Z"
+			)
+		)
+	]
+)

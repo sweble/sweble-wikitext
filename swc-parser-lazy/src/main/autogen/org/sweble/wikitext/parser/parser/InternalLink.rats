@@ -97,6 +97,7 @@ module org.sweble.wikitext.parser.parser.InternalLink;
 
 import org.sweble.wikitext.parser.utils.Numbers;
 import org.sweble.wikitext.parser.utils.ParserCharSequence;
+import org.sweble.wikitext.parser.utils.ParserEntity;
 import org.sweble.wikitext.parser.utils.Warnings;
 import org.sweble.wikitext.parser.utils.XmlReference;
 
@@ -336,10 +337,11 @@ private transient WtLinkOptions LinkOptionStar =
 ;
 
 private inline WtNode LinkOptionChoice =
-    LinkOptionResize    &( '|' / "]]" )
-  / LinkOptionKeyword   &( '|' / "]]" )
-  / LinkOptionNameValue
-  / LinkOptionGarbage   &'|'
+    LinkOptionResize     &( '|' / "]]" )
+  / LinkOptionKeyword    &( '|' / "]]" )
+  / LinkOptionNameValue  &( '|' / "]]" )
+  / LinkOptionUnresolved &( '|' / "]]" )
+  / LinkOptionGarbage    &( '|' )
 ;
 
 
@@ -457,6 +459,20 @@ private transient stateful WtNode LinkOptionNameValue =
 private inline WtLinkTarget LinkTargetOverride =
     Url
   / LinkTarget
+;
+
+
+
+
+// -- Link Option Unresolved Template ------------------------------------------
+
+private inline WtNode LinkOptionUnresolved = 
+  rt0:pExtWsStar entity:ParserEntityTmplParamCommentIgnore rt1:pExtWsStar
+  {
+    prependRtd(entity, '|', rt0);
+    appendRtd(entity, rt1);
+    yyValue = entity;
+  }
 ;
 
 

@@ -510,7 +510,9 @@ public class WikitextNodeFactoryImpl
 					b.addOption((WtLinkOptionResize) option);
 					break;
 				default:
-					throw new InternalError("Is that an option?");
+					// Unresolved templates and the like
+					// We cannot translate those...
+					//throw new InternalError("Is that an option?");
 			}
 		}
 		
