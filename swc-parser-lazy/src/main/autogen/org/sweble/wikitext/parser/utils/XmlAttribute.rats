@@ -129,7 +129,7 @@ private WtNode ValidXmlAttribute =
         nf.attr(nf.name(nf.list(nf.text(name)))),
         ws0, SEP, SEP);
     }
-  / ws0:XmlAttrWs? &'\uE000' entity:ParserEntityTemplateOrParameter &AttrEnd
+  / ws0:XmlAttrWs? &'\uE000' entity:ParserEntityTmplParamCommentIgnore &AttrEnd
     {
       WtRtData rtd = entity.getRtd();
       if (isGatherRtData() && entity.getRtd() != null)

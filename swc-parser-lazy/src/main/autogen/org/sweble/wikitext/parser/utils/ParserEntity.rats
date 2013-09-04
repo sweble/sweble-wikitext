@@ -58,6 +58,20 @@ body
         return false;
     }
   }
+
+  private boolean isTmplParamCommentIgnore(WtNode n)
+  {
+    switch (n.getNodeType())
+    {
+      case WtNode.NT_TEMPLATE:
+      case WtNode.NT_TEMPLATE_PARAMETER:
+      case WtNode.NT_IGNORED:
+      case WtNode.NT_XML_COMMENT:
+        return true;
+      default:
+        return false;
+    }
+  }
 }
 
 
@@ -78,6 +92,10 @@ inline WtNode ParserEntityXmlCommentOrIgnore =
 
 inline WtNode ParserEntityTemplateOrParameter =
   entity:ParserEntity &{ isTemplateOrParameter(entity) } { yyValue = entity; }
+;
+
+inline WtNode ParserEntityTmplParamCommentIgnore =
+  entity:ParserEntity &{ isTmplParamCommentIgnore(entity) } { yyValue = entity; }
 ;
 
 
