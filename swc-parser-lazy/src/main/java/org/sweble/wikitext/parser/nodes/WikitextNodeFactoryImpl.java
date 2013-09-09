@@ -1007,7 +1007,7 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
-	public WtXmlAttributeGarbage attrGarbage(String content)
+	public WtXmlAttributeGarbage attrGarbage(WtNodeList content)
 	{
 		return new WtXmlAttributeGarbage(content);
 	}

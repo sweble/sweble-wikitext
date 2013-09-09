@@ -89,10 +89,18 @@ private inline WtNode XmlTailAttributeChoice =
 ;
 
 private inline WtXmlAttributeGarbage XmlAttributeGarbage =
-  garbage:GarbageString
+  garbage:XmlAttributeGarbageChoice+
   {
-    yyValue = nf.attrGarbage(garbage);
+    yyValue = nf.attrGarbage(nf.list(garbage));
   }
+;
+
+private inline WtNode XmlAttributeGarbageChoice =
+    !GarbageStringStopper ParserEntity
+  / str:GarbageString
+    {
+      yyValue = nf.text(str);
+    }
 ;
 
 private transient String GarbageString =

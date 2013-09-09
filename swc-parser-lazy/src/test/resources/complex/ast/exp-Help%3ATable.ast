@@ -2317,7 +2317,7 @@ WtParsedWikitextPage(
 												name = WtName[ [0] = "modifier" ],
 												value = -
 											),
-											[2] = WtXmlAttributeGarbage(" (not displayed)")
+											[2] = WtXmlAttributeGarbage[ [0] = " (not displayed)" ]
 										],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = "These all |(including the pipes)|go into |the first cell" ],
@@ -4538,7 +4538,7 @@ WtParsedWikitextPage(
 									[5] = WtTable(
 										{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 										xmlAttributes = WtXmlAttributes[
-											[0] = WtXmlAttributeGarbage("\"class=wikitable sortable\""),
+											[0] = WtXmlAttributeGarbage[ [0] = "\"class=wikitable sortable\"" ],
 											[1] = WtXmlAttribute(
 												{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
 												name = WtName[ [0] = "border" ],
@@ -4709,7 +4709,7 @@ WtParsedWikitextPage(
 									[9] = WtTable(
 										{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 										xmlAttributes = WtXmlAttributes[
-											[0] = WtXmlAttributeGarbage("\"class=wikitable sortable\""),
+											[0] = WtXmlAttributeGarbage[ [0] = "\"class=wikitable sortable\"" ],
 											[1] = WtXmlAttribute(
 												{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
 												name = WtName[ [0] = "border" ],

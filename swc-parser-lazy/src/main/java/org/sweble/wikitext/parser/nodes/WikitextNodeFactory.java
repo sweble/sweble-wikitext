@@ -277,7 +277,7 @@ public interface WikitextNodeFactory
 	
 	WtTagExtensionBody noTagExtBody();
 	
-	WtXmlAttributeGarbage attrGarbage(String content);
+	WtXmlAttributeGarbage attrGarbage(WtNodeList content);
 	
 	WtXmlComment comment(String content);
 	

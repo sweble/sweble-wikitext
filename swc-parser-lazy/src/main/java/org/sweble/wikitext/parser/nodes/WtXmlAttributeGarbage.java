@@ -17,11 +17,11 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.Uninitialized;
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
 
 public class WtXmlAttributeGarbage
 		extends
-			WtStringNodeImpl
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,10 +32,9 @@ public class WtXmlAttributeGarbage
 	 */
 	protected WtXmlAttributeGarbage()
 	{
-		super(Uninitialized.X);
 	}
 	
-	protected WtXmlAttributeGarbage(String content)
+	protected WtXmlAttributeGarbage(WtNodeList content)
 	{
 		super(content);
 	}

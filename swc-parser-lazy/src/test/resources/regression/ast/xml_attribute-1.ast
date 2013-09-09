@@ -15,7 +15,7 @@ WtParsedWikitextPage(
 					[1] = "x"
 				]
 			),
-			[1] = WtXmlAttributeGarbage(" x&x")
+			[1] = WtXmlAttributeGarbage[ [0] = " x&x" ]
 		],
 		body = -
 	)
