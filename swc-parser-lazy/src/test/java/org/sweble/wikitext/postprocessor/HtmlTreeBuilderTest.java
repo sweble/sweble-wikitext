@@ -22,24 +22,22 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.ParserIntegrationTestBase;
 import org.sweble.wikitext.parser.WikitextPostprocessor;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.utils.NonPostproParser;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
-import org.sweble.wikitext.parser.utils.WtPrettyPrintWikitextTest;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ParserInterface;
-import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
 import de.fau.cs.osr.utils.NamedParametrized;
 import de.fau.cs.osr.utils.TestNameAnnotation;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrized.class)
 public class HtmlTreeBuilderTest
 		extends
-			IntegrationTestBase<WtNode>
+			ParserIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
@@ -56,28 +54,23 @@ public class HtmlTreeBuilderTest
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return IntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, true);
+		TestResourcesFixture resources = getTestResourcesFixture();
+		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
 	
 	// =========================================================================
 	
 	private final File inputFile;
 	
-	private ParserConfig config;
-	
 	// =========================================================================
 	
-	public HtmlTreeBuilderTest(String title, File inputFile)
+	public HtmlTreeBuilderTest(
+			String title,
+			TestResourcesFixture resources,
+			File inputFile)
 	{
+		super(resources, new NonPostproParser());
 		this.inputFile = inputFile;
-	}
-	
-	@Override
-	public ParserInterface<WtNode> instantiateParser()
-	{
-		NonPostproParser parser = new NonPostproParser();
-		config = parser.getParserConfig();
-		return parser;
 	}
 	
 	// =========================================================================
@@ -101,12 +94,8 @@ public class HtmlTreeBuilderTest
 	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PARSED_AST_SUB_DIR)
 	public void testAstAfterParsingMatchesReference() throws Exception
 	{
-		@SuppressWarnings("unchecked")
-		AstVisitor<WtNode>[] visitors = new AstVisitor[] {};
-		
 		parsePrintAndCompare(
 				inputFile,
-				visitors,
 				INPUT_SUB_DIR,
 				EXPECTED_PARSED_AST_SUB_DIR,
 				new TypedWtAstPrinter());
@@ -119,16 +108,13 @@ public class HtmlTreeBuilderTest
 		@SuppressWarnings("unchecked")
 		AstVisitor<WtNode>[] visitors = new AstVisitor[] { new PostProcess() };
 		
-		WtPrettyPrintWikitextTest.test(
-				config,
-				this,
+		prettyPrintWikitextAndCompare(
+				visitors,
 				inputFile,
 				INPUT_SUB_DIR,
-				EXPECTED_PP_AST_SUB_DIR,
-				getResources(),
-				visitors);
+				EXPECTED_PP_AST_SUB_DIR);
 	}
-
+	
 	// =========================================================================
 	
 	public final class PostProcess
@@ -137,7 +123,8 @@ public class HtmlTreeBuilderTest
 	{
 		public WtNode visit(WtParsedWikitextPage n)
 		{
-			WikitextPostprocessor postp = new WikitextPostprocessor(config);
+			WikitextPostprocessor postp = new WikitextPostprocessor(
+					HtmlTreeBuilderTest.this.getConfig());
 			
 			return postp.postprocess(n, "-");
 		}

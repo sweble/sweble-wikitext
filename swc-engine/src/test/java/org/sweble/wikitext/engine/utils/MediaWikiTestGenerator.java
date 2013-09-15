@@ -32,6 +32,8 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 
+import de.fau.cs.osr.utils.TestResourcesFixture;
+
 public class MediaWikiTestGenerator
 {
 	/**
@@ -39,7 +41,9 @@ public class MediaWikiTestGenerator
 	 * <code>TestDesc test</code>, <code>Map&lt;String,
 	 * String> articles</code>).
 	 */
-	public static List<Object[]> enumerateInputs(List<File> testCollectionFiles) throws Exception
+	public static List<Object[]> enumerateInputs(
+			TestResourcesFixture resources,
+			List<File> testCollectionFiles) throws Exception
 	{
 		List<TestDesc> tests = new ArrayList<TestDesc>();
 		
@@ -71,7 +75,7 @@ public class MediaWikiTestGenerator
 			if (i != -1)
 				name = name.substring(0, i);
 			
-			inputs.add(new Object[] { name, test, articles });
+			inputs.add(new Object[] { name, resources, test, articles });
 		}
 		
 		return inputs;

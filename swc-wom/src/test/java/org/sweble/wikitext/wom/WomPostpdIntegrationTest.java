@@ -26,6 +26,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.wom.utils.WomIntegrationTestBase;
 
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrized.class)
 public class WomPostpdIntegrationTest
@@ -43,7 +44,8 @@ public class WomPostpdIntegrationTest
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return WomIntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, true);
+		TestResourcesFixture resources = getTestResourcesFixture();
+		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
 	
 	// =========================================================================
@@ -52,8 +54,12 @@ public class WomPostpdIntegrationTest
 	
 	// =========================================================================
 	
-	public WomPostpdIntegrationTest(String title, File inputFile)
+	public WomPostpdIntegrationTest(
+			String title,
+			TestResourcesFixture resources,
+			File inputFile)
 	{
+		super(resources);
 		this.inputFile = inputFile;
 	}
 	

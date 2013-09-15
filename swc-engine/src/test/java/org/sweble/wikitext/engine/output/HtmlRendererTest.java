@@ -29,14 +29,11 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.NonExpandingParser;
 
-import de.fau.cs.osr.ptk.common.ParserInterface;
-import de.fau.cs.osr.ptk.common.test.FileCompare;
-import de.fau.cs.osr.ptk.common.test.FileContent;
-import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.utils.FileCompare;
+import de.fau.cs.osr.utils.FileContent;
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrized.class)
 public class HtmlRendererTest
@@ -54,7 +51,8 @@ public class HtmlRendererTest
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return EngineIntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, true);
+		TestResourcesFixture resources = getTestResourcesFixture();
+		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
 	
 	// =========================================================================
@@ -63,15 +61,13 @@ public class HtmlRendererTest
 	
 	// =========================================================================
 	
-	public HtmlRendererTest(String title, File inputFile)
+	public HtmlRendererTest(
+			String title,
+			TestResourcesFixture resources,
+			File inputFile)
 	{
+		super(resources);
 		this.inputFile = inputFile;
-	}
-	
-	@Override
-	public ParserInterface<WtNode> instantiateParser()
-	{
-		return new NonExpandingParser();
 	}
 	
 	// =========================================================================
@@ -104,6 +100,8 @@ public class HtmlRendererTest
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
+	
+	// =========================================================================
 	
 	private static final class TestCallback
 			implements

@@ -17,7 +17,9 @@
 package org.sweble.wikitext.wom.utils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,6 +36,7 @@ import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.WtEngineImpl;
 import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
@@ -41,69 +44,95 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wom.WomNode;
 
-import de.fau.cs.osr.ptk.common.ParserInterface;
-import de.fau.cs.osr.ptk.common.test.FileCompare;
-import de.fau.cs.osr.ptk.common.test.FileContent;
-import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
-import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.ptk.common.PrinterInterface;
+import de.fau.cs.osr.utils.FileCompare;
+import de.fau.cs.osr.utils.FileContent;
+import de.fau.cs.osr.utils.FileUtils;
+import de.fau.cs.osr.utils.TestResourcesFixture;
+import de.fau.cs.osr.utils.WrappedException;
 
 public abstract class WomIntegrationTestBase
-		extends
-			IntegrationTestBase<WtNode>
 {
+	private final TestResourcesFixture resources;
+	
 	private final WikiConfigImpl config;
 	
 	private final WtEngineImpl engine;
 	
 	// =========================================================================
 	
-	public WomIntegrationTestBase()
+	protected static TestResourcesFixture getTestResourcesFixture()
 	{
-		this.config = DefaultConfigEnWp.generate();
-		this.config.getEngineConfig().setTrimTransparentBeforeParsing(false);
-		this.engine = new WtEngineImpl(config);
-		
-		// TODO: Improve default config!
-		this.config.addI18nAlias(new I18nAliasImpl("notoc", true, Arrays.asList("NOTOC")));
-		ParserFunctionGroup pfnGroup = new ParserFunctionGroup("myGroup");
-		pfnGroup.addParserFunction(new ParserFunctionBase(config, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, true, "notoc")
+		try
 		{
-			private static final long serialVersionUID = 1L;
+			File path = TestResourcesFixture.resourceNameToFile(
+					WomIntegrationTestBase.class, "/");
 			
-			@Override
-			public WtNode invoke(
-					WtNode template,
-					ExpansionFrame preprocessorFrame,
-					List<? extends WtNode> argsValues)
-			{
-				// TODO Auto-generated method stub
-				return null;
-			}
-		});
-		this.config.addParserFunctionGroup(pfnGroup);
+			return new TestResourcesFixture(path);
+		}
+		catch (FileNotFoundException e)
+		{
+			throw new WrappedException(e);
+		}
 	}
 	
 	// =========================================================================
 	
-	public WikiConfigImpl getConfig()
+	protected WomIntegrationTestBase(TestResourcesFixture resources)
+	{
+		this.resources = resources;
+		this.config = fixConfig(DefaultConfigEnWp.generate());
+		this.engine = new WtEngineImpl(config);
+		
+	}
+	
+	private static WikiConfigImpl fixConfig(WikiConfigImpl config)
+	{
+		config.getEngineConfig().setTrimTransparentBeforeParsing(false);
+		
+		config.addI18nAlias(new I18nAliasImpl("notoc", true, Arrays.asList("NOTOC")));
+		
+		ParserFunctionGroup pfnGroup = new ParserFunctionGroup("myGroup");
+		pfnGroup.addParserFunction(new ParserFunctionNoToc(config));
+		config.addParserFunctionGroup(pfnGroup);
+		
+		return config;
+	}
+	
+	// =========================================================================
+	
+	protected TestResourcesFixture getResources()
+	{
+		return resources;
+	}
+	
+	protected WikiConfigImpl getConfig()
 	{
 		return config;
 	}
 	
-	public WtEngineImpl getEngine()
+	protected WtEngineImpl getEngine()
 	{
 		return engine;
 	}
 	
-	@Override
-	public ParserInterface<WtNode> instantiateParser()
-	{
-		return null;
-	}
-	
 	// =========================================================================
 	
-	public void parsePrintAndCompare(
+	protected void parsePrintAndCompare(
+			File inputFile,
+			String inputSubDir,
+			String expectedSubDir) throws IOException, LinkTargetException, EngineException
+	{
+		ExpansionCallback callback = new TestExpansionCallback();
+		
+		parsePrintAndCompare(
+				inputFile,
+				inputSubDir,
+				expectedSubDir,
+				callback);
+	}
+	
+	protected void parsePrintAndCompare(
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir,
@@ -122,8 +151,6 @@ public abstract class WomIntegrationTestBase
 				pageId,
 				inputFileContent.getContent(),
 				callback);
-		
-		//System.out.println(AstPrinter.print((WtNode) ast.getPage()));
 		
 		AstToWomVisitor astToWomVisitor = new AstToWomVisitor(
 				config,
@@ -150,23 +177,21 @@ public abstract class WomIntegrationTestBase
 	
 	// =========================================================================
 	
-	public void parsePrintAndCompare(
+	protected void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir) throws IOException, LinkTargetException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback();
 		
-		parsePrintAndCompare(
+		expandPrintAndCompare(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
 				callback);
 	}
 	
-	// =========================================================================
-	
-	public void expandPrintAndCompare(
+	protected void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir,
@@ -191,8 +216,6 @@ public abstract class WomIntegrationTestBase
 				inputFileContent.getContent(),
 				callback);
 		
-		//System.out.println(AstPrinter.print((WtNode) ast.getPage()));
-		
 		AstToWomVisitor astToWomVisitor = new AstToWomVisitor(
 				config,
 				title,
@@ -218,18 +241,42 @@ public abstract class WomIntegrationTestBase
 	
 	// =========================================================================
 	
-	public void expandPrintAndCompare(
-			File inputFile,
-			String inputSubDir,
-			String expectedSubDir) throws IOException, LinkTargetException, EngineException
+	protected String printToString(Object ast, PrinterInterface printer) throws IOException
 	{
-		ExpansionCallback callback = new TestExpansionCallback();
+		StringWriter writer = new StringWriter();
 		
-		expandPrintAndCompare(
-				inputFile,
-				inputSubDir,
-				expectedSubDir,
-				callback);
+		printer.print(ast, writer);
+		
+		String result = writer.toString();
+		
+		// We always operate with UNIX line end '\n':
+		result = FileUtils.lineEndToUnix(result);
+		
+		return resources.stripBaseDirectoryAndFixPath(result);
+	}
+	
+	// =========================================================================
+	
+	private static final class ParserFunctionNoToc
+			extends
+				ParserFunctionBase
+	{
+		private static final long serialVersionUID = 1L;
+		
+		private ParserFunctionNoToc(WikiConfig config)
+		{
+			super(config, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, true, "notoc");
+		}
+		
+		@Override
+		public WtNode invoke(
+				WtNode template,
+				ExpansionFrame preprocessorFrame,
+				List<? extends WtNode> argsValues)
+		{
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
 	
 	// =========================================================================

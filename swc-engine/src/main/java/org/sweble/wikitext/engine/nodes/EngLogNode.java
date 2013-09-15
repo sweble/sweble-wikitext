@@ -16,7 +16,6 @@
  */
 package org.sweble.wikitext.engine.nodes;
 
-
 public interface EngLogNode
 		extends
 			EngNode

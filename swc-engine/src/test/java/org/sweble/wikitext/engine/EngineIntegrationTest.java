@@ -26,6 +26,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
 
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrized.class)
 public class EngineIntegrationTest
@@ -43,7 +44,8 @@ public class EngineIntegrationTest
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return EngineIntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, true);
+		TestResourcesFixture resources = getTestResourcesFixture();
+		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
 	
 	// =========================================================================
@@ -52,8 +54,12 @@ public class EngineIntegrationTest
 	
 	// =========================================================================
 	
-	public EngineIntegrationTest(String title, File inputFile)
+	public EngineIntegrationTest(
+			String title,
+			TestResourcesFixture resources,
+			File inputFile)
 	{
+		super(resources);
 		this.inputFile = inputFile;
 	}
 	

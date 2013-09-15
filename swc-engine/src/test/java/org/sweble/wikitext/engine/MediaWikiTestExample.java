@@ -30,6 +30,7 @@ import org.sweble.wikitext.engine.utils.MediaWikiTestGenerator;
 import org.sweble.wikitext.engine.utils.MediaWikiTestGenerator.TestDesc;
 
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrized.class)
 public class MediaWikiTestExample
@@ -45,10 +46,12 @@ public class MediaWikiTestExample
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		List<File> testCollectionFiles =
-				getResources().gather(INPUT_SUB_DIR, FILTER_RX, true);
+		TestResourcesFixture resources = getTestResourcesFixture();
 		
-		return MediaWikiTestGenerator.enumerateInputs(testCollectionFiles);
+		List<File> testCollectionFiles =
+				resources.gather(INPUT_SUB_DIR, FILTER_RX, false);
+		
+		return MediaWikiTestGenerator.enumerateInputs(resources, testCollectionFiles);
 	}
 	
 	// =========================================================================
@@ -66,9 +69,11 @@ public class MediaWikiTestExample
 	
 	public MediaWikiTestExample(
 			String name,
+			TestResourcesFixture resources,
 			TestDesc test,
 			Map<String, String> articles)
 	{
+		super(resources);
 		this.name = name;
 		this.test = test;
 		this.articles = articles;

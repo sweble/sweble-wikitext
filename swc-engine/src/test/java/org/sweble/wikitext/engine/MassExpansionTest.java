@@ -22,7 +22,6 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -46,7 +45,7 @@ import org.junit.runner.RunWith;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.config.WikiRuntimeInfo;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
-import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
+import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.engine.utils.NoTransparentRtDataPrinter;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 
@@ -54,22 +53,28 @@ import de.fau.cs.osr.utils.NamedParametrizedSuites;
 import de.fau.cs.osr.utils.NamedParametrizedSuites.NamedParametrizedSuite;
 import de.fau.cs.osr.utils.NamedParametrizedSuites.Suites;
 import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrizedSuites.class)
 public class MassExpansionTest
-		extends
-			EngineIntegrationTestBase
 {
 	private static final String TESTS_DIR = "engine/mass-expansion";
+	
+	// =========================================================================
+	
+	private static final Pattern FILE_URL_RX = Pattern.compile("fileUrl-(.*?)-(-?\\d+)-(-?\\d+).txt");
+	
+	private static final Pattern ARTICLE_RX = Pattern.compile("retrieveWikitext-(.*?)-(\\d+).wikitext");
+	
+	private static final Pattern TEST_RX = Pattern.compile("(.*?).txt");
 	
 	// =========================================================================
 	
 	@Suites
 	public static List<NamedParametrizedSuite> enumerateSuites() throws Exception
 	{
-		URL dirUrl = MassExpansionTest.class.getResource("/" + TESTS_DIR + "/index");
-		String path = StringUtils.decodeUsingDefaultCharset(dirUrl.getFile());
-		File dir = new File(path).getParentFile();
+		File dir = TestResourcesFixture.resourceNameToFile(
+				MassExpansionTest.class, "/" + TESTS_DIR);
 		
 		String[] testSetDirs = dir.list(new FilenameFilter()
 		{
@@ -101,12 +106,6 @@ public class MassExpansionTest
 		
 		return suites;
 	}
-	
-	private static final Pattern fileUrlRx = Pattern.compile("fileUrl-(.*?)-(-?\\d+)-(-?\\d+).txt");
-	
-	private static final Pattern articleRx = Pattern.compile("retrieveWikitext-(.*?)-(\\d+).wikitext");
-	
-	private static final Pattern testRx = Pattern.compile("(.*?).txt");
 	
 	private static NamedParametrizedSuite enumerateSuiteTestCasesFromZip(
 			File zipFile) throws IOException
@@ -155,7 +154,7 @@ public class MassExpansionTest
 				if (filename.startsWith(resourcesPrefix + "fileUrl-") && filename.endsWith(".txt"))
 				{
 					filename = filename.substring(resourcesPrefix.length());
-					Matcher m = fileUrlRx.matcher(filename);
+					Matcher m = FILE_URL_RX.matcher(filename);
 					if (!m.matches())
 						throw new IllegalArgumentException("Wrong 'fileUrl' pattern: " + ze.getName());
 					
@@ -169,7 +168,7 @@ public class MassExpansionTest
 				else if (filename.startsWith(resourcesPrefix + "retrieveWikitext-") && filename.endsWith(".wikitext"))
 				{
 					filename = filename.substring(resourcesPrefix.length());
-					Matcher m = articleRx.matcher(filename);
+					Matcher m = ARTICLE_RX.matcher(filename);
 					if (!m.matches())
 						throw new IllegalArgumentException("Wrong 'retrieveWikitext' pattern: " + ze.getName());
 					
@@ -185,7 +184,7 @@ public class MassExpansionTest
 				else if (filename.startsWith(testPrefix) && filename.endsWith(".txt"))
 				{
 					filename = filename.substring(testPrefix.length());
-					Matcher m = testRx.matcher(filename);
+					Matcher m = TEST_RX.matcher(filename);
 					if (!m.matches())
 						throw new IllegalArgumentException("Invalid test case filename: " + ze.getName());
 					
@@ -256,7 +255,7 @@ public class MassExpansionTest
 		
 		for (String fileUrlFilename : fileUrlFiles)
 		{
-			Matcher m = fileUrlRx.matcher(fileUrlFilename);
+			Matcher m = FILE_URL_RX.matcher(fileUrlFilename);
 			if (!m.matches())
 				throw new IllegalArgumentException("Wrong 'fileUrl' pattern: " + fileUrlFilename);
 			
@@ -273,7 +272,7 @@ public class MassExpansionTest
 		
 		for (String articleFilename : articleFiles)
 		{
-			Matcher m = articleRx.matcher(articleFilename);
+			Matcher m = ARTICLE_RX.matcher(articleFilename);
 			if (!m.matches())
 				throw new IllegalArgumentException("Wrong 'retrieveWikitext' pattern: " + articleFilename);
 			
@@ -319,6 +318,10 @@ public class MassExpansionTest
 	
 	// =========================================================================
 	
+	private final WikiConfigImpl config;
+	
+	private final WtEngineImpl engine;
+	
 	private final String title;
 	
 	private final Map<FileUrlKey, String> fileUrls;
@@ -335,14 +338,18 @@ public class MassExpansionTest
 			Map<String, ArticleDesc> articles,
 			String inputFileContent)
 	{
-		fixConfig(getConfig());
+		this.config = fixConfig(DefaultConfigEnWp.generate());
+		this.engine = new WtEngineImpl(config);
+		
 		this.title = title;
 		this.fileUrls = fileUrls;
 		this.articles = articles;
 		this.inputFileContent = inputFileContent;
 	}
 	
-	private void fixConfig(WikiConfigImpl config)
+	// =========================================================================
+	
+	private WikiConfigImpl fixConfig(WikiConfigImpl config)
 	{
 		config.setSiteName("English Wikipedia");
 		
@@ -363,6 +370,8 @@ public class MassExpansionTest
 				return getDateAndTime(Locale.getDefault());
 			}
 		});
+		
+		return config;
 	}
 	
 	// =========================================================================
@@ -378,7 +387,7 @@ public class MassExpansionTest
 		
 		PageTitle title = desc.getTitle();
 		PageId pageId = new PageId(title, -1);
-		EngProcessedPage ast = getEngine().expand(
+		EngProcessedPage ast = engine.expand(
 				pageId,
 				desc.getStmt(),
 				forInclusion,
@@ -458,7 +467,7 @@ public class MassExpansionTest
 		if (i3 < 0)
 			wrongArticleFormat();
 		
-		PageTitle pageTitle = PageTitle.make(getConfig(), content.substring(from0, i1));
+		PageTitle pageTitle = PageTitle.make(config, content.substring(from0, i1));
 		String stmt = content.substring(from1, i2);
 		String expected = content.substring(from2, i3);
 		return new TestDesc(pageTitle, stmt, expected);

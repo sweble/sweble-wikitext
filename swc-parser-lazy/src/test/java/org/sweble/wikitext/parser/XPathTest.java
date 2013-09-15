@@ -33,7 +33,7 @@ import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;
-import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.utils.FileUtils;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class XPathTest
@@ -65,7 +65,7 @@ public class XPathTest
 		
 		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox Country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
-		String actual = TestResourcesFixture.lineEndToUnix(b.toString());
+		String actual = FileUtils.lineEndToUnix(b.toString());
 		
 		String expected = null;
 		try
@@ -94,7 +94,7 @@ public class XPathTest
 		
 		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
-		String actual = TestResourcesFixture.lineEndToUnix(b.toString());
+		String actual = FileUtils.lineEndToUnix(b.toString());
 		
 		String expected = null;
 		try
@@ -136,7 +136,7 @@ public class XPathTest
 		InputStream in = getClass().getResourceAsStream(path);
 		if (in == null)
 			return null;
-		return TestResourcesFixture.lineEndToUnix(
+		return FileUtils.lineEndToUnix(
 				IOUtils.toString(in, "UTF-8"));
 	}
 	

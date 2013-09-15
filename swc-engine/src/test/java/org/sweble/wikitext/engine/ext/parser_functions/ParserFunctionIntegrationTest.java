@@ -26,6 +26,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
 
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrized.class)
 public class ParserFunctionIntegrationTest
@@ -43,7 +44,8 @@ public class ParserFunctionIntegrationTest
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return EngineIntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, true);
+		TestResourcesFixture resources = getTestResourcesFixture();
+		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
 	
 	// =========================================================================
@@ -52,8 +54,12 @@ public class ParserFunctionIntegrationTest
 	
 	// =========================================================================
 	
-	public ParserFunctionIntegrationTest(String title, File inputFile)
+	public ParserFunctionIntegrationTest(
+			String title,
+			TestResourcesFixture resources,
+			File inputFile)
 	{
+		super(resources);
 		this.inputFile = inputFile;
 		getEngine().setCatchAll(false);
 	}

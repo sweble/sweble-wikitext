@@ -25,26 +25,21 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.NonExpandingParser;
 import org.sweble.wikitext.parser.utils.TypedPrettyPrinter;
 import org.sweble.wikitext.parser.utils.TypedRtDataPrinter;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
-import org.sweble.wikitext.parser.utils.WtPrettyPrintAstTest;
 
-import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ParserInterface;
 import de.fau.cs.osr.ptk.common.PrinterInterface;
-import de.fau.cs.osr.ptk.common.test.FileCompare;
-import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
-import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.utils.FileCompare;
 import de.fau.cs.osr.utils.NamedParametrized;
 import de.fau.cs.osr.utils.TestNameAnnotation;
+import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrized.class)
 public class BasicIntegrationTest
 		extends
-			IntegrationTestBase<WtNode>
+			ParserIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
@@ -63,30 +58,23 @@ public class BasicIntegrationTest
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return IntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, false);
+		TestResourcesFixture resources = getTestResourcesFixture();
+		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
 	
 	// =========================================================================
 	
 	private final File inputFile;
 	
-	private final ParserConfig config;
-	
-	private final NonExpandingParser fullParser;
-	
 	// =========================================================================
 	
-	public BasicIntegrationTest(String title, File inputFile)
+	public BasicIntegrationTest(
+			String title,
+			TestResourcesFixture resources,
+			File inputFile)
 	{
+		super(resources, new NonExpandingParser());
 		this.inputFile = inputFile;
-		this.fullParser = new NonExpandingParser();
-		this.config = fullParser.getParserConfig();
-	}
-	
-	@Override
-	public ParserInterface<WtNode> instantiateParser()
-	{
-		return fullParser;
 	}
 	
 	// =========================================================================
@@ -95,26 +83,31 @@ public class BasicIntegrationTest
 	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_AST_SUB_DIR)
 	public void testAstAfterPostprocessingMatchesReference() throws Exception
 	{
-		@SuppressWarnings("unchecked")
-		AstVisitor<WtNode>[] visitors = new AstVisitor[] { /*new AstCompressor()*/};
-		
 		parsePrintAndCompare(
 				inputFile,
-				visitors,
 				INPUT_SUB_DIR,
 				EXPECTED_AST_SUB_DIR,
 				new TypedWtAstPrinter());
 	}
 	
 	@Test
+	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PP_SUB_DIR)
+	public void testPrettyPrintedWikitextMatchesReference() throws Exception
+	{
+		parsePrintAndCompare(
+				inputFile,
+				INPUT_SUB_DIR,
+				EXPECTED_PP_SUB_DIR,
+				new TypedPrettyPrinter());
+	}
+	
+	@Test
 	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_RT_SUB_DIR)
 	public void testRestoredWikitextAfterPostprocessingMatchesOriginal() throws Exception
 	{
-		@SuppressWarnings("unchecked")
-		AstVisitor<WtNode>[] visitors = new AstVisitor[] { /*new AstCompressor()*/};
 		PrinterInterface printer = new TypedRtDataPrinter();
 		
-		Object ast = parse(inputFile, visitors);
+		Object ast = parse(inputFile);
 		
 		String actual = printToString(ast, printer);
 		
@@ -132,7 +125,7 @@ public class BasicIntegrationTest
 		}
 		catch (IllegalArgumentException e)
 		{
-			String expected = TestResourcesFixture.lineEndToUnix(
+			String expected = de.fau.cs.osr.utils.FileUtils.lineEndToUnix(
 					FileUtils.readFileToString(inputFile, "UTF-8"));
 			
 			Assert.assertEquals(expected, actual);
@@ -140,30 +133,12 @@ public class BasicIntegrationTest
 	}
 	
 	@Test
-	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PP_SUB_DIR)
-	public void testPrettyPrintedWikitextMatchesReference() throws Exception
-	{
-		@SuppressWarnings("unchecked")
-		AstVisitor<WtNode>[] visitors = new AstVisitor[] { /*new AstCompressor()*/};
-		
-		parsePrintAndCompare(
-				inputFile,
-				visitors,
-				INPUT_SUB_DIR,
-				EXPECTED_PP_SUB_DIR,
-				new TypedPrettyPrinter());
-	}
-	
-	@Test
 	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PPAST_SUB_DIR)
 	public void testParsedPrettyPrintedWikitextMatchesOriginal() throws Exception
 	{
-		WtPrettyPrintAstTest.test(
-				config,
-				this,
+		prettyPrintAstAndCompare(
 				inputFile,
 				INPUT_SUB_DIR,
-				EXPECTED_PPAST_SUB_DIR,
-				getResources());
+				EXPECTED_PPAST_SUB_DIR);
 	}
 }

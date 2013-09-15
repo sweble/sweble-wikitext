@@ -17,7 +17,9 @@
 package org.sweble.wikitext.engine.utils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.StringWriter;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -30,21 +32,20 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngineImpl;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
-import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 
-import de.fau.cs.osr.ptk.common.ParserInterface;
-import de.fau.cs.osr.ptk.common.test.FileCompare;
-import de.fau.cs.osr.ptk.common.test.FileContent;
-import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
-import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.ptk.common.PrinterInterface;
+import de.fau.cs.osr.utils.FileCompare;
+import de.fau.cs.osr.utils.FileContent;
 import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.TestResourcesFixture;
+import de.fau.cs.osr.utils.WrappedException;
 
 public abstract class EngineIntegrationTestBase
-		extends
-			IntegrationTestBase<WtNode>
 {
 	private static final Logger logger = Logger.getLogger(EngineIntegrationTestBase.class);
+	
+	private final TestResourcesFixture resources;
 	
 	private final WikiConfigImpl config;
 	
@@ -52,13 +53,36 @@ public abstract class EngineIntegrationTestBase
 	
 	// =========================================================================
 	
-	public EngineIntegrationTestBase()
+	protected static TestResourcesFixture getTestResourcesFixture()
 	{
+		try
+		{
+			File path = TestResourcesFixture.resourceNameToFile(
+					EngineIntegrationTestBase.class, "/");
+			
+			return new TestResourcesFixture(path);
+		}
+		catch (FileNotFoundException e)
+		{
+			throw new WrappedException(e);
+		}
+	}
+	
+	// =========================================================================
+	
+	public EngineIntegrationTestBase(TestResourcesFixture resources)
+	{
+		this.resources = resources;
 		this.config = DefaultConfigEnWp.generate();
 		this.engine = new WtEngineImpl(config);
 	}
 	
 	// =========================================================================
+	
+	public TestResourcesFixture getResources()
+	{
+		return resources;
+	}
 	
 	public WikiConfigImpl getConfig()
 	{
@@ -68,12 +92,6 @@ public abstract class EngineIntegrationTestBase
 	public WtEngineImpl getEngine()
 	{
 		return engine;
-	}
-	
-	@Override
-	public ParserInterface<WtNode> instantiateParser()
-	{
-		return null;
 	}
 	
 	// =========================================================================
@@ -115,8 +133,6 @@ public abstract class EngineIntegrationTestBase
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
 	
-	// =========================================================================
-	
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
@@ -132,6 +148,22 @@ public abstract class EngineIntegrationTestBase
 				expectedSubDir,
 				callback,
 				forInclusion);
+	}
+	
+	// =========================================================================
+	
+	public String printToString(Object ast, PrinterInterface printer) throws IOException
+	{
+		StringWriter writer = new StringWriter();
+		
+		printer.print(ast, writer);
+		
+		String result = writer.toString();
+		
+		// We always operate with UNIX line end '\n':
+		result = de.fau.cs.osr.utils.FileUtils.lineEndToUnix(result);
+		
+		return resources.stripBaseDirectoryAndFixPath(result);
 	}
 	
 	// =========================================================================
