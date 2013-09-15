@@ -93,7 +93,8 @@ public final class NonPostproParser
 		return userProcessed;
 	}
 	
-	public ParserConfig getParserConfig()
+	@Override
+	public Object getConfig()
 	{
 		return parserConfig;
 	}

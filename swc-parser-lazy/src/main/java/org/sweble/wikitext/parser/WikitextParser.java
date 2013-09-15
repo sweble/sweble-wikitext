@@ -50,6 +50,14 @@ public class WikitextParser
 	// =========================================================================
 	
 	@Override
+	public Object getConfig()
+	{
+		return config;
+	}
+	
+	// =========================================================================
+	
+	@Override
 	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
 		PreprocessedWikitext ppWt =

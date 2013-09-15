@@ -101,7 +101,8 @@ public final class NonExpandingParser
 		return userProcessed;
 	}
 	
-	public ParserConfig getParserConfig()
+	@Override
+	public Object getConfig()
 	{
 		return parserConfig;
 	}
