@@ -26,7 +26,7 @@ import junit.framework.Assert;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
-import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.utils.FileUtils;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class AppTest
@@ -40,11 +40,11 @@ public class AppTest
 		
 		String path = StringUtils.decodeUsingDefaultCharset(url.getFile());
 		String actual = App.run(new File(path), title, true);
-		actual = TestResourcesFixture.lineEndToUnix(actual);
+		actual = FileUtils.lineEndToUnix(actual);
 		
 		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".html");
 		String expected = IOUtils.toString(expectedIs);
-		expected = TestResourcesFixture.lineEndToUnix(expected);
+		expected = FileUtils.lineEndToUnix(expected);
 		
 		Assert.assertEquals(expected, actual);
 	}

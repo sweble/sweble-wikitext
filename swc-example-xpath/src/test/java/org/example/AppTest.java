@@ -26,7 +26,7 @@ import junit.framework.Assert;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
-import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.utils.FileUtils;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class AppTest
@@ -46,9 +46,9 @@ public class AppTest
 		b.append(App.run(new File(path), title, "//WtTableCell"));
 		
 		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".result");
-		String expected = TestResourcesFixture.lineEndToUnix(IOUtils.toString(expectedIs));
+		String expected = FileUtils.lineEndToUnix(IOUtils.toString(expectedIs));
 		
-		String actual = TestResourcesFixture.lineEndToUnix(b.toString());
+		String actual = FileUtils.lineEndToUnix(b.toString());
 		
 		Assert.assertEquals(expected, actual);
 	}
