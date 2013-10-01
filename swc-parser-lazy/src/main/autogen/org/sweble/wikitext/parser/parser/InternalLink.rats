@@ -486,9 +486,9 @@ private inline stateful WtLinkOptionGarbage LinkOptionGarbage =
         ParserScopes.IMAGE_LINK_ALT :
         ParserScopes.INTERNAL_LINK_ALT);
   }
-  LinkTitleContentStar
+  content:LinkTitleContentStar
   {
-    String content = difference(yyStart, yyResult);
+    //String content = difference(yyStart, yyResult);
     yyValue = setRtd(
       nf.loGarbage(content),
       '|', content);

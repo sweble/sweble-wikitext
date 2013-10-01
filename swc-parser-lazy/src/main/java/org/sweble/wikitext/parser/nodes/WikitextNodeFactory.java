@@ -269,7 +269,7 @@ public interface WikitextNodeFactory
 	
 	WtIgnored ignored(String content);
 	
-	WtLinkOptionGarbage loGarbage(String content);
+	WtLinkOptionGarbage loGarbage(WtNodeList content);
 	
 	WtNewline newline(String content);
 	

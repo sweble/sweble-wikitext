@@ -983,7 +983,7 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
-	public WtLinkOptionGarbage loGarbage(String content)
+	public WtLinkOptionGarbage loGarbage(WtNodeList content)
 	{
 		return new WtLinkOptionGarbage(content);
 	}

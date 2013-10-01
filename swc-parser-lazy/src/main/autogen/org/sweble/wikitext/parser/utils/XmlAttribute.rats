@@ -96,7 +96,7 @@ private inline WtXmlAttributeGarbage XmlAttributeGarbage =
 ;
 
 private inline WtNode XmlAttributeGarbageChoice =
-    !GarbageStringStopper ParserEntity
+    !XmlAttrGarbageStopper ParserEntity
   / str:GarbageString
     {
       yyValue = nf.text(str);
@@ -108,7 +108,8 @@ private transient String GarbageString =
 ;
 
 private inline void GarbageStringStopper =
-    XmlAttrWs? XmlAttrGarbageStopper
+    '\uE000'
+  / XmlAttrWs? XmlAttrGarbageStopper
   / XmlAttrWs ValidXmlAttribute
 ;
 
