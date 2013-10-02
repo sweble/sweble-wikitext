@@ -59,6 +59,14 @@ public class CorePfnVariablesDateAndTime
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public CurrentYearPfn()
+		{
+			super("currentyear");
+		}
+		
 		public CurrentYearPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "currentyear");
@@ -83,6 +91,14 @@ public class CorePfnVariablesDateAndTime
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public CurrentMonthPfn()
+		{
+			super("currentmonth");
+		}
 		
 		public CurrentMonthPfn(WikiConfig wikiConfig)
 		{
@@ -116,6 +132,14 @@ public class CorePfnVariablesDateAndTime
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public CurrentDayPfn()
+		{
+			super("currentday");
+		}
 		
 		public CurrentDayPfn(WikiConfig wikiConfig)
 		{

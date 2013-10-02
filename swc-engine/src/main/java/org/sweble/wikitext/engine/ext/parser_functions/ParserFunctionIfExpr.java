@@ -33,6 +33,14 @@ public class ParserFunctionIfExpr
 	private static final long serialVersionUID = 1L;
 	
 	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionIfExpr()
+	{
+		super("ifexpr", 1 /* thenArgIndex */);
+	}
+	
+	/**
 	 * <pre>
 	 * {{#ifexpr: 
 	 *       expression 

@@ -60,6 +60,14 @@ public class CorePfnFunctionsNamespaces
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public NsPfn()
+		{
+			super("ns");
+		}
+		
 		public NsPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "ns");

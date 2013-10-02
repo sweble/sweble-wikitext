@@ -68,6 +68,14 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public FullPagenamePfn()
+		{
+			super("fullpagename");
+		}
+		
 		public FullPagenamePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "fullpagename");
@@ -91,6 +99,14 @@ public class CorePfnVariablesPageNames
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public FullPagenameePfn()
+		{
+			super("fullpagenamee");
+		}
 		
 		public FullPagenameePfn(WikiConfig wikiConfig)
 		{
@@ -116,6 +132,14 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public PagenamePfn()
+		{
+			super("pagename");
+		}
+		
 		public PagenamePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "pagename");
@@ -139,6 +163,15 @@ public class CorePfnVariablesPageNames
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public PagenameePfn()
+		{
+			// FIXME: DIESEN FIX FUER ALLE!
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "pagenamee");
+		}
 		
 		public PagenameePfn(WikiConfig wikiConfig)
 		{
@@ -189,6 +222,14 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public BasePagenamePfn()
+		{
+			super("basepagename");
+		}
+		
 		public BasePagenamePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "basepagename");
@@ -220,6 +261,14 @@ public class CorePfnVariablesPageNames
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public SubjectPagenamePfn()
+		{
+			super("subjectpagename");
+		}
 		
 		public SubjectPagenamePfn(WikiConfig wikiConfig)
 		{
@@ -264,6 +313,14 @@ public class CorePfnVariablesPageNames
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public TalkPagenamePfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "talkpagename");
+		}
 		
 		public TalkPagenamePfn(WikiConfig wikiConfig)
 		{

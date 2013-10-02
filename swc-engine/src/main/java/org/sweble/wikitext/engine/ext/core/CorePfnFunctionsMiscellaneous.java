@@ -83,6 +83,14 @@ public class CorePfnFunctionsMiscellaneous
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public TagPfn()
+		{
+			super(PfnArgumentMode.TEMPLATE_ARGUMENTS, "tag");
+		}
+		
 		public TagPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, "tag");

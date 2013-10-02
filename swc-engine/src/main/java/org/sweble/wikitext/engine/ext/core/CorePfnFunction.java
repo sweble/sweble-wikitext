@@ -34,6 +34,22 @@ public abstract class CorePfnFunction
 	
 	// =========================================================================
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public CorePfnFunction(PfnArgumentMode argMode, String name)
+	{
+		super(argMode, name);
+	}
+	
+	/**
+	 * For un-marshaling only.
+	 */
+	public CorePfnFunction(String name)
+	{
+		super(name);
+	}
+	
 	public CorePfnFunction(
 			WikiConfig wikiConfig,
 			PfnArgumentMode argMode,

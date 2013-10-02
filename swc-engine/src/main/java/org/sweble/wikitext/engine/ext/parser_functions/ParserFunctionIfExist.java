@@ -34,6 +34,14 @@ public class ParserFunctionIfExist
 	private static final long serialVersionUID = 1L;
 	
 	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionIfExist()
+	{
+		super("ifexist", 1 /* thenArgIndex */);
+	}
+	
+	/**
 	 * <pre>
 	 * {{#ifexist: 
 	 *       page title 

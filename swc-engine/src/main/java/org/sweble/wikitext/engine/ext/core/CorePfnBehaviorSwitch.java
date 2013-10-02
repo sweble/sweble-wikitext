@@ -34,6 +34,16 @@ public abstract class CorePfnBehaviorSwitch
 	
 	// =========================================================================
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public CorePfnBehaviorSwitch(String name)
+	{
+		// Page Switches don't take arguments so don't waste time with funny 
+		// conversions.
+		super(PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
+	}
+	
 	public CorePfnBehaviorSwitch(WikiConfig wikiConfig, String name)
 	{
 		// Page Switches don't take arguments so don't waste time with funny 

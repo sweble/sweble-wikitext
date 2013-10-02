@@ -38,6 +38,14 @@ public class ParserFunctionTime
 {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionTime()
+	{
+		super("time");
+	}
+	
 	public ParserFunctionTime(WikiConfig wikiConfig)
 	{
 		super(wikiConfig, "time");

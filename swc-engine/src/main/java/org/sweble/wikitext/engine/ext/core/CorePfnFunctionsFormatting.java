@@ -75,6 +75,14 @@ public class CorePfnFunctionsFormatting
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public LcPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "lc");
+		}
+		
 		public LcPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "lc");
@@ -113,6 +121,14 @@ public class CorePfnFunctionsFormatting
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public LcFirstPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "lcfirst");
+		}
 		
 		public LcFirstPfn(WikiConfig wikiConfig)
 		{
@@ -155,6 +171,14 @@ public class CorePfnFunctionsFormatting
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public UcPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "uc");
+		}
+		
 		public UcPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "uc");
@@ -193,6 +217,14 @@ public class CorePfnFunctionsFormatting
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public UcFirstPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "ucfirst");
+		}
 		
 		public UcFirstPfn(WikiConfig wikiConfig)
 		{
@@ -236,6 +268,14 @@ public class CorePfnFunctionsFormatting
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public PadLeftPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "padleft");
+		}
 		
 		public PadLeftPfn(WikiConfig wikiConfig)
 		{

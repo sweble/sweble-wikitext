@@ -59,6 +59,14 @@ public class MathTagExt
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public MathTagExtImpl()
+		{
+			super("math");
+		}
+		
 		public MathTagExtImpl(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "math");

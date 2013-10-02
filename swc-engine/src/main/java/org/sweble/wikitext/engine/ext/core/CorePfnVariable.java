@@ -34,6 +34,24 @@ public abstract class CorePfnVariable
 	
 	// =========================================================================
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public CorePfnVariable(String name)
+	{
+		// Most variables don't take arguments so don't waste time with funny 
+		// conversions.
+		super(PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
+	}
+	
+	/**
+	 * For un-marshaling only.
+	 */
+	public CorePfnVariable(PfnArgumentMode argMode, String name)
+	{
+		super(argMode, name);
+	}
+	
 	public CorePfnVariable(WikiConfig wikiConfig, String name)
 	{
 		// Most variables don't take arguments so don't waste time with funny 

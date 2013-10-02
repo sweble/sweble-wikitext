@@ -32,6 +32,14 @@ public class ParserFunctionIf
 	private static final long serialVersionUID = 1L;
 	
 	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionIf()
+	{
+		super("if", 1 /* thenArgIndex */);
+	}
+	
+	/**
 	 * <pre>
 	 * {{#if: 
 	 *       test string 

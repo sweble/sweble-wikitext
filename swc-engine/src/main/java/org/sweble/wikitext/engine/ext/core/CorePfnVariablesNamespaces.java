@@ -63,6 +63,14 @@ public class CorePfnVariablesNamespaces
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public NamespacePfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "namespace");
+		}
+		
 		public NamespacePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "namespace");
@@ -122,6 +130,14 @@ public class CorePfnVariablesNamespaces
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public SubjectspacePfn()
+		{
+			super("subjectspace");
+		}
+		
 		public SubjectspacePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "subjectspace");
@@ -156,6 +172,14 @@ public class CorePfnVariablesNamespaces
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public TalkspacePfn()
+		{
+			super("talkspace");
+		}
 		
 		public TalkspacePfn(WikiConfig wikiConfig)
 		{

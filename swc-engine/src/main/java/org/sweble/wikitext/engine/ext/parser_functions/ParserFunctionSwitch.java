@@ -33,6 +33,14 @@ public class ParserFunctionSwitch
 {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionSwitch()
+	{
+		super("switch");
+	}
+	
 	public ParserFunctionSwitch(WikiConfig wikiConfig)
 	{
 		super(wikiConfig, "switch");

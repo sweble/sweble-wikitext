@@ -33,6 +33,14 @@ public class ParserFunctionExpr
 {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionExpr()
+	{
+		super("expr");
+	}
+	
 	public ParserFunctionExpr(WikiConfig wikiConfig)
 	{
 		super(wikiConfig, "expr");

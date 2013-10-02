@@ -18,7 +18,6 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
-import java.lang.reflect.Constructor;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -58,10 +57,41 @@ public abstract class ParserFunctionBase
 	
 	// =========================================================================
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionBase(String id)
+	{
+		this(PfnArgumentMode.UNEXPANDED_VALUES, false, id);
+	}
+	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionBase(PfnArgumentMode argMode, String id)
+	{
+		this(argMode, false, id);
+	}
+	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionBase(
+			PfnArgumentMode argMode,
+			boolean pageSwitch,
+			String id)
+	{
+		if (id == null || id.isEmpty())
+			throw new IllegalArgumentException();
+		
+		this.argMode = argMode;
+		this.pageSwitch = pageSwitch;
+		this.id = id;
+	}
+	
 	public ParserFunctionBase(WikiConfig wikiConfig, String id)
 	{
 		this(wikiConfig, PfnArgumentMode.UNEXPANDED_VALUES, false, id);
-		
 	}
 	
 	public ParserFunctionBase(
@@ -70,7 +100,6 @@ public abstract class ParserFunctionBase
 			String id)
 	{
 		this(wikiConfig, argMode, false, id);
-		
 	}
 	
 	public ParserFunctionBase(
@@ -79,35 +108,23 @@ public abstract class ParserFunctionBase
 			boolean pageSwitch,
 			String id)
 	{
+		this(argMode, pageSwitch, id);
 		setWikiConfig(wikiConfig);
-		this.argMode = argMode;
-		this.pageSwitch = pageSwitch;
-		this.id = id;
 	}
 	
 	// =========================================================================
-	
-	protected EngineNodeFactory nf()
-	{
-		return nf;
-	}
-	
-	protected EngineAstTextUtils tu()
-	{
-		return tu;
-	}
 	
 	/**
 	 * For internal use only!
 	 */
 	public void setWikiConfig(WikiConfig wikiConfig)
 	{
-		if (wikiConfig != null)
-		{
-			this.wikiConfig = wikiConfig;
-			this.nf = wikiConfig.getNodeFactory();
-			this.tu = wikiConfig.createAstTextUtils();
-		}
+		if (wikiConfig == null)
+			throw new IllegalArgumentException();
+		
+		this.wikiConfig = wikiConfig;
+		this.nf = wikiConfig.getNodeFactory();
+		this.tu = wikiConfig.createAstTextUtils();
 	}
 	
 	public WikiConfig getWikiConfig()
@@ -128,6 +145,16 @@ public abstract class ParserFunctionBase
 	public boolean isPageSwitch()
 	{
 		return pageSwitch;
+	}
+	
+	protected EngineNodeFactory nf()
+	{
+		return nf;
+	}
+	
+	protected EngineAstTextUtils tu()
+	{
+		return tu;
 	}
 	
 	/**
@@ -212,9 +239,12 @@ public abstract class ParserFunctionBase
 		public ParserFunctionBase unmarshal(ParserFunctionRef v) throws Exception
 		{
 			Class<?> clazz = Class.forName(v.className);
+			/*
 			Constructor<?> ctor = clazz.getDeclaredConstructor(WikiConfig.class);
 			// We don't have a wiki config object yet :(
 			return (ParserFunctionBase) ctor.newInstance((WikiConfig) null);
+			*/
+			return (ParserFunctionBase) clazz.newInstance();
 		}
 	}
 }

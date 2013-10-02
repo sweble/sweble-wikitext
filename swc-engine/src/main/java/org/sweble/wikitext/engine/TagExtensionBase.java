@@ -18,7 +18,6 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
-import java.lang.reflect.Constructor;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,6 +28,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.sweble.wikitext.engine.TagExtensionBase.TagExtensionAdapter;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
+import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
@@ -50,27 +50,41 @@ public abstract class TagExtensionBase
 	 */
 	private WikiConfig wikiConfig;
 	
+	private EngineAstTextUtils tu;
+	
+	private EngineNodeFactory nf;
+	
 	// =========================================================================
 	
-	public TagExtensionBase(WikiConfig wikiConfig, String id)
+	/**
+	 * For un-marshaling only.
+	 */
+	protected TagExtensionBase(String id)
 	{
-		this.wikiConfig = wikiConfig;
+		if (id == null || id.isEmpty())
+			throw new IllegalArgumentException();
 		this.id = id;
 	}
 	
-	// =========================================================================
-	
-	protected EngineNodeFactory nf()
+	protected TagExtensionBase(WikiConfig wikiConfig, String id)
 	{
-		return wikiConfig.getNodeFactory();
+		this(id);
+		setWikiConfig(wikiConfig);
 	}
+	
+	// =========================================================================
 	
 	/**
 	 * For internal use only!
 	 */
 	public void setWikiConfig(WikiConfig wikiConfig)
 	{
+		if (wikiConfig == null)
+			throw new IllegalArgumentException();
+		
 		this.wikiConfig = wikiConfig;
+		this.nf = wikiConfig.getNodeFactory();
+		this.tu = wikiConfig.createAstTextUtils();
 	}
 	
 	public WikiConfig getWikiConfig()
@@ -81,6 +95,16 @@ public abstract class TagExtensionBase
 	public String getId()
 	{
 		return id;
+	}
+	
+	protected EngineNodeFactory nf()
+	{
+		return nf;
+	}
+	
+	protected EngineAstTextUtils tu()
+	{
+		return tu;
 	}
 	
 	public abstract WtNode invoke(
@@ -163,9 +187,12 @@ public abstract class TagExtensionBase
 		public TagExtensionBase unmarshal(TagExtensionRef v) throws Exception
 		{
 			Class<?> clazz = Class.forName(v.className);
+			/*
 			Constructor<?> ctor = clazz.getDeclaredConstructor(WikiConfig.class);
 			// We don't have a wiki config object yet :(
 			return (TagExtensionBase) ctor.newInstance((WikiConfig) null);
+			*/
+			return (TagExtensionBase) clazz.newInstance();
 		}
 	}
 }

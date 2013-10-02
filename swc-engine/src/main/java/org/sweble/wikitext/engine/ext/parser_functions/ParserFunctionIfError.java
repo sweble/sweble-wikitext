@@ -33,6 +33,14 @@ public class ParserFunctionIfError
 	private static final long serialVersionUID = 1L;
 	
 	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionIfError()
+	{
+		super("iferror", 1, true);
+	}
+	
+	/**
 	 * <pre>
 	 * {{#iferror: 
 	 *       test string 

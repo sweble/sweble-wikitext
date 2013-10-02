@@ -35,6 +35,14 @@ public class ParserFunctionTitleparts
 {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionTitleparts()
+	{
+		super("titleparts");
+	}
+	
 	public ParserFunctionTitleparts(WikiConfig wikiConfig)
 	{
 		super(wikiConfig, "titleparts");

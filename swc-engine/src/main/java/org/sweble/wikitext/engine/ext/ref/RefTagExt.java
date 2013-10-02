@@ -59,6 +59,14 @@ public class RefTagExt
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public RefTagExtImpl()
+		{
+			super("ref");
+		}
+		
 		public RefTagExtImpl(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "ref");

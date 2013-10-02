@@ -62,6 +62,14 @@ public class BuiltInTagExtensions
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public TagExtensionPre()
+		{
+			super("pre");
+		}
+		
 		public TagExtensionPre(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "pre");
@@ -94,6 +102,14 @@ public class BuiltInTagExtensions
 				TagExtensionBase
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public TagExtensionNowiki()
+		{
+			super("nowiki");
+		}
 		
 		public TagExtensionNowiki(WikiConfig wikiConfig)
 		{

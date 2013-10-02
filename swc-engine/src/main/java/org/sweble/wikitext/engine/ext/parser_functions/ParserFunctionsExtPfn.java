@@ -34,6 +34,22 @@ public abstract class ParserFunctionsExtPfn
 	
 	// =========================================================================
 	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionsExtPfn(String name)
+	{
+		super(name);
+	}
+	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionsExtPfn(PfnArgumentMode argMode, String name)
+	{
+		super(argMode, name);
+	}
+	
 	public ParserFunctionsExtPfn(WikiConfig wikiConfig, String name)
 	{
 		super(wikiConfig, name);
@@ -70,6 +86,14 @@ public abstract class ParserFunctionsExtPfn
 				ParserFunctionsExtPfn
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		protected CtrlStmt(String name)
+		{
+			super(PfnArgumentMode.UNEXPANDED_VALUES, name);
+		}
 		
 		protected CtrlStmt(WikiConfig wikiConfig, String name)
 		{
@@ -115,6 +139,31 @@ public abstract class ParserFunctionsExtPfn
 		private WtNode defaultValue;
 		
 		private final int thenArgIndex;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		protected IfThenElseStmt(
+				String name,
+				int thenArgIndex)
+		{
+			super(name);
+			this.hasDefault = false;
+			this.thenArgIndex = thenArgIndex;
+		}
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		protected IfThenElseStmt(
+				String name,
+				int thenArgIndex,
+				boolean hasDefault)
+		{
+			super(name);
+			this.hasDefault = hasDefault;
+			this.thenArgIndex = thenArgIndex;
+		}
 		
 		protected IfThenElseStmt(
 				WikiConfig wikiConfig,

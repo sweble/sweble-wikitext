@@ -83,6 +83,14 @@ public class CorePfnFunctionsUrlData
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public FullurlPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "fullurl");
+		}
+		
 		public FullurlPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "fullurl");
@@ -234,6 +242,14 @@ public class CorePfnFunctionsUrlData
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public FilepathPfn()
+		{
+			super("filepath");
+		}
+		
 		public FilepathPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "filepath");
@@ -330,6 +346,14 @@ public class CorePfnFunctionsUrlData
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public UrlencodePfn()
+		{
+			super("urlencode");
+		}
 		
 		public UrlencodePfn(WikiConfig wikiConfig)
 		{

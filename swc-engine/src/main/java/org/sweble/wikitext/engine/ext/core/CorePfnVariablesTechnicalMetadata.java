@@ -62,6 +62,14 @@ public class CorePfnVariablesTechnicalMetadata
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public SitenamePfn()
+		{
+			super("sitename");
+		}
+		
 		public SitenamePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "sitename");
@@ -99,6 +107,14 @@ public class CorePfnVariablesTechnicalMetadata
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public ContentLanguagePfn()
+		{
+			super("contentlanguage");
+		}
 		
 		public ContentLanguagePfn(WikiConfig wikiConfig)
 		{
@@ -143,6 +159,14 @@ public class CorePfnVariablesTechnicalMetadata
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public ProtectionLevelPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "protectionlevel");
+		}
+		
 		public ProtectionLevelPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "protectionlevel");
@@ -180,6 +204,14 @@ public class CorePfnVariablesTechnicalMetadata
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public DefaultsortPfn()
+		{
+			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "defaultsort");
+		}
 		
 		public DefaultsortPfn(WikiConfig wikiConfig)
 		{

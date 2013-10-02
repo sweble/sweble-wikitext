@@ -60,6 +60,14 @@ public class BuiltInParserFunctions
 	{
 		private static final long serialVersionUID = 1L;
 		
+		/**
+		 * For un-marshaling only.
+		 */
+		public ParserFunctionSafeSubst()
+		{
+			super(PfnArgumentMode.TEMPLATE_ARGUMENTS, "safesubst");
+		}
+		
 		public ParserFunctionSafeSubst(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, "safesubst");

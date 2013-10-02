@@ -32,6 +32,14 @@ public class ParserFunctionIfeq
 	private static final long serialVersionUID = 1L;
 	
 	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionIfeq()
+	{
+		super("ifeq", 2 /* thenArgIndex */);
+	}
+	
+	/**
 	 * <pre>
 	 * {{#ifeq: 
 	 *       string 1 
