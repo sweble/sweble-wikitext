@@ -192,7 +192,7 @@ public class EngineAstTextUtilsImpl
 	
 	// =========================================================================
 	
-	private class SimpleEngineStringConverter
+	private static class SimpleEngineStringConverter
 			extends
 				SimpleStringConverter
 	{

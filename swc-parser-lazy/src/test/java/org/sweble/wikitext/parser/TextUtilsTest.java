@@ -45,7 +45,7 @@ public class TextUtilsTest
 	public TextUtilsTest()
 	{
 		config = new SimpleParserConfig();
-		tu = config.createAstTextUtils();
+		tu = config.getAstTextUtils();
 		nf = config.getNodeFactory();
 	}
 	

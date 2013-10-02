@@ -33,6 +33,8 @@ public interface AstTextUtils
 	
 	public static final int AST_TO_TEXT_LAST_OPTION = 1;
 	
+	// =========================================================================
+	
 	public String astToText(WtNode node) throws StringConversionException;
 	
 	public String astToText(WtNode node, int... options) throws StringConversionException;
@@ -40,6 +42,8 @@ public interface AstTextUtils
 	public PartialConversion astToTextPartial(WtNode node);
 	
 	public PartialConversion astToTextPartial(WtNode node, int... options);
+	
+	// =========================================================================
 	
 	public interface PartialConversion
 	{

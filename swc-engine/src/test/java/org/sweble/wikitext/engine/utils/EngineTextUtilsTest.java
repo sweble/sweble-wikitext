@@ -29,7 +29,7 @@ public class EngineTextUtilsTest
 	
 	EngineNodeFactory nf = config.getNodeFactory();
 	
-	EngineAstTextUtils tu = config.createAstTextUtils();
+	EngineAstTextUtils tu = config.getAstTextUtils();
 	
 	@Test
 	public void testTrimLeftLeavesUntrimmableTextUnaltered() throws Exception

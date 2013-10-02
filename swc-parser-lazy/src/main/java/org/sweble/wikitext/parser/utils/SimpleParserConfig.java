@@ -46,6 +46,8 @@ public class SimpleParserConfig
 	
 	private final WikitextNodeFactory nodeFactory;
 	
+	private final AstTextUtilsImpl textUtils;
+	
 	// =========================================================================
 	
 	public SimpleParserConfig()
@@ -62,6 +64,7 @@ public class SimpleParserConfig
 		this.gatherRtd = gatherRtd;
 		this.autoCorrect = autoCorrect;
 		this.nodeFactory = new WikitextNodeFactoryImpl(this);
+		this.textUtils = new AstTextUtilsImpl(this);
 	}
 	
 	// ==[ Parser features ]====================================================
@@ -99,9 +102,9 @@ public class SimpleParserConfig
 	}
 	
 	@Override
-	public AstTextUtils createAstTextUtils()
+	public AstTextUtils getAstTextUtils()
 	{
-		return new AstTextUtilsImpl(this);
+		return textUtils;
 	}
 	
 	// ==[ Link classification and parsing ]====================================

@@ -99,7 +99,12 @@ public class ParserConfigImpl
 	 */
 	protected ParserConfigImpl()
 	{
-		this(null);
+	}
+	
+	public ParserConfigImpl(WikiConfigImpl wikiConfig)
+	{
+		this();
+		setWikiConfig(wikiConfig);
 	}
 	
 	/**
@@ -107,13 +112,8 @@ public class ParserConfigImpl
 	 */
 	protected void setWikiConfig(WikiConfigImpl wikiConfig)
 	{
-		this.wikiConfig = wikiConfig;
-	}
-	
-	// =========================================================================
-	
-	public ParserConfigImpl(WikiConfigImpl wikiConfig)
-	{
+		if (wikiConfig == null)
+			throw new IllegalArgumentException();
 		this.wikiConfig = wikiConfig;
 	}
 	
@@ -194,9 +194,9 @@ public class ParserConfigImpl
 	}
 	
 	@Override
-	public AstTextUtils createAstTextUtils()
+	public AstTextUtils getAstTextUtils()
 	{
-		return wikiConfig.createAstTextUtils();
+		return wikiConfig.getAstTextUtils();
 	}
 	
 	// ==[ Link classification and parsing ]====================================

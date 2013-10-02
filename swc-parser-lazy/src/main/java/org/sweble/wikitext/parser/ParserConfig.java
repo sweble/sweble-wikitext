@@ -40,11 +40,11 @@ public interface ParserConfig
 	
 	boolean isGatherRtData();
 	
-	// ==[ Factories ]=======================================================
+	// ==[ AST creation/processing ]============================================
 	
 	WikitextNodeFactory getNodeFactory();
 	
-	AstTextUtils createAstTextUtils();
+	AstTextUtils getAstTextUtils();
 	
 	// ==[ Link classification and parsing ]====================================
 	

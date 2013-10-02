@@ -84,7 +84,7 @@ public abstract class TagExtensionBase
 		
 		this.wikiConfig = wikiConfig;
 		this.nf = wikiConfig.getNodeFactory();
-		this.tu = wikiConfig.createAstTextUtils();
+		this.tu = wikiConfig.getAstTextUtils();
 	}
 	
 	public WikiConfig getWikiConfig()

@@ -1577,6 +1577,6 @@ public class HtmlRenderer
 		this.wikiConfig = wikiConfig;
 		this.pageTitle = pageTitle;
 		this.nf = wikiConfig.getNodeFactory();
-		this.tu = wikiConfig.createAstTextUtils();
+		this.tu = wikiConfig.getAstTextUtils();
 	}
 }

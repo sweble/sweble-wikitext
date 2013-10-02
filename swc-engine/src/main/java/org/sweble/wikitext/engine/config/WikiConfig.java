@@ -36,11 +36,17 @@ public interface WikiConfig
 	
 	public EngineConfig getEngineConfig();
 	
-	// ==[ AST creation ]=======================================================
+	// ==[ AST creation/processing ]============================================
 	
+	/**
+	 * Should return the same instance as getParserConfig().getNodeFactory().
+	 */
 	public EngineNodeFactory getNodeFactory();
 	
-	public EngineAstTextUtils createAstTextUtils();
+	/**
+	 * Should return the same instance as getParserConfig().getAstTextUtils().
+	 */
+	public EngineAstTextUtils getAstTextUtils();
 	
 	// ==[ Namespaces ]=========================================================
 	
@@ -66,8 +72,6 @@ public interface WikiConfig
 	
 	public Collection<Interwiki> getInterwikis();
 	
-	//	public Interwiki getLocalInterwiki();
-	
 	// ==[ Internationalization ]===============================================
 	
 	public I18nAlias getI18nAlias(String name);
@@ -76,8 +80,14 @@ public interface WikiConfig
 	
 	// ==[ Tag extensions, parser functions and page switches ]=================
 	
+	/**
+	 * Returns parser functions and page switches.
+	 */
 	public Collection<ParserFunctionBase> getParserFunctions();
 	
+	/**
+	 * Cannot retrieve page switches.
+	 */
 	public ParserFunctionBase getParserFunction(String name);
 	
 	/**

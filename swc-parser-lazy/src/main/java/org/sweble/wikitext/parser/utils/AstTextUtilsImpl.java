@@ -129,7 +129,7 @@ public class AstTextUtilsImpl
 	
 	// =========================================================================
 	
-	protected class SimpleStringConverter
+	protected static class SimpleStringConverter
 	{
 		protected boolean failOnUnresolvedEntityRef;
 		

@@ -82,7 +82,11 @@ public class WikiConfigImpl
 	@XmlElement()
 	private final EngineConfigImpl engineConfig;
 	
+	// -- AST generation/processing --
+	
 	private EngineNodeFactoryImpl nodeFactory;
+	
+	private EngineAstTextUtilsImpl textUtils;
 	
 	// -- General Information --
 	
@@ -142,6 +146,7 @@ public class WikiConfigImpl
 	{
 		this.parserConfig = new ParserConfigImpl(this);
 		this.nodeFactory = new EngineNodeFactoryImpl(this.parserConfig);
+		this.textUtils = new EngineAstTextUtilsImpl(this.parserConfig);
 		this.runtimeInfo = new WikiRuntimeInfoImpl(this);
 		this.engineConfig = new EngineConfigImpl();
 	}
@@ -161,7 +166,7 @@ public class WikiConfigImpl
 		return engineConfig;
 	}
 	
-	// ==[ AST creation ]=======================================================
+	// ==[ AST creation/processing ]============================================
 	
 	public EngineNodeFactoryImpl getNodeFactory()
 	{
@@ -169,9 +174,9 @@ public class WikiConfigImpl
 	}
 	
 	@Override
-	public EngineAstTextUtils createAstTextUtils()
+	public EngineAstTextUtils getAstTextUtils()
 	{
-		return new EngineAstTextUtilsImpl(parserConfig);
+		return textUtils;
 	}
 	
 	// ==[ Namespaces ]=========================================================

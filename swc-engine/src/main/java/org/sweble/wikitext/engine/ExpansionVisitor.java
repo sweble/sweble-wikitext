@@ -104,7 +104,7 @@ public final class ExpansionVisitor
 		this.timingEnabled = timingEnabled;
 		this.catchAll = catchAll;
 		this.nf = expFrame.getWikiConfig().getNodeFactory();
-		this.tu = expFrame.getWikiConfig().createAstTextUtils();
+		this.tu = expFrame.getWikiConfig().getAstTextUtils();
 	}
 	
 	// =========================================================================
