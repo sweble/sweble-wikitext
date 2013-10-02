@@ -615,9 +615,11 @@ public final class TreeBuilderInBody
 	{
 		// Lines are dissolved which is why we have to save RTD info.
 		WtRtData rtd = n.getRtd();
-		iterateSemiPreRtdField(rtd.getField(0));
+		if (rtd != null)
+			iterateSemiPreRtdField(rtd.getField(0));
 		iterate(n);
-		iterateSemiPreRtdField(rtd.getField(1));
+		if (rtd != null)
+			iterateSemiPreRtdField(rtd.getField(1));
 	}
 	
 	private void iterateSemiPreRtdField(Object[] field)
