@@ -17,16 +17,14 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import java.io.Serializable;
-
-import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
+import java.util.ListIterator;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.Uninitialized;
 
 public class WtImageLink
 		extends
-			WtInnerNode3
+			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -49,11 +47,9 @@ public class WtImageLink
 			ImageVertAlign vAlign,
 			int width,
 			int height,
-			boolean upright,
-			ImageLinkTarget link,
-			WtLinkOptionAltText alt)
+			boolean upright)
 	{
-		super(target, options, WtLinkTitle.NO_TITLE);
+		super(target, options);
 		setFormat(format);
 		setBorder(border);
 		setHAlign(hAlign);
@@ -61,8 +57,6 @@ public class WtImageLink
 		setWidth(width);
 		setHeight(height);
 		setUpright(upright);
-		setLink(link);
-		setAlt(alt);
 	}
 	
 	@Override
@@ -164,43 +158,10 @@ public class WtImageLink
 		this.border = border;
 	}
 	
-	private ImageLinkTarget link;
-	
-	public final ImageLinkTarget getLink()
-	{
-		return this.link;
-	}
-	
-	public final void setLink(ImageLinkTarget link)
-	{
-		if (link == null)
-			throw new NullPointerException();
-		this.link = link;
-	}
-	
-	private WtLinkOptionAltText alt;
-	
-	public final boolean hasAlt()
-	{
-		return getAlt() != WtLinkOptionAltText.NO_ALT;
-	}
-	
-	public final WtLinkOptionAltText getAlt()
-	{
-		return this.alt;
-	}
-	
-	public final void setAlt(WtLinkOptionAltText alt)
-	{
-		if (alt == null)
-			throw new NullPointerException();
-		this.alt = alt;
-	}
-	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 9 + getSuperPropertyCount();
+		return 7 + getSuperPropertyCount();
 	}
 	
 	private final int getSuperPropertyCount()
@@ -211,7 +172,7 @@ public class WtImageLink
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode3PropertyIterator()
+		return new WtInnerNode2PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
@@ -238,10 +199,6 @@ public class WtImageLink
 						return "format";
 					case 6:
 						return "border";
-					case 7:
-						return "link";
-					case 8:
-						return "alt";
 						
 					default:
 						return super.getName(index);
@@ -267,10 +224,6 @@ public class WtImageLink
 						return WtImageLink.this.getFormat();
 					case 6:
 						return WtImageLink.this.getBorder();
-					case 7:
-						return WtImageLink.this.getLink();
-					case 8:
-						return WtImageLink.this.getAlt();
 						
 					default:
 						return super.getValue(index);
@@ -324,18 +277,6 @@ public class WtImageLink
 						WtImageLink.this.setBorder((Boolean) value);
 						return old;
 					}
-					case 7:
-					{
-						ImageLinkTarget old = WtImageLink.this.getLink();
-						WtImageLink.this.setLink((ImageLinkTarget) value);
-						return old;
-					}
-					case 8:
-					{
-						WtLinkOptionAltText old = WtImageLink.this.getAlt();
-						WtImageLink.this.setAlt((WtLinkOptionAltText) value);
-						return old;
-					}
 					
 					default:
 						return super.setValue(index, value);
@@ -367,26 +308,111 @@ public class WtImageLink
 		return (WtLinkOptions) get(1);
 	}
 	
-	public boolean hasTitle()
-	{
-		return getTitle() != WtLinkTitle.NO_TITLE;
-	}
-	
-	public final void setTitle(WtLinkTitle title)
-	{
-		set(2, title);
-	}
-	
-	public final WtLinkTitle getTitle()
-	{
-		return (WtLinkTitle) get(2);
-	}
-	
-	private static final String[] CHILD_NAMES = new String[] { "target", "options", "title" };
+	private static final String[] CHILD_NAMES = new String[] { "target", "options" };
 	
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;
+	}
+	
+	// =========================================================================
+	// Helper
+	
+	public final WtLinkOptionLinkTarget getLink()
+	{
+		WtNode target = getFromOpts(WtNode.NT_LINK_OPTION_LINK_TARGET);
+		if (target == null)
+			return WtLinkOptionLinkTarget.DEFAULT;
+		return (WtLinkOptionLinkTarget) target;
+	}
+	
+	public final void setLink(WtLinkOptionLinkTarget link)
+	{
+		if (link == WtLinkOptionLinkTarget.DEFAULT)
+			link = null;
+		setInOpts(WtNode.NT_LINK_OPTION_LINK_TARGET, link);
+	}
+	
+	public final boolean hasAlt()
+	{
+		return getFromOpts(WtNode.NT_LINK_OPTION_ALT_TEXT) != null;
+	}
+	
+	public final void setAlt(WtLinkOptionAltText alt)
+	{
+		if (alt == WtLinkOptionAltText.NO_ALT)
+			alt = null;
+		setInOpts(WtNode.NT_LINK_OPTION_ALT_TEXT, alt);
+	}
+	
+	public final WtLinkOptionAltText getAlt()
+	{
+		WtNode alt = getFromOpts(WtNode.NT_LINK_OPTION_ALT_TEXT);
+		if (alt == null)
+			return WtLinkOptionAltText.NO_ALT;
+		return (WtLinkOptionAltText) alt;
+	}
+	
+	public boolean hasTitle()
+	{
+		return getFromOpts(WtNode.NT_LINK_TITLE) != null;
+	}
+	
+	public final void setTitle(WtLinkTitle title)
+	{
+		if (title == WtLinkTitle.NO_TITLE)
+			title = null;
+		setInOpts(WtNode.NT_LINK_TITLE, title);
+	}
+	
+	public final WtLinkTitle getTitle()
+	{
+		WtNode title = getFromOpts(WtNode.NT_LINK_TITLE);
+		if (title == null)
+			return WtLinkTitle.NO_TITLE;
+		return (WtLinkTitle) title;
+	}
+	
+	// =========================================================================
+	
+	private void setInOpts(int type, WtNode node)
+	{
+		WtLinkOptions opts = getOptions();
+		
+		ListIterator<WtNode> i = opts.listIterator(opts.size());
+		while (i.hasPrevious())
+		{
+			WtNode o = i.previous();
+			if (o.getNodeType() == type)
+			{
+				if (node != null)
+				{
+					i.set(node);
+					return;
+				}
+				else
+				{
+					// Remove ALL matching nodes...
+					i.remove();
+				}
+			}
+		}
+		
+		// We could not replace an existing link instance, append new instead
+		if (node != null)
+			opts.add(node);
+	}
+	
+	private WtNode getFromOpts(int type)
+	{
+		WtLinkOptions opts = getOptions();
+		for (int i = opts.size() - 1; i >= 0; --i)
+		{
+			WtNode o = opts.get(i);
+			if (o.getNodeType() == type)
+				return o;
+		}
+		return null;
 	}
 	
 	// =========================================================================
@@ -656,79 +682,6 @@ public class WtImageLink
 		public ImageViewFormat combine(ImageViewFormat other)
 		{
 			return priority() > other.priority() ? this : other;
-		}
-	}
-	
-	// =========================================================================
-	
-	public static final class ImageLinkTarget
-			implements
-				Serializable
-	{
-		private static final long serialVersionUID = 7512726979071706711L;
-		
-		private final LinkTargetType targetType;
-		
-		private final WtLinkTarget target;
-		
-		public ImageLinkTarget(LinkTargetType targetType)
-		{
-			this.targetType = targetType;
-			this.target = WtLinkTarget.NO_LINK;
-		}
-		
-		public ImageLinkTarget(LinkTargetType targetType, WtLinkTarget target)
-		{
-			this.targetType = targetType;
-			this.target = target;
-		}
-		
-		public LinkTargetType getTargetType()
-		{
-			return targetType;
-		}
-		
-		public WtLinkTarget getTarget()
-		{
-			return target;
-		}
-		
-		@Override
-		public String toString()
-		{
-			return "ImageLinkTarget[ " + targetType + ": " + target + " ]";
-		}
-		
-		@Override
-		public int hashCode()
-		{
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + ((target == null) ? 0 : target.hashCode());
-			result = prime * result + ((targetType == null) ? 0 : targetType.hashCode());
-			return result;
-		}
-		
-		@Override
-		public boolean equals(Object obj)
-		{
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			ImageLinkTarget other = (ImageLinkTarget) obj;
-			if (target == null)
-			{
-				if (other.target != null)
-					return false;
-			}
-			else if (!target.equals(other.target))
-				return false;
-			if (targetType != other.targetType)
-				return false;
-			return true;
 		}
 	}
 }

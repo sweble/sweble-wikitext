@@ -155,12 +155,10 @@ WtParsedWikitextPage(
 		heading = WtHeading[ [0] = "Using the toolbar" ],
 		body = WtBody[
 			[0] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = FRAME
 				{P} hAlign = CENTER
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -171,17 +169,15 @@ WtParsedWikitextPage(
 					),
 					[1] = WtLinkOptionKeyword(
 						{P} keyword = "center"
-					)
-				],
-				title = WtLinkTitle[ [0] = "Vector toolbar - default" ]
+					),
+					[2] = WtLinkTitle[ [0] = "Vector toolbar - default" ]
+				]
 			),
 			[1] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = FRAME
 				{P} hAlign = CENTER
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -192,39 +188,33 @@ WtParsedWikitextPage(
 					),
 					[1] = WtLinkOptionKeyword(
 						{P} keyword = "center"
-					)
-				],
-				title = WtLinkTitle[ [0] = "Monobook toolbar" ]
+					),
+					[2] = WtLinkTitle[ [0] = "Monobook toolbar" ]
+				]
 			),
 			[2] = "To automatically insert a table, click",
 			[3] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = UNRESTRAINED
 				{P} hAlign = UNSPECIFIED
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
 				target = WtPageName[ [0] = "File:Vector toolbar insert table button.png" ],
-				options = WtLinkOptions[],
-				title = -
+				options = WtLinkOptions[]
 			),
 			[4] = "or",
 			[5] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = UNRESTRAINED
 				{P} hAlign = UNSPECIFIED
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
 				target = WtPageName[ [0] = "File:Button insert table.png" ],
-				options = WtLinkOptions[],
-				title = -
+				options = WtLinkOptions[]
 			),
 			[6] = "(Insert a table) on the",
 			[7] = WtInternalLink(
@@ -2762,12 +2752,10 @@ WtParsedWikitextPage(
 												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 120
@@ -2777,8 +2765,7 @@ WtParsedWikitextPage(
 																{P} height = -1
 																{P} width = 120
 															)
-														],
-														title = -
+														]
 													)
 												]
 											),
@@ -2786,12 +2773,10 @@ WtParsedWikitextPage(
 												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 120
@@ -2800,9 +2785,9 @@ WtParsedWikitextPage(
 															[0] = WtLinkOptionResize(
 																{P} height = -1
 																{P} width = 120
-															)
-														],
-														title = WtLinkTitle[ [0] = "Caption when mouse-over image" ]
+															),
+															[1] = WtLinkTitle[ [0] = "Caption when mouse-over image" ]
+														]
 													)
 												]
 											),
@@ -2810,12 +2795,10 @@ WtParsedWikitextPage(
 												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 120
@@ -2824,9 +2807,9 @@ WtParsedWikitextPage(
 															[0] = WtLinkOptionResize(
 																{P} height = -1
 																{P} width = 120
-															)
-														],
-														title = WtLinkTitle[ [0] = "Green stellar icon" ]
+															),
+															[1] = WtLinkTitle[ [0] = "Green stellar icon" ]
+														]
 													)
 												]
 											)
@@ -2937,12 +2920,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 120
@@ -2952,8 +2933,7 @@ WtParsedWikitextPage(
 																{P} height = -1
 																{P} width = 120
 															)
-														],
-														title = -
+														]
 													)
 												]
 											),
@@ -2966,12 +2946,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 120
@@ -2980,9 +2958,9 @@ WtParsedWikitextPage(
 															[0] = WtLinkOptionResize(
 																{P} height = -1
 																{P} width = 120
-															)
-														],
-														title = WtLinkTitle[ [0] = "Caption when mouse-over image" ]
+															),
+															[1] = WtLinkTitle[ [0] = "Caption when mouse-over image" ]
+														]
 													)
 												]
 											),
@@ -2995,12 +2973,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 120
@@ -3009,9 +2985,9 @@ WtParsedWikitextPage(
 															[0] = WtLinkOptionResize(
 																{P} height = -1
 																{P} width = 120
-															)
-														],
-														title = WtLinkTitle[ [0] = "Green stellar icon" ]
+															),
+															[1] = WtLinkTitle[ [0] = "Green stellar icon" ]
+														]
 													)
 												]
 											)
@@ -3499,18 +3475,15 @@ WtParsedWikitextPage(
 																						xmlAttributes = WtXmlAttributes[],
 																						body = WtBody[
 																							[0] = WtImageLink(
-																								{P} alt = -
 																								{P} border = false
 																								{P} format = UNRESTRAINED
 																								{P} hAlign = UNSPECIFIED
 																								{P} height = -1
-																								{P} link = ImageLinkTarget[ DEFAULT: --- ]
 																								{P} upright = false
 																								{P} vAlign = MIDDLE
 																								{P} width = -1
 																								target = WtPageName[ [0] = "File:Wiki.png" ],
-																								options = WtLinkOptions[],
-																								title = -
+																								options = WtLinkOptions[]
 																							)
 																						]
 																					),
@@ -3523,18 +3496,15 @@ WtParsedWikitextPage(
 																						],
 																						body = WtBody[
 																							[0] = WtImageLink(
-																								{P} alt = -
 																								{P} border = false
 																								{P} format = UNRESTRAINED
 																								{P} hAlign = UNSPECIFIED
 																								{P} height = -1
-																								{P} link = ImageLinkTarget[ DEFAULT: --- ]
 																								{P} upright = false
 																								{P} vAlign = MIDDLE
 																								{P} width = -1
 																								target = WtPageName[ [0] = "File:Wiki.png" ],
-																								options = WtLinkOptions[],
-																								title = -
+																								options = WtLinkOptions[]
 																							)
 																						]
 																					)
@@ -3758,12 +3728,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 180
@@ -3773,8 +3741,7 @@ WtParsedWikitextPage(
 																{P} height = -1
 																{P} width = 180
 															)
-														],
-														title = -
+														]
 													),
 													[1] = WtXmlElement(
 														{P} name = "br"
@@ -3828,12 +3795,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = THUMBNAIL
 														{P} hAlign = RIGHT
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = -1
@@ -3844,9 +3809,9 @@ WtParsedWikitextPage(
 															),
 															[1] = WtLinkOptionKeyword(
 																{P} keyword = "right"
-															)
-														],
-														title = WtLinkTitle[ [0] = "This table shows the implicit margins of  Images using \"right\"." ]
+															),
+															[2] = WtLinkTitle[ [0] = "This table shows the implicit margins of  Images using \"right\"." ]
+														]
 													)
 												]
 											)
@@ -3891,12 +3856,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 105
@@ -3906,8 +3869,7 @@ WtParsedWikitextPage(
 																{P} height = -1
 																{P} width = 105
 															)
-														],
-														title = -
+														]
 													),
 													[1] = WtXmlElement(
 														{P} name = "br"
@@ -3951,12 +3913,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 105
@@ -3966,8 +3926,7 @@ WtParsedWikitextPage(
 																{P} height = -1
 																{P} width = 105
 															)
-														],
-														title = -
+														]
 													),
 													[1] = WtXmlElement(
 														{P} name = "br"
@@ -4011,12 +3970,10 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 105
@@ -4026,8 +3983,7 @@ WtParsedWikitextPage(
 																{P} height = -1
 																{P} width = 105
 															)
-														],
-														title = -
+														]
 													),
 													[1] = WtXmlElement(
 														{P} name = "br"
@@ -8150,12 +8106,10 @@ WtParsedWikitextPage(
 												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = WtLinkOptionAltText[ [0] = "Robed woman, seated, with sword on her lap" ]
 														{P} border = false
 														{P} format = THUMBNAIL
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = true
 														{P} vAlign = MIDDLE
 														{P} width = -1
@@ -8167,12 +8121,12 @@ WtParsedWikitextPage(
 															[1] = WtLinkOptionKeyword(
 																{P} keyword = "upright"
 															),
-															[2] = WtLinkOptionAltText[ [0] = "Robed woman, seated, with sword on her lap" ]
-														],
-														title = WtLinkTitle[
-															[0] = "Philipp Veit,",
-															[1] = WtItalics[ [0] = "Germania" ],
-															[2] = ", 1834\u201336"
+															[2] = WtLinkOptionAltText[ [0] = "Robed woman, seated, with sword on her lap" ],
+															[3] = WtLinkTitle[
+																[0] = "Philipp Veit,",
+																[1] = WtItalics[ [0] = "Germania" ],
+																[2] = ", 1834\u201336"
+															]
 														]
 													)
 												]
@@ -8181,12 +8135,10 @@ WtParsedWikitextPage(
 												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = WtLinkOptionAltText[ [0] = "Robed woman, standing, holding a sword" ]
 														{P} border = false
 														{P} format = THUMBNAIL
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = true
 														{P} vAlign = MIDDLE
 														{P} width = -1
@@ -8198,12 +8150,12 @@ WtParsedWikitextPage(
 															[1] = WtLinkOptionKeyword(
 																{P} keyword = "upright"
 															),
-															[2] = WtLinkOptionAltText[ [0] = "Robed woman, standing, holding a sword" ]
-														],
-														title = WtLinkTitle[
-															[0] = "Philipp Veit,",
-															[1] = WtItalics[ [0] = "Germania" ],
-															[2] = ", 1848"
+															[2] = WtLinkOptionAltText[ [0] = "Robed woman, standing, holding a sword" ],
+															[3] = WtLinkTitle[
+																[0] = "Philipp Veit,",
+																[1] = WtItalics[ [0] = "Germania" ],
+																[2] = ", 1848"
+															]
 														]
 													)
 												]
@@ -8212,12 +8164,10 @@ WtParsedWikitextPage(
 												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = WtLinkOptionAltText[ [0] = "Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another" ]
 														{P} border = false
 														{P} format = THUMBNAIL
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
 														{P} upright = true
 														{P} vAlign = MIDDLE
 														{P} width = -1
@@ -8229,12 +8179,12 @@ WtParsedWikitextPage(
 															[1] = WtLinkOptionKeyword(
 																{P} keyword = "upright"
 															),
-															[2] = WtLinkOptionAltText[ [0] = "Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another" ]
-														],
-														title = WtLinkTitle[
-															[0] = "Johannes Schilling,",
-															[1] = WtItalics[ [0] = "Germania" ],
-															[2] = ", 1871\u201383"
+															[2] = WtLinkOptionAltText[ [0] = "Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another" ],
+															[3] = WtLinkTitle[
+																[0] = "Johannes Schilling,",
+																[1] = WtItalics[ [0] = "Germania" ],
+																[2] = ", 1871\u201383"
+															]
 														]
 													)
 												]
@@ -8284,12 +8234,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = THUMBNAIL
 												{P} hAlign = LEFT
 												{P} height = 155
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
@@ -8304,9 +8252,9 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionKeyword(
 														{P} keyword = "left"
-													)
-												],
-												title = WtLinkTitle[ [0] = "Various window shades" ]
+													),
+													[3] = WtLinkTitle[ [0] = "Various window shades" ]
+												]
 											)
 										]
 									),
@@ -8314,12 +8262,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = THUMBNAIL
 												{P} hAlign = LEFT
 												{P} height = 170
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
@@ -8334,9 +8280,9 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionKeyword(
 														{P} keyword = "left"
-													)
-												],
-												title = WtLinkTitle[ [0] = "Vertical blinds" ]
+													),
+													[3] = WtLinkTitle[ [0] = "Vertical blinds" ]
+												]
 											)
 										]
 									),
@@ -8344,12 +8290,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = THUMBNAIL
 												{P} hAlign = LEFT
 												{P} height = 155
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
@@ -8364,9 +8308,9 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionKeyword(
 														{P} keyword = "left"
-													)
-												],
-												title = WtLinkTitle[ [0] = "This is not a blind" ]
+													),
+													[3] = WtLinkTitle[ [0] = "This is not a blind" ]
+												]
 											)
 										]
 									)
@@ -8394,12 +8338,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = THUMBNAIL
 												{P} hAlign = LEFT
 												{P} height = 155
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 192
@@ -8414,9 +8356,9 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionKeyword(
 														{P} keyword = "left"
-													)
-												],
-												title = WtLinkTitle[ [0] = "Solid shade" ]
+													),
+													[3] = WtLinkTitle[ [0] = "Solid shade" ]
+												]
 											)
 										]
 									),
@@ -8424,12 +8366,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = THUMBNAIL
 												{P} hAlign = LEFT
 												{P} height = 55
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 328
@@ -8444,9 +8384,9 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionKeyword(
 														{P} keyword = "left"
-													)
-												],
-												title = WtLinkTitle[ [0] = "Horizonal blinds" ]
+													),
+													[3] = WtLinkTitle[ [0] = "Horizonal blinds" ]
+												]
 											)
 										]
 									)
@@ -8474,12 +8414,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = THUMBNAIL
 												{P} hAlign = LEFT
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 205
@@ -8494,12 +8432,12 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionKeyword(
 														{P} keyword = "left"
-													)
-												],
-												title = WtLinkTitle[
-													[0] = "Shade, shutters; vertical",
-													[1] = "&",
-													[2] = "horizontal blinds."
+													),
+													[3] = WtLinkTitle[
+														[0] = "Shade, shutters; vertical",
+														[1] = "&",
+														[2] = "horizontal blinds."
+													]
 												]
 											)
 										]
@@ -8508,12 +8446,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = THUMBNAIL
 												{P} hAlign = LEFT
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 388
@@ -8528,9 +8464,9 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionKeyword(
 														{P} keyword = "left"
-													)
-												],
-												title = WtLinkTitle[ [0] = "Detail of turning rod (blind stick) attachment on miniblinds" ]
+													),
+													[3] = WtLinkTitle[ [0] = "Detail of turning rod (blind stick) attachment on miniblinds" ]
+												]
 											)
 										]
 									)
@@ -8579,12 +8515,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ NO_LINK: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8594,8 +8528,7 @@ WtParsedWikitextPage(
 														{P} targetType = NO_LINK
 														target = -
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8608,12 +8541,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8623,8 +8554,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia:WikiProject Video games" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8637,12 +8567,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia talk:WikiProject Video games")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8652,8 +8580,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia talk:WikiProject Video games" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8666,12 +8593,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Portal:Video games")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8681,8 +8606,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Portal:Video games" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8695,12 +8619,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Article guidelines")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8710,8 +8632,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Article guidelines" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8724,12 +8645,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Templates")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8739,8 +8658,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Templates" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8753,12 +8671,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Sources")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8768,8 +8684,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Sources" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8782,12 +8697,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Assessment")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8797,8 +8710,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Assessment" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8811,12 +8723,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Cleanup")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8826,8 +8736,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Cleanup" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -8840,12 +8749,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ PAGE: WtPageName[WtText("Wikipedia:WikiProject Video games/Requests")] ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = -1
@@ -8855,8 +8762,7 @@ WtParsedWikitextPage(
 														{P} targetType = PAGE
 														target = WtPageName[ [0] = "Wikipedia:WikiProject Video games/Requests" ]
 													)
-												],
-												title = -
+												]
 											)
 										]
 									)
@@ -9031,12 +8937,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 265
@@ -9046,8 +8950,7 @@ WtParsedWikitextPage(
 														{P} height = -1
 														{P} width = 265
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9055,12 +8958,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 235
@@ -9070,8 +8971,7 @@ WtParsedWikitextPage(
 														{P} height = -1
 														{P} width = 235
 													)
-												],
-												title = -
+												]
 											)
 										]
 									)
@@ -9146,12 +9046,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 130
@@ -9161,8 +9059,7 @@ WtParsedWikitextPage(
 														{P} height = -1
 														{P} width = 130
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9170,12 +9067,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 125
@@ -9185,8 +9080,7 @@ WtParsedWikitextPage(
 														{P} height = -1
 														{P} width = 125
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9194,12 +9088,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 125
@@ -9209,8 +9101,7 @@ WtParsedWikitextPage(
 														{P} height = -1
 														{P} width = 125
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9218,12 +9109,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = -1
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 115
@@ -9233,8 +9122,7 @@ WtParsedWikitextPage(
 														{P} height = -1
 														{P} width = 115
 													)
-												],
-												title = -
+												]
 											)
 										]
 									)
@@ -9298,12 +9186,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 95
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9313,8 +9199,7 @@ WtParsedWikitextPage(
 														{P} height = 95
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9322,12 +9207,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 95
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9337,8 +9220,7 @@ WtParsedWikitextPage(
 														{P} height = 95
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9346,12 +9228,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 95
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9361,8 +9241,7 @@ WtParsedWikitextPage(
 														{P} height = 95
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9370,12 +9249,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 95
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 100
@@ -9385,8 +9262,7 @@ WtParsedWikitextPage(
 														{P} height = 95
 														{P} width = 100
 													)
-												],
-												title = -
+												]
 											)
 										]
 									)
@@ -9450,12 +9326,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 70
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9465,8 +9339,7 @@ WtParsedWikitextPage(
 														{P} height = 70
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9474,12 +9347,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 70
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9489,8 +9360,7 @@ WtParsedWikitextPage(
 														{P} height = 70
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9498,12 +9368,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 70
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9513,8 +9381,7 @@ WtParsedWikitextPage(
 														{P} height = 70
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9522,12 +9389,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 70
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9537,8 +9402,7 @@ WtParsedWikitextPage(
 														{P} height = 70
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9546,12 +9410,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 70
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9561,8 +9423,7 @@ WtParsedWikitextPage(
 														{P} height = 70
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -9570,12 +9431,10 @@ WtParsedWikitextPage(
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = -
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 70
-												{P} link = ImageLinkTarget[ DEFAULT: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 199
@@ -9585,8 +9444,7 @@ WtParsedWikitextPage(
 														{P} height = 70
 														{P} width = 199
 													)
-												],
-												title = -
+												]
 											)
 										]
 									)
@@ -9678,12 +9536,10 @@ WtParsedWikitextPage(
 														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = WtImageLink(
-																{P} alt = -
 																{P} border = false
 																{P} format = UNRESTRAINED
 																{P} hAlign = UNSPECIFIED
 																{P} height = 125
-																{P} link = ImageLinkTarget[ DEFAULT: --- ]
 																{P} upright = false
 																{P} vAlign = MIDDLE
 																{P} width = 299
@@ -9693,8 +9549,7 @@ WtParsedWikitextPage(
 																		{P} height = 125
 																		{P} width = 299
 																	)
-																],
-																title = -
+																]
 															)
 														]
 													),
@@ -9711,12 +9566,10 @@ WtParsedWikitextPage(
 																],
 																body = WtBody[
 																	[0] = WtImageLink(
-																		{P} alt = -
 																		{P} border = false
 																		{P} format = UNRESTRAINED
 																		{P} hAlign = UNSPECIFIED
 																		{P} height = 125
-																		{P} link = ImageLinkTarget[ DEFAULT: --- ]
 																		{P} upright = false
 																		{P} vAlign = MIDDLE
 																		{P} width = 299
@@ -9726,8 +9579,7 @@ WtParsedWikitextPage(
 																				{P} height = 125
 																				{P} width = 299
 																			)
-																		],
-																		title = -
+																		]
 																	)
 																]
 															)
@@ -9741,12 +9593,10 @@ WtParsedWikitextPage(
 																{P} resolved = "\u00A0"
 															),
 															[1] = WtImageLink(
-																{P} alt = -
 																{P} border = false
 																{P} format = UNRESTRAINED
 																{P} hAlign = UNSPECIFIED
 																{P} height = 125
-																{P} link = ImageLinkTarget[ DEFAULT: --- ]
 																{P} upright = false
 																{P} vAlign = MIDDLE
 																{P} width = 299
@@ -9756,8 +9606,7 @@ WtParsedWikitextPage(
 																		{P} height = 125
 																		{P} width = 299
 																	)
-																],
-																title = -
+																]
 															),
 															[2] = WtXmlEntityRef(
 																{P} name = "nbsp"

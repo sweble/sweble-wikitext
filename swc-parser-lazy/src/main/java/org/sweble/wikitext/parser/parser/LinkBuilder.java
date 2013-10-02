@@ -18,20 +18,18 @@
 package org.sweble.wikitext.parser.parser;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
-import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
-import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
+import org.sweble.wikitext.parser.nodes.WtLinkOptionGarbage;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionKeyword;
-import org.sweble.wikitext.parser.nodes.WtLinkOptionLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionResize;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions;
-import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtPageName;
@@ -41,8 +39,6 @@ import de.fau.cs.osr.ptk.common.Warning;
 public class LinkBuilder
 {
 	private final WtPageName target;
-	
-	private WtLinkTitle title;
 	
 	// -- format
 	
@@ -57,10 +53,6 @@ public class LinkBuilder
 	private ImageVertAlign vAlign;
 	
 	private ImageViewFormat format;
-	
-	private ImageLinkTarget link;
-	
-	private WtLinkOptionAltText alt;
 	
 	private boolean border;
 	
@@ -86,7 +78,6 @@ public class LinkBuilder
 			targetType = parserConfig.classifyTarget(target.getAsString());
 		this.targetType = targetType;
 		
-		this.title = null;
 		this.width = -1;
 		this.height = -1;
 		this.upright = false;
@@ -94,8 +85,6 @@ public class LinkBuilder
 		this.vAlign = null;
 		this.format = null;
 		this.border = false;
-		this.link = null;
-		this.alt = null;
 	}
 	
 	// =========================================================================
@@ -161,42 +150,6 @@ public class LinkBuilder
 			this.height = height;
 	}
 	
-	public void addOption(WtLinkOptionLinkTarget option)
-	{
-		if (option != null)
-		{
-			ImageLinkTarget target = new ImageLinkTarget(
-					option.getTargetType(),
-					option.getTarget());
-			
-			if (target.getTargetType() == LinkTargetType.URL)
-			{
-				// second occurrence wins, url beats page
-				this.link = target;
-			}
-			else
-			{
-				// second occurrence wins, url beats page
-				if (this.link == null || this.link.getTargetType() != LinkTargetType.URL)
-					this.link = target;
-			}
-		}
-		else
-		{
-			this.link = new ImageLinkTarget(LinkTargetType.NO_LINK);
-		}
-	}
-	
-	public void addOption(WtLinkOptionAltText option)
-	{
-		this.alt = option;
-	}
-	
-	public void setTitle(WtLinkTitle title)
-	{
-		this.title = title;
-	}
-	
 	public void addWarning(Warning warning)
 	{
 		if (warnings == null)
@@ -208,6 +161,8 @@ public class LinkBuilder
 	
 	public WtNode build(WtLinkOptions options, String postfix)
 	{
+		WtLinkTitle title = findTitle(options);
+		
 		if (this.targetType == LinkType.IMAGE)
 		{
 			if (hAlign == null)
@@ -219,12 +174,6 @@ public class LinkBuilder
 			if (format == null)
 				format = ImageViewFormat.UNRESTRAINED;
 			
-			if (alt == null)
-				alt = parserConfig.getNodeFactory().noLoAlt();
-			
-			if (link == null)
-				link = new ImageLinkTarget(LinkTargetType.DEFAULT);
-			
 			WtImageLink result = parserConfig.getNodeFactory().img(
 					target,
 					options,
@@ -234,11 +183,9 @@ public class LinkBuilder
 					vAlign,
 					width,
 					height,
-					upright,
-					link,
-					alt);
+					upright);
 			
-			if (this.title != null)
+			if (title != null)
 				result.setTitle(title);
 			
 			finish(result);
@@ -254,12 +201,43 @@ public class LinkBuilder
 					target,
 					postfix);
 			
-			if (this.title != null)
+			if (title != null)
 				result.setTitle(title);
 			
 			finish(result);
 			return result;
 		}
+	}
+	
+	/**
+	 * Converts all but the last title option node into garbage nodes (since
+	 * only the last is really considered). The last node becomes the title node
+	 * and is returned. May return null if there are no title nodes at all.
+	 */
+	private WtLinkTitle findTitle(WtLinkOptions options)
+	{
+		ListIterator<WtNode> i = options.listIterator(options.size());
+		WtLinkTitle title = null;
+		while (i.hasPrevious())
+		{
+			WtNode n = i.previous();
+			if (n.getNodeType() == WtNode.NT_LINK_TITLE)
+			{
+				if (title == null)
+				{
+					title = (WtLinkTitle) n;
+				}
+				else
+				{
+					WtLinkOptionGarbage garbage =
+							parserConfig.getNodeFactory().loGarbage(
+									parserConfig.getNodeFactory().list());
+					garbage.exchange((WtLinkTitle) n);
+					i.set(garbage);
+				}
+			}
+		}
+		return title;
 	}
 	
 	public void finish(WtNode n)

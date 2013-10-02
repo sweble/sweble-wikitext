@@ -480,15 +480,11 @@ WtParsedWikitextPage(
 							),
 							[1] = " ",
 							[2] = WtImageLink(
-								{P} alt = WtLinkOptionAltText(
-										{P} rtd = RTD[ "|alt=" <o> "" ]
-									)
 								{P} border = false
 								{P} format = UNRESTRAINED
 								{P} hAlign = UNSPECIFIED
 								{P} height = -1
-								{P} link = ImageLinkTarget[ DEFAULT: --- ]
-								{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								{P} upright = false
 								{P} vAlign = MIDDLE
 								{P} width = 225
@@ -501,12 +497,12 @@ WtParsedWikitextPage(
 									),
 									[1] = WtLinkOptionAltText(
 										{P} rtd = RTD[ "|alt=" <o> "" ]
+									),
+									[2] = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Saxby Chambliss"
 									)
-								],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Saxby Chambliss"
-								)
+								]
 							),
 							[3] = WtXmlEmptyTag(
 								{P} name = "br"
@@ -3062,16 +3058,11 @@ WtParsedWikitextPage(
 								]
 							),
 							[16] = WtImageLink(
-								{P} alt = WtLinkOptionAltText(
-										{P} rtd = RTD[ "|alt=" <o> "" ]
-										[0] = "\n    "
-									)
 								{P} border = false
 								{P} format = UNRESTRAINED
 								{P} hAlign = UNSPECIFIED
 								{P} height = 40
-								{P} link = ImageLinkTarget[ NO_LINK: --- ]
-								{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								{P} upright = false
 								{P} vAlign = MIDDLE
 								{P} width = 40
@@ -3091,8 +3082,7 @@ WtParsedWikitextPage(
 										{P} rtd = RTD[ "|alt=" <o> "" ]
 										[0] = "\n    "
 									)
-								],
-								title = -
+								]
 							),
 							[17] = WtXmlEndTag(
 								{P} name = "td"
@@ -6121,16 +6111,11 @@ WtParsedWikitextPage(
 				]
 			),
 			[8] = WtImageLink(
-				{P} alt = WtLinkOptionAltText(
-						{P} rtd = RTD[ "|alt=" <o> "" ]
-						[0] = "\n    "
-					)
 				{P} border = false
 				{P} format = UNRESTRAINED
 				{P} hAlign = UNSPECIFIED
 				{P} height = 40
-				{P} link = ImageLinkTarget[ NO_LINK: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = 40
@@ -6150,8 +6135,7 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "|alt=" <o> "" ]
 						[0] = "\n    "
 					)
-				],
-				title = -
+				]
 			),
 			[9] = WtXmlEndTag(
 				{P} name = "td"
@@ -6304,16 +6288,11 @@ WtParsedWikitextPage(
 				]
 			),
 			[34] = WtImageLink(
-				{P} alt = WtLinkOptionAltText(
-						{P} rtd = RTD[ "|alt=" <o> "" ]
-						[0] = "\n    "
-					)
 				{P} border = false
 				{P} format = UNRESTRAINED
 				{P} hAlign = UNSPECIFIED
 				{P} height = 40
-				{P} link = ImageLinkTarget[ NO_LINK: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = 40
@@ -6333,8 +6312,7 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "|alt=" <o> "" ]
 						[0] = "\n    "
 					)
-				],
-				title = -
+				]
 			),
 			[35] = WtXmlEndTag(
 				{P} name = "td"
@@ -8698,13 +8676,11 @@ WtParsedWikitextPage(
 				]
 			),
 			[184] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = UNRESTRAINED
 				{P} hAlign = UNSPECIFIED
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = 80
@@ -8714,12 +8690,12 @@ WtParsedWikitextPage(
 						{P} height = -1
 						{P} rtd = RTD[ "|80px" ]
 						{P} width = 80
+					),
+					[1] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "United States Senate"
 					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "United States Senate"
-				)
+				]
 			),
 			[185] = WtXmlEndTag(
 				{P} name = "td"

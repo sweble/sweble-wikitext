@@ -66,12 +66,10 @@ WtParsedWikitextPage(
 								],
 								body = WtBody[
 									[0] = WtImageLink(
-										{P} alt = WtLinkOptionAltText[]
 										{P} border = false
 										{P} format = UNRESTRAINED
 										{P} hAlign = UNSPECIFIED
 										{P} height = -1
-										{P} link = ImageLinkTarget[ DEFAULT: --- ]
 										{P} upright = false
 										{P} vAlign = MIDDLE
 										{P} width = 225
@@ -81,9 +79,9 @@ WtParsedWikitextPage(
 												{P} height = -1
 												{P} width = 225
 											),
-											[1] = WtLinkOptionAltText[]
-										],
-										title = WtLinkTitle[ [0] = "Saxby Chambliss" ]
+											[1] = WtLinkOptionAltText[],
+											[2] = WtLinkTitle[ [0] = "Saxby Chambliss" ]
+										]
 									),
 									[1] = WtXmlElement(
 										{P} name = "br"
@@ -1644,12 +1642,10 @@ WtParsedWikitextPage(
 														],
 														body = WtBody[
 															[0] = WtImageLink(
-																{P} alt = WtLinkOptionAltText[]
 																{P} border = false
 																{P} format = UNRESTRAINED
 																{P} hAlign = UNSPECIFIED
 																{P} height = 40
-																{P} link = ImageLinkTarget[ NO_LINK: --- ]
 																{P} upright = false
 																{P} vAlign = MIDDLE
 																{P} width = 40
@@ -1664,8 +1660,7 @@ WtParsedWikitextPage(
 																		target = -
 																	),
 																	[2] = WtLinkOptionAltText[]
-																],
-																title = -
+																]
 															)
 														]
 													),
@@ -3309,12 +3304,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = WtLinkOptionAltText[]
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 40
-												{P} link = ImageLinkTarget[ NO_LINK: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 40
@@ -3329,8 +3322,7 @@ WtParsedWikitextPage(
 														target = -
 													),
 													[2] = WtLinkOptionAltText[]
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -3428,12 +3420,10 @@ WtParsedWikitextPage(
 										],
 										body = WtBody[
 											[0] = WtImageLink(
-												{P} alt = WtLinkOptionAltText[]
 												{P} border = false
 												{P} format = UNRESTRAINED
 												{P} hAlign = UNSPECIFIED
 												{P} height = 40
-												{P} link = ImageLinkTarget[ NO_LINK: --- ]
 												{P} upright = false
 												{P} vAlign = MIDDLE
 												{P} width = 40
@@ -3448,8 +3438,7 @@ WtParsedWikitextPage(
 														target = -
 													),
 													[2] = WtLinkOptionAltText[]
-												],
-												title = -
+												]
 											)
 										]
 									),
@@ -5065,12 +5054,10 @@ WtParsedWikitextPage(
 																		],
 																		body = WtBody[
 																			[0] = WtImageLink(
-																				{P} alt = -
 																				{P} border = false
 																				{P} format = UNRESTRAINED
 																				{P} hAlign = UNSPECIFIED
 																				{P} height = -1
-																				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 																				{P} upright = false
 																				{P} vAlign = MIDDLE
 																				{P} width = 80
@@ -5079,9 +5066,9 @@ WtParsedWikitextPage(
 																					[0] = WtLinkOptionResize(
 																						{P} height = -1
 																						{P} width = 80
-																					)
-																				],
-																				title = WtLinkTitle[ [0] = "United States Senate" ]
+																					),
+																					[1] = WtLinkTitle[ [0] = "United States Senate" ]
+																				]
 																			)
 																		]
 																	)

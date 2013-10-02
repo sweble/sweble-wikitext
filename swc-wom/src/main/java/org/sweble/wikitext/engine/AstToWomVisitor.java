@@ -45,7 +45,6 @@ import org.sweble.wikitext.parser.nodes.WtImEndTag;
 import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
-import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
@@ -665,7 +664,7 @@ public class AstToWomVisitor
 		return img;
 	}
 	
-	private void setImgLink(ImageImpl img, ImageLinkTarget link)
+	private void setImgLink(ImageImpl img, WtLinkOptionLinkTarget link)
 	{
 		switch (link.getTargetType())
 		{

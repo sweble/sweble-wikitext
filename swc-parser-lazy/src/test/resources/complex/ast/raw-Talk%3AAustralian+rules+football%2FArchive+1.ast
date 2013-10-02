@@ -315,13 +315,11 @@ WtParsedWikitextPage(
 							),
 							[6] = " before any of these codes of football exited. Cambridge had an offside rule. And not quite enough time elapsed between the Sheffield rules (1857) and Wills' experiments of 1858, for the former to have influenced the latter. So I suspect that it was either a case of parallel evolution or they were both influenced by a common \"ancestor\". ",
 							[7] = WtImageLink(
-								{P} alt = -
 								{P} border = false
 								{P} format = UNRESTRAINED
 								{P} hAlign = UNSPECIFIED
 								{P} height = -1
-								{P} link = ImageLinkTarget[ DEFAULT: --- ]
-								{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								{P} upright = false
 								{P} vAlign = MIDDLE
 								{P} width = 30
@@ -332,8 +330,7 @@ WtParsedWikitextPage(
 										{P} rtd = RTD[ "|30px" ]
 										{P} width = 30
 									)
-								],
-								title = -
+								]
 							),
 							[8] = "  ",
 							[9] = WtInternalLink(
@@ -377,13 +374,11 @@ WtParsedWikitextPage(
 									),
 									[2] = " the modern football games can be traced back to the various english public school games of the 1840s and 1850s.  Funny you should mention composite rules of aussie rules/rugby - I believe that in 2008, to mark the 150th anniversary of the first recorded game of our national game (however it may have been played back then), we should try and recreate the rules of 1858, and it would basically be a composite aussie rules/rugby game, and the AFL should challenge the Wallabies (or anyone else for that matter) playing these composite rules.  You first read the idea here folks, don't forget it!  Re a hybrid soccer/rugby game - I am all for it, because the end result would undoubtedly look better than either of them!  ",
 									[3] = WtImageLink(
-										{P} alt = -
 										{P} border = false
 										{P} format = UNRESTRAINED
 										{P} hAlign = UNSPECIFIED
 										{P} height = -1
-										{P} link = ImageLinkTarget[ DEFAULT: --- ]
-										{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 										{P} upright = false
 										{P} vAlign = MIDDLE
 										{P} width = 40
@@ -394,8 +389,7 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|40px" ]
 												{P} width = 40
 											)
-										],
-										title = -
+										]
 									),
 									[4] = " ",
 									[5] = WtInternalLink(
@@ -1209,13 +1203,11 @@ WtParsedWikitextPage(
 									{P} rtd = RTD[ ":::" <o> "" ]
 									[0] = "Actually it's the \"Australian Football Hall of Fame\" (but it's already been moved back in the article). ",
 									[1] = WtImageLink(
-										{P} alt = -
 										{P} border = false
 										{P} format = UNRESTRAINED
 										{P} hAlign = UNSPECIFIED
 										{P} height = -1
-										{P} link = ImageLinkTarget[ DEFAULT: --- ]
-										{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 										{P} upright = false
 										{P} vAlign = MIDDLE
 										{P} width = 30
@@ -1226,8 +1218,7 @@ WtParsedWikitextPage(
 												{P} rtd = RTD[ "|30px" ]
 												{P} width = 30
 											)
-										],
-										title = -
+										]
 									),
 									[2] = " ",
 									[3] = WtInternalLink(
@@ -1287,13 +1278,11 @@ WtParsedWikitextPage(
 													{P} rtd = RTD[ ":::::" <o> "" ]
 													[0] = "Possibly a good idea, assuming there is enough to write about it. If there is a HOF article in its own right, then obviously both the AFL and ARF articles should link to it, but in the meantime it should reside under Australian Rules Football, not the AFL. ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 30
@@ -1304,8 +1293,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|30px" ]
 																{P} width = 30
 															)
-														],
-														title = -
+														]
 													),
 													[2] = " ",
 													[3] = WtInternalLink(
@@ -1482,13 +1470,11 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ ":" <o> "" ]
 					[0] = "The AFL certainly see themselves as the universal governing body, and I don't think I've seen any official AFL statements regarding the IAFC but I can guarantee they wouldn't be positive. ",
 					[1] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = UNRESTRAINED
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = 30
@@ -1498,11 +1484,11 @@ WtParsedWikitextPage(
 								{P} height = -1
 								{P} rtd = RTD[ "|30px" ]
 								{P} width = 30
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-						)
+						]
 					),
 					[2] = " ",
 					[3] = WtInternalLink(
@@ -4931,19 +4917,16 @@ WtParsedWikitextPage(
 									{P} rtd = RTD[ ":::" <o> "" ]
 									[0] = "I've cropped the one with the banner, uploaded it as ",
 									[1] = WtImageLink(
-										{P} alt = -
 										{P} border = false
 										{P} format = UNRESTRAINED
 										{P} hAlign = UNSPECIFIED
 										{P} height = -1
-										{P} link = ImageLinkTarget[ DEFAULT: --- ]
-										{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 										{P} upright = false
 										{P} vAlign = MIDDLE
 										{P} width = -1
 										target = WtPageName[ [0] = ":Image:Footybanner.jpg" ],
-										options = WtLinkOptions[],
-										title = -
+										options = WtLinkOptions[]
 									),
 									[2] = " and put it in the section of this article mentioning the banners. ",
 									[3] = WtInternalLink(

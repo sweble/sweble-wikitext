@@ -374,13 +374,11 @@ WtSection(
 		[2] = "\n\n",
 		[3] = WtParagraph[],
 		[4] = WtImageLink(
-			{P} alt = -
 			{P} border = false
 			{P} format = THUMBNAIL
 			{P} hAlign = LEFT
 			{P} height = -1
-			{P} link = ImageLinkTarget[ DEFAULT: --- ]
-			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
@@ -393,28 +391,28 @@ WtSection(
 				[1] = WtLinkOptionKeyword(
 					{P} keyword = "left"
 					{P} rtd = RTD[ "|left" ]
+				),
+				[2] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "France after the ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "Hundred Years War" ],
+						title = -
+					),
+					[2] = ". Red line: Boundary of the ",
+					[3] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "Kingdom of France" ],
+						title = -
+					),
+					[4] = "; Light blue: the directly held royal domain"
 				)
-			],
-			title = WtLinkTitle(
-				{P} rtd = RTD[ "|" <o> "" ]
-				[0] = "France after the ",
-				[1] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "Hundred Years War" ],
-					title = -
-				),
-				[2] = ". Red line: Boundary of the ",
-				[3] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "Kingdom of France" ],
-					title = -
-				),
-				[4] = "; Light blue: the directly held royal domain"
-			)
+			]
 		),
 		[5] = "\nIn the 4th century AD, Gaul\u2019s eastern frontier along the ",
 		[6] = WtInternalLink(
@@ -499,13 +497,11 @@ WtSection(
 		[23] = " and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.\n\n",
 		[24] = WtParagraph[],
 		[25] = WtImageLink(
-			{P} alt = -
 			{P} border = false
 			{P} format = THUMBNAIL
 			{P} hAlign = RIGHT
 			{P} height = -1
-			{P} link = ImageLinkTarget[ DEFAULT: --- ]
-			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 			{P} upright = false
 			{P} vAlign = MIDDLE
 			{P} width = -1
@@ -518,38 +514,36 @@ WtSection(
 				[1] = WtLinkOptionKeyword(
 					{P} keyword = "thumb"
 					{P} rtd = RTD[ "|thumb" ]
+				),
+				[2] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "The ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "St. Bartholomew's Day massacre" ],
+						title = -
+					),
+					[2] = " (1572) during the ",
+					[3] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "French Wars of Religion" ],
+						title = -
+					),
+					[4] = "."
 				)
-			],
-			title = WtLinkTitle(
-				{P} rtd = RTD[ "|" <o> "" ]
-				[0] = "The ",
-				[1] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "St. Bartholomew's Day massacre" ],
-					title = -
-				),
-				[2] = " (1572) during the ",
-				[3] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "French Wars of Religion" ],
-					title = -
-				),
-				[4] = "."
-			)
+			]
 		),
 		[26] = "\n",
 		[27] = WtImageLink(
-			{P} alt = -
 			{P} border = false
 			{P} format = THUMBNAIL
 			{P} hAlign = UNSPECIFIED
 			{P} height = -1
-			{P} link = ImageLinkTarget[ DEFAULT: --- ]
-			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 			{P} upright = true
 			{P} vAlign = MIDDLE
 			{P} width = -1
@@ -562,45 +556,43 @@ WtSection(
 				[1] = WtLinkOptionKeyword(
 					{P} keyword = "upright"
 					{P} rtd = RTD[ "|upright" ]
+				),
+				[2] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "Napoleon I" ],
+						title = -
+					),
+					[1] = ", ",
+					[2] = WtItalics(
+						{P} rtd = RTD[ "''" <o> "''" ]
+						[0] = "Empereur des Fran\u00E7ais"
+					),
+					[3] = ", built a ",
+					[4] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "First French Empire" ],
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = "Great Empire"
+						)
+					),
+					[5] = " across Europe."
 				)
-			],
-			title = WtLinkTitle(
-				{P} rtd = RTD[ "|" <o> "" ]
-				[0] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "Napoleon I" ],
-					title = -
-				),
-				[1] = ", ",
-				[2] = WtItalics(
-					{P} rtd = RTD[ "''" <o> "''" ]
-					[0] = "Empereur des Fran\u00E7ais"
-				),
-				[3] = ", built a ",
-				[4] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "First French Empire" ],
-					title = WtLinkTitle(
-						{P} rtd = RTD[ "|" <o> "" ]
-						[0] = "Great Empire"
-					)
-				),
-				[5] = " across Europe."
-			)
+			]
 		),
 		[28] = "\n",
 		[29] = WtImageLink(
-			{P} alt = -
 			{P} border = false
 			{P} format = THUMBNAIL
 			{P} hAlign = LEFT
 			{P} height = -1
-			{P} link = ImageLinkTarget[ DEFAULT: --- ]
-			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 			{P} upright = true
 			{P} vAlign = MIDDLE
 			{P} width = -1
@@ -617,30 +609,30 @@ WtSection(
 				[2] = WtLinkOptionKeyword(
 					{P} keyword = "upright"
 					{P} rtd = RTD[ "|upright" ]
+				),
+				[3] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "Jeanne d'Arc" ],
+						title = -
+					),
+					[1] = " by ",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName[ [0] = "Philippe-Alexandre Le Brun de Charmettes" ],
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = "Le Brun de Charmettes"
+						)
+					),
+					[3] = "."
 				)
-			],
-			title = WtLinkTitle(
-				{P} rtd = RTD[ "|" <o> "" ]
-				[0] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "Jeanne d'Arc" ],
-					title = -
-				),
-				[1] = " by ",
-				[2] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName[ [0] = "Philippe-Alexandre Le Brun de Charmettes" ],
-					title = WtLinkTitle(
-						{P} rtd = RTD[ "|" <o> "" ]
-						[0] = "Le Brun de Charmettes"
-					)
-				),
-				[3] = "."
-			)
+			]
 		),
 		[30] = "\nExistence as a separate entity began with the ",
 		[31] = WtInternalLink(

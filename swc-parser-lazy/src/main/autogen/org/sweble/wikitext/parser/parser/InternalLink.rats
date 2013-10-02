@@ -61,12 +61,6 @@
  *   Grammar:
  *     - LinkOptionAltText ::= Ws* 'alt=' LinkTitleContent{ALT}*
  *
- * Link Option: Garbage
- * --------------------
- *
- *   Grammar:
- *     - LinkOptionGarbage ::= LinkTitleContent{ALT}* &'|'
- *
  * Link Title
  * ----------
  *
@@ -244,7 +238,7 @@ private transient stateful WtNode InternalLinkChoice =
       {
         setRtd(
           yyValue,
-          "[[", rt0, SEP, rt1, SEP, SEP, "]]", postfix);
+          "[[", rt0, SEP, rt1, SEP, "]]", postfix);
       }
       else
       {
@@ -322,26 +316,26 @@ private inline WtNode InternalLinkAutoCorrect =
 // -- Options ------------------------------------------------------------------
 
 private inline WtLinkOptions OptionsAndTitle =
-    &{ !getLinkBuilder().isImageTarget() } LinkTitle?
+    &{ !getLinkBuilder().isImageTarget() } title:LinkTitle?
     {
-      yyValue = nf.emptyLinkOpts();
+      yyValue = nf.linkOpts(title);
     }
-  / yyValue:LinkOptionStar LinkTitle?
+  / yyValue:LinkOptionStar
 ;
 
 private transient WtLinkOptions LinkOptionStar =
-  options:( void:'|' LinkOptionChoice )*
+  options:( void:'|' LinkOptionChoice &( '|' / "]]" ) )*
   {
     yyValue = nf.linkOpts(nf.list(options));
   }
 ;
 
 private inline WtNode LinkOptionChoice =
-    LinkOptionResize     &( '|' / "]]" )
-  / LinkOptionKeyword    &( '|' / "]]" )
-  / LinkOptionNameValue  &( '|' / "]]" )
-  / LinkOptionUnresolved &( '|' / "]]" )
-  / LinkOptionGarbage    &( '|' )
+    LinkOptionResize
+  / LinkOptionKeyword
+  / LinkOptionNameValue
+  / LinkOptionUnresolved
+  / LinkOptionTitle
 ;
 
 
@@ -432,15 +426,13 @@ private transient String LinkOptionKeywordString =
 private transient stateful WtNode LinkOptionNameValue =
     rt0:pExtWsStar "link=" target:LinkTargetOverride? rt1:pExtWsStar
     {
-      ImageLinkTarget linkTarget = (target == null) ?
-          new ImageLinkTarget(LinkTargetType.NO_LINK) :
-          new ImageLinkTarget(target.getTargetType(), target);
-
-      yyValue = setRtd(
-        nf.loLinkTarget(linkTarget),
-        '|', rt0, "link=", SEP, rt1);
-
-      getLinkBuilder().addOption((WtLinkOptionLinkTarget) yyValue);
+		WtLinkOptionLinkTarget linkTarget = (target == null) ?
+				nf.loLinkTargetNoLink() :
+				nf.loLinkTarget(target, target.getTargetType());
+		
+		yyValue = setRtd(
+				linkTarget,
+				'|', rt0, "link=", SEP, rt1);
     }
   / rt0:pExtWsStar "alt="
     {
@@ -451,8 +443,6 @@ private transient stateful WtNode LinkOptionNameValue =
       yyValue = setRtd(
         nf.loAlt(alt),
         '|', rt0, "alt=", SEP);
-
-      getLinkBuilder().addOption((WtLinkOptionAltText) yyValue);
     }
 ;
 
@@ -480,7 +470,7 @@ private inline WtNode LinkOptionUnresolved =
 
 // -- Link Option Garbage ------------------------------------------------------
 
-private inline stateful WtLinkOptionGarbage LinkOptionGarbage =
+private inline stateful WtLinkTitle LinkOptionTitle =
   {
     enter(getLinkBuilder().isImageTarget() ?
         ParserScopes.IMAGE_LINK_ALT :
@@ -488,10 +478,9 @@ private inline stateful WtLinkOptionGarbage LinkOptionGarbage =
   }
   content:LinkTitleContentStar
   {
-    //String content = difference(yyStart, yyResult);
     yyValue = setRtd(
-      nf.loGarbage(content),
-      '|', content);
+      nf.linkTitle(content),
+      '|', SEP);
   }
 ;
 
@@ -511,8 +500,6 @@ private inline stateful WtLinkTitle LinkTitle =
     yyValue = setRtd(
       nf.linkTitle(title),
       '|', SEP);
-
-    getLinkBuilder().setTitle(yyValue);
   }
 ;
 

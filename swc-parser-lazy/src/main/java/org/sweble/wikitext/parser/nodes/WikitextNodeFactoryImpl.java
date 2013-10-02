@@ -33,13 +33,13 @@ import org.sweble.wikitext.parser.nodes.WtBody.WtEmptyBody;
 import org.sweble.wikitext.parser.nodes.WtBody.WtNoBody;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
-import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtLctFlags.WtLctFlagsImpl;
 import org.sweble.wikitext.parser.nodes.WtLctFlags.WtNoLctFlags;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtLinkOptionAltTextImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtNoLinkOptionAltText;
+import org.sweble.wikitext.parser.nodes.WtLinkOptionLinkTarget.WtLinkOptionLinkTargetImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtEmptyLinkOptions;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
@@ -95,7 +95,7 @@ public class WikitextNodeFactoryImpl
 		this.parserConfig = parserConfig;
 		
 		this.prototypes.put(WtLctRule.class, new WtLctRule());
-		this.prototypes.put(WtLinkOptionLinkTarget.class, new WtLinkOptionLinkTarget());
+		this.prototypes.put(WtLinkOptionLinkTarget.class, new WtLinkOptionLinkTargetImpl());
 		this.prototypes.put(WtRedirect.class, new WtRedirect());
 		this.prototypes.put(WtTableImplicitTableBody.class, new WtTableImplicitTableBody());
 		this.prototypes.put(WtXmlAttribute.class, new WtXmlAttribute());
@@ -205,7 +205,7 @@ public class WikitextNodeFactoryImpl
 		this.defaultValueImmutables.put(new NamedMemberId(WtLctRuleConv.class, "flags"), WtLctFlags.NO_FLAGS);
 		this.defaultValueImmutables.put(new NamedMemberId(WtLctVarConv.class, "flags"), WtLctFlags.NO_FLAGS);
 		
-		this.defaultValueImmutables.put(new NamedMemberId(WtLinkOptionLinkTarget.class, "target"), WtLinkTarget.NO_LINK);
+		this.defaultValueImmutables.put(new NamedMemberId(WtLinkOptionLinkTargetImpl.class, "target"), WtLinkTarget.NO_LINK);
 		
 		this.defaultValueImmutables.put(new NamedMemberId(WtTable.class, "body"), WtBody.NO_BODY);
 		this.defaultValueImmutables.put(new NamedMemberId(WtSection.class, "body"), WtBody.NO_BODY);
@@ -295,16 +295,17 @@ public class WikitextNodeFactoryImpl
 	// =========================================================================
 	
 	@Override
-	public WtLinkOptionLinkTarget loLinkTarget(ImageLinkTarget type)
+	public WtLinkOptionLinkTarget loLinkTarget(
+			WtLinkTarget target,
+			LinkTargetType type)
 	{
-		return new WtLinkOptionLinkTarget(type);
+		return new WtLinkOptionLinkTargetImpl(target, type);
 	}
 	
 	@Override
-	public WtLinkOptionLinkTarget loNoLinkTarget()
+	public WtLinkOptionLinkTarget loLinkTargetNoLink()
 	{
-		return new WtLinkOptionLinkTarget(
-				new ImageLinkTarget(LinkTargetType.NO_LINK));
+		return new WtLinkOptionLinkTargetImpl(WtLinkTarget.NO_LINK, LinkTargetType.NO_LINK);
 	}
 	
 	@Override
@@ -475,20 +476,11 @@ public class WikitextNodeFactoryImpl
 	@Override
 	public WtImageLink img(WtPageName target)
 	{
-		return img(target, emptyLinkOpts(), null);
+		return img(target, emptyLinkOpts());
 	}
 	
 	@Override
 	public WtImageLink img(WtPageName target, WtLinkOptions options)
-	{
-		return img(target, options, null);
-	}
-	
-	@Override
-	public WtImageLink img(
-			WtPageName target,
-			WtLinkOptions options,
-			WtLinkTitle title)
 	{
 		LinkBuilder b = new LinkBuilder(parserConfig, target);
 		for (WtNode option : options)
@@ -496,15 +488,11 @@ public class WikitextNodeFactoryImpl
 			switch (option.getNodeType())
 			{
 				case WtNode.NT_LINK_OPTION_ALT_TEXT:
-					b.addOption((WtLinkOptionAltText) option);
-					break;
 				case WtNode.NT_LINK_OPTION_GARBAGE:
+				case WtNode.NT_LINK_OPTION_LINK_TARGET:
 					break;
 				case WtNode.NT_LINK_OPTION_KEYWORD:
 					b.addOption((WtLinkOptionKeyword) option);
-					break;
-				case WtNode.NT_LINK_OPTION_LINK_TARGET:
-					b.addOption((WtLinkOptionLinkTarget) option);
 					break;
 				case WtNode.NT_LINK_OPTION_RESIZE:
 					b.addOption((WtLinkOptionResize) option);
@@ -515,8 +503,6 @@ public class WikitextNodeFactoryImpl
 					//throw new InternalError("Is that an option?");
 			}
 		}
-		
-		b.setTitle(title);
 		
 		WtNode link = b.build(options, null);
 		if (!(link instanceof WtImageLink))
@@ -535,9 +521,7 @@ public class WikitextNodeFactoryImpl
 			ImageVertAlign vAlign,
 			int width,
 			int height,
-			boolean upright,
-			ImageLinkTarget link,
-			WtLinkOptionAltText alt)
+			boolean upright)
 	{
 		return new WtImageLink(
 				target,
@@ -548,9 +532,7 @@ public class WikitextNodeFactoryImpl
 				vAlign,
 				width,
 				height,
-				upright,
-				link,
-				alt);
+				upright);
 	}
 	
 	@Override

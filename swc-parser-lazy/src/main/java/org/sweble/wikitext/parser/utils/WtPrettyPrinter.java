@@ -398,8 +398,6 @@ public class WtPrettyPrinter
 		p.print("[[");
 		dispatch(n.getTarget());
 		dispatch(n.getOptions());
-		if (n.hasTitle())
-			dispatch(n.getTitle());
 		p.print("]]");
 		scope.pop();
 	}
@@ -619,8 +617,18 @@ public class WtPrettyPrinter
 	
 	public void visit(WtLinkTitle n)
 	{
-		boolean isExt = (scope.peek().getNodeType() == WtNode.NT_EXTERNAL_LINK);
-		p.print(isExt ? ' ' : '|');
+		switch (scope.peek().getNodeType())
+		{
+			case WtNode.NT_INTERNAL_LINK:
+				p.print('|');
+				break;
+			case WtNode.NT_EXTERNAL_LINK:
+				p.print(' ');
+				break;
+			case WtNode.NT_IMAGE_LINK:
+			default:
+				break;
+		}
 		iterate(n);
 	}
 	

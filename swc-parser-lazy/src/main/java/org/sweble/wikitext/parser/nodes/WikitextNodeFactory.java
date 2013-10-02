@@ -23,9 +23,9 @@ import java.util.List;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
-import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
+import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtOnlyInclude.XmlElementType;
 import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
@@ -40,9 +40,9 @@ public interface WikitextNodeFactory
 {
 	// -- Inner Node 1 ---------------------------------------------------------
 	
-	WtLinkOptionLinkTarget loLinkTarget(ImageLinkTarget type);
+	WtLinkOptionLinkTarget loLinkTarget(WtLinkTarget target, LinkTargetType type);
 	
-	WtLinkOptionLinkTarget loNoLinkTarget();
+	WtLinkOptionLinkTarget loLinkTargetNoLink();
 	
 	WtRedirect redirect(WtPageName target);
 	
@@ -107,8 +107,6 @@ public interface WikitextNodeFactory
 	
 	WtImageLink img(WtPageName target, WtLinkOptions options);
 	
-	WtImageLink img(WtPageName target, WtLinkOptions options, WtLinkTitle title);
-	
 	WtImageLink img(
 			WtPageName target,
 			WtLinkOptions options,
@@ -118,9 +116,7 @@ public interface WikitextNodeFactory
 			ImageVertAlign vAlign,
 			int width,
 			int height,
-			boolean upright,
-			ImageLinkTarget link,
-			WtLinkOptionAltText alt);
+			boolean upright);
 	
 	WtTemplateParameter tmplParam(WtName name);
 	

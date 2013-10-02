@@ -3,16 +3,11 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtParagraph[],
 	[1] = WtImageLink(
-		{P} alt = WtLinkOptionAltText(
-				{P} rtd = RTD[ "|alt=" <o> "" ]
-				[0] = "Y"
-			)
 		{P} border = false
 		{P} format = THUMBNAIL
 		{P} hAlign = UNSPECIFIED
 		{P} height = -1
-		{P} link = ImageLinkTarget[ DEFAULT: --- ]
-		{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 		{P} upright = false
 		{P} vAlign = MIDDLE
 		{P} width = -1
@@ -25,17 +20,17 @@ WtParsedWikitextPage(
 			[1] = WtLinkOptionAltText(
 				{P} rtd = RTD[ "|alt=" <o> "" ]
 				[0] = "Y"
+			),
+			[2] = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName[ [0] = "Z" ],
+					title = -
+				)
 			)
-		],
-		title = WtLinkTitle(
-			{P} rtd = RTD[ "|" <o> "" ]
-			[0] = WtInternalLink(
-				{P} postfix = ""
-				{P} prefix = ""
-				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-				target = WtPageName[ [0] = "Z" ],
-				title = -
-			)
-		)
+		]
 	)
 )

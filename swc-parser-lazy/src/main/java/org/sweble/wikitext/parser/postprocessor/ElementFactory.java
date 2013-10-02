@@ -29,6 +29,7 @@ import org.sweble.wikitext.parser.nodes.WtHeading;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLctVarConv;
+import org.sweble.wikitext.parser.nodes.WtLinkOptions;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -341,13 +342,31 @@ public class ElementFactory
 			case INLINE_IMG:
 			{
 				WtImageLink n = (WtImageLink) node;
-				WtLinkTitle title = nf.noLinkTitle();
+				WtLinkTitle title = null;//nf.noLinkTitle();
 				if (n.hasTitle())
 				{
 					title = nf.linkTitle(nf.list());
 					title.setRtd(n.getTitle().getRtd());
 				}
-				newNode = nf.img(n.getTarget(), n.getOptions(), title);
+				/*
+				WtLinkOptions opts = n.getOptions();
+				if (!opts.isEmpty())
+				{
+					opts = nf.linkOpts(nf.list());
+					for (WtNode o : n.getOptions())
+					{
+						if (o.getNodeType() != WtNode.NT_LINK_TITLE)
+							opts.add(o);
+					}
+				}
+				*/
+				WtImageLink newNode2 = nf.img(n.getTarget(), n.getOptions());
+				if (title != null)
+				{
+					newNode2.setOptions((WtLinkOptions) n.getOptions().cloneWrapException());
+					newNode2.setTitle(title);
+				}
+				newNode = newNode2;
 				break;
 			}
 			

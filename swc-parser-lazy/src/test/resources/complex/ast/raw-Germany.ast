@@ -5848,13 +5848,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -5867,29 +5865,29 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Expansion of the ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Germanic peoples" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Germanic tribes"
+									)
+								),
+								[2] = " 750 BC \u2013 AD",
+								[3] = WtXmlEntityRef(
+									{P} name = "nbsp"
+									{P} resolved = "\u00A0"
+									{P} rtd = RTD[ "&nbsp;" ]
+								),
+								[4] = "1"
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Expansion of the ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Germanic peoples" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Germanic tribes"
-								)
-							),
-							[2] = " 750 BC \u2013 AD",
-							[3] = WtXmlEntityRef(
-								{P} name = "nbsp"
-								{P} resolved = "\u00A0"
-								{P} rtd = RTD[ "&nbsp;" ]
-							),
-							[4] = "1"
-						)
+						]
 					),
 					[4] = "\nThe ",
 					[5] = WtInternalLink(
@@ -6397,13 +6395,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -6416,37 +6412,37 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "upright"
 								{P} rtd = RTD[ "|upright" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Imperial Crown of the Holy Roman Empire" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Imperial Crown"
+									)
+								),
+								[2] = " of the ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Holy Roman Empire" ],
+									title = -
+								),
+								[4] = ", created around AD",
+								[5] = WtXmlEntityRef(
+									{P} name = "nbsp"
+									{P} resolved = "\u00A0"
+									{P} rtd = RTD[ "&nbsp;" ]
+								),
+								[6] = "1000"
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Imperial Crown of the Holy Roman Empire" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Imperial Crown"
-								)
-							),
-							[2] = " of the ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Holy Roman Empire" ],
-								title = -
-							),
-							[4] = ", created around AD",
-							[5] = WtXmlEntityRef(
-								{P} name = "nbsp"
-								{P} resolved = "\u00A0"
-								{P} rtd = RTD[ "&nbsp;" ]
-							),
-							[6] = "1000"
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -6525,13 +6521,11 @@ WtParsedWikitextPage(
 					[6] = "\n\n",
 					[7] = WtParagraph[],
 					[8] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = 150
@@ -6549,27 +6543,27 @@ WtParsedWikitextPage(
 								{P} height = -1
 								{P} rtd = RTD[ "|150px" ]
 								{P} width = 150
+							),
+							[3] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Martin Luther" ],
+									title = -
+								),
+								[1] = " initiated the ",
+								[2] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Protestant Reformation" ],
+									title = -
+								),
+								[3] = "."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Martin Luther" ],
-								title = -
-							),
-							[1] = " initiated the ",
-							[2] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Protestant Reformation" ],
-								title = -
-							),
-							[3] = "."
-						)
+						]
 					),
 					[9] = "\n\n",
 					[10] = WtParagraph[
@@ -6968,13 +6962,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -6983,19 +6975,19 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Frankfurt parliament" ],
-								title = -
 							),
-							[1] = " in 1848"
-						)
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Frankfurt parliament" ],
+									title = -
+								),
+								[1] = " in 1848"
+							)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -7279,13 +7271,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = RIGHT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -7298,31 +7288,31 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "right"
 								{P} rtd = RTD[ "|right" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Foundation of modern Germany in ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Versailles" ],
+									title = -
+								),
+								[2] = ", France, 1871. ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Otto von Bismarck" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Bismarck"
+									)
+								),
+								[4] = " is at the centre in a white uniform."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Foundation of modern Germany in ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Versailles" ],
-								title = -
-							),
-							[2] = ", France, 1871. ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Otto von Bismarck" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Bismarck"
-								)
-							),
-							[4] = " is at the centre in a white uniform."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -7422,13 +7412,11 @@ WtParsedWikitextPage(
 					[6] = "\n\n",
 					[7] = WtParagraph[],
 					[8] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -7441,20 +7429,20 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Imperial Germany (1871\u20131918), with the dominant ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Kingdom of Prussia" ],
-								title = -
 							),
-							[2] = " in blue"
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Imperial Germany (1871\u20131918), with the dominant ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Kingdom of Prussia" ],
+									title = -
+								),
+								[2] = " in blue"
+							)
+						]
 					),
 					[9] = "\n\n",
 					[10] = WtParagraph[
@@ -7795,13 +7783,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -7814,30 +7800,30 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Philipp Scheidemann" ],
+									title = -
+								),
+								[1] = " proclaiming the German Republic in 1918. The ",
+								[2] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Weimar Republic" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Weimar"
+									)
+								),
+								[3] = " era was dominated by political unrest."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Philipp Scheidemann" ],
-								title = -
-							),
-							[1] = " proclaiming the German Republic in 1918. The ",
-							[2] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Weimar Republic" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Weimar"
-								)
-							),
-							[3] = " era was dominated by political unrest."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -8093,13 +8079,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -8112,32 +8096,32 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "upright"
 								{P} rtd = RTD[ "|upright" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Adolf Hitler" ],
-								title = -
 							),
-							[1] = ", chancellor of the ",
-							[2] = WtItalics(
-								{P} rtd = RTD[ "''" <o> "''" ]
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = WtInternalLink(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName[ [0] = "Nazi Germany" ],
-									title = WtLinkTitle(
-										{P} rtd = RTD[ "|" <o> "" ]
-										[0] = "Gro\u00DFdeutsches Reich"
+									target = WtPageName[ [0] = "Adolf Hitler" ],
+									title = -
+								),
+								[1] = ", chancellor of the ",
+								[2] = WtItalics(
+									{P} rtd = RTD[ "''" <o> "''" ]
+									[0] = WtInternalLink(
+										{P} postfix = ""
+										{P} prefix = ""
+										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+										target = WtPageName[ [0] = "Nazi Germany" ],
+										title = WtLinkTitle(
+											{P} rtd = RTD[ "|" <o> "" ]
+											[0] = "Gro\u00DFdeutsches Reich"
+										)
 									)
 								)
 							)
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -8395,13 +8379,11 @@ WtParsedWikitextPage(
 					[8] = "\n\n",
 					[9] = WtParagraph[],
 					[10] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -8414,28 +8396,28 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Berlin in ruins after ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "World War II" ],
+									title = -
+								),
+								[2] = ", ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Potsdamer Platz" ],
+									title = -
+								),
+								[4] = " 1945"
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Berlin in ruins after ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "World War II" ],
-								title = -
-							),
-							[2] = ", ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Potsdamer Platz" ],
-								title = -
-							),
-							[4] = " 1945"
-						)
+						]
 					),
 					[11] = "On 22 June 1941, Germany broke the ",
 					[12] = WtInternalLink(
@@ -8709,13 +8691,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -8724,50 +8704,50 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Post-WWII ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Allied Occupation Zones in Germany" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "occupation zones"
+									)
+								),
+								[2] = " of Germany, in its 1937 borders, with territories east of the ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Oder-Neisse line" ],
+									title = -
+								),
+								[4] = " shown as annexed by Poland and the Soviet Union, plus the ",
+								[5] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Saar (protectorate)" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Saar protectorate"
+									)
+								),
+								[6] = " and divided Berlin. ",
+								[7] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "East Germany" ],
+									title = -
+								),
+								[8] = " was formed by the Soviet Zone, while West Germany was formed by the American, British, and French zones in 1949 and the Saar in 1957."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Post-WWII ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Allied Occupation Zones in Germany" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "occupation zones"
-								)
-							),
-							[2] = " of Germany, in its 1937 borders, with territories east of the ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Oder-Neisse line" ],
-								title = -
-							),
-							[4] = " shown as annexed by Poland and the Soviet Union, plus the ",
-							[5] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Saar (protectorate)" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Saar protectorate"
-								)
-							),
-							[6] = " and divided Berlin. ",
-							[7] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "East Germany" ],
-								title = -
-							),
-							[8] = " was formed by the Soviet Zone, while West Germany was formed by the American, British, and French zones in 1949 and the Saar in 1957."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -9010,13 +8990,11 @@ WtParsedWikitextPage(
 					[10] = "\n\n",
 					[11] = WtParagraph[],
 					[12] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -9029,28 +9007,28 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Berlin Wall" ],
+									title = -
+								),
+								[2] = " in front of the ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Brandenburg Gate" ],
+									title = -
+								),
+								[4] = " shortly after its opening in 1989"
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Berlin Wall" ],
-								title = -
-							),
-							[2] = " in front of the ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Brandenburg Gate" ],
-								title = -
-							),
-							[4] = " shortly after its opening in 1989"
-						)
+						]
 					),
 					[13] = "\n\n",
 					[14] = WtParagraph[
@@ -9322,13 +9300,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -9337,32 +9313,32 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = " A new currency, the ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Euro" ],
-								title = -
 							),
-							[2] = ", began circulating on 1 January 2002.",
-							[3] = WtTagExtension(
-								{P} name = "ref"
-								{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
-								xmlAttributes = WtXmlAttributes[
-									[0] = WtXmlAttribute(
-										{P} rtd = RTD[ " " <o> "=" <o> "" ]
-										name = WtName[ [0] = "name" ],
-										value = WtValue[ [0] = "euroc" ]
-									)
-								],
-								body = -
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = " A new currency, the ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Euro" ],
+									title = -
+								),
+								[2] = ", began circulating on 1 January 2002.",
+								[3] = WtTagExtension(
+									{P} name = "ref"
+									{P} rtd = RTD[ "<ref" <o> "/>" <o> "" ]
+									xmlAttributes = WtXmlAttributes[
+										[0] = WtXmlAttribute(
+											{P} rtd = RTD[ " " <o> "=" <o> "" ]
+											name = WtName[ [0] = "name" ],
+											value = WtValue[ [0] = "euroc" ]
+										)
+									],
+									body = -
+								)
 							)
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -9556,13 +9532,11 @@ WtParsedWikitextPage(
 			],
 			[2] = "\n",
 			[3] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = RIGHT
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = true
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -9579,12 +9553,12 @@ WtParsedWikitextPage(
 					[2] = WtLinkOptionKeyword(
 						{P} keyword = "right"
 						{P} rtd = RTD[ "|right" ]
+					),
+					[3] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "Topographic map"
 					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "Topographic map"
-				)
+				]
 			),
 			[4] = "\n\n",
 			[5] = WtParagraph[
@@ -11738,13 +11712,11 @@ WtParsedWikitextPage(
 			],
 			[2] = "\n",
 			[3] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = UNSPECIFIED
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = 230
@@ -11758,23 +11730,23 @@ WtParsedWikitextPage(
 						{P} height = -1
 						{P} rtd = RTD[ "|230px" ]
 						{P} width = 230
-					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "The political system of Germany is written down in the ",
-					[1] = WtInternalLink(
-						{P} postfix = ""
-						{P} prefix = ""
-						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName[ [0] = "Basic Law for the Federal Republic of Germany" ],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Basic Law (Grundgesetz)"
-						)
 					),
-					[2] = ". "
-				)
+					[2] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "The political system of Germany is written down in the ",
+						[1] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+							target = WtPageName[ [0] = "Basic Law for the Federal Republic of Germany" ],
+							title = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Basic Law (Grundgesetz)"
+							)
+						),
+						[2] = ". "
+					)
+				]
 			),
 			[4] = "\n\n",
 			[5] = WtParagraph[
@@ -11883,13 +11855,11 @@ WtParsedWikitextPage(
 					[0] = "\n",
 					[1] = WtParagraph[],
 					[2] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -11902,27 +11872,27 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Christian Wulff" ],
+									title = -
+								),
+								[1] = " has been the ",
+								[2] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "President of Germany" ],
+									title = -
+								),
+								[3] = " since June 2010. The head of state holds primarily representative powers."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Christian Wulff" ],
-								title = -
-							),
-							[1] = " has been the ",
-							[2] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "President of Germany" ],
-								title = -
-							),
-							[3] = " since June 2010. The head of state holds primarily representative powers."
-						)
+						]
 					),
 					[3] = "\n\n",
 					[4] = WtParagraph[
@@ -12043,13 +12013,11 @@ WtParsedWikitextPage(
 					[9] = "\n\n",
 					[10] = WtParagraph[],
 					[11] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = 290
@@ -12063,23 +12031,23 @@ WtParsedWikitextPage(
 								{P} height = -1
 								{P} rtd = RTD[ "|290px" ]
 								{P} width = 290
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Reichstag (building)" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Reichstag"
-								)
 							),
-							[2] = " in Berlin is the site of the German parliament (Bundestag)"
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Reichstag (building)" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Reichstag"
+									)
+								),
+								[2] = " in Berlin is the site of the German parliament (Bundestag)"
+							)
+						]
 					),
 					[12] = "\n\n",
 					[13] = WtParagraph[
@@ -12309,13 +12277,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = RIGHT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -12328,30 +12294,30 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Federal Constitutional Court of Germany" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Federal Constitutional Court"
-								)
 							),
-							[2] = " (Bundesverfassungsgericht) in ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Karlsruhe" ],
-								title = -
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Federal Constitutional Court of Germany" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Federal Constitutional Court"
+									)
+								),
+								[2] = " (Bundesverfassungsgericht) in ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Karlsruhe" ],
+									title = -
+								)
 							)
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -12547,13 +12513,11 @@ WtParsedWikitextPage(
 					[8] = "\n\n",
 					[9] = WtParagraph[],
 					[10] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = 150
@@ -12571,30 +12535,30 @@ WtParsedWikitextPage(
 							[2] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "German ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Landespolizei" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "state police"
-								)
 							),
-							[2] = " officer in ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Hamburg" ],
-								title = -
+							[3] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "German ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Landespolizei" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "state police"
+									)
+								),
+								[2] = " officer in ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Hamburg" ],
+									title = -
+								)
 							)
-						)
+						]
 					),
 					[11] = "\n\n",
 					[12] = WtParagraph[
@@ -12790,13 +12754,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -12805,36 +12767,36 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Chancellor ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Angela Merkel" ],
+									title = -
+								),
+								[2] = ", the head of government, hosting the ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "G8" ],
+									title = -
+								),
+								[4] = " summit in ",
+								[5] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Heiligendamm" ],
+									title = -
+								),
+								[6] = "."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Chancellor ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Angela Merkel" ],
-								title = -
-							),
-							[2] = ", the head of government, hosting the ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "G8" ],
-								title = -
-							),
-							[4] = " summit in ",
-							[5] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Heiligendamm" ],
-								title = -
-							),
-							[6] = "."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -12916,13 +12878,11 @@ WtParsedWikitextPage(
 					[8] = "\n\n",
 					[9] = WtParagraph[],
 					[10] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -12935,23 +12895,23 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Germany is a founding member of the ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "European Economic Community" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "EEC"
-								)
 							),
-							[2] = " in 1957, which became the European Union in 1993. It maintains close relations with its neighbours to coordinate EU politics."
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Germany is a founding member of the ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "European Economic Community" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "EEC"
+									)
+								),
+								[2] = " in 1957, which became the European Union in 1993. It maintains close relations with its neighbours to coordinate EU politics."
+							)
+						]
 					),
 					[11] = "\n\n",
 					[12] = WtParagraph[
@@ -13011,13 +12971,11 @@ WtParsedWikitextPage(
 					[13] = "\n\n",
 					[14] = WtParagraph[],
 					[15] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = RIGHT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -13030,20 +12988,20 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "right"
 								{P} rtd = RTD[ "|right" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "West Germany became a ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "NATO" ],
-								title = -
 							),
-							[2] = " member in 1955. (Defence ministers in 2000)"
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "West Germany became a ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "NATO" ],
+									title = -
+								),
+								[2] = " member in 1955. (Defence ministers in 2000)"
+							)
+						]
 					),
 					[16] = "\n\n",
 					[17] = WtParagraph[
@@ -13174,13 +13132,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = RIGHT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -13193,36 +13149,36 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtItalics(
+									{P} rtd = RTD[ "''" <o> "''" ]
+									[0] = "Mecklenburg-Vorpommern"
+								),
+								[2] = " participated in a ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "United Nations Interim Force in Lebanon" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "UNIFIL II"
+									)
+								),
+								[4] = " operation off the coast of ",
+								[5] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Lebanon" ],
+									title = -
+								),
+								[6] = "."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtItalics(
-								{P} rtd = RTD[ "''" <o> "''" ]
-								[0] = "Mecklenburg-Vorpommern"
-							),
-							[2] = " participated in a ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "United Nations Interim Force in Lebanon" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "UNIFIL II"
-								)
-							),
-							[4] = " operation off the coast of ",
-							[5] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Lebanon" ],
-								title = -
-							),
-							[6] = "."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -13374,13 +13330,11 @@ WtParsedWikitextPage(
 					[6] = "\n\n",
 					[7] = WtParagraph[],
 					[8] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -13390,30 +13344,27 @@ WtParsedWikitextPage(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
 							),
-							[1] = WtLinkOptionGarbage(
-								{P} content = "thumbtime=32"
-								{P} rtd = RTD[ "|thumbtime=32" ]
-							),
+							[1] = WtLinkOptionGarbage[ [0] = "thumbtime=32" ],
 							[2] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "A ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Eurofighter Typhoon" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Eurofighter"
-								)
 							),
-							[2] = " flight demonstration"
-						)
+							[3] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "A ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Eurofighter Typhoon" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Eurofighter"
+									)
+								),
+								[2] = " flight demonstration"
+							)
+						]
 					),
 					[9] = "\n\n",
 					[10] = WtParagraph[
@@ -13547,13 +13498,11 @@ WtParsedWikitextPage(
 			],
 			[2] = "\n",
 			[3] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = UNSPECIFIED
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -13562,18 +13511,18 @@ WtParsedWikitextPage(
 					[0] = WtLinkOptionKeyword(
 						{P} keyword = "thumb"
 						{P} rtd = RTD[ "|thumb" ]
+					),
+					[1] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "A Mercedes-Benz automobile. Germany was the world's leading exporter of goods from 2003 to 2008.",
+						[1] = WtTagExtension(
+							{P} name = "ref"
+							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+							xmlAttributes = WtXmlAttributes[],
+							body = WtTagExtensionBody("{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}")
+						)
 					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "A Mercedes-Benz automobile. Germany was the world's leading exporter of goods from 2003 to 2008.",
-					[1] = WtTagExtension(
-						{P} name = "ref"
-						{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-						xmlAttributes = WtXmlAttributes[],
-						body = WtTagExtensionBody("{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}")
-					)
-				)
+				]
 			),
 			[4] = "\n\n",
 			[5] = WtParagraph[
@@ -13675,13 +13624,11 @@ WtParsedWikitextPage(
 			[6] = "\n\n",
 			[7] = WtParagraph[],
 			[8] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = LEFT
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = true
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -13698,31 +13645,31 @@ WtParsedWikitextPage(
 					[2] = WtLinkOptionKeyword(
 						{P} keyword = "left"
 						{P} rtd = RTD[ "|left" ]
+					),
+					[3] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "Germany is part of a monetary union, the ",
+						[1] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+							target = WtPageName[ [0] = "eurozone" ],
+							title = -
+						),
+						[2] = " (dark blue), and of the ",
+						[3] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+							target = WtPageName[ [0] = "Internal Market (European Union)" ],
+							title = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "EU single market"
+							)
+						),
+						[4] = ". "
 					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "Germany is part of a monetary union, the ",
-					[1] = WtInternalLink(
-						{P} postfix = ""
-						{P} prefix = ""
-						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName[ [0] = "eurozone" ],
-						title = -
-					),
-					[2] = " (dark blue), and of the ",
-					[3] = WtInternalLink(
-						{P} postfix = ""
-						{P} prefix = ""
-						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName[ [0] = "Internal Market (European Union)" ],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "EU single market"
-						)
-					),
-					[4] = ". "
-				)
+				]
 			),
 			[9] = "\n\n",
 			[10] = WtParagraph[
@@ -13909,13 +13856,11 @@ WtParsedWikitextPage(
 					[0] = "\n",
 					[1] = WtParagraph[],
 					[2] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -13924,41 +13869,39 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Seat of the ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Siemens" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Siemens AG"
+									)
+								),
+								[2] = " in Munich. The city is the headquarter of 7 ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Fortune Global 500" ],
+									title = -
+								),
+								[4] = " companies."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Seat of the ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Siemens" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Siemens AG"
-								)
-							),
-							[2] = " in Munich. The city is the headquarter of 7 ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Fortune Global 500" ],
-								title = -
-							),
-							[4] = " companies."
-						)
+						]
 					),
 					[3] = "\n",
 					[4] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -13967,38 +13910,38 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Frankfurt am Main" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "Frankfurt"
+									)
+								),
+								[1] = " is a financial ",
+								[2] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "global city" ],
+									title = -
+								),
+								[3] = ", seat of the ",
+								[4] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "European Central Bank" ],
+									title = -
+								),
+								[5] = ", and an international aviation hub."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Frankfurt am Main" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "Frankfurt"
-								)
-							),
-							[1] = " is a financial ",
-							[2] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "global city" ],
-								title = -
-							),
-							[3] = ", seat of the ",
-							[4] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "European Central Bank" ],
-								title = -
-							),
-							[5] = ", and an international aviation hub."
-						)
+						]
 					),
 					[5] = "\n\n",
 					[6] = WtParagraph[
@@ -15091,13 +15034,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -15106,20 +15047,20 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "ICE 3" ],
-								title = -
 							),
-							[2] = " train"
-						)
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "ICE 3" ],
+									title = -
+								),
+								[2] = " train"
+							)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -15328,13 +15269,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -15343,31 +15282,31 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The largest ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "solar power" ],
+									title = -
+								),
+								[2] = " and ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Wind power in the European Union" ],
+									title = WtLinkTitle(
+										{P} rtd = RTD[ "|" <o> "" ]
+										[0] = "second-largest wind power"
+									)
+								),
+								[4] = " capacity in the world is installed in Germany."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The largest ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "solar power" ],
-								title = -
-							),
-							[2] = " and ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Wind power in the European Union" ],
-								title = WtLinkTitle(
-									{P} rtd = RTD[ "|" <o> "" ]
-									[0] = "second-largest wind power"
-								)
-							),
-							[4] = " capacity in the world is installed in Germany."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -15479,13 +15418,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -15498,41 +15435,41 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Liquid crystal" ],
+									title = -
+								),
+								[1] = " visualised by a polarising microscope. Germany is a pioneer research center for ",
+								[2] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "nanotechnology" ],
+									title = -
+								),
+								[3] = " and ",
+								[4] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "material engineering" ],
+									title = -
+								),
+								[5] = ".",
+								[6] = WtTagExtension(
+									{P} name = "ref"
+									{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+									xmlAttributes = WtXmlAttributes[],
+									body = WtTagExtensionBody("[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08.")
+								)
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Liquid crystal" ],
-								title = -
-							),
-							[1] = " visualised by a polarising microscope. Germany is a pioneer research center for ",
-							[2] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "nanotechnology" ],
-								title = -
-							),
-							[3] = " and ",
-							[4] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "material engineering" ],
-								title = -
-							),
-							[5] = ".",
-							[6] = WtTagExtension(
-								{P} name = "ref"
-								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-								xmlAttributes = WtXmlAttributes[],
-								body = WtTagExtensionBody("[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08.")
-							)
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -15812,13 +15749,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -15831,18 +15766,18 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "upright"
 								{P} rtd = RTD[ "|upright" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Albert Einstein" ],
+									title = -
+								)
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Albert Einstein" ],
-								title = -
-							)
-						)
+						]
 					),
 					[4] = "\nGermany's achievements in sciences have been significant and ",
 					[5] = WtInternalLink(
@@ -16189,13 +16124,11 @@ WtParsedWikitextPage(
 			[0] = "\n",
 			[1] = WtParagraph[],
 			[2] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = UNSPECIFIED
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -16204,12 +16137,12 @@ WtParsedWikitextPage(
 					[0] = WtLinkOptionKeyword(
 						{P} keyword = "thumb"
 						{P} rtd = RTD[ "|thumb" ]
+					),
+					[1] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "Population density in German states (left) and communities (right)"
 					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "Population density in German states (left) and communities (right)"
-				)
+				]
 			),
 			[3] = "\n",
 			[4] = WtTemplate(
@@ -16365,13 +16298,11 @@ WtParsedWikitextPage(
 			],
 			[11] = "\n",
 			[12] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = LEFT
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -16384,20 +16315,20 @@ WtParsedWikitextPage(
 					[1] = WtLinkOptionKeyword(
 						{P} keyword = "left"
 						{P} rtd = RTD[ "|left" ]
-					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "Germany's ",
-					[1] = WtInternalLink(
-						{P} postfix = ""
-						{P} prefix = ""
-						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName[ [0] = "population pyramid" ],
-						title = -
 					),
-					[2] = " in 2005"
-				)
+					[2] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "Germany's ",
+						[1] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+							target = WtPageName[ [0] = "population pyramid" ],
+							title = -
+						),
+						[2] = " in 2005"
+					)
+				]
 			),
 			[13] = "\n\n",
 			[14] = WtParagraph[ [0] = "Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class." ],
@@ -16439,13 +16370,11 @@ WtParsedWikitextPage(
 					[0] = "\n",
 					[1] = WtParagraph[],
 					[2] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -16454,20 +16383,20 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Population of German territories 1800\u20132000 and ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "immigrant" ],
-								title = -
 							),
-							[2] = " population from 1975\u20132000"
-						)
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Population of German territories 1800\u20132000 and ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "immigrant" ],
+									title = -
+								),
+								[2] = " population from 1975\u20132000"
+							)
+						]
 					),
 					[3] = "\n\n",
 					[4] = WtParagraph[
@@ -16879,13 +16808,11 @@ WtParsedWikitextPage(
 													[0] = WtParagraph[
 														[0] = " ",
 														[1] = WtImageLink(
-															{P} alt = -
 															{P} border = true
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 160
@@ -16899,12 +16826,12 @@ WtParsedWikitextPage(
 																	{P} height = -1
 																	{P} rtd = RTD[ "|160px" ]
 																	{P} width = 160
+																),
+																[2] = WtLinkTitle(
+																	{P} rtd = RTD[ "|" <o> "" ]
+																	[0] = "Berlin"
 																)
-															],
-															title = WtLinkTitle(
-																{P} rtd = RTD[ "|" <o> "" ]
-																[0] = "Berlin"
-															)
+															]
 														),
 														[2] = WtXmlElement(
 															{P} name = "br"
@@ -16926,13 +16853,11 @@ WtParsedWikitextPage(
 															body = -
 														),
 														[5] = WtImageLink(
-															{P} alt = -
 															{P} border = true
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 160
@@ -16946,12 +16871,12 @@ WtParsedWikitextPage(
 																	{P} height = -1
 																	{P} rtd = RTD[ "|160px" ]
 																	{P} width = 160
+																),
+																[2] = WtLinkTitle(
+																	{P} rtd = RTD[ "|" <o> "" ]
+																	[0] = "Hamburg"
 																)
-															],
-															title = WtLinkTitle(
-																{P} rtd = RTD[ "|" <o> "" ]
-																[0] = "Hamburg"
-															)
+															]
 														),
 														[6] = WtXmlElement(
 															{P} name = "br"
@@ -16973,13 +16898,11 @@ WtParsedWikitextPage(
 															body = -
 														),
 														[9] = WtImageLink(
-															{P} alt = -
 															{P} border = true
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 160
@@ -16993,12 +16916,12 @@ WtParsedWikitextPage(
 																	{P} height = -1
 																	{P} rtd = RTD[ "|160px" ]
 																	{P} width = 160
+																),
+																[2] = WtLinkTitle(
+																	{P} rtd = RTD[ "|" <o> "" ]
+																	[0] = "Munich"
 																)
-															],
-															title = WtLinkTitle(
-																{P} rtd = RTD[ "|" <o> "" ]
-																[0] = "Munich"
-															)
+															]
 														),
 														[10] = WtXmlElement(
 															{P} name = "br"
@@ -17153,13 +17076,11 @@ WtParsedWikitextPage(
 													[0] = WtParagraph[
 														[0] = " ",
 														[1] = WtImageLink(
-															{P} alt = -
 															{P} border = true
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 160
@@ -17173,12 +17094,12 @@ WtParsedWikitextPage(
 																	{P} height = -1
 																	{P} rtd = RTD[ "|160px" ]
 																	{P} width = 160
+																),
+																[2] = WtLinkTitle(
+																	{P} rtd = RTD[ "|" <o> "" ]
+																	[0] = "Cologne"
 																)
-															],
-															title = WtLinkTitle(
-																{P} rtd = RTD[ "|" <o> "" ]
-																[0] = "Cologne"
-															)
+															]
 														),
 														[2] = WtXmlElement(
 															{P} name = "br"
@@ -17204,13 +17125,11 @@ WtParsedWikitextPage(
 														),
 														[5] = "\n",
 														[6] = WtImageLink(
-															{P} alt = -
 															{P} border = true
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 160
@@ -17224,12 +17143,12 @@ WtParsedWikitextPage(
 																	{P} height = -1
 																	{P} rtd = RTD[ "|160px" ]
 																	{P} width = 160
+																),
+																[2] = WtLinkTitle(
+																	{P} rtd = RTD[ "|" <o> "" ]
+																	[0] = "Frankfurt am Main"
 																)
-															],
-															title = WtLinkTitle(
-																{P} rtd = RTD[ "|" <o> "" ]
-																[0] = "Frankfurt am Main"
-															)
+															]
 														),
 														[7] = WtXmlElement(
 															{P} name = "br"
@@ -17254,13 +17173,11 @@ WtParsedWikitextPage(
 															body = -
 														),
 														[10] = WtImageLink(
-															{P} alt = -
 															{P} border = true
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 160
@@ -17274,12 +17191,12 @@ WtParsedWikitextPage(
 																	{P} height = -1
 																	{P} rtd = RTD[ "|160px" ]
 																	{P} width = 160
+																),
+																[2] = WtLinkTitle(
+																	{P} rtd = RTD[ "|" <o> "" ]
+																	[0] = "Stuttgart"
 																)
-															],
-															title = WtLinkTitle(
-																{P} rtd = RTD[ "|" <o> "" ]
-																[0] = "Stuttgart"
-															)
+															]
 														),
 														[11] = WtXmlElement(
 															{P} name = "br"
@@ -18497,13 +18414,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -18516,12 +18431,12 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "upright"
 								{P} rtd = RTD[ "|upright" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Knowledge of German in European countries"
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Knowledge of German in European countries"
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -18927,13 +18842,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -18946,36 +18859,36 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "upright"
 								{P} rtd = RTD[ "|upright" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Cologne Cathedral" ],
+									title = -
+								),
+								[2] = " at the ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Rhine" ],
+									title = -
+								),
+								[4] = " river is a ",
+								[5] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "UNESCO World Heritage Site" ],
+									title = -
+								),
+								[6] = "."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Cologne Cathedral" ],
-								title = -
-							),
-							[2] = " at the ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Rhine" ],
-								title = -
-							),
-							[4] = " river is a ",
-							[5] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "UNESCO World Heritage Site" ],
-								title = -
-							),
-							[6] = "."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -19600,13 +19513,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -19615,19 +19526,19 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Kindergarten in ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Hessen" ],
+									title = -
+								)
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Kindergarten in ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Hessen" ],
-								title = -
-							)
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -19722,13 +19633,11 @@ WtParsedWikitextPage(
 					[6] = "\n\n",
 					[7] = WtParagraph[],
 					[8] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -19741,20 +19650,20 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "University of Heidelberg" ],
-								title = -
 							),
-							[2] = " was established in 1386."
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "University of Heidelberg" ],
+									title = -
+								),
+								[2] = " was established in 1386."
+							)
+						]
 					),
 					[9] = "\n\n",
 					[10] = WtParagraph[
@@ -19927,13 +19836,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -19942,19 +19849,19 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
+							),
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Department of Surgery in the ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "University Medical Center Freiburg" ],
+									title = -
+								)
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Department of Surgery in the ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "University Medical Center Freiburg" ],
-								title = -
-							)
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -20158,13 +20065,11 @@ WtParsedWikitextPage(
 			],
 			[2] = "\n",
 			[3] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = LEFT
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = true
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -20181,19 +20086,19 @@ WtParsedWikitextPage(
 					[2] = WtLinkOptionKeyword(
 						{P} keyword = "upright"
 						{P} rtd = RTD[ "|upright" ]
-					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = WtInternalLink(
-						{P} postfix = ""
-						{P} prefix = ""
-						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-						target = WtPageName[ [0] = "Ludwig van Beethoven" ],
-						title = -
 					),
-					[1] = " (1770\u20131827), composer"
-				)
+					[3] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+							target = WtPageName[ [0] = "Ludwig van Beethoven" ],
+							title = -
+						),
+						[1] = " (1770\u20131827), composer"
+					)
+				]
 			),
 			[4] = "\n\n",
 			[5] = WtParagraph[
@@ -20297,13 +20202,11 @@ WtParsedWikitextPage(
 			[8] = "\n\n",
 			[9] = WtParagraph[],
 			[10] = WtImageLink(
-				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = UNSPECIFIED
 				{P} height = -1
-				{P} link = ImageLinkTarget[ DEFAULT: --- ]
-				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
 				{P} width = -1
@@ -20312,12 +20215,12 @@ WtParsedWikitextPage(
 					[0] = WtLinkOptionKeyword(
 						{P} keyword = "thumb"
 						{P} rtd = RTD[ "|thumb" ]
+					),
+					[1] = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "Berlin is a centre of arts, nightlife, music, architecture and festivals"
 					)
-				],
-				title = WtLinkTitle(
-					{P} rtd = RTD[ "|" <o> "" ]
-					[0] = "Berlin is a centre of arts, nightlife, music, architecture and festivals"
-				)
+				]
 			),
 			[11] = "\n\n",
 			[12] = WtParagraph[
@@ -20857,13 +20760,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 190
@@ -20874,8 +20775,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|190px" ]
 																{P} width = 190
 															)
-														],
-														title = -
+														]
 													),
 													[2] = " "
 												]
@@ -20892,13 +20792,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 129
@@ -20909,8 +20807,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|129px" ]
 																{P} width = 129
 															)
-														],
-														title = -
+														]
 													)
 												]
 											),
@@ -20926,13 +20823,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 125
@@ -20943,8 +20838,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|125px" ]
 																{P} width = 125
 															)
-														],
-														title = -
+														]
 													)
 												]
 											),
@@ -20960,13 +20854,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 106
@@ -20977,8 +20869,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|106px" ]
 																{P} width = 106
 															)
-														],
-														title = -
+														]
 													),
 													[2] = " "
 												]
@@ -20996,13 +20887,11 @@ WtParsedWikitextPage(
 													[0] = WtParagraph[
 														[0] = " ",
 														[1] = WtImageLink(
-															{P} alt = -
 															{P} border = false
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 110
@@ -21013,8 +20902,7 @@ WtParsedWikitextPage(
 																	{P} rtd = RTD[ "|110px" ]
 																	{P} width = 110
 																)
-															],
-															title = -
+															]
 														)
 													],
 													[1] = "\n"
@@ -21053,13 +20941,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -21072,19 +20958,19 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "upright"
 								{P} rtd = RTD[ "|upright" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Immanuel Kant" ],
-								title = -
 							),
-							[1] = " (1724\u20131804)"
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Immanuel Kant" ],
+									title = -
+								),
+								[1] = " (1724\u20131804)"
+							)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -21306,13 +21192,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -21325,30 +21209,30 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "upright"
 								{P} rtd = RTD[ "|upright" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Marlene Dietrich" ],
-								title = -
 							),
-							[1] = " in ",
-							[2] = WtItalics(
-								{P} rtd = RTD[ "''" <o> "''" ]
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
 								[0] = WtInternalLink(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName[ [0] = "The Blue Angel" ],
+									target = WtPageName[ [0] = "Marlene Dietrich" ],
 									title = -
-								)
-							),
-							[3] = " in 1930, Germany's first major film with sound"
-						)
+								),
+								[1] = " in ",
+								[2] = WtItalics(
+									{P} rtd = RTD[ "''" <o> "''" ]
+									[0] = WtInternalLink(
+										{P} postfix = ""
+										{P} prefix = ""
+										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+										target = WtPageName[ [0] = "The Blue Angel" ],
+										title = -
+									)
+								),
+								[3] = " in 1930, Germany's first major film with sound"
+							)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -21487,13 +21371,11 @@ WtParsedWikitextPage(
 					[8] = "\n\n",
 					[9] = WtParagraph[],
 					[10] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -21506,20 +21388,20 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The Berlinale Palast during the ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Berlin Film Festival" ],
-								title = -
 							),
-							[2] = " in February 2007"
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The Berlinale Palast during the ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Berlin Film Festival" ],
+									title = -
+								),
+								[2] = " in February 2007"
+							)
+						]
 					),
 					[11] = "\n\n",
 					[12] = WtParagraph[
@@ -22217,13 +22099,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 110
@@ -22234,8 +22114,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|110px" ]
 																{P} width = 110
 															)
-														],
-														title = -
+														]
 													),
 													[2] = " "
 												]
@@ -22252,13 +22131,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 110
@@ -22269,8 +22146,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|110px" ]
 																{P} width = 110
 															)
-														],
-														title = -
+														]
 													)
 												]
 											),
@@ -22285,13 +22161,11 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 110
@@ -22302,8 +22176,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|110px" ]
 																{P} width = 110
 															)
-														],
-														title = -
+														]
 													),
 													[1] = " "
 												]
@@ -22320,13 +22193,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 110
@@ -22337,8 +22208,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|110px" ]
 																{P} width = 110
 															)
-														],
-														title = -
+														]
 													),
 													[2] = " "
 												]
@@ -22355,13 +22225,11 @@ WtParsedWikitextPage(
 												body = WtBody[
 													[0] = " ",
 													[1] = WtImageLink(
-														{P} alt = -
 														{P} border = false
 														{P} format = UNRESTRAINED
 														{P} hAlign = UNSPECIFIED
 														{P} height = -1
-														{P} link = ImageLinkTarget[ DEFAULT: --- ]
-														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+														{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
 														{P} width = 110
@@ -22372,8 +22240,7 @@ WtParsedWikitextPage(
 																{P} rtd = RTD[ "|110px" ]
 																{P} width = 110
 															)
-														],
-														title = -
+														]
 													)
 												]
 											),
@@ -22390,13 +22257,11 @@ WtParsedWikitextPage(
 													[0] = WtParagraph[
 														[0] = " ",
 														[1] = WtImageLink(
-															{P} alt = -
 															{P} border = false
 															{P} format = UNRESTRAINED
 															{P} hAlign = UNSPECIFIED
 															{P} height = -1
-															{P} link = ImageLinkTarget[ DEFAULT: --- ]
-															{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+															{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 															{P} upright = false
 															{P} vAlign = MIDDLE
 															{P} width = 110
@@ -22407,8 +22272,7 @@ WtParsedWikitextPage(
 																	{P} rtd = RTD[ "|110px" ]
 																	{P} width = 110
 																)
-															],
-															title = -
+															]
 														)
 													],
 													[1] = "\n"
@@ -22433,13 +22297,11 @@ WtParsedWikitextPage(
 					[0] = "\n",
 					[1] = WtParagraph[],
 					[2] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -22448,20 +22310,20 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Frankfurt Book Fair" ],
-								title = -
 							),
-							[2] = " in 2008"
-						)
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Frankfurt Book Fair" ],
+									title = -
+								),
+								[2] = " in 2008"
+							)
+						]
 					),
 					[3] = "\n\n",
 					[4] = WtParagraph[
@@ -22598,13 +22460,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = true
 						{P} vAlign = MIDDLE
 						{P} width = 140
@@ -22622,27 +22482,27 @@ WtParsedWikitextPage(
 								{P} height = -1
 								{P} rtd = RTD[ "|140px" ]
 								{P} width = 140
+							),
+							[3] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Michael Schumacher" ],
+									title = -
+								),
+								[1] = " has won seven ",
+								[2] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Formula One" ],
+									title = -
+								),
+								[3] = " championships."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Michael Schumacher" ],
-								title = -
-							),
-							[1] = " has won seven ",
-							[2] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Formula One" ],
-								title = -
-							),
-							[3] = " championships."
-						)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -22865,13 +22725,11 @@ WtParsedWikitextPage(
 					[6] = "\n\n",
 					[7] = WtParagraph[],
 					[8] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -22884,36 +22742,36 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
+							),
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "The ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Allianz Arena" ],
+									title = -
+								),
+								[2] = " is host to the football club ",
+								[3] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Bayern Munich" ],
+									title = -
+								),
+								[4] = " and was a venue for the ",
+								[5] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "2006 FIFA World Cup" ],
+									title = -
+								),
+								[6] = "."
 							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "The ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Allianz Arena" ],
-								title = -
-							),
-							[2] = " is host to the football club ",
-							[3] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Bayern Munich" ],
-								title = -
-							),
-							[4] = " and was a venue for the ",
-							[5] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "2006 FIFA World Cup" ],
-								title = -
-							),
-							[6] = "."
-						)
+						]
 					),
 					[9] = "\n\n",
 					[10] = WtParagraph[
@@ -23138,13 +22996,11 @@ WtParsedWikitextPage(
 					],
 					[2] = "\n",
 					[3] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = UNSPECIFIED
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -23153,23 +23009,23 @@ WtParsedWikitextPage(
 							[0] = WtLinkOptionKeyword(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "A ",
-							[1] = WtItalics(
-								{P} rtd = RTD[ "''" <o> "''" ]
-								[0] = WtInternalLink(
-									{P} postfix = ""
-									{P} prefix = ""
-									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-									target = WtPageName[ [0] = "Schwarzw\u00E4lder Kirschtorte" ],
-									title = -
-								)
 							),
-							[2] = " (Black Forest cake)"
-						)
+							[1] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "A ",
+								[1] = WtItalics(
+									{P} rtd = RTD[ "''" <o> "''" ]
+									[0] = WtInternalLink(
+										{P} postfix = ""
+										{P} prefix = ""
+										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+										target = WtPageName[ [0] = "Schwarzw\u00E4lder Kirschtorte" ],
+										title = -
+									)
+								),
+								[2] = " (Black Forest cake)"
+							)
+						]
 					),
 					[4] = "\n\n",
 					[5] = WtParagraph[
@@ -23243,13 +23099,11 @@ WtParsedWikitextPage(
 					[8] = "\n\n",
 					[9] = WtParagraph[],
 					[10] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = LEFT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -23262,20 +23116,20 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "A typical cheese and cold meat ",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "buffet" ],
-								title = -
 							),
-							[2] = " served at private festivities"
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "A typical cheese and cold meat ",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "buffet" ],
+									title = -
+								),
+								[2] = " served at private festivities"
+							)
+						]
 					),
 					[11] = "\n\n",
 					[12] = WtParagraph[
@@ -23535,13 +23389,11 @@ WtParsedWikitextPage(
 					[0] = "\n",
 					[1] = WtParagraph[],
 					[2] = WtImageLink(
-						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
 						{P} hAlign = RIGHT
 						{P} height = -1
-						{P} link = ImageLinkTarget[ DEFAULT: --- ]
-						{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						{P} upright = false
 						{P} vAlign = MIDDLE
 						{P} width = -1
@@ -23554,20 +23406,20 @@ WtParsedWikitextPage(
 							[1] = WtLinkOptionKeyword(
 								{P} keyword = "right"
 								{P} rtd = RTD[ "|right" ]
-							)
-						],
-						title = WtLinkTitle(
-							{P} rtd = RTD[ "|" <o> "" ]
-							[0] = "Tourism is an important industry in parts of Germany(",
-							[1] = WtInternalLink(
-								{P} postfix = ""
-								{P} prefix = ""
-								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-								target = WtPageName[ [0] = "Neuschwanstein Castle" ],
-								title = -
 							),
-							[2] = ")"
-						)
+							[2] = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "Tourism is an important industry in parts of Germany(",
+								[1] = WtInternalLink(
+									{P} postfix = ""
+									{P} prefix = ""
+									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+									target = WtPageName[ [0] = "Neuschwanstein Castle" ],
+									title = -
+								),
+								[2] = ")"
+							)
+						]
 					),
 					[3] = "\n\n",
 					[4] = WtParagraph[
