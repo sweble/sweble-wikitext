@@ -17,15 +17,15 @@
 
 package org.sweble.wikitext.engine.config;
 
-import java.util.TreeSet;
+import java.util.Set;
 
 public interface I18nAlias
 {
 	
 	public abstract String getId();
 	
-	public abstract Boolean isCaseSensitive();
+	public abstract boolean isCaseSensitive();
 	
-	public abstract TreeSet<String> getAliases();
+	public abstract Set<String> getAliases();
 	
 }

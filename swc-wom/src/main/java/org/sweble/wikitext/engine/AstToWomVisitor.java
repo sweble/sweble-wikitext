@@ -1233,7 +1233,7 @@ public class AstToWomVisitor
 	{
 		try
 		{
-			return config.createAstTextUtils().astToText(value);
+			return config.getAstTextUtils().astToText(value);
 		}
 		catch (StringConversionException e)
 		{

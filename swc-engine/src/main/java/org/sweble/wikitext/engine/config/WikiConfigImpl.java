@@ -311,6 +311,25 @@ public class WikiConfigImpl
 	
 	// ==[ Internationalization ]===============================================
 	
+	/**
+	 * Aliases apply to the following things:
+	 * <ul>
+	 * <li>Page switches, e.g. {@code __NOTOC__}. They can be queried using
+	 * getPageSwitch(). The full name (e.g. " {@code __NOTOC__}") has to be
+	 * specified as alias when specifying an alias as well as when querying the
+	 * page switch in the expansion process.</li>
+	 * <li>Parser functions, e.g. {@code lc:}. They can be queried using
+	 * getParserFunction(). The full name plus the colon (e.g. " {@code lc:}")
+	 * has to be specified as alias when specifying an alias as well as when
+	 * querying the parser function in the expansion process. A parser function
+	 * that can also be called without arguments is treated as magic word
+	 * instead (e.g. {@code NAMESPACE} instead of {@code NAMESPACE:})!</li>
+	 * <li>Magic words, e.g. {@code CURRENTDAY}. They can be queried using
+	 * getParserFunction(). The full name (e.g. " {@code CURRENTDAY}") has to be
+	 * specified as alias when specifying an alias as well as when querying the
+	 * magic word in the expansion process.</li>
+	 * </ul>
+	 */
 	public void addI18nAlias(I18nAliasImpl alias)
 	{
 		I18nAliasImpl old = aliases.get(alias.getId());
@@ -413,8 +432,6 @@ public class WikiConfigImpl
 		return pfn;
 	}
 	
-	// --------
-	
 	@Override
 	public ParserFunctionBase getPageSwitch(String name)
 	{
@@ -422,7 +439,7 @@ public class WikiConfigImpl
 		if (alias == null)
 			return null;
 		ParserFunctionBase pfn = aliasToPfnMap.get(alias);
-		if (!pfn.isPageSwitch())
+		if (pfn != null && !pfn.isPageSwitch())
 			return null;
 		return pfn;
 	}
@@ -456,15 +473,6 @@ public class WikiConfigImpl
 			throw new IllegalArgumentException("A tag extension with the same id `" + tagExt.getId() + "' is already registered.");
 		
 		tagExtensions.put(tagExt.getId(), tagExt);
-		
-		/*
-		I18nAliasImpl alias = aliases.get(tagExt.getId());
-		if (alias == null)
-			throw new IllegalArgumentException("No alias registered for tag extension `" + tagExt.getId() + "'.");
-		
-		if (aliasToTagExtMap.put(alias, tagExt) != null)
-			throw new InternalError("Alias collision should not be possible...");
-		*/
 	}
 	
 	@Override
@@ -476,13 +484,6 @@ public class WikiConfigImpl
 	@Override
 	public TagExtensionBase getTagExtension(String name)
 	{
-		/*
-		I18nAliasImpl alias = getI18nAlias(name);
-		if (alias == null)
-			return null;
-		return aliasToTagExtMap.get(alias);
-		*/
-		
 		return tagExtensions.get(name);
 	}
 	

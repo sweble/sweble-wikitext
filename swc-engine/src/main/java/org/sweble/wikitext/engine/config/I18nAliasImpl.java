@@ -19,6 +19,7 @@ package org.sweble.wikitext.engine.config;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Set;
 import java.util.TreeSet;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,23 +41,25 @@ public class I18nAliasImpl
 	
 	private Boolean caseSensitive;
 	
-	private TreeSet<String> aliases = new TreeSet<String>();
+	private Set<String> aliases;
 	
 	// =========================================================================
 	
+	/**
+	 * Only for de-serialization, not part of public API
+	 */
 	protected I18nAliasImpl()
 	{
 	}
 	
 	public I18nAliasImpl(
 			String id,
-			Boolean caseSensitive,
+			boolean caseSensitive,
 			Collection<String> aliases)
 	{
-		this.id = id;
-		this.caseSensitive = caseSensitive;
-		this.aliases = new TreeSet<String>();
-		this.aliases.addAll(aliases);
+		setId(id);
+		setCaseSensitive(caseSensitive);
+		setAliases(new TreeSet<String>(aliases));
 	}
 	
 	// =========================================================================
@@ -68,32 +71,53 @@ public class I18nAliasImpl
 		return id;
 	}
 	
+	/**
+	 * Only for de-serialization, not part of public API
+	 */
 	public void setId(String id)
 	{
+		if (id == null)
+			throw new IllegalArgumentException();
+		if (this.id != null)
+			throw new UnsupportedOperationException();
 		this.id = id;
 	}
 	
 	@Override
 	@XmlAttribute
-	public Boolean isCaseSensitive()
+	public boolean isCaseSensitive()
 	{
 		return caseSensitive;
 	}
 	
-	public void setCaseSensitive(Boolean caseSensitive)
+	/**
+	 * Only for de-serialization, not part of public API
+	 */
+	public void setCaseSensitive(boolean caseSensitive)
 	{
+		if (this.caseSensitive != null)
+			throw new UnsupportedOperationException();
 		this.caseSensitive = caseSensitive;
 	}
 	
 	@Override
 	@XmlElement(name = "alias")
-	public TreeSet<String> getAliases()
+	public Set<String> getAliases()
 	{
+		if (aliases == null)
+			aliases = new TreeSet<String>();
+		// Cannot return immutable aliases set since de-serialization uses this
+		// method's return value to add aliases to the set.
 		return aliases;
 	}
 	
-	public void setAliases(TreeSet<String> aliases)
+	/**
+	 * Only for de-serialization, not part of public API
+	 */
+	public void setAliases(Set<String> aliases)
 	{
+		if (aliases == null)
+			throw new IllegalArgumentException();
 		this.aliases = aliases;
 	}
 	
