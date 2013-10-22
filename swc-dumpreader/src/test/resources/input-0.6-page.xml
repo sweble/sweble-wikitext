@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     Copyright 2011 The Open Source Research Group,
@@ -17,26 +16,21 @@
     limitations under the License.
 
 -->
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-
-  <system
-    systemId="http://www.w3.org/2001/xml.xsd"
-    uri="catalog/xml.xsd" />
-
-  <system
-    systemId="http://www.mediawiki.org/xml/export-0.5.xsd"
-    uri="export-0.5.xsd" />
- 
-  <system
-    systemId="http://www.mediawiki.org/xml/export-0.6-fixed.xsd"
-    uri="export-0.6-fixed.xsd" />
- 
-  <system
-    systemId="http://www.mediawiki.org/xml/export-0.7.xsd"
-    uri="export-0.7.xsd" />
- 
-  <system
-    systemId="http://www.mediawiki.org/xml/export-0.8.xsd"
-    uri="export-0.8.xsd" />
- 
-</catalog>
+<page xmlns="http://www.mediawiki.org/xml/export-0.6/">
+  <title>TITLE</title>
+  <ns>0</ns>
+  <id>10</id>
+  <redirect title="TITLE" />
+    <sha1 />
+  <revision>
+    <id>123456789</id>
+    <timestamp>2012-05-21T11:11:11Z</timestamp>
+    <contributor>
+      <username>USERNAME</username>
+      <id>987654321</id>
+    </contributor>
+    <minor />
+    <comment>COMMENT</comment>
+    <text xml:space="preserve">TEXT</text>
+  </revision>
+</page>

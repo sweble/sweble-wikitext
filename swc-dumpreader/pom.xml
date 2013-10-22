@@ -30,6 +30,7 @@
 
     <!-- Dependency versions -->
     <version.dep.aspectjrt>1.6.7</version.dep.aspectjrt>
+    <version.dep.joda-time>2.3</version.dep.joda-time>
 
     <!-- Plugin dependency versions -->
     <version.plugin.eclipse>2.9</version.plugin.eclipse>
@@ -42,6 +43,13 @@
 
   <dependencies>
 
+    <!-- Joda-Time - Java date and time API -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>${version.dep.joda-time}</version>
+    </dependency>
+    
     <!-- Log4j -->
     <dependency>
       <groupId>log4j</groupId>

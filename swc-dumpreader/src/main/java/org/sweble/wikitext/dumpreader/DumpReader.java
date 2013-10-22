@@ -17,9 +17,11 @@
 
 package org.sweble.wikitext.dumpreader;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 
 import javax.xml.bind.JAXBContext;
@@ -44,7 +46,11 @@ import de.fau.cs.osr.utils.WrappedException;
 
 public abstract class DumpReader
 {
-	private final File dumpFile;
+	//private final File dumpFile;
+	
+	private final InputStream dumpInputStream;
+	
+	private final String dumpUri;
 	
 	private final Logger logger;
 	
@@ -52,26 +58,38 @@ public abstract class DumpReader
 	
 	private final Unmarshaller unmarshaller;
 	
-	private final long fileLength;
-	
 	private final ExportSchemaVersion schemaVersion;
 	
 	private CountingInputStream decompressedInputStream;
 	
 	private CountingInputStream compressedInputStream;
 	
+	private long fileLength;
+	
 	private long parsedCount;
 	
 	private boolean decompress;
+	
+	private static final int LOOKAHEAD = 4096;
 	
 	// =========================================================================
 	
 	public DumpReader(File dumpFile, Logger logger) throws Exception
 	{
-		this.dumpFile = dumpFile;
+		this(new FileInputStream(dumpFile), dumpFile.getAbsolutePath(), logger);
+		
+		fileLength = dumpFile.length();
+	}
+	
+	public DumpReader(InputStream is, String url, Logger logger) throws Exception
+	{
+		this.dumpInputStream = is;
+		this.dumpUri = url;
 		this.logger = logger;
 		
-		logger.info("Setting up parser for file " + dumpFile.getAbsolutePath());
+		logger.info("Setting up parser for file " + dumpUri);
+		
+		getDumpInputStream();
 		
 		schemaVersion = determineExportVersion();
 		
@@ -83,17 +101,15 @@ public abstract class DumpReader
 				DumpReader.class.getResource("/catalog.xml"),
 				DumpReader.class.getResource(schemaVersion.getSchema()));
 		
-		getDumpInputStream();
 		xmlStreamReader = getXmlStreamReader();
 		
-		fileLength = dumpFile.length();
-		
+		fileLength = -1;
 		parsedCount = 0;
 	}
 	
 	// =========================================================================
 	
-	public void unmarshal() throws Throwable
+	public void unmarshal() throws JAXBException, XMLStreamException
 	{
 		unmarshaller.unmarshal(xmlStreamReader);
 		xmlStreamReader.close();
@@ -130,6 +146,20 @@ public abstract class DumpReader
 	
 	protected abstract void processPage(Object mediaWiki, Object page) throws Exception;
 	
+	protected boolean processEvent(
+			ValidationEvent ve,
+			ValidationEventLocator vel) throws Exception
+	{
+		logger.warn(String.format(
+				"%s:%d:%d: %s",
+				dumpUri,
+				vel.getLineNumber(),
+				vel.getColumnNumber(),
+				ve.getMessage()));
+		
+		return true;
+	}
+	
 	// =========================================================================
 	
 	private void handlePage(Object mediaWiki, Object page) throws Exception
@@ -141,57 +171,48 @@ public abstract class DumpReader
 	
 	protected boolean handleEvent(ValidationEvent ve, ValidationEventLocator vel) throws Exception
 	{
-		logger.warn(String.format(
-				"%s:%d:%d: %s",
-				dumpFile.getAbsolutePath(),
-				vel.getLineNumber(),
-				vel.getColumnNumber(),
-				ve.getMessage()));
-		
-		return true;
+		return processEvent(ve, vel);
 	}
 	
 	// =========================================================================
 	
 	private void getDumpInputStream() throws Exception
 	{
-		if (dumpFile.getName().endsWith(".bz2"))
+		InputStream decomp;
+		if (dumpUri.endsWith(".bz2"))
 		{
 			decompress = true;
 			
-			compressedInputStream = new CountingInputStream(
-					new FileInputStream(dumpFile));
+			compressedInputStream = new CountingInputStream(dumpInputStream);
 			
-			decompressedInputStream = new CountingInputStream(
-					new BZip2CompressorInputStream(compressedInputStream));
+			decomp = new BZip2CompressorInputStream(compressedInputStream);
 		}
-		else if (dumpFile.getName().endsWith(".gz"))
+		else if (dumpUri.endsWith(".gz"))
 		{
 			decompress = true;
 			
-			compressedInputStream = new CountingInputStream(
-					new FileInputStream(dumpFile));
+			compressedInputStream = new CountingInputStream(dumpInputStream);
 			
-			decompressedInputStream = new CountingInputStream(
-					new GzipCompressorInputStream(compressedInputStream));
+			decomp = new GzipCompressorInputStream(compressedInputStream);
 		}
 		else
 		{
 			decompress = false;
 			
-			decompressedInputStream = new CountingInputStream(
-					new FileInputStream(dumpFile));
+			decomp = dumpInputStream;
 		}
+		
+		decompressedInputStream = new CountingInputStream(
+				new BufferedInputStream(decomp, LOOKAHEAD));
 	}
 	
 	private ExportSchemaVersion determineExportVersion() throws Exception
 	{
-		final int LOOKAHEAD = 4096;
 		byte[] b = new byte[LOOKAHEAD];
 		
-		getDumpInputStream();
+		decompressedInputStream.mark(LOOKAHEAD);
 		int read = decompressedInputStream.read(b, 0, LOOKAHEAD);
-		decompressedInputStream.close();
+		decompressedInputStream.reset();
 		
 		String header = new String(b, 0, read);
 		

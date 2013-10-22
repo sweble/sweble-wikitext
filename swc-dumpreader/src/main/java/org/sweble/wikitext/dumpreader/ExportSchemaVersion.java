@@ -32,15 +32,39 @@ public enum ExportSchemaVersion
 		}
 		
 		@Override
+		public String getFragmentsSchema()
+		{
+			return "/export-0.5-fragments.xsd";
+		}
+		
+		@Override
 		public String getContextPath()
 		{
 			return "org.sweble.wikitext.dumpreader.export_0_5";
 		}
 		
 		@Override
+		public String getMediaWikiNamespace()
+		{
+			return "http://www.mediawiki.org/xml/export-0.5/";
+		}
+		
+		@Override
 		public Class<?> getMediaWikiType()
 		{
 			return org.sweble.wikitext.dumpreader.export_0_5.MediaWikiType.class;
+		}
+		
+		@Override
+		public Class<?> getPageType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_5.PageType.class;
+		}
+		
+		@Override
+		public Class<?> getRevisionType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_5.RevisionType.class;
 		}
 	},
 	
@@ -55,15 +79,39 @@ public enum ExportSchemaVersion
 		}
 		
 		@Override
+		public String getFragmentsSchema()
+		{
+			return "/export-0.6-fixed-fragments.xsd";
+		}
+		
+		@Override
 		public String getContextPath()
 		{
 			return "org.sweble.wikitext.dumpreader.export_0_6";
 		}
 		
 		@Override
+		public String getMediaWikiNamespace()
+		{
+			return "http://www.mediawiki.org/xml/export-0.6/";
+		}
+		
+		@Override
 		public Class<?> getMediaWikiType()
 		{
 			return org.sweble.wikitext.dumpreader.export_0_6.MediaWikiType.class;
+		}
+		
+		@Override
+		public Class<?> getPageType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_6.PageType.class;
+		}
+		
+		@Override
+		public Class<?> getRevisionType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_6.RevisionType.class;
 		}
 	},
 	
@@ -78,15 +126,39 @@ public enum ExportSchemaVersion
 		}
 		
 		@Override
+		public String getFragmentsSchema()
+		{
+			return "/export-0.7-fragments.xsd";
+		}
+		
+		@Override
 		public String getContextPath()
 		{
 			return "org.sweble.wikitext.dumpreader.export_0_7";
 		}
 		
 		@Override
+		public String getMediaWikiNamespace()
+		{
+			return "http://www.mediawiki.org/xml/export-0.7/";
+		}
+		
+		@Override
 		public Class<?> getMediaWikiType()
 		{
 			return org.sweble.wikitext.dumpreader.export_0_7.MediaWikiType.class;
+		}
+		
+		@Override
+		public Class<?> getPageType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_7.PageType.class;
+		}
+		
+		@Override
+		public Class<?> getRevisionType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_7.RevisionType.class;
 		}
 	},
 	
@@ -101,9 +173,21 @@ public enum ExportSchemaVersion
 		}
 		
 		@Override
+		public String getFragmentsSchema()
+		{
+			return "/export-0.8-fragments.xsd";
+		}
+		
+		@Override
 		public String getContextPath()
 		{
 			return "org.sweble.wikitext.dumpreader.export_0_8";
+		}
+		
+		@Override
+		public String getMediaWikiNamespace()
+		{
+			return "http://www.mediawiki.org/xml/export-0.8/";
 		}
 		
 		@Override
@@ -111,15 +195,35 @@ public enum ExportSchemaVersion
 		{
 			return org.sweble.wikitext.dumpreader.export_0_8.MediaWikiType.class;
 		}
+		
+		@Override
+		public Class<?> getPageType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_8.PageType.class;
+		}
+		
+		@Override
+		public Class<?> getRevisionType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_8.RevisionType.class;
+		}
 	};
 	
 	// =========================================================================
 	
 	public abstract String getSchema();
 	
+	public abstract String getFragmentsSchema();
+	
 	public abstract String getContextPath();
 	
+	public abstract String getMediaWikiNamespace();
+	
 	public abstract Class<?> getMediaWikiType();
+	
+	public abstract Class<?> getPageType();
+	
+	public abstract Class<?> getRevisionType();
 	
 	// =========================================================================
 	

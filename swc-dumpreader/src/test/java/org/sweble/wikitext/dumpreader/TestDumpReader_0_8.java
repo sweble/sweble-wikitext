@@ -175,7 +175,7 @@ public class TestDumpReader_0_8
 			}
 			
 			@Override
-			protected boolean handleEvent(
+			protected boolean processEvent(
 					ValidationEvent ve,
 					ValidationEventLocator vel) throws Exception
 			{
@@ -186,7 +186,7 @@ public class TestDumpReader_0_8
 						vel.getColumnNumber(),
 						ve.getMessage()));
 				
-				return super.handleEvent(ve, vel);
+				return super.processEvent(ve, vel);
 			}
 		};
 		
