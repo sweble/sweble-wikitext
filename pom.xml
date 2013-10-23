@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -33,29 +51,32 @@
     <module>swc-engine</module>
     <module>swc-dumpreader</module>
     <module>swc-article-cruncher</module>
+    <module>swc-wom</module>
+
+    <!-- Examples -->
     <module>swc-example-basic</module>
     <module>swc-example-dumpcruncher</module>
     <module>swc-example-serialization</module>
     <module>swc-example-xpath</module>
-    <module>swc-wom</module>
   </modules>
 
   <!-- ==[ Properties ]===================================================== -->
 
   <properties>
 
+    <sweble-wikitext.basedir>${project.basedir}</sweble-wikitext.basedir>
+    <sweble-wikitext.etc>${sweble-wikitext.basedir}/etc</sweble-wikitext.etc>
+
     <!-- Dependency versions -->
-    <version.dep.rats-runtime>1.15.0</version.dep.rats-runtime>
-    <version.dep.log4j>1.2.14</version.dep.log4j>
-    <version.dep.lombok>0.10.0</version.dep.lombok>
     <version.dep.jaxb-impl>2.2.5</version.dep.jaxb-impl>
+    <version.dep.jsoup>1.6.3</version.dep.jsoup>
     <version.dep.xerces>2.10.0</version.dep.xerces>
     <version.dep.xml-resolver>1.2</version.dep.xml-resolver>
 
     <!-- Plugin dependency versions -->
+    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
     <version.plugin.rats>1.3.0.1</version.plugin.rats>
-    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
 
   </properties>
 
@@ -66,9 +87,16 @@
 
       <!-- JAXB Reference Implementation -->
       <dependency>
-          <groupId>com.sun.xml.bind</groupId>
-          <artifactId>jaxb-impl</artifactId>
-          <version>${version.dep.jaxb-impl}</version>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>${version.dep.jaxb-impl}</version>
+      </dependency>
+
+      <!-- jsoup: Java HTML Parser -->
+      <dependency>
+        <groupId>org.jsoup</groupId>
+        <artifactId>jsoup</artifactId>
+        <version>${version.dep.jsoup}</version>
       </dependency>
 
       <!-- Apache Xerces -->
@@ -81,21 +109,6 @@
         <groupId>xml-resolver</groupId>
         <artifactId>xml-resolver</artifactId>
         <version>${version.dep.xml-resolver}</version>
-      </dependency>
-
-      <!-- Log4j -->
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${version.dep.log4j}</version>
-      </dependency>
-
-      <!-- Project Lombok -->
-      <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>${version.dep.lombok}</version>
-        <scope>provided</scope>
       </dependency>
 
       <!-- Utils -->
@@ -139,53 +152,38 @@
 
       <!-- Check and format license headers -->
       <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
         <configuration>
-          <header>etc/license-header.txt</header>
+          <header>${sweble-wikitext.etc}/license-header.txt</header>
+          <headerDefinitions>
+            <headerDefinition>${sweble-wikitext.etc}/license-header-apt-style.xml</headerDefinition>
+          </headerDefinitions>
+          <mapping>
+             <rats>JAVADOC_STYLE</rats>
+             <jflex>JAVADOC_STYLE</jflex>
+             <apt>PTK_APT_STYLE</apt>
+             <txt>SCRIPT_STYLE</txt>
+          </mapping>
           <strictCheck>true</strictCheck>
           <failIfMissing>true</failIfMissing>
-          <skip>false</skip>
           <excludes>
+            <exclude>**/*.log</exclude>
+            <exclude>**/.gitignore</exclude>
             <exclude>src/site/site.xml</exclude>
             <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
-            <exclude>etc/license-header-apt-style.xml</exclude>
-            <exclude>bin/**</exclude>
-            <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
-            <exclude>*-archetype/**</exclude>
+            <exclude>swc-*/</exclude>
           </excludes>
         </configuration>
       </plugin>
 
-      <!-- Maven site generation -->
+      <!-- Make Git information available as properties -->
       <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <reportPlugins>
-
-            <plugin>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-changes-plugin</artifactId>
-              <configuration>
-                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
-              </configuration>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>changes-report</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-            </plugin>
-
-          </reportPlugins>
-        </configuration>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
       </plugin>
 
     </plugins>
@@ -194,6 +192,21 @@
 
     <pluginManagement>
       <plugins>
+
+        <!-- JAXB Maven Plugin -->
+        <plugin>
+          <groupId>org.jvnet.jaxb2.maven2</groupId>
+          <artifactId>maven-jaxb2-plugin</artifactId>
+          <version>${version.plugin.jaxb}</version>
+          <executions>
+            <execution>
+              <id>schema-to-java</id>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
 
         <!-- Maven JFlex Plugin -->
         <plugin>
@@ -220,21 +233,6 @@
             <execution>
               <id>rats-generate</id>
               <phase>generate-sources</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- JAXB Maven Plugin -->
-        <plugin>
-          <groupId>org.jvnet.jaxb2.maven2</groupId>
-          <artifactId>maven-jaxb2-plugin</artifactId>
-          <version>${version.plugin.jaxb}</version>
-          <executions>
-            <execution>
-              <id>schema-to-java</id>
               <goals>
                 <goal>generate</goal>
               </goals>
@@ -349,81 +347,6 @@
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
-    <profile>
-      <id>quick</id>
-      <build>
-        <plugins>
-
-          <!-- Don't check and format license headers -->
-          <plugin>
-            <groupId>com.mycila.maven-license-plugin</groupId>
-            <artifactId>maven-license-plugin</artifactId>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </plugin>
-
-          <!-- Only generate minimal site -->
-          <plugin>
-            <artifactId>maven-site-plugin</artifactId>
-            <configuration>
-              <reportPlugins>
-                <plugin>
-                  <artifactId>maven-project-info-reports-plugin</artifactId>
-                  <reportSets>
-                    <reportSet>
-                      <reports>
-                        <!-- cim, dependencies, dependency-convergence -->
-                        <report>dependency-management</report>
-                        <report>distribution-management</report>
-                        <report>index</report>
-                        <report>issue-tracking</report>
-                        <report>license</report>
-                        <report>mailing-list</report>
-                        <report>modules</report>
-                        <report>plugin-management</report>
-                        <report>plugins</report>
-                        <report>project-team</report>
-                        <report>scm</report>
-                        <report>summary</report>
-                      </reports>
-                    </reportSet>
-                  </reportSets>
-                </plugin>
-              </reportPlugins>
-            </configuration>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>sign</id>
-      <build>
-        <plugins>
-
-          <!-- Maven GPG Plugin -->
-          <plugin>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <!-- Sweble <info@sweble.org> -->
-              <keyname>D17B20AF</keyname>
-            </configuration>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
   </profiles>
+
 </project>

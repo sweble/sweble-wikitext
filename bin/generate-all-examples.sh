@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 #
 # Copyright 2011 The Open Source Research Group,
 #                University of Erlangen-Nürnberg
