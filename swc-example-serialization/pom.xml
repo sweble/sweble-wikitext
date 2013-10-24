@@ -20,7 +20,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.java>1.6</version.java>
-    <mvnCmdLine>mvn</mvnCmdLine>
+    <build-examples.maven.cmd>mvn</build-examples.maven.cmd>
   </properties>
 
   <dependencies>
@@ -228,12 +228,12 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <executable>../bin/generate-example-archetype</executable>
+                  <executable>../bin/generate-example-archetype.sh</executable>
                   <arguments>
                     <argument>.</argument>
                   </arguments>
                   <environmentVariables>
-                    <MVN>${mvnCmdLine}</MVN>
+                    <MVN>${build-examples.maven.cmd}</MVN>
                   </environmentVariables>
                 </configuration>
               </execution>
@@ -244,12 +244,12 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <executable>../bin/generate-example-eclipse-project</executable>
+                  <executable>../bin/generate-example-eclipse-project.sh</executable>
                   <arguments>
                     <argument>.</argument>
                   </arguments>
                   <environmentVariables>
-                    <MVN>${mvnCmdLine}</MVN>
+                    <MVN>${build-examples.maven.cmd}</MVN>
                   </environmentVariables>
                 </configuration>
               </execution>
