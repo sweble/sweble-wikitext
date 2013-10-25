@@ -13344,7 +13344,10 @@ WtParsedWikitextPage(
 								{P} keyword = "thumb"
 								{P} rtd = RTD[ "|thumb" ]
 							),
-							[1] = WtLinkOptionGarbage[ [0] = "thumbtime=32" ],
+							[1] = WtLinkOptionGarbage(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "thumbtime=32"
+							),
 							[2] = WtLinkOptionKeyword(
 								{P} keyword = "left"
 								{P} rtd = RTD[ "|left" ]

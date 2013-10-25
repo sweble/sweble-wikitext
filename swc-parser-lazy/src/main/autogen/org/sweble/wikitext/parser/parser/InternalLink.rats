@@ -468,7 +468,7 @@ private inline WtNode LinkOptionUnresolved =
 
 
 
-// -- Link Option Garbage ------------------------------------------------------
+// -- Link Option Title --------------------------------------------------------
 
 private inline stateful WtLinkTitle LinkOptionTitle =
   {

@@ -185,8 +185,10 @@ public class LinkBuilder
 					height,
 					upright);
 			
+			/*
 			if (title != null)
 				result.setTitle(title);
+			*/
 			
 			finish(result);
 			return result;
@@ -233,6 +235,7 @@ public class LinkBuilder
 							parserConfig.getNodeFactory().loGarbage(
 									parserConfig.getNodeFactory().list());
 					garbage.exchange((WtLinkTitle) n);
+					garbage.setRtd(n.getRtd());
 					i.set(garbage);
 				}
 			}
