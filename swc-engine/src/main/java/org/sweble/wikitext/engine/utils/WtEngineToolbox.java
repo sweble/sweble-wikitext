@@ -162,7 +162,16 @@ public class WtEngineToolbox
 	{
 		if (!quiet)
 		{
-			String line = formatSepLine(title);
+			String line = formatSepLine(0, title);
+			System.out.println(line);
+		}
+	}
+	
+	public void printSep(int indent, String title)
+	{
+		if (!quiet)
+		{
+			String line = formatSepLine(indent, title);
 			System.out.println(line);
 		}
 	}
@@ -184,9 +193,9 @@ public class WtEngineToolbox
 		}
 	}
 	
-	public String formatSepLine(String title)
+	public String formatSepLine(int indent, String title)
 	{
-		String sep = "--[ " + title + " ]";
+		String sep = StringUtils.strrep(' ', indent) + "--[ " + title + " ]";
 		String line = sep + StringUtils.strrep("-", Math.max(80 - sep.length(), 2));
 		return line;
 	}
