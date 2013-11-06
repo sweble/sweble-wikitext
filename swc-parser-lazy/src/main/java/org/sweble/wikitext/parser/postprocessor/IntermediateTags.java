@@ -98,14 +98,16 @@ public enum IntermediateTags
 		public WtNode createOpen(WikitextNodeFactory nf, boolean synthetic)
 		{
 			WtImStartTag tag = nf.imStartTag(this, synthetic);
-			tag.setRtd("'''");
+			if (!synthetic)
+				tag.setRtd("'''");
 			return tag;
 		}
 		
 		public WtNode createClose(WikitextNodeFactory nf, boolean synthetic)
 		{
 			WtImEndTag tag = nf.imEndTag(this, synthetic);
-			tag.setRtd("'''");
+			if (!synthetic)
+				tag.setRtd("'''");
 			return tag;
 		}
 	},

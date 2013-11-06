@@ -35,6 +35,8 @@ public interface WtNode
 	
 	public void clearRtd();
 	
+	public void suppressRtd();
+	
 	// =========================================================================
 	
 	public static final int NT_MW_NODE_BITS /* ................. */= NT_CUSTOM_BIT | 0x20000;

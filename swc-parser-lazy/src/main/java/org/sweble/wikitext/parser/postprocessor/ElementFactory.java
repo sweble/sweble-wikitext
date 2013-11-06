@@ -27,6 +27,7 @@ import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtExternalLink;
 import org.sweble.wikitext.parser.nodes.WtHeading;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
+import org.sweble.wikitext.parser.nodes.WtIntermediate;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions;
@@ -42,6 +43,7 @@ import org.sweble.wikitext.parser.nodes.WtTableHeader;
 import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtUrl;
+import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
 import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
@@ -114,6 +116,8 @@ public class ElementFactory
 			
 			case NT_IM_START_TAG:
 			case NT_IM_END_TAG:
+				return create(nodeType, node, ((WtIntermediate) node).isSynthetic());
+				
 			default:
 				return create(nodeType, node, synthetic);
 		}
@@ -129,7 +133,7 @@ public class ElementFactory
 		{
 			case NT_XML_START_TAG:
 				newNode.setXmlAttributes(((WtXmlStartTag) node).getXmlAttributes());
-				if (!synthetic && node.getRtd() != null)
+				if ((!synthetic && (node.getRtd() != null)))
 				{
 					WtRtData rtd = node.getRtd();
 					newNode.setRtd(rtd.getField(0), RtData.SEP, rtd.getField(1),
@@ -139,7 +143,7 @@ public class ElementFactory
 			
 			case NT_XML_EMPTY_TAG:
 				newNode.setXmlAttributes(((WtXmlEmptyTag) node).getXmlAttributes());
-				if (!synthetic && node.getRtd() != null)
+				if ((!synthetic && (node.getRtd() != null)))
 				{
 					WtRtData rtd = node.getRtd();
 					newNode.setRtd(rtd.getField(0), RtData.SEP, rtd.getField(1),
@@ -149,7 +153,7 @@ public class ElementFactory
 			
 			case NT_XML_ELEMENT:
 				newNode.setXmlAttributes(((WtXmlElement) node).getXmlAttributes());
-				if (!synthetic)
+				if ((!synthetic && (node.getRtd() != null)))
 					newNode.setRtd(node.getRtd());
 				break;
 		
@@ -178,10 +182,14 @@ public class ElementFactory
 				}
 		}
 		
-		if (newNode.getRtd() == null)
+		WtXmlAttributes attribs = newNode.getXmlAttributes();
+		if ((newNode.getRtd() == null) && !attribs.isEmpty())
 		{
-			for (WtNode attr : newNode.getXmlAttributes())
-				attr.removeAttribute("RTD");
+			// Don't mess up node we've copied from...
+			attribs = (WtXmlAttributes) attribs.deepCloneWrapException();
+			newNode.setXmlAttributes(attribs);
+			for (WtNode attr : attribs)
+				attr.suppressRtd();
 		}
 		
 		return newNode;
@@ -382,6 +390,7 @@ public class ElementFactory
 		}
 		
 		newNode.setRtd(node.getRtd());
+		
 		copyNodeAttributes(node, newNode);
 		return newNode;
 	}

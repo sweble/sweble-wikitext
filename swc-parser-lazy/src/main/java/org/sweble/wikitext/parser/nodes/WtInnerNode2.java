@@ -90,6 +90,12 @@ public abstract class WtInnerNode2
 		rtd = null;
 	}
 	
+	@Override
+	public void suppressRtd()
+	{
+		rtd = WtRtData.SUPPRESS;
+	}
+	
 	// =========================================================================
 	
 	@Override

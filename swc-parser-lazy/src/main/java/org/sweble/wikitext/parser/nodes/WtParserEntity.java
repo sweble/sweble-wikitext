@@ -84,4 +84,10 @@ public class WtParserEntity
 	public void clearRtd()
 	{
 	}
+	
+	@Override
+	public void suppressRtd()
+	{
+		throw new UnsupportedOperationException();
+	}
 }

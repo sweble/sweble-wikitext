@@ -79,6 +79,12 @@ public abstract class WtStringNodeImpl
 		rtd = null;
 	}
 	
+	@Override
+	public void suppressRtd()
+	{
+		rtd = WtRtData.SUPPRESS;
+	}
+	
 	// =========================================================================
 	
 	@Override

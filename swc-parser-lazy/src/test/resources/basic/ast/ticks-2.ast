@@ -10,7 +10,7 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "*" <o> "\n" ]
 			[0] = " ",
 			[1] = WtItalics(
-				{P} rtd = RTD[ "''" <o> "''" ]
+				{P} rtd = RTD[ "''" <o> "" ]
 				[0] = "Item 1"
 			)
 		),
@@ -18,7 +18,7 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "*" <o> "\n" ]
 			[0] = " ",
 			[1] = WtBold(
-				{P} rtd = RTD[ "'''" <o> "'''" ]
+				{P} rtd = RTD[ "'''" <o> "" ]
 				[0] = "Item 2"
 			)
 		),
@@ -26,9 +26,9 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "*" <o> "" ]
 			[0] = " ",
 			[1] = WtItalics(
-				{P} rtd = RTD[ "''" <o> "''" ]
+				{P} rtd = RTD[ "''" <o> "" ]
 				[0] = WtBold(
-					{P} rtd = RTD[ "'''" <o> "'''" ]
+					{P} rtd = RTD[ "'''" <o> "" ]
 					[0] = "Item 3"
 				)
 			)
@@ -38,19 +38,19 @@ WtParsedWikitextPage(
 	[6] = WtSemiPre[
 		[0] = " ",
 		[1] = WtItalics(
-			{P} rtd = RTD[ "''" <o> "''" ]
+			{P} rtd = RTD[ "''" <o> "" ]
 			[0] = "Pre 1"
 		),
 		[2] = "\n ",
 		[3] = WtBold(
-			{P} rtd = RTD[ "'''" <o> "'''" ]
+			{P} rtd = RTD[ "'''" <o> "" ]
 			[0] = "Pre 2"
 		),
 		[4] = "\n ",
 		[5] = WtItalics(
-			{P} rtd = RTD[ "''" <o> "''" ]
+			{P} rtd = RTD[ "''" <o> "" ]
 			[0] = WtBold(
-				{P} rtd = RTD[ "'''" <o> "'''" ]
+				{P} rtd = RTD[ "'''" <o> "" ]
 				[0] = "Pre 3"
 			)
 		)

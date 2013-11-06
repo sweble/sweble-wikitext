@@ -11,6 +11,7 @@ WtParsedWikitextPage(
 	[2] = "\nP2\n",
 	[3] = WtXmlElement(
 		{P} name = "p"
+		{P} rtd = RTD[ "" <o> "" <o> "</p>" ]
 		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[]
 	),

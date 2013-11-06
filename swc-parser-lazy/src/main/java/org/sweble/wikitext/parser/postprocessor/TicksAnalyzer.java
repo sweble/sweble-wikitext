@@ -35,6 +35,8 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
 import org.sweble.wikitext.parser.nodes.WtStringNode;
+import org.sweble.wikitext.parser.nodes.WtTableCell;
+import org.sweble.wikitext.parser.nodes.WtTableHeader;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtTicks;
 import org.sweble.wikitext.parser.nodes.WtWhitespace;
@@ -249,6 +251,24 @@ public class TicksAnalyzer
 			finishLine();
 		}
 		
+		public void visit(WtTableCell n)
+		{
+			// Inline table cells are on one line but we want to finish after
+			// each line to prevent leakage of tick formatting into adjacent 
+			// cells
+			iterateContent(n.getBody());
+			finishLine();
+		}
+		
+		public void visit(WtTableHeader n)
+		{
+			// Inline table cells are on one line but we want to finish after
+			// each line to prevent leakage of tick formatting into adjacent 
+			// cells
+			iterateContent(n.getBody());
+			finishLine();
+		}
+		
 		public void visit(WtLeafNode n)
 		{
 			// Nothing to do here
@@ -405,6 +425,18 @@ public class TicksAnalyzer
 		public WtNode visit(WtSemiPreLine n)
 		{
 			return implicitLineScope(n);
+		}
+		
+		public WtNode visit(WtTableCell n)
+		{
+			implicitLineScope(n.getBody());
+			return n;
+		}
+		
+		public WtNode visit(WtTableHeader n)
+		{
+			implicitLineScope(n.getBody());
+			return n;
 		}
 		
 		private WtNode implicitLineScope(WtNodeList content)

@@ -17,7 +17,8 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import org.sweble.wikitext.parser.nodes.WtIntermediate;
+import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.WtImEndTag;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
@@ -68,51 +69,87 @@ public class TreeBuilderModeBase
 	
 	protected static void addRtDataOfEndTag(WtNode finish, WtNode endTag)
 	{
-		if (finish.getRtd() == null)
+		if (endTag.getNodeType() == WtNode.NT_IM_END_TAG)
 		{
+			// Special treatment for intermediate tags
+			addRtDataOfImEndTag(finish, (WtImEndTag) endTag);
 			return;
 		}
-		else
+		
+		if (endTag.getBooleanAttribute("synthetic"))
 		{
-			if (endTag.getNodeType() == WtNode.NT_IM_END_TAG)
-			{
-				addRtDataOfImEndTag(finish, (WtIntermediate) endTag);
-				return;
-			}
-			else if (endTag.getBooleanAttribute("synthetic"))
-			{
-				return;
-			}
+			// Synthetic tags should not show up in RTD information.
+			return;
 		}
 		
-		// Could happen: * .. </li> would be one such case.
+		// We expect "finish" to be an WtXmlElement. However, that's not always 
+		// true. "* .. </li>" would be one such case. The endTag would be a tag
+		// but the node we're finishing is a WtListItem.
+		
 		if (!(finish instanceof WtXmlElement))
+			// We're violently fixing stuff here by dropping the illegal
+			// </li> markup.
 			return;
 		
 		WtXmlElement fe = (WtXmlElement) finish;
-		// Could also be an empty tag:
-		WtNamedXmlElement et = (WtNamedXmlElement) endTag;
 		
 		RtData feRtd = fe.getRtd();
-		RtData etRtd = et.getRtd();
-		if (etRtd != null)
+		if (feRtd == null)
 		{
-			feRtd.setField(2, etRtd.getField(0));
+			// The element we have to finish might not have RTD data associated.F 
+			finish.setRtd(RtData.SEP, RtData.SEP);
+			feRtd = fe.getRtd();
 		}
-		else
+		
+		WtNamedXmlElement et = (WtNamedXmlElement) endTag;
+		RtData etRtd = et.getRtd();
+		
+		if (etRtd == null)
 		{
-			feRtd.setField(2, "</", et.getName(), ">");
+			// End tag has no RTD, so we should not artifically generate it...
+			//feRtd.setField(2, "</", et.getName(), ">");
+			return;
+		}
+		
+		switch (endTag.getNodeType())
+		{
+			case WtNode.NT_XML_END_TAG:
+				feRtd.setField(2, etRtd.getField(0));
+				break;
+			
+			default:
+				throw new InternalError();
 		}
 	}
 	
 	protected static void addRtDataOfImEndTag(
 			WtNode finish,
-			WtIntermediate endTag)
+			WtImEndTag endTag)
 	{
-		if (endTag.getRtd() == null)
+		WtRtData etRtd = endTag.getRtd();
+		if (endTag.isSynthetic() || etRtd == null)
 			return;
 		
-		// finish is assumed to be WtBold or WtItalics
-		finish.getRtd().setField(1, endTag.getRtd().getField(0));
+		switch (finish.getNodeType())
+		{
+			case WtNode.NT_BOLD:
+			case WtNode.NT_ITALICS:
+			{
+				RtData feRtd = finish.getRtd();
+				if (feRtd == null)
+				{
+					finish.setRtd(RtData.SEP, etRtd.getField(0));
+				}
+				else
+				{
+					feRtd.setField(1, etRtd.getField(0));
+				}
+				break;
+			}
+			
+			default:
+				// Finish is assumed to be WtBold or WtItalics
+				throw new InternalError();
+		}
 	}
 }

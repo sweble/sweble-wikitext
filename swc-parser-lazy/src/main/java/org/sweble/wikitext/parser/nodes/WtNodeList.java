@@ -180,6 +180,12 @@ public interface WtNodeList
 		{
 		}
 		
+		@Override
+		public void suppressRtd()
+		{
+			throw new UnsupportedOperationException();
+		}
+		
 		// =====================================================================
 		
 		@Override

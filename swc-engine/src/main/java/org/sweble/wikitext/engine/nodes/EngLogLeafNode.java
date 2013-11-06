@@ -62,6 +62,12 @@ public class EngLogLeafNode
 		throw new UnsupportedOperationException(genMsg());
 	}
 	
+	@Override
+	public void suppressRtd()
+	{
+		throw new UnsupportedOperationException(genMsg());
+	}
+	
 	// =========================================================================
 	
 	protected String genMsg()

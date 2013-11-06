@@ -52,6 +52,7 @@ WtParsedWikitextPage(
 	),
 	[2] = WtXmlElement(
 		{P} name = "i"
+		{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
 		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = WtXmlElement(

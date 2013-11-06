@@ -74,69 +74,75 @@ public class WtXmlEndTag
 	}
 	
 	@Override
-	public final int getPropertyCount()
+	public int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
 	
-	public final int getSuperPropertyCount()
+	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
 	
 	@Override
-	public final AstNodePropertyIterator propertyIterator()
+	public AstNodePropertyIterator propertyIterator()
 	{
-		return new WtLeafNodePropertyIterator()
+		return new WtXmlEndTagPropertyIterator();
+	}
+	
+	// =========================================================================
+	
+	protected class WtXmlEndTagPropertyIterator
+			extends
+				WtLeafNodePropertyIterator
+	{
+		@Override
+		protected int getPropertyCount()
 		{
-			@Override
-			protected int getPropertyCount()
+			return WtXmlEndTag.this.getPropertyCount();
+		}
+		
+		@Override
+		protected String getName(int index)
+		{
+			switch (index - getSuperPropertyCount())
 			{
-				return WtXmlEndTag.this.getPropertyCount();
-			}
-			
-			@Override
-			protected String getName(int index)
-			{
-				switch (index - getSuperPropertyCount())
-				{
-					case 0:
-						return "name";
-						
-					default:
-						return super.getName(index);
-				}
-			}
-			
-			@Override
-			protected Object getValue(int index)
-			{
-				switch (index - getSuperPropertyCount())
-				{
-					case 0:
-						return WtXmlEndTag.this.getName();
-						
-					default:
-						return super.getValue(index);
-				}
-			}
-			
-			@Override
-			protected Object setValue(int index, Object value)
-			{
-				switch (index - getSuperPropertyCount())
-				{
-					case 0:
-					{
-						String old = WtXmlEndTag.this.getName();
-						WtXmlEndTag.this.setName((String) value);
-						return old;
-					}
+				case 0:
+					return "name";
 					
-					default:
-						return super.setValue(index, value);
-				}
+				default:
+					return super.getName(index);
 			}
-		};
+		}
+		
+		@Override
+		protected Object getValue(int index)
+		{
+			switch (index - getSuperPropertyCount())
+			{
+				case 0:
+					return WtXmlEndTag.this.getName();
+					
+				default:
+					return super.getValue(index);
+			}
+		}
+		
+		@Override
+		protected Object setValue(int index, Object value)
+		{
+			switch (index - getSuperPropertyCount())
+			{
+				case 0:
+				{
+					String old = WtXmlEndTag.this.getName();
+					WtXmlEndTag.this.setName((String) value);
+					return old;
+				}
+				
+				default:
+					return super.setValue(index, value);
+			}
+		}
 	}
 }

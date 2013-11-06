@@ -93,7 +93,7 @@ WtParsedWikitextPage(
 				{P} name = "b"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						{P} rtd = RTD[  ]
 						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "x" ]
 					)
@@ -107,7 +107,7 @@ WtParsedWikitextPage(
 								{P} name = "b"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} rtd = RTD[ " " <o> "=" <o> "" ]
+										{P} rtd = RTD[  ]
 										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "x" ]
 									)
@@ -117,7 +117,7 @@ WtParsedWikitextPage(
 										{P} name = "b"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} rtd = RTD[ " " <o> "=" <o> "" ]
+												{P} rtd = RTD[  ]
 												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "x" ]
 											)
@@ -147,7 +147,7 @@ WtParsedWikitextPage(
 				{P} name = "b"
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
-						{P} rtd = RTD[ " " <o> "=" <o> "" ]
+						{P} rtd = RTD[  ]
 						name = WtName[ [0] = "class" ],
 						value = WtValue[ [0] = "x" ]
 					)
@@ -161,7 +161,7 @@ WtParsedWikitextPage(
 								{P} name = "b"
 								xmlAttributes = WtXmlAttributes[
 									[0] = WtXmlAttribute(
-										{P} rtd = RTD[ " " <o> "=" <o> "" ]
+										{P} rtd = RTD[  ]
 										name = WtName[ [0] = "class" ],
 										value = WtValue[ [0] = "x" ]
 									)
@@ -171,7 +171,7 @@ WtParsedWikitextPage(
 										{P} name = "b"
 										xmlAttributes = WtXmlAttributes[
 											[0] = WtXmlAttribute(
-												{P} rtd = RTD[ " " <o> "=" <o> "" ]
+												{P} rtd = RTD[  ]
 												name = WtName[ [0] = "class" ],
 												value = WtValue[ [0] = "x" ]
 											)

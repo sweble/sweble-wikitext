@@ -109,13 +109,16 @@ public class RtDataPrinter
 	{
 		if (rtd != null)
 		{
-			int i = 0;
-			for (WtNode n : node)
+			if (!rtd.isSuppress())
 			{
-				printRtd(rtd.getField(i++));
-				dispatch(n);
+				int i = 0;
+				for (WtNode n : node)
+				{
+					printRtd(rtd.getField(i++));
+					dispatch(n);
+				}
+				printRtd(rtd.getField(i));
 			}
-			printRtd(rtd.getField(i));
 		}
 		else
 		{

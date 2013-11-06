@@ -31,7 +31,16 @@ public class WtRtData
 {
 	private static final long serialVersionUID = 1L;
 	
+	public static final WtRtData SUPPRESS = new WtRtDataSuppressSingleton();
+	
 	// =========================================================================
+	
+	/**
+	 * Constructor for SUPPRESS singleton.
+	 */
+	private WtRtData()
+	{
+	}
 	
 	public WtRtData(AstNode<?> node, Object... glue)
 	{
@@ -69,6 +78,14 @@ public class WtRtData
 	}
 	
 	// =========================================================================
+
+	@Override
+	public boolean isSuppress()
+	{
+		return this == SUPPRESS;
+	}
+	
+	// =========================================================================
 	
 	@Override
 	protected void addNodeOrObject(ArrayList<Object> result, Object o)
@@ -96,5 +113,81 @@ public class WtRtData
 	public Object clone() throws CloneNotSupportedException
 	{
 		return new WtRtData(this);
+	}
+	
+	// =========================================================================
+	
+	protected static class WtRtDataSuppressSingleton
+			extends
+				WtRtData
+	{
+		private static final long serialVersionUID = 1L;
+		
+		@Override
+		public void set(Object... glue)
+		{
+			notSupported();
+		}
+		
+		@Override
+		public void set(String... glue)
+		{
+			notSupported();
+		}
+		
+		@Override
+		public void setField(int field, Object... glue)
+		{
+			notSupported();
+		}
+		
+		@Override
+		public void setField(int field, String glue)
+		{
+			notSupported();
+		}
+		
+		@Override
+		public void setField(int field, String... glue)
+		{
+			notSupported();
+		}
+		
+		@Override
+		public void prepend(String text)
+		{
+			notSupported();
+		}
+		
+		@Override
+		public void append(Object... glue)
+		{
+			notSupported();
+		}
+		
+		@Override
+		public void prepend(Object... glue)
+		{
+			notSupported();
+		}
+		
+		private void notSupported()
+		{
+			throw new UnsupportedOperationException();
+		}
+		
+		@Override
+		public boolean equals(Object obj)
+		{
+			if (this == obj)
+				return true;
+			return false;
+		}
+		
+		@Override
+		public Object clone() throws CloneNotSupportedException
+		{
+			throw new CloneNotSupportedException();
+		}
 	}
 }

@@ -150,6 +150,12 @@ public interface WtContentNode
 			rtd = null;
 		}
 		
+		@Override
+		public void suppressRtd()
+		{
+			rtd = WtRtData.SUPPRESS;
+		}
+		
 		// =====================================================================
 		
 		@Override

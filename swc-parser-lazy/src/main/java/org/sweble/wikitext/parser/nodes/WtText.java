@@ -75,4 +75,10 @@ public class WtText
 	public void clearRtd()
 	{
 	}
+	
+	@Override
+	public void suppressRtd()
+	{
+		throw new UnsupportedOperationException();
+	}
 }

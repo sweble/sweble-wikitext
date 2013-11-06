@@ -23,6 +23,7 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "*" <o> "" ]
 			[0] = WtXmlElement(
 				{P} name = "b"
+				{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
 				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[ [0] = " bold" ]
 			),
@@ -61,6 +62,7 @@ WtParsedWikitextPage(
 		[0] = WtXmlElement(
 			{A} synthetic = true
 			{P} name = "b"
+			{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
 			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[ [0] = "bold\n" ]
 		),

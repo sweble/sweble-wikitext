@@ -77,6 +77,12 @@ public abstract class WtInnerImmutableNode1
 		throw new UnsupportedOperationException(genMsg());
 	}
 	
+	@Override
+	public void suppressRtd()
+	{
+		throw new UnsupportedOperationException(genMsg());
+	}
+	
 	// =========================================================================
 	
 	protected String genMsg()

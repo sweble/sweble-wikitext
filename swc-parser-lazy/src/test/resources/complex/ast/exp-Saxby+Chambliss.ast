@@ -6561,7 +6561,7 @@ WtParsedWikitextPage(
 												[0] = WtItalics(
 													{P} rtd = RTD[ "''" <o> "''" ]
 													[0] = WtBold(
-														{P} rtd = RTD[ "'''" <o> "'''" ]
+														{P} rtd = RTD[ "'''" <o> "" ]
 														[0] = WtInternalLink(
 															{P} postfix = ""
 															{P} prefix = ""
@@ -6575,7 +6575,7 @@ WtParsedWikitextPage(
 													)
 												),
 												[1] = WtBold(
-													{P} rtd = RTD[ "'''" <o> "'''" ]
+													{P} rtd = RTD[ "" <o> "'''" ]
 													[0] = WtTagExtension(
 														{P} name = "nowiki"
 														{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
