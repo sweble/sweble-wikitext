@@ -18,6 +18,7 @@
 package org.sweble.wikitext.dumpreader;
 
 import java.io.BufferedInputStream;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -39,15 +40,16 @@ import javax.xml.validation.SchemaFactory;
 
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.apache.xerces.util.XMLCatalogResolver;
 
 import de.fau.cs.osr.utils.WrappedException;
 
 public abstract class DumpReader
+		implements
+			Closeable
 {
-	//private final File dumpFile;
-	
 	private final InputStream dumpInputStream;
 	
 	private final String dumpUri;
@@ -111,8 +113,27 @@ public abstract class DumpReader
 	
 	public void unmarshal() throws JAXBException, XMLStreamException
 	{
-		unmarshaller.unmarshal(xmlStreamReader);
-		xmlStreamReader.close();
+		try
+		{
+			unmarshaller.unmarshal(xmlStreamReader);
+		}
+		finally
+		{
+			closeStreams();
+		}
+	}
+	
+	@Override
+	public void close() throws IOException
+	{
+		closeStreams();
+	}
+	
+	private void closeStreams()
+	{
+		IOUtils.closeQuietly(decompressedInputStream);
+		IOUtils.closeQuietly(compressedInputStream);
+		IOUtils.closeQuietly(dumpInputStream);
 	}
 	
 	public long getFileSize()
