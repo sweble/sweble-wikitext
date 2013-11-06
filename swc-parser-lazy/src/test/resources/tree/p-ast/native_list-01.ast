@@ -3,11 +3,13 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[1] = "List 1",
 	[2] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[3] = WtNewline("\n"),
 	[4] = WtUnorderedList[
@@ -24,11 +26,13 @@ WtParsedWikitextPage(
 	[6] = WtNewline("\n"),
 	[7] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[8] = "List 2",
 	[9] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[10] = WtNewline("\n"),
 	[11] = WtOrderedList[

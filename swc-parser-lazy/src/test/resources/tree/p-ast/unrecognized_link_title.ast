@@ -3,6 +3,7 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[1] = WtImageLink(
@@ -32,5 +33,6 @@ WtParsedWikitextPage(
 	),
 	[2] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	)
 )

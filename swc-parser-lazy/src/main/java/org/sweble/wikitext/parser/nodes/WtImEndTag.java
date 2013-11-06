@@ -67,7 +67,7 @@ public class WtImEndTag
 	@Override
 	public final int getPropertyCount()
 	{
-		return /*1 + */getSuperPropertyCount();
+		return 1 + getSuperPropertyCount();
 	}
 	
 	private final int getSuperPropertyCount()

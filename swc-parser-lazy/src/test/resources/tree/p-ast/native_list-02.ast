@@ -3,11 +3,13 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[1] = "List 1",
 	[2] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[3] = WtNewline("\n"),
 	[4] = WtUnorderedList[
@@ -35,11 +37,13 @@ WtParsedWikitextPage(
 	[6] = WtNewline("\n"),
 	[7] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[8] = "List 2",
 	[9] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[10] = WtNewline("\n"),
 	[11] = WtOrderedList[
@@ -61,6 +65,7 @@ WtParsedWikitextPage(
 	[12] = WtNewline("\n"),
 	[13] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[14] = "bold",
@@ -73,6 +78,7 @@ WtParsedWikitextPage(
 	[18] = "normal",
 	[19] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[20] = WtNewline("\n")
 )

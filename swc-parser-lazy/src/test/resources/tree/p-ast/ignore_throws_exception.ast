@@ -430,6 +430,7 @@ WtParsedWikitextPage(
 				body = WtBody[
 					[0] = WtImStartTag(
 						{P} name = "@p"
+						{P} synthetic = false
 						xmlAttributes = WtXmlAttributes[]
 					),
 					[1] = WtXmlStartTag(
@@ -450,6 +451,7 @@ WtParsedWikitextPage(
 					),
 					[4] = WtImEndTag(
 						{P} name = "@p"
+						{P} synthetic = false
 					),
 					[5] = WtNewline("\n")
 				]
@@ -476,6 +478,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -520,6 +523,7 @@ WtParsedWikitextPage(
 							),
 							[6] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[7] = WtNewline("\n")
 						]
@@ -548,6 +552,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = WtXmlEmptyTag(
@@ -598,6 +603,7 @@ WtParsedWikitextPage(
 							),
 							[8] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[9] = WtNewline("\n")
 						]
@@ -626,6 +632,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -646,6 +653,7 @@ WtParsedWikitextPage(
 							),
 							[5] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[6] = WtNewline("\n")
 						]
@@ -674,6 +682,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = WtTicks(
@@ -728,6 +737,7 @@ WtParsedWikitextPage(
 							),
 							[15] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[16] = WtNewline("\n")
 						]
@@ -745,6 +755,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Preceded",
@@ -756,6 +767,7 @@ WtParsedWikitextPage(
 							[3] = "by",
 							[4] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[5] = WtNewline("\n")
 						]
@@ -766,6 +778,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -778,6 +791,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -818,6 +832,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = WtXmlEmptyTag(
@@ -900,6 +915,7 @@ WtParsedWikitextPage(
 							),
 							[13] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[14] = WtNewline("\n")
 						]
@@ -928,6 +944,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = WtTicks(
@@ -969,6 +986,7 @@ WtParsedWikitextPage(
 							[11] = "January 3, 2003",
 							[12] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[13] = WtNewline("\n")
 						]
@@ -986,6 +1004,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Preceded",
@@ -997,6 +1016,7 @@ WtParsedWikitextPage(
 							[3] = "by",
 							[4] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[5] = WtNewline("\n")
 						]
@@ -1007,6 +1027,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1019,6 +1040,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1036,6 +1058,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Succeeded",
@@ -1047,6 +1070,7 @@ WtParsedWikitextPage(
 							[3] = "by",
 							[4] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[5] = WtNewline("\n")
 						]
@@ -1057,6 +1081,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1081,6 +1106,7 @@ WtParsedWikitextPage(
 							),
 							[4] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[5] = WtNewline("\n")
 						]
@@ -1112,6 +1138,7 @@ WtParsedWikitextPage(
 							[2] = WtNewline("\n"),
 							[3] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[4] = WtXmlEmptyTag(
@@ -1147,6 +1174,7 @@ WtParsedWikitextPage(
 							),
 							[9] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[10] = WtNewline("\n")
 						]
@@ -1175,6 +1203,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = WtTicks(
@@ -1216,6 +1245,7 @@ WtParsedWikitextPage(
 							[11] = "January 3, 2007",
 							[12] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[13] = WtNewline("\n")
 						]
@@ -1233,6 +1263,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Preceded",
@@ -1244,6 +1275,7 @@ WtParsedWikitextPage(
 							[3] = "by",
 							[4] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[5] = WtNewline("\n")
 						]
@@ -1254,6 +1286,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1266,6 +1299,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1283,6 +1317,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Succeeded",
@@ -1294,6 +1329,7 @@ WtParsedWikitextPage(
 							[3] = "by",
 							[4] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[5] = WtNewline("\n")
 						]
@@ -1304,6 +1340,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1316,6 +1353,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1411,6 +1449,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = WtXmlEmptyTag(
@@ -1420,6 +1459,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1437,11 +1477,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Born",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1452,6 +1494,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " November 10, 1943",
@@ -1535,6 +1578,7 @@ WtParsedWikitextPage(
 							),
 							[18] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[19] = WtNewline("\n")
 						]
@@ -1552,6 +1596,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Political",
@@ -1563,6 +1608,7 @@ WtParsedWikitextPage(
 							[3] = "party",
 							[4] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[5] = WtNewline("\n")
 						]
@@ -1573,6 +1619,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1588,6 +1635,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1605,11 +1653,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Spouse(s)",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1620,11 +1670,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Julianne Chambliss",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1642,11 +1694,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Residence",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1663,6 +1717,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1675,6 +1730,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1692,6 +1748,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1713,6 +1770,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1723,6 +1781,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1746,6 +1805,7 @@ WtParsedWikitextPage(
 							),
 							[5] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[6] = WtNewline("\n")
 						]
@@ -1763,11 +1823,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Occupation",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1778,11 +1840,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Lawyer",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1800,11 +1864,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Religion",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1815,6 +1881,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1830,6 +1897,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1847,11 +1915,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " Website",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -1862,6 +1932,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -1876,6 +1947,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[4] = WtNewline("\n")
 						]
@@ -1894,6 +1966,7 @@ WtParsedWikitextPage(
 	[3] = WtNewline("\n"),
 	[4] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[5] = WtTicks(
@@ -1949,6 +2022,7 @@ WtParsedWikitextPage(
 	[16] = ", chairing the committee during the 109th Congress (2005-2007).",
 	[17] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[18] = WtNewline("\n"),
 	[19] = WtNewline("\n"),
@@ -1963,6 +2037,7 @@ WtParsedWikitextPage(
 			[1] = WtNewline("\n"),
 			[2] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[3] = "Chambliss, the son of an ",
@@ -2093,11 +2168,13 @@ WtParsedWikitextPage(
 			[31] = " Fraternity.",
 			[32] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[33] = WtNewline("\n"),
 			[34] = WtNewline("\n"),
 			[35] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[36] = "During the ",
@@ -2125,11 +2202,13 @@ WtParsedWikitextPage(
 			),
 			[42] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[43] = WtNewline("\n"),
 			[44] = WtNewline("\n"),
 			[45] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[46] = "\t ",
@@ -2157,11 +2236,13 @@ WtParsedWikitextPage(
 			[53] = ". He married Julianne Frohbert in 1966 and they have two children and two grandchildren.",
 			[54] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[55] = WtNewline("\n"),
 			[56] = WtNewline("\n"),
 			[57] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[58] = "Chambliss's son Bo is a registered lobbyist for the ",
@@ -2192,6 +2273,7 @@ WtParsedWikitextPage(
 			),
 			[64] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[65] = WtNewline("\n"),
 			[66] = WtNewline("\n")
@@ -2208,6 +2290,7 @@ WtParsedWikitextPage(
 			[1] = WtNewline("\n"),
 			[2] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[3] = "Chambliss was elected to the ",
@@ -2251,11 +2334,13 @@ WtParsedWikitextPage(
 			[11] = ".",
 			[12] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[13] = WtNewline("\n"),
 			[14] = WtNewline("\n"),
 			[15] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[16] = "Chambliss was elected from the ",
@@ -2280,11 +2365,13 @@ WtParsedWikitextPage(
 			[20] = " retired. He was elected with 63% of the vote\u2014an unexpectedly large margin since the 8th had never elected a Republican. He faced a tough re-election fight in 1996 against Macon attorney Jim Wiggins, but breezed to reelection in 1998 and 2000.",
 			[21] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[22] = WtNewline("\n"),
 			[23] = WtNewline("\n"),
 			[24] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[25] = "During his four terms in the House, Chambliss served on the ",
@@ -2298,11 +2385,13 @@ WtParsedWikitextPage(
 			[27] = " and chaired the House Intelligence Subcommittee on Terrorism and Homeland Security.",
 			[28] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[29] = WtNewline("\n"),
 			[30] = WtNewline("\n"),
 			[31] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[32] = "Less than a month after the ",
@@ -2325,11 +2414,13 @@ WtParsedWikitextPage(
 			),
 			[36] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[37] = WtNewline("\n"),
 			[38] = WtNewline("\n"),
 			[39] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[40] = "Chambliss was criticized for remarks he made during a November 19, 2001 meeting with first responders in ",
@@ -2357,11 +2448,13 @@ WtParsedWikitextPage(
 			),
 			[46] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[47] = WtNewline("\n"),
 			[48] = WtNewline("\n"),
 			[49] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[50] = "In 2006, Chambliss was among several congressional Republicans and Democrats who returned campaign donations from ",
@@ -2381,6 +2474,7 @@ WtParsedWikitextPage(
 			),
 			[54] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[55] = WtNewline("\n"),
 			[56] = WtNewline("\n")
@@ -2572,6 +2666,7 @@ WtParsedWikitextPage(
 					[4] = WtNewline("\n"),
 					[5] = WtImStartTag(
 						{P} name = "@p"
+						{P} synthetic = false
 						xmlAttributes = WtXmlAttributes[]
 					),
 					[6] = "Sen. Chambliss is the only senator since 1947 to have chaired a full standing Senate Committee (",
@@ -2663,11 +2758,13 @@ WtParsedWikitextPage(
 					),
 					[18] = WtImEndTag(
 						{P} name = "@p"
+						{P} synthetic = false
 					),
 					[19] = WtNewline("\n"),
 					[20] = WtNewline("\n"),
 					[21] = WtImStartTag(
 						{P} name = "@p"
+						{P} synthetic = false
 						xmlAttributes = WtXmlAttributes[]
 					),
 					[22] = "In 2008, he was named one of 10 worst congressmen by Esquire Magazine, which described the competition as \"staggering.\" ",
@@ -2679,6 +2776,7 @@ WtParsedWikitextPage(
 					),
 					[24] = WtImEndTag(
 						{P} name = "@p"
+						{P} synthetic = false
 					),
 					[25] = WtNewline("\n"),
 					[26] = WtNewline("\n")
@@ -2751,6 +2849,7 @@ WtParsedWikitextPage(
 							[1] = WtNewline("\n"),
 							[2] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[3] = WtXmlStartTag(
@@ -2830,11 +2929,13 @@ WtParsedWikitextPage(
 							[16] = ".",
 							[17] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[18] = WtNewline("\n"),
 							[19] = WtNewline("\n"),
 							[20] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[21] = "Chambliss focused on the issue of ",
@@ -2878,11 +2979,13 @@ WtParsedWikitextPage(
 							),
 							[31] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[32] = WtNewline("\n"),
 							[33] = WtNewline("\n"),
 							[34] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[35] = "Chambliss received criticism from Democrats and Republicans for this ad, pointing out that he, who hadn't served in the Vietnam War due to receiving military deferments, had attacked a Vietnam War veteran who lost three limbs during his service for not being tough enough on issues of war and homeland security. Republican Senator ",
@@ -2951,16 +3054,19 @@ WtParsedWikitextPage(
 							),
 							[51] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[52] = WtNewline("\n"),
 							[53] = WtNewline("\n"),
 							[54] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[55] = "Chambliss won the election, receiving 53 percent of the votes to Cleland's 46 percent.",
 							[56] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[57] = WtNewline("\n"),
 							[58] = WtNewline("\n")
@@ -2977,6 +3083,7 @@ WtParsedWikitextPage(
 							[1] = WtNewline("\n"),
 							[2] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[3] = WtXmlStartTag(
@@ -3016,11 +3123,13 @@ WtParsedWikitextPage(
 							),
 							[7] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[8] = WtNewline("\n"),
 							[9] = WtNewline("\n"),
 							[10] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[11] = WtXmlStartTag(
@@ -3197,21 +3306,25 @@ WtParsedWikitextPage(
 							),
 							[42] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[43] = WtNewline("\n"),
 							[44] = WtNewline("\n"),
 							[45] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[46] = "Since no candidate exceeded 50% of the vote, a runoff election between Chambliss and Martin was held on December 2, 2008.",
 							[47] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[48] = WtNewline("\n"),
 							[49] = WtNewline("\n"),
 							[50] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[51] = "Chambliss defeated Martin 57.5% to 42.5% in the runoff election.",
@@ -3241,6 +3354,7 @@ WtParsedWikitextPage(
 							),
 							[54] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[55] = WtNewline("\n"),
 							[56] = WtNewline("\n")
@@ -3257,6 +3371,7 @@ WtParsedWikitextPage(
 							[1] = WtNewline("\n"),
 							[2] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[3] = "During the run-off period, Chambliss received a subpoena regarding the investigation of a lawsuit against ",
@@ -3306,6 +3421,7 @@ WtParsedWikitextPage(
 							),
 							[13] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[14] = WtNewline("\n"),
 							[15] = WtNewline("\n")
@@ -3333,6 +3449,7 @@ WtParsedWikitextPage(
 							[1] = WtNewline("\n"),
 							[2] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[3] = "Chambliss's voting record is typically that of voting in line with conservative issues.",
@@ -3378,11 +3495,13 @@ WtParsedWikitextPage(
 							[12] = " (S. 1025), attracting more cosponsors than any other fundamental tax reform bill introduced.",
 							[13] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[14] = WtNewline("\n"),
 							[15] = WtNewline("\n"),
 							[16] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[17] = "Although Chambliss has a conservative voting record, he has participated in bi-partisan legislation\u2014such as the ",
@@ -3457,6 +3576,7 @@ WtParsedWikitextPage(
 							[31] = ", a bipartisan group which has worked to create a compromise surrounding the energy policy of the United States.",
 							[32] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[33] = WtNewline("\n"),
 							[34] = WtNewline("\n")
@@ -3473,6 +3593,7 @@ WtParsedWikitextPage(
 							[1] = WtNewline("\n"),
 							[2] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[3] = "On abortion issues, the ratings given Chambliss as of 2007 by ",
@@ -3512,11 +3633,13 @@ WtParsedWikitextPage(
 							),
 							[10] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[11] = WtNewline("\n"),
 							[12] = WtNewline("\n"),
 							[13] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[14] = "On ",
@@ -3556,11 +3679,13 @@ WtParsedWikitextPage(
 							),
 							[21] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[22] = WtNewline("\n"),
 							[23] = WtNewline("\n"),
 							[24] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[25] = "On agricultural issues, the ",
@@ -3580,11 +3705,13 @@ WtParsedWikitextPage(
 							),
 							[29] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[30] = WtNewline("\n"),
 							[31] = WtNewline("\n"),
 							[32] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[33] = "On economic issues including voting on the national budget, national spending, and taxes, in 2007, the National Tax Limitation Committee gave Chambliss a 90% rating,",
@@ -3611,11 +3738,13 @@ WtParsedWikitextPage(
 							),
 							[39] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[40] = WtNewline("\n"),
 							[41] = WtNewline("\n"),
 							[42] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[43] = "On civil liberties and civil rights issues, in 2007, the ",
@@ -3653,11 +3782,13 @@ WtParsedWikitextPage(
 							),
 							[51] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[52] = WtNewline("\n"),
 							[53] = WtNewline("\n"),
 							[54] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[55] = "On education issues, in 2008, the Center for Education Reform, gave Chambliss a score of 9 out of 9, and called him a \"real reformer\",",
@@ -3684,11 +3815,13 @@ WtParsedWikitextPage(
 							),
 							[61] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[62] = WtNewline("\n"),
 							[63] = WtNewline("\n"),
 							[64] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[65] = "On organized labor issues, in 2007 the ",
@@ -3723,11 +3856,13 @@ WtParsedWikitextPage(
 							),
 							[73] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[74] = WtNewline("\n"),
 							[75] = WtNewline("\n"),
 							[76] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[77] = "On environmental issues, in 2003 the ",
@@ -3747,6 +3882,7 @@ WtParsedWikitextPage(
 							),
 							[81] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[82] = WtNewline("\n"),
 							[83] = WtNewline("\n")
@@ -3767,6 +3903,7 @@ WtParsedWikitextPage(
 			[1] = WtNewline("\n"),
 			[2] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[3] = WtXmlStartTag(
@@ -3806,6 +3943,7 @@ WtParsedWikitextPage(
 			),
 			[7] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[8] = WtNewline("\n"),
 			[9] = WtNewline("\n"),
@@ -3830,6 +3968,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -3855,6 +3994,7 @@ WtParsedWikitextPage(
 							),
 							[5] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[6] = WtNewline("\n")
 						]
@@ -3865,11 +4005,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Year",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -3885,11 +4027,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Democrat",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -3900,11 +4044,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Votes",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -3915,11 +4061,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Pct",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -3935,11 +4083,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Republican",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -3950,11 +4100,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Votes",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -3965,11 +4117,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Pct",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -3990,6 +4144,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -4004,6 +4159,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4025,11 +4181,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Craig Mathis",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4051,11 +4209,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "53,408",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4072,11 +4232,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "37%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4098,6 +4260,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -4111,6 +4274,7 @@ WtParsedWikitextPage(
 									),
 									[4] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[5] = WtNewline("\n")
 								]
@@ -4132,11 +4296,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "89,591",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4153,11 +4319,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "63%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4180,6 +4348,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -4194,6 +4363,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4215,11 +4385,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Jim Wiggins",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4241,11 +4413,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "84,506",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4262,11 +4436,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "47%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4288,6 +4464,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -4301,6 +4478,7 @@ WtParsedWikitextPage(
 									),
 									[4] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[5] = WtNewline("\n")
 								]
@@ -4322,11 +4500,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "93,619",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4343,11 +4523,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "53%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4370,6 +4552,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -4384,6 +4567,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4405,11 +4589,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Ronald L. Cain",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4431,11 +4617,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "53,079",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4452,11 +4640,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "38%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4478,6 +4668,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -4491,6 +4682,7 @@ WtParsedWikitextPage(
 									),
 									[4] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[5] = WtNewline("\n")
 								]
@@ -4512,11 +4704,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "87,993",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4533,11 +4727,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "62%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4560,6 +4756,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -4574,6 +4771,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4595,6 +4793,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -4609,6 +4808,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4630,11 +4830,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "79,051",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4651,11 +4853,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "41%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4677,6 +4881,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -4690,6 +4895,7 @@ WtParsedWikitextPage(
 									),
 									[4] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[5] = WtNewline("\n")
 								]
@@ -4711,11 +4917,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "113,380",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4732,11 +4940,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "59%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -4773,6 +4983,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = " ",
@@ -4801,6 +5012,7 @@ WtParsedWikitextPage(
 							),
 							[5] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[6] = WtNewline("\n")
 						]
@@ -4811,11 +5023,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Year",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4831,11 +5045,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Democrat",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4846,11 +5062,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Votes",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4861,11 +5079,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Pct",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4881,11 +5101,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Republican",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4896,11 +5118,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Votes",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4911,11 +5135,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Pct",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4931,11 +5157,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "3rd Party",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4946,11 +5174,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Party",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4961,11 +5191,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Votes",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -4976,11 +5208,13 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtImStartTag(
 								{P} name = "@p"
+								{P} synthetic = false
 								xmlAttributes = WtXmlAttributes[]
 							),
 							[1] = "Pct",
 							[2] = WtImEndTag(
 								{P} name = "@p"
+								{P} synthetic = false
 							),
 							[3] = WtNewline("\n")
 						]
@@ -5001,6 +5235,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -5015,6 +5250,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5036,6 +5272,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -5047,6 +5284,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5068,11 +5306,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "932,422",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5089,11 +5329,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "46%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5115,6 +5357,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtXmlStartTag(
@@ -5143,6 +5386,7 @@ WtParsedWikitextPage(
 									),
 									[6] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[7] = WtNewline("\n")
 								]
@@ -5164,11 +5408,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "1,071,352",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5185,11 +5431,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "53%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5211,11 +5459,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Claude \"Sandy\" Thomas",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5232,6 +5482,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtInternalLink(
@@ -5246,6 +5497,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5267,11 +5519,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "27,830",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5293,11 +5547,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "1%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5361,6 +5617,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "2008 Georgia U.S. Senator general election runoff",
@@ -5378,6 +5635,7 @@ WtParsedWikitextPage(
 									),
 									[3] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[4] = WtNewline("\n")
 								]
@@ -5412,11 +5670,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Party",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5433,11 +5693,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Candidate",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5454,11 +5716,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Votes",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5475,11 +5739,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5496,11 +5762,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "\u00B1%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5561,6 +5829,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -5576,6 +5845,7 @@ WtParsedWikitextPage(
 									),
 									[3] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[4] = WtNewline("\n")
 								]
@@ -5592,6 +5862,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " Saxby Chambliss (",
@@ -5605,6 +5876,7 @@ WtParsedWikitextPage(
 									[3] = ")",
 									[4] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[5] = WtNewline("\n")
 								]
@@ -5621,11 +5893,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " 1,226,528",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5642,11 +5916,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " 57.5%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5721,6 +5997,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -5736,6 +6013,7 @@ WtParsedWikitextPage(
 									),
 									[3] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[4] = WtNewline("\n")
 								]
@@ -5752,6 +6030,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -5767,6 +6046,7 @@ WtParsedWikitextPage(
 									),
 									[3] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[4] = WtNewline("\n")
 								]
@@ -5783,11 +6063,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " 907,916",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5804,11 +6086,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " 42.5%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5863,6 +6147,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -5877,6 +6162,7 @@ WtParsedWikitextPage(
 									),
 									[5] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[6] = WtNewline("\n")
 								]
@@ -5893,11 +6179,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " 318,612",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5914,11 +6202,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " 14.9%",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -5973,6 +6263,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -5996,6 +6287,7 @@ WtParsedWikitextPage(
 									),
 									[5] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[6] = WtNewline("\n")
 								]
@@ -6012,11 +6304,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " 2,134,444",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -6074,6 +6368,7 @@ WtParsedWikitextPage(
 			[1] = WtNewline("\n"),
 			[2] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[3] = WtXmlStartTag(
@@ -6194,6 +6489,7 @@ WtParsedWikitextPage(
 			),
 			[22] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[23] = WtNewline("\n"),
 			[24] = WtNewline("\n"),
@@ -6251,6 +6547,7 @@ WtParsedWikitextPage(
 			[27] = WtNewline("\n"),
 			[28] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[29] = WtXmlStartTag(
@@ -6379,6 +6676,7 @@ WtParsedWikitextPage(
 			),
 			[50] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[51] = WtNewline("\n"),
 			[52] = WtNewline("\n"),
@@ -6620,6 +6918,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -6632,6 +6931,7 @@ WtParsedWikitextPage(
 									),
 									[3] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[4] = WtNewline("\n")
 								]
@@ -6671,6 +6971,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Preceded",
@@ -6709,6 +7010,7 @@ WtParsedWikitextPage(
 									),
 									[8] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[9] = WtNewline("\n")
 								]
@@ -6735,6 +7037,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -6819,6 +7122,7 @@ WtParsedWikitextPage(
 									[16] = "1995 \u2013 2003        ",
 									[17] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[18] = WtNewline("\n")
 								]
@@ -6845,6 +7149,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " Succeeded",
@@ -6895,6 +7200,7 @@ WtParsedWikitextPage(
 									),
 									[9] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[10] = WtNewline("\n")
 								]
@@ -6929,6 +7235,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -6941,6 +7248,7 @@ WtParsedWikitextPage(
 									),
 									[3] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[4] = WtNewline("\n")
 								]
@@ -6992,6 +7300,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Preceded",
@@ -7030,6 +7339,7 @@ WtParsedWikitextPage(
 									),
 									[8] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[9] = WtNewline("\n")
 								]
@@ -7056,6 +7366,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -7134,6 +7445,7 @@ WtParsedWikitextPage(
 									),
 									[18] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[19] = WtNewline("\n")
 								]
@@ -7160,6 +7472,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -7173,6 +7486,7 @@ WtParsedWikitextPage(
 									),
 									[4] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[5] = WtNewline("\n")
 								]
@@ -7207,11 +7521,13 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " Political offices",
 									[2] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[3] = WtNewline("\n")
 								]
@@ -7251,6 +7567,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Preceded",
@@ -7311,11 +7628,13 @@ WtParsedWikitextPage(
 									),
 									[13] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[14] = WtNewline("\n"),
 									[15] = WtNewline("\n"),
 									[16] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[17] = WtXmlStartTag(
@@ -7330,6 +7649,7 @@ WtParsedWikitextPage(
 									),
 									[20] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[21] = WtNewline("\n")
 								]
@@ -7356,6 +7676,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -7391,6 +7712,7 @@ WtParsedWikitextPage(
 									[7] = "2005 \u2013 2007        ",
 									[8] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[9] = WtNewline("\n")
 								]
@@ -7417,6 +7739,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " Succeeded",
@@ -7477,11 +7800,13 @@ WtParsedWikitextPage(
 									),
 									[13] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[14] = WtNewline("\n"),
 									[15] = WtNewline("\n"),
 									[16] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[17] = WtXmlStartTag(
@@ -7496,6 +7821,7 @@ WtParsedWikitextPage(
 									),
 									[20] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[21] = WtNewline("\n")
 								]
@@ -7530,6 +7856,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " ",
@@ -7542,6 +7869,7 @@ WtParsedWikitextPage(
 									),
 									[3] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[4] = WtNewline("\n")
 								]
@@ -7581,6 +7909,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = "Preceded",
@@ -7641,11 +7970,13 @@ WtParsedWikitextPage(
 									),
 									[13] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[14] = WtNewline("\n"),
 									[15] = WtNewline("\n"),
 									[16] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[17] = WtXmlStartTag(
@@ -7660,6 +7991,7 @@ WtParsedWikitextPage(
 									),
 									[20] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[21] = WtNewline("\n")
 								]
@@ -7686,6 +8018,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = WtTicks(
@@ -7724,6 +8057,7 @@ WtParsedWikitextPage(
 									[7] = "61st        ",
 									[8] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[9] = WtNewline("\n")
 								]
@@ -7750,6 +8084,7 @@ WtParsedWikitextPage(
 								body = WtBody[
 									[0] = WtImStartTag(
 										{P} name = "@p"
+										{P} synthetic = false
 										xmlAttributes = WtXmlAttributes[]
 									),
 									[1] = " Succeeded",
@@ -7810,6 +8145,7 @@ WtParsedWikitextPage(
 									),
 									[13] = WtImEndTag(
 										{P} name = "@p"
+										{P} synthetic = false
 									),
 									[14] = WtNewline("\n")
 								]
@@ -7828,6 +8164,7 @@ WtParsedWikitextPage(
 			[61] = WtNewline("\n"),
 			[62] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[63] = WtXmlStartTag(
@@ -18151,6 +18488,7 @@ WtParsedWikitextPage(
 			),
 			[1985] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[1986] = WtNewline("\n"),
 			[1987] = WtNewline("\n")
@@ -18167,6 +18505,7 @@ WtParsedWikitextPage(
 			[1] = WtNewline("\n"),
 			[2] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[3] = WtXmlStartTag(
@@ -18207,11 +18546,13 @@ WtParsedWikitextPage(
 			),
 			[8] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[9] = WtNewline("\n"),
 			[10] = WtNewline("\n"),
 			[11] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[12] = WtInternalLink(
@@ -18319,11 +18660,13 @@ WtParsedWikitextPage(
 			),
 			[37] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[38] = WtNewline("\n"),
 			[39] = WtNewline("\n"),
 			[40] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[41] = WtInternalLink(
@@ -18399,6 +18742,7 @@ WtParsedWikitextPage(
 			),
 			[58] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[59] = WtNewline("\n")
 		]

@@ -23,6 +23,7 @@ WtParsedWikitextPage(
 				body = WtBody[
 					[0] = WtImStartTag(
 						{P} name = "@p"
+						{P} synthetic = false
 						xmlAttributes = WtXmlAttributes[]
 					),
 					[1] = " Header",
@@ -37,6 +38,7 @@ WtParsedWikitextPage(
 					),
 					[5] = WtImEndTag(
 						{P} name = "@p"
+						{P} synthetic = false
 					),
 					[6] = WtNewline("\n")
 				]

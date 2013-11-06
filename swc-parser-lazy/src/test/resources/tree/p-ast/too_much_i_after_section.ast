@@ -18,11 +18,13 @@ WtParsedWikitextPage(
 			[0] = WtNewline("\n"),
 			[1] = WtImStartTag(
 				{P} name = "@p"
+				{P} synthetic = false
 				xmlAttributes = WtXmlAttributes[]
 			),
 			[2] = "C",
 			[3] = WtImEndTag(
 				{P} name = "@p"
+				{P} synthetic = false
 			),
 			[4] = WtNewline("\n")
 		]

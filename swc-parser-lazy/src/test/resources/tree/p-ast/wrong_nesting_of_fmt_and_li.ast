@@ -3,6 +3,7 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[1] = "Hallo!",
@@ -33,11 +34,13 @@ WtParsedWikitextPage(
 	[12] = "Ich sollte wieder d\u00FCnn sein...",
 	[13] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[14] = WtNewline("\n"),
 	[15] = WtNewline("\n"),
 	[16] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[17] = "Hallo!",
@@ -68,6 +71,7 @@ WtParsedWikitextPage(
 	[28] = "Ich aber nicht mehr...",
 	[29] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[30] = WtNewline("\n")
 )

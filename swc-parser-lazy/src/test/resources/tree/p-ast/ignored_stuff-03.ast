@@ -7,11 +7,13 @@ WtParsedWikitextPage(
 	[0] = WtNewline("\n"),
 	[1] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[2] = "This will not get transcluded",
 	[3] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[4] = WtNewline("\n"),
 	[5] = WtNewline("\n"),
@@ -26,11 +28,13 @@ WtParsedWikitextPage(
 	[8] = WtNewline("\n"),
 	[9] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[10] = "Nor will this get transcluded",
 	[11] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[12] = WtNewline("\n")
 )

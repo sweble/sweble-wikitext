@@ -3,6 +3,7 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[1] = "I say yes",
@@ -15,6 +16,7 @@ WtParsedWikitextPage(
 	[5] = "And I say goodbye",
 	[6] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[7] = WtNewline("\n")
 )

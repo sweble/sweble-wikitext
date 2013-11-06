@@ -23,6 +23,7 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtImStartTag(
 		{P} name = "@p"
+		{P} synthetic = false
 		xmlAttributes = WtXmlAttributes[]
 	),
 	[1] = WtTemplate(
@@ -47,6 +48,7 @@ WtParsedWikitextPage(
 	),
 	[4] = WtImEndTag(
 		{P} name = "@p"
+		{P} synthetic = false
 	),
 	[5] = WtNewline("\n")
 )
