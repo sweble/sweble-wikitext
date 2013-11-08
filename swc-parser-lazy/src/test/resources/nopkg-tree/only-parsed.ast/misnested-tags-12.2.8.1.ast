@@ -1,0 +1,43 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = WtXmlStartTag(
+		{P} name = "p"
+		{P} rtd = RTD[ "<p" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[2] = "1",
+	[3] = WtXmlStartTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "<b" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[4] = "2",
+	[5] = WtXmlStartTag(
+		{P} name = "i"
+		{P} rtd = RTD[ "<i" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[6] = "3",
+	[7] = WtXmlEndTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "</b>" ]
+	),
+	[8] = "4",
+	[9] = WtXmlEndTag(
+		{P} name = "i"
+		{P} rtd = RTD[ "</i>" ]
+	),
+	[10] = "5",
+	[11] = WtXmlEndTag(
+		{P} name = "p"
+		{P} rtd = RTD[ "</p>" ]
+	),
+	[12] = WtImEndTag(
+		{P} name = "@p"
+	)
+)

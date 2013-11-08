@@ -172,7 +172,7 @@ public final class TreeBuilderInTable
 	{
 		startTagR04(n);
 		iterate(n.getBody());
-		dispatch(getFactory().synEndTag(CAPTION));
+		dispatch(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtTableCell n)
@@ -252,7 +252,7 @@ public final class TreeBuilderInTable
 	 */
 	private void startTagR06(WtNode n)
 	{
-		dispatch(getFactory().synStartTag(COLGROUP));
+		dispatch(getFactory().createMissingRepairStartTag(COLGROUP));
 		dispatch(n);
 	}
 	
@@ -273,8 +273,8 @@ public final class TreeBuilderInTable
 	 */
 	private void startTagR08(WtNode n)
 	{
-		WtNode itbody = getFactory().synStartTag(TBODY);
-		itbody.setBooleanAttribute("implicit", true);
+		WtNode itbody = getFactory().createMissingRepairStartTag(TBODY);
+		WtNodeFlags.setImplicit(itbody);
 		dispatch(itbody);
 		dispatch(n);
 	}
@@ -285,7 +285,7 @@ public final class TreeBuilderInTable
 	private void startTagR09(WtNode n)
 	{
 		tb.error(n, "12.2.5.4.9 R09");
-		dispatch(getFactory().synEndTag(TABLE));
+		dispatch(getFactory().createMissingRepairEndTag(TABLE));
 		// Since we have no fragment case, the fake token cannot be ignored
 		dispatch(n);
 	}
@@ -465,7 +465,7 @@ public final class TreeBuilderInTable
 		private void rule02(WtNode n)
 		{
 			tb.error(n, "12.2.5.4.11 R02");
-			dispatch(getFactory().synEndTag(CAPTION));
+			dispatch(getFactory().createMissingRepairEndTag(CAPTION));
 			// Since we have no fragment case, the fake token cannot be ignored
 			dispatch(n);
 		}
@@ -585,7 +585,7 @@ public final class TreeBuilderInTable
 		
 		private void anythingElse(WtNode n)
 		{
-			dispatch(getFactory().synEndTag(COLGROUP));
+			dispatch(getFactory().createMissingRepairEndTag(COLGROUP));
 			// Since we have no fragment case, the fake token cannot be ignored
 			dispatch(n);
 		}
@@ -690,7 +690,7 @@ public final class TreeBuilderInTable
 		{
 			rule01(n);
 			iterate(n.getBody());
-			dispatch(getFactory().synEndTag(TR));
+			dispatch(getFactory().createSyntheticEndTag(n));
 		}
 		
 		public void visit(WtTableHeader n)
@@ -731,15 +731,15 @@ public final class TreeBuilderInTable
 					&& !hasRows((WtTable) table))
 			{
 				// Pretend we saw the implicit row:
-				WtNode tr = getFactory().synStartTag(TR);
-				tr.setBooleanAttribute("implicit", true);
+				WtNode tr = getFactory().createMissingRepairStartTag(TR);
+				WtNodeFlags.setImplicit(tr);
 				dispatch(tr);
 				dispatch(n);
 			}
 			else
 			{
 				tb.error(n, "12.2.5.4.13 R02");
-				dispatch(getFactory().synStartTag(TR));
+				dispatch(getFactory().createMissingRepairStartTag(TR));
 				dispatch(n);
 			}
 		}
@@ -781,7 +781,7 @@ public final class TreeBuilderInTable
 				case TBODY:
 				case TFOOT:
 				case THEAD:
-					dispatch(getFactory().synEndTag(curNodeType));
+					dispatch(getFactory().createMissingRepairEndTag(curNodeType));
 					break;
 				default:
 					throw new InternalError();
@@ -873,7 +873,7 @@ public final class TreeBuilderInTable
 					}
 					else
 					{
-						dispatch(getFactory().synEndTag(TR));
+						dispatch(getFactory().createMissingRepairEndTag(TR));
 						dispatch(n);
 					}
 					break;
@@ -902,14 +902,14 @@ public final class TreeBuilderInTable
 		{
 			rule01(n);
 			iterate(n.getBody());
-			dispatch(getFactory().synEndTag(TD));
+			dispatch(getFactory().createSyntheticEndTag(n));
 		}
 		
 		public void visit(WtTableHeader n)
 		{
 			rule01(n);
 			iterate(n.getBody());
-			dispatch(getFactory().synEndTag(TH));
+			dispatch(getFactory().createSyntheticEndTag(n));
 		}
 		
 		public void visit(WtTableCaption n)
@@ -934,7 +934,7 @@ public final class TreeBuilderInTable
 		
 		private void rule03(WtNode n)
 		{
-			dispatch(getFactory().synEndTag(TR));
+			dispatch(getFactory().createMissingRepairEndTag(TR));
 			// We don't have a fragment case!
 			dispatch(n);
 		}
@@ -1098,17 +1098,20 @@ public final class TreeBuilderInTable
 			tb.processInInsertionMode(InsertionMode.IN_BODY, n);
 		}
 		
+		/**
+		 * This method is only called if a cell has to be closed forcefully.
+		 */
 		private void closeCell()
 		{
 			if (tb.isElementTypeInTableScope(TD))
 			{
-				dispatch(getFactory().synEndTag(TD));
+				dispatch(getFactory().createMissingRepairEndTag(TD));
 			}
 			else
 			{
 				if (!tb.isElementTypeInTableScope(TH))
 					throw new InternalError();
-				dispatch(getFactory().synEndTag(TH));
+				dispatch(getFactory().createMissingRepairEndTag(TH));
 			}
 		}
 	}

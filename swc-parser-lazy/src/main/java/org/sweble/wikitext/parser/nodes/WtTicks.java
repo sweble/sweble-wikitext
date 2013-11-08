@@ -48,14 +48,6 @@ public class WtTicks
 	}
 	
 	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
-	}
-	
-	// =========================================================================
 	// Properties
 	
 	private int tickCount;

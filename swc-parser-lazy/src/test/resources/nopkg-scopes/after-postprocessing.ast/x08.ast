@@ -1,0 +1,39 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x08.wikitext:1:32: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[
+		[0] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName[ [0] = "target" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = " a ",
+				[1] = WtXmlElement(
+					{P} name = "i"
+					{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+					xmlAttributes = WtXmlAttributes[],
+					body = WtBody[ [0] = " b " ]
+				)
+			)
+		),
+		[1] = WtXmlElement(
+			{P} name = "i"
+			{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[
+				[0] = " c ",
+				[1] = WtXmlElement(
+					{P} name = "b"
+					{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+					xmlAttributes = WtXmlAttributes[],
+					body = WtBody[ [0] = " d " ]
+				)
+			]
+		)
+	]
+)

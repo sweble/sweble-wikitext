@@ -345,9 +345,9 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
-	public WtImStartTag imStartTag(IntermediateTags type, boolean synthetic)
+	public WtImStartTag imStartTag(IntermediateTags type)
 	{
-		return new WtImStartTag(type, synthetic);
+		return new WtImStartTag(type);
 	}
 	
 	@Override
@@ -619,9 +619,9 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
-	public WtImEndTag imEndTag(IntermediateTags type, boolean synthetic)
+	public WtImEndTag imEndTag(IntermediateTags type)
 	{
-		return new WtImEndTag(type, synthetic);
+		return new WtImEndTag(type);
 	}
 	
 	@Override

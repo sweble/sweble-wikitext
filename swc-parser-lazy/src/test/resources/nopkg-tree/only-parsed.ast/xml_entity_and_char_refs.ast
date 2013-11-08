@@ -1,0 +1,23 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Hello World! A ",
+	[2] = WtXmlEntityRef(
+		{P} name = "amp"
+		{P} resolved = "&"
+		{P} rtd = RTD[ "&amp;" ]
+	),
+	[3] = " ",
+	[4] = WtXmlCharRef(
+		{P} codePoint = 79
+		{P} rtd = RTD[ "&#x4F;" ]
+	),
+	[5] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[6] = WtNewline("\n")
+)

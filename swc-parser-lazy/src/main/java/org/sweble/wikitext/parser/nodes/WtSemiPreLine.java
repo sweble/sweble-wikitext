@@ -43,12 +43,4 @@ public class WtSemiPreLine
 	{
 		return NT_SEMI_PRE_LINE;
 	}
-	
-	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
-	}
 }

@@ -38,13 +38,13 @@ public class RegressionTest
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
-	private static final String INPUT_SUB_DIR = "regression/wikitext";
+	private static final String INPUT_SUB_DIR = "nopkg-regression/input.wikitext";
 	
-	private static final String EXPECTED_SUB_DIR = "regression/ast";
+	private static final String EXPECTED_SUB_DIR = "nopkg-regression/after-postprocessing.ast";
 	
-	private static final String EXPECTED_PP_SUB_DIR = "regression/pp";
+	private static final String EXPECTED_PP_SUB_DIR = "nopkg-regression/pretty-printed.wikitext";
 	
-	private static final String EXPECTED_PPAST_SUB_DIR = "regression/ppast";
+	private static final String EXPECTED_PPAST_SUB_DIR = "nopkg-regression/pretty-printed.ast";
 	
 	// =========================================================================
 	

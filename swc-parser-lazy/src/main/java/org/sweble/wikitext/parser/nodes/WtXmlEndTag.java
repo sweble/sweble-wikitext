@@ -49,14 +49,6 @@ public class WtXmlEndTag
 	}
 	
 	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
-	}
-	
-	// =========================================================================
 	// Properties
 	
 	private String name;

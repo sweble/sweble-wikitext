@@ -38,13 +38,13 @@ public class ProductionScopeTest
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
-	private static final String INPUT_SUB_DIR = "scopes/wikitext";
+	private static final String INPUT_SUB_DIR = "nopkg-scopes/input.wikitext";
 	
-	private static final String EXPECTED_SUB_DIR = "scopes/ast";
+	private static final String EXPECTED_SUB_DIR = "nopkg-scopes/after-postprocessing.ast";
 	
-	private static final String EXPECTED_PP_SUB_DIR = "scopes/pp";
+	private static final String EXPECTED_PP_SUB_DIR = "nopkg-scopes/pretty-printed.wikitext";
 	
-	private static final String EXPECTED_PPAST_SUB_DIR = "scopes/ppast";
+	private static final String EXPECTED_PPAST_SUB_DIR = "nopkg-scopes/pretty-printed.ast";
 	
 	// =========================================================================
 	

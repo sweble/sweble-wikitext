@@ -18,10 +18,7 @@
 package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.WtImEndTag;
-import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.RtData;
@@ -69,67 +66,36 @@ public class TreeBuilderModeBase
 	
 	protected static void addRtDataOfEndTag(WtNode finish, WtNode endTag)
 	{
+		WtRtData etRtd = endTag.getRtd();
+		if (etRtd == null)
+			return;
+		
+		if (WtNodeFlags.isRepairNode(endTag))
+			// Synthetic tags should not show up in RTD information.
+			return;
+		
 		if (endTag.getNodeType() == WtNode.NT_IM_END_TAG)
 		{
 			// Special treatment for intermediate tags
-			addRtDataOfImEndTag(finish, (WtImEndTag) endTag);
+			addRtDataOfImEndTag(finish, etRtd);
 			return;
 		}
 		
-		if (endTag.getBooleanAttribute("synthetic"))
-		{
-			// Synthetic tags should not show up in RTD information.
-			return;
-		}
-		
-		// We expect "finish" to be an WtXmlElement. However, that's not always 
-		// true. "* .. </li>" would be one such case. The endTag would be a tag
-		// but the node we're finishing is a WtListItem.
-		
-		if (!(finish instanceof WtXmlElement))
-			// We're violently fixing stuff here by dropping the illegal
-			// </li> markup.
-			return;
-		
-		WtXmlElement fe = (WtXmlElement) finish;
-		
-		RtData feRtd = fe.getRtd();
+		WtRtData feRtd = finish.getRtd();
 		if (feRtd == null)
 		{
-			// The element we have to finish might not have RTD data associated.F 
-			finish.setRtd(RtData.SEP, RtData.SEP);
-			feRtd = fe.getRtd();
+			// The element we have to finish might not have RTD data associated.
+			finish.setRtd((Object) null);
+			feRtd = finish.getRtd();
 		}
 		
-		WtNamedXmlElement et = (WtNamedXmlElement) endTag;
-		RtData etRtd = et.getRtd();
-		
-		if (etRtd == null)
-		{
-			// End tag has no RTD, so we should not artifically generate it...
-			//feRtd.setField(2, "</", et.getName(), ">");
-			return;
-		}
-		
-		switch (endTag.getNodeType())
-		{
-			case WtNode.NT_XML_END_TAG:
-				feRtd.setField(2, etRtd.getField(0));
-				break;
-			
-			default:
-				throw new InternalError();
-		}
+		int size = feRtd.size();
+		if (size >= 2)
+			feRtd.setField(size - 1, etRtd.getField(0));
 	}
 	
-	protected static void addRtDataOfImEndTag(
-			WtNode finish,
-			WtImEndTag endTag)
+	protected static void addRtDataOfImEndTag(WtNode finish, WtRtData etRtd)
 	{
-		WtRtData etRtd = endTag.getRtd();
-		if (endTag.isSynthetic() || etRtd == null)
-			return;
-		
 		switch (finish.getNodeType())
 		{
 			case WtNode.NT_BOLD:

@@ -1,0 +1,32 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "=" ],
+				args = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[
+		Warning: /nopkg-regression/input.wikitext/xml-tag-with-templates-1.wikitext:1:2: <no content> : 12.2.4 Element should not be an empty tag! @ WtXmlEmptyTag.,
+		Warning: /nopkg-regression/input.wikitext/xml-tag-with-templates-1.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+	]
+	[0] = WtParagraph[],
+	[1] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> " />" <o> "" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttributeGarbage[
+				[0] = " style",
+				[1] = WtTemplate(
+					{P} precededByNewline = false
+					{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+					name = WtName[ [0] = "=" ],
+					args = WtTemplateArguments[]
+				),
+				[2] = "\"X\""
+			]
+		],
+		body = WtBody[ [0] = "\n" ]
+	)
+)

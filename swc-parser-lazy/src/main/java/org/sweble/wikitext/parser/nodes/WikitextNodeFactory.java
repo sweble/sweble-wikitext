@@ -56,7 +56,7 @@ public interface WikitextNodeFactory
 	
 	WtXmlStartTag startTag(String name, WtXmlAttributes xmlAttributes);
 	
-	WtImStartTag imStartTag(IntermediateTags type, boolean synthetic);
+	WtImStartTag imStartTag(IntermediateTags type);
 	
 	// -- Inner Node 2 ---------------------------------------------------------
 	
@@ -149,7 +149,7 @@ public interface WikitextNodeFactory
 	
 	WtXmlEndTag endTag(String name);
 	
-	WtImEndTag imEndTag(IntermediateTags type, boolean synthetic);
+	WtImEndTag imEndTag(IntermediateTags type);
 	
 	WtXmlEntityRef entityRef(String name, String resolved);
 	

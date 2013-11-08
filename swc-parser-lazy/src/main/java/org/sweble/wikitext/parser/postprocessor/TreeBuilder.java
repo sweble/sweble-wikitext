@@ -28,6 +28,7 @@ import java.util.ListIterator;
 import java.util.Map;
 
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.comparer.WtComparer;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtBody;
@@ -564,23 +565,35 @@ public class TreeBuilder
 			case WtNode.NT_XML_START_TAG:
 			case WtNode.NT_XML_END_TAG:
 			case WtNode.NT_XML_EMPTY_TAG:
-				if (!node.getBooleanAttribute("synthetic"))
-					appendToCurrentNode(node);
-				break;
 			case WtNode.NT_IM_START_TAG:
 			case WtNode.NT_IM_END_TAG:
+				if (!WtNodeFlags.isRepairNode(node) && hasNonEmptyRtd(node))
+					appendToCurrentNode(node);
 				break;
+			
 			default:
 				throw new InternalError();
 		}
 	}
 	
+	private boolean hasNonEmptyRtd(WtNode node)
+	{
+		WtRtData rtd = node.getRtd();
+		if (rtd == null)
+			return false;
+		for (Object[] glue : rtd.getFields())
+		{
+			if (glue.length != 0)
+				return true;
+		}
+		return false;
+	}
+	
 	void error(WtNode node, String message)
 	{
-		if (/*node.getBooleanAttribute("synthetic")
-				|| */node instanceof WtImStartTag
-				|| node instanceof WtImEndTag)
+		if ((node instanceof WtImStartTag) || (node instanceof WtImEndTag))
 			return;
+		
 		errors.add(new TreeBuilderWarning(node, message));
 	}
 	
@@ -601,15 +614,15 @@ public class TreeBuilder
 	 */
 	WtNode insertAnHtmlElement(WtNode sample)
 	{
-		WtNode newNode = factory.create(sample, false);
+		WtNode newNode = factory.createNewElement(sample);
 		appendToCurrentNode(newNode);
 		getStack().push(newNode);
 		return newNode;
 	}
 	
-	WtNode insertAnHtmlElement(WtNode sample, boolean synthetic)
+	WtNode insertAnHtmlRepairFormattingElement(WtNode sample)
 	{
-		WtNode newNode = factory.create(sample, synthetic);
+		WtNode newNode = factory.createRepairFormattingElement(sample);
 		appendToCurrentNode(newNode);
 		getStack().push(newNode);
 		return newNode;
@@ -1131,7 +1144,7 @@ public class TreeBuilder
 			 * 9) Append new element to the current node and push it onto the stack of open
 			 * elements so that it is the new current node.
 			 */
-			WtNode newNode = insertAnHtmlElement(entry, true);
+			WtNode newNode = insertAnHtmlRepairFormattingElement(entry);
 			
 			/* 10) Replace the entry for entry in the list with an entry for new element.
 			 */

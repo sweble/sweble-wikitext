@@ -54,7 +54,7 @@ public class ManualTesting
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
-	private static final String INPUT_SUB_DIR = "manual";
+	private static final String INPUT_SUB_DIR = "nopkg-manual";
 	
 	// =========================================================================
 	
@@ -161,7 +161,6 @@ public class ManualTesting
 	private void printAst(WtNode ast, String tag) throws IOException
 	{
 		File output = new File(inputFile.getName() + tag);
-		
 		PrinterInterface printer = new TypedWtAstPrinter();
 		String actual = printToString(ast, printer);
 		FileUtils.writeStringToFile(output, actual);
@@ -172,6 +171,8 @@ public class ManualTesting
 		File expectedFile = inputFile;
 		PrinterInterface printer = new TypedRtDataPrinter();
 		String actual = printToString(ast, printer);
+		File output = new File(inputFile.getName() + "-printed-from-rtd.wikitext");
+		FileUtils.writeStringToFile(output, actual);
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
@@ -181,6 +182,8 @@ public class ManualTesting
 		File expectedFile = inputFile;
 		PrinterInterface printer = new TypedPrettyPrinter();
 		String actual = printToString(ast, printer);
+		File output = new File(inputFile.getName() + "-pretty-printed.wikitext");
+		FileUtils.writeStringToFile(output, actual);
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}

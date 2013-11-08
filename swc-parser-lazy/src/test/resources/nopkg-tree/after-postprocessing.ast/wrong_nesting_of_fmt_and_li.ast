@@ -1,0 +1,57 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-tree/input.wikitext/wrong_nesting_of_fmt_and_li.wikitext:3:24: <no content> : 12.2.5.4.7 - R23 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-tree/input.wikitext/wrong_nesting_of_fmt_and_li.wikitext:8:22: <no content> : 12.2.5.4.7 - R23 (2) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[
+		[0] = "Hallo!\n",
+		[1] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "Ich bin fett\n" ]
+		)
+	],
+	[1] = WtXmlElement(
+		{P} name = "li"
+		{P} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "Ich bin ein Item!" ]
+			)
+		]
+	),
+	[2] = WtXmlElement(
+		{P} name = "b"
+		{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[ [0] = "\n" ]
+	),
+	[3] = "\nIch sollte wieder d\u00FCnn sein...\n\n",
+	[4] = WtParagraph[ [0] = "Hallo!\n" ],
+	[5] = WtXmlElement(
+		{P} name = "li"
+		{P} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "Ich bin fett" ]
+			)
+		]
+	),
+	[6] = WtXmlElement(
+		{P} name = "b"
+		{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[ [0] = "\nIch sollte noch fett sein\n" ]
+	),
+	[7] = "\nIch aber nicht mehr...\n"
+)

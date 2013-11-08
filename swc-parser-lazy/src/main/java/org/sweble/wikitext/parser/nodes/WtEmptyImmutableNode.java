@@ -330,25 +330,25 @@ public abstract class WtEmptyImmutableNode
 	@Override
 	public Object clone() throws CloneNotSupportedException
 	{
-		throw new UnsupportedOperationException(genMsg());
+		return this;
 	}
 	
 	@Override
 	public AstNode<WtNode> cloneWrapException()
 	{
-		throw new UnsupportedOperationException(genMsg());
+		return this;
 	}
 	
 	@Override
 	public AstNode<WtNode> deepClone() throws CloneNotSupportedException
 	{
-		throw new UnsupportedOperationException(genMsg());
+		return this;
 	}
 	
 	@Override
 	public AstNode<WtNode> deepCloneWrapException()
 	{
-		throw new UnsupportedOperationException(genMsg());
+		return this;
 	}
 	
 	// =========================================================================

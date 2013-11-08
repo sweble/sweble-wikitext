@@ -43,15 +43,15 @@ public class BasicIntegrationTest
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
-	private static final String INPUT_SUB_DIR = "basic/wikitext";
+	private static final String INPUT_SUB_DIR = "nopkg-basic/input.wikitext";
 	
-	private static final String EXPECTED_AST_SUB_DIR = "basic/ast";
+	private static final String EXPECTED_AST_SUB_DIR = "nopkg-basic/after-postprocessing.ast";
 	
-	private static final String EXPECTED_PP_SUB_DIR = "basic/pp";
+	private static final String EXPECTED_PP_SUB_DIR = "nopkg-basic/pretty-printed.wikitext";
 	
-	private static final String EXPECTED_RT_SUB_DIR = "basic/rt";
+	private static final String EXPECTED_RT_SUB_DIR = "nopkg-basic/printed-from-rtd.wikitext";
 	
-	private static final String EXPECTED_PPAST_SUB_DIR = "basic/ppast";
+	private static final String EXPECTED_PPAST_SUB_DIR = "nopkg-basic/pretty-printed.ast";
 	
 	// =========================================================================
 	

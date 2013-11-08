@@ -51,14 +51,6 @@ public class WtWhitespace
 	}
 	
 	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
-	}
-	
-	// =========================================================================
 	// Properties
 	
 	private boolean hasNewline;

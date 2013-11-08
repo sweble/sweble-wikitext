@@ -47,12 +47,4 @@ public class WtNewline
 	{
 		return NT_NEWLINE;
 	}
-	
-	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
-	}
 }

@@ -24,16 +24,20 @@ import static org.sweble.wikitext.parser.postprocessor.TreeBuilder.*;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtBody;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtEmptyImmutableNode;
 import org.sweble.wikitext.parser.nodes.WtExternalLink;
 import org.sweble.wikitext.parser.nodes.WtHeading;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtIntermediate;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
+import org.sweble.wikitext.parser.nodes.WtLctFlags;
 import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtPageName;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtTable;
@@ -74,92 +78,310 @@ public class ElementFactory
 	
 	// =========================================================================
 	
-	public WtNode create(WtNode node, boolean synthetic)
+	/**
+	 * This method is always called if we first have to open a container node in
+	 * order to process the node we are currently dealing with. For example we
+	 * are dealing with a &lt;td> tag but haven't seen a &lt;tbody> yet. In this
+	 * case this method is called to generate a synthetic &lt;tbody> element.
+	 */
+	public WtNode createMissingRepairStartTag(ElementType type)
 	{
-		ElementType nodeType = getNodeType(node);
+		return WtNodeFlags.setRepairNode(createStartTag(type));
+	}
+	
+	/**
+	 * This method is called when a native wiki markup element (for example an
+	 * internal link) which really only exists as one element is trying to
+	 * emulate an "end tag event". These tags should not be repair tags since
+	 * they stem from a "real" element with valid RTD information attached to
+	 * it.
+	 */
+	public WtNode createSyntheticEndTag(WtNode node)
+	{
+		return createSyntheticEndTag(node, getType(node));
+	}
+	
+	/**
+	 * Same as createSyntheticEndTag(WtNode). It's only used by image links
+	 * which can be closed as framed image or inline image. However, which one
+	 * it is cannot easily be determined from the WtImageLink node type alone.
+	 */
+	public WtNode createSyntheticEndTag(WtNode node, ElementType type)
+	{
+		WtXmlEndTag endTag = createEndTag(type);
 		
-		switch (node.getNodeType())
+		/**
+		 * Copy only the last field. We assume that every element is built like
+		 * "RTD (CHILD RTD)* (BODY RTD)?". By only copying the last RTD field
+		 * (only if there's at least two RTD fields) we hope to always only copy
+		 * the RTD portion that belongs to the "end tag".
+		 */
+		WtRtData rtd = node.getRtd();
+		if ((rtd != null) && (rtd.size() >= 2))
+			endTag.setRtd(rtd.getField(rtd.size() - 1));
+		
+		return endTag;
+	}
+	
+	/**
+	 * We find ourselves forced to prematurely close the element that's
+	 * currently on top of the scope stack. This might happen, for example, if
+	 * we're inside a table cell but encounter a table row start tag. In this
+	 * case we'll have to close the cell before we've actually encountered a
+	 * cell end tag.
+	 */
+	public WtNode createMissingRepairEndTag(ElementType type)
+	{
+		return WtNodeFlags.setRepairNode(createEndTag(type));
+	}
+	
+	// =========================================================================
+	
+	private WtXmlStartTag createStartTag(ElementType type)
+	{
+		return nf.startTag(getTagNameOrFail(type), nf.emptyAttrs());
+	}
+	
+	private WtXmlEndTag createEndTag(final ElementType type)
+	{
+		return nf.endTag(getTagNameOrFail(type));
+	}
+	
+	// =========================================================================
+	
+	/**
+	 * Called when a formatting element is reopened after it had to be closed
+	 * forcibly previously.
+	 */
+	public WtNode createRepairFormattingElement(WtNode template)
+	{
+		return create(template, true);
+	}
+	
+	/**
+	 * Called only to create a &lt;br> element when what we really encountered
+	 * was a isolated &lt;/br> end tag.
+	 */
+	public WtNode createElementRepairBr(WtNode template)
+	{
+		WtXmlEndTag tag = (WtXmlEndTag) template;
+		if (getNodeType(tag) != BR)
+			throw new InternalError();
+		
+		WtXmlElement newElement = createEmptyElement(tag.getName());
+		copyNodeAttributes(tag, newElement);
+		
+		/**
+		 * Don't set repair flag. We have original RTD information on such a
+		 * &lt;br> element.
+		 */
+		//setRepairNode(element);
+		
+		return newElement;
+	}
+	
+	/**
+	 * Only used by adoption agency algorithm to create the adopting node.
+	 * 
+	 * I'm not sure if the adopter is a repair element. I think it is, but we
+	 * probably have to render it fully, otherwise things could get messy. After
+	 * all the adoption agency algorithm completely rearranges nodes thus
+	 * messing up faulty wikitext.
+	 */
+	public WtNode createAdopterElement(WtNode template)
+	{
+		WtNode newElement = createNewElement(template);
+		
+		/**
+		 * Don't treat it as repair element. Those won't be rendered which might
+		 * cause havoc in the case of adopter nodes (I'm not sure about
+		 * this...).
+		 */
+		//setRepairNode(element);
+		
+		return newElement;
+	}
+	
+	/**
+	 * Called when a new element is put on the scope stack.
+	 */
+	public WtNode createNewElement(WtNode template)
+	{
+		return create(template, false);
+	}
+	
+	// =========================================================================
+	
+	private WtNode create(WtNode template, boolean suppressRtd)
+	{
+		ElementType elementType = getNodeType(template);
+		
+		switch (template.getNodeType())
 		{
+			case NT_IM_START_TAG:
+				return createFromIntermediate(elementType, (WtIntermediate) template, suppressRtd);
+				
 			case NT_XML_START_TAG:
-				switch (nodeType)
+				switch (elementType)
 				{
 					case TR:
-						if (node.getBooleanAttribute("implicit"))
+						if (WtNodeFlags.isImplicit(template))
 							return createImplicitTableRow();
 						break;
 					
 					case TBODY:
-						if (node.getBooleanAttribute("implicit"))
+						if (WtNodeFlags.isImplicit(template))
 							return createImplicitTableBody();
 						break;
 					
 					default:
-						// FALL THROUGH
+						break;
 				}
 				// FALL THROUGH
+				
 			case NT_XML_EMPTY_TAG:
 			case NT_XML_ELEMENT:
-				return create(nodeType, (WtNamedXmlElement) node, synthetic);
+				return createFromTag(elementType, (WtNamedXmlElement) template, suppressRtd);
 				
-			case NT_XML_END_TAG:
-			{
-				if (getNodeType(node) != BR)
-					throw new InternalError();
-				
-				WtXmlElement newNode = nf.elem(((WtXmlEndTag) node).getName(),
-						nf.emptyAttrs());
-				
-				copyNodeAttributes(node, newNode);
-				
-				return newNode;
-			}
-			
-			case NT_IM_START_TAG:
 			case NT_IM_END_TAG:
-				return create(nodeType, node, ((WtIntermediate) node).isSynthetic());
+			case NT_XML_END_TAG:
+				throw new InternalError();
 				
 			default:
-				return create(nodeType, node, synthetic);
+				return createFromNative(elementType, template, suppressRtd);
 		}
 	}
 	
-	private WtNode create(ElementType elemType, WtNamedXmlElement node,
-			boolean synthetic)
+	// =========================================================================
+	
+	private WtNode createFromIntermediate(
+			ElementType elementType,
+			WtIntermediate template,
+			boolean suppressRtd)
 	{
-		WtXmlElement newNode = nf.elem(node.getName(), nf.emptyAttrs());
+		WtNode newElement;
 		
-		int nodeType = node.getNodeType();
+		/**
+		 * Unlike other nodes, intermediate nodes (@i and @b) can already be
+		 * marked as repair nodes by the TicksAnalyzer.
+		 */
+		//suppressRtd |= WtNodeFlags.isRepairNode(template);
+		
+		switch (getNodeType(template))
+		{
+			case B:
+				newElement = nf.b(nf.list());
+				copyIntermediateRtd(template, suppressRtd, newElement);
+				break;
+			
+			case I:
+				newElement = nf.i(nf.list());
+				copyIntermediateRtd(template, suppressRtd, newElement);
+				break;
+			
+			case P:
+				newElement = nf.p(nf.list());
+				break;
+			
+			default:
+				throw new InternalError("Don't know how to create intermediate element: " + elementType);
+		}
+		
+		copyNodeAttributes(template, newElement);
+		return newElement;
+	}
+	
+	private WtNode createFromTag(
+			ElementType elementType,
+			WtNamedXmlElement template,
+			boolean suppressRtd)
+	{
+		WtXmlElement newElement = createEmptyElement(template.getName());
+		WtRtData rtd = template.getRtd();
+		WtXmlAttributes attribs;
+		
+		int nodeType = template.getNodeType();
 		switch (nodeType)
 		{
 			case NT_XML_START_TAG:
-				newNode.setXmlAttributes(((WtXmlStartTag) node).getXmlAttributes());
-				if ((!synthetic && (node.getRtd() != null)))
-				{
-					WtRtData rtd = node.getRtd();
-					newNode.setRtd(rtd.getField(0), RtData.SEP, rtd.getField(1),
-							RtData.SEP);
-				}
+				attribs = ((WtXmlStartTag) template).getXmlAttributes();
+				copyStartTagRtd(suppressRtd, newElement, rtd);
 				break;
 			
 			case NT_XML_EMPTY_TAG:
-				newNode.setXmlAttributes(((WtXmlEmptyTag) node).getXmlAttributes());
-				if ((!synthetic && (node.getRtd() != null)))
-				{
-					WtRtData rtd = node.getRtd();
-					newNode.setRtd(rtd.getField(0), RtData.SEP, rtd.getField(1),
-							RtData.SEP);
-				}
+				attribs = ((WtXmlEmptyTag) template).getXmlAttributes();
+				copyStartTagRtd(suppressRtd, newElement, rtd);
 				break;
 			
 			case NT_XML_ELEMENT:
-				newNode.setXmlAttributes(((WtXmlElement) node).getXmlAttributes());
-				if ((!synthetic && (node.getRtd() != null)))
-					newNode.setRtd(node.getRtd());
+				attribs = ((WtXmlElement) template).getXmlAttributes();
+				copyElementRtd(suppressRtd, newElement, rtd);
 				break;
-		
+			
+			default:
+				throw new InternalError();
 		}
 		
-		switch (elemType)
+		if (suppressRtd)
+			attribs = suppressRtdOnChildren(attribs);
+		
+		newElement.setXmlAttributes(attribs);
+		
+		setElementBody(elementType, nodeType, template, newElement);
+		
+		copyNodeAttributes(template, newElement);
+		return newElement;
+	}
+	
+	// =========================================================================
+	
+	private WtXmlElement createEmptyElement(String name)
+	{
+		return nf.elem(name, nf.emptyAttrs());
+	}
+	
+	private void copyIntermediateRtd(
+			WtIntermediate template,
+			boolean suppressRtd,
+			WtNode newElement)
+	{
+		if (!suppressRtd)
+			copyAllExceptLastRtd(template, newElement, false);
+		//newElement.setRtd(template.getRtd());
+	}
+	
+	private void copyElementRtd(
+			boolean suppressRtd,
+			WtXmlElement newElement,
+			WtRtData rtd)
+	{
+		copyStartTagRtd(suppressRtd, newElement, rtd);
+		/*
+		if ((!suppressRtd && (rtd != null)))
+			newElement.setRtd(rtd);
+		*/
+	}
+	
+	private void copyStartTagRtd(
+			boolean suppressRtd,
+			WtXmlElement newElement,
+			WtRtData rtd)
+	{
+		if ((!suppressRtd && (rtd != null)))
+			newElement.setRtd(
+					rtd.getField(0),
+					RtData.SEP,
+					rtd.getField(1),
+					RtData.SEP);
+	}
+	
+	private void setElementBody(
+			ElementType elementType,
+			int nodeType,
+			WtNamedXmlElement template,
+			WtXmlElement element)
+	{
+		switch (elementType)
 		{
 			case AREA:
 			case BR:
@@ -167,304 +389,429 @@ public class ElementFactory
 			case HR:
 			case COL:
 				if (nodeType != NT_XML_EMPTY_TAG)
-					tb.error((WtNode) node,
-							"12.2.4 Element should be an empty tag!");
+					tb.error((WtNode) template, "12.2.4 Element should be an empty tag!");
+				
+				// Doesn't need body
 				break;
 			
 			default:
-				newNode.setBody(nf.body(nf.list()));
 				if ((nodeType == NT_XML_EMPTY_TAG)
-						|| (nodeType == NT_XML_ELEMENT && !((WtXmlElement) node)
-								.hasBody()))
-				{
-					tb.error((WtNode) node,
-							"12.2.4 Element should not be an empty tag!");
-				}
+						|| (nodeType == NT_XML_ELEMENT && !((WtXmlElement) template).hasBody()))
+					tb.error((WtNode) template, "12.2.4 Element should not be an empty tag!");
+				
+				element.setBody(createEmptyBody());
+				break;
 		}
-		
-		WtXmlAttributes attribs = newNode.getXmlAttributes();
-		if ((newNode.getRtd() == null) && !attribs.isEmpty())
-		{
-			// Don't mess up node we've copied from...
-			attribs = (WtXmlAttributes) attribs.deepCloneWrapException();
-			newNode.setXmlAttributes(attribs);
-			for (WtNode attr : attribs)
-				attr.suppressRtd();
-		}
-		
-		return newNode;
 	}
 	
-	private WtNode create(ElementType type, WtNode node, boolean synthetic)
-			throws InternalError
+	// =========================================================================
+	
+	private WtNode createFromNative(
+			ElementType elementType,
+			WtNode template,
+			boolean suppressRtd)
 	{
-		WtNode newNode;
-		switch (type)
+		WtNode newElement;
+		boolean copyAllRtd = false;
+		
+		switch (elementType)
 		{
 			case PAGE:
-			{
-				WtParsedWikitextPage n = (WtParsedWikitextPage) node;
-				WtParsedWikitextPage newNode2 = nf.parsedPage(nf.list());
-				newNode2.setEntityMap(n.getEntityMap());
-				newNode2.setWarnings(n.getWarnings());
-				newNode = newNode2;
+				newElement = createPage((WtParsedWikitextPage) template);
 				break;
-			}
 			
 			case DL:
-				newNode = nf.dl(nf.list());
+				newElement = nf.dl(nf.list());
 				break;
 			
 			case OL:
-				newNode = nf.ol(nf.list());
+				newElement = nf.ol(nf.list());
 				break;
 			
 			case UL:
-				newNode = nf.ul(nf.list());
+				newElement = nf.ul(nf.list());
 				break;
 			
 			case LI:
-				newNode = nf.li(nf.list());
+				newElement = nf.li(nf.list());
 				break;
 			
 			case DD:
-				newNode = nf.dd(nf.list());
+				newElement = nf.dd(nf.list());
 				break;
 			
 			case DT:
-				newNode = nf.dt(nf.list());
+				newElement = nf.dt(nf.list());
 				break;
 			
 			case P:
-				newNode = nf.p(nf.list());
+				newElement = nf.p(nf.list());
 				break;
 			
 			case INT_LINK:
-			{
-				WtInternalLink n = (WtInternalLink) node;
-				newNode = nf.intLink(n.getPrefix(), n.getTarget(),
-						n.getPostfix());
-				if (n.hasTitle())
-				{
-					WtLinkTitle title = nf.linkTitle(nf.list());
-					title.setRtd(n.getTitle().getRtd());
-					((WtInternalLink) newNode).setTitle(title);
-				}
+				newElement = createIntLink((WtInternalLink) template, suppressRtd);
 				break;
-			}
+			
 			case EXT_LINK:
-			{
-				WtExternalLink n = (WtExternalLink) node;
-				newNode = nf.extLink(n.getTarget());
-				if (n.hasTitle())
-				{
-					WtLinkTitle title = nf.linkTitle(nf.list());
-					title.setRtd(n.getTitle().getRtd());
-					((WtExternalLink) newNode).setTitle(title);
-				}
+				newElement = createExtLink((WtExternalLink) template, suppressRtd);
 				break;
-			}
+			
 			case URL:
-			{
-				WtUrl n = (WtUrl) node;
-				newNode = nf.url(n.getProtocol(), n.getPath());
+				newElement = createUrl((WtUrl) template);
 				break;
-			}
+			
 			case B:
-				newNode = nf.b(nf.list());
+				newElement = nf.b(nf.list());
 				break;
 			
 			case I:
-				newNode = nf.i(nf.list());
+				newElement = nf.i(nf.list());
 				break;
 			
 			case SEMIPRE:
-				newNode = nf.semiPre(nf.list());
+				newElement = nf.semiPre(nf.list());
 				break;
 			
 			case HR:
-				newNode = nf.hr();
+				newElement = nf.hr();
 				break;
 			
 			case SECTION:
-			{
-				WtSection n = (WtSection) node;
-				WtHeading heading = nf.heading(nf.list());
-				heading.setRtd(n.getHeading().getRtd());
-				WtBody body = nf.noBody();
-				if (n.hasBody())
-				{
-					body = nf.body(nf.list());
-					body.setRtd(n.getBody().getRtd());
-				}
-				newNode = nf.section(n.getLevel(), heading, body);
+				newElement = createSection((WtSection) template, suppressRtd);
 				break;
-			}
 			
 			case SECTION_HEADING:
-				newNode = nf.heading(nf.list());
+				newElement = nf.heading(nf.list());
+				/**
+				 * Section headings cannot be interrupted and therefore cannot
+				 * "loose" their closing RTD. They also do not generate
+				 * synthetic end tags and would not get their closing RTD
+				 * otherwise.
+				 */
+				copyAllRtd = true;
 				break;
 			
 			case SECTION_BODY:
-				newNode = nf.body(nf.list());
+				newElement = createEmptyBody();
 				break;
 			
 			case TABLE:
-			{
-				WtTable n = (WtTable) node;
-				WtBody body = nf.noBody();
-				if (n.hasBody())
-				{
-					body = nf.body(nf.list());
-					body.setRtd(n.getBody().getRtd());
-				}
-				newNode = nf.table(n.getXmlAttributes(), body);
+				newElement = createTable((WtTable) template, suppressRtd);
 				break;
-			}
 			
 			case TBODY:
-				newNode = nf.itbody(nf.body(nf.list()));
+				newElement = nf.itbody(createEmptyBody());
 				break;
 			
 			case CAPTION:
-				newNode = nf.caption(((WtTableCaption) node).getXmlAttributes(),
-						nf.body(nf.list()));
+				newElement = createCaption((WtTableCaption) template, suppressRtd);
 				break;
 			
 			case TR:
-				newNode = nf.tr(((WtTableRow) node).getXmlAttributes(),
-						nf.body(nf.list()));
+				newElement = createTr((WtTableRow) template, suppressRtd);
 				break;
 			
 			case TD:
-				newNode = nf.td(((WtTableCell) node).getXmlAttributes(),
-						nf.body(nf.list()));
+				newElement = createTd((WtTableCell) template, suppressRtd);
 				break;
 			
 			case TH:
-				newNode = nf.th(((WtTableHeader) node).getXmlAttributes(),
-						nf.body(nf.list()));
+				newElement = createTh((WtTableHeader) template, suppressRtd);
 				break;
 			
 			case FRAMED_IMG:
 			case INLINE_IMG:
-			{
-				WtImageLink n = (WtImageLink) node;
-				WtLinkTitle title = null;//nf.noLinkTitle();
-				if (n.hasTitle())
-				{
-					title = nf.linkTitle(nf.list());
-					title.setRtd(n.getTitle().getRtd());
-				}
-				/*
-				WtLinkOptions opts = n.getOptions();
-				if (!opts.isEmpty())
-				{
-					opts = nf.linkOpts(nf.list());
-					for (WtNode o : n.getOptions())
-					{
-						if (o.getNodeType() != WtNode.NT_LINK_TITLE)
-							opts.add(o);
-					}
-				}
-				*/
-				WtImageLink newNode2 = nf.img(n.getTarget(), n.getOptions());
-				if (title != null)
-				{
-					newNode2.setOptions((WtLinkOptions) n.getOptions().cloneWrapException());
-					newNode2.setTitle(title);
-				}
-				newNode = newNode2;
+				newElement = createImage((WtImageLink) template, suppressRtd);
 				break;
-			}
 			
 			case LCT_VAR_CONV:
-				newNode = nf.lctVarConv(((WtLctVarConv) node).getFlags(),
-						nf.body(nf.list()));
+				newElement = createLctVarConv((WtLctVarConv) template, suppressRtd);
 				break;
 			
 			default:
-				throw new InternalError(
-						"Don't know how to generate a node of the specified node type: "
-								+ type);
+				throw new InternalError("Don't know how to create element for: " + elementType);
 		}
 		
-		newNode.setRtd(node.getRtd());
+		if (!suppressRtd)
+		{
+			/**
+			 * Copy everything except the last field. We assume that every
+			 * element is built like "RTD (CHILD RTD)* (BODY RTD)?". By
+			 * excluding the last RTD field (only if there's at least two RTD
+			 * fields) we hope to always "cut off" the RTD portion that belongs
+			 * to the "end tag".
+			 */
+			copyAllExceptLastRtd(template, newElement, copyAllRtd);
+		}
 		
-		copyNodeAttributes(node, newNode);
-		return newNode;
+		copyNodeAttributes(template, newElement);
+		return newElement;
+	}
+	
+	private void copyAllExceptLastRtd(
+			WtNode template,
+			WtNode newElement,
+			boolean copyAllRtd)
+	{
+		WtRtData rtd = template.getRtd();
+		if (rtd != null)
+		{
+			if (copyAllRtd || rtd.size() == 1)
+			{
+				newElement.setRtd(rtd);
+			}
+			else
+			{
+				int size = rtd.size() - 1;
+				WtRtData newRtd = new WtRtData(size + 1);
+				for (int i = 0; i < size; ++i)
+					newRtd.setField(i, template.getRtd().getField(i));
+				newElement.setRtd(newRtd);
+			}
+		}
 	}
 	
 	// =========================================================================
 	
-	public WtNode synCreate(WtNode node)
+	private WtNode createLctVarConv(WtLctVarConv template, boolean suppressRtd)
 	{
-		return setSynFlag(create(node, true));
+		WtLctFlags flags = template.getFlags();
+		if (suppressRtd && !(flags instanceof WtEmptyImmutableNode))
+		{
+			flags = (WtLctFlags) template.getFlags().deepCloneWrapException();
+			flags.suppressRtd();
+		}
+		return nf.lctVarConv(flags, createBody(template.getText(), suppressRtd));
 	}
 	
-	public WtNode synStartTag(ElementType type)
+	private WtNode createTh(WtTableHeader template, boolean suppressRtd)
 	{
-		String tagName = type.getXmlTagName();
-		if (tagName == null)
-			throw new InternalError(
-					"Don't know how to generate start tag for given type: "
-							+ type);
+		return nf.th(
+				suppressRtdOnChildren(template.getXmlAttributes(), suppressRtd),
+				createBody(template.getBody(), suppressRtd));
+	}
+	
+	private WtNode createTd(WtTableCell template, boolean suppressRtd)
+	{
+		return nf.td(
+				suppressRtdOnChildren(template.getXmlAttributes(), suppressRtd),
+				createBody(template.getBody(), suppressRtd));
+	}
+	
+	private WtNode createTr(WtTableRow template, boolean suppressRtd)
+	{
+		return nf.tr(
+				suppressRtdOnChildren(template.getXmlAttributes(), suppressRtd),
+				createBody(template.getBody(), suppressRtd));
+	}
+	
+	private WtNode createCaption(WtTableCaption template, boolean suppressRtd)
+	{
+		return nf.caption(
+				suppressRtdOnChildren(template.getXmlAttributes(), suppressRtd),
+				createBody(template.getBody(), suppressRtd));
+	}
+	
+	private WtNode createImage(WtImageLink template, boolean suppressRtd)
+	{
+		WtLinkTitle title = null;
+		if (template.hasTitle())
+			title = createLinkTitle(template.getTitle(), suppressRtd);
 		
-		return setSynFlag(nf.startTag(tagName, nf.emptyAttrs()));
-	}
-	
-	public WtNode synEndTag(WtNode node)
-	{
-		return synEndTag(getType(node));
-	}
-	
-	public WtNode synEndTag(ElementType type)
-	{
-		String tagName = type.getXmlTagName();
-		if (tagName == null)
-			throw new InternalError(
-					"Don't know how to generate end tag for given type: "
-							+ type);
+		WtLinkOptions options = template.getOptions();
+		if (suppressRtd)
+		{
+			// Does the cloning for us
+			options = suppressRtdOnChildren(options);
+		}
+		else if ((title != null) && !(options instanceof WtEmptyImmutableNode))
+		{
+			// We have to clone ourselves
+			options = (WtLinkOptions) options.deepCloneWrapException();
+		}
 		
-		return setSynFlag(nf.endTag(tagName));
-	}
-	
-	public WtNode synEmptyTag(ElementType type)
-	{
-		String tagName = type.getXmlTagName();
-		if (tagName == null)
-			throw new InternalError(
-					"Don't know how to generate empty tag for given type: "
-							+ type);
+		WtImageLink newElement = nf.img(template.getTarget(), options);
+		if (title != null)
+			newElement.setTitle(title);
 		
-		return setSynFlag(nf.startTag(tagName, nf.emptyAttrs()));
+		return newElement;
 	}
 	
-	private WtNode setSynFlag(WtNode node)
+	private WtNode createExtLink(WtExternalLink template, boolean suppressRtd)
 	{
-		node.setAttribute("synthetic", true);
-		return node;
+		WtUrl target = template.getTarget();
+		if (suppressRtd)
+		{
+			target = (WtUrl) target.deepCloneWrapException();
+			target.suppressRtd();
+		}
+		
+		WtExternalLink newElement = nf.extLink(target);
+		
+		if (template.hasTitle())
+			newElement.setTitle(createLinkTitle(template.getTitle(), suppressRtd));
+		
+		return newElement;
 	}
 	
-	// =========================================================================
-	
-	public WtNode createImplicitTableRow()
+	private WtNode createIntLink(WtInternalLink template, boolean suppressRtd)
 	{
-		WtTableRow tr = nf.tr(nf.emptyAttrs(), nf.body(nf.list()));
+		WtPageName target = template.getTarget();
+		if (suppressRtd)
+		{
+			target = (WtPageName) target.deepCloneWrapException();
+			target.suppressRtd();
+		}
+		
+		WtInternalLink newElement = nf.intLink(
+				template.getPrefix(),
+				target,
+				template.getPostfix());
+		
+		if (template.hasTitle())
+			newElement.setTitle(createLinkTitle(template.getTitle(), suppressRtd));
+		
+		return newElement;
+	}
+	
+	private WtLinkTitle createLinkTitle(
+			WtLinkTitle template,
+			boolean suppressRtd)
+	{
+		WtLinkTitle newElement = createEmptyLinkTitle();
+		if (!suppressRtd)
+			newElement.setRtd(template.getRtd());
+		/**
+		 * LinkTitle is the "body" of a link, the part that gets repeated if the
+		 * link was interrupted. Therefore, it must be rendered. However, we
+		 * don't copy the RTD of the LinkTitle since the RTD is only the
+		 * starting pipe which must not get repeated.
+		 */
+		/*
+		else
+			newElement.suppressRtd();
+		*/
+		return newElement;
+	}
+	
+	private WtNode createUrl(WtUrl template)
+	{
+		return nf.url(template.getProtocol(), template.getPath());
+	}
+	
+	private WtNode createTable(WtTable template, boolean suppressRtd)
+	{
+		WtBody body = createBody(
+				template.hasBody() ? template.getBody() : null, suppressRtd);
+		
+		return nf.table(
+				suppressRtdOnChildren(template.getXmlAttributes(), suppressRtd),
+				body);
+	}
+	
+	private WtNode createSection(WtSection template, boolean suppressRtd)
+	{
+		WtBody body = createBody(
+				template.hasBody() ? template.getBody() : null, suppressRtd);
+		
+		WtHeading heading = nf.heading(nf.list());
+		if (!suppressRtd)
+			heading.setRtd(template.getHeading().getRtd());
+		else
+			heading.suppressRtd();
+		
+		return nf.section(template.getLevel(), heading, body);
+	}
+	
+	private WtNode createPage(WtParsedWikitextPage template)
+	{
+		WtParsedWikitextPage newElement = nf.parsedPage(nf.list());
+		newElement.setEntityMap(template.getEntityMap());
+		newElement.setWarnings(template.getWarnings());
+		return newElement;
+	}
+	
+	private WtNode createImplicitTableRow()
+	{
+		WtTableRow tr = nf.tr(nf.emptyAttrs(), createEmptyBody());
 		tr.setImplicit(true);
 		return tr;
 	}
 	
-	public WtNode createImplicitTableBody()
+	private WtNode createImplicitTableBody()
 	{
-		return nf.itbody(nf.body(nf.list()));
+		return nf.itbody(createEmptyBody());
 	}
 	
 	// =========================================================================
+	
+	private WtBody createEmptyBody()
+	{
+		return nf.body(nf.list());
+	}
+	
+	private WtLinkTitle createEmptyLinkTitle()
+	{
+		return nf.linkTitle(nf.list());
+	}
+	
+	private WtBody createBody(WtBody template, boolean suppressRtd)
+	{
+		WtBody newBody;
+		if (template != null)
+		{
+			newBody = createEmptyBody();
+			if (!suppressRtd)
+				newBody.setRtd(template.getRtd());
+			else
+				/**
+				 * We never suppress RTD of the body node's children. Only the
+				 * RTD information of the body node itself.
+				 */
+				;//newBody.suppressRtd();
+		}
+		else
+			newBody = nf.noBody();
+		return newBody;
+	}
+	
+	// =========================================================================
+	
+	private String getTagNameOrFail(ElementType type)
+	{
+		String tagName = type.getXmlTagName();
+		if (tagName == null)
+			throw new IllegalArgumentException(
+					"Don't know tag name for given node type: " + type);
+		
+		return tagName;
+	}
 	
 	private static void copyNodeAttributes(WtNode from, WtNode to)
 	{
 		if (from.hasAttributes())
 			to.setAttributes(from.getAttributes());
+	}
+	
+	private <T extends WtContentNode> T suppressRtdOnChildren(
+			T container,
+			boolean suppressRtd)
+	{
+		return suppressRtd ? suppressRtdOnChildren(container) : container;
+	}
+	
+	private <T extends WtContentNode> T suppressRtdOnChildren(T container)
+	{
+		if (container instanceof WtEmptyImmutableNode)
+			return container;
+		
+		@SuppressWarnings("unchecked")
+		T clone = (T) container.deepCloneWrapException();
+		clone.suppressRtd();
+		/*
+		for (WtNode attr : clone)
+			attr.suppressRtd();
+		*/
+		return clone;
 	}
 }

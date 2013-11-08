@@ -38,7 +38,7 @@ import de.fau.cs.osr.utils.StringUtils;
 
 public class XPathTest
 {
-	private static final String PATH = "/xpath";
+	private static final String PATH = "/nopkg-xpath";
 	
 	private static final boolean WARNINGS_ENABLED = false;
 	

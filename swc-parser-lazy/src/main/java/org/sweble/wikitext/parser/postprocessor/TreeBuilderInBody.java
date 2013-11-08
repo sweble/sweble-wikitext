@@ -96,18 +96,28 @@ public final class TreeBuilderInBody
 		{
 			case B:
 			case I:
-				endTagR30(n);//getFactory().synEndTag(n));
+				endTagR30(n);
 				break;
+			
 			case P:
-				// Synthetic paragraph closing tags can be ignored if they
-				// don't have a proper opening tag
+				/**
+				 * Synthetic paragraph closing tags can be ignored if they don't
+				 * have a proper opening tag
+				 */
 				if (tb.isElementTypeInButtonScope(P))
 				{
-					WtNode pEndTag = getFactory().synEndTag(n);
-					pEndTag.setBooleanAttribute("parser-recognized", true);
+					/**
+					 * An intermediate paragraph closing never has RTD
+					 * information attached. We don't have to worry about
+					 * whether RTD information is copied to the created element
+					 * or not.
+					 */
+					WtNode pEndTag = getFactory().createSyntheticEndTag(n);
+					WtNodeFlags.setParserRecognized(pEndTag);
 					endTagR22(pEndTag);
 				}
 				break;
+			
 			default:
 				throw new InternalError("Should not happen!");
 		}
@@ -421,7 +431,7 @@ public final class TreeBuilderInBody
 	public void visit(WtParsedWikitextPage n)
 	{
 		// insertAnHtmlElement
-		WtNode newNode = getFactory().create(n, false);
+		WtNode newNode = getFactory().createNewElement(n);
 		tb.getStack().push(newNode);
 		tb.setRootNode((WtParsedWikitextPage) newNode);
 		
@@ -493,56 +503,56 @@ public final class TreeBuilderInBody
 	{
 		startTagR28(n);
 		iterate(n);
-		endTagR30(getFactory().synEndTag(n));
+		endTagR30(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtItalics n)
 	{
 		startTagR28(n);
 		iterate(n);
-		endTagR30(getFactory().synEndTag(n));
+		endTagR30(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtListItem n)
 	{
 		startTagR16(n);
 		iterate(n);
-		endTagR23(getFactory().synEndTag(n));
+		endTagR23(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtOrderedList n)
 	{
 		startTagR12(n);
 		iterate(n);
-		endTagR20(getFactory().synEndTag(n));
+		endTagR20(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtUnorderedList n)
 	{
 		startTagR12(n);
 		iterate(n);
-		endTagR20(getFactory().synEndTag(n));
+		endTagR20(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtDefinitionList n)
 	{
 		startTagR12(n);
 		iterate(n);
-		endTagR20(getFactory().synEndTag(n));
+		endTagR20(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtDefinitionListDef n)
 	{
 		startTagR17(n);
 		iterate(n);
-		endTagR24(getFactory().synEndTag(n));
+		endTagR24(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtDefinitionListTerm n)
 	{
 		startTagR17(n);
 		iterate(n);
-		endTagR24(getFactory().synEndTag(n));
+		endTagR24(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtInternalLink n)
@@ -552,7 +562,7 @@ public final class TreeBuilderInBody
 		if (n.hasTitle())
 			dispatch(n.getTitle());
 		
-		dispatch(getFactory().synEndTag(INT_LINK));//A));
+		dispatch(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtExternalLink n)
@@ -562,13 +572,13 @@ public final class TreeBuilderInBody
 		if (n.hasTitle())
 			dispatch(n.getTitle());
 		
-		dispatch(getFactory().synEndTag(EXT_LINK));//A));
+		dispatch(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtUrl n)
 	{
 		startTagR27(n);
-		dispatch(getFactory().synEndTag(URL));//A));
+		dispatch(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtImageLink n)
@@ -580,8 +590,7 @@ public final class TreeBuilderInBody
 			if (n.hasTitle())
 				dispatch(n.getTitle());
 			
-			//endTagR52(n);
-			dispatch(getFactory().synEndTag(INLINE_IMG));
+			dispatch(getFactory().createSyntheticEndTag(n, INLINE_IMG));
 		}
 		else
 		{
@@ -590,8 +599,7 @@ public final class TreeBuilderInBody
 			if (n.hasTitle())
 				dispatch(n.getTitle());
 			
-			//endTagR20(getFactory().synEndTag(IMG));
-			dispatch(getFactory().synEndTag(FRAMED_IMG));
+			dispatch(getFactory().createSyntheticEndTag(n, FRAMED_IMG));
 		}
 	}
 	
@@ -607,8 +615,7 @@ public final class TreeBuilderInBody
 		if (!n.isEmpty())
 			iterate(n);
 		
-		//endTagR20(n);
-		dispatch(getFactory().synEndTag(SEMIPRE));
+		dispatch(getFactory().createSyntheticEndTag(n));
 	}
 	
 	public void visit(WtSemiPreLine n)
@@ -657,7 +664,7 @@ public final class TreeBuilderInBody
 		{
 			iterate(n.getBody());
 			
-			dispatch(getFactory().synEndTag(TABLE));
+			dispatch(getFactory().createSyntheticEndTag(n));
 		}
 	}
 	
@@ -701,9 +708,10 @@ public final class TreeBuilderInBody
 	public void visitSectionHeading(WtHeading heading) throws InternalError
 	{
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			dispatch(getFactory().createMissingRepairEndTag(P));
+		
 		// Almost: tb.insertAnHtmlElement(heading);
-		WtHeading newNode = (WtHeading) getFactory().create(heading, false);
+		WtHeading newNode = (WtHeading) getFactory().createNewElement(heading);
 		((WtSection) tb.getCurrentNode()).setHeading(newNode);
 		tb.getStack().push(newNode);
 		// ---
@@ -724,9 +732,15 @@ public final class TreeBuilderInBody
 	public void visitSectionBody(WtBody body) throws InternalError
 	{
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			/**
+			 * I don't think that's even possible. A section body can only be
+			 * started after a section and a section cannot end with a P in
+			 * scope
+			 */
+			dispatch(getFactory().createMissingRepairEndTag(P));
+		
 		// Almost: tb.insertAnHtmlElement(heading);
-		WtBody newNode = (WtBody) getFactory().create(body, false);
+		WtBody newNode = (WtBody) getFactory().createNewElement(body);
 		((WtSection) tb.getCurrentNode()).setBody(newNode);
 		tb.getStack().push(newNode);
 		// ---
@@ -748,7 +762,7 @@ public final class TreeBuilderInBody
 	{
 		startTagR28(n);
 		iterate(n.getText());
-		endTagR30(getFactory().synEndTag(n));
+		endTagR30(getFactory().createSyntheticEndTag(n));
 	}
 	
 	// =====================================================================
@@ -786,7 +800,7 @@ public final class TreeBuilderInBody
 	private void startTagR12(WtNode n)
 	{
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			dispatch(getFactory().createMissingRepairEndTag(P));
 		tb.insertAnHtmlElement(n);
 	}
 	
@@ -796,7 +810,7 @@ public final class TreeBuilderInBody
 	private void startTagR13(WtNode n)
 	{
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			dispatch(getFactory().createMissingRepairEndTag(P));
 		if (tb.isCurrentNodeTypeOneOf(H1, H2, H3, H4, H5, H6))
 		{
 			tb.error(n, "12.2.5.4.7 - R13");
@@ -815,14 +829,14 @@ public final class TreeBuilderInBody
 			ElementType nodeType = getNodeType(node);
 			if (nodeType == LI)
 			{
-				dispatch(getFactory().synEndTag(LI));
+				dispatch(getFactory().createMissingRepairEndTag(LI));
 				break;
 			}
 			if (nodeType.isSpecial() && !isTypeOneOf(nodeType, ADDRESS, DIV, P))
 				break;
 		}
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			dispatch(getFactory().createMissingRepairEndTag(P));
 		tb.insertAnHtmlElement(n);
 	}
 	
@@ -836,14 +850,14 @@ public final class TreeBuilderInBody
 			ElementType nodeType = getNodeType(node);
 			if (isTypeOneOf(nodeType, DD, DT))
 			{
-				dispatch(getFactory().synEndTag(nodeType));
+				dispatch(getFactory().createMissingRepairEndTag(nodeType));
 				break;
 			}
 			if (nodeType.isSpecial() && !isTypeOneOf(nodeType, ADDRESS, DIV, P))
 				break;
 		}
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			dispatch(getFactory().createMissingRepairEndTag(P));
 		tb.insertAnHtmlElement(n);
 	}
 	
@@ -882,7 +896,7 @@ public final class TreeBuilderInBody
 		if (!tb.isElementTypeInButtonScope(P))
 		{
 			tb.error(n, "12.2.5.4.7 - R22 (1)");
-			dispatch(getFactory().synStartTag(P));
+			dispatch(getFactory().createMissingRepairStartTag(P));
 			dispatch(n);
 		}
 		else
@@ -895,7 +909,7 @@ public final class TreeBuilderInBody
 			WtNode p = tb.popFromStackUntilIncluding(P);
 			addRtDataOfEndTag(p, n);
 			
-			if (!n.getBooleanAttribute("parser-recognized"))
+			if (!WtNodeFlags.isParserRecognized(n))
 			{
 				/* Hannes: When a paragraph is implicitly closed in front of
 				 * another block element we have to manually fix newlines. If
@@ -1061,7 +1075,7 @@ public final class TreeBuilderInBody
 		{
 			tb.error(n, "12.2.5.4.7 - R27");
 			
-			dispatch(getFactory().synEndTag(type));
+			dispatch(getFactory().createMissingRepairEndTag(type));
 			
 			// Remove if not already done 
 			// (can happen if not in table scope)
@@ -1198,7 +1212,7 @@ public final class TreeBuilderInBody
 					break inner;
 				}
 				
-				WtNode replacement = getFactory().create(node, true);
+				WtNode replacement = getFactory().createRepairFormattingElement(node);
 				tb.replaceInListOfActiveFormattingElements(node, replacement);
 				stackIter.set(replacement);
 				node = replacement;
@@ -1235,7 +1249,7 @@ public final class TreeBuilderInBody
 				tb.getContentOfNodeForModification(commonAncestor).add(lastNode);
 			}
 			
-			WtNode adopter = getFactory().synCreate(fe);
+			WtNode adopter = getFactory().createAdopterElement(fe);
 			
 			WtNodeList contentOfFb = tb.getContentOfNodeForModification(furthestBlock);
 			tb.getContentOfNodeForModification(adopter).addAll(contentOfFb);
@@ -1257,7 +1271,7 @@ public final class TreeBuilderInBody
 	{
 		// We don't support quirks mode!
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			dispatch(getFactory().createMissingRepairEndTag(P));
 		
 		tb.insertAnHtmlElement(n);
 		
@@ -1283,7 +1297,7 @@ public final class TreeBuilderInBody
 	private void startTagR37(WtNode n)
 	{
 		if (tb.isElementTypeInButtonScope(P))
-			dispatch(getFactory().synEndTag(P));
+			dispatch(getFactory().createMissingRepairEndTag(P));
 		
 		tb.insertAnHtmlElement(n);
 		
@@ -1297,7 +1311,7 @@ public final class TreeBuilderInBody
 	{
 		tb.error(n, "12.2.5.4.7 - R47");
 		// This is an exception for which the create() method knows a special rule
-		handleStartTag(getFactory().create(n, false));
+		handleStartTag(getFactory().createElementRepairBr(n));
 	}
 	
 	/**

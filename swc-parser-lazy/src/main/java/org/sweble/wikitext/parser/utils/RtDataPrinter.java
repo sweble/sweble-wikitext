@@ -83,9 +83,12 @@ public class RtDataPrinter
 	{
 		if (rtd != null)
 		{
-			printRtd(rtd.getField(0));
-			iterate(contentNode);
-			printRtd(rtd.getField(1));
+			if (!rtd.isSuppress())
+			{
+				printRtd(rtd.getField(0));
+				iterate(contentNode);
+				printRtd(rtd.getField(1));
+			}
 		}
 		else
 		{
@@ -97,7 +100,8 @@ public class RtDataPrinter
 	{
 		if (rtd != null)
 		{
-			printRtd(rtd.getField(0));
+			if (!rtd.isSuppress())
+				printRtd(rtd.getField(0));
 		}
 		else
 		{

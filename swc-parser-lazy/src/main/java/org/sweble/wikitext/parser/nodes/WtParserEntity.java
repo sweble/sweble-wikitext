@@ -49,14 +49,6 @@ public class WtParserEntity
 	// =========================================================================
 	
 	@Override
-	public boolean isSynthetic()
-	{
-		return false;
-	}
-	
-	// =========================================================================
-	
-	@Override
 	public void setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException();

@@ -52,14 +52,6 @@ public class WtXmlEmptyTag
 	}
 	
 	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
-	}
-	
-	// =========================================================================
 	// Properties
 	
 	private String name;

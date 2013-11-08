@@ -38,13 +38,13 @@ public class ComplexIntegrationTest
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
-	private static final String INPUT_SUB_DIR = "complex/wikitext";
+	private static final String INPUT_SUB_DIR = "nopkg-complex/input.wikitext";
 	
-	private static final String EXPECTED_AST_SUB_DIR = "complex/ast";
+	private static final String EXPECTED_AST_SUB_DIR = "nopkg-complex/after-postprocessing.ast";
 	
-	private static final String EXPECTED_PP_SUB_DIR = "complex/pp";
+	private static final String EXPECTED_PP_SUB_DIR = "nopkg-complex/pretty-printed.wikitext";
 	
-	private static final String EXPECTED_PPAST_SUB_DIR = "complex/ppast";
+	private static final String EXPECTED_PPAST_SUB_DIR = "nopkg-complex/pretty-printed.ast";
 	
 	// =========================================================================
 	
