@@ -177,6 +177,10 @@ public class ElementFactory
 		 */
 		//setRepairNode(element);
 		
+		WtRtData rtd = tag.getRtd();
+		if (rtd != null)
+			newElement.setRtd(rtd.getField(0));
+		
 		return newElement;
 	}
 	
