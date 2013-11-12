@@ -8,6 +8,7 @@ WtParsedWikitextPage(
 		[0] = "I say yes\n",
 		[1] = WtXmlElement(
 			{P} name = "br"
+			{P} rtd = RTD[ "</br>" <o> "" <o> "" ]
 			xmlAttributes = WtXmlAttributes[],
 			body = -
 		),

@@ -698,11 +698,11 @@ WtParsedWikitextPage(
 			[1] = WtParagraph[
 				[0] = "The history section on this page needs to be corrected to bring it into line with the information on this site ",
 				[1] = WtUrl(
-					{P} path = "//www.fullpointsfooty.net/melbourne.htm,"
+					{P} path = "//www.fullpointsfooty.net/melbourne.htm"
 					{P} protocol = "http"
-					{P} rtd = RTD[ "http://www.fullpointsfooty.net/melbourne.htm," ]
+					{P} rtd = RTD[ "http://www.fullpointsfooty.net/melbourne.htm" ]
 				),
-				[2] = " but I'l leave that to the Aussies. ",
+				[2] = ", but I'l leave that to the Aussies. ",
 				[3] = WtInternalLink(
 					{P} postfix = ""
 					{P} prefix = ""
@@ -3111,11 +3111,11 @@ WtParsedWikitextPage(
 			[83] = WtParagraph[
 				[0] = "You are being extremely inconsistent, one minute you say what the ABS says is crap, the next you're using their statistics to prove your point. The most recent version of the sweeney report, mentioned above, which uses participation as well as watching and attending, gives swimming as the most popular sport, with tennis, cricket and AF tied on second. Taking only TV (your favourite statistic) AF is the highest. Again, it contains many forms of exercise as well. If you want to read it - ",
 				[1] = WtUrl(
-					{P} path = "//www.sweeneyresearch.com.au/PDF/Interest.pdf."
+					{P} path = "//www.sweeneyresearch.com.au/PDF/Interest.pdf"
 					{P} protocol = "http"
-					{P} rtd = RTD[ "http://www.sweeneyresearch.com.au/PDF/Interest.pdf." ]
+					{P} rtd = RTD[ "http://www.sweeneyresearch.com.au/PDF/Interest.pdf" ]
 				),
-				[2] = " ",
+				[2] = ". ",
 				[3] = WtXmlElement(
 					{P} name = "s"
 					{P} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]

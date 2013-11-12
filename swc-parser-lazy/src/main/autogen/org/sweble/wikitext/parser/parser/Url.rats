@@ -59,20 +59,32 @@ body
 
   private WtNode makeExternalLink(WtText text, String path)
   {
-    String p = extractProtocol(text);
-    String t = text.getContent();
-    String b = t.substring(0, t.length() - p.length());
-
+    String protocol = extractProtocol(text);
+    String textStr = text.getContent();
+    String prefix = textStr.substring(0, textStr.length() - protocol.length());
+    
+    String strip = ",;\\.:!?";
+    if (path.indexOf('(') == -1)
+      strip += ")";
+    String trimmedPath = org.apache.commons.lang.StringUtils.stripEnd(path, strip);
+    String suffix = path.substring(trimmedPath.length());
+    
     WtUrl url = setRtd(
-      nf.url(p, path),
-      p, ':', path);
-
-    if (b.isEmpty())
+        nf.url(protocol, trimmedPath),
+        protocol, ':', trimmedPath);
+    
+    if (prefix.isEmpty() && suffix.isEmpty())
       return url;
-
-    return nf.list(nf.text(b), url);
+    
+    WtNodeList result = nf.list();
+    if (!prefix.isEmpty())
+      result.add(nf.text(prefix));
+    result.add(url);
+    if (!suffix.isEmpty())
+      result.add(nf.text(suffix));
+    return result;
   }
-
+  
   private String extractProtocol(WtText text)
   {
     String s = text.getContent();
