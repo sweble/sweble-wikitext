@@ -21,11 +21,11 @@ import java.io.Writer;
 
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.utils.RtDataPrinter;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
 public final class NoTransparentRtDataPrinter
 		extends
-			RtDataPrinter
+			WtRtDataPrinter
 {
 	@Override
 	public void dispatch(WtNode node)

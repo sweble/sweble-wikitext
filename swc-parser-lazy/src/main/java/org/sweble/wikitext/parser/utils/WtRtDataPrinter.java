@@ -29,7 +29,7 @@ import org.sweble.wikitext.parser.nodes.WtText;
 
 import de.fau.cs.osr.utils.PrinterBase;
 
-public class RtDataPrinter
+public class WtRtDataPrinter
 {
 	protected void iterate(WtNode node)
 	{
@@ -149,12 +149,12 @@ public class RtDataPrinter
 	
 	public static String print(WtNode node)
 	{
-		return RtDataPrinter.print(new StringWriter(), node).toString();
+		return WtRtDataPrinter.print(new StringWriter(), node).toString();
 	}
 	
 	public static Writer print(Writer writer, WtNode node)
 	{
-		new RtDataPrinter(writer).go(node);
+		new WtRtDataPrinter(writer).go(node);
 		return writer;
 	}
 	
@@ -162,7 +162,7 @@ public class RtDataPrinter
 	
 	protected final PrinterBase p;
 	
-	protected RtDataPrinter(Writer writer)
+	protected WtRtDataPrinter(Writer writer)
 	{
 		this.p = new PrinterBase(writer);
 		this.p.setMemoize(false);

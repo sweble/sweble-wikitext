@@ -104,7 +104,7 @@ import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.RtDataPrinter;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 
 import de.fau.cs.osr.utils.FmtNotYetImplementedError;
@@ -1009,7 +1009,7 @@ public class HtmlRenderer
 	{
 		if (!n.getName().isResolved())
 		{
-			logger.warn("Unresolved attribute name: " + RtDataPrinter.print(n));
+			logger.warn("Unresolved attribute name: " + WtRtDataPrinter.print(n));
 		}
 		else
 		{
@@ -1026,7 +1026,7 @@ public class HtmlRenderer
 	
 	public void visit(WtXmlAttributeGarbage n)
 	{
-		logger.warn("Attribute garbage: " + RtDataPrinter.print(n));
+		logger.warn("Attribute garbage: " + WtRtDataPrinter.print(n));
 	}
 	
 	@Override
@@ -1041,7 +1041,7 @@ public class HtmlRenderer
 					dispatch(n1);
 					break;
 				default:
-					logger.warn("Non-attribute node in attributes collection: " + RtDataPrinter.print(n));
+					logger.warn("Non-attribute node in attributes collection: " + WtRtDataPrinter.print(n));
 					break;
 			}
 		}

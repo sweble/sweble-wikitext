@@ -94,7 +94,7 @@ import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.RtDataPrinter;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
 import de.fau.cs.osr.utils.FmtNotYetImplementedError;
 import de.fau.cs.osr.utils.visitor.VisitingException;
@@ -516,7 +516,7 @@ public class SafeLinkTitlePrinter
 	@Override
 	public void visit(WtXmlAttributeGarbage n)
 	{
-		logger.warn("Attribute garbage: " + RtDataPrinter.print(n));
+		logger.warn("Attribute garbage: " + WtRtDataPrinter.print(n));
 	}
 	
 	@Override
@@ -568,7 +568,7 @@ public class SafeLinkTitlePrinter
 	
 	private void printAsWikitext(WtNode n)
 	{
-		p.indentAtBol(esc(RtDataPrinter.print(n)));
+		p.indentAtBol(esc(WtRtDataPrinter.print(n)));
 	}
 	
 	// =====================================================================

@@ -30,7 +30,7 @@ import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
-import org.sweble.wikitext.parser.utils.RtDataPrinter;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 
 import de.fau.cs.osr.utils.XmlGrammar;
@@ -123,7 +123,7 @@ public class CorePfnFunctionsMiscellaneous
 			WtTemplateArgument bodyNode = (WtTemplateArgument) argsValues.get(1);
 			WtNode expValueNode = frame.expand(bodyNode.getValue());
 			expValueNode = stripComments(expValueNode);
-			String bodyStr = RtDataPrinter.print(expValueNode);
+			String bodyStr = WtRtDataPrinter.print(expValueNode);
 			
 			WtNodeList attrs = nf().list();
 			for (int i = 2; i < argsValues.size(); ++i)

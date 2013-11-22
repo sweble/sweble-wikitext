@@ -37,6 +37,6 @@ public final class TypedRtDataPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		RtDataPrinter.print(out, (WtNode) ast);
+		WtRtDataPrinter.print(out, (WtNode) ast);
 	}
 }
