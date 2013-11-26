@@ -97,6 +97,9 @@ public class TextConverter
 	
 	private int extLinkNum;
 	
+	/**
+	 * Becomes true if we are no long at the Beginning Of the whole Document.
+	 */
 	private boolean pastBod;
 	
 	private int needNewlines;
