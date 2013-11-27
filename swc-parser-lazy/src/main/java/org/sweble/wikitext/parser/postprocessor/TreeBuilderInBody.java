@@ -679,33 +679,58 @@ public final class TreeBuilderInBody
 		
 		// -- title ----
 		
-		visitSectionHeading(n.getHeading());
-		
-		if (tb.getCurrentNode() != section)
-			throw new InternalError("Stack of open elements corrupted!");
-		
-		// -- body ----
-		
-		if (n.hasBody())
+		if (visitSectionHeading(n.getHeading()))
 		{
-			visitSectionBody(n.getBody());
 			
 			if (tb.getCurrentNode() != section)
 				throw new InternalError("Stack of open elements corrupted!");
+			
+			// -- body ----
+			
+			boolean processedBody = false;
+			if (n.hasBody())
+			{
+				if (visitSectionBody(n.getBody()))
+				{
+					processedBody = true;
+					
+					if (tb.getCurrentNode() != section)
+						throw new InternalError("Stack of open elements corrupted!");
+				}
+			}
+			
+			// -- done ----
+			
+			if (processedBody)
+			{
+				// Almost: endTagR20(getFactory().synEndTag(section));
+				tb.generateImpliedEndTags();
+				
+				if (getNodeType(tb.getCurrentNode()) != SECTION)
+					tb.error(n, "12.2.5.4.7 - R20 (2)");
+				
+				// We don't want native wiki markup section to interrupt table cells
+				//tb.popFromStackUntilIncluding(SECTION);
+				
+				tb.popFromStackUntilExcluding(PAGE, SECTION, TABLE, TBODY, TFOOT, THEAD, TR, TD, TH, CAPTION);
+				if (tb.getCurrentNode() == section)
+					tb.popFromStack();
+			}
 		}
-		
-		// -- done ----
-		
-		// Almost: endTagR20(getFactory().synEndTag(section));
-		tb.generateImpliedEndTags();
-		
-		if (getNodeType(tb.getCurrentNode()) != SECTION)
-			tb.error(n, "12.2.5.4.7 - R20 (2)");
-		
-		tb.popFromStackUntilIncluding(SECTION);
+		else
+		{
+			// just iterate the body, don't treat it as part of a section
+			if (n.hasBody())
+				iterate(n.getBody());
+		}
 	}
 	
-	public void visitSectionHeading(WtHeading heading) throws InternalError
+	/**
+	 * @return True if the heading was fully processed. False if the heading was
+	 *         interrupted by another element that forced the heading to end
+	 *         prematurely.
+	 */
+	public boolean visitSectionHeading(WtHeading heading)
 	{
 		if (tb.isElementTypeInButtonScope(P))
 			dispatch(getFactory().createMissingRepairEndTag(P));
@@ -718,7 +743,8 @@ public final class TreeBuilderInBody
 		
 		iterate(heading);
 		if (!tb.isInStackOfOpenElements(newNode))
-			throw new InternalError("Section heading was removed from stack prematurely!");
+			//throw new InternalError("Section heading was removed from stack prematurely!");
+			return false;
 		
 		// Almost: endTagR20(getFactory().synEndTag(heading));
 		tb.generateImpliedEndTags();
@@ -726,10 +752,27 @@ public final class TreeBuilderInBody
 		if (getNodeType(tb.getCurrentNode()) != SECTION_HEADING)
 			tb.error(heading, "12.2.5.4.7 - R20 (2)");
 		
-		tb.popFromStackUntilIncluding(SECTION_HEADING);
+		// We don't want native wiki markup section to interrupt table cells
+		//tb.popFromStackUntilIncluding(SECTION_HEADING);
+		
+		tb.popFromStackUntilExcluding(PAGE, SECTION_HEADING, TABLE, TBODY, TFOOT, THEAD, TR, TD, TH, CAPTION);
+		if (tb.getCurrentNode() == newNode)
+		{
+			tb.popFromStack();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
-	public void visitSectionBody(WtBody body) throws InternalError
+	/**
+	 * @return True if the body was fully processed. False if the body was
+	 *         interrupted by another element that forced the body to end
+	 *         prematurely.
+	 */
+	public boolean visitSectionBody(WtBody body) throws InternalError
 	{
 		if (tb.isElementTypeInButtonScope(P))
 			/**
@@ -747,7 +790,8 @@ public final class TreeBuilderInBody
 		
 		iterate(body);
 		if (!tb.isInStackOfOpenElements(newNode))
-			throw new InternalError("Section body was removed from stack prematurely!");
+			//throw new InternalError("Section body was removed from stack prematurely!");
+			return false;
 		
 		// Almost: endTagR20(getFactory().synEndTag(body));
 		tb.generateImpliedEndTags();
@@ -755,7 +799,19 @@ public final class TreeBuilderInBody
 		if (getNodeType(tb.getCurrentNode()) != SECTION_BODY)
 			tb.error(body, "12.2.5.4.7 - R20 (2)");
 		
-		tb.popFromStackUntilIncluding(SECTION_BODY);
+		// We don't want native wiki markup section to interrupt table cells
+		//tb.popFromStackUntilIncluding(SECTION_BODY);
+		
+		tb.popFromStackUntilExcluding(PAGE, SECTION_BODY, TABLE, TBODY, TFOOT, THEAD, TR, TD, TH, CAPTION);
+		if (tb.getCurrentNode() == newNode)
+		{
+			tb.popFromStack();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	public void visit(WtLctVarConv n)

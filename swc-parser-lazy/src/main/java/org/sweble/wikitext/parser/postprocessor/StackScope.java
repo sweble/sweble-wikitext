@@ -97,8 +97,10 @@ public enum StackScope
 		{
 			switch (nodeType)
 			{
-				case SECTION_HEADING:
-				case SECTION_BODY:
+			/*
+			case SECTION_HEADING:
+			case SECTION_BODY:
+			*/
 				case TABLE:
 				case PAGE:
 					return true;

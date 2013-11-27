@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
+	{P} warnings = C[ Warning: /nopkg-basic/input.wikitext/block-section.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage. ]
 	[0] = WtSection(
 		{P} level = 3
 		heading = WtHeading(

@@ -864,17 +864,17 @@ public class TreeBuilder
 	
 	void clearStackBackToTableContext()
 	{
-		popFromStackUntilExcluding(PAGE, SECTION_HEADING, SECTION_BODY, TABLE);
+		popFromStackUntilExcluding(PAGE, /*SECTION_HEADING, SECTION_BODY, */TABLE);
 	}
 	
 	void clearStackBackToTableBodyContext()
 	{
-		popFromStackUntilExcluding(PAGE, SECTION_HEADING, SECTION_BODY, TBODY, TFOOT, THEAD);
+		popFromStackUntilExcluding(PAGE, /*SECTION_HEADING, SECTION_BODY, */TBODY, TFOOT, THEAD);
 	}
 	
 	void clearStackBackToTableRowContext()
 	{
-		popFromStackUntilExcluding(PAGE, SECTION_HEADING, SECTION_BODY, TR);
+		popFromStackUntilExcluding(PAGE, /*SECTION_HEADING, SECTION_BODY, */TR);
 	}
 	
 	WtNode getAboveOnStack(WtNode node)

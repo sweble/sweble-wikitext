@@ -744,6 +744,10 @@ public final class TreeBuilderInTable
 			}
 		}
 		
+		/**
+		 * Iterate through the elements of the "new" table that we already
+		 * processed to see if the table already has a row attached.
+		 */
 		private boolean hasRows(WtTable table)
 		{
 			for (WtNode n : table.getBody())
@@ -759,10 +763,19 @@ public final class TreeBuilderInTable
 						return false;
 					case WtNode.NT_TEXT:
 						// Whitespace only text can be part of the table.
+						// Non-whitespace text should have been hoisted in 
+						// front of the table already -> no need to check.
 						continue;
 					case WtNode.NT_TABLE_CAPTION:
 						continue;
+					case WtNode.NT_XML_ELEMENT:
+						if (getNodeType(n) == CAPTION)
+							continue;
+						else
+							; // FALL THROUGH
 					default:
+						// Any other garbage should have been hoisted in front 
+						// of the table already.
 						throw new InternalError();
 				}
 			}
