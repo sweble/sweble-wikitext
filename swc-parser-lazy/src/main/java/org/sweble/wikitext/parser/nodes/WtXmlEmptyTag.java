@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.IOException;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.Uninitialized;
 
@@ -153,5 +155,35 @@ public class WtXmlEmptyTag
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public void toString(Appendable out) throws IOException
+	{
+		out.append(getClass().getSimpleName());
+		out.append('[');
+		out.append(name);
+		out.append(']');
+		out.append('(');
+		
+		boolean first = true;
+		for (WtNode node : this)
+		{
+			if (first)
+			{
+				first = false;
+			}
+			else
+			{
+				out.append(", ");
+			}
+			
+			node.toString(out);
+			
+		}
+		
+		out.append(')');
 	}
 }

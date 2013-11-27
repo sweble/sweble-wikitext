@@ -318,7 +318,8 @@ public enum ElementType
 		xmlElementTypeMap.put("h6", H6);
 		xmlElementTypeMap.put("hr", HR);
 		xmlElementTypeMap.put("i", I);
-		xmlElementTypeMap.put("img", IMG);
+		// Image elements are not supported as pure HTML
+		//xmlElementTypeMap.put("img", IMG);
 		xmlElementTypeMap.put("ins", INS);
 		xmlElementTypeMap.put("kbd", KBD);
 		xmlElementTypeMap.put("li", LI);
