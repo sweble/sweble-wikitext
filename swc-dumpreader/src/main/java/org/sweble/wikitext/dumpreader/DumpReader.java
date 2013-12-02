@@ -167,6 +167,12 @@ public abstract class DumpReader
 	
 	protected abstract void processPage(Object mediaWiki, Object page) throws Exception;
 	
+	protected boolean processRevision(Object page, Object revision) throws Exception
+	{
+		// Add by default
+		return true;
+	}
+	
 	protected boolean processEvent(
 			ValidationEvent ve,
 			ValidationEventLocator vel) throws Exception
@@ -188,6 +194,11 @@ public abstract class DumpReader
 		++parsedCount;
 		
 		processPage(mediaWiki, page);
+	}
+	
+	private boolean handleRevision(Object page, Object revision) throws Exception
+	{
+		return processRevision(page, revision);
 	}
 	
 	protected boolean handleEvent(ValidationEvent ve, ValidationEventLocator vel) throws Exception
@@ -301,7 +312,7 @@ public abstract class DumpReader
 	
 	private void installCallbacks()
 	{
-		final PageListener pageListener = new PageListener()
+		final DumpReaderListener pageListener = new DumpReaderListener()
 		{
 			@Override
 			public void handlePage(Object mediaWiki, Object page)
@@ -309,6 +320,25 @@ public abstract class DumpReader
 				try
 				{
 					DumpReader.this.handlePage(mediaWiki, page);
+				}
+				catch (RuntimeException e)
+				{
+					throw e;
+				}
+				catch (Exception e)
+				{
+					throw new WrappedException(e);
+				}
+			}
+			
+			@Override
+			public boolean handleRevisionOrUploadOrLogitem(
+					Object page,
+					Object revision)
+			{
+				try
+				{
+					return DumpReader.this.handleRevision(page, revision);
 				}
 				catch (RuntimeException e)
 				{

@@ -17,7 +17,13 @@
 
 package org.sweble.wikitext.dumpreader;
 
-public interface PageListener
+public interface DumpReaderListener
 {
 	void handlePage(Object mediaWiki, Object page);
+	
+	/**
+	 * @return Return true to add the item to the page's list or false if you
+	 *         handled it yourself.
+	 */
+	boolean handleRevisionOrUploadOrLogitem(Object page, Object revision);
 }

@@ -227,20 +227,30 @@ public enum ExportSchemaVersion
 	
 	// =========================================================================
 	
-	public void setPageListener(Object target, PageListener pageListener)
+	public void setPageListener(Object target, DumpReaderListener listener)
 	{
-		Class<?> mwType = getMediaWikiType();
-		if (mwType.isInstance(target))
+		try
 		{
-			try
+			Method m = null;
+			if (getMediaWikiType().isInstance(target))
 			{
-				Method m = mwType.getMethod("setPageListener", PageListener.class);
-				m.invoke(target, pageListener);
+				m = getMediaWikiType().getMethod(
+						"setPageListener",
+						DumpReaderListener.class);
 			}
-			catch (Exception e)
+			else if (getPageType().isInstance(target))
 			{
-				throw new WrappedException(e);
+				m = getPageType().getMethod(
+						"setRevisionListener",
+						DumpReaderListener.class);
 			}
+			
+			if (m != null)
+				m.invoke(target, listener);
+		}
+		catch (Exception e)
+		{
+			throw new WrappedException(e);
 		}
 	}
 }

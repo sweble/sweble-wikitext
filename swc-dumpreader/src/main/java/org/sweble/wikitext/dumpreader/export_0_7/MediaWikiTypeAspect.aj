@@ -19,11 +19,11 @@ package org.sweble.wikitext.dumpreader.export_0_7;
 
 import java.util.ArrayList;
 
-import org.sweble.wikitext.dumpreader.PageListener;
+import org.sweble.wikitext.dumpreader.DumpReaderListener;
 
 public aspect MediaWikiTypeAspect
 {
-	public void MediaWikiType.setPageListener(final PageListener listener)
+	public void MediaWikiType.setPageListener(final DumpReaderListener listener)
 	{
 		page = (listener == null) ? null : new ArrayList<PageType>()
 		{
