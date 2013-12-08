@@ -85,6 +85,15 @@ public abstract class DumpReader
 	
 	public DumpReader(InputStream is, String url, Logger logger) throws Exception
 	{
+		this(is, url, logger, true);
+	}
+	
+	public DumpReader(
+			InputStream is,
+			String url,
+			Logger logger,
+			boolean useSchema) throws Exception
+	{
 		this.dumpInputStream = is;
 		this.dumpUri = url;
 		this.logger = logger;
@@ -99,9 +108,10 @@ public abstract class DumpReader
 		
 		installCallbacks();
 		
-		setSchema(
-				DumpReader.class.getResource("/catalog.xml"),
-				DumpReader.class.getResource(schemaVersion.getSchema()));
+		if (useSchema)
+			setSchema(
+					DumpReader.class.getResource("/catalog.xml"),
+					DumpReader.class.getResource(schemaVersion.getSchema()));
 		
 		xmlStreamReader = getXmlStreamReader();
 		
