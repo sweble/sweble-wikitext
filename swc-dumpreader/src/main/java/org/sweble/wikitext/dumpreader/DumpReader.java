@@ -26,6 +26,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.nio.charset.Charset;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -119,7 +120,7 @@ public abstract class DumpReader
 	
 	public DumpReader(
 			InputStream is,
-			String encoding,
+			Charset encoding,
 			String url,
 			Logger logger,
 			boolean useSchema) throws Exception
@@ -323,7 +324,7 @@ public abstract class DumpReader
 	 * Therefore, in case you have trouble to parse a XML file, by specifying an
 	 * encoding, you force the use of a Reader and can circumvent the crash.
 	 */
-	private XMLStreamReader getXmlStreamReader(String encoding) throws FactoryConfigurationError, XMLStreamException, UnsupportedEncodingException
+	private XMLStreamReader getXmlStreamReader(Charset encoding) throws FactoryConfigurationError, XMLStreamException, UnsupportedEncodingException
 	{
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 		
