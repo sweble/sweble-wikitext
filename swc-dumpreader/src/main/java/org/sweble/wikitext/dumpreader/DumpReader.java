@@ -23,6 +23,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 
 import javax.xml.bind.JAXBContext;
@@ -76,6 +78,12 @@ public abstract class DumpReader
 	
 	// =========================================================================
 	
+	/**
+	 * Use a constructor that expects an encoding to prevent bug in xerces
+	 * parser code.
+	 * 
+	 * @deprecated
+	 */
 	public DumpReader(File dumpFile, Logger logger) throws Exception
 	{
 		this(new FileInputStream(dumpFile), dumpFile.getAbsolutePath(), logger);
@@ -83,13 +91,35 @@ public abstract class DumpReader
 		fileLength = dumpFile.length();
 	}
 	
+	/**
+	 * Use a constructor that expects an encoding to prevent bug in xerces
+	 * parser code.
+	 * 
+	 * @deprecated
+	 */
 	public DumpReader(InputStream is, String url, Logger logger) throws Exception
 	{
-		this(is, url, logger, true);
+		this(is, null, url, logger, true);
+	}
+	
+	/**
+	 * Use a constructor that expects an encoding to prevent bug in xerces
+	 * parser code.
+	 * 
+	 * @deprecated
+	 */
+	public DumpReader(
+			InputStream is,
+			String url,
+			Logger logger,
+			boolean useSchema) throws Exception
+	{
+		this(is, null, url, logger, useSchema);
 	}
 	
 	public DumpReader(
 			InputStream is,
+			String encoding,
 			String url,
 			Logger logger,
 			boolean useSchema) throws Exception
@@ -113,7 +143,7 @@ public abstract class DumpReader
 					DumpReader.class.getResource("/catalog.xml"),
 					DumpReader.class.getResource(schemaVersion.getSchema()));
 		
-		xmlStreamReader = getXmlStreamReader();
+		xmlStreamReader = getXmlStreamReader(encoding);
 		
 		fileLength = -1;
 		parsedCount = 0;
@@ -280,10 +310,32 @@ public abstract class DumpReader
 		}
 	}
 	
-	private XMLStreamReader getXmlStreamReader() throws FactoryConfigurationError, XMLStreamException
+	/**
+	 * The xerces UTF8Reader is broken. If the xerces XML parser is given an
+	 * input stream, it will instantiate a reader for the encoding found in the
+	 * XML file, a UTF8Reader in case of an UTF8 encoded XML file. Sadly, this
+	 * UTF8Reader crashes for certain input (not sure why exactly).
+	 * 
+	 * On the other hand, when given a reader, which is forced to work with a
+	 * certain encoding, the xerces XML parser does not have this freedom and
+	 * will apparently process Wikipedia dumps just fine.
+	 * 
+	 * Therefore, in case you have trouble to parse a XML file, by specifying an
+	 * encoding, you force the use of a Reader and can circumvent the crash.
+	 */
+	private XMLStreamReader getXmlStreamReader(String encoding) throws FactoryConfigurationError, XMLStreamException, UnsupportedEncodingException
 	{
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-		return xmlInputFactory.createXMLStreamReader(decompressedInputStream);
+		
+		if (encoding != null)
+		{
+			InputStreamReader isr = new InputStreamReader(decompressedInputStream, encoding);
+			return xmlInputFactory.createXMLStreamReader(isr);
+		}
+		else
+		{
+			return xmlInputFactory.createXMLStreamReader(decompressedInputStream);
+		}
 	}
 	
 	private void setSchema(URL catalog, URL schemaUrl) throws Exception
