@@ -132,7 +132,7 @@
     <developer>
       <id>driehle</id>
       <name>Dirk Riehle</name>
-      <email>dirk.riehle@informatik.uni-erlangen.de</email>
+      <email>dirk.riehle@fau.de</email>
       <roles>
         <role>Director</role>
       </roles>
@@ -142,7 +142,7 @@
     <developer>
       <id>hdohrn</id>
       <name>Hannes Dohrn</name>
-      <email>hannes.dohrn@informatik.uni-erlangen.de</email>
+      <email>hannes.dohrn@fau.de</email>
       <roles>
         <role>Developer</role>
       </roles>
@@ -186,7 +186,7 @@
       </snapshots>
       <id>osr-public-snapshots-repo</id>
       <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
     </repository>
   </repositories>
 
