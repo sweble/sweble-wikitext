@@ -10,7 +10,7 @@
   <packaging>jar</packaging>
 
   <name>SWC - XPath Example</name>
-  <url>http://osr.informatik.uni-erlangen.de</url>
+  <url>http://osr.cs.fau.de</url>
   <inceptionYear>2011</inceptionYear>
   <description>
     An example project that contains a simple application that is able to parse
@@ -173,7 +173,7 @@
       </snapshots>
       <id>osr-public-snapshots-repo</id>
       <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
     </repository>
   </repositories>
 
@@ -189,7 +189,7 @@
       </snapshots>
       <id>osr-public-plugin-snapshots-repo</id>
       <name>OSR Public Plugin Snapshots Repository</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
     </pluginRepository>
   </pluginRepositories>
 
