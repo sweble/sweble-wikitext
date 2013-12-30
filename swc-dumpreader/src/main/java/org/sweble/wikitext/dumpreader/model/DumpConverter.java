@@ -75,12 +75,20 @@ public class DumpConverter
 			{
 				revisions.add(convertToRevision_0_5(item));
 			}
+			// We're ignoring:
+			// - UploadItem
+			// - LogItem
 		}
+		
+		// We're ignoring:
+		// - getDiscussionthreadinginfo()
+		// - getRestrictions()
+		
 		return new Page(
 				page.getId(),
 				null,
 				page.getTitle(),
-				page.getRedirect() != null,
+				(page.getRedirect() != null) ? "" : null,
 				revisions);
 	}
 	
@@ -99,36 +107,43 @@ public class DumpConverter
 				revision.getText();
 		
 		Contributor contributor_ = null;
+		String contributorIp = null;
 		if (contributor != null)
 		{
-			contributor_ = new Contributor(
-					contributor.getId(),
-					contributor.getIp(),
-					contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED,
-					contributor.getUsername());
+			if (contributor.getIp() == null)
+			{
+				contributor_ = new Contributor(
+						contributor.getId(),
+						contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED,
+						contributor.getUsername());
+			}
+			else
+			{
+				contributorIp = contributor.getIp();
+			}
 		}
 		
-		Comment comment_ = null;
+		boolean commentDeleted = false;
+		String commentText = null;
 		if (comment != null)
 		{
-			comment_ = new Comment(
-					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED,
-					comment.getValue());
+			commentDeleted =
+					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED;
+			commentText = comment.getValue();
 		}
 		
-		Text text_ = null;
+		boolean textDeleted = false;
+		String textText = null;
 		if (text != null)
 		{
-			BigInteger textIdBi = null;
-			String textId = text.getId();
-			if (textId != null)
-				textIdBi = new BigInteger(textId);
+			// We ignore:
+			// - getBytes
+			// - getId
+			// - getSpace
 			
-			text_ = new Text(
-					textIdBi,
-					text.getBytes(),
-					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED,
-					text.getValue());
+			textDeleted =
+					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED;
+			textText = text.getValue();
 		}
 		
 		DateTime revisionTimestampDt = null;
@@ -138,11 +153,18 @@ public class DumpConverter
 		
 		return new Revision(
 				revision.getId(),
+				new BigInteger("-1"),
 				revisionTimestampDt,
 				revision.getMinor() != null,
 				contributor_,
-				comment_,
-				text_);
+				contributorIp,
+				commentText,
+				commentDeleted,
+				textText,
+				null,
+				textDeleted,
+				null,
+				null);
 	}
 	
 	// =========================================================================
@@ -158,12 +180,25 @@ public class DumpConverter
 			{
 				revisions.add(convertToRevision_0_6(item));
 			}
+			// We're ignoring:
+			// - UploadItem
+			// - LogItem
 		}
+		
+		// We're ignoring:
+		// - getDiscussionthreadinginfo()
+		// - getRestrictions()
+		// - getSha1()
+		
+		String redirectTitle = null;
+		if (page.getRedirect() != null)
+			redirectTitle = page.getRedirect().getTitle();
+		
 		return new Page(
 				page.getId(),
 				page.getNs(),
 				page.getTitle(),
-				page.getRedirect() != null,
+				redirectTitle,
 				revisions);
 	}
 	
@@ -182,36 +217,43 @@ public class DumpConverter
 				revision.getText();
 		
 		Contributor contributor_ = null;
+		String contributorIp = null;
 		if (contributor != null)
 		{
-			contributor_ = new Contributor(
-					contributor.getId(),
-					contributor.getIp(),
-					contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED,
-					contributor.getUsername());
+			if (contributor.getIp() == null)
+			{
+				contributor_ = new Contributor(
+						contributor.getId(),
+						contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED,
+						contributor.getUsername());
+			}
+			else
+			{
+				contributorIp = contributor.getIp();
+			}
 		}
 		
-		Comment comment_ = null;
+		boolean commentDeleted = false;
+		String commentText = null;
 		if (comment != null)
 		{
-			comment_ = new Comment(
-					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED,
-					comment.getValue());
+			commentDeleted =
+					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED;
+			commentText = comment.getValue();
 		}
 		
-		Text text_ = null;
+		boolean textDeleted = false;
+		String textText = null;
 		if (text != null)
 		{
-			BigInteger textIdBi = null;
-			String textId = text.getId();
-			if (textId != null)
-				textIdBi = new BigInteger(textId);
+			// We ignore:
+			// - getBytes
+			// - getId
+			// - getSpace
 			
-			text_ = new Text(
-					textIdBi,
-					text.getBytes(),
-					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED,
-					text.getValue());
+			textDeleted =
+					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED;
+			textText = text.getValue();
 		}
 		
 		DateTime revisionTimestampDt = null;
@@ -221,11 +263,18 @@ public class DumpConverter
 		
 		return new Revision(
 				revision.getId(),
+				new BigInteger("-1"),
 				revisionTimestampDt,
 				revision.getMinor() != null,
 				contributor_,
-				comment_,
-				text_);
+				contributorIp,
+				commentText,
+				commentDeleted,
+				textText,
+				revision.getSha1(),
+				textDeleted,
+				null,
+				null);
 	}
 	
 	// =========================================================================
@@ -241,12 +290,23 @@ public class DumpConverter
 			{
 				revisions.add(convertToRevision_0_7(item));
 			}
+			// We're ignoring:
+			// - UploadItem
 		}
+		
+		// We're ignoring:
+		// - getDiscussionthreadinginfo()
+		// - getRestrictions()
+		
+		String redirectTitle = null;
+		if (page.getRedirect() != null)
+			redirectTitle = page.getRedirect().getTitle();
+		
 		return new Page(
 				page.getId(),
 				page.getNs(),
 				page.getTitle(),
-				page.getRedirect() != null,
+				redirectTitle,
 				revisions);
 	}
 	
@@ -265,36 +325,43 @@ public class DumpConverter
 				revision.getText();
 		
 		Contributor contributor_ = null;
+		String contributorIp = null;
 		if (contributor != null)
 		{
-			contributor_ = new Contributor(
-					contributor.getId(),
-					contributor.getIp(),
-					contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED,
-					contributor.getUsername());
+			if (contributor.getIp() == null)
+			{
+				contributor_ = new Contributor(
+						contributor.getId(),
+						contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED,
+						contributor.getUsername());
+			}
+			else
+			{
+				contributorIp = contributor.getIp();
+			}
 		}
 		
-		Comment comment_ = null;
+		boolean commentDeleted = false;
+		String commentText = null;
 		if (comment != null)
 		{
-			comment_ = new Comment(
-					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED,
-					comment.getValue());
+			commentDeleted =
+					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED;
+			commentText = comment.getValue();
 		}
 		
-		Text text_ = null;
+		boolean textDeleted = false;
+		String textText = null;
 		if (text != null)
 		{
-			BigInteger textIdBi = null;
-			String textId = text.getId();
-			if (textId != null)
-				textIdBi = new BigInteger(textId);
+			// We ignore:
+			// - getBytes
+			// - getId
+			// - getSpace
 			
-			text_ = new Text(
-					textIdBi,
-					text.getBytes(),
-					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED,
-					text.getValue());
+			textDeleted =
+					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED;
+			textText = text.getValue();
 		}
 		
 		DateTime revisionTimestampDt = null;
@@ -304,11 +371,18 @@ public class DumpConverter
 		
 		return new Revision(
 				revision.getId(),
+				revision.getParentid(),
 				revisionTimestampDt,
 				revision.getMinor() != null,
 				contributor_,
-				comment_,
-				text_);
+				contributorIp,
+				commentText,
+				commentDeleted,
+				textText,
+				revision.getSha1(),
+				textDeleted,
+				null,
+				null);
 	}
 	
 	// =========================================================================
@@ -324,12 +398,23 @@ public class DumpConverter
 			{
 				revisions.add(convertToRevision_0_8(item));
 			}
+			// We're ignoring:
+			// - UploadItem
 		}
+		
+		// We're ignoring:
+		// - getDiscussionthreadinginfo()
+		// - getRestrictions()
+		
+		String redirectTitle = null;
+		if (page.getRedirect() != null)
+			redirectTitle = page.getRedirect().getTitle();
+		
 		return new Page(
 				page.getId(),
 				page.getNs(),
 				page.getTitle(),
-				page.getRedirect() != null,
+				redirectTitle,
 				revisions);
 	}
 	
@@ -348,36 +433,43 @@ public class DumpConverter
 				revision.getText();
 		
 		Contributor contributor_ = null;
+		String contributorIp = null;
 		if (contributor != null)
 		{
-			contributor_ = new Contributor(
-					contributor.getId(),
-					contributor.getIp(),
-					contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED,
-					contributor.getUsername());
+			if (contributor.getIp() == null)
+			{
+				contributor_ = new Contributor(
+						contributor.getId(),
+						contributor.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED,
+						contributor.getUsername());
+			}
+			else
+			{
+				contributorIp = contributor.getIp();
+			}
 		}
 		
-		Comment comment_ = null;
+		boolean commentDeleted = false;
+		String commentText = null;
 		if (comment != null)
 		{
-			comment_ = new Comment(
-					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED,
-					comment.getValue());
+			commentDeleted =
+					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED;
+			commentText = comment.getValue();
 		}
 		
-		Text text_ = null;
+		boolean textDeleted = false;
+		String textText = null;
 		if (text != null)
 		{
-			BigInteger textIdBi = null;
-			String textId = text.getId();
-			if (textId != null)
-				textIdBi = new BigInteger(textId);
+			// We ignore:
+			// - getBytes
+			// - getId
+			// - getSpace
 			
-			text_ = new Text(
-					textIdBi,
-					text.getBytes(),
-					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED,
-					text.getValue());
+			textDeleted =
+					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED;
+			textText = text.getValue();
 		}
 		
 		DateTime revisionTimestampDt = null;
@@ -385,12 +477,30 @@ public class DumpConverter
 		if (revisionTimestamp != null)
 			revisionTimestampDt = new DateTime(revisionTimestamp.toGregorianCalendar());
 		
+		/*
+		if (!"text/x-wiki".equalsIgnoreCase(revision.getFormat()))
+			throw new UnsupportedDumpFormat("revision/format = " + revision.getFormat());
+		
+		if (!"wikitext".equalsIgnoreCase(revision.getModel()))
+			throw new UnsupportedDumpFormat("revision/model = " + revision.getModel());
+		*/
+		
+		String format = revision.getFormat();
+		String model = revision.getModel();
+		
 		return new Revision(
 				revision.getId(),
+				revision.getParentid(),
 				revisionTimestampDt,
 				revision.getMinor() != null,
 				contributor_,
-				comment_,
-				text_);
+				contributorIp,
+				commentText,
+				commentDeleted,
+				textText,
+				revision.getSha1(),
+				textDeleted,
+				format,
+				model);
 	}
 }

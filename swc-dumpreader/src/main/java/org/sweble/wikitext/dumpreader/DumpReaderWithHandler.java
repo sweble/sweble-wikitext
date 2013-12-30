@@ -14,45 +14,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.dumpreader.model;
 
-import java.io.Serializable;
+package org.sweble.wikitext.dumpreader;
 
-public class Comment
-		implements
-			Serializable
+import java.io.InputStream;
+import java.nio.charset.Charset;
+
+import org.apache.log4j.Logger;
+
+public class DumpReaderWithHandler
+		extends
+			DumpReader
 {
-	private static final long serialVersionUID = 1L;
-	
-	private final boolean deleted;
-	
-	private final String value;
+	private final DumpReaderListener listener;
 	
 	// =========================================================================
 	
-	public Comment(boolean deleted, String value)
+	public DumpReaderWithHandler(
+			InputStream is,
+			Charset encoding,
+			DumpReaderListener listener,
+			String url,
+			Logger logger,
+			boolean useSchema) throws Exception
 	{
-		this.deleted = deleted;
-		this.value = value;
-	}
-	
-	// =========================================================================
-	
-	public boolean isDeleted()
-	{
-		return deleted;
-	}
-	
-	public String getValue()
-	{
-		return value;
+		super(is, encoding, url, logger, useSchema);
+		this.listener = listener;
 	}
 	
 	// =========================================================================
 	
 	@Override
-	public String toString()
+	protected void processPage(Object mediaWiki, Object page) throws Exception
 	{
-		return "Comment [deleted=" + deleted + ", value=" + value + "]";
+		listener.handlePage(mediaWiki, page);
+	}
+	
+	@Override
+	protected boolean processRevision(Object page, Object revision) throws Exception
+	{
+		return listener.handleRevisionOrUploadOrLogitem(page, revision);
 	}
 }

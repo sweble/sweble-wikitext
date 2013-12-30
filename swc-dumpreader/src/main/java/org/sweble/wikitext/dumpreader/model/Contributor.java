@@ -27,22 +27,16 @@ public class Contributor
 	
 	private final BigInteger id;
 	
-	private final String ip;
-	
 	private final boolean deleted;
 	
 	private final String username;
 	
 	// =========================================================================
 	
-	public Contributor(
-			BigInteger id,
-			String ip,
-			boolean deleted,
-			String username)
+	public Contributor(BigInteger id, boolean deleted, String username)
 	{
+		super();
 		this.id = id;
-		this.ip = ip;
 		this.deleted = deleted;
 		this.username = username;
 	}
@@ -52,11 +46,6 @@ public class Contributor
 	public BigInteger getId()
 	{
 		return id;
-	}
-	
-	public String getIp()
-	{
-		return ip;
 	}
 	
 	public boolean isDeleted()
@@ -74,6 +63,6 @@ public class Contributor
 	@Override
 	public String toString()
 	{
-		return "Contributor [id=" + id + ", ip=" + ip + ", deleted=" + deleted + ", username=" + username + "]";
+		return "Contributor [id=" + id + ", deleted=" + deleted + ", username=" + username + "]";
 	}
 }

@@ -31,11 +31,9 @@ import javax.xml.transform.stream.StreamSource;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Test;
-import org.sweble.wikitext.dumpreader.model.Comment;
 import org.sweble.wikitext.dumpreader.model.Contributor;
 import org.sweble.wikitext.dumpreader.model.Page;
 import org.sweble.wikitext.dumpreader.model.Revision;
-import org.sweble.wikitext.dumpreader.model.Text;
 import org.xml.sax.SAXException;
 
 public class TestDumpReader_0_8_Fragments
@@ -123,28 +121,27 @@ public class TestDumpReader_0_8_Fragments
 	private void compare(Revision rev)
 	{
 		assertEquals(BigInteger.valueOf(123456789), rev.getId());
+		assertEquals(BigInteger.valueOf(987654321), rev.getParentId());
 		assertTrue(rev.isMinor());
 		
-		{
-			Comment comment = rev.getComment();
-			assertFalse(comment.isDeleted());
-			assertEquals("COMMENT", comment.getValue());
-		}
+		assertFalse(rev.isCommentDeleted());
+		assertEquals("COMMENT", rev.getCommentText());
+		
+		assertFalse(rev.isTextDeleted());
+		assertEquals("TEXT", rev.getText());
+		assertEquals("abcdfeghijklmnopqrstuvwxyz01234", rev.getTextSha1());
+		
+		assertEquals("text/x-wiki", rev.getFormat());
+		
+		assertEquals("wikitext", rev.getModel());
+		
+		assertNull(rev.getContributorIp());
 		
 		{
 			Contributor contrib = rev.getContributor();
 			assertFalse(contrib.isDeleted());
 			assertEquals(BigInteger.valueOf(987654321), contrib.getId());
-			assertNull(contrib.getIp());
 			assertEquals("USERNAME", contrib.getUsername());
-		}
-		
-		{
-			Text text = rev.getText();
-			assertNull(text.getBytes());
-			assertFalse(text.isDeleted());
-			assertNull(text.getId());
-			assertEquals("TEXT", text.getValue());
 		}
 		
 		{

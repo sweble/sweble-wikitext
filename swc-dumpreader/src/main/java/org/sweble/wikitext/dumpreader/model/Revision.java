@@ -29,32 +29,60 @@ public class Revision
 	
 	private final BigInteger id;
 	
+	private final BigInteger parentId;
+	
 	private final DateTime timestamp;
 	
 	private final boolean minor;
 	
 	private final Contributor contributor;
 	
-	private final Comment comment;
+	private final String contributorIp;
 	
-	private final Text text;
+	private final String commentText;
+	
+	private final boolean commentDeleted;
+	
+	private final String text;
+	
+	private final String textSha1;
+	
+	private final boolean textDeleted;
+	
+	private final String format;
+	
+	private final String model;
 	
 	// =========================================================================
 	
 	public Revision(
 			BigInteger id,
+			BigInteger parentId,
 			DateTime timestamp,
 			boolean minor,
 			Contributor contributor,
-			Comment comment,
-			Text text)
+			String contributorIp,
+			String commentText,
+			boolean commentDeleted,
+			String text,
+			String textSha1,
+			boolean textDeleted,
+			String format,
+			String model)
 	{
 		this.id = id;
+		this.parentId = parentId;
 		this.timestamp = timestamp;
 		this.minor = minor;
 		this.contributor = contributor;
-		this.comment = comment;
+		this.contributorIp = contributorIp;
+		this.commentText = commentText;
+		this.commentDeleted = commentDeleted;
 		this.text = text;
+		this.textSha1 = textSha1;
+		this.textDeleted = textDeleted;
+		this.format = format;
+		this.model = model;
 	}
 	
 	// =========================================================================
@@ -62,6 +90,11 @@ public class Revision
 	public BigInteger getId()
 	{
 		return id;
+	}
+	
+	public BigInteger getParentId()
+	{
+		return parentId;
 	}
 	
 	public DateTime getTimestamp()
@@ -79,14 +112,44 @@ public class Revision
 		return contributor;
 	}
 	
-	public Comment getComment()
+	public String getContributorIp()
 	{
-		return comment;
+		return contributorIp;
 	}
 	
-	public Text getText()
+	public String getCommentText()
+	{
+		return commentText;
+	}
+	
+	public boolean isCommentDeleted()
+	{
+		return commentDeleted;
+	}
+	
+	public String getText()
 	{
 		return text;
+	}
+	
+	public String getTextSha1()
+	{
+		return textSha1;
+	}
+	
+	public boolean isTextDeleted()
+	{
+		return textDeleted;
+	}
+	
+	public String getFormat()
+	{
+		return format;
+	}
+	
+	public String getModel()
+	{
+		return model;
 	}
 	
 	// =========================================================================
@@ -94,6 +157,6 @@ public class Revision
 	@Override
 	public String toString()
 	{
-		return "Revision [id=" + id + ", timestamp=" + timestamp + ", minor=" + minor + ", contributor=" + contributor + ", comment=" + comment + ", text=" + text + "]";
+		return "Revision [id=" + id + ", parentId=" + parentId + ", timestamp=" + timestamp + ", minor=" + minor + ", contributor=" + contributor + ", contributorIp=" + contributorIp + ", commentText=" + commentText + ", commentDeleted=" + commentDeleted + ", text=" + text + ", textSha1=" + textSha1 + ", textDeleted=" + textDeleted + "]";
 	}
 }

@@ -45,8 +45,8 @@
       <comment>COMMENT</comment>
       <text xml:space="preserve">TEXT</text>
       <sha1>abcdfeghijklmnopqrstuvwxyz01234</sha1>
-      <model>MODEL</model>
-      <format>text/fantasy</format>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
     </revision>
   </page>
 </mediawiki>

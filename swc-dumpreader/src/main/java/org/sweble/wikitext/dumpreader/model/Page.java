@@ -18,7 +18,6 @@ package org.sweble.wikitext.dumpreader.model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.Collections;
 import java.util.List;
 
 public class Page
@@ -33,7 +32,7 @@ public class Page
 	
 	private final String title;
 	
-	private final boolean redirect;
+	private final String redirectTitle;
 	
 	private final List<Revision> revisions;
 	
@@ -43,14 +42,15 @@ public class Page
 			BigInteger id,
 			BigInteger namespace,
 			String title,
-			boolean redirect,
+			String redirectTitle,
 			List<Revision> revisions)
 	{
+		super();
 		this.id = id;
 		this.namespace = namespace;
 		this.title = title;
-		this.redirect = redirect;
-		this.revisions = Collections.unmodifiableList(revisions);
+		this.redirectTitle = redirectTitle;
+		this.revisions = revisions;
 	}
 	
 	// =========================================================================
@@ -72,7 +72,12 @@ public class Page
 	
 	public boolean isRedirect()
 	{
-		return redirect;
+		return redirectTitle != null;
+	}
+	
+	public String getRedirectTitle()
+	{
+		return redirectTitle;
 	}
 	
 	public List<Revision> getRevisions()
@@ -85,6 +90,6 @@ public class Page
 	@Override
 	public String toString()
 	{
-		return "Page [id=" + id + ", namespace=" + namespace + ", title=" + title + ", redirect=" + redirect + ", revisions=" + revisions + "]";
+		return "Page [id=" + id + ", namespace=" + namespace + ", title=" + title + ", redirectTitle=" + redirectTitle + ", revisions=" + revisions + "]";
 	}
 }

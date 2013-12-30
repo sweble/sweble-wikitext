@@ -155,10 +155,10 @@ public class TestDumpReader_0_8
 						assertEquals("abcdfeghijklmnopqrstuvwxyz01234", new String(item.getSha1().getBytes()));
 						
 						assertNotNull(item.getModel());
-						assertEquals("MODEL", item.getModel());
+						assertEquals("wikitext", item.getModel());
 						
 						assertNotNull(item.getFormat());
-						assertEquals("text/fantasy", item.getFormat());
+						assertEquals("text/x-wiki", item.getFormat());
 						
 						{
 							XMLGregorianCalendar ts = item.getTimestamp();
