@@ -62,6 +62,16 @@
       <version>1.0</version>
     </dependency>
 
+    <!-- Apache Xerces -->
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>xml-resolver</groupId>
+      <artifactId>xml-resolver</artifactId>
+    </dependency>
+
     <!-- Utils -->
     <dependency>
       <groupId>de.fau.cs.osr.utils</groupId>

@@ -45,6 +45,8 @@
     <!-- Dependency versions -->
     <version.dep.rats-runtime>1.15.0</version.dep.rats-runtime>
     <version.dep.log4j>1.2.14</version.dep.log4j>
+    <version.dep.xerces>2.10.0</version.dep.xerces>
+    <version.dep.xml-resolver>1.2</version.dep.xml-resolver>
 
     <!-- Plugin dependency versions -->
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
@@ -64,6 +66,18 @@
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
         <version>${version.dep.log4j}</version>
+      </dependency>
+
+      <!-- Apache Xerces -->
+      <dependency>
+        <groupId>xerces</groupId>
+        <artifactId>xercesImpl</artifactId>
+        <version>${version.dep.xerces}</version>
+      </dependency>
+      <dependency>
+        <groupId>xml-resolver</groupId>
+        <artifactId>xml-resolver</artifactId>
+        <version>${version.dep.xml-resolver}</version>
       </dependency>
 
       <!-- Utils -->
