@@ -154,6 +154,12 @@ public class SimpleParserConfig
 	}
 
 	@Override
+	public boolean isRedirectKeyword(String keyword)
+	{
+		return keyword.equalsIgnoreCase("#redirect");
+	}
+
+	@Override
 	public String getInternalLinkPrefixPattern()
 	{
 		// Doesn't make that much sense, but needed for testing ...

@@ -85,6 +85,9 @@ public class SimpleWikiConfiguration
 	
 	private Interwiki localInterwiki = null;
 	
+	private final HashMap<String, MagicWord> magicWords =
+			new HashMap<String, MagicWord>();
+	
 	private final HashMap<String, MagicWord> magicWordsByAlias =
 			new HashMap<String, MagicWord>();
 	
@@ -293,6 +296,17 @@ public class SimpleWikiConfiguration
 	}
 	
 	// =========================================================================
+
+	@Override
+	public boolean isRedirectKeyword(String keyword)
+	{
+		MagicWord mw = magicWords.get("redirect");
+		if (mw == null)
+			return false;
+		return mw.hasAlias(keyword);
+	}
+	
+	// =========================================================================
 	
 	public Interwiki addInterwiki(Interwiki interwiki)
 	{
@@ -430,6 +444,8 @@ public class SimpleWikiConfiguration
 				        magicWord.getName(),
 				        alias);
 		*/
+		
+		magicWords.put(magicWord.getName(), magicWord);
 		
 		// FIXME: Is lower case comparison the right way for magic words?
 		//        See also: getMagicWord()

@@ -18,9 +18,12 @@
 package org.sweble.wikitext.engine;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.sweble.wikitext.engine.config.MagicWord;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.lazy.LinkTargetException;
 
@@ -70,6 +73,50 @@ public class CompilerTest
 						"    Text(\" as one\")\n" +
 						"  ])\n" +
 						"])\n",
+				AstPrinter.print(cp.getPage()));
+	}
+
+	@Test
+	public void testRedirect()
+			throws LinkTargetException, IOException, CompilerException
+	{
+		CompiledPage cp = postprocess("RedirectMe", false);
+		Assert.assertEquals(
+				"Page([\n"+
+				"  Paragraph([\n"+
+				"    Redirect(\n"+
+				"      Properties:\n"+
+				"            RTD = RtData: [0] = \"#REDIRECT[[WhereTheWildRosesGrow]]\"\n"+
+				"        {N} target = \"WhereTheWildRosesGrow\"\n"+
+				"    )\n"+
+				"  ])\n"+
+				"])\n",
+				AstPrinter.print(cp.getPage()));
+	}
+
+	@Test
+	public void testChineseRedirect()
+			throws LinkTargetException, IOException, CompilerException
+	{
+		getConfig().addMagicWord(
+				new MagicWord(
+						"redirect",
+						false,
+						new HashSet<String>(Arrays.asList(
+								"#redirect",
+								"#重定向"))));
+
+		CompiledPage cp = postprocess("RedirectMeChinese", false);
+		Assert.assertEquals(
+				"Page([\n"+
+				"  Paragraph([\n"+
+				"    Redirect(\n"+
+				"      Properties:\n"+
+				"            RTD = RtData: [0] = \"#\\u91CD\\u5B9A\\u5411[[WhereTheWildRosesGrow]]\"\n"+
+				"        {N} target = \"WhereTheWildRosesGrow\"\n"+
+				"    )\n"+
+				"  ])\n"+
+				"])\n",
 				AstPrinter.print(cp.getPage()));
 	}
 }

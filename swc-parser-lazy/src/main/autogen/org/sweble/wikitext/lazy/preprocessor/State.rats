@@ -68,6 +68,11 @@ body
   {
     return getState().hasAtLeastTemplateBraces(count);
   }
+
+  public boolean isRedirectKeyword(String keyword)
+  {
+    return getState().isRedirectKeyword(keyword);
+  }
 }
 
 option stateful(LazyPreprocessorState);

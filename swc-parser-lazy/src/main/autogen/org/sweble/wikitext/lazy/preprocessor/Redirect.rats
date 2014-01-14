@@ -45,18 +45,18 @@ import org.sweble.wikitext.lazy.parser.LinkTarget;
 // -- Redirect -----------------------------------------------------------------
 
 AstNode Redirect =
-  ws0:pWsStar '#' keyword:RedirectKeyword ws1:pWsStar target:RedirectLink
+  ws0:pWsStar keyword:RedirectKeyword &{ isRedirectKeyword(keyword) } ws1:pWsStar target:RedirectLink
   {
     yyValue = new Redirect(target._2);
 
     if (isGatherRtData())
       addRtData(yyValue,
-          joinRt(ws0, '#', keyword, ws1, target._1, target._2, target._3));
+          joinRt(ws0, keyword, ws1, target._1, target._2, target._3));
   }
 ;
 
 private inline String RedirectKeyword =
-  [Rr][Ee][Dd][Ii][Rr][Ee][Cc][Tt]
+  ( ![\u0000-\u0020] ![!] !["] ![$] ![%] ![&] !['] ![(] ![)] ![*+,./:;<=>?@\[\\\]^`{|}~\u007F] _ )+
 ;
 
 private inline Tuple3<String, String, String> RedirectLink =
