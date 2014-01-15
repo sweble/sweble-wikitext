@@ -77,6 +77,16 @@
         </configuration>
       </plugin>
 
+      <!-- We don't want post phase. However, best we can do is settle with validate -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-archetype-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <archetypePostPhase>validate</archetypePostPhase>
+        </configuration>
+      </plugin>
+
       <!-- Copy libraries to target/lib (needed by .jar package) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

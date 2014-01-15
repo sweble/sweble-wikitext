@@ -98,6 +98,8 @@ function mvn_get_pom_variable() {
 
   set +e
   CMD="$MVN help:evaluate -Dexpression=\"$VARIABLE\""
+  echo $( pwd ) 1>&2
+  echo "+ $CMD" 1>&2
   OUTPUT=$( eval $CMD 2>&1 )
   RESULT=$?
   set -e
@@ -119,7 +121,10 @@ function mvn_get_pom_variable() {
 function do_mvn() {
   echo
   echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MVN"
-  eval $MVN "$@"
+  echo $( pwd ) 1>&2
+  ( set -vx
+      eval $MVN "$@"
+  )
   echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MVN"
   echo
 }
@@ -151,6 +156,8 @@ function mvn_get_dependency_version() {
 
   set +e
   CMD="$MVN -N dependency:list"
+  echo $( pwd ) 1>&2
+  echo "+ $CMD" 1>&2
   OUTPUT=$( eval $CMD 2>&1 )
   RESULT=$?
   set -e
@@ -188,6 +195,8 @@ function mvn_download_artifact() {
     -Dpackaging=jar
     -Dclassifier=${CLASSIFIER}
     -Ddest=\"${TARGETDIR}/${JAR}\""
+  echo $( pwd ) 1>&2
+  echo "+ $CMD" 1>&2
   OUTPUT=$( eval $CMD 2>&1 )
   RESULT=$?
   set -e
@@ -204,6 +213,8 @@ function mvn_copy_dependencies() {
   set +e
   CMD="$MVN org.apache.maven.plugins:maven-dependency-plugin:2.4:copy-dependencies \
     -DoutputDirectory=\"${TARGETDIR}\""
+  echo $( pwd ) 1>&2
+  echo "+ $CMD" 1>&2
   OUTPUT=$( eval $CMD 2>&1 )
   RESULT=$?
   set -e

@@ -47,7 +47,7 @@ pushd "$PRJ" &>/dev/null
 
   TITLE=$( basename "${WDIR}" )
   JARPRJ="${WDIR}/target/generated-sources/${TITLE}-jar"
-  ZIP="${WDIR}/target/${TITLE}-jar.zip"
+  ZIP="${WDIR}/target/${TITLE}-eclipse-project.zip"
 
   rm -rf "$LOG" "$JARPRJ" "$ZIP"
 
