@@ -324,18 +324,30 @@ private inline WtLinkOptions OptionsAndTitle =
 ;
 
 private transient WtLinkOptions LinkOptionStar =
-  options:( void:'|' LinkOptionChoice &( '|' / "]]" ) )*
+  options:( void:'|' LinkOptionChoice )*
   {
     yyValue = nf.linkOpts(nf.list(options));
   }
 ;
 
+/* Let's try to not make this stupid mistake again:
+ * The '''  &( '|' / "]]" ) ''' part has to be listed for each alternative and
+ * NOT after the whole LinkOptionChoice production to make sure, that the other
+ * alternatives are also tried first. The bug was introduced last in commit
+ * 0449049309cfb3706561e6ddd6655d967b1bbcf3
+ */
 private inline WtNode LinkOptionChoice =
-    LinkOptionResize
-  / LinkOptionKeyword
-  / LinkOptionNameValue
-  / LinkOptionUnresolved
-  / LinkOptionTitle
+    yyValue:LinkOptionResize &( '|' / "]]" )
+    {
+      getLinkBuilder().addOption((WtLinkOptionResize) yyValue);
+    }
+  / yyValue:LinkOptionKeyword &( '|' / "]]" )
+    {
+      getLinkBuilder().addOption((WtLinkOptionKeyword) yyValue);
+    }
+  / LinkOptionNameValue &( '|' / "]]" )
+  / LinkOptionUnresolved &( '|' / "]]" )
+  / LinkOptionTitle &( '|' / "]]" )
 ;
 
 
@@ -358,8 +370,6 @@ private WtLinkOptionResize LinkOptionResize =
       yyValue = setRtd(
         nf.loResize(w, -1),
         '|', rt0, width, rt1, "px", rt2);
-
-      getLinkBuilder().addOption(yyValue);
     }
   / rt0:pExtWsStar width:DigitPlus 'x' height:DigitPlus? rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -376,8 +386,6 @@ private WtLinkOptionResize LinkOptionResize =
       yyValue = setRtd(
         nf.loResize(w, h),
         '|', rt0, width, 'x', height, rt1, "px", rt2);
-
-      getLinkBuilder().addOption(yyValue);
     }
   / rt0:pExtWsStar 'x' height:DigitPlus rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -393,8 +401,6 @@ private WtLinkOptionResize LinkOptionResize =
       yyValue = setRtd(
         nf.loResize(-1, h),
         '|', rt0, 'x', height, rt1, "px", rt2);
-
-      getLinkBuilder().addOption(yyValue);
     }
 ;
 
@@ -409,8 +415,6 @@ private WtLinkOptionKeyword LinkOptionKeyword =
     yyValue = setRtd(
       nf.loKeyword(keyword),
       '|', rt0, keyword, rt1);
-
-    getLinkBuilder().addOption(yyValue);
   }
 ;
 
