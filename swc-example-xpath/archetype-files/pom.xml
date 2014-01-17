@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -8,7 +26,6 @@
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
     <version>${SWEBLE_WIKITEXT_VERSION}</version>
-    <!--<relativePath>../../../../pom.xml</relativePath>-->
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - XPath Example Archetype -->
@@ -19,14 +36,30 @@
   <packaging>maven-archetype</packaging>
 
   <name>SWC - XPath Example Archetype</name>
-  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-xpath-archetype</url>
+  <url>http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext/swc-example-xpath-archetype</url>
   <inceptionYear>2011</inceptionYear>
   <description>
     An archetype that creates a simple application which is able to parse
     a page written in Wikitext and perform an XPath query on that document.
   </description>
 
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+  </properties>
+
+  <!-- ==[ Dependencies ]=================================================== -->
+
+  <dependencies>
+  </dependencies>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+  </dependencyManagement>
+
   <build>
+
     <extensions>
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
@@ -35,48 +68,43 @@
       </extension>
     </extensions>
 
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
     <!-- ==[ Plugin Configuration ]========================================= -->
 
     <plugins>
 
-      <!-- Check and format license headers -->
+      <!-- DON'T check license headers -->
       <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <skip>true</skip>
         </configuration>
       </plugin>
 
-      <!-- Maven site generation -->
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <reportPlugins>
-
-            <plugin>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-changes-plugin</artifactId>
-              <configuration>
-                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
-              </configuration>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>changes-report</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-            </plugin>
-
-          </reportPlugins>
-        </configuration>
-      </plugin>
-
     </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement>
+    </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
   </build>
 
   <!-- ==[ Reporting ]====================================================== -->
@@ -168,32 +196,6 @@
       </build>
     </profile>
 
-    <profile>
-      <id>sign</id>
-      <build>
-        <plugins>
-
-          <!-- Maven GPG Plugin -->
-          <plugin>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <!-- Sweble <info@sweble.org> -->
-              <keyname>D17B20AF</keyname>
-            </configuration>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
   </profiles>
+
 </project>

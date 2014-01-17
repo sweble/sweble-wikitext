@@ -34,10 +34,10 @@
     <breadcrumbs>
       <item name="Sweble" href="http://sweble.org" />
       <item name="Documentation" href="http://sweble.org/doc" img="" />
-      <item name="Tooling" href="http://sweble.org/sites/swc-devel/latest/tooling" img="" />
-      <item name="Sweble" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble" img="" />
-      <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext" img="" />
-      <item name="SWC - Article Cruncher" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-article-cruncher" img="" />
+      <item name="Tooling" href="http://sweble.org/sites/swc-devel/develop-latest/tooling" img="" />
+      <item name="Sweble" href="http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble" img="" />
+      <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext" img="" />
+      <item name="SWC - Article Cruncher" href="http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext/swc-article-cruncher" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>
