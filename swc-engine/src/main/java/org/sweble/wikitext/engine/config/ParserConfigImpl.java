@@ -331,6 +331,15 @@ public class ParserConfigImpl
 		return this.wikiConfig.getTagExtension(name) != null;
 	}
 	
+	@Override
+	public boolean isRedirectKeyword(String keyword)
+	{
+		I18nAliasImpl alias = this.wikiConfig.getI18nAliasById("redirect");
+		if (alias == null)
+			return false;
+		return alias.hasAlias(keyword);
+	}
+	
 	// ==[ Parsing XML elements ]===============================================
 	
 	@Override

@@ -798,6 +798,9 @@
         <i18nAlias id="protectionlevel" caseSensitive="true">
             <alias>PROTECTIONLEVEL:</alias>
         </i18nAlias>
+        <i18nAlias id="redirect" caseSensitive="false">
+            <alias>#REDIRECT</alias>
+        </i18nAlias>
         <i18nAlias id="safesubst" caseSensitive="false">
             <alias>SAFESUBST:</alias>
         </i18nAlias>

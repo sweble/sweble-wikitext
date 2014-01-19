@@ -4397,10 +4397,12 @@ public class DefaultConfigEnWp
 				"usertestwiki",
 				false,
 				Arrays.asList("USERTESTWIKI")));
+		*/
 		c.addI18nAlias(new I18nAliasImpl(
 				"redirect",
 				false,
 				Arrays.asList("#REDIRECT")));
+		/*
 		c.addI18nAlias(new I18nAliasImpl(
 				"notoc",
 				false,

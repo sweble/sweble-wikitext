@@ -328,6 +328,7 @@ public class WikiConfigImpl
 	 * getParserFunction(). The full name (e.g. " {@code CURRENTDAY}") has to be
 	 * specified as alias when specifying an alias as well as when querying the
 	 * magic word in the expansion process.</li>
+	 * <li>Redirect keyword</li>
 	 * </ul>
 	 */
 	public void addI18nAlias(I18nAliasImpl alias)
@@ -366,7 +367,11 @@ public class WikiConfigImpl
 		if (alias != null && alias.isCaseSensitive() && !alias.getAliases().contains(name))
 			alias = null;
 		return alias;
-		
+	}
+	
+	public I18nAliasImpl getI18nAliasById(String id)
+	{
+		return aliases.get(id);
 	}
 	
 	@Override

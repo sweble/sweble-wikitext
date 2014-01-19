@@ -15,19 +15,29 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.engine.config;
+package org.sweble.wikitext.engine.utils;
 
-import java.util.Set;
+import java.io.IOException;
+import java.io.Writer;
 
-public interface I18nAlias
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.utils.WtAstPrinter;
+
+import de.fau.cs.osr.ptk.common.PrinterInterface;
+
+public final class TypedWtAstPrinter
+		implements
+			PrinterInterface
 {
+	@Override
+	public String getPrintoutType()
+	{
+		return "ast";
+	}
 	
-	public abstract String getId();
-	
-	public abstract boolean isCaseSensitive();
-	
-	public abstract Set<String> getAliases();
-	
-	public abstract boolean hasAlias(String alias);
-	
+	@Override
+	public void print(Object ast, Writer out) throws IOException
+	{
+		new WtAstPrinter(out).go((WtNode) ast);
+	}
 }

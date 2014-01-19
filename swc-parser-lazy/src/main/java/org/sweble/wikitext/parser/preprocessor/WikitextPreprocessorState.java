@@ -179,4 +179,9 @@ public class WikitextPreprocessorState
 					("onlyinclude".compareTo(lcName) == 0);
 		}
 	}
+	
+	public boolean isRedirectKeyword(String keyword)
+	{
+		return config.isRedirectKeyword(keyword);
+	}
 }

@@ -200,6 +200,11 @@ public class SimpleParserConfig
 				"onlyinclude".equalsIgnoreCase(name);
 	}
 	
+	public boolean isRedirectKeyword(String keyword)
+	{
+		return keyword.equalsIgnoreCase("#redirect");
+	}
+	
 	// ==[ Parsing XML elements ]===============================================
 	
 	@Override

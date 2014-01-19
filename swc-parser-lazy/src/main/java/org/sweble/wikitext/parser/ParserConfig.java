@@ -70,6 +70,8 @@ public interface ParserConfig
 	
 	boolean isValidExtensionTagName(String name);
 	
+	boolean isRedirectKeyword(String keyword);
+	
 	// ==[ Parsing XML elements ]===============================================
 	
 	boolean isValidXmlEntityRef(String name);

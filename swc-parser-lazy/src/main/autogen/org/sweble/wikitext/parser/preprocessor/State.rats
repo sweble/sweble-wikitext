@@ -69,6 +69,11 @@ body
     return getState().hasAtLeastTemplateBraces(count);
   }
 
+  public boolean isRedirectKeyword(String keyword)
+  {
+    return getState().isRedirectKeyword(keyword);
+  }
+
   public WtNode getEntity(int id)
   {
     throw new InternalError("Entities should never occur in pre-processing!");

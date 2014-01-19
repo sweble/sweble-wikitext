@@ -101,7 +101,8 @@ public abstract class EngineIntegrationTestBase
 			String inputSubDir,
 			String expectedSubDir,
 			ExpansionCallback callback,
-			boolean forInclusion) throws IOException, LinkTargetException, EngineException
+			boolean forInclusion,
+			PrinterInterface printer) throws IOException, LinkTargetException, EngineException
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
 		
@@ -118,15 +119,13 @@ public abstract class EngineIntegrationTestBase
 				forInclusion,
 				callback);
 		
-		TypedEnginePrettyPrinter pp = new TypedEnginePrettyPrinter();
-		
-		String actual = printToString(ast.getPage(), pp);
+		String actual = printToString(ast.getPage(), printer);
 		
 		File expectedFile = TestResourcesFixture.rebase(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
-				pp.getPrintoutType(),
+				printer.getPrintoutType(),
 				true /* don't throw if file doesn't exist */);
 		
 		FileCompare cmp = new FileCompare(getResources());
@@ -136,7 +135,32 @@ public abstract class EngineIntegrationTestBase
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
+			String expectedSubDir,
+			ExpansionCallback callback,
+			boolean forInclusion) throws IOException, LinkTargetException, EngineException
+	{
+		TypedEnginePrettyPrinter printer = new TypedEnginePrettyPrinter();
+		expandPrintAndCompare(inputFile, inputSubDir, expectedSubDir, callback, forInclusion, printer);
+	}
+	
+	public void expandPrintAndCompare(
+			File inputFile,
+			String inputSubDir,
 			String expectedSubDir) throws IOException, LinkTargetException, EngineException
+	{
+		TypedEnginePrettyPrinter printer = new TypedEnginePrettyPrinter();
+		expandPrintAndCompare(
+				inputFile,
+				inputSubDir,
+				expectedSubDir,
+				printer);
+	}
+	
+	public void expandPrintAndCompare(
+			File inputFile,
+			String inputSubDir,
+			String expectedSubDir,
+			PrinterInterface printer) throws IOException, LinkTargetException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
 		
@@ -147,7 +171,8 @@ public abstract class EngineIntegrationTestBase
 				inputSubDir,
 				expectedSubDir,
 				callback,
-				forInclusion);
+				forInclusion,
+				printer);
 	}
 	
 	// =========================================================================

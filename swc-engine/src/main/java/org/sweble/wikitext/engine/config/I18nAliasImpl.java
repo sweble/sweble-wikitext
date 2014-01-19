@@ -19,6 +19,7 @@ package org.sweble.wikitext.engine.config;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -59,7 +60,7 @@ public class I18nAliasImpl
 	{
 		setId(id);
 		setCaseSensitive(caseSensitive);
-		setAliases(new TreeSet<String>(aliases));
+		setAliases(aliases);
 	}
 	
 	// =========================================================================
@@ -114,11 +115,28 @@ public class I18nAliasImpl
 	/**
 	 * Only for de-serialization, not part of public API
 	 */
-	public void setAliases(Set<String> aliases)
+	public void setAliases(Collection<String> aliases)
 	{
 		if (aliases == null)
 			throw new IllegalArgumentException();
-		this.aliases = aliases;
+		this.aliases = new TreeSet<String>(
+				new Comparator<String>()
+				{
+					@Override
+					public int compare(String o1, String o2)
+					{
+						return I18nAliasImpl.this.caseSensitive ?
+								o1.compareTo(o2) :
+								o1.compareToIgnoreCase(o2);
+					}
+				});
+		this.aliases.addAll(aliases);
+	}
+	
+	@Override
+	public boolean hasAlias(String alias)
+	{
+		return aliases.contains(alias);
 	}
 	
 	// =========================================================================
