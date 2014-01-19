@@ -157,12 +157,16 @@ EOF
 
     do_mvn install
 
-    log_info_sep
-    log_info "Generating site"
-    log_info_sep
-    log_info "Site location: ${ARCHETYPE_DST_DIR}/target/staging"
-
-    do_mvn site site:stage
+#     if [[ ! -z ${DEPLOY_EXAMPLE_ARCHETYPES-} ]]; then
+# 
+#       log_info_sep
+#       log_info "Generating site"
+#       log_info_sep
+#       log_info "Site location: ${ARCHETYPE_DST_DIR}/target/staging"
+# 
+#       do_mvn site site:stage
+# 
+#     fi
 
   popd &>/dev/null
 
@@ -202,7 +206,7 @@ EOF
       log_info "Deploying archetype"
       log_info_sep
 
-      do_mvn deploy $DEPLOY_EXAMPLE_ARCHETYPES
+      do_mvn site site:stage deploy $DEPLOY_EXAMPLE_ARCHETYPES
 
     popd &>/dev/null
 

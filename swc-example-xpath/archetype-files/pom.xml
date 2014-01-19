@@ -36,7 +36,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>SWC - XPath Example Archetype</name>
-  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-xpath-archetype</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-xpath-archetype</url>
   <inceptionYear>2011</inceptionYear>
   <description>
     An archetype that creates a simple application which is able to parse

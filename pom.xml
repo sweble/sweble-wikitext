@@ -37,7 +37,7 @@
   <packaging>pom</packaging>
 
   <name>Sweble Wikitext Components</name>
-  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext</url>
   <inceptionYear>2009</inceptionYear>
   <description>
     The Sweble Wikitext Components module provides a parser for MediaWiki's

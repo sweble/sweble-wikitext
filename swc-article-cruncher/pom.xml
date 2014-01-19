@@ -36,7 +36,7 @@
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Article Cruncher</name>
-  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-article-cruncher</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-article-cruncher</url>
   <inceptionYear>2012</inceptionYear>
   <description>
     A framework for multi-threaded processing of lots of articles.
