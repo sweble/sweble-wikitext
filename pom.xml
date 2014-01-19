@@ -37,7 +37,7 @@
   <packaging>pom</packaging>
 
   <name>Sweble</name>
-  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     The next generation Wiki platform project.
