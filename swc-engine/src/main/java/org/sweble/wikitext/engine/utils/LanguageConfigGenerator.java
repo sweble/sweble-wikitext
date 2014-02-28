@@ -1,3 +1,20 @@
+/**
+ * Author: Samy Ateia, samyateia@hotmail.de
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
 package org.sweble.wikitext.engine.utils;
 
 import java.io.IOException;
@@ -29,28 +46,6 @@ import org.xml.sax.SAXException;
 
 public class LanguageConfigGenerator
 {
-
-	/*public static void main(String[] args) throws IOException,
-		ParserConfigurationException, SAXException, JAXBException
-	{
-		
-		
-		WikiConfigImpl wikiConfig = new WikiConfigImpl();
-		
-		wikiConfig.setSiteName("English Wikipedia");
-		wikiConfig.setWikiUrl("http://en.wikipedia.org");
-		wikiConfig.setContentLang("en");
-		wikiConfig.setIwPrefix("en");
-		
-		addNamespaces(wikiConfig, wikiConfig.getInterwikiPrefix());
-		addInterwikis(wikiConfig, wikiConfig.getInterwikiPrefix());
-		addi18NAliases(wikiConfig, wikiConfig.getInterwikiPrefix());
-		
-		wikiConfig.save(new File("/home/samy/Workspace/swebleconfigurator/src/main/java/myConfigEN.xml"));
-	
-
-	}*/
-	
 	
 	public static WikiConfig generateWikiConfig(String siteName, String siteURL, String languagePrefix) throws IOException, ParserConfigurationException, SAXException
 	{
@@ -60,9 +55,16 @@ public class LanguageConfigGenerator
 		wikiConfig.setContentLang(languagePrefix);
 		wikiConfig.setIwPrefix(languagePrefix);
 		
+		DefaultConfigEnWp config = new DefaultConfigEnWp();
+		config.configureEngine(wikiConfig);
+		
 		addNamespaces(wikiConfig, wikiConfig.getInterwikiPrefix());
 		addInterwikis(wikiConfig, wikiConfig.getInterwikiPrefix());
 		addi18NAliases(wikiConfig, wikiConfig.getInterwikiPrefix());
+		
+		config.addParserFunctions(wikiConfig);	
+		config.addTagExtensions(wikiConfig);
+		
 		
 		return wikiConfig;
 	}
@@ -80,16 +82,13 @@ public class LanguageConfigGenerator
 			Node apii18NAlias = apiI18NAliases.item(i);
 			NamedNodeMap attributes = apii18NAlias.getAttributes();
 			
-			String name = attributes.getNamedItem("name").getNodeValue();
-			System.out.println("Magic word: "+name);
-			
+			String name = attributes.getNamedItem("name").getNodeValue();			
 			boolean iscaseSensitive = false;
 			Node caseSensitive = attributes.getNamedItem("case-sensitive");
 			if(caseSensitive != null)
 			{
 				iscaseSensitive = true;
 			}
-			System.out.println("cas sensitive: "+ iscaseSensitive);
 			
 			Node aliasesNode = apii18NAlias.getFirstChild();
 			NodeList aliasesList = aliasesNode.getChildNodes();
@@ -98,10 +97,8 @@ public class LanguageConfigGenerator
 			{
 				Node aliasNode = aliasesList.item(j);
 				String aliasString = aliasNode.getTextContent();
-				System.out.println("alias: "+aliasString);
 				aliases.add(aliasString);
 			}
-			System.out.println("");
 			I18nAliasImpl I18Alias = new I18nAliasImpl(name, iscaseSensitive, aliases);
 			try{
 				wikiConfig.addI18nAlias(I18Alias);
@@ -156,10 +153,8 @@ public class LanguageConfigGenerator
 		{
 			Node apiNamespace = apiNamespaces.item(i);
 			String name = apiNamespace.getTextContent();
-			System.out.println(name);
 			NamedNodeMap attributes = apiNamespace.getAttributes();
 			Integer id = new Integer(attributes.getNamedItem("id").getNodeValue());
-			System.out.println(id);
 			String canonical = "";
 			if (attributes.getNamedItem("canonical") != null)
 			{
@@ -172,14 +167,12 @@ public class LanguageConfigGenerator
 				fileNs = true;
 			}
 
-			System.out.println(canonical);
 			Node subpages = attributes.getNamedItem("subpages");
 			boolean canHaveSubpages = false;
 			if (subpages != null)
 			{
 				canHaveSubpages = true;
 			}
-			System.out.println(canHaveSubpages);
 			
 			Collection<String> aliases = new ArrayList<String>();
 			if(namespaceAliases.containsKey(id))
@@ -219,7 +212,6 @@ public class LanguageConfigGenerator
 			
 			Integer id = new Integer(attributes.getNamedItem("id").getNodeValue());
 			String aliasString = aliasNode.getTextContent();
-			System.out.println("aliasId: "+id);
 			namespaces.put(id, aliasString);
 		}
 		return namespaces;
