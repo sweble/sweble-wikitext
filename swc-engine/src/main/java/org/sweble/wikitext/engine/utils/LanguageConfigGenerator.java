@@ -1,5 +1,6 @@
 /**
- * Author: Samy Ateia, samyateia@hotmail.de
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +45,10 @@ import org.xml.sax.SAXException;
 
 
 
+/**
+ * @author Samy Ateia, samyateia@hotmail.de
+ *
+ */
 public class LanguageConfigGenerator
 {
 	
