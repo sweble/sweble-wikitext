@@ -156,6 +156,9 @@
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <header>${sweble-wikitext.etc}/license-header.txt</header>
+          <validHeaders>
+            <validHeader>${sweble-wikitext.etc}/license-header-no-copyright.txt</validHeader>
+          </validHeaders>
           <headerDefinitions>
             <headerDefinition>${sweble-wikitext.etc}/license-header-apt-style.xml</headerDefinition>
           </headerDefinitions>
@@ -170,6 +173,7 @@
           <excludes>
             <exclude>**/*.log</exclude>
             <exclude>**/.gitignore</exclude>
+            <exclude>etc/license-header-no-copyright.txt</exclude>
             <exclude>src/site/site.xml</exclude>
             <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
