@@ -1,7 +1,0 @@
-EngPage[
-	[0] = WtRedirect(
-		{A} __SKIP__ = false
-		{P} rtd = RTD[ "#REDIRECT [[" <o> "]]" ]
-		target = WtPageName[ [0] = "target" ]
-	)
-]

@@ -132,6 +132,7 @@
 
             <!-- Extra excludes for this project -->
             <exclude>**/catalog/xml.xsd</exclude>
+            <exclude>src/test/resources/**/*.ast</exclude>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/*.mwtest</exclude>
             <exclude>src/test/resources/**/Template%3*</exclude>
