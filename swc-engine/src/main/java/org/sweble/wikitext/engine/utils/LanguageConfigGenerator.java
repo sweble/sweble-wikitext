@@ -179,7 +179,9 @@ public class LanguageConfigGenerator
 			Collection<String> aliases = new ArrayList<String>();
 			if(namespaceAliases.containsKey(id))
 			{
-				aliases = (Collection<String>) namespaceAliases.getCollection(id);	
+				@SuppressWarnings("unchecked")
+				Collection<String> tmp = (Collection<String>) namespaceAliases.getCollection(id);
+				aliases = tmp;	
 			}
 			
 			NamespaceImpl namespace = new NamespaceImpl(id.intValue(), name, canonical, canHaveSubpages, fileNs, aliases);
