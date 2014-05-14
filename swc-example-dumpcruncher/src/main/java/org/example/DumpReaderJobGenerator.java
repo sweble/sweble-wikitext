@@ -18,7 +18,10 @@
 package org.example;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.concurrent.BlockingQueue;
 
 import org.sweble.wikitext.articlecruncher.Job;
@@ -57,14 +60,35 @@ public class DumpReaderJobGenerator
 		this.inTray = inTray;
 		this.jobTraces = jobTraces;
 		
-		this.dumpReader = new DumpReader(dumpFile, getLogger())
+		InputStream is = null;
+		try
 		{
-			@Override
-			protected void processPage(Object mediaWiki, Object page) throws Exception
+			is = new FileInputStream(dumpFile);
+			this.dumpReader = new DumpReader(
+					is,
+					Charset.forName("UTF8"),
+					dumpFile.getPath(),
+					getLogger(),
+					false)
 			{
-				DumpReaderJobGenerator.this.processPage(mediaWiki, page);
-			}
-		};
+				@Override
+				protected void processPage(Object mediaWiki, Object page) throws Exception
+				{
+					DumpReaderJobGenerator.this.processPage(mediaWiki, page);
+				}
+			};
+		}
+		finally
+		{
+			if (is != null)
+				try
+				{
+					is.close();
+				}
+				finally
+				{
+				}
+		}
 	}
 	
 	// =========================================================================
