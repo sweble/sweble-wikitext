@@ -148,7 +148,7 @@ public class PageTitle
 	 * Get title string suitable for links:
 	 * 
 	 * <pre>
-	 * &quot;[IW_PREFIX:][NS_PREFIX:]TITLE;
+	 * &quot;[IW_PREFIX:][NS_PREFIX:]TITLE&quot;
 	 * </pre>
 	 * 
 	 * The TITLE itself will be in normalized form (" " replaced by "_").
