@@ -21,6 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.parser.LinkTargetException.Reason;
 
 import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.XmlGrammar;
@@ -150,7 +151,7 @@ public class LinkTargetParser
 		result = StringUtils.trimUnderscores(result);
 		
 		if (result.isEmpty())
-			throw new LinkTargetException(target, "Target has empty title");
+			throw new LinkTargetException(Reason.EMPTY_TITLE, target);
 		
 		// Has the link an initial colon? Can be reset by identifyNamespaces!
 		if (result.charAt(0) == ':')
@@ -171,8 +172,9 @@ public class LinkTargetParser
 			Matcher matcher = invalidTitle.matcher(result);
 			if (matcher.find())
 				throw new LinkTargetException(
+						Reason.INVALID_ENTITIES,
 						target,
-						"The title contains invalid entities");
+						matcher.group());
 		}
 		
 		// Empty links to a namespace alone are not allowed
@@ -180,9 +182,7 @@ public class LinkTargetParser
 				this.interwiki == null &&
 				this.namespace != null)
 		{
-			throw new LinkTargetException(
-					target,
-					"A namespace alone is not a valid link target");
+			throw new LinkTargetException(Reason.ONLY_NAMESPACE, target);
 		}
 		
 		this.title = result;
@@ -217,9 +217,7 @@ public class LinkTargetParser
 					// It points to THIS wiki
 					if (result.isEmpty())
 					{
-						throw new LinkTargetException(
-								target,
-								"Empty article title!");
+						throw new LinkTargetException(Reason.NO_ARTICLE_TITLE, target);
 					}
 					else
 					{
@@ -238,9 +236,7 @@ public class LinkTargetParser
 							}
 							else if (config.isInterwikiName(nsName))
 							{
-								throw new LinkTargetException(
-										target,
-										"An interwiki name cannot be followed by another interwiki name!");
+								throw new LinkTargetException(Reason.IW_IW_LINK, target, nsName);
 							}
 						}
 					}
@@ -275,9 +271,7 @@ public class LinkTargetParser
 			{
 				nsName = matcher.group(1);
 				if ((config.isNamespace(nsName) || config.isInterwikiName(nsName)))
-					throw new LinkTargetException(
-							target,
-							"The Talk namespace in a link target may not be followed by another namespace or interwiki name");
+					throw new LinkTargetException(Reason.TALK_NS_IW_LINK, target, nsName);
 			}
 		}
 	}

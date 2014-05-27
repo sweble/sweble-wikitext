@@ -25,25 +25,76 @@ public final class LinkTargetException
 	
 	private final String title;
 	
-	public LinkTargetException(String title, String message, Throwable cause)
+	private final Reason reason;
+	
+	private String offendingSubstring;
+	
+	// =========================================================================
+	
+	public LinkTargetException(Reason reason, String title)
 	{
-		super(makeMessage(title, message), cause);
+		super(makeMessage(reason, title, null));
+		this.reason = reason;
 		this.title = title;
 	}
 	
-	public LinkTargetException(String title, String message)
+	public LinkTargetException(
+			Reason reason,
+			String title,
+			String offendingSubstring)
 	{
-		super(makeMessage(title, message));
+		super(makeMessage(reason, title, offendingSubstring));
+		this.reason = reason;
 		this.title = title;
+		this.offendingSubstring = offendingSubstring;
 	}
+	
+	// =========================================================================
 	
 	public String getTitle()
 	{
 		return title;
 	}
 	
-	private static String makeMessage(String title, String message)
+	public Reason getReason()
 	{
-		return message + ": `" + title + "'";
+		return reason;
+	}
+	
+	public String getOffendingSubstring()
+	{
+		return offendingSubstring;
+	}
+	
+	private static String makeMessage(
+			Reason reason,
+			String title,
+			String offendingSubstring)
+	{
+		return String.format(reason.getDescription(), title, offendingSubstring);
+	}
+	
+	// =========================================================================
+	
+	public static enum Reason
+	{
+		EMPTY_TITLE("Target string must not be empty"),
+		INVALID_ENTITIES("The title `%1$s' contains invalid entities: %2$s"),
+		ONLY_NAMESPACE("A namespace alone is not a valid link target: %1$s"),
+		NO_ARTICLE_TITLE("Title part of target string is empty: %1$s"),
+		IW_IW_LINK("An interwiki name cannot be followed by another interwiki name `%2$s' in target `%1$s'"),
+		TALK_NS_IW_LINK("The Talk namespace in a link target may not be followed by another namespace or interwiki name `%2$s' in target `%1$s'");
+		
+		private String description;
+		
+		private Reason(String description)
+		{
+			this.description = description;
+		}
+		
+		public String getDescription()
+		{
+			return description;
+		}
 	}
 }
