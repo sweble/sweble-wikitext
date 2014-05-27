@@ -78,7 +78,7 @@ public final class LinkTargetException
 	
 	public static enum Reason
 	{
-		EMPTY_TITLE("Target string must not be empty"),
+		EMPTY_TARGET("Target string must not be empty (or contain only characters that are reduced to whitespace)"),
 		INVALID_ENTITIES("The title `%1$s' contains invalid entities: %2$s"),
 		ONLY_NAMESPACE("A namespace alone is not a valid link target: %1$s"),
 		NO_ARTICLE_TITLE("Title part of target string is empty: %1$s"),

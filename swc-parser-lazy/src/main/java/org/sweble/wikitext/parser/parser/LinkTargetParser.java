@@ -151,7 +151,7 @@ public class LinkTargetParser
 		result = StringUtils.trimUnderscores(result);
 		
 		if (result.isEmpty())
-			throw new LinkTargetException(Reason.EMPTY_TITLE, target);
+			throw new LinkTargetException(Reason.EMPTY_TARGET, target);
 		
 		// Has the link an initial colon? Can be reset by identifyNamespaces!
 		if (result.charAt(0) == ':')
@@ -205,7 +205,7 @@ public class LinkTargetParser
 				result = matcher.group(2);
 				this.namespace = nsName;
 				
-				checkNonsAfterTalkNs(config, target, result, nsName);
+				checkNoNsAfterTalkNs(config, target, result, nsName);
 			}
 			else if (config.isInterwikiName(nsName))
 			{
@@ -232,7 +232,7 @@ public class LinkTargetParser
 								result = matcher.group(2);
 								this.namespace = nsName;
 								
-								checkNonsAfterTalkNs(config, target, result, nsName);
+								checkNoNsAfterTalkNs(config, target, result, nsName);
 							}
 							else if (config.isInterwikiName(nsName))
 							{
@@ -257,7 +257,7 @@ public class LinkTargetParser
 		return result;
 	}
 	
-	private void checkNonsAfterTalkNs(
+	private void checkNoNsAfterTalkNs(
 			ParserConfig config,
 			final String target,
 			String result,
