@@ -104,8 +104,8 @@ import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
 import de.fau.cs.osr.utils.FmtNotYetImplementedError;
 import de.fau.cs.osr.utils.StringUtils;
@@ -189,7 +189,7 @@ public class HtmlRenderer
 			p.indentAtBol();
 			
 			pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s\">%!</a>",
-					makeUrl(n.getTarget()),
+					callback.makeUrl(n.getTarget()),
 					n.getTitle());
 		}
 		else
@@ -398,7 +398,7 @@ public class HtmlRenderer
 			}
 			else if (linkUrl != null)
 			{
-				aTitle = makeUrl(linkUrl);
+				aTitle = callback.makeUrl(linkUrl);
 			}
 		}
 		if (!aTitle.isEmpty())
@@ -477,7 +477,7 @@ public class HtmlRenderer
 		if (linkTarget != null || linkUrl != null)
 		{
 			pf("<a href=\"%s\"%s%s>",
-					linkTarget != null ? LOCAL_URL + makeUrl(linkTarget) : makeUrl(linkUrl),
+					linkTarget != null ? callback.makeUrl(linkTarget) : callback.makeUrl(linkUrl),
 					aClasses,
 					aTitle);
 		}
@@ -519,7 +519,7 @@ public class HtmlRenderer
 				p.incIndent();
 				p.indent();
 				pf("<a href=\"%s\" class=\"internal\" title=\"Enlarge\"><img src=\"/mediawiki/skins/common/images/magnify-clip.png\" width=\"15\" height=\"11\" alt=\"\" /></a>",
-						LOCAL_URL + makeUrl(linkTarget));
+						callback.makeUrl(linkTarget));
 				p.decIndent();
 				p.indentln("</div>");
 				dispatch(n.getTitle());
@@ -588,10 +588,8 @@ public class HtmlRenderer
 			
 			if (n.hasTitle())
 			{
-				pt("<a href=\"%s%s%s\" class=\"new\" title=\"%s (page does not exist)\">%=%!%=</a>",
-						"/mediawiki/index.php?title=",
-						path,
-						"&amp;action=edit&amp;redlink=1",
+				pt("<a href=\"%s\" class=\"new\" title=\"%s (page does not exist)\">%=%!%=</a>",
+						callback.makeUrlMissingTarget(path),
 						title,
 						n.getPrefix(),
 						n.getTitle(),
@@ -601,10 +599,8 @@ public class HtmlRenderer
 			{
 				String linkText = makeTitleFromTarget(n, target);
 				
-				pt("<a href=\"%s%s%s\" class=\"new\" title=\"%s (page does not exist)\">%=%=%=</a>",
-						"/mediawiki/index.php?title=",
-						path,
-						"&amp;action=edit&amp;redlink=1",
+				pt("<a href=\"%s\" class=\"new\" title=\"%s (page does not exist)\">%=%=%=</a>",
+						callback.makeUrlMissingTarget(path),
 						title,
 						n.getPrefix(),
 						linkText,
@@ -617,9 +613,8 @@ public class HtmlRenderer
 			{
 				if (n.hasTitle())
 				{
-					pt("<a href=\"%s%s\" title=\"%s\">%=%!%=</a>",
-							LOCAL_URL,
-							makeUrl(target),
+					pt("<a href=\"%s\" title=\"%s\">%=%!%=</a>",
+							callback.makeUrl(target),
 							makeLinkTitle(n, target),
 							n.getPrefix(),
 							n.getTitle(),
@@ -627,9 +622,8 @@ public class HtmlRenderer
 				}
 				else
 				{
-					pt("<a href=\"%s%s\" title=\"%s\">%=%=%=</a>",
-							LOCAL_URL,
-							makeUrl(target),
+					pt("<a href=\"%s\" title=\"%s\">%=%=%=</a>",
+							callback.makeUrl(target),
 							makeLinkTitle(n, target),
 							n.getPrefix(),
 							makeTitleFromTarget(n, target),
@@ -988,7 +982,7 @@ public class HtmlRenderer
 	{
 		p.indentAtBol();
 		
-		String url = makeUrl(n);
+		String url = callback.makeUrl(n);
 		pf("<a href=\"%s\">%s</a>", url, url);
 	}
 	
@@ -1279,22 +1273,6 @@ public class HtmlRenderer
 		return targetStr;
 	}
 	
-	protected static String makeUrl(PageTitle target)
-	{
-		String page = UrlEncoding.WIKI.encode(target.getNormalizedFullTitle());
-		String f = target.getFragment();
-		if (f == null || f.isEmpty())
-			return page;
-		return page + "#" + UrlEncoding.WIKI.encode(f);
-	}
-	
-	protected String makeUrl(WtUrl linkUrl)
-	{
-		if (linkUrl.getProtocol() == "")
-			return linkUrl.getPath();
-		return linkUrl.getProtocol() + ":" + linkUrl.getPath();
-	}
-	
 	// =====================================================================
 	
 	/**
@@ -1506,8 +1484,6 @@ public class HtmlRenderer
 	}
 	
 	// =========================================================================
-	
-	protected static final String LOCAL_URL = "/mediawiki/index.php/";
 	
 	protected static final Logger logger = Logger.getLogger(HtmlRenderer.class);
 	

@@ -29,6 +29,8 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
+import org.sweble.wikitext.engine.utils.UrlEncoding;
+import org.sweble.wikitext.parser.nodes.WtUrl;
 
 import de.fau.cs.osr.utils.FileCompare;
 import de.fau.cs.osr.utils.FileContent;
@@ -107,6 +109,8 @@ public class HtmlRendererTest
 			implements
 				HtmlRendererCallback
 	{
+		protected static final String LOCAL_URL = "/mediawiki/index.php/";
+		
 		@Override
 		public boolean resourceExists(PageTitle target)
 		{
@@ -119,6 +123,32 @@ public class HtmlRendererTest
 		{
 			// TODO: Return proper media info
 			return null;
+		}
+		
+		@Override
+		public String makeUrl(PageTitle target)
+		{
+			String page = UrlEncoding.WIKI.encode(target.getNormalizedFullTitle());
+			String f = target.getFragment();
+			String url = page;
+			if (f != null && !f.isEmpty())
+				url = page + "#" + UrlEncoding.WIKI.encode(f);
+			return LOCAL_URL + "/" + url;
+		}
+		
+		@Override
+		public String makeUrl(WtUrl target)
+		{
+			if (target.getProtocol() == "")
+				return target.getPath();
+			return target.getProtocol() + ":" + target.getPath();
+		}
+		
+		@Override
+		public String makeUrlMissingTarget(String path)
+		{
+			return LOCAL_URL + "?title=" + path + "&amp;action=edit&amp;redlink=1";
+			
 		}
 	}
 }
