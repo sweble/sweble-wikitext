@@ -61,9 +61,11 @@ import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderIn
 import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderInRow;
 import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderInTableBody;
 import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderInTableText;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
+import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.visitor.VisitorInterface;
 import de.fau.cs.osr.utils.visitor.VisitorLogic;
 
@@ -77,6 +79,8 @@ import de.fau.cs.osr.utils.visitor.VisitorLogic;
  */
 public class TreeBuilder
 {
+	static final boolean DEBUG = false;
+	
 	private static final WtNode MARKER = null;
 	
 	private static final WtNode BOOKMARK = new Bookmark();
@@ -141,8 +145,38 @@ public class TreeBuilder
 	
 	// =========================================================================
 	
+	private int dbgIndent = 0;
+	
+	void dbgIn(String format, Object... args)
+	{
+		System.out.println(StringUtils.indent(
+				String.format(format, args),
+				StringUtils.strrep(' ', dbgIndent * 4)));
+		++dbgIndent;
+	}
+	
+	void dbg(String format, Object... args)
+	{
+		System.out.println(StringUtils.indent(
+				String.format(format, args),
+				StringUtils.strrep(' ', dbgIndent * 4)));
+	}
+	
+	void dbgOut(String format, Object... args)
+	{
+		--dbgIndent;
+		System.out.println(StringUtils.indent(
+				String.format(format, args),
+				StringUtils.strrep(' ', dbgIndent * 4)));
+	}
+	
+	// =========================================================================
+	
 	private WtParsedWikitextPage go(WtNode ast)
 	{
+		if (DEBUG)
+			dbgIn("> TreeBuilder.go");
+		
 		switchInsertionMode(InsertionMode.IN_BODY);
 		
 		logic.go(ast);
@@ -157,6 +191,8 @@ public class TreeBuilder
 				getRootNode().getWarnings().addAll(errors);
 		}
 		
+		if (DEBUG)
+			dbgOut("< TreeBuilder.go");
 		return getRootNode();
 	}
 	
@@ -169,6 +205,8 @@ public class TreeBuilder
 	
 	void switchInsertionMode(InsertionMode mode)
 	{
+		if (DEBUG)
+			dbg("!! %s", mode);
 		logic.setImpl(getModeImpl(mode));
 	}
 	
@@ -204,6 +242,8 @@ public class TreeBuilder
 	
 	void resetToOriginalInsertionMode()
 	{
+		if (DEBUG)
+			dbg("!! %s", this.originalInsertionMode.getClass().getSimpleName());
 		logic.setImpl(this.originalInsertionMode);
 	}
 	
@@ -572,7 +612,10 @@ public class TreeBuilder
 				break;
 			
 			default:
-				throw new InternalError();
+				((TreeBuilderModeBase) logic.getImpl())
+						.dispatch(getFactory().text(WtRtDataPrinter.print(node)));
+				
+				//throw new InternalError();
 		}
 	}
 	

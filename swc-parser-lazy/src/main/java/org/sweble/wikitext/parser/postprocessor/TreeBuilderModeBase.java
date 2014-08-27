@@ -18,6 +18,7 @@
 package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -38,6 +39,31 @@ public class TreeBuilderModeBase
 	{
 		super(logic);
 		this.tb = treeBuilder;
+	}
+	
+	// =====================================================================
+	
+	@Override
+	public Object dispatch(WtNode node)
+	{
+		if (TreeBuilder.DEBUG)
+		{
+			String nodeName = node.getNodeName();
+			if (node instanceof WtNamedXmlElement)
+				nodeName = String.format(
+						"%s <%s>",
+						nodeName,
+						((WtNamedXmlElement) node).getName());
+			
+			tb.dbgIn("~~> %s (%08X)", nodeName, System.identityHashCode(node));
+		}
+		
+		Object result = super.dispatch(node);
+		
+		if (TreeBuilder.DEBUG)
+			tb.dbgOut("<~~ %s", node.getNodeName());
+		
+		return result;
 	}
 	
 	// =====================================================================

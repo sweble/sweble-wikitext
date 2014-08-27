@@ -413,13 +413,21 @@ public final class TreeBuilderInBody
 			
 			case NT_SEMI_PRE:
 				throw new InternalError("Node should only occur in SemiPre scope: " + n.getClass().getSimpleName());
+				
 			case NT_TABLE_CAPTION:
 			case NT_TABLE_CELL:
 			case NT_TABLE_HEADER:
 			case NT_TABLE_ROW:
-				throw new InternalError("Node should only occur in Table scope: " + n.getClass().getSimpleName());
+				//throw new InternalError("Node should only occur in Table scope: " + n.getClass().getSimpleName());
+				// Although native WtNode tables elements are always correctly 
+				// nested by the parser, it is possible that the TreeBuilder
+				// leaves the table/row/cell scope before all the tables/... 
+				// children were processed. And in that case, we can end up 
+				// here...
+				startTagR50(n);
+				break;
+			
 			case NT_XML_ELEMENT:
-				
 			default:
 				//throw new InternalError("Unhandled node: " + n.getClass().getSimpleName());
 				// Treat these like comments
