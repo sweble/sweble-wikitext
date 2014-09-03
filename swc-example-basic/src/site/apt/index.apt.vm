@@ -1,0 +1,12 @@
+ ------
+ SWC - Basic Example
+ ------
+ Hannes Dohrn
+ ------
+ 2012-03-29
+ ------
+
+SWC - Basic Example
+
+ An example project that contains a simple application that is able to parse a
+ page written in Wikitext and render it as HTML or plain text.
