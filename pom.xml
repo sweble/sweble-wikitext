@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
-    <version>2.0.0-alpha-3-SNAPSHOT</version>
+    <version>2.0.0-alpha-4-SNAPSHOT</version>
     <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
@@ -33,7 +33,7 @@
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>sweble-wikitext</artifactId>
-  <version>2.0.0-alpha-3-SNAPSHOT</version>
+  <version>2.0.0-alpha-4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sweble Wikitext Components</name>
@@ -116,7 +116,7 @@
         <groupId>de.fau.cs.osr.utils</groupId>
         <artifactId>utils</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>2.0.0-alpha-3-SNAPSHOT</version>
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
       </dependency>
 
       <!-- Parser Toolkit - Common -->
@@ -124,7 +124,7 @@
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-common</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>2.0.0-alpha-3-SNAPSHOT</version>
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
       </dependency>
 
       <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
@@ -132,7 +132,7 @@
         <groupId>org.sweble.wikitext</groupId>
         <artifactId>swc-parser-lazy</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>2.0.0-alpha-3-SNAPSHOT</version>
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
       </dependency>
 
     </dependencies>
