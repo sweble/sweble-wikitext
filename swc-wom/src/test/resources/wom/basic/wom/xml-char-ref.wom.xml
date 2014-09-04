@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<page xmlns="http://sweble.org/schema/wom" title="Xml-char-ref" version="1.0">
-  <body>
-    <p bottomgap="0" topgap="0">
-      <text xml:space="preserve">A
-&amp;#0;</text>
-    </p>
-  </body>
-</page>

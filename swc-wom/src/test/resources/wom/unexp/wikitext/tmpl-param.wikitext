@@ -1,5 +1,0 @@
-{{{param}}}
-
-{{{param|default value}}}
-
-{{{param|default values|garbage 1|garbage 2}}}

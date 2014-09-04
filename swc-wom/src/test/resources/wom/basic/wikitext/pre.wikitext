@@ -1,1 +1,0 @@
-<pre>I'm a tag extension</pre>
