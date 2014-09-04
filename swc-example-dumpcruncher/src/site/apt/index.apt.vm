@@ -14,16 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *#
-
  ------
- SWC - Basic Example
+ SWC - Dump Cruncher Example
  ------
  Hannes Dohrn
  ------
  2012-03-29
  ------
 
-SWC - Basic Example
+SWC - Dump Cruncher Example Archetype
 
- An example project that contains a simple application that is able to parse a
- page written in Wikitext and render it as HTML or plain text.
+ An example project that goes through a WikiMedia Dump and processes each page.

@@ -18,12 +18,12 @@
 
 -->
 <project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
-    name="SWC - Serialization Example Archetype" >
+    name="SWC - Dump Cruncher Example" >
 
   <bannerLeft>
     <name>Sweble</name>
-    <src>http://sweble.org/img/maven-site-banner-left-swc-serialization-example-archetype.png</src>
-    <href>http://sweble.org</href>
+    <src>http://sweble.org/img/maven-site-banner-left-swc-example-dumpcruncher.png</src>
+    <href>http://sweble.org/</href>
   </bannerLeft>
   <bannerRight>
     <src>http://sweble.org/img/maven-site-banner-right.png</src>
@@ -52,10 +52,10 @@
     <breadcrumbs>
       <item name="Sweble" href="http://sweble.org" />
       <item name="Documentation" href="http://sweble.org/doc" img="" />
-      <item name="Tooling" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling" img="" />
-      <item name="Sweble" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble" img="" />
-      <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext" img="" />
-      <item name="SWC - Serialiaztion Example Archetype" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-serialization-archetype" img="" />
+      <item name="Tooling" href="http://sweble.org/doc/site/tooling" img="" />
+      <item name="Sweble" href="http://sweble.org/doc/site/tooling/sweble" img="" />
+      <item name="Wikitext Components" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext" img="" />
+      <item name="SWC - Dump Cruncher Example" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-example-dumpcruncher" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>
@@ -64,9 +64,10 @@
 
     <menu name="Sweble">
       <item name="Blog" href="http://sweble.org" />
+      <item name="Wiki" href="http://sweble.org/wiki" />
       <item name="Documentation" href="http://sweble.org/doc" />
-      <item name="Mailing Lists" href="http://sweble.org/mailing-lists" />
-      <item name="Repositories" href="http://sweble.org/repos" />
+      <item name="Mailing Lists" href="http://sweble.org/mailing-lists/" />
+      <item name="Repositories" href="http://sweble.org/git-repositories/" />
       <item name="Bugtracker" href="http://sweble.org/bugtracker" />
     </menu>
 

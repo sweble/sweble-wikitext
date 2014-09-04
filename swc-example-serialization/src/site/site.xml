@@ -18,11 +18,11 @@
 
 -->
 <project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
-    name="SWC - XPath Example Archetype" >
+    name="SWC - Serialization Example" >
 
   <bannerLeft>
     <name>Sweble</name>
-    <src>http://sweble.org/img/maven-site-banner-left-swc-xpath-example-archetype.png</src>
+    <src>http://sweble.org/img/maven-site-banner-left-swc-serialization-example.png</src>
     <href>http://sweble.org</href>
   </bannerLeft>
   <bannerRight>
@@ -55,7 +55,7 @@
       <item name="Tooling" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling" img="" />
       <item name="Sweble" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble" img="" />
       <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext" img="" />
-      <item name="SWC - XPath Example Archetype" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-xpath-archetype" img="" />
+      <item name="SWC - Serialiaztion Example" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-serialization" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>
