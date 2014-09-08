@@ -40,10 +40,9 @@
     <breadcrumbs>
       <item name="Sweble" href="http://sweble.org" />
       <item name="Documentation" href="http://sweble.org/doc" img="" />
-      <item name="Tooling" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling" img="" />
-      <item name="Sweble" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble" img="" />
-      <item name="WOM 3.0" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wom3" img="" />
-      <item name="WOM 3.0 - Basic Example" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wom3/sweble-wom3-basic-example" img="" />
+      <item name="Tooling" href="${project.url}/../../.." img="" />
+      <item name="Sweble" href="${project.url}/../.." img="" />
+      <item name="WOM 3.0" href="${project.url}/.." img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>
