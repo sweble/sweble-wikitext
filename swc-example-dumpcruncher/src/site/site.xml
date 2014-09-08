@@ -52,10 +52,10 @@
     <breadcrumbs>
       <item name="Sweble" href="http://sweble.org" />
       <item name="Documentation" href="http://sweble.org/doc" img="" />
-      <item name="Tooling" href="http://sweble.org/doc/site/tooling" img="" />
-      <item name="Sweble" href="http://sweble.org/doc/site/tooling/sweble" img="" />
-      <item name="Wikitext Components" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext" img="" />
-      <item name="SWC - Dump Cruncher Example" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-example-dumpcruncher" img="" />
+      <item name="Tooling" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling" img="" />
+      <item name="Sweble" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble" img="" />
+      <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext" img="" />
+      <item name="SWC - Dump Cruncher Example" href="http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-dumpcruncher" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>
@@ -64,7 +64,6 @@
 
     <menu name="Sweble">
       <item name="Blog" href="http://sweble.org" />
-      <item name="Wiki" href="http://sweble.org/wiki" />
       <item name="Documentation" href="http://sweble.org/doc" />
       <item name="Mailing Lists" href="http://sweble.org/mailing-lists/" />
       <item name="Repositories" href="http://sweble.org/git-repositories/" />
