@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+-->
+<document xmlns="http://maven.apache.org/changes/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+  <properties>
+    <title>Changelog</title>
+    <author email="hannes.dohrn@informatik.uni-erlangen.de">Hannes Dohrn</author>
+  </properties>
+  <body>
+    <release version="1.1.0" description="Initial release">
+    </release>
+  </body>
+</document>
+
+<!--
+  Preferred order:
+    New features
+    Fixes
+    Updates
+  Then order by size/importance of features
+
+  Tpyes:
+    add: added functionnality to the project.
+    fix: bug fix for the project.
+    update: updated some part of the project.
+    remove: removed some functionnality from the project.
+
+  <action dev="hdohrn" type="fix">
+  </action>
+  -->

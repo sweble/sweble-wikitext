@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble WOM 3.0 -->
+
+  <parent>
+    <groupId>org.sweble.wom3</groupId>
+    <artifactId>sweble-wom3</artifactId>
+    <version>2.0.0-alpha-4-SNAPSHOT</version>
+  </parent>
+
+  <!-- This POM: Sweble WOM 3.0 - SWC Adapter -->
+
+  <groupId>org.sweble.wom3</groupId>
+  <artifactId>sweble-wom3-swc-adapter</artifactId>
+  <version>2.0.0-alpha-4-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Sweble WOM 3.0 SWC Adapter</name>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wom3/sweble-wom3-swc-adapter</url>
+  <inceptionYear>2013</inceptionYear>
+  <description>
+    Convert a Sweble Wikitext (SWC) AST to and from a WOM data structure.
+  </description>
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+
+    <sweble-wom3.basedir>${project.parent.basedir}</sweble-wom3.basedir>
+
+  </properties>
+
+  <!-- ==[ Dependencies ]=================================================== -->
+
+  <dependencies>
+
+    <!-- Project Lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+
+    <!-- Sweble Wikitext Components - Engine -->
+    <dependency>
+      <groupId>org.sweble.wikitext</groupId>
+      <artifactId>swc-engine</artifactId>
+    </dependency>
+
+    <!-- Sweble - WOM 3.0 Core -->
+    <dependency>
+      <groupId>org.sweble.wom3</groupId>
+      <artifactId>sweble-wom3-core</artifactId>
+    </dependency>
+
+    <!--
+      Testing
+    -->
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <!-- I assume the configuration is inherited from the parent -->
+          <excludes>
+            <!-- These excludes should be the same as in the parent project -->
+            <exclude>**/*.log</exclude>
+            <exclude>**/.gitignore</exclude>
+            <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
+            <exclude>src/site/resources/css/site.css</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
+
+            <!-- Extra excludes for this project -->
+            <exclude>src/test/resources/**/NOTICE</exclude>
+            <exclude>src/test/resources/**/*.wikitext</exclude>
+            <exclude>src/test/resources/**/*.wom.xml</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement>
+    </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <!-- TODO: Fill in license information -->
+  <licenses />
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wom3.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wom3.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wom3.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles />
+
+</project>

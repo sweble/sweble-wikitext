@@ -1,0 +1,17 @@
+#*
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *#
+ ------
+ Sweble WOM 3.0 Basic Example
+ ------
+ Hannes Dohrn
+ ------
+ 2014-09-05
+ ------
+
+Sweble WOM 3.0 Basic Example
+
+ An example project that contains a simple application that is able to parse a
+ page written in Wikitext, convert it into a WOM document and render it as plain
+ text.

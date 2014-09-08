@@ -1,0 +1,51 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ */
+package org.sweble.wom3.swcadapter;
+
+public enum HtmlElement
+{
+	ABBR,
+	B,
+	BIG,
+	BLOCKQUOTE,
+	BR,
+	CAPTION,
+	CENTER,
+	CITE,
+	CODE,
+	DD,
+	DEL,
+	DFN,
+	DIV,
+	DL,
+	DT,
+	EM,
+	FONT,
+	HR,
+	I,
+	INS,
+	KBD,
+	LI,
+	OL,
+	P,
+	PRE,
+	S,
+	SAMP,
+	SMALL,
+	SPAN,
+	STRIKE,
+	STRONG,
+	SUB,
+	SUP,
+	TABLE,
+	TBODY,
+	TD,
+	TH,
+	TR,
+	TT,
+	U,
+	UL,
+	VAR;
+}

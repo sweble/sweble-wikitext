@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Hr">
+   <body>
+      <p topgap="0" bottomgap="0">
+         <text>a</text>
+      </p>
+      <text>
+</text>
+      <hr>
+         <rtd>----</rtd>
+      </hr>
+      <text>
+</text>
+      <p topgap="0" bottomgap="0">
+         <text>b</text>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="1">
+         <text>x
+</text>
+      </p>
+      <hr>
+         <rtd>&lt;hr /&gt;</rtd>
+      </hr>
+      <text>
+y
+</text>
+   </body>
+</article>

@@ -1,0 +1,7 @@
+<table class="a">
+ <caption class="b">the caption</caption>
+ <tr class="c">
+  <td class="d">a header cell...</td>
+  <td class="e">a cell ...</td>
+ </tr>
+</table>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+-->
+<additionalHeaders>
+    <ptk_apt_style>
+        <firstLine>%*</firstLine>
+        <beforeEachLine> * </beforeEachLine>
+        <endLine> *%</endLine>
+        <!--skipLine></skipLine-->
+        <firstLineDetectionPattern>(\s|\t)*%\*.*$</firstLineDetectionPattern>
+        <lastLineDetectionPattern>.*\*%(\s|\t)*$</lastLineDetectionPattern>
+        <allowBlankLines>false</allowBlankLines>
+        <isMultiline>true</isMultiline>
+    </ptk_apt_style>
+</additionalHeaders>

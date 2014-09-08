@@ -1,0 +1,72 @@
+<ABBR attr="value">... content ...</ABBR>
+
+<B attr="value">... content ...</B>
+
+<BIG attr="value">... content ...</BIG>
+
+<BLOCKQUOTE attr="value" cite="http://somewhere">... content ...</BLOCKQUOTE>
+
+<BR attr="value" clear="left"/>
+<BR attr="value" clear="all"/>
+<BR attr="value" clear="right"/>
+<BR attr="value" clear="none"/>
+
+<CENTER attr="value">... content ...</CENTER>
+
+<CITE attr="value">... content ...</CITE>
+
+<CODE attr="value">... content ...</CODE>
+
+<DEL attr="value" cite="http://somewhere" datetime="2007-12-24T18:21Z">... content ...</DEL>
+
+<DFN attr="value">... content ...</DFN>
+
+<DIV attr="value" align="left">... content ...</DIV>
+<DIV attr="value" align="center">... content ...</DIV>
+<DIV attr="value" align="right">... content ...</DIV>
+<DIV attr="value" align="justify">... content ...</DIV>
+
+<EM attr="value">... content ...</EM>
+
+<FONT attr="value" color="#FF0000" face="Arial" size="5">... content ...</FONT>
+
+<HR attr="value" noshade="noshade" />
+<HR attr="value" size="2" />
+<HR attr="value" width="64" />
+<HR attr="value" width="50%" />
+<HR attr="value" align="left" />
+<HR attr="value" align="center" />
+<HR attr="value" align="right" />
+
+<I attr="value">... content ...</I>
+
+<INS attr="value" cite="http://somewhere" datetime="2007-12-24T18:21Z">... content ...</INS>
+
+<KBD attr="value">... content ...</KBD>
+
+<P attr="value" align="left">... content ...</P>
+<P attr="value" align="center">... content ...</P>
+<P attr="value" align="right">... content ...</P>
+<P attr="value" align="justify">... content ...</P>
+
+<S attr="value">... content ...</S>
+
+<SAMP attr="value">... content ...</SAMP>
+
+<SMALL attr="value">... content ...</SMALL>
+
+<SPAN attr="value">... content ...</SPAN>
+
+<STRIKE attr="value">... content ...</STRIKE>
+
+<STRONG attr="value">... content ...</STRONG>
+
+<SUB attr="value">... content ...</SUB>
+
+<SUP attr="value">... content ...</SUP>
+
+<TT attr="value">... content ...</TT>
+
+<U attr="value">... content ...</U>
+
+<VAR attr="value">... content ...</VAR>
