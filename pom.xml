@@ -126,10 +126,50 @@
         <version>2.0.0-alpha-4-SNAPSHOT</version>
       </dependency>
 
+      <!-- Parser Toolkit - XML Tools -->
+      <dependency>
+        <groupId>de.fau.cs.osr.ptk</groupId>
+        <artifactId>ptk-xml-tools</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
+      </dependency>
+
+      <!-- Parser Toolkit - JSON Tools -->
+      <dependency>
+        <groupId>de.fau.cs.osr.ptk</groupId>
+        <artifactId>ptk-json-tools</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
+      </dependency>
+
       <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
       <dependency>
         <groupId>org.sweble.wikitext</groupId>
         <artifactId>swc-parser-lazy</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Engine -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-engine</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Dump Reader -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-dumpreader</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>2.0.0-alpha-4-SNAPSHOT</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Article Cruncher -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-article-cruncher</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
         <version>2.0.0-alpha-4-SNAPSHOT</version>
       </dependency>
