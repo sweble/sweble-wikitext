@@ -73,12 +73,6 @@
       <artifactId>log4j</artifactId>
     </dependency>
 
-    <!-- Project Lombok -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-
     <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
