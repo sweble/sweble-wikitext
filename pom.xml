@@ -21,7 +21,7 @@
 
   <groupId>org.sweble.wom3</groupId>
   <artifactId>sweble-wom3</artifactId>
-  <version>2.0.0-alpha-4-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>pom</packaging>
 
   <name>Sweble Wiki Object Model Version 3</name>
