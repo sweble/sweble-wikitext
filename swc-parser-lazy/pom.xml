@@ -118,7 +118,7 @@
             <configuration>
               <sources>
                 <source>src/main/autogen</source>
-                <source>target/generated-sources/jflex</source>
+                <source>${project.build.directory}/generated-sources</source>
               </sources>
             </configuration>
           </execution>
@@ -191,9 +191,9 @@
         </executions>
         <configuration>
           <includes>
-            <include>target/generated-sources/**/*Lexer.java</include>
-            <include>target/generated-sources/**/*Preprocessor.java</include>
-            <include>target/generated-sources/**/*Parser.java</include>
+            <include>${project.build.directory}/generated-sources/**/*Lexer.java</include>
+            <include>${project.build.directory}/generated-sources/**/*Preprocessor.java</include>
+            <include>${project.build.directory}/generated-sources/**/*Parser.java</include>
           </includes>
 
           <regex>true</regex>
