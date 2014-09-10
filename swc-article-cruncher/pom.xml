@@ -30,9 +30,9 @@
 
   <!-- This POM: Sweble Wikitext Components - Sweble Article Cruncher -->
 
-  <groupId>org.sweble.wikitext</groupId>
+  <!-- Same groupId as parent -->
   <artifactId>swc-article-cruncher</artifactId>
-  <version>2.0.0-alpha-4-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Article Cruncher</name>
