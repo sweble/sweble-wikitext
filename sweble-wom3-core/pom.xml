@@ -48,12 +48,6 @@
       <artifactId>joda-time</artifactId>
     </dependency>
 
-    <!-- Project Lombok -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-
     <!-- The XSLT and XQuery Processor (Saxon Home Edition) -->
     <dependency>
       <groupId>net.sf.saxon</groupId>

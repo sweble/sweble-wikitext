@@ -42,12 +42,6 @@
 
   <dependencies>
 
-    <!-- Project Lombok -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-
     <!-- Sweble Wikitext Components - Engine -->
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
