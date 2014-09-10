@@ -103,7 +103,7 @@ public class TextConverter
 	@Override
 	protected Object after(Wom3Node node, Object result)
 	{
-		finishLine();
+		writeNewlines(1);
 		
 		// This method is called by go() after visitation has finished
 		// The return value will be passed to go() which passes it to the caller
@@ -253,6 +253,8 @@ public class TextConverter
 		finishLine();
 		StringBuilder saveSb = sb;
 		boolean saveNoWrap = noWrap;
+		boolean savePastBod = pastBod;
+		boolean saveNeedSpace = needSpace;
 		
 		sb = new StringBuilder();
 		noWrap = true;
@@ -285,6 +287,9 @@ public class TextConverter
 			sb2.append(title);
 			title = sb2.toString();
 		}
+		
+		pastBod = savePastBod;
+		needSpace = saveNeedSpace;
 		
 		newline(2);
 		write(title);
