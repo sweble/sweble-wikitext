@@ -53841,7 +53841,8 @@ WtParsedWikitextPage(
 				[2] = " "
 			],
 			[6] = "\n",
-			[7] = WtParagraph[ [0] = WtIgnored("</noinclude>") ]
+			[7] = WtIgnored("</noinclude>"),
+			[8] = "\n"
 		]
 	)
 )

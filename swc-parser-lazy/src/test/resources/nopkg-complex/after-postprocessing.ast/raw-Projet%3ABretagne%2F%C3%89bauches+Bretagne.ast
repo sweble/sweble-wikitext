@@ -5906,7 +5906,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "Centre d\u0092\u00E9tude et de valorisation des algues" ],
+										target = WtPageName[ [0] = "Centre d\u2019\u00E9tude et de valorisation des algues" ],
 										title = -
 									)
 								]
@@ -11426,7 +11426,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "Deski\u00F1 d\u0092an oadourien" ],
+										target = WtPageName[ [0] = "Deski\u00F1 d\u2019an oadourien" ],
 										title = -
 									)
 								]
@@ -19902,7 +19902,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "Je vous emporte dans mon c\u009Cur (35 ans - 35 titres)" ],
+										target = WtPageName[ [0] = "Je vous emporte dans mon c\u0153ur (35 ans - 35 titres)" ],
 										title = -
 									)
 								]
@@ -23198,7 +23198,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "Keiichiro Kume" ],
+										target = WtPageName[ [0] = "Keiichir\u014D Kume" ],
 										title = -
 									)
 								]
@@ -26298,7 +26298,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "Ligne de Saint-Hilaire-de-Chal\u00E9ons \u00E0 Paimb\u009Cuf" ],
+										target = WtPageName[ [0] = "Ligne de Saint-Hilaire-de-Chal\u00E9ons \u00E0 Paimb\u0153uf" ],
 										title = -
 									)
 								]
@@ -41626,7 +41626,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "S\u009Curs de la Charit\u00E9 de Saint-Louis" ],
+										target = WtPageName[ [0] = "S\u0153urs de la Charit\u00E9 de Saint-Louis" ],
 										title = -
 									)
 								]
@@ -47774,7 +47774,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "\u00CEle des \u008Cufs" ],
+										target = WtPageName[ [0] = "\u00CEle des \u0152ufs" ],
 										title = -
 									)
 								]
@@ -47990,7 +47990,7 @@ WtParsedWikitextPage(
 										{P} postfix = ""
 										{P} prefix = ""
 										{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-										target = WtPageName[ [0] = "?" ],
+										target = WtPageName[ [0] = "\uA742" ],
 										title = -
 									)
 								]
@@ -48007,8 +48007,7 @@ WtParsedWikitextPage(
 										target = WtPageName[ [0] = "Portail:Bretagne" ],
 										title = -
 									),
-									[1] = "\n\n",
-									[2] = WtParagraph[]
+									[1] = "\n"
 								]
 							)
 						]
@@ -48016,5 +48015,6 @@ WtParsedWikitextPage(
 				]
 			)
 		]
-	)
+	),
+	[4] = "\n"
 )
