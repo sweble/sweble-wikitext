@@ -191,9 +191,11 @@
         </executions>
         <configuration>
           <includes>
-            <include>${project.build.directory}/generated-sources/**/*Lexer.java</include>
-            <include>${project.build.directory}/generated-sources/**/*Preprocessor.java</include>
-            <include>${project.build.directory}/generated-sources/**/*Parser.java</include>
+            <!-- Using ${project.build.directory} instead of target
+                 DOES NOT WORK! -->
+            <include>target/generated-sources/**/*Lexer.java</include>
+            <include>target/generated-sources/**/*Preprocessor.java</include>
+            <include>target/generated-sources/**/*Parser.java</include>
           </includes>
 
           <regex>true</regex>
