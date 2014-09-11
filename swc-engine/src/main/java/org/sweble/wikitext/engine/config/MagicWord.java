@@ -19,6 +19,7 @@ package org.sweble.wikitext.engine.config;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.TreeSet;
 
 public class MagicWord
@@ -31,7 +32,7 @@ public class MagicWord
 	
 	private Boolean caseSensitive;
 	
-	private TreeSet<String> aliases = new TreeSet<String>();
+	private TreeSet<String> aliases;
 	
 	// =========================================================================
 	
@@ -42,7 +43,16 @@ public class MagicWord
 	{
 		this.name = name;
 		this.caseSensitive = caseSensitive;
-		this.aliases = new TreeSet<String>();
+		this.aliases = new TreeSet<String>(
+				new Comparator<String>() {
+					@Override
+					public int compare(String o1, String o2) {
+						return MagicWord.this.caseSensitive ? 
+								o1.compareTo(o2) : 
+								o1.compareToIgnoreCase(o2);
+					}
+				});
+		
 		this.aliases.addAll(aliases);
 	}
 	
@@ -61,5 +71,10 @@ public class MagicWord
 	public TreeSet<String> getAliases()
 	{
 		return aliases;
+	}
+	
+	public boolean hasAlias(String alias)
+	{
+		return aliases.contains(alias);
 	}
 }

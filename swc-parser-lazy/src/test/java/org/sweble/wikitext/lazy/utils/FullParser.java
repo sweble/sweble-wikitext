@@ -15,26 +15,32 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.lazy;
+package org.sweble.wikitext.lazy.utils;
 
 import java.io.IOException;
 
+import org.sweble.wikitext.lazy.LazyEncodingValidator;
+import org.sweble.wikitext.lazy.LazyParser;
+import org.sweble.wikitext.lazy.LazyPostprocessor;
+import org.sweble.wikitext.lazy.LazyPreprocessor;
+import org.sweble.wikitext.lazy.ParserConfigInterface;
+import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
 import org.sweble.wikitext.lazy.preprocessor.PreprocessedWikitext;
-import org.sweble.wikitext.lazy.utils.SimpleParserConfig;
 
 import xtc.parser.ParseException;
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserCommon;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public final class FullParser
-        extends
-            ParserCommon
+		extends
+			ParserCommon
 {
 	private ParserConfigInterface parserConfig;
+	
+	// =========================================================================
 	
 	public FullParser()
 	{
@@ -42,51 +48,51 @@ public final class FullParser
 	}
 	
 	public FullParser(
-	        boolean warningsEnabled,
-	        boolean gatherRtd,
-	        boolean autoCorrect)
-
+			boolean warningsEnabled,
+			boolean gatherRtd,
+			boolean autoCorrect)
+	
 	{
 		parserConfig = new SimpleParserConfig(
-		        warningsEnabled,
-		        gatherRtd,
-		        autoCorrect);
+				warningsEnabled,
+				gatherRtd,
+				autoCorrect);
 	}
+	
+	// =========================================================================
 	
 	@Override
 	public AstNode parseArticle(String source, String title) throws IOException, ParseException
 	{
-		EntityMap entityMap = new EntityMap();
-		
 		// Encoding validation
 		
 		LazyEncodingValidator v = new LazyEncodingValidator();
 		
-		String validated = v.validate(source, title, entityMap);
+		ValidatedWikitext validated = v.validate(source, title);
 		
 		// Pre-processing
 		
-		ParserCommon prep = new LazyPreprocessor(parserConfig);
+		LazyPreprocessor prep = new LazyPreprocessor(parserConfig);
 		
 		LazyPreprocessedPage prepArticle =
-		        (LazyPreprocessedPage) prep.parseArticle(validated, title);
+				(LazyPreprocessedPage) prep.parseArticle(validated, title, false);
 		
 		// Parsing
 		
-		PreprocessedWikitext ppw = PreprocessorToParserTransformer.transform(
-		        prepArticle, entityMap);
+		PreprocessedWikitext ppw = PreprocessorToParserTransformer
+				.transform(prepArticle);
 		
 		LazyParser p = new LazyParser(parserConfig);
 		
 		LazyParsedPage parsedArticle =
-		        (LazyParsedPage) p.parseArticle(ppw, title);
+				(LazyParsedPage) p.parseArticle(ppw, title);
 		
 		// Post-processing
 		
 		LazyPostprocessor postp = new LazyPostprocessor(parserConfig);
 		
 		LazyParsedPage postpArticle =
-		        (LazyParsedPage) postp.postprocess(parsedArticle, title);
+				(LazyParsedPage) postp.postprocess(parsedArticle, title);
 		
 		// User-defined processing
 		

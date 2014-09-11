@@ -104,4 +104,22 @@ public class LinkTargetParserTest
 
 		Assert.assertEquals("aAa", LinkTargetParser.urlDecode("a%41a"));
 	}
+	
+	@Test
+	public void testTrimUnderscoreEmptyString() throws Exception
+	{
+		Assert.assertEquals("", LinkTargetParser.trimUnderscore(""));
+	}
+	
+	@Test
+	public void testTrimEmptyString() throws Exception
+	{
+		Assert.assertEquals("", LinkTargetParser.trim(""));
+	}
+	
+	@Test
+	public void testTrimUnderscoreWithOnlyUnderscores() throws Exception
+	{
+		Assert.assertEquals("", LinkTargetParser.trimUnderscore("_"));
+	}
 }

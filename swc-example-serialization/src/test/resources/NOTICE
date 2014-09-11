@@ -26,3 +26,6 @@ The following articles were taken from the English Wikipedia:
     http://en.wikipedia.org/w/index.php?oldid=390667719
 
 Expansion is done using the script bin/enwp-expand.php.
+
+In raw-Germany.wikitext line 958 ([[got:𐌸𐌹𐌿𐌳𐌹𐍃𐌺𐌰𐌻𐌰𐌽𐌳]]) was removed to circumvent 
+a bug.

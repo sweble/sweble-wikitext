@@ -4,7 +4,7 @@
 
   <bannerLeft>
     <name>Sweble</name>
-    <src>http://sweble.org/img/maven-site-banner-left-swc-example-serialization-archetype.png</src>
+    <src>http://sweble.org/img/maven-site-banner-left-swc-serialization-example-archetype.png</src>
     <href>http://sweble.org</href>
   </bannerLeft>
   <bannerRight>
@@ -34,10 +34,10 @@
     <breadcrumbs>
       <item name="Sweble" href="http://sweble.org" />
       <item name="Documentation" href="http://sweble.org/doc" img="" />
-      <item name="Tooling" href="http://sweble.org/sites/swc-devel/latest/tooling" img="" />
-      <item name="Sweble" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble" img="" />
-      <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext" img="" />
-      <item name="SWC - Serialiaztion Example Archetype" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-serialization-archetype" img="" />
+      <item name="Tooling" href="http://sweble.org/sites/swc-devel/develop-latest/tooling" img="" />
+      <item name="Sweble" href="http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble" img="" />
+      <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext" img="" />
+      <item name="SWC - Serialiaztion Example Archetype" href="http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext/swc-example-serialization-archetype" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>

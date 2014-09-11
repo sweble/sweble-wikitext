@@ -1,5 +1,6 @@
 LazyParsedPage(
   Properties:
+    {N} entityMap = EntityMap {0=XmlComment(" Comment 1 "), 1=XmlComment(" Comment 2 ")}
     {N} warnings = []
 
   [

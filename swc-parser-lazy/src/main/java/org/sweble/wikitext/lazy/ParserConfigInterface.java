@@ -33,6 +33,8 @@ public interface ParserConfigInterface
 
 	boolean isMagicWord(String word);
 
+	boolean isRedirectKeyword(String keyword);
+
 	boolean isUrlProtocol(String proto);
 
 	boolean isWarningLevelEnabled(WarningSeverity severity);

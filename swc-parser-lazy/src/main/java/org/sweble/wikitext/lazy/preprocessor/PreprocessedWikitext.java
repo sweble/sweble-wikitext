@@ -20,22 +20,18 @@
  */
 package org.sweble.wikitext.lazy.preprocessor;
 
-import java.util.Map;
-
 import de.fau.cs.osr.ptk.common.EntityMap;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public final class PreprocessedWikitext
 {
 	private String wikitext;
 	
-	private Map<Integer, AstNode> entityMap;
+	private EntityMap entityMap;
 	
 	public PreprocessedWikitext(String wikitext, EntityMap entityMap)
 	{
-		super();
 		this.wikitext = wikitext;
-		this.entityMap = entityMap.getMap();
+		this.entityMap = entityMap;
 	}
 	
 	public String getWikitext()
@@ -43,7 +39,7 @@ public final class PreprocessedWikitext
 		return wikitext;
 	}
 	
-	public Map<Integer, AstNode> getEntityMap()
+	public EntityMap getEntityMap()
 	{
 		return entityMap;
 	}

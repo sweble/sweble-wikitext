@@ -361,17 +361,18 @@ public class LinkTargetParser
 		return result;
 	}
 
-	static String trimUnderscore(String result)
+	static String trimUnderscore(String input)
 	{
-		int i;
-		for (i = 0; i < result.length() && result.charAt(i) == '_'; ++i)
-			;
+		int i = 0;
+		int j = input.length();
 
-		int j;
-		for (j = result.length() - 1; j >= 0 && result.charAt(j) == '_'; --j)
-			;
+		while ((i < j) && input.charAt(i) == '_')
+			++i;
 
-		return result.substring(i, j + 1);
+		while ((i < j) && input.charAt(j - 1) == '_')
+			--j;
+
+		return ((i > 0) || (j < input.length())) ? input.substring(i, j) : input;
 	}
 
 	static String trim(String input)

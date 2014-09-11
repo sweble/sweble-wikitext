@@ -1,15 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <!-- This POM -->
 
   <groupId>org.example</groupId>
   <artifactId>swc-example-basic</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <packaging>jar</packaging>
 
   <name>SWC - Basic Example</name>
-  <url>http://osr.informatik.uni-erlangen.de</url>
+  <url>http://osr.cs.fau.de</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     An example project that contains a simple application that is able to parse
@@ -19,6 +20,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.java>1.6</version.java>
+    <build-examples.maven.cmd>mvn</build-examples.maven.cmd>
   </properties>
 
   <dependencies>
@@ -34,7 +36,7 @@
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-engine</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.1</version>
     </dependency>
 
     <!-- JUnit -->
@@ -44,6 +46,7 @@
       <version>4.7</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>
@@ -74,22 +77,60 @@
         </configuration>
       </plugin>
 
+      <!-- We don't want post phase. However, best we can do is settle with validate -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-archetype-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <archetypePostPhase>validate</archetypePostPhase>
+        </configuration>
+      </plugin>
+
+      <!-- Copy libraries to target/lib (needed by .jar package) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <!--
+              Should really be:
+              <outputDirectory>DOLLAR{project.build.directory}/lib</outputDirectory>
+              But the Variable is replaced too early, messing up the packaged archetype.
+                -->
+              <outputDirectory>target/lib</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- Check and format license headers -->
       <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
-        <version>1.9.0</version>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>2.5</version>
         <configuration>
           <header>../etc/license-header.txt</header>
+          <strictCheck>true</strictCheck>
+          <failIfMissing>true</failIfMissing>
           <excludes>
-            <exclude>src/test/resources/*.wikitext</exclude>
-            <exclude>src/test/resources/*.html</exclude>
             <exclude>**/.gitignore</exclude>
+            <exclude>pom.xml</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
             <exclude>README</exclude>
-            <exclude>pom-archetype.xml</exclude>
-            <exclude>generate-archetype</exclude>
+            <exclude>archetype-content.txt</exclude>
+            <exclude>eclipse-project-files/**</exclude>
+            <exclude>archetype-files/src/site/apt/index.apt.vm</exclude>
+            <exclude>src/main/resources/render-template.html</exclude>
+            <exclude>src/test/resources/**</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -133,7 +174,7 @@
   <repositories>
     <repository>
       <releases>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
@@ -142,14 +183,14 @@
       </snapshots>
       <id>osr-public-snapshots-repo</id>
       <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <releases>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
@@ -158,7 +199,7 @@
       </snapshots>
       <id>osr-public-plugin-snapshots-repo</id>
       <name>OSR Public Plugin Snapshots Repository</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
     </pluginRepository>
   </pluginRepositories>
 
@@ -178,28 +219,34 @@
             <executions>
               <execution>
                 <id>exec-generate-example-archetype</id>
-                <phase>package</phase>
+                <phase>install</phase>
                 <goals>
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <executable>../bin/generate-example-archetype</executable>
+                  <executable>../bin/generate-example-archetype.sh</executable>
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables>
+                    <MVN>${build-examples.maven.cmd}</MVN>
+                  </environmentVariables>
                 </configuration>
               </execution>
               <execution>
                 <id>exec-generate-example-eclipse-project</id>
-                <phase>package</phase>
+                <phase>install</phase>
                 <goals>
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <executable>../bin/generate-example-eclipse-project</executable>
+                  <executable>../bin/generate-example-eclipse-project.sh</executable>
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables>
+                    <MVN>${build-examples.maven.cmd}</MVN>
+                  </environmentVariables>
                 </configuration>
               </execution>
             </executions>

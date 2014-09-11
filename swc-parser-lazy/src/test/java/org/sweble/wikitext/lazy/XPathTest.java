@@ -26,6 +26,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.junit.Test;
+import org.sweble.wikitext.lazy.utils.FullParser;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinter;
