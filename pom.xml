@@ -25,7 +25,7 @@
   <parent>
     <groupId>de.fau.cs.osr</groupId>
     <artifactId>tooling</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.1</version>
     <relativePath>../tooling/pom.xml</relativePath>
   </parent>
 
@@ -33,7 +33,7 @@
 
   <groupId>org.sweble</groupId>
   <artifactId>sweble</artifactId>
-  <version>1.1.1-SNAPSHOT</version>
+  <version>1.1.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sweble</name>
@@ -167,6 +167,7 @@
     <connection>scm:git://sweble.org/git/sweble.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble.git;a=summary</url>
+    <tag>HEAD</tag>
   </scm>
 
   <!--
