@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Signatures">
+   <body>
+      <p topgap="0" bottomgap="0">
+         <signature format="user"
+                    author="Mr. Tester"
+                    timestamp="2012-12-07T12:15:30.000+01:00">
+            <rtd>~~~</rtd>
+         </signature>
+         <text>
+</text>
+         <signature format="user-timestamp"
+                    author="Mr. Tester"
+                    timestamp="2012-12-07T12:15:30.000+01:00">
+            <rtd>~~~~</rtd>
+         </signature>
+         <text>
+</text>
+         <signature format="timestamp"
+                    author="Mr. Tester"
+                    timestamp="2012-12-07T12:15:30.000+01:00">
+            <rtd>~~~~~</rtd>
+         </signature>
+      </p>
+   </body>
+</article>

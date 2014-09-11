@@ -1,0 +1,6 @@
+
+{| style="no-stlye"
+ |+ style="caption-style" | a fine caption :D
+ |- style="row-style"
+ | style="hells-bells" | cellibelli || style="highway-to-hell" | langweilig
+ |}

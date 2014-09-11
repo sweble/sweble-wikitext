@@ -1,0 +1,159 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Lists">
+   <body>
+      <ul>
+         <li>
+            <rtd>*</rtd>
+            <text> Item 1</text>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> Item 2</text>
+         </li>
+      </ul>
+      <text>
+
+</text>
+      <ol>
+         <li>
+            <rtd>#</rtd>
+            <text> Item 1</text>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>#</rtd>
+            <text> Item 2</text>
+         </li>
+      </ol>
+      <text>
+
+</text>
+      <ul>
+         <rtd>&lt;ul&gt;</rtd>
+         <text>
+0
+</text>
+         <li>
+            <rtd>&lt;li&gt;</rtd>
+            <text>Item 1</text>
+            <rtd>&lt;/li&gt;</rtd>
+         </li>
+         <text>
+2
+</text>
+         <li>
+            <rtd>&lt;li&gt;</rtd>
+            <text>Item 3</text>
+            <rtd>&lt;/li&gt;</rtd>
+         </li>
+         <text>
+4
+</text>
+         <rtd>&lt;/ul&gt;</rtd>
+      </ul>
+      <text>
+
+</text>
+      <ol>
+         <rtd>&lt;ol&gt;</rtd>
+         <text>
+0
+</text>
+         <li>
+            <rtd>&lt;li&gt;</rtd>
+            <text>Item 1</text>
+            <rtd>&lt;/li&gt;</rtd>
+         </li>
+         <text>
+2
+</text>
+         <li>
+            <rtd>&lt;li&gt;</rtd>
+            <text>Item 3</text>
+            <rtd>&lt;/li&gt;</rtd>
+         </li>
+         <text>
+4
+</text>
+         <rtd>&lt;/ol&gt;</rtd>
+      </ol>
+      <text>
+
+</text>
+      <dl>
+         <dd>
+            <rtd>:</rtd>
+            <text>Def 0</text>
+            <rtd>
+</rtd>
+         </dd>
+         <dt>
+            <rtd>;</rtd>
+            <text>Term 1</text>
+            <rtd>
+</rtd>
+         </dt>
+         <dd>
+            <rtd>:</rtd>
+            <text>Def 1</text>
+            <rtd>
+</rtd>
+         </dd>
+         <dd>
+            <rtd>:</rtd>
+            <text>Def 2</text>
+            <rtd>
+</rtd>
+         </dd>
+         <dt>
+            <rtd>;</rtd>
+            <text>Term 2</text>
+            <rtd>
+</rtd>
+         </dt>
+         <dd>
+            <rtd>:</rtd>
+            <text>Def 3</text>
+         </dd>
+      </dl>
+      <text>
+
+</text>
+      <dl>
+         <rtd>&lt;dl&gt;</rtd>
+         <text>
+0
+</text>
+         <dd>
+            <rtd>&lt;dd&gt;</rtd>
+            <text>Def 0</text>
+            <rtd>&lt;/dd&gt;</rtd>
+         </dd>
+         <text>
+1
+</text>
+         <dt>
+            <rtd>&lt;dt&gt;</rtd>
+            <text>Tern 1</text>
+            <rtd>&lt;/dt&gt;</rtd>
+         </dt>
+         <text>
+2
+</text>
+         <dd>
+            <rtd>&lt;dd&gt;</rtd>
+            <text>Def 1</text>
+            <rtd>&lt;/dd&gt;</rtd>
+         </dd>
+         <text>
+</text>
+         <rtd>&lt;/dl&gt;</rtd>
+      </dl>
+   </body>
+</article>

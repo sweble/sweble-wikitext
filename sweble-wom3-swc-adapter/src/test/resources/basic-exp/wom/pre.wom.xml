@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Pre">
+   <body>
+      <p topgap="0" bottomgap="0">
+         <pre>
+            <rtd>&lt;pre&gt;</rtd>
+            <nowiki>
+               <text>I'm a tag extension</text>
+            </nowiki>
+            <rtd>&lt;/pre&gt;</rtd>
+         </pre>
+      </p>
+   </body>
+</article>

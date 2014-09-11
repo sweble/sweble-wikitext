@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Table">
+   <body>
+      <text>
+</text>
+      <table style="no-stlye">
+         <rtd>{| style="no-stlye"
+</rtd>
+         <caption style="caption-style">
+            <rtd> |+ style="caption-style" |</rtd>
+            <p topgap="0" bottomgap="0">
+               <text> a fine caption :D</text>
+            </p>
+            <text>
+</text>
+         </caption>
+         <tbody>
+            <tr style="row-style">
+               <rtd> |- style="row-style"
+</rtd>
+               <td style="hells-bells">
+                  <rtd> | style="hells-bells" |</rtd>
+                  <text> cellibelli </text>
+               </td>
+               <td style="highway-to-hell">
+                  <rtd>|| style="highway-to-hell" |</rtd>
+                  <p topgap="0" bottomgap="0">
+                     <text> langweilig</text>
+                  </p>
+                  <text>
+</text>
+               </td>
+            </tr>
+         </tbody>
+         <rtd> |}</rtd>
+      </table>
+      <text>
+</text>
+   </body>
+</article>
