@@ -1,0 +1,13 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = "\n",
+	[1] = WtParagraph[ [0] = "x\n" ],
+	[2] = WtXmlElement(
+		{P} name = "hr"
+		{P} rtd = RTD[ "<hr" <o> " />" <o> "" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = -
+	),
+	[3] = "\ny\n"
+)

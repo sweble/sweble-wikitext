@@ -1,0 +1,1 @@
+-{T|zh:文字1;zh-hans:文字2;zh-hant:文字3;zh-cn:文字4;zh-tw:文字5;zh-hk:文字6;zh-sg:文字7;}-

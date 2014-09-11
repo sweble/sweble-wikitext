@@ -1,0 +1,3 @@
+{| <!-- some comment -->
+ | A cell
+ |}

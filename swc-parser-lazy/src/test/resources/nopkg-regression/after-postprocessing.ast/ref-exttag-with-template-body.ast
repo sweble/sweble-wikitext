@@ -1,0 +1,32 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTagExtension(
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+						name = WtName[ [0] = "name" ],
+						value = WtValue[ [0] = "X'" ]
+					)
+				],
+				body = WtTagExtensionBody("{{Y|}}")
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtTagExtension(
+			{P} name = "ref"
+			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+			xmlAttributes = WtXmlAttributes[
+				[0] = WtXmlAttribute(
+					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+					name = WtName[ [0] = "name" ],
+					value = WtValue[ [0] = "X'" ]
+				)
+			],
+			body = WtTagExtensionBody("{{Y|}}")
+		)
+	],
+	[1] = "\n"
+)

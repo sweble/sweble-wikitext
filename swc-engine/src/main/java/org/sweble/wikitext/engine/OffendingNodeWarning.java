@@ -17,53 +17,52 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.lazy.parser.LazyWarning;
-import org.sweble.wikitext.lazy.parser.WarningSeverity;
-import org.sweble.wikitext.lazy.utils.WikitextPrinter;
+import org.sweble.wikitext.parser.WikitextWarning;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Span;
 
 public abstract class OffendingNodeWarning
-        extends
-            LazyWarning
+		extends
+			WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final AstNode node;
+	private final WtNode node;
 	
 	// =========================================================================
 	
 	public OffendingNodeWarning(
-	        AstNode node,
-	        WarningSeverity severity,
-	        String origin,
-	        String message)
+			WtNode node,
+			WarningSeverity severity,
+			String origin,
+			String message)
 	{
 		super(makeSpan(node), severity, origin, message);
 		this.node = node;
 	}
 	
 	public OffendingNodeWarning(
-	        AstNode node,
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        String message)
+			WtNode node,
+			WarningSeverity severity,
+			Class<?> origin,
+			String message)
 	{
 		super(makeSpan(node), severity, origin, message);
 		this.node = node;
 	}
 	
-	private static Span makeSpan(AstNode node)
+	private static Span makeSpan(WtNode node)
 	{
 		return new Span(
-		        node.getNativeLocation(),
-		        WikitextPrinter.print(node));
+				node.getNativeLocation(),
+				WtRtDataPrinter.print(node));
 	}
 	
 	// =========================================================================
 	
-	public AstNode getNode()
+	public WtNode getNode()
 	{
 		return node;
 	}

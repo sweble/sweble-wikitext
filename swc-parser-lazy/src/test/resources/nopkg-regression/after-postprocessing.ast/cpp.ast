@@ -1,0 +1,19 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "code"
+			{P} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "<" ]
+		),
+		[1] = "\n",
+		[2] = WtXmlElement(
+			{P} name = "blub"
+			{P} rtd = RTD[ "<blub" <o> ">" <o> "</blub>" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "<" ]
+		)
+	]
+)

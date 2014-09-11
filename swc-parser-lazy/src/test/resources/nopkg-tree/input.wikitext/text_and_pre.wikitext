@@ -1,0 +1,5 @@
+Hallo Welt!
+<pre>
+	Some special pre text
+</pre>
+Tschüss!

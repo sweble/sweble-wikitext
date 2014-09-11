@@ -26,54 +26,58 @@ public class Gatherer
 		extends
 			WorkerBase
 {
-	private final BlockingQueue<JobWithHistory> inTray;
+	private final BlockingQueue<Job> inTray;
 	
-	private final BlockingQueue<JobWithHistory> completedJobs;
+	private final BlockingQueue<Job> processedJobs;
 	
-	private final BlockingQueue<CompletedJob> outTray;
+	private final BlockingQueue<Job> outTray;
 	
 	// =========================================================================
 	
 	public Gatherer(
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
-			BlockingQueue<JobWithHistory> completedJobs,
-			BlockingQueue<CompletedJob> outTray)
+			BlockingQueue<Job> inTray,
+			BlockingQueue<Job> processedJobs,
+			BlockingQueue<Job> outTray)
 	{
-		super(Gatherer.class.getSimpleName(), abortHandler);
+		super(getClassName(), abortHandler);
+		
+		Thread.currentThread().setName(getClassName());
 		
 		this.inTray = inTray;
-		this.completedJobs = completedJobs;
+		this.processedJobs = processedJobs;
 		this.outTray = outTray;
+	}
+	
+	private static String getClassName()
+	{
+		return Gatherer.class.getSimpleName();
 	}
 	
 	// =========================================================================
 	
-	int count = 0;
+	private int count = 0;
 	
 	@Override
 	protected void work() throws Throwable
 	{
 		while (true)
 		{
-			JobWithHistory completed = completedJobs.take();
-			Nexus.getConsoleWriter().updateCompletedJobs(completedJobs.size());
+			Job processed = processedJobs.take();
 			++count;
 			
-			completed.getJob().getTrace().signOff(getClass(), null);
+			processed.signOff(getClass(), null);
 			
 			// TODO: Decide what to do with it.
 			boolean tryAgain = false;
 			
 			if (tryAgain)
 			{
-				inTray.put(completed);
-				Nexus.getConsoleWriter().updateInTray(inTray.size());
+				inTray.put(processed);
 			}
 			else
 			{
-				outTray.put(completed.getLastAttempt());
-				Nexus.getConsoleWriter().updateOutTray(outTray.size());
+				outTray.put(processed);
 			}
 		}
 	}

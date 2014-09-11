@@ -17,21 +17,16 @@
 
 package org.sweble.wikitext.articlecruncher.pnodes;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
-import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.sweble.wikitext.articlecruncher.CompletedJob;
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
-import org.sweble.wikitext.articlecruncher.Nexus;
+import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorCompletionService;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
@@ -42,12 +37,9 @@ public class LpnDistributor
 		extends
 			WorkerBase
 {
-	private final Map<Future<CompletedJob>, JobWithHistory> runningJobs =
-			new HashMap<Future<CompletedJob>, JobWithHistory>();
+	private final BlockingQueue<Job> inTray;
 	
-	private final BlockingQueue<JobWithHistory> inTray;
-	
-	private final CompletionService<CompletedJob> execComplServ;
+	private final MyExecutorCompletionService<Job> execComplServ;
 	
 	private final Semaphore backPressure;
 	
@@ -59,13 +51,15 @@ public class LpnDistributor
 	
 	public LpnDistributor(
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
+			BlockingQueue<Job> inTray,
 			ThreadGroup fatherThreadGroup,
 			int numWorkers,
 			LpnJobProcessorFactory jobProcessorFactory,
 			Semaphore backPressure)
 	{
-		super(LpnDistributor.class.getSimpleName(), abortHandler);
+		super(getClassName(), abortHandler);
+		
+		Thread.currentThread().setName(getClassName());
 		
 		this.inTray = inTray;
 		this.backPressure = backPressure;
@@ -76,7 +70,7 @@ public class LpnDistributor
 		
 		info(getClass().getSimpleName() + " starts with a pool of " + numWorkers + " workers");
 		
-		execComplServ = new MyExecutorCompletionService<CompletedJob>(
+		execComplServ = new MyExecutorCompletionService<Job>(
 				getLogger(),
 				corePoolSize,
 				maximumPoolSize,
@@ -84,6 +78,13 @@ public class LpnDistributor
 				TimeUnit.SECONDS,
 				new SynchronousQueue<Runnable>(),
 				new RejectedExecutionHandlerImpl());
+		
+		execComplServ.setThreadNameTemplate(jobProcessorFactory.getProcessorNameTemplate());
+	}
+	
+	protected static String getClassName()
+	{
+		return LpnDistributor.class.getSimpleName();
 	}
 	
 	// =========================================================================
@@ -93,42 +94,32 @@ public class LpnDistributor
 	{
 		while (true)
 		{
-			// Prevent a accumulation of finished jobs in the gatherer.
+			// Prevent a accumulation of processed jobs in the gatherer.
 			backPressure.acquire();
 			
-			final JobWithHistory job = inTray.take();
-			Nexus.getConsoleWriter().updateInTray(inTray.size());
+			final Job job = inTray.take();
 			++count;
 			
-			job.getJob().getTrace().signOff(getClass(), null);
+			job.signOff(getClass(), null);
 			
-			// Make sure we retrieve the future handle before the worker kicks off
-			synchronized (job)
-			{
-				Callable<CompletedJob> worker =
-						new LpnWorker(jobProcessorFactory, job);
-				
-				Future<CompletedJob> f = execComplServ.submit(worker);
-				
-				runningJobs.put(f, job);
-			}
+			Callable<Job> worker = new LpnWorker(jobProcessorFactory, job);
+			
+			execComplServ.submit(worker);
 		}
 	}
 	
 	@Override
 	protected void after()
 	{
+		if (execComplServ != null)
+			execComplServ.shutdownAndAwaitTermination();
+		
 		info(getClass().getSimpleName() + " counts " + count + " items");
 	}
 	
 	// =========================================================================
 	
-	public Map<Future<CompletedJob>, JobWithHistory> getRunningJobs()
-	{
-		return runningJobs;
-	}
-	
-	public CompletionService<CompletedJob> getEcs()
+	public CompletionService<Job> getEcs()
 	{
 		return execComplServ;
 	}

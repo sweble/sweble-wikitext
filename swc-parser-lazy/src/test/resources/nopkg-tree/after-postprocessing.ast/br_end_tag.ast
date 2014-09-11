@@ -1,0 +1,18 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: /nopkg-tree/input.wikitext/br_end_tag.wikitext:2:3: <no content> : 12.2.5.4.7 - R47 @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.4 Element should be an empty tag! @ WtXmlElement.
+	]
+	[0] = WtParagraph[
+		[0] = "I say yes\n",
+		[1] = WtXmlElement(
+			{P} name = "br"
+			{P} rtd = RTD[ "</br>" <o> "" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = -
+		),
+		[2] = "\nAnd I say goodbye"
+	],
+	[1] = "\n"
+)

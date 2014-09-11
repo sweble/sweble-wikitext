@@ -21,7 +21,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutorCompletionService;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.TimeUnit;
@@ -33,6 +32,8 @@ public class MyExecutorCompletionService<V>
 			CompletionService<V>
 {
 	private final ExecutorCompletionService<V> execComplServ;
+	
+	private final MyExecutorService executor;
 	
 	// =========================================================================
 	
@@ -46,8 +47,7 @@ public class MyExecutorCompletionService<V>
 			Logger logger,
 			ThreadGroup threadGroup)
 	{
-		ExecutorService executor =
-				new MyExecutorService(type, logger, threadGroup);
+		executor = new MyExecutorService(type, logger, threadGroup);
 		
 		execComplServ = new ExecutorCompletionService<V>(executor);
 	}
@@ -97,7 +97,7 @@ public class MyExecutorCompletionService<V>
 			BlockingQueue<Runnable> workQueue,
 			ThreadGroup threadGroup)
 	{
-		ExecutorService executor =
+		executor =
 				new MyExecutorService(
 						logger,
 						maximumPoolSize,
@@ -120,18 +120,34 @@ public class MyExecutorCompletionService<V>
 			ThreadGroup threadGroup,
 			RejectedExecutionHandler handler)
 	{
-		ExecutorService executor =
-				new MyExecutorService(
-						logger,
-						maximumPoolSize,
-						maximumPoolSize,
-						keepAliveTime,
-						unit,
-						workQueue,
-						threadGroup,
-						handler);
+		executor = new MyExecutorService(
+				logger,
+				maximumPoolSize,
+				maximumPoolSize,
+				keepAliveTime,
+				unit,
+				workQueue,
+				threadGroup,
+				handler);
 		
 		execComplServ = new ExecutorCompletionService<V>(executor);
+	}
+	
+	// =========================================================================
+	
+	public MyExecutorService getExecutor()
+	{
+		return executor;
+	}
+	
+	public void shutdownAndAwaitTermination()
+	{
+		executor.shutdownAndAwaitTermination();
+	}
+	
+	public void setThreadNameTemplate(String threadNameTemplate)
+	{
+		executor.setThreadNameTemplate(threadNameTemplate);
 	}
 	
 	// =========================================================================

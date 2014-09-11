@@ -23,4 +23,20 @@
     systemId="http://www.w3.org/2001/xml.xsd"
     uri="catalog/xml.xsd" />
 
+  <system
+    systemId="http://www.mediawiki.org/xml/export-0.5.xsd"
+    uri="export-0.5.xsd" />
+ 
+  <system
+    systemId="http://www.mediawiki.org/xml/export-0.6-fixed.xsd"
+    uri="export-0.6-fixed.xsd" />
+ 
+  <system
+    systemId="http://www.mediawiki.org/xml/export-0.7.xsd"
+    uri="export-0.7.xsd" />
+ 
+  <system
+    systemId="http://www.mediawiki.org/xml/export-0.8.xsd"
+    uri="export-0.8.xsd" />
+ 
 </catalog>

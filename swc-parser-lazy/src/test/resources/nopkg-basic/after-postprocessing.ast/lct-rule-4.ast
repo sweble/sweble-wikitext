@@ -1,0 +1,71 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtLctRuleConv(
+			{P} rtd = RTD[ "-{" <o> "|" <o> "}-" ]
+			flags = WtLctFlags(
+				{P} flags = C[ "H" ]
+				{P} garbage = C[]
+				{P} rtd = RTD[ "H" ]
+				{P} variants = C[]
+			),
+			rules = WtLctRules[
+				[0] = WtLctRule(
+					{P} directConvert = true
+					{P} rtd = RTD[ "zh:" <o> "" ]
+					{P} search = ""
+					{P} variant = "zh"
+					replace = WtLctRuleText[ [0] = "\u6587\u5B571" ]
+				),
+				[1] = WtLctRule(
+					{P} directConvert = true
+					{P} rtd = RTD[ ";zh-hans:" <o> "" ]
+					{P} search = ""
+					{P} variant = "zh-hans"
+					replace = WtLctRuleText[ [0] = "\u6587\u5B572" ]
+				),
+				[2] = WtLctRule(
+					{P} directConvert = true
+					{P} rtd = RTD[ ";zh-hant:" <o> "" ]
+					{P} search = ""
+					{P} variant = "zh-hant"
+					replace = WtLctRuleText[ [0] = "\u6587\u5B573" ]
+				),
+				[3] = WtLctRule(
+					{P} directConvert = true
+					{P} rtd = RTD[ ";zh-cn:" <o> "" ]
+					{P} search = ""
+					{P} variant = "zh-cn"
+					replace = WtLctRuleText[ [0] = "\u6587\u5B574" ]
+				),
+				[4] = WtLctRule(
+					{P} directConvert = true
+					{P} rtd = RTD[ ";zh-tw:" <o> "" ]
+					{P} search = ""
+					{P} variant = "zh-tw"
+					replace = WtLctRuleText[ [0] = "\u6587\u5B575" ]
+				),
+				[5] = WtLctRule(
+					{P} directConvert = true
+					{P} rtd = RTD[ ";zh-hk:" <o> "" ]
+					{P} search = ""
+					{P} variant = "zh-hk"
+					replace = WtLctRuleText[ [0] = "\u6587\u5B576" ]
+				),
+				[6] = WtLctRule(
+					{P} directConvert = true
+					{P} rtd = RTD[ ";zh-sg:" <o> "" ]
+					{P} search = ""
+					{P} variant = "zh-sg"
+					replace = WtLctRuleText[ [0] = "\u6587\u5B577" ]
+				),
+				[7] = WtLctRuleGarbage(
+					{P} content = ""
+					{P} rtd = RTD[ ";" ]
+				)
+			]
+		)
+	],
+	[1] = "\n"
+)

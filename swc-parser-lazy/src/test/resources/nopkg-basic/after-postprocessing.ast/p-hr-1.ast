@@ -1,0 +1,34 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[1] = "\n\n",
+	[2] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[3] = WtParagraph[ [0] = "text" ],
+	[4] = "\n",
+	[5] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[6] = "\n",
+	[7] = WtParagraph[ [0] = "t" ],
+	[8] = "\n",
+	[9] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[10] = "\n\n",
+	[11] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[12] = "\n",
+	[13] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[14] = "\n\n",
+	[15] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	)
+)

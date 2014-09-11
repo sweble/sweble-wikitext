@@ -1,0 +1,18 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "Hello World! A ",
+		[1] = WtXmlEntityRef(
+			{P} name = "amp"
+			{P} resolved = "&"
+			{P} rtd = RTD[ "&amp;" ]
+		),
+		[2] = " ",
+		[3] = WtXmlCharRef(
+			{P} codePoint = 79
+			{P} rtd = RTD[ "&#x4F;" ]
+		)
+	],
+	[1] = "\n"
+)

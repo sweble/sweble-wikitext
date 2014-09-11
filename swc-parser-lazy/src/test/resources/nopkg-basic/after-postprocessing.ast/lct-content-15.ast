@@ -1,0 +1,12 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtLctVarConv(
+			{P} rtd = RTD[ "-{" <o> "" <o> "}-" ]
+			flags = -,
+			body = WtBody[ [0] = "A\nB" ]
+		)
+	],
+	[1] = "\n"
+)

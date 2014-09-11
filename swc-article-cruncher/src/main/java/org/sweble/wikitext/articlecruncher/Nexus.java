@@ -25,12 +25,10 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 import org.apache.log4j.Logger;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
-import org.sweble.wikitext.articlecruncher.utils.ConsoleWriter;
-import org.sweble.wikitext.articlecruncher.utils.ConsoleWriterBase;
-import org.sweble.wikitext.articlecruncher.utils.ConsoleWriterDummy;
 import org.sweble.wikitext.articlecruncher.utils.ExecutorType;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorService;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
+import org.sweble.wikitext.articlecruncher.utils.WorkerLauncher;
 import org.sweble.wikitext.articlecruncher.utils.WorkerSynchronizer;
 
 public class Nexus
@@ -44,34 +42,17 @@ public class Nexus
 	
 	// =========================================================================
 	
-	private static Nexus nexus;
-	
-	public static Nexus get()
-	{
-		if (nexus == null)
-			nexus = new Nexus();
-		return nexus;
-	}
-	
-	public static ConsoleWriterBase getConsoleWriter()
-	{
-		return get().consoleWriter;
-	}
-	
-	// =========================================================================
-	
-	private static final Logger logger =
-			Logger.getLogger(Nexus.class.getName());
+	private static final Logger logger = Logger.getLogger(Nexus.class);
 	
 	private static final int COMPLETION_TIMEOUT_IN_SECONDS = 60 * 5;
 	
 	// =========================================================================
 	
-	private BlockingQueue<JobWithHistory> inTray;
+	private BlockingQueue<Job> inTray;
 	
-	private BlockingQueue<JobWithHistory> completedJobs;
+	private BlockingQueue<Job> processedJobs;
 	
-	private BlockingQueue<CompletedJob> outTray;
+	private BlockingQueue<Job> outTray;
 	
 	private JobTraceSet jobTraces = new JobTraceSet();
 	
@@ -79,13 +60,7 @@ public class Nexus
 	
 	private Throwable emergencyCause;
 	
-	//private WorkerBase parser;
-	
-	private WorkerBase gatherer;
-	
-	//private WorkerBase storer;
-	
-	private ConsoleWriterBase consoleWriter;
+	private WorkerLauncher gatherer;
 	
 	private NexusState state;
 	
@@ -93,15 +68,15 @@ public class Nexus
 	
 	private WorkerSynchronizer synchronizer = new WorkerSynchronizer();
 	
-	private List<WorkerBase> jobGenerators = new ArrayList<WorkerBase>();
+	private List<WorkerLauncher> jobGenerators = new ArrayList<WorkerLauncher>();
 	
-	private List<WorkerBase> processingNodes = new ArrayList<WorkerBase>();
+	private List<WorkerLauncher> processingNodes = new ArrayList<WorkerLauncher>();
 	
-	private List<WorkerBase> storers = new ArrayList<WorkerBase>();
+	private List<WorkerLauncher> storers = new ArrayList<WorkerLauncher>();
 	
 	// =========================================================================
 	
-	private Nexus()
+	public Nexus()
 	{
 	}
 	
@@ -109,17 +84,8 @@ public class Nexus
 	
 	public void setUp(
 			int inTrayCapacity,
-			int completedJobsCapacity,
+			int processedJobsCapacity,
 			int outTrayCapacity) throws Throwable
-	{
-		setUp(inTrayCapacity, completedJobsCapacity, outTrayCapacity, true);
-	}
-	
-	public void setUp(
-			int inTrayCapacity,
-			int completedJobsCapacity,
-			int outTrayCapacity,
-			boolean withConsoleWriter) throws Throwable
 	{
 		synchronized (synchronizer.getMonitor())
 		{
@@ -130,11 +96,11 @@ public class Nexus
 			{
 				logger.info("Nexus starting");
 				
-				inTray = new LinkedBlockingDeque<JobWithHistory>(inTrayCapacity);
+				inTray = new LinkedBlockingDeque<Job>(inTrayCapacity);
 				
-				completedJobs = new LinkedBlockingDeque<JobWithHistory>(completedJobsCapacity);
+				processedJobs = new LinkedBlockingDeque<Job>(processedJobsCapacity);
 				
-				outTray = new LinkedBlockingDeque<CompletedJob>(outTrayCapacity);
+				outTray = new LinkedBlockingDeque<Job>(outTrayCapacity);
 				
 				executor = new MyExecutorService(ExecutorType.CACHED_THREAD_POOL, logger);
 				
@@ -147,20 +113,14 @@ public class Nexus
 					}
 				};
 				
-				if (withConsoleWriter)
+				gatherer = new WorkerLauncher(new WorkerInstantiator()
 				{
-					consoleWriter = new ConsoleWriter(
-							abortHandler,
-							inTrayCapacity,
-							completedJobsCapacity,
-							outTrayCapacity);
-				}
-				else
-				{
-					consoleWriter = new ConsoleWriterDummy(abortHandler);
-				}
-				
-				gatherer = new Gatherer(abortHandler, inTray, completedJobs, outTray);
+					@Override
+					public WorkerBase instantiate()
+					{
+						return new Gatherer(abortHandler, inTray, processedJobs, outTray);
+					}
+				}, abortHandler);
 				
 				state = NexusState.INITIALIZED;
 			}
@@ -188,7 +148,6 @@ public class Nexus
 				{
 					logger.info("Nexus starting workers");
 					
-					consoleWriter.start(executor);
 					gatherer.start(executor);
 					
 					logger.info("Nexus waiting for end of input stream");
@@ -227,7 +186,7 @@ public class Nexus
 		}
 	}
 	
-	public void addJobGenerator(JobGeneratorFactory factory)
+	public void addJobGenerator(final JobGeneratorFactory factory)
 	{
 		synchronized (synchronizer.getMonitor())
 		{
@@ -238,14 +197,18 @@ public class Nexus
 				{
 					logger.info("Adding job generator");
 					
-					WorkerBase jg = factory.create(
-							abortHandler,
-							inTray,
-							jobTraces);
+					WorkerLauncher wl = new WorkerLauncher(new WorkerInstantiator()
+					{
+						@Override
+						public WorkerBase instantiate()
+						{
+							return factory.create(abortHandler, inTray, jobTraces);
+						}
+					}, abortHandler);
 					
-					jobGenerators.add(jg);
+					jobGenerators.add(wl);
 					
-					jg.start(executor, synchronizer);
+					wl.start(executor, synchronizer);
 					
 					break;
 				}
@@ -255,7 +218,7 @@ public class Nexus
 		}
 	}
 	
-	public void addProcessingNode(ProcessingNodeFactory factory)
+	public void addProcessingNode(final ProcessingNodeFactory factory)
 	{
 		synchronized (synchronizer.getMonitor())
 		{
@@ -266,14 +229,21 @@ public class Nexus
 				{
 					logger.info("Adding processing node");
 					
-					WorkerBase pn = factory.create(
-							abortHandler,
-							inTray,
-							completedJobs);
+					WorkerLauncher wl = new WorkerLauncher(new WorkerInstantiator()
+					{
+						@Override
+						public WorkerBase instantiate()
+						{
+							return factory.create(
+									abortHandler,
+									inTray,
+									processedJobs);
+						}
+					}, abortHandler);
 					
-					processingNodes.add(pn);
+					processingNodes.add(wl);
 					
-					pn.start(executor);
+					wl.start(executor);
 					
 					break;
 				}
@@ -283,7 +253,7 @@ public class Nexus
 		}
 	}
 	
-	public void addStorer(StorerFactory factory)
+	public void addStorer(final StorerFactory factory)
 	{
 		synchronized (synchronizer.getMonitor())
 		{
@@ -294,14 +264,18 @@ public class Nexus
 				{
 					logger.info("Adding storer");
 					
-					WorkerBase storer = factory.create(
-							abortHandler,
-							jobTraces,
-							outTray);
+					WorkerLauncher wl = new WorkerLauncher(new WorkerInstantiator()
+					{
+						@Override
+						public WorkerBase instantiate()
+						{
+							return factory.create(abortHandler, jobTraces, outTray);
+						}
+					}, abortHandler);
 					
-					storers.add(storer);
+					storers.add(wl);
 					
-					storer.start(executor);
+					wl.start(executor);
 					
 					break;
 				}
@@ -316,41 +290,40 @@ public class Nexus
 		return jobTraces.getTraces();
 	}
 	
-	public BlockingQueue<JobWithHistory> getInTray()
+	public BlockingQueue<Job> getInTray()
 	{
 		return inTray;
 	}
 	
-	public BlockingQueue<CompletedJob> getOutTray()
+	public BlockingQueue<Job> getOutTray()
 	{
 		return outTray;
 	}
 	
-	public static void shutdown()
+	public/*static*/void shutdown()
 	{
 		internalShutdown(null);
 	}
 	
-	public static void emergencyShutdown(Throwable t)
+	public/*static*/void emergencyShutdown(Throwable t)
 	{
 		internalShutdown(t);
 	}
 	
 	// =========================================================================
 	
-	private static void internalShutdown(Throwable t)
+	private/*static*/void internalShutdown(Throwable t)
 	{
-		synchronized (get().synchronizer.getMonitor())
+		synchronized (/*get().*/synchronizer.getMonitor())
 		{
-			switch (get().state)
+			switch (/*get().*/state)
 			{
 				case RUNNING:
 				{
-					WorkerSynchronizer sync = get().synchronizer;
+					WorkerSynchronizer sync = /*get().*/synchronizer;
 					if (!sync.isSynchronized() && !sync.isAborted())
 					{
-						// Don't overwrite original cause
-						get().setEmergencyCause(t);
+						/*get().*/setEmergencyCause(t);
 						
 						logger.info(t == null ?
 								"Nexus performing orderly shutdown" :
@@ -369,6 +342,7 @@ public class Nexus
 	
 	private void setEmergencyCause(Throwable t)
 	{
+		// Don't overwrite original cause
 		if (emergencyCause == null)
 			emergencyCause = t;
 	}
@@ -384,20 +358,17 @@ public class Nexus
 			
 			logger.info("Stopping workers");
 			
-			for (WorkerBase jg : jobGenerators)
+			for (WorkerLauncher jg : jobGenerators)
 				jg.stop();
 			
-			for (WorkerBase pn : processingNodes)
+			for (WorkerLauncher pn : processingNodes)
 				pn.stop();
 			
 			if (gatherer != null)
 				gatherer.stop();
 			
-			for (WorkerBase s : storers)
+			for (WorkerLauncher s : storers)
 				s.stop();
-			
-			if (consoleWriter != null)
-				consoleWriter.stop();
 			
 			if (executor != null)
 			{

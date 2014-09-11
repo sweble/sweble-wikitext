@@ -1,0 +1,19 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTagExtension(
+				{P} name = "pre"
+				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtTagExtensionBody("\n\tBlock\n")
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtTagExtension(
+			{P} name = "pre"
+			{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtTagExtensionBody("\n\tBlock\n")
+		)
+	]
+)

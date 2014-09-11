@@ -1,0 +1,52 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R24 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x21.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+	]
+	[0] = "\n",
+	[1] = WtDefinitionList[
+		[0] = WtDefinitionListDef[
+			[0] = WtDefinitionList[
+				[0] = WtDefinitionListDef(
+					{P} rtd = RTD[ "::" <o> "" ]
+					[0] = WtXmlElement(
+						{P} name = "i"
+						{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = "X",
+							[1] = WtXmlElement(
+								{P} name = "b"
+								{P} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[ [0] = " Y" ]
+							),
+							[2] = WtXmlElement(
+								{P} name = "i"
+								{P} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[ [0] = "Z" ]
+							),
+							[3] = " "
+						]
+					)
+				)
+			]
+		]
+	],
+	[2] = WtXmlElement(
+		{P} name = "i"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = "\n\n",
+			[1] = WtDefinitionList[
+				[0] = WtDefinitionListDef(
+					{P} rtd = RTD[ ":" <o> "" ]
+					[0] = "B "
+				)
+			],
+			[2] = "\n"
+		]
+	)
+)

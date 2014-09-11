@@ -1,0 +1,11 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[1] = "\n\n",
+	[2] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	)
+)

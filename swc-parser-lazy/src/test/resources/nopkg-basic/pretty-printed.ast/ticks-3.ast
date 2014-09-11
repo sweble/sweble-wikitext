@@ -1,0 +1,7 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtItalics[ [0] = WtBold[ [0] = "x'''" ] ],
+	[1] = "y",
+	[2] = WtBold[]
+)

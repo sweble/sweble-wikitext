@@ -1,0 +1,243 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * XML Attribute
+ * -------------
+ *
+ *   Grammar:
+ *     - Ws* XmlName Ws* '=' Ws* '\'' AttributeValueSq* '\''
+ *     - Ws* XmlName Ws* '=' Ws* '"' ValueDqStar '"'
+ *     - Ws* XmlName Ws* '=' ValueNqStar
+ *     - Ws* XmlName
+ *
+ */
+
+module org.sweble.wikitext.parser.utils.XmlAttribute(WS);
+
+import org.sweble.wikitext.parser.utils.ParserEntity;
+import org.sweble.wikitext.parser.utils.XmlName;
+import org.sweble.wikitext.parser.utils.XmlReference;
+import WS;
+
+
+
+
+
+// -- Attributes ---------------------------------------------------------------
+
+WtXmlAttributes XmlAttributeStar =
+  yyValue:tXmlAttributePlus?
+  {
+    if (yyValue == null)
+      yyValue = nf.emptyAttrs();
+  }
+;
+
+WtXmlAttributes XmlAttributePlus = tXmlAttributePlus ;
+
+inline void XmlAttrGarbageStopper =
+    <SlashGreater> "/>"
+  / <Greater>      '>'
+  / <Less>         '<'
+;
+
+inline void XmlAttrValueStopper =
+    <SlashGreater> "/>"
+  / <Greater>      '>'
+  / <Less>         '<'
+;
+
+inline String XmlAttrWs =
+    <Whitespace>   pWsPlus
+;
+
+
+
+
+// -- Attributes ---------------------------------------------------------------
+
+private transient WtXmlAttributes tXmlAttributePlus =
+  head:XmlHeadAttributeChoice tail:XmlTailAttributeChoice*
+  {
+    yyValue = nf.attrs(nf.list(head, tail));
+  }
+;
+
+private inline WtNode XmlHeadAttributeChoice =
+    ValidXmlAttribute
+  / XmlAttributeGarbage
+;
+
+private inline WtNode XmlTailAttributeChoice =
+    &XmlAttrWs ValidXmlAttribute
+  / XmlAttributeGarbage
+;
+
+private inline WtXmlAttributeGarbage XmlAttributeGarbage =
+  garbage:XmlAttributeGarbageChoice+
+  {
+    yyValue = nf.attrGarbage(nf.list(garbage));
+  }
+;
+
+private inline WtNode XmlAttributeGarbageChoice =
+    !XmlAttrGarbageStopper ParserEntity
+  / str:GarbageString
+    {
+      yyValue = nf.text(str);
+    }
+;
+
+private transient String GarbageString =
+  ( !GarbageStringStopper _ )+
+;
+
+private inline void GarbageStringStopper =
+    '\uE000'
+  / XmlAttrWs? XmlAttrGarbageStopper
+  / XmlAttrWs ValidXmlAttribute
+;
+
+private WtNode ValidXmlAttribute =
+    ws0:XmlAttrWs? name:XmlNameOrTemplate ws1:XmlAttrWs? '=' ws2:XmlAttrWs? ['] value:ValueSqStar ['] &AttrEnd
+    {
+      yyValue = setRtd(
+        nf.attr(name, value),
+        ws0, SEP, ws1, '=', ws2, '\'', SEP, '\'');
+    }
+  / ws0:XmlAttrWs? name:XmlNameOrTemplate ws1:XmlAttrWs? '=' ws2:XmlAttrWs? '"' value:ValueDqStar '"' &AttrEnd
+    {
+      yyValue = setRtd(
+        nf.attr(name, value),
+        ws0, SEP, ws1, '=', ws2, '"', SEP, '"');
+    }
+  / ws0:XmlAttrWs? name:XmlNameOrTemplate ws1:XmlAttrWs? '=' value:ValueNqStar &AttrEnd
+    {
+      yyValue = setRtd(
+        nf.attr(name, value),
+        ws0, SEP, ws1, '=', SEP);
+    }
+  / ws0:XmlAttrWs? name:XmlName &AttrEnd
+    {
+      yyValue = setRtd(
+        nf.attr(nf.name(nf.list(nf.text(name)))),
+        ws0, SEP, SEP);
+    }
+  / ws0:XmlAttrWs? &'\uE000' entity:ParserEntityTmplParamCommentIgnore &AttrEnd
+    {
+      prependRtd(entity, ws0);
+      yyValue = entity;
+    }
+;
+
+private inline WtName XmlNameOrTemplate =
+    xmlName:XmlName
+    {
+      yyValue = nf.name(nf.list(nf.text(xmlName)));
+    }
+  / &'\uE000' entity:ParserEntityTemplateOrParameter
+    {
+      yyValue = nf.name(nf.list(entity));
+    }
+;
+
+private inline void AttrEnd =
+    XmlAttrWs
+  / XmlAttrValueStopper
+  / Eof
+;
+
+
+
+
+// -- Single quoted attribute values -------------------------------------------
+
+private transient WtValue ValueSqStar =
+  value:ValueSqChoice*
+  {
+    yyValue = nf.value(nf.list(value));
+  }
+;
+
+private inline WtNode ValueSqChoice =
+    string:ValueSqString
+    {
+      yyValue = nf.text(string);
+    }
+  / &'&' XmlReference
+  / &'\uE000' ParserEntity
+;
+
+private transient String ValueSqString =
+  ( !XmlAttrValueStopper ![<'&\uE000] _ )+
+;
+
+
+
+
+// -- Double quoted attribute values -------------------------------------------
+
+private transient WtValue ValueDqStar =
+  value:ValueDqChoice*
+  {
+    yyValue = nf.value(nf.list(value));
+  }
+;
+
+private inline WtNode ValueDqChoice =
+    string:ValueDqString
+    {
+      yyValue = nf.text(string);
+    }
+  / &'&' XmlReference
+  / &'\uE000' ParserEntity
+;
+
+private transient String ValueDqString =
+  ( !XmlAttrValueStopper ![<"&\uE000] _ )+
+;
+
+
+
+
+// -- Non-quoted attribute values ----------------------------------------------
+
+private transient WtValue ValueNqStar =
+  value:ValueNqChoice*
+  {
+    yyValue = nf.value(nf.list(value));
+  }
+;
+
+private inline WtNode ValueNqChoice =
+    string:ValueNqString
+    {
+      yyValue = nf.text(string);
+    }
+  / &'&' XmlReference
+  / &'\uE000' ParserEntity
+;
+
+private transient String ValueNqString =
+  ( !XmlAttrValueStopper [a-zA-Z0-9!#$%()*,\-./:;<?@[\]^_`{|}~] )+
+;
+
+
+
+
+// -- End of file -------------------------------------------------------------

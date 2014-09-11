@@ -1,6 +1,4 @@
 
-A .jar file is generated in target/ when "mvn package" is invoked. Further, all
-required libraries are copied to target/lib. The program can now be invoked
-with:
+A .jar file is generated in target/ when "mvn package -Pbuild-aggregates" is invoked:
 
-  $ java -jar target/[artifactId].jar TITLE QUERY
+  $ java -jar target/[artifactId]-jar-with-dependencies.jar TITLE QUERY

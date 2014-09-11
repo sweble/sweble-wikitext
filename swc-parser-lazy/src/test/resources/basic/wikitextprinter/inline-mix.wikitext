@@ -1,3 +1,0 @@
-
- ~~~ '' ~~~~ '''  ~~~~~ http://example.com '''' [http://example.com] ''''' __NOTOC__ &amp; ignored 
-

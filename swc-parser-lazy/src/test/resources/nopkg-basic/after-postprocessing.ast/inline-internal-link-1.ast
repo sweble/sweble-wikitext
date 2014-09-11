@@ -1,0 +1,398 @@
+WtParsedWikitextPage(
+  Properties:
+    {N} entityMap = EntityMap {}
+    {N} warnings = []
+
+  [
+    WtParagraph([
+      WtText(
+        Properties:
+          {N} content = "[[Link!"
+          warnings = 
+          [
+            Warning (informative): /nopkg-basic/input.wikitext/inline-internal-link-1.wikitext:1:1 - 8: "[[Link!" : This looks like a Internal Link, however the finishing `]]' is missing.
+          ]
+      )
+      WtNewline("\n")
+      WtNewline("\n")
+    ])
+    WtParagraph([
+      WtText(
+        Properties:
+          {N} content = "[[File:Image.png|Title]"
+          warnings = 
+          [
+            Warning (informative): /nopkg-basic/input.wikitext/inline-internal-link-1.wikitext:3:1 - 17: "[[File:Image.png" : This looks like a Internal Link, however the finishing `]]' is missing.
+          ]
+      )
+      WtNewline("\n")
+      WtNewline("\n")
+    ])
+    WtParagraph([
+      WtImageLink(
+        Properties:
+          {N} alt = 
+            WtLinkOptionAltText([ ])
+          {N} border = false
+          {N} format = UNRESTRAINED
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
+          {N} target = "File:Image.png"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          warnings = 
+          [
+            Warning (informative): /nopkg-basic/input.wikitext/inline-internal-link-1.wikitext:5:18 - 40: "1000000000000000000xpx" : Invalid size format.
+          ]
+          {N} width = -1
+
+        [
+          WtLinkOptionResize(
+            Properties:
+              {N} height = -1
+              {N} rtd = RTD[ "|1000000000000000000xpx" ]
+              {N} width = -2
+          )
+        ]
+        WtLinkTitle([ ])
+      )
+      WtNewline("\n")
+      WtNewline("\n")
+    ])
+    WtParagraph([
+      WtImageLink(
+        Properties:
+          {N} alt = 
+            WtLinkOptionAltText(
+              Properties:
+                {N} rtd = RTD[ "|alt=" <o> "" ]
+
+              [ WtText("Alternativer alternativer Text\n\t") ]
+            )
+          {N} border = false
+          {N} format = FRAME
+          {N} hAlign = NONE
+          {N} height = 15
+          {N} linkPage = null
+          {N} linkUrl = 
+            WtUrl(
+              Properties:
+                {N} path = "//example.com"
+                {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
+            )
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
+          {N} target = "File:Image.png"
+          {N} upright = false
+          {N} vAlign = TOP
+          {N} width = 15
+
+        [
+          WtLinkOptionKeyword(
+            Properties:
+              {N} keyword = "frame"
+              {N} rtd = RTD[ "|frame\n\t" ]
+          )
+          WtLinkOptionResize(
+            Properties:
+              {N} height = 20
+              {N} rtd = RTD[ "|10x20px\n\t" ]
+              {N} width = 10
+          )
+          WtLinkOptionAltText(
+            Properties:
+              {N} rtd = RTD[ "|alt=" <o> "" ]
+
+            [ WtText("Alternativer Text\n\t") ]
+          )
+          WtLinkOptionResize(
+            Properties:
+              {N} height = -1
+              {N} rtd = RTD[ "|15xpx\n\t" ]
+              {N} width = 15
+          )
+          WtLinkOptionLinkTarget(
+            Properties:
+              {N} rtd = RTD[ "|link=" <o> "\n\t" ]
+
+            WtUrl(
+              Properties:
+                {N} path = "//example.com"
+                {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
+            )
+          )
+          WtLinkOptionResize(
+            Properties:
+              {N} height = 15
+              {N} rtd = RTD[ "|x15px<!-- Comment -->\n\t" ]
+              {N} width = -1
+          )
+          WtLinkOptionKeyword(
+            Properties:
+              {N} keyword = "top"
+              {N} rtd = RTD[ "|top\n\t" ]
+          )
+          WtLinkOptionAltText(
+            Properties:
+              {N} rtd = RTD[ "|alt=" <o> "" ]
+
+            [ WtText("Alternativer alternativer Text\n\t") ]
+          )
+        ]
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("Title") ]
+        )
+      )
+      WtNewline("\n")
+      WtNewline("\n")
+    ])
+    WtParagraph([
+      WtImageLink(
+        Properties:
+          {N} alt = 
+            WtLinkOptionAltText([ ])
+          {N} border = false
+          {N} format = UNRESTRAINED
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
+          {N} target = "File:Image.png"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [ ]
+        WtLinkTitle([ ])
+      )
+      WtNewline("\n")
+      WtImageLink(
+        Properties:
+          {N} alt = 
+            WtLinkOptionAltText([ ])
+          {N} border = false
+          {N} format = UNRESTRAINED
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
+          {N} target = "File:Image.png"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          WtLinkOptionGarbage(
+            Properties:
+              {N} content = "invisible"
+              {N} rtd = RTD[ "|invisible" ]
+          )
+        ]
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("visible") ]
+        )
+      )
+      WtNewline("\n")
+      WtImageLink(
+        Properties:
+          {N} alt = 
+            WtLinkOptionAltText([ ])
+          {N} border = false
+          {N} format = UNRESTRAINED
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = "Some Page Title"
+          {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
+          {N} target = "File:Image.png"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          WtLinkOptionLinkTarget(
+            Properties:
+              {N} rtd = RTD[ "|link=" <o> "" ]
+
+            WtLinkTarget("Some Page Title")
+          )
+        ]
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("Title") ]
+        )
+      )
+      WtNewline("\n")
+      WtImageLink(
+        Properties:
+          {N} alt = 
+            WtLinkOptionAltText([ ])
+          {N} border = false
+          {N} format = UNRESTRAINED
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = 
+            WtUrl(
+              Properties:
+                {N} path = "//example.com"
+                {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
+            )
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
+          {N} target = "File:Image.png"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          WtLinkOptionLinkTarget(
+            Properties:
+              {N} rtd = RTD[ "|link=" <o> "" ]
+
+            WtUrl(
+              Properties:
+                {N} path = "//example.com"
+                {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
+            )
+          )
+        ]
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("Title") ]
+        )
+      )
+      WtNewline("\n")
+      WtNewline("\n")
+    ])
+    WtParagraph([
+      WtInternalLink(
+        Properties:
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("arg0") ]
+        )
+      )
+      WtNewline("\n")
+      WtInternalLink(
+        Properties:
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("arg0|http://blub.com") ]
+        )
+      )
+      WtNewline("\n")
+      WtInternalLink(
+        Properties:
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("arg0|[http://blub.com") ]
+        )
+      )
+      WtText("]")
+      WtNewline("\n")
+      WtInternalLink(
+        Properties:
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle(
+          Properties:
+            {N} rtd = RTD[ "|" <o> "" ]
+
+          [ WtText("arg0|[http://bl|ub.com") ]
+        )
+      )
+      WtText("]")
+      WtNewline("\n")
+      WtNewline("\n")
+    ])
+    WtParagraph([
+      WtInternalLink(
+        Properties:
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle([ ])
+      )
+      WtNewline("\n")
+      WtText("text ")
+      WtInternalLink(
+        Properties:
+          {N} postfix = ""
+          {N} prefix = "a"
+          {N} rtd = RTD[ "a[[Hallo" <o> "]]" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle([ ])
+      )
+      WtText(" text")
+      WtNewline("\n")
+      WtText("text ")
+      WtInternalLink(
+        Properties:
+          {N} postfix = "z"
+          {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]z" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle([ ])
+      )
+      WtText(" text")
+      WtNewline("\n")
+      WtText("text ")
+      WtInternalLink(
+        Properties:
+          {N} postfix = "z"
+          {N} prefix = "a"
+          {N} rtd = RTD[ "a[[Hallo" <o> "]]z" ]
+          {N} target = "Hallo"
+
+        WtLinkTitle([ ])
+      )
+      WtText(" text")
+    ])
+  ]
+)

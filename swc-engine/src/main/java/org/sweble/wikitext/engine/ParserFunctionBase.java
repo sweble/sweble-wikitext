@@ -18,37 +18,233 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
-import java.util.LinkedList;
+import java.util.List;
 
-import org.sweble.wikitext.lazy.preprocessor.Template;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.engine.ParserFunctionBase.ParserFunctionAdapter;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
+import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
+@XmlTransient
+@XmlJavaTypeAdapter(value = ParserFunctionAdapter.class)
 public abstract class ParserFunctionBase
-        implements
-            Serializable
+		implements
+			Serializable,
+			Comparable<ParserFunctionBase>
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final String name;
+	private final String id;
+	
+	private final PfnArgumentMode argMode;
+	
+	private final boolean pageSwitch;
+	
+	/**
+	 * Can't be final since it cannot be set during un-marshaling.
+	 */
+	private WikiConfig wikiConfig;
+	
+	private EngineAstTextUtils tu;
+	
+	private EngineNodeFactory nf;
 	
 	// =========================================================================
 	
-	public ParserFunctionBase(String name)
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionBase(String id)
 	{
-		super();
-		this.name = name;
+		this(PfnArgumentMode.UNEXPANDED_VALUES, false, id);
+	}
+	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionBase(PfnArgumentMode argMode, String id)
+	{
+		this(argMode, false, id);
+	}
+	
+	/**
+	 * For un-marshaling only.
+	 */
+	public ParserFunctionBase(
+			PfnArgumentMode argMode,
+			boolean pageSwitch,
+			String id)
+	{
+		if (id == null || id.isEmpty())
+			throw new IllegalArgumentException();
+		
+		this.argMode = argMode;
+		this.pageSwitch = pageSwitch;
+		this.id = id;
+	}
+	
+	public ParserFunctionBase(WikiConfig wikiConfig, String id)
+	{
+		this(wikiConfig, PfnArgumentMode.UNEXPANDED_VALUES, false, id);
+	}
+	
+	public ParserFunctionBase(
+			WikiConfig wikiConfig,
+			PfnArgumentMode argMode,
+			String id)
+	{
+		this(wikiConfig, argMode, false, id);
+	}
+	
+	public ParserFunctionBase(
+			WikiConfig wikiConfig,
+			PfnArgumentMode argMode,
+			boolean pageSwitch,
+			String id)
+	{
+		this(argMode, pageSwitch, id);
+		setWikiConfig(wikiConfig);
 	}
 	
 	// =========================================================================
 	
-	public String getName()
+	/**
+	 * For internal use only!
+	 */
+	public void setWikiConfig(WikiConfig wikiConfig)
 	{
-		return name;
+		if (wikiConfig == null)
+			throw new IllegalArgumentException();
+		
+		this.wikiConfig = wikiConfig;
+		this.nf = wikiConfig.getNodeFactory();
+		this.tu = wikiConfig.getAstTextUtils();
 	}
 	
-	public abstract AstNode invoke(
-	        Template template,
-	        ExpansionFrame preprocessorFrame,
-	        LinkedList<AstNode> args);
+	public WikiConfig getWikiConfig()
+	{
+		return wikiConfig;
+	}
+	
+	public String getId()
+	{
+		return id;
+	}
+	
+	public PfnArgumentMode getArgMode()
+	{
+		return argMode;
+	}
+	
+	public boolean isPageSwitch()
+	{
+		return pageSwitch;
+	}
+	
+	protected EngineNodeFactory nf()
+	{
+		return nf;
+	}
+	
+	protected EngineAstTextUtils tu()
+	{
+		return tu;
+	}
+	
+	/**
+	 * WtNode can either be a WtTemplate or a WtPageSwitch
+	 */
+	public abstract WtNode invoke(
+			WtNode template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends WtNode> argsValues);
+	
+	// =========================================================================
+	
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		return true;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public int compareTo(ParserFunctionBase o)
+	{
+		return this.id.compareTo(o.getId());
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public String toString()
+	{
+		return "ParserFunctionBase [id=" + id + ", argMode=" + argMode + ", pageSwitch=" + pageSwitch + "]";
+	}
+	
+	// =========================================================================
+	
+	protected static final class ParserFunctionRef
+	{
+		@XmlAttribute(name = "class")
+		public String className;
+		
+		public ParserFunctionRef()
+		{
+		}
+		
+		public ParserFunctionRef(String name)
+		{
+			this.className = name;
+		}
+	}
+	
+	public static final class ParserFunctionAdapter
+			extends
+				XmlAdapter<ParserFunctionRef, ParserFunctionBase>
+	{
+		public ParserFunctionAdapter()
+		{
+		}
+		
+		@Override
+		public ParserFunctionRef marshal(ParserFunctionBase v) throws Exception
+		{
+			return new ParserFunctionRef(v.getClass().getName());
+		}
+		
+		@Override
+		public ParserFunctionBase unmarshal(ParserFunctionRef v) throws Exception
+		{
+			Class<?> clazz = Class.forName(v.className);
+			/*
+			Constructor<?> ctor = clazz.getDeclaredConstructor(WikiConfig.class);
+			// We don't have a wiki config object yet :(
+			return (ParserFunctionBase) ctor.newInstance((WikiConfig) null);
+			*/
+			return (ParserFunctionBase) clazz.newInstance();
+		}
+	}
 }

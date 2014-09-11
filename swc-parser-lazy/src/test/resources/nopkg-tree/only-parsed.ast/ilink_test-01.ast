@@ -1,0 +1,20 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Es kommt ein Link: ",
+	[2] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName[ [0] = "Hallo" ],
+		title = -
+	),
+	[3] = " und er ist wieder weg ...",
+	[4] = WtImEndTag(
+		{P} name = "@p"
+	)
+)

@@ -25,18 +25,18 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.1.1</version>
+    <version>2.0.0</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Dump Reader -->
 
-  <groupId>org.sweble.wikitext</groupId>
+  <!-- Same groupId as parent -->
   <artifactId>swc-dumpreader</artifactId>
-  <version>1.1.1</version>
+  <!-- Same version as parent -->
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Dump Reader</name>
-  <url>http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext/swc-dumpreader</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-dumpreader</url>
   <inceptionYear>2012</inceptionYear>
   <description>
     A small library for reading in Wikipedia dumps.
@@ -48,14 +48,6 @@
 
     <sweble-wikitext.basedir>${project.parent.basedir}</sweble-wikitext.basedir>
 
-    <!-- Dependency versions -->
-    <version.dep.aspectjrt>1.6.7</version.dep.aspectjrt>
-
-    <!-- Plugin dependency versions -->
-    <version.plugin.eclipse>2.9</version.plugin.eclipse>
-    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
-    <version.plugin.aspectj>1.3</version.plugin.aspectj>
-
   </properties>
 
   <!-- ==[ Dependencies ]=================================================== -->
@@ -66,14 +58,18 @@
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>
-      <version>${version.dep.aspectjrt}</version>
     </dependency>
 
     <!-- Apache Commons Compress -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-      <version>1.0</version>
+    </dependency>
+
+    <!-- Joda-Time - Java date and time API -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
     </dependency>
 
     <!-- Log4j -->
@@ -129,49 +125,6 @@
 
     <plugins>
 
-      <!-- Maven AspectJ Plugin -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>aspectj-maven-plugin</artifactId>
-        <version>${version.plugin.aspectj}</version>
-        <inherited>false</inherited>
-        <configuration>
-          <source>${version.java}</source>
-          <target>${version.java}</target>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <!--
-        When using the AspectJ plugin one must disable the Maven Compilier 
-        Plugin in favor of the AspectJ plugin:
-      -->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <excludes>
-            <exclude>**/*</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-
-      <!-- Add the AspectJ nature to the eclipse project -->
-      <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <downloadSources>true</downloadSources>
-          <downloadJavadocs>true</downloadJavadocs>
-          <ajdtVersion>1.5</ajdtVersion>
-        </configuration>
-      </plugin>
-
       <!-- Add various source directories -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -186,7 +139,7 @@
             <configuration>
               <sources>
                 <source>src/main/schema</source>
-                <source>target/generated-sources/xjc</source>
+                <source>${project.build.directory}/generated-sources/xjc</source>
               </sources>
             </configuration>
           </execution>
@@ -197,7 +150,6 @@
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>${version.plugin.jaxb}</version>
         <executions>
           <execution>
             <id>schema-to-java</id>
@@ -235,7 +187,57 @@
               <forceRegenerate>true</forceRegenerate>
             </configuration>
           </execution>
+          <execution>
+            <id>compile-mw-schema-0.7</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.7.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_7</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
+          <execution>
+            <id>compile-mw-schema-0.8</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.8.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_8</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
         </executions>
+      </plugin>
+
+      <!-- Maven AspectJ Plugin -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>aspectj-maven-plugin</artifactId>
+        <inherited>false</inherited>
+      </plugin>
+
+      <!-- Add the AspectJ nature to the eclipse project -->
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <inherited>false</inherited>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>true</downloadJavadocs>
+          <ajdtVersion>1.5</ajdtVersion>
+        </configuration>
       </plugin>
 
       <!-- Check and format license headers -->
@@ -248,12 +250,8 @@
             <!-- These excludes should be the same as in the parent project -->
             <exclude>**/*.log</exclude>
             <exclude>**/.gitignore</exclude>
-            <exclude>**/LICENSE</exclude>
-            <exclude>**/NOTICE</exclude>
-            <exclude>src/site/site.xml</exclude>
-            <exclude>src/site/changes.xml</exclude>
-            <exclude>src/site/resources/css/site.css</exclude>
-            <exclude>swc-*/</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
 
             <!-- Extra excludes for this project -->
             <exclude>**/*.log</exclude>
@@ -317,7 +315,7 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>sweble-wikitext-1.1.1</tag>
+    <tag>sweble-wikitext-2.0.0</tag>
   </scm>
 
   <!--

@@ -1,0 +1,41 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = "\n",
+	[1] = WtParagraph[
+		[0] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = "Italics"
+		),
+		[1] = "\n",
+		[2] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "'''" ]
+			[0] = "Bold"
+		)
+	],
+	[2] = "\n\n",
+	[3] = WtParagraph[
+		[0] = "Jetzt wirds funky:\n'",
+		[1] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = "What?"
+		),
+		[2] = "\n",
+		[3] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = "What'"
+		),
+		[4] = "s up?"
+	],
+	[4] = "\n\n",
+	[5] = WtParagraph[
+		[0] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = WtBold(
+				{P} rtd = RTD[ "'''" <o> "'''" ]
+				[0] = "Boah"
+			)
+		)
+	],
+	[6] = "\n"
+)

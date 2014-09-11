@@ -1,0 +1,103 @@
+WtParsedWikitextPage(
+  Properties:
+    {N} entityMap = EntityMap {}
+    {N} warnings = []
+
+  [
+    WtNewline("\n")
+    WtParagraph([ ])
+    WtXmlElement(
+      Properties:
+        {N} empty = false
+        {N} name = "table"
+        {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
+
+      [ ]
+      [
+        WtNewline("\n")
+        WtNewline("\n")
+        WtParagraph([
+          WtText("\ttext")
+          WtNewline("\n")
+          WtNewline("\n")
+        ])
+        WtParagraph([ WtText("\t") ])
+        WtXmlElement(
+          Properties:
+            {N} empty = false
+            {N} name = "tr"
+            {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
+
+          [ ]
+          [
+            WtNewline("\n")
+            WtText("\t\t")
+            WtXmlElement(
+              Properties:
+                {N} empty = false
+                {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
+
+              [ ]
+              [ WtText("Cell 1.1") ]
+            )
+            WtNewline("\n")
+            WtText("\t\t")
+            WtXmlElement(
+              Properties:
+                {N} empty = false
+                {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
+
+              [ ]
+              [ WtText("Cell 1.2") ]
+            )
+            WtNewline("\n")
+            WtText("\t")
+          ]
+        )
+        WtNewline("\n")
+        WtNewline("\n")
+        WtParagraph([ WtText("\t") ])
+        WtXmlElement(
+          Properties:
+            {N} empty = false
+            {N} name = "tr"
+            {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
+
+          [ ]
+          [
+            WtNewline("\n")
+            WtText("\t\t")
+            WtXmlElement(
+              Properties:
+                {N} empty = false
+                {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
+
+              [ ]
+              [ WtText("Cell 2.1") ]
+            )
+            WtNewline("\n")
+            WtText("\t\t")
+            WtXmlElement(
+              Properties:
+                {N} empty = false
+                {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
+
+              [ ]
+              [ WtText("Cell 2.2") ]
+            )
+            WtNewline("\n")
+            WtText("\t")
+          ]
+        )
+        WtNewline("\n")
+        WtNewline("\n")
+        WtParagraph([ ])
+      ]
+    )
+    WtNewline("\n")
+  ]
+)

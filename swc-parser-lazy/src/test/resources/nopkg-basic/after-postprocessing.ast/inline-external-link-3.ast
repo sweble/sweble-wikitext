@@ -1,0 +1,15 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtExternalLink(
+			{P} rtd = RTD[ "[" <o> "" <o> " \t \t]" ]
+			target = WtUrl(
+				{P} path = "//example.com"
+				{P} protocol = "http"
+				{P} rtd = RTD[ "http://example.com" ]
+			),
+			title = -
+		)
+	]
+)

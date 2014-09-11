@@ -1,0 +1,9 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtIgnored("<includeonly> Only visible when included </includeonly>")
+	}
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtIgnored("<includeonly> Only visible when included </includeonly>"),
+	[2] = WtNewline("\n")
+)

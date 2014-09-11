@@ -1,0 +1,76 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtRedirect(
+				{P} rtd = RTD[ "#ReDiReCt[[" <o> "|garbage]]" ]
+				target = WtPageName[ [0] = "link" ]
+			),
+		[1] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name" ],
+				args = WtTemplateArguments[
+					[0] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "arg0" ]
+					),
+					[1] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+						name = WtName[ [0] = "arg1" ],
+						value = WtValue[ [0] = "value1" ]
+					),
+					[2] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+						name = WtName[ [0] = "arg2" ],
+						value = WtValue[
+							[0] = WtTemplateParameter(
+								{P} precededByNewline = false
+								{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+								name = WtName[ [0] = "parameter2" ],
+								default = -,
+								garbage = WtTemplateArguments[]
+							)
+						]
+					)
+				]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtRedirect(
+			{P} rtd = RTD[ "#ReDiReCt[[" <o> "|garbage]]" ]
+			target = WtPageName[ [0] = "link" ]
+		),
+		[1] = "\n",
+		[2] = WtTemplate(
+			{P} precededByNewline = true
+			{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+			name = WtName[ [0] = "name" ],
+			args = WtTemplateArguments[
+				[0] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "" <o> "" ]
+					name = -,
+					value = WtValue[ [0] = "arg0" ]
+				),
+				[1] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+					name = WtName[ [0] = "arg1" ],
+					value = WtValue[ [0] = "value1" ]
+				),
+				[2] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+					name = WtName[ [0] = "arg2" ],
+					value = WtValue[
+						[0] = WtTemplateParameter(
+							{P} precededByNewline = false
+							{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+							name = WtName[ [0] = "parameter2" ],
+							default = -,
+							garbage = WtTemplateArguments[]
+						)
+					]
+				)
+			]
+		)
+	]
+)

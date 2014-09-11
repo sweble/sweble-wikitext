@@ -1,0 +1,62 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "0"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtImStartTag(
+				{P} name = "@p"
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[2] = WtXmlStartTag(
+				{P} name = "table"
+				{P} rtd = RTD[ "<table" <o> ">" ]
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[3] = WtXmlStartTag(
+				{P} name = "th"
+				{P} rtd = RTD[ "<th" <o> ">" ]
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[4] = WtImEndTag(
+				{P} name = "@p"
+			),
+			[5] = WtNewline("\n")
+		]
+	),
+	[1] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "1"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtImStartTag(
+				{P} name = "@p"
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[2] = "B",
+			[3] = WtNewline("\n"),
+			[4] = WtXmlStartTag(
+				{P} name = "tr"
+				{P} rtd = RTD[ "<tr" <o> ">" ]
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[5] = WtXmlEndTag(
+				{P} name = "table"
+				{P} rtd = RTD[ "</table>" ]
+			),
+			[6] = WtNewline("\n"),
+			[7] = "A",
+			[8] = WtImEndTag(
+				{P} name = "@p"
+			)
+		]
+	)
+)

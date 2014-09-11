@@ -1,0 +1,139 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[ Warning: /nopkg-basic/input.wikitext/block-section.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage. ]
+	[0] = WtSection(
+		{P} level = 3
+		heading = WtHeading(
+			{P} rtd = RTD[ "===" <o> "===" ]
+			[0] = " Hallo 1 "
+		),
+		body = WtBody[
+			[0] = "\n",
+			[1] = WtParagraph[ [0] = "Welt 1" ],
+			[2] = "\n\n"
+		]
+	),
+	[1] = WtSection(
+		{P} level = 1
+		heading = WtHeading(
+			{P} rtd = RTD[ "=" <o> "=" ]
+			[0] = " Hallo 2 "
+		),
+		body = WtBody[
+			[0] = "\n",
+			[1] = WtUnorderedList[
+				[0] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = " a"
+				),
+				[1] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "" ]
+					[0] = " b"
+				)
+			],
+			[2] = "\n"
+		]
+	),
+	[2] = WtSection(
+		{P} level = 1
+		heading = WtHeading(
+			{P} rtd = RTD[ "=" <o> "=" ]
+			[0] = " Hallo 3 "
+		),
+		body = WtBody[
+			[0] = "\n",
+			[1] = WtParagraph[ [0] = "Welt 3" ],
+			[2] = "\n\n",
+			[3] = WtSection(
+				{P} level = 2
+				heading = WtHeading(
+					{P} rtd = RTD[ "==" <o> "==" ]
+					[0] = " Hallo 4 "
+				),
+				body = WtBody[
+					[0] = "\n",
+					[1] = WtParagraph[ [0] = "Welt 4" ],
+					[2] = "\n",
+					[3] = WtSection(
+						{P} level = 3
+						heading = WtHeading(
+							{P} rtd = RTD[ "===" <o> "===" ]
+							[0] = " Hallo 5 "
+						),
+						body = WtBody[
+							[0] = "\n",
+							[1] = WtParagraph[ [0] = "Welt 5" ],
+							[2] = "\n"
+						]
+					),
+					[4] = WtSection(
+						{P} level = 3
+						heading = WtHeading(
+							{P} rtd = RTD[ "===" <o> "===" ]
+							[0] = " Hallo 6 "
+						),
+						body = WtBody[
+							[0] = "\n",
+							[1] = WtParagraph[ [0] = "Welt 6\n" ],
+							[2] = "\n\n"
+						]
+					)
+				]
+			),
+			[4] = WtSection(
+				{P} level = 2
+				heading = WtHeading(
+					{P} rtd = RTD[ "==" <o> "==" ]
+					[0] = " Hallo 7 "
+				),
+				body = WtBody[
+					[0] = "\n",
+					[1] = WtParagraph[ [0] = "Welt 7" ],
+					[2] = "\n",
+					[3] = WtSection(
+						{P} level = 4
+						heading = WtHeading(
+							{P} rtd = RTD[ "====" <o> "====" ]
+							[0] = " Hallo 8 "
+						),
+						body = WtBody[
+							[0] = "\n",
+							[1] = WtParagraph[ [0] = "Welt 8" ],
+							[2] = "\n"
+						]
+					)
+				]
+			)
+		]
+	),
+	[3] = WtSection(
+		{P} level = 1
+		heading = WtHeading(
+			{P} rtd = RTD[ "=" <o> "=" ]
+			[0] = " Hallo 9 "
+		),
+		body = WtBody[
+			[0] = "\n",
+			[1] = WtParagraph[ [0] = "Welt 9\n" ],
+			[2] = "\n\n"
+		]
+	),
+	[4] = WtSection(
+		{P} level = 1
+		heading = WtHeading(
+			{A} warnings = C[ Warning (normal): /nopkg-basic/input.wikitext/block-section.wikitext:26:1 - 14: "= Hallo 10 ==" : Odd number of closing equals. ]
+			{P} rtd = RTD[ "=" <o> "=" ]
+			[0] = " Hallo 10 ="
+		),
+		body = WtBody[ [0] = "\n" ]
+	),
+	[5] = WtSection(
+		{P} level = 1
+		heading = WtHeading(
+			{A} warnings = C[ Warning (normal): /nopkg-basic/input.wikitext/block-section.wikitext:27:1 - 14: "== Hallo 11 =" : Odd number of opening equals. ]
+			{P} rtd = RTD[ "=" <o> "=" ]
+			[0] = "= Hallo 11 "
+		),
+		body = -
+	)
+)

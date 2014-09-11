@@ -1,0 +1,23 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " considered ",
+			[1] = WtItalics(
+				{P} rtd = RTD[ "''" <o> "''" ]
+				[0] = "perfect use"
+			),
+			[2] = " because the clinical trials measured efficacy during actual use of Depo-Provera",
+			[3] = WtUnorderedList(
+				{P} rtd = RTD[ "\n" <o> "" ]
+				[0] = WtListItem(
+					{P} rtd = RTD[ "**" <o> "" ]
+					[0] = " defined as being no longer than 14 or 15 weeks after an injection (i.e., no more than 1 or 2 weeks late for a next injection)"
+				)
+			)
+		)
+	],
+	[1] = "\n"
+)
