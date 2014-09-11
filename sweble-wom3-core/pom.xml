@@ -116,28 +116,6 @@
         </configuration>
       </plugin>
 
-      <!-- Check and format license headers -->
-      <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <configuration>
-          <!-- I assume the configuration is inherited from the parent -->
-          <excludes>
-            <!-- These excludes should be the same as in the parent project -->
-            <exclude>**/*.log</exclude>
-            <exclude>**/.gitignore</exclude>
-            <exclude>src/site/site.xml</exclude>
-            <exclude>src/site/changes.xml</exclude>
-            <exclude>src/site/resources/css/site.css</exclude>
-            <exclude>LICENSE</exclude>
-            <exclude>NOTICE</exclude>
-
-            <!-- Extra excludes for this project -->
-            <exclude>README</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-
     </plugins>
 
     <!-- ==[ Plugin Management ]============================================ -->
