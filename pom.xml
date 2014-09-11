@@ -271,6 +271,105 @@
 
   <!-- ==[ Profiles ]======================================================= -->
 
-  <profiles />
+  <profiles>
+
+    <!--
+      This profile is used to release artifacts to Maven Central. Each module
+      has to build its main artifacts including javadoc and source. Signing of
+      the artifacts is also required (see "sign" profile).
+    -->
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+
+          <!--
+            Maven Javadoc Plugin.
+            Build a javadoc JAR archive for each individual module.
+          -->
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadoc-jar</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <quiet>true</quiet>
+            </configuration>
+          </plugin>
+
+          <!--
+            Maven Source Plugin.
+            Build a source JAR archive for each individual module.
+          -->
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources-jar</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+            Maven Deploy Plugin.
+            We have to explicitly define it here to force the right execution order of plugins
+          -->
+          <plugin>
+            <artifactId>maven-deploy-plugin</artifactId> 
+            <executions> 
+              <execution> 
+                <id>deploy</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>deploy</goal>
+                </goals> 
+              </execution> 
+            </executions> 
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <!--
+      Sign the generated artifacts. Usually used in conjunction with the
+      "release" profile to deploy artifacts to Maven Central. The key name has
+      to be given as option on the command line and the key should be unlocked
+      and held by the gpg agent (-Dgpg.keyname=...).
+    -->
+    <profile>
+      <id>sign</id>
+      <build>
+        <plugins>
+
+          <!-- Maven GPG Plugin -->
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
 
 </project>
