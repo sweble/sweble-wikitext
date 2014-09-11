@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -7,7 +25,7 @@
   <parent>
     <groupId>de.fau.cs.osr</groupId>
     <artifactId>tooling</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <relativePath>../tooling/pom.xml</relativePath>
   </parent>
 
@@ -15,11 +33,11 @@
 
   <groupId>org.sweble</groupId>
   <artifactId>sweble</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <packaging>pom</packaging>
 
   <name>Sweble</name>
-  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble</url>
+  <url>http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     The next generation Wiki platform project.
@@ -32,20 +50,11 @@
   <!-- ==[ Properties ]===================================================== -->
 
   <properties>
-
-    <!-- Dependency versions -->
-    <!-- ... -->
-
-    <!-- Plugin dependency versions -->
-    <!-- ... -->
-
   </properties>
 
   <!-- ==[ Dependency Management ]========================================== -->
 
   <dependencyManagement>
-    <dependencies>
-    </dependencies>
   </dependencyManagement>
 
   <build>
@@ -62,13 +71,12 @@
 
       <!-- Check and format license headers -->
       <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <header>etc/license-header.txt</header>
           <strictCheck>true</strictCheck>
           <failIfMissing>true</failIfMissing>
-          <skip>false</skip>
           <excludes>
             <exclude>**/.gitignore</exclude>
             <exclude>src/site/site.xml</exclude>
@@ -77,34 +85,6 @@
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
           </excludes>
-        </configuration>
-      </plugin>
-
-      <!-- Maven site generation -->
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <reportPlugins>
-
-            <plugin>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-changes-plugin</artifactId>
-              <configuration>
-                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
-              </configuration>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>changes-report</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-            </plugin>
-
-          </reportPlugins>
         </configuration>
       </plugin>
 
@@ -152,7 +132,7 @@
     <developer>
       <id>driehle</id>
       <name>Dirk Riehle</name>
-      <email>dirk.riehle@informatik.uni-erlangen.de</email>
+      <email>dirk.riehle@fau.de</email>
       <roles>
         <role>Director</role>
       </roles>
@@ -162,7 +142,7 @@
     <developer>
       <id>hdohrn</id>
       <name>Hannes Dohrn</name>
-      <email>hannes.dohrn@informatik.uni-erlangen.de</email>
+      <email>hannes.dohrn@fau.de</email>
       <roles>
         <role>Developer</role>
       </roles>
@@ -187,6 +167,7 @@
     <connection>scm:git://sweble.org/git/sweble.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble.git;a=summary</url>
+    <tag>sweble-1.1.1</tag>
   </scm>
 
   <!--
@@ -197,7 +178,7 @@
   <repositories>
     <repository>
       <releases>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
@@ -206,62 +187,87 @@
       </snapshots>
       <id>osr-public-snapshots-repo</id>
       <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
     </repository>
   </repositories>
-
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
+
+    <!--
+      This profile is used to release artifacts to Maven Central. Each module
+      has to build its main artifacts including javadoc and source. Signing of
+      the artifacts is also required (see "sign" profile).
+    -->
     <profile>
-      <id>quick</id>
+      <id>release</id>
       <build>
         <plugins>
 
-          <!-- Don't check and format license headers -->
+          <!--
+            Maven Javadoc Plugin.
+            Build a javadoc JAR archive for each individual module.
+          -->
           <plugin>
-            <groupId>com.mycila.maven-license-plugin</groupId>
-            <artifactId>maven-license-plugin</artifactId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadoc-jar</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
             <configuration>
-              <skip>true</skip>
+              <quiet>true</quiet>
             </configuration>
           </plugin>
 
-          <!-- Only generate minimal site -->
+          <!--
+            Maven Source Plugin.
+            Build a source JAR archive for each individual module.
+          -->
           <plugin>
-            <artifactId>maven-site-plugin</artifactId>
-            <configuration>
-              <reportPlugins>
-                <plugin>
-                  <artifactId>maven-project-info-reports-plugin</artifactId>
-                  <reportSets>
-                    <reportSet>
-                      <reports>
-                        <!-- cim, dependencies, dependency-convergence -->
-                        <report>dependency-management</report>
-                        <report>distribution-management</report>
-                        <report>index</report>
-                        <report>issue-tracking</report>
-                        <report>license</report>
-                        <report>mailing-list</report>
-                        <report>modules</report>
-                        <report>plugin-management</report>
-                        <report>plugins</report>
-                        <report>project-team</report>
-                        <report>scm</report>
-                        <report>summary</report>
-                      </reports>
-                    </reportSet>
-                  </reportSets>
-                </plugin>
-              </reportPlugins>
-            </configuration>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources-jar</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+            Maven Deploy Plugin.
+            We have to explicitly define it here to force the right execution order of plugins
+          -->
+          <plugin>
+            <artifactId>maven-deploy-plugin</artifactId> 
+            <executions> 
+              <execution> 
+                <id>deploy</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>deploy</goal>
+                </goals> 
+              </execution> 
+            </executions> 
           </plugin>
 
         </plugins>
       </build>
     </profile>
 
+    <!--
+      Sign the generated artifacts. Usually used in conjunction with the
+      "release" profile to deploy artifacts to Maven Central. The key name has
+      to be given as option on the command line and the key should be unlocked
+      and held by the gpg agent (-Dgpg.keyname=...).
+    -->
     <profile>
       <id>sign</id>
       <build>
@@ -270,14 +276,10 @@
           <!-- Maven GPG Plugin -->
           <plugin>
             <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <!-- Sweble <info@sweble.org> -->
-              <keyname>D17B20AF</keyname>
-            </configuration>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
-                <phase>verify</phase>
+                <phase>package</phase>
                 <goals>
                   <goal>sign</goal>
                 </goals>
@@ -290,4 +292,5 @@
     </profile>
 
   </profiles>
+
 </project>
