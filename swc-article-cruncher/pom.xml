@@ -25,14 +25,14 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.1</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Sweble Article Cruncher -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-article-cruncher</artifactId>
-  <version>1.1.1-SNAPSHOT</version>
+  <version>1.1.1</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Article Cruncher</name>
@@ -148,6 +148,7 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+    <tag>sweble-wikitext-1.1.1</tag>
   </scm>
 
   <!--
