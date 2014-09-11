@@ -7,8 +7,8 @@ This product includes software developed at
 The University of Erlangen-Nürnberg (http://http://www.uni-erlangen.de/).
 
 Some test cases used in this software rely on articles written in Wikitext that
-were taken from the English Wikipedia. These articles are licensed under the
-Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license which can be found 
-at http://creativecommons.org/licenses/by-sa/3.0/. Each directory that contains
-such files holds a NOTICE file which gives detailed information about the 
-origin of the articles.
+were taken from the English, French and Spanish Wikipedia. These articles are 
+licensed under the Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license 
+which can be found at http://creativecommons.org/licenses/by-sa/3.0/. Each 
+directory that contains such files holds a NOTICE file which gives detailed 
+information about the origin of the articles.
