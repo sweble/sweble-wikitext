@@ -161,9 +161,6 @@
             <!-- These excludes should be the same as in the parent project -->
             <exclude>**/*.log</exclude>
             <exclude>**/.gitignore</exclude>
-            <exclude>src/site/site.xml</exclude>
-            <exclude>src/site/changes.xml</exclude>
-            <exclude>src/site/resources/css/site.css</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
 
