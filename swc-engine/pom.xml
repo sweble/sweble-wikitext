@@ -131,6 +131,7 @@
             <exclude>src/test/resources/**/*.mwtest</exclude>
             <exclude>src/test/resources/**/Template%3*</exclude>
             <exclude>src/test/resources/**/index</exclude>
+            <exclude>src/test/resources/**/NOTICE</exclude>
           </excludes>
         </configuration>
       </plugin>
