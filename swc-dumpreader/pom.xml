@@ -25,14 +25,14 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.2-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Dump Reader -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-dumpreader</artifactId>
-  <version>1.1.1-SNAPSHOT</version>
+  <version>1.1.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Dump Reader</name>
@@ -317,6 +317,7 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+    <tag>HEAD</tag>
   </scm>
 
   <!--

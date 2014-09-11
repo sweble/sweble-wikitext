@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.1</version>
     <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
@@ -33,7 +33,7 @@
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>sweble-wikitext</artifactId>
-  <version>1.1.1-SNAPSHOT</version>
+  <version>1.1.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sweble Wikitext Components</name>
@@ -116,7 +116,7 @@
         <groupId>de.fau.cs.osr.utils</groupId>
         <artifactId>utils</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>0.3.1-SNAPSHOT</version>
+        <version>0.3.1</version>
       </dependency>
 
       <!-- Parser Toolkit - Common -->
@@ -124,7 +124,7 @@
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-common</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>1.1.1-SNAPSHOT</version>
+        <version>1.1.1</version>
       </dependency>
 
       <!-- Sweble Wikitext Components - Lazy Wikitext Parser -->
@@ -132,7 +132,7 @@
         <groupId>org.sweble.wikitext</groupId>
         <artifactId>swc-parser-lazy</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>1.1.1-SNAPSHOT</version>
+        <version>1.1.2-SNAPSHOT</version>
       </dependency>
 
     </dependencies>
@@ -353,6 +353,7 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+    <tag>HEAD</tag>
   </scm>
 
   <!--
