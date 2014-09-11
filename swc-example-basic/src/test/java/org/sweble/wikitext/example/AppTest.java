@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.example;
+package org.sweble.wikitext.example;
 
 import java.io.File;
 import java.io.InputStream;
@@ -25,6 +25,7 @@ import junit.framework.Assert;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
+import org.sweble.wikitext.example.App;
 
 import de.fau.cs.osr.utils.FileUtils;
 import de.fau.cs.osr.utils.StringUtils;
@@ -37,18 +38,14 @@ public class AppTest
 		String title = "Simple_Page";
 		
 		URL url = AppTest.class.getResource("/" + title + ".wikitext");
+		
 		String path = StringUtils.decodeUsingDefaultCharset(url.getFile());
+		String actual = App.run(new File(path), title, true);
+		actual = FileUtils.lineEndToUnix(actual);
 		
-		StringBuilder b = new StringBuilder();
-		
-		b.append(App.run(new File(path), title, "//WtInternalLink"));
-		
-		b.append(App.run(new File(path), title, "//WtTableCell"));
-		
-		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".result");
-		String expected = FileUtils.lineEndToUnix(IOUtils.toString(expectedIs));
-		
-		String actual = FileUtils.lineEndToUnix(b.toString());
+		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".html");
+		String expected = IOUtils.toString(expectedIs);
+		expected = FileUtils.lineEndToUnix(expected);
 		
 		Assert.assertEquals(expected, actual);
 	}

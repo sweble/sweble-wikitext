@@ -14,9 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.example;
+package org.sweble.wikitext.example;
 
 import java.io.IOException;
+
+import org.sweble.wikitext.example.SerializationMethod;
+import org.sweble.wikitext.example.Serializer;
 
 public class ProfileSerialization
 {

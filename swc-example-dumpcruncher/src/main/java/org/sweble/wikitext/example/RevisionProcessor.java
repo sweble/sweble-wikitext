@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.example;
+package org.sweble.wikitext.example;
 
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.Processor;

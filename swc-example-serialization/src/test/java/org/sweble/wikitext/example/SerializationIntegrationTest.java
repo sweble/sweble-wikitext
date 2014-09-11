@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.example;
+package org.sweble.wikitext.example;
 
 import static org.junit.Assert.*;
 
@@ -26,6 +26,8 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
+import org.sweble.wikitext.example.SerializationMethod;
+import org.sweble.wikitext.example.Serializer;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.WtAstPrinter;
 

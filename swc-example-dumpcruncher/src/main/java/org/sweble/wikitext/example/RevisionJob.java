@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.example;
+package org.sweble.wikitext.example;
 
 import java.math.BigInteger;
 import java.util.Calendar;

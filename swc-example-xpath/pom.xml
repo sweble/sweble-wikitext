@@ -30,9 +30,9 @@
 
   <!-- This POM: Sweble Wikitext Components - XPath Example-->
 
-  <groupId>org.example</groupId>
+  <!-- Same groupId as parent -->
   <artifactId>swc-example-xpath</artifactId>
-  <version>2.0.0-alpha-4-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>jar</packaging>
 
   <name>SWC - XPath Example</name>
@@ -96,7 +96,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.example.App</mainClass>
+              <mainClass>org.sweble.wikitext.example.App</mainClass>
               <classpathPrefix>lib/</classpathPrefix>
               <addClasspath>true</addClasspath>
             </manifest>
@@ -208,7 +208,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>org.example.App</mainClass>
+                  <mainClass>org.sweble.wikitext.example.App</mainClass>
                 </manifest>
               </archive>
             </configuration>
