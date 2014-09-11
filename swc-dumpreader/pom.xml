@@ -125,37 +125,6 @@
 
     <plugins>
 
-      <!-- Maven AspectJ Plugin -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>aspectj-maven-plugin</artifactId>
-        <inherited>false</inherited>
-      </plugin>
-      <!--
-        When using the AspectJ plugin one must disable the Maven Compilier 
-        Plugin in favor of the AspectJ plugin:
-      -->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <excludes>
-            <exclude>**/*</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-
-      <!-- Add the AspectJ nature to the eclipse project -->
-      <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <downloadSources>true</downloadSources>
-          <downloadJavadocs>true</downloadJavadocs>
-          <ajdtVersion>1.5</ajdtVersion>
-        </configuration>
-      </plugin>
-
       <!-- Add various source directories -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -170,7 +139,7 @@
             <configuration>
               <sources>
                 <source>src/main/schema</source>
-                <source>target/generated-sources/xjc</source>
+                <source>${project.build.directory}/generated-sources/xjc</source>
               </sources>
             </configuration>
           </execution>
@@ -251,6 +220,24 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <!-- Maven AspectJ Plugin -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>aspectj-maven-plugin</artifactId>
+        <inherited>false</inherited>
+      </plugin>
+
+      <!-- Add the AspectJ nature to the eclipse project -->
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <inherited>false</inherited>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>true</downloadJavadocs>
+          <ajdtVersion>1.5</ajdtVersion>
+        </configuration>
       </plugin>
 
       <!-- Check and format license headers -->
