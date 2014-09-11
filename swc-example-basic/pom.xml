@@ -1,27 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- This POM -->
+  <!-- Parent POM: Sweble Wikitext Components -->
 
-  <groupId>org.example</groupId>
+  <parent>
+    <groupId>org.sweble.wikitext</groupId>
+    <artifactId>sweble-wikitext</artifactId>
+    <version>2.0.0-alpha-4-SNAPSHOT</version>
+  </parent>
+
+  <!-- This POM: Sweble Wikitext Components - Basic Example -->
+
+  <!-- Same groupId as parent -->
   <artifactId>swc-example-basic</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>jar</packaging>
 
   <name>SWC - Basic Example</name>
-  <url>http://osr.cs.fau.de</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-basic</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     An example project that contains a simple application that is able to parse
     a page written in Wikitext and render it as HTML or plain text.
   </description>
 
+  <!-- ==[ Properties ]===================================================== -->
+
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <version.java>1.6</version.java>
-    <build-examples.maven.cmd>mvn</build-examples.maven.cmd>
+    <sweble-wikitext.basedir>${project.parent.basedir}</sweble-wikitext.basedir>
   </properties>
+
+  <!-- ==[ Dependencies ]=================================================== -->
 
   <dependencies>
 
@@ -29,47 +57,46 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>1.4</version>
     </dependency>
 
     <!-- Sweble Wikitext Components -->
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-engine</artifactId>
-      <version>1.1.2-SNAPSHOT</version>
     </dependency>
 
     <!-- JUnit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.7</version>
-      <scope>test</scope>
     </dependency>
 
   </dependencies>
 
-  <build>
-    <plugins>
+  <!-- ==[ Dependency Management ]========================================== -->
 
-      <!-- Maven Eclipse Plugin -->
-      <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <version>2.8</version>
-        <configuration>
-          <downloadSources>true</downloadSources>
-          <downloadJavadocs>true</downloadJavadocs>
-        </configuration>
-      </plugin>
+  <dependencyManagement>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
 
       <!-- Create a JAR package -->
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.3.1</version>
         <configuration>
           <archive>
             <manifest>
-              <mainClass>${package}.App</mainClass>
+              <mainClass>org.sweble.wikitext.example.App</mainClass>
               <classpathPrefix>lib/</classpathPrefix>
               <addClasspath>true</addClasspath>
             </manifest>
@@ -77,177 +104,119 @@
         </configuration>
       </plugin>
 
-      <!-- We don't want post phase. However, best we can do is settle with validate -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-archetype-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <archetypePostPhase>validate</archetypePostPhase>
-        </configuration>
-      </plugin>
-
-      <!-- Copy libraries to target/lib (needed by .jar package) -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>copy-dependencies</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <!--
-              Should really be:
-              <outputDirectory>DOLLAR{project.build.directory}/lib</outputDirectory>
-              But the Variable is replaced too early, messing up the packaged archetype.
-                -->
-              <outputDirectory>target/lib</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
       <!-- Check and format license headers -->
       <plugin>
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
-        <version>2.5</version>
         <configuration>
-          <header>../etc/license-header.txt</header>
-          <strictCheck>true</strictCheck>
-          <failIfMissing>true</failIfMissing>
+          <!-- I assume the configuration is inherited from the parent -->
           <excludes>
+            <!-- These excludes should be the same as in the parent project -->
+            <exclude>**/*.log</exclude>
             <exclude>**/.gitignore</exclude>
-            <exclude>pom.xml</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
+
+            <!-- Extra excludes for this project -->
             <exclude>README</exclude>
-            <exclude>archetype-content.txt</exclude>
-            <exclude>eclipse-project-files/**</exclude>
-            <exclude>archetype-files/src/site/apt/index.apt.vm</exclude>
             <exclude>src/main/resources/render-template.html</exclude>
             <exclude>src/test/resources/**</exclude>
           </excludes>
         </configuration>
       </plugin>
 
-      <!-- DO NOT DEPLOY THE EXAMPLE PROJECT ITSELF -->
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.7</version>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
-      <!-- DO NOT GENERATE A SITE FOR THE EXAMPLE PROJECT ITSELF -->
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.0</version>
-        <configuration>
-          <skip>true</skip>
-          <skipDeploy>true</skipDeploy>
-        </configuration>
-      </plugin>
     </plugins>
 
-    <pluginManagement>
-      <plugins>
+    <!-- ==[ Plugin Management ]============================================ -->
 
-        <!-- Java Maven Compiler Plugin -->
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
-          <configuration>
-            <source>${version.java}</source>
-            <target>${version.java}</target>
-          </configuration>
-        </plugin>
-      </plugins>
+    <pluginManagement>
     </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
   </build>
 
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </snapshots>
-      <id>osr-public-snapshots-repo</id>
-      <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
-    </repository>
-  </repositories>
+  <!-- ==[ Reporting ]====================================================== -->
 
-  <pluginRepositories>
-    <pluginRepository>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </snapshots>
-      <id>osr-public-plugin-snapshots-repo</id>
-      <name>OSR Public Plugin Snapshots Repository</name>
-      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
-    </pluginRepository>
-  </pluginRepositories>
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
 
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
+
     <profile>
-      <id>build-examples</id>
+      <id>build-aggregates</id>
       <build>
         <plugins>
 
-          <!-- Call shell scripts to build examples -->
+          <!-- Generate Jar with dependencies -->
           <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>1.2.1</version>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <inherited>false</inherited>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <archive>
+                <manifest>
+                  <mainClass>org.sweble.wikitext.example.App</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
             <executions>
               <execution>
-                <id>exec-generate-example-archetype</id>
-                <phase>install</phase>
+                <id>make-assembly</id>
+                <phase>package</phase>
                 <goals>
-                  <goal>exec</goal>
+                  <goal>single</goal>
                 </goals>
-                <configuration>
-                  <executable>../bin/generate-example-archetype.sh</executable>
-                  <arguments>
-                    <argument>.</argument>
-                  </arguments>
-                  <environmentVariables>
-                    <MVN>${build-examples.maven.cmd}</MVN>
-                  </environmentVariables>
-                </configuration>
-              </execution>
-              <execution>
-                <id>exec-generate-example-eclipse-project</id>
-                <phase>install</phase>
-                <goals>
-                  <goal>exec</goal>
-                </goals>
-                <configuration>
-                  <executable>../bin/generate-example-eclipse-project.sh</executable>
-                  <arguments>
-                    <argument>.</argument>
-                  </arguments>
-                  <environmentVariables>
-                    <MVN>${build-examples.maven.cmd}</MVN>
-                  </environmentVariables>
-                </configuration>
               </execution>
             </executions>
           </plugin>
@@ -255,6 +224,7 @@
         </plugins>
       </build>
     </profile>
+
   </profiles>
 
 </project>

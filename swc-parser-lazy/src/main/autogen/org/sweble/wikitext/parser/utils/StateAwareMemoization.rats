@@ -1,0 +1,172 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+module org.sweble.wikitext.parser.utils.StateAwareMemoization;
+
+
+
+
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  private static ParserStats stats = null;
+
+  // ===========================================================================
+
+  public static void enableStats()
+  {
+    stats = new ParserStats();
+  }
+
+  public static boolean isStatsEnabled()
+  {
+    return stats != null;
+  }
+
+  public static ParserStats getStats()
+  {
+    return stats;
+  }
+
+  // ===========================================================================
+
+  protected static final class StateAwareResult
+      extends
+          Result
+  {
+    private WikitextParserContext context;
+
+    private Result result;
+
+    /* DEBUG ONLY
+    private final String prod;
+
+    private boolean reused = false;
+    */
+
+    public StateAwareResult(String prod, WikitextParserContext context, Result result)
+    {
+      super(-1);
+      setResult(context, result);
+
+      /* <DEBUG ONLY>
+      this.prod = prod;
+      */
+    }
+
+    public Result setResult(WikitextParserContext context, Result result)
+    {
+      this.context = context;
+      this.result = result;
+      /* DEBUG ONLY
+      if (stats != null)
+      {
+        stats.parsed(prod);
+        if (!result.hasValue())
+          stats.failed(prod);
+      }
+      */
+      return result;
+    }
+
+    public Result getResult(WikitextParserContext newContext)
+    {
+      /* DEBUG ONLY
+      if (stats != null)
+      {
+        stats.called(prod);
+        if (this.context.equals(newContext))
+        {
+          if (reused)
+            stats.reused(prod);
+
+          reused = true;
+          return result;
+        }
+        return null;
+      }
+      else
+      */
+      {
+        if (this.context.equals(newContext))
+          return result;
+        return null;
+      }
+    }
+
+    /* DEBUG + VERBOSE ONLY
+    public String getProd()
+    {
+      return prod;
+    }
+
+    public Result justGetResult()
+    {
+      return result;
+    }
+
+    public boolean isReused()
+    {
+      return reused;
+    }
+    */
+
+    @Override public boolean hasValue() { return result.hasValue(); }
+
+    @Override public boolean hasValue(String s) { return result.hasValue(s); }
+
+    @Override public boolean hasValueIgnoreCase(String s) { return result.hasValueIgnoreCase(s); }
+
+    @SuppressWarnings("unchecked")
+    @Override public <T> T semanticValue() { return (T) result.semanticValue(); }
+
+    @Override public ParseError parseError() { return result.parseError(); }
+
+    @Override public ParseError select(ParseError error) { return result.select(error); }
+
+    @Override public ParseError select(ParseError error, int index) { return result.select(error, index); }
+
+    @Override public SemanticValue createValue(Object value, ParseError error) { return result.createValue(value, error); }
+  }
+
+  // ===========================================================================
+
+  private boolean returnTrue(Result yyResult)
+  {
+    /* DEBUG + VERBOSE ONLY
+    StateAwareResult r = (StateAwareResult) yyResult;
+    String name = r.getProd();
+    if (!r.isReused())
+      name += "Memoized";
+    if (r.justGetResult().hasValue())
+    {
+      traceSuccess(name, r.justGetResult().index);
+    }
+    else
+    {
+      traceFailure(name, r.justGetResult().index);
+    }
+    */
+    return true;
+  }
+}
+
+
+
+
+// -- End of file --------------------------------------------------------------

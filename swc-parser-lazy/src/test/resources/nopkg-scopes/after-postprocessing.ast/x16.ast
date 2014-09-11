@@ -1,0 +1,53 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x16.wikitext:1:31: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x16.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+	]
+	[0] = WtParagraph[
+		[0] = "a ",
+		[1] = WtXmlElement(
+			{P} name = "i"
+			{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = " b " ]
+		)
+	],
+	[1] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "i"
+				{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[
+					[0] = " c ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "" ]
+						target = WtPageName[ [0] = "target" ],
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = " d "
+						)
+					)
+				]
+			),
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "" <o> "" <o> "]]" ]
+				target = WtPageName(
+					{P} rtd = RTD[  ]
+					[0] = "target"
+				),
+				title = WtLinkTitle[ [0] = " e " ]
+			),
+			[2] = " f "
+		]
+	)
+)

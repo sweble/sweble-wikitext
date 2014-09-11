@@ -1,0 +1,2 @@
+{{Some Template|Some Template Argument}}
+{{{Some Template Parameter|Some Template Parameter Default Value}}}

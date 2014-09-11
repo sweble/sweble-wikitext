@@ -1,0 +1,17 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtLctVarConv(
+			{P} rtd = RTD[ "-{" <o> "|" <o> "}-" ]
+			flags = WtLctFlags(
+				{P} flags = C[ "N" ]
+				{P} garbage = C[]
+				{P} rtd = RTD[ "N" ]
+				{P} variants = C[]
+			),
+			body = WtBody[ [0] = "zh-hk" ]
+		)
+	],
+	[1] = "\n"
+)

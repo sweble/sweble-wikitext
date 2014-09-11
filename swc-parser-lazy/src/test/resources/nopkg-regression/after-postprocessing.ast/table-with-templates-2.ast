@@ -1,0 +1,58 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "ligne grise" ],
+				args = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtTableImplicitTableBody(
+				body = WtBody[
+					[0] = WtTableRow(
+						{P} implicit = true
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtTableCell(
+								{P} rtd = RTD[ "|" <o> "" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = WtParagraph[ [0] = "..." ],
+									[1] = "\n"
+								]
+							)
+						]
+					),
+					[1] = WtTableRow(
+						{P} implicit = false
+						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtTemplate(
+								{P} precededByNewline = false
+								{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+								name = WtName[ [0] = "ligne grise" ],
+								args = WtTemplateArguments[]
+							)
+						],
+						body = WtBody[
+							[0] = WtTableCell(
+								{P} rtd = RTD[ "|" <o> "" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = WtParagraph[ [0] = "..." ],
+									[1] = "\n"
+								]
+							)
+						]
+					)
+				]
+			)
+		]
+	),
+	[1] = "\n"
+)

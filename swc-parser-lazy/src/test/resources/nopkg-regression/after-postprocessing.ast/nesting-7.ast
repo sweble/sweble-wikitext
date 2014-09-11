@@ -1,0 +1,18 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "=",
+		[1] = WtInternalLink(
+			{P} postfix = "h"
+			{P} prefix = "h"
+			{P} rtd = RTD[ "h[[" <o> "" <o> "]]h" ]
+			target = WtPageName[ [0] = "t" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "a\nb"
+			)
+		),
+		[2] = "="
+	]
+)

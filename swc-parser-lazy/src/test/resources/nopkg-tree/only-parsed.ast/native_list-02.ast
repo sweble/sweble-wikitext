@@ -1,0 +1,78 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "List 1",
+	[2] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[3] = WtNewline("\n"),
+	[4] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " normal",
+			[1] = WtXmlStartTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" ]
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[2] = "bold"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " bold",
+			[1] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			),
+			[2] = "normal"
+		)
+	],
+	[5] = WtNewline("\n"),
+	[6] = WtNewline("\n"),
+	[7] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[8] = "List 2",
+	[9] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[10] = WtNewline("\n"),
+	[11] = WtOrderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "#" <o> "\n" ]
+			[0] = " normal",
+			[1] = WtXmlStartTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" ]
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[2] = "bold"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "#" <o> "" ]
+			[0] = " bold"
+		)
+	],
+	[12] = WtNewline("\n"),
+	[13] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[14] = "bold",
+	[15] = WtNewline("\n"),
+	[16] = WtXmlEndTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "</b>" ]
+	),
+	[17] = WtNewline("\n"),
+	[18] = "normal",
+	[19] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[20] = WtNewline("\n")
+)

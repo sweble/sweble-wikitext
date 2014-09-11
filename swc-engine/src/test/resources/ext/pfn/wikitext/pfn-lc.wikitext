@@ -1,0 +1,3 @@
+<!-- The engine supports this test fully -->
+
+{{lc:LOWERCASE}}

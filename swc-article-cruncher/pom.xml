@@ -25,18 +25,18 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>2.0.0-alpha-4-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Sweble Article Cruncher -->
 
-  <groupId>org.sweble.wikitext</groupId>
+  <!-- Same groupId as parent -->
   <artifactId>swc-article-cruncher</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Article Cruncher</name>
-  <url>http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext/swc-article-cruncher</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-article-cruncher</url>
   <inceptionYear>2012</inceptionYear>
   <description>
     A framework for multi-threaded processing of lots of articles.
@@ -148,7 +148,6 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>HEAD</tag>
   </scm>
 
   <!--

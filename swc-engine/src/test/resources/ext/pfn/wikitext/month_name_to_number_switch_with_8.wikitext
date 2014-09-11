@@ -1,0 +1,20 @@
+{{#switch:8
+ |january|jan=1
+ |february|feb=2
+ |march|mar=3
+ |apr|april=4
+ |may=5
+ |june|jun=6
+ |july|jul=7
+ |august|aug=8
+ |september|sep|sept=9
+ |october|oct=10
+ |november|nov=11
+ |december|dec=12
+ |{{#ifexpr:8<0
+  |{{#ifexpr:((8)round 0)!=(8)
+   |{{#expr:12-(((0.5-(8))round 0)mod 12)}}
+   |{{#expr:12-(((11.5-(8))round 0)mod 12)}}
+  }}
+ |8}}
+}}

@@ -17,10 +17,16 @@
 
 package org.sweble.wikitext.dumpreader;
 
+import java.io.BufferedInputStream;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.nio.charset.Charset;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -37,15 +43,19 @@ import javax.xml.validation.SchemaFactory;
 
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
-
 import org.apache.xerces.util.XMLCatalogResolver;
 
 import de.fau.cs.osr.utils.WrappedException;
 
 public abstract class DumpReader
+		implements
+			Closeable
 {
-	private final File dumpFile;
+	private final InputStream dumpInputStream;
+	
+	private final String dumpUri;
 	
 	private final Logger logger;
 	
@@ -53,26 +63,75 @@ public abstract class DumpReader
 	
 	private final Unmarshaller unmarshaller;
 	
-	private final long fileLength;
-	
 	private final ExportSchemaVersion schemaVersion;
 	
 	private CountingInputStream decompressedInputStream;
 	
 	private CountingInputStream compressedInputStream;
 	
+	private long fileLength;
+	
 	private long parsedCount;
 	
 	private boolean decompress;
 	
+	private static final int LOOKAHEAD = 4096;
+	
 	// =========================================================================
 	
+	/**
+	 * Use a constructor that expects an encoding to prevent bug in xerces
+	 * parser code.
+	 * 
+	 * @deprecated
+	 */
 	public DumpReader(File dumpFile, Logger logger) throws Exception
 	{
-		this.dumpFile = dumpFile;
+		this(new FileInputStream(dumpFile), dumpFile.getAbsolutePath(), logger);
+		
+		fileLength = dumpFile.length();
+	}
+	
+	/**
+	 * Use a constructor that expects an encoding to prevent bug in xerces
+	 * parser code.
+	 * 
+	 * @deprecated
+	 */
+	public DumpReader(InputStream is, String url, Logger logger) throws Exception
+	{
+		this(is, null, url, logger, true);
+	}
+	
+	/**
+	 * Use a constructor that expects an encoding to prevent bug in xerces
+	 * parser code.
+	 * 
+	 * @deprecated
+	 */
+	public DumpReader(
+			InputStream is,
+			String url,
+			Logger logger,
+			boolean useSchema) throws Exception
+	{
+		this(is, null, url, logger, useSchema);
+	}
+	
+	public DumpReader(
+			InputStream is,
+			Charset encoding,
+			String url,
+			Logger logger,
+			boolean useSchema) throws Exception
+	{
+		this.dumpInputStream = is;
+		this.dumpUri = url;
 		this.logger = logger;
 		
-		logger.info("Setting up parser for file " + dumpFile.getAbsolutePath());
+		logger.info("Setting up parser for file " + dumpUri);
+		
+		getDumpInputStream();
 		
 		schemaVersion = determineExportVersion();
 		
@@ -80,24 +139,42 @@ public abstract class DumpReader
 		
 		installCallbacks();
 		
-		setSchema(
-				DumpReader.class.getResource("/catalog.xml"),
-				DumpReader.class.getResource(schemaVersion.getSchema()));
+		if (useSchema)
+			setSchema(
+					DumpReader.class.getResource("/catalog.xml"),
+					DumpReader.class.getResource(schemaVersion.getSchema()));
 		
-		getDumpInputStream();
-		xmlStreamReader = getXmlStreamReader();
+		xmlStreamReader = getXmlStreamReader(encoding);
 		
-		fileLength = dumpFile.length();
-		
+		fileLength = -1;
 		parsedCount = 0;
 	}
 	
 	// =========================================================================
 	
-	public void unmarshal() throws Throwable
+	public void unmarshal() throws JAXBException, XMLStreamException
 	{
-		unmarshaller.unmarshal(xmlStreamReader);
-		xmlStreamReader.close();
+		try
+		{
+			unmarshaller.unmarshal(xmlStreamReader);
+		}
+		finally
+		{
+			closeStreams();
+		}
+	}
+	
+	@Override
+	public void close() throws IOException
+	{
+		closeStreams();
+	}
+	
+	private void closeStreams()
+	{
+		IOUtils.closeQuietly(decompressedInputStream);
+		IOUtils.closeQuietly(compressedInputStream);
+		IOUtils.closeQuietly(dumpInputStream);
 	}
 	
 	public long getFileSize()
@@ -131,20 +208,19 @@ public abstract class DumpReader
 	
 	protected abstract void processPage(Object mediaWiki, Object page) throws Exception;
 	
-	// =========================================================================
-	
-	private void handlePage(Object mediaWiki, Object page) throws Exception
+	protected boolean processRevision(Object page, Object revision) throws Exception
 	{
-		++parsedCount;
-		
-		processPage(mediaWiki, page);
+		// Add by default
+		return true;
 	}
 	
-	protected boolean handleEvent(ValidationEvent ve, ValidationEventLocator vel) throws Exception
+	protected boolean processEvent(
+			ValidationEvent ve,
+			ValidationEventLocator vel) throws Exception
 	{
 		logger.warn(String.format(
 				"%s:%d:%d: %s",
-				dumpFile.getAbsolutePath(),
+				dumpUri,
 				vel.getLineNumber(),
 				vel.getColumnNumber(),
 				ve.getMessage()));
@@ -154,45 +230,62 @@ public abstract class DumpReader
 	
 	// =========================================================================
 	
+	private void handlePage(Object mediaWiki, Object page) throws Exception
+	{
+		++parsedCount;
+		
+		processPage(mediaWiki, page);
+	}
+	
+	private boolean handleRevision(Object page, Object revision) throws Exception
+	{
+		return processRevision(page, revision);
+	}
+	
+	protected boolean handleEvent(ValidationEvent ve, ValidationEventLocator vel) throws Exception
+	{
+		return processEvent(ve, vel);
+	}
+	
+	// =========================================================================
+	
 	private void getDumpInputStream() throws Exception
 	{
-		if (dumpFile.getName().endsWith(".bz2"))
+		InputStream decomp;
+		if (dumpUri.endsWith(".bz2"))
 		{
 			decompress = true;
 			
-			compressedInputStream = new CountingInputStream(
-					new FileInputStream(dumpFile));
+			compressedInputStream = new CountingInputStream(dumpInputStream);
 			
-			decompressedInputStream = new CountingInputStream(
-					new BZip2CompressorInputStream(compressedInputStream));
+			decomp = new BZip2CompressorInputStream(compressedInputStream);
 		}
-		else if (dumpFile.getName().endsWith(".gz"))
+		else if (dumpUri.endsWith(".gz"))
 		{
 			decompress = true;
 			
-			compressedInputStream = new CountingInputStream(
-					new FileInputStream(dumpFile));
+			compressedInputStream = new CountingInputStream(dumpInputStream);
 			
-			decompressedInputStream = new CountingInputStream(
-					new GzipCompressorInputStream(compressedInputStream));
+			decomp = new GzipCompressorInputStream(compressedInputStream);
 		}
 		else
 		{
 			decompress = false;
 			
-			decompressedInputStream = new CountingInputStream(
-					new FileInputStream(dumpFile));
+			decomp = dumpInputStream;
 		}
+		
+		decompressedInputStream = new CountingInputStream(
+				new BufferedInputStream(decomp, LOOKAHEAD));
 	}
 	
 	private ExportSchemaVersion determineExportVersion() throws Exception
 	{
-		final int LOOKAHEAD = 4096;
 		byte[] b = new byte[LOOKAHEAD];
 		
-		getDumpInputStream();
+		decompressedInputStream.mark(LOOKAHEAD);
 		int read = decompressedInputStream.read(b, 0, LOOKAHEAD);
-		decompressedInputStream.close();
+		decompressedInputStream.reset();
 		
 		String header = new String(b, 0, read);
 		
@@ -204,16 +297,46 @@ public abstract class DumpReader
 		{
 			return ExportSchemaVersion.V0_6;
 		}
+		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.7/\""))
+		{
+			return ExportSchemaVersion.V0_7;
+		}
+		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.8/\""))
+		{
+			return ExportSchemaVersion.V0_8;
+		}
 		else
 		{
 			throw new IllegalArgumentException("Unknown xmlns");
 		}
 	}
 	
-	private XMLStreamReader getXmlStreamReader() throws FactoryConfigurationError, XMLStreamException
+	/**
+	 * The xerces UTF8Reader is broken. If the xerces XML parser is given an
+	 * input stream, it will instantiate a reader for the encoding found in the
+	 * XML file, a UTF8Reader in case of an UTF8 encoded XML file. Sadly, this
+	 * UTF8Reader crashes for certain input (not sure why exactly).
+	 * 
+	 * On the other hand, when given a reader, which is forced to work with a
+	 * certain encoding, the xerces XML parser does not have this freedom and
+	 * will apparently process Wikipedia dumps just fine.
+	 * 
+	 * Therefore, in case you have trouble to parse a XML file, by specifying an
+	 * encoding, you force the use of a Reader and can circumvent the crash.
+	 */
+	private XMLStreamReader getXmlStreamReader(Charset encoding) throws FactoryConfigurationError, XMLStreamException, UnsupportedEncodingException
 	{
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-		return xmlInputFactory.createXMLStreamReader(decompressedInputStream);
+		
+		if (encoding != null)
+		{
+			InputStreamReader isr = new InputStreamReader(decompressedInputStream, encoding);
+			return xmlInputFactory.createXMLStreamReader(isr);
+		}
+		else
+		{
+			return xmlInputFactory.createXMLStreamReader(decompressedInputStream);
+		}
 	}
 	
 	private void setSchema(URL catalog, URL schemaUrl) throws Exception
@@ -252,7 +375,7 @@ public abstract class DumpReader
 	
 	private void installCallbacks()
 	{
-		final PageListener pageListener = new PageListener()
+		final DumpReaderListener pageListener = new DumpReaderListener()
 		{
 			@Override
 			public void handlePage(Object mediaWiki, Object page)
@@ -260,6 +383,25 @@ public abstract class DumpReader
 				try
 				{
 					DumpReader.this.handlePage(mediaWiki, page);
+				}
+				catch (RuntimeException e)
+				{
+					throw e;
+				}
+				catch (Exception e)
+				{
+					throw new WrappedException(e);
+				}
+			}
+			
+			@Override
+			public boolean handleRevisionOrUploadOrLogitem(
+					Object page,
+					Object revision)
+			{
+				try
+				{
+					return DumpReader.this.handleRevision(page, revision);
 				}
 				catch (RuntimeException e)
 				{

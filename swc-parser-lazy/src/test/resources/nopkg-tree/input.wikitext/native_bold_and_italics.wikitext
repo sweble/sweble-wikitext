@@ -1,0 +1,9 @@
+
+''Italics''
+'''Bold'''
+
+Jetzt wirds funky:
+'''What?''
+''What'''s up?
+
+'''''Boah'''''

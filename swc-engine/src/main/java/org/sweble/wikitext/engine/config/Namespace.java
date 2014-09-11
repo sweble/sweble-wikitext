@@ -17,106 +17,31 @@
 
 package org.sweble.wikitext.engine.config;
 
-import java.io.Serializable;
-import java.util.Collection;
 import java.util.TreeSet;
 
-public class Namespace
-        implements
-            Serializable
+public interface Namespace
 {
-	private static final long serialVersionUID = 1L;
 	
-	private final int id;
+	public abstract int getId();
 	
-	private final String name;
+	public abstract String getName();
 	
-	private final String canonical;
+	public abstract boolean isCanHaveSubpages();
 	
-	private final boolean subpages;
+	public abstract String getCanonical();
 	
-	private final boolean isFileNs;
+	public abstract TreeSet<String> getAliases();
 	
-	private final TreeSet<String> aliases = new TreeSet<String>();
+	public abstract boolean isFileNs();
 	
-	// =========================================================================
+	public abstract boolean isMediaNs();
 	
-	public Namespace(
-	        int id,
-	        String name,
-	        String canonical,
-	        boolean subpages,
-	        boolean isFileNs,
-	        Collection<String> aliases)
-	{
-		this.id = id;
-		this.name = name;
-		this.subpages = subpages;
-		this.canonical = canonical;
-		this.isFileNs = isFileNs;
-		this.aliases.addAll(aliases);
-	}
+	public abstract boolean isTalkNamespace();
 	
-	// =========================================================================
+	public abstract boolean isSubjectNamespace();
 	
-	public String getName()
-	{
-		return name;
-	}
+	public abstract int getTalkspaceId();
 	
-	public int getId()
-	{
-		return id;
-	}
+	public abstract int getSubjectspaceId();
 	
-	public boolean isSubpages()
-	{
-		return subpages;
-	}
-	
-	public String getCanonical()
-	{
-		return canonical;
-	}
-	
-	public TreeSet<String> getAliases()
-	{
-		return aliases;
-	}
-	
-	// TODO: Implement properly
-	public boolean isCapitalized()
-	{
-		return true;
-	}
-	
-	// TODO: Think this through once more ...
-	public boolean isFileNs()
-	{
-		return isFileNs;
-	}
-	
-	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		return result;
-	}
-	
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Namespace other = (Namespace) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
 }

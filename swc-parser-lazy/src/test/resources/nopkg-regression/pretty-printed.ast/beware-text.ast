@@ -1,0 +1,28 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = "The text intentionally contains an unescaped",
+	[1] = "&",
+	[2] = "ltdiv> tag!",
+	[3] = "Beware:\nConcerns the \"parse the pretty printed text again\" test.\nThe \" b",
+	[4] = WtXmlElement(
+		{P} name = "div"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = "c \" part will be pulled in front of the table.\nThe \"a \" is in a paragraph, the table contents will appear on a NEW LINE\nafter the paragraph. When pretty printing the \" b\" will be at the start of a line.\nIt will be parsed as SEMI PRE!",
+			[1] = "a",
+			[2] = "b",
+			[3] = WtXmlElement(
+				{P} name = "div"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "c" ]
+			),
+			[4] = WtXmlElement(
+				{P} name = "table"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[]
+			),
+			[5] = "d"
+		]
+	)
+)

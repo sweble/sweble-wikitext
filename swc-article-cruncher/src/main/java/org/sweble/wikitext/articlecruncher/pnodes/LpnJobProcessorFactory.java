@@ -22,4 +22,6 @@ import org.sweble.wikitext.articlecruncher.Processor;
 public interface LpnJobProcessorFactory
 {
 	public Processor createProcessor();
+	
+	public String getProcessorNameTemplate();
 }

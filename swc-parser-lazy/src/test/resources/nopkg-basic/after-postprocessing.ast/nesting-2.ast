@@ -1,0 +1,16 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName[ [0] = "Target1" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Title1a [http://heise.de] Title1b"
+			)
+		)
+	]
+)

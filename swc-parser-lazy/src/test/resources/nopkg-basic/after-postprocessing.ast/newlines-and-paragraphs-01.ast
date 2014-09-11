@@ -1,0 +1,5 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "Hallo" ]
+)

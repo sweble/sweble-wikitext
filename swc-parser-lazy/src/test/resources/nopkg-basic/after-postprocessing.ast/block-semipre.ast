@@ -1,0 +1,25 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " Comment "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- Comment -->" ]
+				{P} suffix = ""
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtSemiPre[
+		[0] = " Line 1\n",
+		[1] = WtXmlComment(
+			{P} content = " Comment "
+			{P} prefix = ""
+			{P} rtd = RTD[ "<!-- Comment -->" ]
+			{P} suffix = ""
+		),
+		[2] = " Line 2\n Line 3"
+	],
+	[1] = "\n",
+	[2] = WtParagraph[ [0] = "\tdiscontinued" ],
+	[3] = "\n",
+	[4] = WtSemiPre[ [0] = " Line 5\n Line 6" ]
+)

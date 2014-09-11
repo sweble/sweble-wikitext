@@ -1,0 +1,90 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * XmlElement
+ * ----------
+ *
+ *   This grammar recognizes start and end tags separatly without matching them.
+ *   Finding valid pairs of start and end tags is defered to later processing.
+ *
+ *   Grammar:
+ *     - '</' XmlName Ws* '>'
+ *     - '<' XmlName XmlAttribute* Ws* "/>"
+ *     - '<' XmlName XmlAttribute* Ws* ">"
+ *
+ */
+
+module org.sweble.wikitext.parser.parser.XmlElement;
+
+import org.sweble.wikitext.parser.utils.Whitespace as Whitespace;
+
+import org.sweble.wikitext.parser.utils.XmlName;
+import org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
+
+
+
+
+// -- XmlElement ---------------------------------------------------------------
+
+WtNode XmlElement =
+    "</" yyValue:XmlEndTag
+  / '<'  yyValue:XmlStartTag
+  / '<'
+    {
+      yyValue = nf.text("<");
+    }
+;
+
+private inline WtNode XmlEndTag =
+    name:XmlName ws:pWsStar '>'
+    {
+      yyValue = setRtd(
+        nf.endTag(name),
+        "</", name, ws, '>');
+    }
+    // FIXME: Add auto correction and/or warning generation
+;
+
+private inline WtNode XmlStartTag =
+    name:XmlName attributes:AttributeStar ws:pWsStar "/>"
+    {
+      yyValue = setRtd(
+        nf.emptyTag(name, attributes),
+        "<", name, SEP, ws, "/>");
+    }
+  / name:XmlName attributes:AttributeStar ws:pWsStar '>'
+    {
+      yyValue = setRtd(
+        nf.startTag(name, attributes),
+        '<', name, SEP, ws, '>');
+    }
+    // FIXME: Add auto correction and/or warning generation
+;
+
+private inline WtXmlAttributes AttributeStar =
+  yyValue:(&pWsPlus XmlAttributePlus)?
+  {
+    if (yyValue == null)
+      yyValue = nf.emptyAttrs();
+  }
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

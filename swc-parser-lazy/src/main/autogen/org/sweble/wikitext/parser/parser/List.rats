@@ -1,0 +1,297 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * Lists
+ * -----
+ *
+ *   Grammar:
+ *     - ( [*#:]+ ';'? | ';' ) ListItemContentStar
+ *
+ */
+
+module org.sweble.wikitext.parser.parser.List;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.State;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+
+
+
+// -- Body ---------------------------------------------------------------------
+
+header
+{
+  import java.util.Vector;
+}
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TempListItem
+      extends
+          WtTempNode
+  {
+    WtNodeList content;
+    String rt0;
+    WtNode rt1;
+    String prefix;
+  }
+
+  public static class ListNode
+  {
+    public ListType type;
+
+    public WtContentNode node;
+
+    public ListNode(ListType type, WtContentNode node)
+    {
+      this.type = type;
+      this.node = node;
+    }
+
+    public boolean comparePrefix(char ch)
+    {
+      switch (type)
+      {
+        case DEFINITION:
+          return (ch == ';' || ch == ':');
+        case ENUMERATION:
+          return (ch == '#');
+        case ITEMIZATION:
+          return (ch == '*');
+        default:
+          return false;
+      }
+    }
+
+    public static enum ListType
+    {
+      DEFINITION,
+      ITEMIZATION,
+      ENUMERATION,
+    }
+  }
+
+  private WtNodeList getCurrentListContent(Vector<ListNode> listStack)
+  {
+    return listStack.lastElement().node;
+  }
+
+  private WtNodeList getLastItemContent(Vector<ListNode> listStack)
+  {
+    WtNodeList items = getCurrentListContent(listStack);
+    return (WtContentNode) items.get(items.size() - 1);
+  }
+
+  private WtNode pushNewListItem(Vector<ListNode> listStack, char ch, WtNodeList content)
+  {
+    WtNode n = null;
+    switch (ch)
+    {
+      case '*':
+      case '#':
+        n = nf.li(content);
+        break;
+      case ':':
+        n = nf.dd(content);
+        break;
+      case ';':
+        n = nf.dt(content);
+        break;
+    }
+    getCurrentListContent(listStack).add(n);
+    return n;
+  }
+
+  private ListNode pushNewList(Vector<ListNode> listStack, char ch, boolean createItem)
+  {
+    ListNode node = null;
+    switch (ch)
+    {
+      case '*':
+        node = new ListNode(ListNode.ListType.ITEMIZATION, nf.ul(null));
+        break;
+      case '#':
+        node = new ListNode(ListNode.ListType.ENUMERATION, nf.ol(null));
+        break;
+      case ':':
+      case ';':
+        node = new ListNode(ListNode.ListType.DEFINITION, nf.dl(null));
+        break;
+    }
+
+    if (!listStack.isEmpty())
+      getLastItemContent(listStack).add(node.node);
+
+    listStack.add(node);
+
+    if (createItem)
+    {
+      // TODO: Issue warning!
+      pushNewListItem(listStack, ch, null);
+    }
+    
+    return node;
+  }
+
+  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, TempListItem p, WtRtData lastItemRtd)
+  {
+    int j;
+    for (j = 0; j < p.prefix.length() && j < listStack.size(); ++j)
+    {
+      if (!listStack.get(j).comparePrefix(p.prefix.charAt(j)))
+        break;
+    }
+
+    // pop closed list levels
+    listStack.setSize(j);
+
+    boolean addRoot = (j == 0);
+
+    int last = p.prefix.length() - 1;
+
+    // open new list levels
+    if (p.rt0 != null) {
+      if (j < p.prefix.length()) {
+        ListNode node = pushNewList(listStack, p.prefix.charAt(j), j < last);
+        node.node.setRtd(p.rt0, SEP);
+        ++j;
+      }
+      else
+      {
+        if (lastItemRtd != null)
+          lastItemRtd.setField(1, p.rt0);    	
+      }
+    }
+    for (; j < p.prefix.length(); ++j)
+      pushNewList(listStack, p.prefix.charAt(j), j < last);
+
+    // push the actual list item
+    WtNode item = pushNewListItem(
+        listStack,
+        p.prefix.charAt(last),
+        p.content);
+
+    if (isGatherRtData())
+      item.setRtd(p.rt1, p.prefix, SEP);
+
+    if (addRoot)
+      items.add(listStack.firstElement().node);
+
+    return item.getRtd();
+  }
+
+  private WtNodeList makeList(TempListItem first, Pair<TempListItem> tail)
+  {
+    Vector<ListNode> listStack = new Vector<ListNode>();
+
+    WtNodeList items = nf.list();
+
+    WtRtData lastItemRtd = processListItem(listStack, items, first, null);
+
+    for (Pair<TempListItem> i = tail; !i.isEmpty(); i = i.tail())
+    {
+      TempListItem item = i.head();
+
+      /*if (lastItem != null)
+        lastItem.setField(1, item.rt0);*/
+
+      lastItemRtd = processListItem(listStack, items, item, lastItemRtd);
+    }
+
+    return items;
+  }
+
+}
+
+
+
+
+// -- List --[ State Aware Memoization ]-------------------------------------
+
+noinline transient WtNode List =
+ ^{
+    StateAwareResult r = (StateAwareResult) pListMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pListTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized WtNode ListMemoized =
+ ^{
+    Result yyResult = new StateAwareResult("List", getContext(), pListTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+
+
+
+// -- List ------------------------------------------------------------------
+
+noinline transient WtNode ListTransient =
+  &{ accept(ParserAtoms.LIST) } first:ListItem tail:( &slEol ListItem )*
+  {
+    yyValue = makeList(first, tail);
+  }
+;
+
+private noinline transient TempListItem ListItem =
+  rt0:pEol? rt1:pTpStar prefix:ListPrefix content:ListItemContentStar
+  {
+    // TODO: Support "; term : def" on a single line
+    yyValue = new TempListItem();
+    yyValue.content = content;
+    yyValue.rt0 = rt0;
+    yyValue.rt1 = rt1;
+    yyValue.prefix = prefix;
+  }
+;
+
+private inline String ListPrefix =
+    prefix:ListPrefixStr semicolon:';'?
+    {
+      yyValue = (semicolon != null) ? prefix + ';' : prefix;
+    }
+  / ';'
+    {
+      yyValue = ";";
+    }
+;
+
+private transient String ListPrefixStr =
+  [*#:]+
+;
+
+private inline stateful WtNodeList ListItemContentStar =
+  {
+    enter(ParserScopes.LIST_ITEM);
+  }
+  InlineContentStar
+;
+
+
+
+
+// -- End of file -------------------------------------------------------------

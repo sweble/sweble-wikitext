@@ -1,5 +1,0 @@
-[[{{{1}}} in baseball|{{{1}}}]]<noinclude>
-
-{{Documentation}}
-<!-- Add categories and interwikis to the /doc subpage, not here! -->
-</noinclude>

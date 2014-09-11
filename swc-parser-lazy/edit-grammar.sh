@@ -30,6 +30,6 @@ BIN=`which kate`
 
 OPTIONS=`${BIN} -v | grep "KDE 4" &> /dev/null && echo "--startanon"`
 
-GRAMMAR="src/main/autogen/org/sweble/wikitext/lazy/parser"
+GRAMMAR="src/main/autogen/org/sweble/wikitext/parser"
 
 find ${GRAMMAR} -name "*.rats" | xargs screen -d -m ${BIN} ${OPTIONS}

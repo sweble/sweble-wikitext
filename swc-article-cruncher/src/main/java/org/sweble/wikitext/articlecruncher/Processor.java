@@ -19,6 +19,13 @@ package org.sweble.wikitext.articlecruncher;
 
 public interface Processor
 {
-	public CompletedJob process(JobWithHistory job);
+	/**
+	 * Process a job and return the result.
+	 * 
+	 * @param job
+	 *            The job to process.
+	 * @return The result of the processed job.
+	 */
+	public Object process(Job job) throws Exception;
 	
 }

@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
-    <version>1.1.1</version>
+    <version>2.0.0-alpha-4-SNAPSHOT</version>
     <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
@@ -33,11 +33,11 @@
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>sweble-wikitext</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>pom</packaging>
 
   <name>Sweble Wikitext Components</name>
-  <url>http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext</url>
   <inceptionYear>2009</inceptionYear>
   <description>
     The Sweble Wikitext Components module provides a parser for MediaWiki's
@@ -54,6 +54,7 @@
 
     <!-- Examples -->
     <module>swc-example-basic</module>
+    <module>swc-example-dumpcruncher</module>
     <module>swc-example-serialization</module>
     <module>swc-example-xpath</module>
   </modules>
@@ -66,8 +67,7 @@
     <sweble-wikitext.etc>${sweble-wikitext.basedir}/etc</sweble-wikitext.etc>
 
     <!-- Dependency versions -->
-    <version.dep.rats-runtime>1.15.0</version.dep.rats-runtime>
-    <version.dep.log4j>1.2.14</version.dep.log4j>
+    <version.dep.jaxb-impl>2.2.5</version.dep.jaxb-impl>
     <version.dep.jsoup>1.6.3</version.dep.jsoup>
     <version.dep.xerces>2.10.0</version.dep.xerces>
     <version.dep.xml-resolver>1.2</version.dep.xml-resolver>
@@ -76,7 +76,6 @@
     <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
     <version.plugin.rats>1.3.0.1</version.plugin.rats>
-    <version.plugin.parser-toolkit>1.0.0.1</version.plugin.parser-toolkit>
 
   </properties>
 
@@ -85,11 +84,11 @@
   <dependencyManagement>
     <dependencies>
 
-      <!-- Log4j -->
+      <!-- JAXB Reference Implementation -->
       <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${version.dep.log4j}</version>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>${version.dep.jaxb-impl}</version>
       </dependency>
 
       <!-- jsoup: Java HTML Parser -->
@@ -115,24 +114,56 @@
       <dependency>
         <groupId>de.fau.cs.osr.utils</groupId>
         <artifactId>utils</artifactId>
-        <!-- Version is given directly so the release plugin can see it -->
-        <version>0.3.1</version>
+        <version>${project.version}</version>
       </dependency>
 
       <!-- Parser Toolkit - Common -->
       <dependency>
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-common</artifactId>
-        <!-- Version is given directly so the release plugin can see it -->
-        <version>1.1.1</version>
+        <version>${project.version}</version>
       </dependency>
 
-      <!-- Sweble Wikitext Components - Lazy Wikitext Parser -->
+      <!-- Parser Toolkit - XML Tools -->
+      <dependency>
+        <groupId>de.fau.cs.osr.ptk</groupId>
+        <artifactId>ptk-xml-tools</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Parser Toolkit - JSON Tools -->
+      <dependency>
+        <groupId>de.fau.cs.osr.ptk</groupId>
+        <artifactId>ptk-json-tools</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
       <dependency>
         <groupId>org.sweble.wikitext</groupId>
         <artifactId>swc-parser-lazy</artifactId>
-        <!-- Version is given directly so the release plugin can see it -->
-        <version>1.1.2-SNAPSHOT</version>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Engine -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-engine</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Dump Reader -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-dumpreader</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Article Cruncher -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-article-cruncher</artifactId>
+        <version>${project.version}</version>
       </dependency>
 
     </dependencies>
@@ -156,6 +187,9 @@
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <header>${sweble-wikitext.etc}/license-header.txt</header>
+          <validHeaders>
+            <validHeader>${sweble-wikitext.etc}/license-header-no-copyright.txt</validHeader>
+          </validHeaders>
           <headerDefinitions>
             <headerDefinition>${sweble-wikitext.etc}/license-header-apt-style.xml</headerDefinition>
           </headerDefinitions>
@@ -170,12 +204,9 @@
           <excludes>
             <exclude>**/*.log</exclude>
             <exclude>**/.gitignore</exclude>
-            <exclude>**/LICENSE</exclude>
-            <exclude>**/NOTICE</exclude>
-            <exclude>src/site/site.xml</exclude>
-            <exclude>src/site/changes.xml</exclude>
-            <exclude>src/site/resources/css/site.css</exclude>
-            <exclude>swc-*/</exclude>
+            <exclude>etc/license-header-no-copyright.txt</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -240,36 +271,59 @@
           </executions>
         </plugin>
 
-        <!-- Maven NodeGen Plugin -->
+        <!-- This is not a real plugin. Since it is listed under 
+             pluginManagement Maven will not try to resolve it, however, the 
+             m2e will find it and handle the respective plugins as specified 
+             here -->
         <plugin>
-          <groupId>de.fau.cs.osr.ptk</groupId>
-          <artifactId>ptk-nodegen-maven-plugin</artifactId>
-          <version>${version.plugin.parser-toolkit}</version>
-          <executions>
-            <execution>
-              <id>nodegen-generate</id>
-              <phase>generate-sources</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Maven PrinterGen Plugin -->
-        <plugin>
-          <groupId>de.fau.cs.osr.ptk</groupId>
-          <artifactId>ptk-printergen-maven-plugin</artifactId>
-          <version>${version.plugin.parser-toolkit}</version>
-          <executions>
-            <execution>
-              <id>printergen-generate</id>
-              <phase>generate-sources</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>com.google.code.maven-replacer-plugin</groupId>
+                    <artifactId>maven-replacer-plugin</artifactId>
+                    <versionRange>[1.0.0,)</versionRange>
+                    <goals>
+                      <goal>replace</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>de.fau.cs.osr.maven.plugins</groupId>
+                    <artifactId>maven-rats-plugin</artifactId>
+                    <versionRange>[1.0.0,)</versionRange>
+                    <goals>
+                      <goal>generate</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>de.jflex</groupId>
+                    <artifactId>maven-jflex-plugin</artifactId>
+                    <versionRange>[1.0.0,)</versionRange>
+                    <goals>
+                      <goal>generate</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
         </plugin>
 
       </plugins>
@@ -353,7 +407,6 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>HEAD</tag>
   </scm>
 
   <!--

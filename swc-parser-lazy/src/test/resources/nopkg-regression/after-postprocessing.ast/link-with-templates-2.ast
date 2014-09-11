@@ -1,0 +1,45 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " ... "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- ... -->" ]
+				{P} suffix = ""
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[],
+	[1] = WtImageLink(
+		{P} border = false
+		{P} format = THUMBNAIL
+		{P} hAlign = UNSPECIFIED
+		{P} height = -1
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		{P} upright = false
+		{P} vAlign = MIDDLE
+		{P} width = -1
+		target = WtPageName[ [0] = "File:X.jpg" ],
+		options = WtLinkOptions[
+			[0] = WtLinkOptionKeyword(
+				{P} keyword = "thumb"
+				{P} rtd = RTD[ "|thumb" ]
+			),
+			[1] = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "A ",
+				[1] = WtXmlComment(
+					{P} content = " ... "
+					{P} prefix = ""
+					{P} rtd = RTD[ "<!-- ... -->" ]
+					{P} suffix = ""
+				),
+				[2] = " B"
+			),
+			[2] = WtLinkOptionAltText(
+				{P} rtd = RTD[ "|alt=" <o> "" ]
+				[0] = "Y"
+			)
+		]
+	),
+	[2] = "\n"
+)

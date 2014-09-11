@@ -1,0 +1,22 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " comment ... "
+				{P} prefix = "  "
+				{P} rtd = RTD[ "  <!-- comment ... -->  \n" ]
+				{P} suffix = "  \n"
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "Hallo" ],
+	[1] = "\n\n",
+	[2] = WtParagraph[
+		[0] = WtXmlComment(
+			{P} content = " comment ... "
+			{P} prefix = "  "
+			{P} rtd = RTD[ "  <!-- comment ... -->  \n" ]
+			{P} suffix = "  \n"
+		),
+		[1] = "\nHallo"
+	]
+)

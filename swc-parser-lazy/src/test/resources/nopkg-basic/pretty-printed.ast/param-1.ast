@@ -1,0 +1,22 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtTemplateParameter(
+		{P} precededByNewline = false
+		name = WtName[ [0] = "param" ],
+		default = -,
+		garbage = WtTemplateArguments[]
+	),
+	[1] = WtTemplateParameter(
+		{P} precededByNewline = true
+		name = WtName[ [0] = "param" ],
+		default = WtValue[ [0] = "default value" ],
+		garbage = WtTemplateArguments[]
+	),
+	[2] = WtTemplateParameter(
+		{P} precededByNewline = true
+		name = WtName[ [0] = "param" ],
+		default = WtValue[ [0] = "default values" ],
+		garbage = WtTemplateArguments[]
+	)
+)

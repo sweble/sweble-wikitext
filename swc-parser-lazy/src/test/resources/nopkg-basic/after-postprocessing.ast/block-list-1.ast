@@ -1,0 +1,49 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " Comment 1 "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- Comment 1 -->" ]
+				{P} suffix = ""
+			),
+		[1] = WtXmlComment(
+				{P} content = " Comment 2 "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- Comment 2 -->" ]
+				{P} suffix = ""
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " Hallo"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " Welt"
+		)
+	],
+	[1] = "\n\n",
+	[2] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " Hallo"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " Welt"
+		)
+	],
+	[3] = "\n\n",
+	[4] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ WtXmlComment(" Comment 1 ") + "*" <o> "\n" ]
+			[0] = " Hallo"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ WtXmlComment(" Comment 2 ") + "*" <o> "" ]
+			[0] = " Welt"
+		)
+	]
+)

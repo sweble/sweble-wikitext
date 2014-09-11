@@ -17,32 +17,30 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.lazy.parser.WarningSeverity;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class IllegalArgumentsWarning
-        extends
-            OffendingNodeWarning
+		extends
+			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
 	public IllegalArgumentsWarning(
-	        WarningSeverity severity,
-	        String origin,
-	        String message,
-	        AstNode template)
+			WarningSeverity severity,
+			String origin,
+			String message,
+			WtNode template)
 	{
 		super(template, severity, origin, message);
 	}
 	
 	public IllegalArgumentsWarning(
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        String message,
-	        AstNode template)
+			WarningSeverity severity,
+			Class<?> origin,
+			String message,
+			WtNode template)
 	{
 		super(template, severity, origin, message);
 	}

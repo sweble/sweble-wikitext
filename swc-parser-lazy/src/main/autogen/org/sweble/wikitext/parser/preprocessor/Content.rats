@@ -1,0 +1,108 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+module org.sweble.wikitext.parser.preprocessor.Content;
+
+import org.sweble.wikitext.parser.utils.Whitespace;
+import org.sweble.wikitext.parser.utils.ContentUtils;
+
+import org.sweble.wikitext.parser.preprocessor.XmlElement;
+import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.preprocessor.InternalLink;
+import org.sweble.wikitext.parser.preprocessor.OnlyInclude;
+
+
+
+
+// -- Content ------------------------------------------------------------------
+
+transient WtNodeList ContentStar =
+  content:ContentAtom*
+  {
+    yyValue = nf.list(content);
+  }
+;
+
+transient WtNodeList ContentPlus =
+  content:ContentAtom+
+  {
+    yyValue = nf.list(content);
+  }
+;
+
+private inline WtNode ContentAtom =
+  !ContentStopper ContentChoice
+;
+
+
+
+
+// -- Modify these to create new types of content ------------------------------
+
+inline void XmlCommentPrefix =
+  Eol ' '* "<!--"
+;
+
+inline void TemplatePrefix =
+  Eol "{{"
+;
+
+inline WtNode ContentChoice =
+    <XmlComment>  &XmlCommentPrefix XmlCommentTrimmed // prefix: \n ' '* <!--
+  / <EolTemplate> &TemplatePrefix   Template          // prefix: \n "{{"
+  / <XmlElement>  &'<'              XmlElement        // prefix: "<"
+  / <Template>    &"{{"             Template          // prefix: "{{"
+  / <IntLink>     &"[["             InternalLink      // prefix: "[["
+  / <ContentText>                   ContentText
+;
+
+inline void ContentStopper =
+  ContentStopperOnlyInclude
+;
+
+inline void ContentStringStopper =
+    <PrefixXmlComment>  XmlCommentPrefix
+  / <PrefixEolTempalte> TemplatePrefix
+  / <PrefixOnlyInclude> '<'              // For security reasons: You might
+                                         // remove PrefixXmlElement unreflected,
+                                         // but you will think twice before
+                                         // removing PrefixOnlyInclude
+  / <PrefixXmlElement>  '<'
+  / <PrefixTemplate>    "{{"
+  / <PrefixIntLink>     "[["
+;
+
+
+
+
+// -- Everything else is text --------------------------------------------------
+
+private inline WtText ContentText =
+  text:ContentString
+  {
+    yyValue = nf.text(text);
+  }
+;
+
+private transient String ContentString =
+  ( !ContentStringStopper _ )+
+;
+
+
+
+
+// -- End of file -------------------------------------------------------------

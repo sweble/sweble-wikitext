@@ -1,2 +1,0 @@
-[http://example.com title1a [http://inner.com] title1b]
-

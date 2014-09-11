@@ -1,0 +1,100 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+module org.sweble.wikitext.parser.utils.Whitespace;
+
+
+
+
+// -- Preserved Spaces ---------------------------------------------------------
+
+transient String pSpaceStar     = pSpace* ;
+
+transient String pSpacePlus     = pSpace+ ;
+
+   inline String pSpace         = ' '
+                                / '\t'
+                                / '\f' ;
+
+
+// -- Preserved Whitespace -----------------------------------------------------
+
+transient String  pWsStar       = pWhitespace* ;
+
+transient String  pWsPlus       = pWhitespace+ ;
+
+   inline String  pWhitespace   = pSpace
+                                / pEol ;
+
+   inline String  pEol          = "\r\n"
+                                / "\r"
+                                / "\n"
+                                / "\u2028"
+                                / "\u2029"
+                                / "\u000B"
+                                / "\u000C"
+                                / "\u0085" ;
+
+
+// -- Preserved End of File ----------------------------------------------------
+
+   inline String  pEof          = !_ ;
+
+   inline String  pEolOrEof     = pEol / pEof ;
+
+
+// -- Space predicates  --------------------------------------------------------
+
+transient void SpaceStar        = Space* ;
+
+transient void SpacePlus        = Space+ ;
+
+   inline void Space            = ' '
+                                / '\t'
+                                / '\f' ;
+
+
+// -- Whitespace predicates  ---------------------------------------------------
+
+transient void WsStar           = Ws* ;
+
+transient void WsPlus           = Ws+ ;
+
+   inline void Ws               = Space
+                                / Eol ;
+
+   inline void Eol              = "\r\n"
+                                / '\r'
+                                / '\n'
+                                / '\u2028'
+                                / '\u2029'
+                                / '\u000B'
+                                / '\u000C'
+                                / '\u0085' ;
+
+
+// -- End of File predicates ---------------------------------------------------
+
+transient void Eof              = !_ ;
+
+transient void EolOrEof         = Eol
+                                / Eof ;
+
+
+
+
+// -- End of file --------------------------------------------------------------

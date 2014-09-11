@@ -1,0 +1,18 @@
+LazyParsedPage(
+  Properties:
+    {N} entityMap = EntityMap {}
+    {N} warnings = []
+
+  [
+    Paragraph([ ])
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<table", [1] = ">"
+        {N} empty = false
+        {N} name = "table"
+
+      [ ]
+      [ Text("\n") ]
+    )
+  ]
+)

@@ -1,0 +1,26 @@
+<!-- The engine supports this test fully -->
+<!-- 0 -->
+Baz
+<!-- 1 -->
+Bar
+<!-- 2 -->
+<!-- 3 -->
+<!-- 4 -->
+Bar
+<!-- 5 -->
+<!-- 6 -->
+three
+<!-- 7 -->
+one
+<!-- 8 -->
+A
+<!-- 9 -->
+C
+<!-- 10 -->
+Nothing
+<!-- 11 -->
+Bar
+<!-- 12 -->
+A
+<!-- 13 -->
+nowiki <!-- not yet supported: should really be "template"! -->

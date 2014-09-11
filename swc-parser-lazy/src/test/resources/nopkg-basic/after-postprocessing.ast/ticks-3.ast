@@ -1,0 +1,17 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = WtBold(
+				{P} rtd = RTD[ "'''" <o> "" ]
+				[0] = "x"
+			)
+		),
+		[1] = WtBold(
+			{P} rtd = RTD[ "" <o> "'''" ]
+			[0] = "y"
+		)
+	]
+)

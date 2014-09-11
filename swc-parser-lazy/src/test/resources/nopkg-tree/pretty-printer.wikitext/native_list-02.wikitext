@@ -1,0 +1,16 @@
+List 1
+
+* normal<b>bold</b>
+*<b> bold</b>normal
+
+List 2
+
+# normal<b>bold</b>
+#<b> bold</b>
+
+<b>
+</b>
+
+<b>bold
+</b>
+normal

@@ -1,0 +1,8 @@
+ <source lang="xml">
+ <div>
+   <div>Joe Doe</div>
+   <div>The Example Company</div>
+   <div>604-555-1234</div>
+   <a href="http://example.com/">http://example.com/</a>
+ </div>
+ </source>

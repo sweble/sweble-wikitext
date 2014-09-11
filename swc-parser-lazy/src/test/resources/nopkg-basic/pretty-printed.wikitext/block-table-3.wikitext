@@ -1,0 +1,5 @@
+
+{|
+ |- border="2"
+ ! class="foo"
+ |}

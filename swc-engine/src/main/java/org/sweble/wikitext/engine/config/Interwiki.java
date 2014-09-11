@@ -17,72 +17,19 @@
 
 package org.sweble.wikitext.engine.config;
 
-import java.io.Serializable;
+import java.net.URL;
 
-public class Interwiki
-        implements
-            Serializable
+import org.sweble.wikitext.engine.PageTitle;
+
+public interface Interwiki
 {
-	private static final long serialVersionUID = 1L;
 	
-	String prefix;
+	public abstract String getPrefix();
 	
-	String url;
+	public abstract URL getUrl(PageTitle title);
 	
-	boolean local;
+	public abstract boolean isLocal();
 	
-	boolean trans;
+	public abstract boolean isTrans();
 	
-	// =========================================================================
-	
-	public Interwiki(String prefix, String url, boolean local, boolean trans)
-	{
-		super();
-		this.prefix = prefix;
-		this.url = url;
-		this.local = local;
-		this.trans = trans;
-	}
-	
-	// =========================================================================
-	
-	public String getPrefix()
-	{
-		return prefix;
-	}
-	
-	public void setPrefix(String prefix)
-	{
-		this.prefix = prefix;
-	}
-	
-	public String getUrl()
-	{
-		return url;
-	}
-	
-	public void setUrl(String url)
-	{
-		this.url = url;
-	}
-	
-	public boolean isLocal()
-	{
-		return local;
-	}
-	
-	public void setLocal(boolean local)
-	{
-		this.local = local;
-	}
-	
-	public boolean isTrans()
-	{
-		return trans;
-	}
-	
-	public void setTrans(boolean trans)
-	{
-		this.trans = trans;
-	}
 }

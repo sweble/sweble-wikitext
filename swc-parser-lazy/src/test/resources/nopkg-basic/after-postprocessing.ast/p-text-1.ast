@@ -1,0 +1,5 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtSemiPre[ [0] = "  text\n text  \n  text" ]
+)

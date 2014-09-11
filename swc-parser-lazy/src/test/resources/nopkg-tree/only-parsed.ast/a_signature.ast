@@ -1,0 +1,17 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Hello World ",
+	[2] = WtSignature(
+		{P} rtd = RTD[ "~~~~" ]
+		{P} tildeCount = 4
+	),
+	[3] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[4] = WtNewline("\n")
+)

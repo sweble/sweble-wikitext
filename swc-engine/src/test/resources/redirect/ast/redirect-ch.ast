@@ -1,0 +1,7 @@
+EngPage[
+	[0] = WtRedirect(
+		{A} __SKIP__ = false
+		{P} rtd = RTD[ "#\u91CD\u5B9A\u5411 [[" <o> "]]" ]
+		target = WtPageName[ [0] = "target" ]
+	)
+]

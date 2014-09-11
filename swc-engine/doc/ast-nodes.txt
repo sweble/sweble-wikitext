@@ -1,0 +1,261 @@
+#
+# Copyright 2011 The Open Source Research Group,
+#                University of Erlangen-Nürnberg
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+AstNode<T> [I]
+
+	AstNodeImpl<T> [A]
+
+		AstAbstractInnerNode<T> [A]
+			AstInnerNode?<T> [A]
+			AstNodeListImpl<T>
+
+		AstLeafNodeImpl<T> [A]
+			AstParserEntity<T>
+			AstStringNodeImpl<T> [A]
+				AstText<T>
+
+	AstInnerNode<T> [I]
+		(AstAbstractInnerNode<T> [A]) ...
+		AstNodeList<T> [I]
+			(AstNodeListImpl<T>)
+
+	AstLeafNode<T> [I]
+		(AstLeafNodeImpl<T> [A]) ...
+		AstStringNode<T> [I]
+			(AstStringNodeImpl<T>) ...
+
+WtNode [I]
+
+	WtEmptyImmutableNode [A]
+
+		WtNullStringNode [A] =|> WtStringNode =|> AstStringNode<WtNode>
+			WtNoTagExtensionBody
+
+		WtAbsentContentNode [A] =|> WtContentNode =|> WtNodeList =|> AstNodeList<WtNode>
+			WtNoBody
+			WtNoLinkOptionAltText
+			WtNoLinkTitle
+			WtNoName
+			WtNoValue
+
+		WtEmptyContentNode [A] =|> WtContentNode =|> WtNodeList =|> AstNodeList<WtNode>
+			WtEmptyBody
+			WtEmptyLinkOptions
+			WtEmptyNodeList
+			WtEmptyTemplateArguments
+			WtEmptyXmlAttributes
+
+		WtNoLctFlags
+		WtNoLink
+
+	WtInnerNode? [A] =|> AstInnerNode?<WtNode>
+
+		EngCompiledPage
+		WtLctRule
+		WtLinkOptionLinkTarget
+		WtRedirect
+		WtTableImplicitTableBody
+		WtXmlAttribute
+		WtXmlEmptyTag
+		WtXmlStartTag
+			WtImStartTag
+
+		WtExternalLink
+		WtInternalLink
+		WtLctRuleConv
+		WtLctVarConv
+		WtSection
+		WtTable
+		WtTableCaption
+		WtTableCell
+		WtTableHeader
+		WtTableRow
+		WtTagExtension
+		WtTemplate
+		WtTemplateArgument
+		WtXmlElement
+			EngSoftErrorNode
+
+		WtImageLink
+		WtTemplateParameter
+
+	WtLeafNode [A] =|> AstLeafNodeImpl<WtNode>
+		WtHorizontalRule
+		WtIllegalCodePoint
+		WtLctFlagsImpl
+		WtLinkOptionKeyword
+		WtLinkOptionResize
+		WtPageSwitch
+		WtSignature
+		WtTempNode
+			...
+		WtTicks
+		WtUrl
+		WtXmlCharRef
+		WtXmlEndTag
+			WtImEndTag
+		WtXmlEntityRef
+
+	WtParserEntity =|> AstParserEntity<WtNode>
+
+	EngNode [I]
+
+		(EngCompiledPage)
+		(EngNowiki)
+		(EngPage)
+		(EngSoftErrorNode)
+
+	WtIntermediate [I]
+
+		(WtNewline)
+		(WtParserEntity)
+		(WtSemiPreLine)
+		(WtTicks)
+		(WtWhitespace)
+		(WtXmlEmptyTag)
+		(WtXmlEndTag) ...
+		(WtXmlStartTag) ...
+
+	WtLctFlags [I]
+
+		(WtLctFlagsImpl)
+		(WtNoLctFlags)
+
+	WtLinkTarget [I]
+
+		(WtNoLink)
+		(WtPageName)
+		(WtUrl)
+
+	WtNamedXmlElement [I]
+
+		(WtXmlElement) ...
+		(WtXmlEmptyTag)
+		(WtXmlEndTag) ...
+		(WtXmlStartTag) ...
+
+	WtNodeList [I]
+
+		(WtEmptyNodeList)
+
+		WtNodeListImpl =|> AstNodeListImpl<WtNode>
+
+			WtContentNodeImpl [A]
+
+				EngPage
+				WtBodyImpl
+				WtBold
+				WtDefinitionList
+				WtDefinitionListDef
+				WtDefinitionListTerm
+				WtHeading
+				WtItalics
+				WtLctRules
+				WtLctRuleText
+				WtLinkOptionAltTextImpl
+				WtLinkOptionsImpl
+				WtLinkTitleImpl
+				WtListItem
+				WtNameImpl
+				WtOnlyInclude
+				WtOrderedList
+				WtPage [A]
+					WtParsedWikitextPage
+					WtPreproWikitextPage
+				WtParagraph
+				WtSemiPre
+				WtSemiPreLine
+				WtTemplateArgumentsImpl
+				WtUnorderedList
+				WtValueImpl
+				WtWhitespace
+				WtXmlAttributesImpl
+
+		WtContentNode [I]
+
+			(WtAbsentContentNode [A]) ...
+			(WtContentNodeImpl [A]) ...
+			(WtEmptyContentNode [A]) ...
+
+			WtBody [I]
+				(WtBodyImpl)
+				(WtEmptyBody)
+				(WtNoBody)
+
+			WtLinkOptionAltText [I]
+				(WtLinkOptionAltTextImpl)
+				(WtNoLinkOptionAltText)
+
+			WtLinkOptions [I]
+				(WtEmptyLinkOptions)
+				(WtLinkOptionsImpl)
+
+			WtLinkTitle [I]
+				(WtLinkTitleImpl)
+				(WtNoLinkTitle)
+
+			WtName [I]
+				(WtNameImpl)
+				(WtNoName)
+
+			WtTemplateArguments [I]
+				(WtEmptyTemplateArguments)
+				(WtTemplateArgumentsImpl)
+
+			WtValue [I]
+				(WtNoValue)
+				(WtValueImpl)
+
+			WtXmlAttributes [I]
+				(WtEmptyXmlAttributes)
+				(WtXmlAttributesImpl)
+
+	WtPreproNode [I]
+
+		(WtIgnored)
+		(WtOnlyInclude)
+		(WtPageSwitch)
+		(WtPreproWikitextPage)
+		(WtRedirect)
+		(WtTagExtension)
+		(WtTemplate)
+		(WtTemplateArgument)
+		(WtTemplateParameter)
+		(WtXmlComment)
+		(WtTagExtensionBody [I]) ...
+
+	WtStringNode [I] =|> AstStringNode<WtNode>
+
+		(WtNullStringNode [A]) ...
+
+		WtStringNodeImpl [A] =|> AstStringNodeImpl<WtNode>
+
+			EngNowiki
+			WtIgnored
+			WtLctRuleGarbage
+			WtLinkOptionGarbage
+			WtNewline
+			WtPageName
+			WtTagExtensionBodyImpl
+			WtXmlAttributeGarbage
+			WtXmlComment
+
+		WtText =|> AstText<WtNode>
+
+		WtTagExtensionBody [I]
+			(WtNoTagExtensionBody)
+			(WtTagExtensionBodyImpl)

@@ -25,21 +25,21 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>2.0.0-alpha-4-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Engine -->
 
-  <groupId>org.sweble.wikitext</groupId>
+  <!-- Same groupId as parent -->
   <artifactId>swc-engine</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Engine</name>
-  <url>http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext/swc-engine</url>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-engine</url>
   <inceptionYear>2010</inceptionYear>
   <description>
-    A minimal engine using the Sweble Lazy Wikitext Parser to
+    A minimal engine using the Sweble Wikitext Parser to
     process articles in the context of a MediaWiki-like configuration.
   </description>
 
@@ -55,6 +55,12 @@
 
   <dependencies>
 
+    <!-- JAXB Reference Implementation -->
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+    </dependency>
+
     <!-- jsoup: Java HTML Parser -->
     <dependency>
       <groupId>org.jsoup</groupId>
@@ -67,7 +73,7 @@
       <artifactId>log4j</artifactId>
     </dependency>
 
-    <!-- Sweble Wikitext Components - Lazy Wikitext Parser -->
+    <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-parser-lazy</artifactId>
@@ -102,71 +108,6 @@
 
     <plugins>
 
-      <!-- Add various source directories -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>src/main/autogen</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Compile schema files -->
-      <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <configuration>
-          <schemaDirectory>${basedir}/src/main/autogen</schemaDirectory>
-          <generatePackage>org.sweble.wikitext.engine.utils</generatePackage>
-          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
-          <schemaIncludes>
-            <include>SimpleWikiConfiguration.xsd</include>
-          </schemaIncludes>
-          <!--
-          <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-           -->
-          <forceRegenerate>true</forceRegenerate>
-          <strict>true</strict>
-        </configuration>
-      </plugin>
-
-      <!-- Generate Ast Nodes -->
-      <plugin>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-nodegen-maven-plugin</artifactId>
-        <configuration>
-          <baseDir>${project.basedir}/src/main/autogen</baseDir>
-          <outputDir>${project.build.directory}/generated-sources</outputDir>
-          <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/engine</ratsInputFile>
-          </ratsInputFiles>
-        </configuration>
-      </plugin>
-
-      <!-- Generate Ast Printers -->
-      <plugin>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-printergen-maven-plugin</artifactId>
-        <configuration>
-          <baseDir>${project.basedir}/src/main/autogen</baseDir>
-          <outputDir>${project.build.directory}/generated-sources</outputDir>
-          <aptInputFiles>
-            <aptInputFile>org/sweble/wikitext/engine/utils</aptInputFile>
-          </aptInputFiles>
-        </configuration>
-      </plugin>
-
       <!-- Check and format license headers -->
       <plugin>
         <groupId>com.mycila</groupId>
@@ -177,19 +118,17 @@
             <!-- These excludes should be the same as in the parent project -->
             <exclude>**/*.log</exclude>
             <exclude>**/.gitignore</exclude>
-            <exclude>**/LICENSE</exclude>
-            <exclude>**/NOTICE</exclude>
-            <exclude>src/site/site.xml</exclude>
-            <exclude>src/site/changes.xml</exclude>
-            <exclude>src/site/resources/css/site.css</exclude>
-            <exclude>swc-*/</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
 
             <!-- Extra excludes for this project -->
             <exclude>**/catalog/xml.xsd</exclude>
+            <exclude>src/test/resources/**/*.ast</exclude>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/*.mwtest</exclude>
             <exclude>src/test/resources/**/Template%3*</exclude>
             <exclude>src/test/resources/**/index</exclude>
+            <exclude>src/test/resources/**/NOTICE</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -248,7 +187,6 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>HEAD</tag>
   </scm>
 
   <!--

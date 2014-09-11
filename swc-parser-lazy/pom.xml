@@ -25,21 +25,21 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>2.0.0-alpha-4-SNAPSHOT</version>
   </parent>
 
-  <!-- This POM: Sweble Wikitext Components - Lazy Wikitext Parser -->
+  <!-- This POM: Sweble Wikitext Components - Sweble Wikitext Parser -->
 
-  <groupId>org.sweble.wikitext</groupId>
+  <!-- Same groupId as parent -->
   <artifactId>swc-parser-lazy</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <!-- Same version as parent -->
   <packaging>jar</packaging>
 
-  <name>SWC - Sweble Lazy Wikitext Parser</name>
-  <url>http://sweble.org/sites/swc-devel/develop-latest/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
+  <name>SWC - Sweble Wikitext Parser</name>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
   <inceptionYear>2010</inceptionYear>
   <description>
-    A lazy parser for MediaWiki's Wikitext.
+    A parser for MediaWiki's Wikitext.
   </description>
 
   <!-- ==[ Properties ]===================================================== -->
@@ -118,7 +118,7 @@
             <configuration>
               <sources>
                 <source>src/main/autogen</source>
-                <source>target/generated-sources/jflex</source>
+                <source>${project.build.directory}/generated-sources</source>
               </sources>
             </configuration>
           </execution>
@@ -145,35 +145,9 @@
           <baseDir>${project.basedir}/src/main/autogen</baseDir>
           <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
           <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/lazy/parser/Grammar.rats</ratsInputFile>
-            <ratsInputFile>org/sweble/wikitext/lazy/preprocessor/Grammar.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser/parser/RatsWikitextParser.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser/preprocessor/RatsWikitextPreprocessor.rats</ratsInputFile>
           </ratsInputFiles>
-        </configuration>
-      </plugin>
-
-      <!-- Generate Ast Nodes -->
-      <plugin>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-nodegen-maven-plugin</artifactId>
-        <configuration>
-          <baseDir>${project.basedir}/src/main/autogen</baseDir>
-          <outputDir>${project.build.directory}/generated-sources</outputDir>
-          <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/lazy</ratsInputFile>
-          </ratsInputFiles>
-        </configuration>
-      </plugin>
-
-      <!-- Generate Ast Printers -->
-      <plugin>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-printergen-maven-plugin</artifactId>
-        <configuration>
-          <baseDir>${project.basedir}/src/main/autogen</baseDir>
-          <outputDir>${project.build.directory}/generated-sources</outputDir>
-          <aptInputFiles>
-            <aptInputFile>org/sweble/wikitext/lazy</aptInputFile>
-          </aptInputFiles>
         </configuration>
       </plugin>
 
@@ -187,12 +161,8 @@
             <!-- These excludes should be the same as in the parent project -->
             <exclude>**/*.log</exclude>
             <exclude>**/.gitignore</exclude>
-            <exclude>**/LICENSE</exclude>
-            <exclude>**/NOTICE</exclude>
-            <exclude>src/site/site.xml</exclude>
-            <exclude>src/site/changes.xml</exclude>
-            <exclude>src/site/resources/css/site.css</exclude>
-            <exclude>swc-*/</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
 
             <!-- Extra excludes for this project -->
             <exclude>src/test/resources/**/NOTICE</exclude>
@@ -201,6 +171,41 @@
             <exclude>src/test/resources/**/*.ast</exclude>
             <exclude>src/test/resources/**/*.txt</exclude>
           </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Get rid of warnings in auto-generated code -->
+      <plugin>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>maven-replacer-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>replace</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <includes>
+            <!-- Using ${project.build.directory} instead of target
+                 DOES NOT WORK! -->
+            <include>target/generated-sources/**/*Lexer.java</include>
+            <include>target/generated-sources/**/*Preprocessor.java</include>
+            <include>target/generated-sources/**/*Parser.java</include>
+          </includes>
+
+          <regex>true</regex>
+          <regexFlags>
+            <regexFlag>MULTILINE</regexFlag>
+          </regexFlags>
+
+          <replacements>
+            <replacement>
+              <token>^(@SuppressWarnings\(.*?\)\s+)?(((public|final)\s+)*)class</token>
+              <value>@SuppressWarnings("all") $2class</value>
+            </replacement>
+          </replacements>
         </configuration>
       </plugin>
 
@@ -258,7 +263,6 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>HEAD</tag>
   </scm>
 
   <!--
