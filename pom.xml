@@ -81,32 +81,28 @@
       <dependency>
         <groupId>de.fau.cs.osr.utils</groupId>
         <artifactId>utils</artifactId>
-        <!-- Version is given directly so the release plugin can see it -->
-        <version>2.0.0-alpha-4-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
 
       <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
       <dependency>
         <groupId>org.sweble.wikitext</groupId>
         <artifactId>swc-engine</artifactId>
-        <!-- Version is given directly so the release plugin can see it -->
-        <version>2.0.0-alpha-4-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
 
       <!-- Sweble - WOM 3.0 Core -->
       <dependency>
         <groupId>org.sweble.wom3</groupId>
         <artifactId>sweble-wom3-core</artifactId>
-        <!-- Version is given directly so the release plugin can see it -->
-        <version>2.0.0-alpha-4-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
 
       <!-- Sweble WOM 3.0 - SWC Adapter -->
       <dependency>
         <groupId>org.sweble.wom3</groupId>
         <artifactId>sweble-wom3-swc-adapter</artifactId>
-        <!-- Version is given directly so the release plugin can see it -->
-        <version>2.0.0-alpha-4-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
 
     </dependencies>
