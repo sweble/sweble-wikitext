@@ -181,6 +181,7 @@
     <connection>scm:git://sweble.org/git/sweble-engine.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-engine.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-engine.git;a=summary</url>
+    <tag>HEAD</tag>
   </scm>
 
   <!--
