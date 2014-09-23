@@ -142,6 +142,7 @@ import org.sweble.wom3.Wom3XmlText;
 import org.sweble.wom3.impl.DocumentImpl;
 import org.sweble.wom3.impl.DomImplementationImpl;
 import org.sweble.wom3.impl.Toolbox;
+import org.sweble.wom3.swcadapter.nodes.SwcNode;
 import org.w3c.dom.Document;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -153,9 +154,9 @@ public class AstToWomConverter
 		implements
 			CompleteEngineVisitor<Wom3Node>
 {
-	public static final String MWW_NS_URI = "http://sweble.org/schema/mww30";
+	public static final String MWW_NS_URI = SwcNode.MWW_NS_URI;
 	
-	public static final String DEFAULT_MWW_NS_PREFIX = "mww";
+	public static final String DEFAULT_MWW_NS_PREFIX = SwcNode.DEFAULT_MWW_NS_PREFIX;
 	
 	// =========================================================================
 	
