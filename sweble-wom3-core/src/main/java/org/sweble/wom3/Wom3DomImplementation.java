@@ -17,10 +17,16 @@
  */
 package org.sweble.wom3;
 
+import org.w3c.dom.DOMException;
 import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.DocumentType;
 
 public interface Wom3DomImplementation
 		extends
 			DOMImplementation
 {
+	Wom3Document createDocument(
+			String namespaceURI,
+			String qualifiedName,
+			DocumentType doctype) throws DOMException;
 }

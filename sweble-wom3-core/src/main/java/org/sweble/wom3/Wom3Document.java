@@ -26,4 +26,7 @@ public interface Wom3Document
 {
 	@Override
 	public Wom3ElementNode getDocumentElement();
+	
+	@Override
+	public Wom3DomImplementation getImplementation();
 }
