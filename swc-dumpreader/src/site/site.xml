@@ -51,10 +51,10 @@
 
     <breadcrumbs>
       <item name="Sweble" href="http://sweble.org" />
-      <item name="Documentation" href="http://sweble.org/doc" img="" />
-      <item name="Tooling" href="${project.url}/../../.." img="" />
-      <item name="Sweble" href="${project.url}/../.." img="" />
-      <item name="Wikitext Components" href="${project.url}/.." img="" />
+      <item name="Documentation" href="http://sweble.org/doc" />
+      <item name="Tooling" href="${project.url}/../../.." />
+      <item name="Sweble" href="${project.url}/../.." />
+      <item name="Wikitext Components" href="${project.url}/.." />
     </breadcrumbs>
 
     <menu ref="parent"/>
