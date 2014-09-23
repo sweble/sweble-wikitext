@@ -328,7 +328,7 @@ public class AstToWomConverter
 	@Override
 	public Wom3ElementNode visit(WtTagExtension n)
 	{
-		Wom3Element tag = genPushMww("tagext");
+		Wom3ElementNode tag = genPushMww("tagext");
 		{
 			tag.setAttribute("name", n.getName());
 			
@@ -349,7 +349,7 @@ public class AstToWomConverter
 	@Override
 	public Wom3ElementNode visit(WtTagExtensionBody n)
 	{
-		Wom3Element body = genPushMww("body");
+		Wom3ElementNode body = genPushMww("body");
 		{
 			appendText(n.getContent());
 		}
@@ -361,7 +361,7 @@ public class AstToWomConverter
 	@Override
 	public Wom3ElementNode visit(WtTemplate n)
 	{
-		Wom3Element template = genPushMww("transclusion");
+		Wom3ElementNode template = genPushMww("transclusion");
 		{
 			appendRtd(template, n, 0);
 			
@@ -386,7 +386,7 @@ public class AstToWomConverter
 	@Override
 	public Wom3ElementNode visit(WtTemplateArgument n)
 	{
-		Wom3Element arg = genPushMww("arg");
+		Wom3ElementNode arg = genPushMww("arg");
 		{
 			appendRtd(arg, n, 0);
 			
@@ -405,7 +405,7 @@ public class AstToWomConverter
 	@Override
 	public Wom3ElementNode visit(WtTemplateParameter n)
 	{
-		Wom3Element param = genPushMww("param");
+		Wom3ElementNode param = genPushMww("param");
 		{
 			appendRtd(param, n, 0);
 			
@@ -420,7 +420,7 @@ public class AstToWomConverter
 			
 			if (!n.getGarbage().isEmpty())
 			{
-				Wom3Element garbage = genPushMww("garbage");
+				Wom3ElementNode garbage = genPushMww("garbage");
 				{
 					dispatchAppend(garbage, n.getGarbage());
 				}
@@ -449,7 +449,7 @@ public class AstToWomConverter
 				
 				Wom3For for_ = (Wom3For) genPushWom("for");
 				{
-					Wom3Element charRef = genPushMww("xml-char-ref");
+					Wom3ElementNode charRef = genPushMww("xml-char-ref");
 					{
 						charRef.setAttribute("code", String.valueOf(n.getCodePoint()));
 						
@@ -500,7 +500,7 @@ public class AstToWomConverter
 				
 				Wom3For for_ = (Wom3For) genPushWom("for");
 				{
-					Wom3Element entityRef = genPushMww("xml-entity-ref");
+					Wom3ElementNode entityRef = genPushMww("xml-entity-ref");
 					{
 						entityRef.setAttribute("name", String.valueOf(n.getName()));
 						appendRtd(entityRef, n, 0);
@@ -908,7 +908,7 @@ public class AstToWomConverter
 	
 	private Wom3Element convertToExplicitMwwAttribute(WtXmlAttribute wtAttr)
 	{
-		Wom3Element womAttr = genPushMww("attr");
+		Wom3ElementNode womAttr = genPushMww("attr");
 		
 		appendRtd(womAttr, wtAttr, 0);
 		
@@ -954,7 +954,7 @@ public class AstToWomConverter
 					
 					Wom3For for_ = (Wom3For) genPushWom("for");
 					{
-						Wom3Element mwwRedirect = genPushMww("redirect");
+						Wom3ElementNode mwwRedirect = genPushMww("redirect");
 						{
 							appendRtd(mwwRedirect, n, 0);
 							
@@ -1979,7 +1979,7 @@ public class AstToWomConverter
 		return push(genWom(name));
 	}
 	
-	private Wom3Element genPushMww(String name)
+	private Wom3ElementNode genPushMww(String name)
 	{
 		return push(genMww(name));
 	}
@@ -2277,9 +2277,9 @@ public class AstToWomConverter
 				tag);
 	}
 	
-	private Wom3Element genMww(String type)
+	private Wom3ElementNode genMww(String type)
 	{
-		return (Wom3Element) doc.createElementNS(
+		return (Wom3ElementNode) doc.createElementNS(
 				MWW_NS_URI,
 				DEFAULT_MWW_NS_PREFIX + ":" + type);
 	}
