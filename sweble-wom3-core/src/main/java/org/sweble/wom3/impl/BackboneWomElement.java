@@ -27,12 +27,15 @@ import org.sweble.wom3.Wom3Color;
 import org.sweble.wom3.Wom3HorizAlign;
 import org.sweble.wom3.Wom3TableVAlign;
 import org.sweble.wom3.Wom3ValueWithUnit;
+import org.w3c.dom.DOMException;
 
 public abstract class BackboneWomElement
 		extends
 			BackboneElement
 {
 	private static final long serialVersionUID = 1L;
+	
+	private String prefix;
 	
 	// =========================================================================
 	
@@ -51,8 +54,15 @@ public abstract class BackboneWomElement
 	@Override
 	public String getNodeName()
 	{
-		// DOM Level 1 implementation
-		return getWomName();
+		if (this.prefix == null)
+			return getWomName();
+		return this.prefix + ":" + getWomName();
+	}
+	
+	@Override
+	public String getPrefix()
+	{
+		return prefix;
 	}
 	
 	@Override
@@ -65,6 +75,29 @@ public abstract class BackboneWomElement
 	public String getNamespaceURI()
 	{
 		return WOM_NS_URI;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public void setPrefix(String prefix) throws DOMException
+	{
+		if ((prefix != null) && prefix.isEmpty())
+			prefix = null;
+		
+		if (prefix != null)
+		{
+			Toolbox.checkValidXmlName(prefix);
+			
+			if (prefix.indexOf(':') >= 0)
+				throw new DOMException(DOMException.NAMESPACE_ERR, "Prefix must not contain ':' character");
+			
+			if (prefix.equals("xml"))
+				// Cannot have xml: prefix since it's namespaceURI will never be the XML namespace!
+				throw new DOMException(DOMException.NAMESPACE_ERR, "WOM node cannot have \"xml\" prefix!");
+		}
+		
+		this.prefix = prefix;
 	}
 	
 	// =========================================================================
