@@ -17,20 +17,16 @@
  */
 package org.sweble.wom3.swcadapter.nodes.impl;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.sweble.wom3.impl.AttributeDescriptor;
 import org.sweble.wom3.impl.Backbone;
 import org.sweble.wom3.impl.ChildDescriptor;
 import org.sweble.wom3.impl.DocumentImpl;
-import org.sweble.wom3.impl.SiblingCollectionBounds;
-import org.sweble.wom3.impl.SiblingRangeCollection;
 import org.sweble.wom3.swcadapter.nodes.SwcArg;
 import org.sweble.wom3.swcadapter.nodes.SwcName;
 import org.sweble.wom3.swcadapter.nodes.SwcTransclusion;
@@ -51,8 +47,6 @@ public class TransclusionImpl
 	
 	private NameImpl name;
 	
-	private SiblingRangeCollection<TransclusionImpl, ArgImpl> args;
-	
 	private Map<String, ArgImpl> argByName;
 	
 	private ArrayList<ArgImpl> argByIndex;
@@ -62,29 +56,6 @@ public class TransclusionImpl
 	public TransclusionImpl(DocumentImpl owner)
 	{
 		super(owner);
-		
-		args = new SiblingRangeCollection<TransclusionImpl, ArgImpl>(
-				this, new SiblingCollectionsBoundIml());
-	}
-	
-	private final class SiblingCollectionsBoundIml
-			implements
-				SiblingCollectionBounds,
-				Serializable
-	{
-		private static final long serialVersionUID = 1L;
-		
-		@Override
-		public Backbone getPred()
-		{
-			return name;
-		}
-		
-		@Override
-		public Backbone getSucc()
-		{
-			return null;
-		}
 	}
 	
 	// =========================================================================
@@ -162,8 +133,8 @@ public class TransclusionImpl
 		if (argByIndex == null)
 		{
 			argByIndex = new ArrayList<ArgImpl>();
-			for (ArgImpl arg : args)
-				argByIndex.add(arg);
+			for (SwcArg arg : getArguments())
+				argByIndex.add((ArgImpl) arg);
 		}
 		return argByIndex.get(index);
 	}
@@ -174,12 +145,12 @@ public class TransclusionImpl
 		if (argByName == null)
 		{
 			argByName = new HashMap<String, ArgImpl>();
-			for (ArgImpl arg : args)
+			for (SwcArg arg : getArguments())
 			{
 				try
 				{
 					String resolvedName = SwcTextUtils.womToText(arg.getName()).trim();
-					argByName.put(resolvedName, arg);
+					argByName.put(resolvedName, (ArgImpl) arg);
 				}
 				catch (StringConversionException e)
 				{
@@ -193,10 +164,16 @@ public class TransclusionImpl
 	@Override
 	public Collection<SwcArg> getArguments()
 	{
-		@SuppressWarnings({ "unchecked", "rawtypes" })
-		List<SwcArg> uc =
-				(List) Collections.unmodifiableList(args);
-		return uc;
+		// TODO: Use view instead of static excerpt!
+		
+		ArrayList<SwcArg> args = new ArrayList<SwcArg>();
+		for (Backbone i = getFirstChild(); i != null; i = i.getNextSibling())
+		{
+			if (i instanceof SwcArg)
+				args.add((SwcArg) i);
+		}
+		
+		return Collections.unmodifiableCollection(args);
 	}
 	
 	// =========================================================================
