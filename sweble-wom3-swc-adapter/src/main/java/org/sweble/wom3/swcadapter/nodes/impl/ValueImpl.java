@@ -19,13 +19,13 @@ package org.sweble.wom3.swcadapter.nodes.impl;
 
 import org.sweble.wom3.impl.AttributeDescriptor;
 import org.sweble.wom3.impl.DocumentImpl;
-import org.sweble.wom3.swcadapter.nodes.SwcName;
+import org.sweble.wom3.swcadapter.nodes.SwcValue;
 
 public class ValueImpl
 		extends
 			BackboneSwcContainer
 		implements
-			SwcName
+			SwcValue
 {
 	private static final long serialVersionUID = 1L;
 	
