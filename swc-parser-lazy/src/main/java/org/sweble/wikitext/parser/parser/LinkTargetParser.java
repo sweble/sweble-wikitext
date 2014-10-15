@@ -112,7 +112,10 @@ public class LinkTargetParser
 					"|(/\\.\\.?$)" +
 					
 					// No magic tilde sequences
-					"|(~~~)");
+					"|(~~~)" +
+					
+					// No invalid characters
+					"|[\\u0000-\\u001F\\u007F\\uFFFD<>{}\\|\\[\\]]");
 	
 	// =========================================================================
 	
