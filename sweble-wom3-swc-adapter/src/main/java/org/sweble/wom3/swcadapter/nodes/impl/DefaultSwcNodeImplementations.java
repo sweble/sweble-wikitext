@@ -66,10 +66,14 @@ public class DefaultSwcNodeImplementations
 	
 	static
 	{
+		// TODO: Still missing: xml-char-ref, xml-entity-ref, xmlelement, redirect
 		ArrayList<SwcNodeImplInfo> implsTmp = new ArrayList<SwcNodeImplInfo>();
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "arg", ArgImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "attr", AttrImpl.class));
+		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "body", BodyImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "name", NameImpl.class));
+		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "garbage", GarbageImpl.class));
+		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "param", ParamImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "tagext", TagExtensionImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "tagext-body", TagExtBodyImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "transclusion", TransclusionImpl.class));
