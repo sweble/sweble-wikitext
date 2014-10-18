@@ -17,43 +17,33 @@
  */
 package org.sweble.wom3.swcadapter.nodes.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.sweble.wom3.impl.AttributeDescriptor;
 import org.sweble.wom3.impl.Backbone;
 import org.sweble.wom3.impl.ChildDescriptor;
 import org.sweble.wom3.impl.DocumentImpl;
-import org.sweble.wom3.swcadapter.nodes.SwcArg;
+import org.sweble.wom3.swcadapter.nodes.SwcAttr;
 import org.sweble.wom3.swcadapter.nodes.SwcName;
-import org.sweble.wom3.swcadapter.nodes.SwcTransclusion;
-import org.sweble.wom3.swcadapter.utils.StringConversionException;
-import org.sweble.wom3.swcadapter.utils.SwcTextUtils;
+import org.sweble.wom3.swcadapter.nodes.SwcValue;
 
-public class TransclusionImpl
+public class AttrImpl
 		extends
 			BackboneSwcElement
 		implements
-			SwcTransclusion
+			SwcAttr
 {
 	private static final long serialVersionUID = 1L;
 	
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc(MWW_NS_URI, "name", ChildDescriptor.REQUIRED),
-			childDesc(MWW_NS_URI, "arg", ChildDescriptor.MULTIPLE) };
+			childDesc(MWW_NS_URI, "value") };
 	
-	private NameImpl name;
+	private SwcName name;
 	
-	private Map<String, ArgImpl> argByName;
-	
-	private ArrayList<ArgImpl> argByIndex;
+	private SwcValue value;
 	
 	// =========================================================================
 	
-	public TransclusionImpl(DocumentImpl owner)
+	public AttrImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
@@ -63,7 +53,7 @@ public class TransclusionImpl
 	@Override
 	public String getSwcName()
 	{
-		return "transclusion";
+		return "attr";
 	}
 	
 	// =========================================================================
@@ -90,33 +80,33 @@ public class TransclusionImpl
 	public void childInserted(Backbone prev, Backbone added)
 	{
 		if (added instanceof SwcName)
-		{
-			this.name = (NameImpl) added;
-		}
-		else if (added instanceof SwcArg)
-		{
-			// TODO: More efficient implementation possible
-			this.argByIndex = null;
-			this.argByName = null;
-		}
+			this.name = (SwcName) added;
+		if (added instanceof SwcValue)
+			this.value = (SwcValue) added;
 	}
 	
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
 		if (removed == this.name)
-		{
 			this.name = null;
-		}
-		else if (removed instanceof SwcArg)
-		{
-			// TODO: More efficient implementation possible
-			this.argByIndex = null;
-			this.argByName = null;
-		}
+		if (removed == this.value)
+			this.value = null;
 	}
 	
 	// =========================================================================
+	
+	@Override
+	public boolean hasValue()
+	{
+		return this.value != null;
+	}
+	
+	@Override
+	public SwcName setName(SwcName name)
+	{
+		return (SwcName) replaceOrInsertBeforeOrAppend(this.name, this.value, name, false);
+	}
 	
 	@Override
 	public SwcName getName()
@@ -125,59 +115,15 @@ public class TransclusionImpl
 	}
 	
 	@Override
-	public SwcName setName(SwcName name)
+	public SwcValue setValue(SwcValue value)
 	{
-		return (SwcName) replaceOrInsertBeforeOrAppend(
-				this.name, getFirstChild(), name, true);
+		return (SwcValue) replaceOrAppend(this.value, value, true);
 	}
 	
 	@Override
-	public SwcArg getArgument(int index)
+	public SwcValue getValue()
 	{
-		if (argByIndex == null)
-		{
-			argByIndex = new ArrayList<ArgImpl>();
-			for (SwcArg arg : getArguments())
-				argByIndex.add((ArgImpl) arg);
-		}
-		return argByIndex.get(index);
-	}
-	
-	@Override
-	public SwcArg getArgument(String name)
-	{
-		if (argByName == null)
-		{
-			argByName = new HashMap<String, ArgImpl>();
-			for (SwcArg arg : getArguments())
-			{
-				try
-				{
-					String resolvedName = SwcTextUtils.womToText(arg.getName()).trim();
-					argByName.put(resolvedName, (ArgImpl) arg);
-				}
-				catch (StringConversionException e)
-				{
-					// We simply don't add un-resolved argument names to the index.
-				}
-			}
-		}
-		return argByName.get(name);
-	}
-	
-	@Override
-	public Collection<SwcArg> getArguments()
-	{
-		// TODO: Use view instead of static excerpt!
-		
-		ArrayList<SwcArg> args = new ArrayList<SwcArg>();
-		for (Backbone i = getFirstChild(); i != null; i = i.getNextSibling())
-		{
-			if (i instanceof SwcArg)
-				args.add((SwcArg) i);
-		}
-		
-		return Collections.unmodifiableCollection(args);
+		return this.value;
 	}
 	
 	// =========================================================================

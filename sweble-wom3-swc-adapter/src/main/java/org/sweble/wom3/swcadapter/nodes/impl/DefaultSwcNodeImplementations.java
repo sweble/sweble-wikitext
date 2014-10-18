@@ -68,7 +68,10 @@ public class DefaultSwcNodeImplementations
 	{
 		ArrayList<SwcNodeImplInfo> implsTmp = new ArrayList<SwcNodeImplInfo>();
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "arg", ArgImpl.class));
+		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "attr", AttrImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "name", NameImpl.class));
+		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "tagext", TagExtensionImpl.class));
+		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "tagext-body", TagExtBodyImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "transclusion", TransclusionImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "value", ValueImpl.class));
 		

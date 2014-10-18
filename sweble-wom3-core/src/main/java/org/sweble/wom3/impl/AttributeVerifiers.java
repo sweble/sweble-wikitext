@@ -389,6 +389,18 @@ public enum AttributeVerifiers
 				verified.strValue = Toolbox.tableRulesToString((Wom3TableRules) verified.value);
 			return true;
 		}
+	},
+	XML_NAME
+	{
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			Toolbox.checkValidXmlName(
+					(verified.strValue == null) ? (String) verified.value : verified.strValue);
+			return true;
+		}
 	};
 	
 	// =========================================================================

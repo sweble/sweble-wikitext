@@ -23,37 +23,41 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.sweble.wom3.Wom3Node;
+import org.sweble.wom3.impl.AttributeBase;
 import org.sweble.wom3.impl.AttributeDescriptor;
+import org.sweble.wom3.impl.AttributeVerifiers;
 import org.sweble.wom3.impl.Backbone;
 import org.sweble.wom3.impl.ChildDescriptor;
 import org.sweble.wom3.impl.DocumentImpl;
-import org.sweble.wom3.swcadapter.nodes.SwcArg;
-import org.sweble.wom3.swcadapter.nodes.SwcName;
-import org.sweble.wom3.swcadapter.nodes.SwcTransclusion;
+import org.sweble.wom3.impl.NativeAndStringValuePair;
+import org.sweble.wom3.swcadapter.nodes.SwcAttr;
+import org.sweble.wom3.swcadapter.nodes.SwcTagExtBody;
+import org.sweble.wom3.swcadapter.nodes.SwcTagExtension;
 import org.sweble.wom3.swcadapter.utils.StringConversionException;
 import org.sweble.wom3.swcadapter.utils.SwcTextUtils;
 
-public class TransclusionImpl
+public class TagExtensionImpl
 		extends
 			BackboneSwcElement
 		implements
-			SwcTransclusion
+			SwcTagExtension
 {
 	private static final long serialVersionUID = 1L;
 	
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
-			childDesc(MWW_NS_URI, "name", ChildDescriptor.REQUIRED),
-			childDesc(MWW_NS_URI, "arg", ChildDescriptor.MULTIPLE) };
+			childDesc(Wom3Node.WOM_NS_URI, "attr", ChildDescriptor.MULTIPLE),
+			childDesc(Wom3Node.WOM_NS_URI, "body") };
 	
-	private NameImpl name;
+	private Map<String, AttrImpl> argByName;
 	
-	private Map<String, ArgImpl> argByName;
+	private ArrayList<AttrImpl> argByIndex;
 	
-	private ArrayList<ArgImpl> argByIndex;
+	private TagExtBodyImpl body;
 	
 	// =========================================================================
 	
-	public TransclusionImpl(DocumentImpl owner)
+	public TagExtensionImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
@@ -63,7 +67,7 @@ public class TransclusionImpl
 	@Override
 	public String getSwcName()
 	{
-		return "transclusion";
+		return "tagext";
 	}
 	
 	// =========================================================================
@@ -89,11 +93,11 @@ public class TransclusionImpl
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
-		if (added instanceof SwcName)
+		if (added instanceof SwcTagExtBody)
 		{
-			this.name = (NameImpl) added;
+			this.body = (TagExtBodyImpl) added;
 		}
-		else if (added instanceof SwcArg)
+		else if (added instanceof SwcAttr)
 		{
 			// TODO: More efficient implementation possible
 			this.argByIndex = null;
@@ -104,11 +108,9 @@ public class TransclusionImpl
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
-		if (removed == this.name)
-		{
-			this.name = null;
-		}
-		else if (removed instanceof SwcArg)
+		if (removed == this.body)
+			this.body = null;
+		if (removed instanceof SwcAttr)
 		{
 			// TODO: More efficient implementation possible
 			this.argByIndex = null;
@@ -119,42 +121,61 @@ public class TransclusionImpl
 	// =========================================================================
 	
 	@Override
-	public SwcName getName()
+	public String getName()
 	{
-		return this.name;
+		return getStringAttr("name");
 	}
 	
 	@Override
-	public SwcName setName(SwcName name)
+	public String setName(String name)
 	{
-		return (SwcName) replaceOrInsertBeforeOrAppend(
-				this.name, getFirstChild(), name, true);
+		return setStringAttr(Attributes.NAME, "name", name);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean hasBody()
+	{
+		return this.body != null;
 	}
 	
 	@Override
-	public SwcArg getArgument(int index)
+	public TagExtBodyImpl getBody()
+	{
+		return this.body;
+	}
+	
+	@Override
+	public SwcTagExtBody setBody(SwcTagExtBody body)
+	{
+		return (SwcTagExtBody) replaceOrAppend(this.body, body, false);
+	}
+	
+	@Override
+	public SwcAttr getXmlAttribute(int index)
 	{
 		if (argByIndex == null)
 		{
-			argByIndex = new ArrayList<ArgImpl>();
-			for (SwcArg arg : getArguments())
-				argByIndex.add((ArgImpl) arg);
+			argByIndex = new ArrayList<AttrImpl>();
+			for (SwcAttr arg : getXmlAttributes())
+				argByIndex.add((AttrImpl) arg);
 		}
 		return argByIndex.get(index);
 	}
 	
 	@Override
-	public SwcArg getArgument(String name)
+	public SwcAttr getXmlAttribute(String name)
 	{
 		if (argByName == null)
 		{
-			argByName = new HashMap<String, ArgImpl>();
-			for (SwcArg arg : getArguments())
+			argByName = new HashMap<String, AttrImpl>();
+			for (SwcAttr arg : getXmlAttributes())
 			{
 				try
 				{
 					String resolvedName = SwcTextUtils.womToText(arg.getName()).trim();
-					argByName.put(resolvedName, (ArgImpl) arg);
+					argByName.put(resolvedName, (AttrImpl) arg);
 				}
 				catch (StringConversionException e)
 				{
@@ -166,15 +187,15 @@ public class TransclusionImpl
 	}
 	
 	@Override
-	public Collection<SwcArg> getArguments()
+	public Collection<SwcAttr> getXmlAttributes()
 	{
 		// TODO: Use view instead of static excerpt!
 		
-		ArrayList<SwcArg> args = new ArrayList<SwcArg>();
+		ArrayList<SwcAttr> args = new ArrayList<SwcAttr>();
 		for (Backbone i = getFirstChild(); i != null; i = i.getNextSibling())
 		{
-			if (i instanceof SwcArg)
-				args.add((SwcArg) i);
+			if (i instanceof SwcAttr)
+				args.add((SwcAttr) i);
 		}
 		
 		return Collections.unmodifiableCollection(args);
@@ -184,10 +205,47 @@ public class TransclusionImpl
 	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
-			String namespaceUri,
+			String namespaceURL,
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDescStrict(namespaceUri, localName, qualifiedName);
+		return getAttrDescStrict(namespaceURL, localName, qualifiedName,
+				"name", Attributes.NAME);
+	}
+	
+	private static enum Attributes implements AttributeDescriptor
+	{
+		NAME
+		{
+			@Override
+			public boolean verifyAndConvert(
+					Backbone parent,
+					NativeAndStringValuePair verified)
+			{
+				return AttributeVerifiers.XML_NAME.verifyAndConvert(parent, verified);
+			}
+		};
+		
+		// =====================================================================
+		
+		@Override
+		public boolean isRemovable()
+		{
+			return false;
+		}
+		
+		@Override
+		public Normalization getNormalizationMode()
+		{
+			return Normalization.CDATA;
+		}
+		
+		@Override
+		public void customAction(
+				Wom3Node parent,
+				AttributeBase oldAttr,
+				AttributeBase newAttr)
+		{
+		}
 	}
 }

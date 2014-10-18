@@ -349,7 +349,8 @@ public class AstToWomConverter
 	@Override
 	public Wom3ElementNode visit(WtTagExtensionBody n)
 	{
-		Wom3ElementNode body = genPushMww("body");
+		// FIXME: should be tagext-body!
+		Wom3ElementNode body = genPushMww("tagext-body");
 		{
 			appendText(n.getContent());
 		}
@@ -906,7 +907,7 @@ public class AstToWomConverter
 		appendRtd(womParent, xmlAttribs, 1);
 	}
 	
-	private Wom3Element convertToExplicitMwwAttribute(WtXmlAttribute wtAttr)
+	private Wom3ElementNode convertToExplicitMwwAttribute(WtXmlAttribute wtAttr)
 	{
 		Wom3ElementNode womAttr = genPushMww("attr");
 		
@@ -921,7 +922,7 @@ public class AstToWomConverter
 		
 		appendRtd(womAttr, wtAttr, 2);
 		
-		return (Wom3Element) pop(womAttr);
+		return (Wom3ElementNode) pop(womAttr);
 	}
 	
 	// == [ Redirect ] =========================================================
