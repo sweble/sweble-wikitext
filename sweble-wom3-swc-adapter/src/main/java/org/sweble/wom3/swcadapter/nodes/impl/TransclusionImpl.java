@@ -153,8 +153,11 @@ public class TransclusionImpl
 			{
 				try
 				{
-					String resolvedName = SwcTextUtils.womToText(arg.getName()).trim();
-					argByName.put(resolvedName, (ArgImpl) arg);
+					if (arg.hasName())
+					{
+						String resolvedName = SwcTextUtils.womToText(arg.getName()).trim();
+						argByName.put(resolvedName, (ArgImpl) arg);
+					}
 				}
 				catch (StringConversionException e)
 				{

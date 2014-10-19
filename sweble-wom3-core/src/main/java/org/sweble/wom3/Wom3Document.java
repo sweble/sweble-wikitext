@@ -17,7 +17,9 @@
  */
 package org.sweble.wom3;
 
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 public interface Wom3Document
 		extends
@@ -26,6 +28,9 @@ public interface Wom3Document
 {
 	@Override
 	public Wom3ElementNode getDocumentElement();
+	
+	@Override
+	public Wom3Node adoptNode(Node source) throws DOMException;
 	
 	@Override
 	public Wom3DomImplementation getImplementation();

@@ -219,7 +219,7 @@ public class DocumentImpl
 	// org.w3c.dom.Document - Node adoption
 	
 	@Override
-	public Node adoptNode(Node source) throws DOMException
+	public Wom3Node adoptNode(Node source) throws DOMException
 	{
 		if (!isSameNode(source.getOwnerDocument()))
 			adoptRecursively(source);
@@ -236,7 +236,7 @@ public class DocumentImpl
 				source.getParentNode().removeChild(source);
 		}
 		
-		return source;
+		return (Wom3Node) source;
 	}
 	
 	private void adoptRecursively(Node source_)
