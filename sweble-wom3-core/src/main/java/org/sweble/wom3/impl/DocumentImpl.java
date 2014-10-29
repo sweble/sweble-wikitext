@@ -19,12 +19,12 @@ package org.sweble.wom3.impl;
 
 import org.sweble.wom3.Wom3Attribute;
 import org.sweble.wom3.Wom3Document;
+import org.sweble.wom3.Wom3DocumentFragment;
 import org.sweble.wom3.Wom3ElementNode;
 import org.sweble.wom3.Wom3Node;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.DOMConfiguration;
 import org.w3c.dom.DOMException;
-import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 import org.w3c.dom.EntityReference;
@@ -196,7 +196,7 @@ public class DocumentImpl
 	}
 	
 	@Override
-	public DocumentFragment createDocumentFragment()
+	public Wom3DocumentFragment createDocumentFragment()
 	{
 		return new DocumentFragmentImpl(this);
 	}

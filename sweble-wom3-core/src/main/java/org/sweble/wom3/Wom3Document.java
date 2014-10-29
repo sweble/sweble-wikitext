@@ -30,6 +30,9 @@ public interface Wom3Document
 	public Wom3ElementNode getDocumentElement();
 	
 	@Override
+	public Wom3DocumentFragment createDocumentFragment();
+	
+	@Override
 	public Wom3Node adoptNode(Node source) throws DOMException;
 	
 	@Override
