@@ -259,7 +259,7 @@ public abstract class BackboneWithChildren
 	
 	// =========================================================================
 	
-	private Backbone appendChildIntern(
+	private final Backbone appendChildIntern(
 			Wom3Node child,
 			boolean notify)
 	{
@@ -286,7 +286,7 @@ public abstract class BackboneWithChildren
 		return lastChild;
 	}
 	
-	private Backbone insertBeforeIntern(
+	private final Backbone insertBeforeIntern(
 			Wom3Node before,
 			Wom3Node child,
 			boolean notify)
@@ -317,7 +317,7 @@ public abstract class BackboneWithChildren
 		return prev;
 	}
 	
-	private Backbone removeChildIntern(
+	private final Backbone removeChildIntern(
 			Wom3Node child,
 			boolean notify)
 	{
@@ -345,7 +345,7 @@ public abstract class BackboneWithChildren
 		return prev;
 	}
 	
-	private void replaceChild(Wom3Node replace, Wom3Node search)
+	private final void replaceChild(Wom3Node replace, Wom3Node search)
 	{
 		replaceChildIntern(search, replace, true);
 		
@@ -368,7 +368,7 @@ public abstract class BackboneWithChildren
 		this.childInserted(prev, newChild);
 	}
 	
-	private void replaceChildIntern(
+	private final void replaceChildIntern(
 			Wom3Node search,
 			Wom3Node replace,
 			boolean notify)
@@ -393,23 +393,23 @@ public abstract class BackboneWithChildren
 	
 	// =========================================================================
 	
-	protected void appendChildNoNotify(Wom3Node child)
+	protected final void appendChildNoNotify(Wom3Node child)
 	{
 		appendChildIntern(child, false);
 	}
 	
-	protected void insertBeforeNoNotify(Wom3Node before, Wom3Node child)
+	protected final void insertBeforeNoNotify(Wom3Node before, Wom3Node child)
 			throws IllegalArgumentException
 	{
 		insertBeforeIntern(before, child, false);
 	}
 	
-	protected void removeChildNoNotify(Wom3Node child)
+	protected final void removeChildNoNotify(Wom3Node child)
 	{
 		removeChildIntern(child, false);
 	}
 	
-	protected void replaceChildNoNotify(Wom3Node search, Wom3Node replace)
+	protected final void replaceChildNoNotify(Wom3Node search, Wom3Node replace)
 	{
 		replaceChildIntern(search, replace, false);
 		
@@ -433,7 +433,7 @@ public abstract class BackboneWithChildren
 	/**
 	 * Remove all children from this node.
 	 */
-	protected void clearChildren()
+	protected final void clearChildren()
 	{
 		while (getFirstChild() != null)
 			removeChild(getFirstChild());
@@ -442,7 +442,7 @@ public abstract class BackboneWithChildren
 	/**
 	 * For setting the first child of a node with exactly one child.
 	 */
-	protected Wom3Node replaceOrAdd(
+	protected final Wom3Node replaceOrAdd(
 			Wom3Node replace,
 			Wom3Node replacement,
 			boolean required)
@@ -481,7 +481,7 @@ public abstract class BackboneWithChildren
 	/**
 	 * For setting the first child of a node with exactly two children.
 	 */
-	protected Wom3Node replaceOrInsertBeforeOrAppend(
+	protected final Wom3Node replaceOrInsertBeforeOrAppend(
 			Wom3Node replace,
 			Wom3Node before,
 			Wom3Node replacement,
@@ -525,7 +525,7 @@ public abstract class BackboneWithChildren
 	/**
 	 * For setting the second child of a node with exactly two children.
 	 */
-	protected Wom3Node replaceOrAppend(
+	protected final Wom3Node replaceOrAppend(
 			Wom3Node replace,
 			Wom3Node replacement,
 			boolean required)

@@ -88,6 +88,13 @@ public abstract class Backbone
 		return owner;
 	}
 	
+	/**
+	 * The {@code parent} attribute of a {@link Backbone} instance is always
+	 * properly set (can be {@code null}) but not all node types (especially
+	 * {@link AttributeBase}) return it when getParentNode() is called and
+	 * always return {@code null} instead. The {@code parent} attribute can only
+	 * be altered by the {@code Backbone} class.
+	 */
 	@Override
 	public abstract Backbone getParentNode();
 	
@@ -241,6 +248,7 @@ public abstract class Backbone
 	@Override
 	public boolean isDefaultNamespace(String namespaceURI)
 	{
+		// FIXME: This does not look like the correct implementation for this method?!
 		return (namespaceURI != null && namespaceURI.equals(WOM_NS_URI));
 	}
 	

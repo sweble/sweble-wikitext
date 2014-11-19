@@ -53,44 +53,24 @@ public abstract class AttributeBase
 	// =========================================================================
 	
 	@Override
-	public abstract String getValue();
-	
-	protected abstract Object getNativeValue();
-	
-	protected abstract void setValue(Object value, String strValue);
-	
-	// =========================================================================
-	
-	@Override
-	public String getNodeName()
-	{
-		return getName();
-	}
-	
-	@Override
-	public short getNodeType()
+	public final short getNodeType()
 	{
 		return Node.ATTRIBUTE_NODE;
 	}
 	
 	@Override
-	public Backbone getParentNode()
+	public final Backbone getParentNode()
 	{
 		return null;
 	}
 	
 	@Override
-	public Element getOwnerElement()
+	public final Element getOwnerElement()
 	{
 		return (Element) getParentNodeIntern();
 	}
 	
-	@Override
-	public void setTextContent(String textContent) throws DOMException
-	{
-		// TODO: Actually an attr can hold children and the node value is 
-		// composed of those children!
-	}
+	// =========================================================================
 	
 	@Override
 	public boolean getSpecified()
@@ -113,10 +93,18 @@ public abstract class AttributeBase
 		return false;
 	}
 	
+	// =========================================================================
+	
 	@Override
 	public String getName()
 	{
 		return name;
+	}
+	
+	@Override
+	public final String getNodeName()
+	{
+		return getName();
 	}
 	
 	@Override
@@ -132,30 +120,52 @@ public abstract class AttributeBase
 		return setName(null, null, name);
 	}
 	
+	// =========================================================================
+	
 	@Override
-	public String getNodeValue() throws DOMException
+	public abstract String getValue();
+	
+	@Override
+	public final String getNodeValue() throws DOMException
 	{
-		// TODO: Actually an attr can hold children and the node value is 
-		// composed of those children!
 		return getValue();
 	}
+	
+	protected abstract Object getNativeValue();
+	
+	// =========================================================================
 	
 	@Override
 	public void setValue(String value)
 	{
-		setNodeValue(value);
-	}
-	
-	@Override
-	public void setNodeValue(String nodeValue) throws DOMException
-	{
 		// TODO: Actually an attr can hold children and the node value is 
 		// composed of those children!
 		
-		if (nodeValue == null)
+		if (value == null)
 			throw new NullPointerException();
 		
-		validateValueChangeWithParentAndSet(nodeValue);
+		validateValueChangeWithParentAndSet(value);
+	}
+	
+	@Override
+	public final void setNodeValue(String nodeValue) throws DOMException
+	{
+		setValue(nodeValue);
+	}
+	
+	@Override
+	public void setTextContent(String textContent) throws DOMException
+	{
+		// TODO: Actually an attr can hold children and the node value is 
+		// composed of those children!
+	}
+	
+	@Override
+	public String getTextContent() throws DOMException
+	{
+		// TODO: Actually an attr can hold children and the node value is 
+		// composed of those children!
+		return super.getTextContent();
 	}
 	
 	// =========================================================================
@@ -205,6 +215,10 @@ public abstract class AttributeBase
 		descriptor.customAction(parent, this, this);
 	}
 	
+	// =========================================================================
+	
+	protected abstract void setValue(Object value, String strValue);
+	
 	private void validateValueChangeWithParentAndSet(String value)
 	{
 		BackboneElement parent =
@@ -222,7 +236,7 @@ public abstract class AttributeBase
 				namespaceUri, localName, name);
 		
 		NativeAndStringValuePair verified = new NativeAndStringValuePair(value);
-		if (value != null && descriptor.verifyAndConvert(parent, verified))
+		if ((value != null) && descriptor.verifyAndConvert(parent, verified))
 		{
 			setValue(verified.value, verified.strValue);
 			descriptor.customAction(parent, this, this);
