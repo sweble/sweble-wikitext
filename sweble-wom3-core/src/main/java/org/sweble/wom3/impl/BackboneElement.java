@@ -70,6 +70,7 @@ public abstract class BackboneElement
 	@Override
 	public TypeInfo getSchemaTypeInfo()
 	{
+		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
 	
@@ -125,13 +126,13 @@ public abstract class BackboneElement
 	// =========================================================================
 	
 	@Override
-	public boolean hasAttribute(String name)
+	public final boolean hasAttribute(String name)
 	{
 		return (getAttributeNode(name) != null);
 	}
 	
 	@Override
-	public boolean hasAttributeNS(String namespaceUri, String localName) throws DOMException
+	public final boolean hasAttributeNS(String namespaceUri, String localName) throws DOMException
 	{
 		return (getAttributeNodeNS(namespaceUri, localName) != null);
 	}
@@ -139,7 +140,7 @@ public abstract class BackboneElement
 	// =========================================================================
 	
 	@Override
-	public NamedNodeMap getAttributes()
+	public final NamedNodeMap getAttributes()
 	{
 		return new AttributeMap(this);
 	}
@@ -147,7 +148,7 @@ public abstract class BackboneElement
 	// =========================================================================
 	
 	@Override
-	public String getAttribute(String name)
+	public final String getAttribute(String name)
 	{
 		Wom3Attribute attributeNode = getAttributeNode(name);
 		if (attributeNode == null)
@@ -156,7 +157,7 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public AttributeBase getAttributeNode(String name)
+	public final AttributeBase getAttributeNode(String name)
 	{
 		if (name == null)
 			throw new IllegalArgumentException("Argument `name' is null.");
@@ -171,7 +172,7 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public String getAttributeNS(String namespaceUri, String localName) throws DOMException
+	public final String getAttributeNS(String namespaceUri, String localName) throws DOMException
 	{
 		Wom3Attribute attributeNode = getAttributeNodeNS(namespaceUri, localName);
 		if (attributeNode == null)
@@ -180,7 +181,7 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public AttributeBase getAttributeNodeNS(
+	public final AttributeBase getAttributeNodeNS(
 			String namespaceUri,
 			String localName) throws DOMException
 	{
@@ -261,8 +262,9 @@ public abstract class BackboneElement
 	// =========================================================================
 	
 	@Override
-	public void setAttribute(String name, String value) throws DOMException
+	public final void setAttribute(String name, String value) throws DOMException
 	{
+		Toolbox.checkValidXmlName(name);
 		AttributeDescriptor descriptor = getAttributeDescriptorOrFail(name);
 		
 		NativeAndStringValuePair verified = new NativeAndStringValuePair(value);
@@ -285,8 +287,6 @@ public abstract class BackboneElement
 			String name,
 			NativeAndStringValuePair verified)
 	{
-		// FIXME: Shouldn't this be done by createAttribute?
-		Toolbox.checkValidXmlName(name);
 		AttributeBase newAttr = createAttribute(name, verified);
 		AttributeBase oldAttr = getAttributeNode(name);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
@@ -306,11 +306,13 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public void setAttributeNS(
+	public final void setAttributeNS(
 			String namespaceUri,
 			String qualifiedName,
 			String value) throws DOMException
 	{
+		Toolbox.checkValidXmlName(qualifiedName);
+		
 		int index = qualifiedName.indexOf(':');
 		String localName;
 		if (index < 0)
@@ -340,15 +342,13 @@ public abstract class BackboneElement
 		}
 	}
 	
-	private AttributeBase setAttributeNs(
+	private final AttributeBase setAttributeNs(
 			AttributeDescriptor descriptor,
 			String namespaceUri,
 			String localName,
 			String qualifiedName,
 			NativeAndStringValuePair verified)
 	{
-		// FIXME: Shouldn't this be done by createAttribute?
-		//Toolbox.checkValidXmlName(name);
 		AttributeBase newAttr = createAttributeNS(namespaceUri, qualifiedName, verified);
 		AttributeBase oldAttr = getAttributeNodeNS(namespaceUri, localName);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
@@ -358,7 +358,7 @@ public abstract class BackboneElement
 	/**
 	 * Test cases may want to overwrite this -> no final
 	 */
-	protected final AttributeBase createAttributeNS(
+	protected AttributeBase createAttributeNS(
 			String namespaceUri,
 			String qualifiedName,
 			NativeAndStringValuePair verified)
@@ -369,7 +369,7 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public Wom3Attribute setAttributeNode(Attr attr_) throws IllegalArgumentException, DOMException
+	public final Wom3Attribute setAttributeNode(Attr attr_) throws IllegalArgumentException, DOMException
 	{
 		if (attr_ == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");
@@ -408,7 +408,7 @@ public abstract class BackboneElement
 		}
 	}
 	
-	private AttributeBase setAttributeNode(
+	private final AttributeBase setAttributeNode(
 			AttributeDescriptor descriptor,
 			Wom3Attribute attr,
 			NativeAndStringValuePair verified)
@@ -428,7 +428,7 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public Wom3Attribute setAttributeNodeNS(Attr attr_) throws DOMException
+	public final Wom3Attribute setAttributeNodeNS(Attr attr_) throws DOMException
 	{
 		if (attr_ == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");
@@ -464,7 +464,7 @@ public abstract class BackboneElement
 		}
 	}
 	
-	private AttributeBase setAttributeNodeNS(
+	private final AttributeBase setAttributeNodeNS(
 			AttributeDescriptor descriptor,
 			Wom3Attribute attr,
 			NativeAndStringValuePair verified)
@@ -495,7 +495,7 @@ public abstract class BackboneElement
 			T value)
 	{
 		AttributeBase old;
-		NativeAndStringValuePair verified = new NativeAndStringValuePair(value);
+		NativeAndStringValuePair verified = new NativeAndStringValuePair((Object) value);
 		if (value != null && descriptor.verifyAndConvert(this, verified))
 		{
 			// keep attribute
@@ -527,7 +527,7 @@ public abstract class BackboneElement
 	
 	// =========================================================================
 	
-	private void replaceAttributeInternal(
+	private final void replaceAttributeInternal(
 			AttributeDescriptor descriptor,
 			AttributeBase oldAttr,
 			AttributeBase newAttr)
@@ -587,7 +587,7 @@ public abstract class BackboneElement
 	// =========================================================================
 	
 	@Override
-	public void removeAttribute(String name)
+	public final void removeAttribute(String name)
 	{
 		if (name == null)
 			throw new IllegalArgumentException("Argument `name' is null.");
@@ -600,7 +600,7 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public void removeAttributeNS(String namespaceUri, String localName) throws DOMException
+	public final void removeAttributeNS(String namespaceUri, String localName) throws DOMException
 	{
 		if (localName == null)
 			throw new IllegalArgumentException("Argument `localName' is null.");
@@ -613,7 +613,7 @@ public abstract class BackboneElement
 	}
 	
 	@Override
-	public Wom3Attribute removeAttributeNode(Attr attr_) throws DOMException
+	public final Wom3Attribute removeAttributeNode(Attr attr_) throws DOMException
 	{
 		Wom3Attribute attr = Toolbox.expectType(Wom3Attribute.class, attr_);
 		
