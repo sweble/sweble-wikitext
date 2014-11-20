@@ -97,7 +97,7 @@ public class DefinitionListImpl
 	{
 		Wom3DefinitionListTerm old = getTerm(index);
 		terms.set(index, term);
-		replaceChildNoNotify(old, term);
+		replaceChildNoNotify(term, old);
 		removeDefs(old);
 		appendDefs(term);
 		return old;

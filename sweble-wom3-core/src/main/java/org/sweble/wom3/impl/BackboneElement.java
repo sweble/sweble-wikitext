@@ -130,7 +130,7 @@ public abstract class BackboneElement
 		return firstAttr;
 	}
 	
-	public final void setFirstAttr(AttributeBase firstAttr)
+	private final void setFirstAttr(AttributeBase firstAttr)
 	{
 		this.firstAttr = firstAttr;
 	}

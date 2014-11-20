@@ -40,7 +40,7 @@ public abstract class BackboneWithChildren
 	
 	// =========================================================================
 	
-	public final void setFirstChild(Backbone firstChild)
+	private final void setFirstChild(Backbone firstChild)
 	{
 		this.firstChild = firstChild;
 	}
@@ -51,7 +51,7 @@ public abstract class BackboneWithChildren
 		return firstChild;
 	}
 	
-	public final void setLastChild(Backbone lastChild)
+	private final void setLastChild(Backbone lastChild)
 	{
 		this.lastChild = lastChild;
 	}
@@ -180,7 +180,6 @@ public abstract class BackboneWithChildren
 		Wom3Node before = Toolbox.expectType(Wom3Node.class, before_);
 		Backbone prev = insertBeforeIntern(before, child, true);
 		
-		++childrenChanges;
 		this.childInserted(prev, (Backbone) child);
 		
 		return child;
@@ -189,12 +188,16 @@ public abstract class BackboneWithChildren
 	@Override
 	public final Wom3Node replaceChild(Node newChild_, Node oldChild_) throws DOMException
 	{
-		Wom3Node newChild = Toolbox.expectType(Wom3Node.class, newChild_);
+		Backbone newChild = Toolbox.expectType(Backbone.class, newChild_);
 		if (((Backbone) newChild).isContentWhitespace() && ignoresContentWhitespace())
 			return removeChild(oldChild_);
 		
-		Wom3Node oldChild = Toolbox.expectType(Wom3Node.class, oldChild_);
-		replaceChild(newChild, oldChild);
+		Backbone oldChild = Toolbox.expectType(Backbone.class, oldChild_);
+		
+		Backbone prev = replaceChildIntern(newChild, oldChild, true);
+		
+		this.childRemoved(prev, oldChild);
+		this.childInserted(prev, newChild);
 		
 		return oldChild;
 	}
@@ -205,7 +208,6 @@ public abstract class BackboneWithChildren
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
 		Backbone prev = removeChildIntern(child, true);
 		
-		++childrenChanges;
 		this.childRemoved(prev, (Backbone) child);
 		
 		return child;
@@ -220,7 +222,6 @@ public abstract class BackboneWithChildren
 		
 		Backbone prev = appendChildIntern(child, true);
 		
-		++childrenChanges;
 		this.childInserted(prev, (Backbone) child);
 		
 		return child;
@@ -259,37 +260,10 @@ public abstract class BackboneWithChildren
 	
 	// =========================================================================
 	
-	private final Backbone appendChildIntern(
-			Wom3Node child,
-			boolean notify)
-	{
-		if (child == null)
-			throw new IllegalArgumentException("Argument `child' is null.");
-		
-		final Backbone newChild =
-				Toolbox.expectType(Backbone.class, child, "child");
-		
-		if (newChild.isLinked())
-			throw new IllegalStateException(
-					"Given node `child' is still child of another WOM node.");
-		
-		Backbone lastChild = (Backbone) getLastChild();
-		
-		if (notify)
-			this.allowsInsertion(lastChild, newChild);
-		
-		newChild.link(this, lastChild, null);
-		setLastChild(newChild);
-		if (getFirstChild() == null)
-			setFirstChild(newChild);
-		
-		return lastChild;
-	}
-	
 	private final Backbone insertBeforeIntern(
 			Wom3Node before,
 			Wom3Node child,
-			boolean notify)
+			boolean check)
 	{
 		if (before == null || child == null)
 			throw new IllegalArgumentException("Argument `before' and/or `child' is null.");
@@ -307,8 +281,11 @@ public abstract class BackboneWithChildren
 		
 		Backbone prev = p.getPreviousSibling();
 		
-		if (notify)
+		if (check)
 			this.allowsInsertion(prev, newChild);
+		
+		// Indicate change before performing it
+		++childrenChanges;
 		
 		newChild.link(this, prev, p);
 		if (p == getFirstChild())
@@ -317,61 +294,10 @@ public abstract class BackboneWithChildren
 		return prev;
 	}
 	
-	private final Backbone removeChildIntern(
-			Wom3Node child,
-			boolean notify)
-	{
-		if (child == null)
-			throw new IllegalArgumentException("Argument `child' is null.");
-		
-		Backbone remove = Toolbox.expectType(Backbone.class, child, "child");
-		
-		if (child.getParentNode() != this)
-			throw new IllegalArgumentException("Given node `child' is not a child of this node.");
-		
-		if (notify)
-			this.allowsRemoval(remove);
-		/*remove.childAllowsRemoval(this);*/
-		
-		Backbone prev = remove.getPreviousSibling();
-		Backbone next = remove.getNextSibling();
-		
-		if (remove == getFirstChild())
-			setFirstChild(next);
-		if (remove == getLastChild())
-			setLastChild(prev);
-		remove.unlink();
-		
-		return prev;
-	}
-	
-	private final void replaceChild(Wom3Node replace, Wom3Node search)
-	{
-		replaceChildIntern(search, replace, true);
-		
-		Backbone oldChild = (Backbone) search;
-		Backbone newChild = (Backbone) replace;
-		
-		Backbone prev = oldChild.getPreviousSibling();
-		Backbone next = oldChild.getNextSibling();
-		
-		oldChild.unlink();
-		
-		newChild.link(this, prev, next);
-		if (oldChild == getFirstChild())
-			setFirstChild(newChild);
-		if (oldChild == getLastChild())
-			setLastChild(newChild);
-		
-		++childrenChanges;
-		this.childRemoved(prev, oldChild);
-		this.childInserted(prev, newChild);
-	}
-	
-	private final void replaceChildIntern(
-			Wom3Node search,
+	private Backbone replaceChildIntern(
 			Wom3Node replace,
-			boolean notify)
+			Wom3Node search,
+			boolean check)
 	{
 		if (search == null || replace == null)
 			throw new IllegalArgumentException("Argument `search' and/or `replace' is null.");
@@ -387,37 +313,14 @@ public abstract class BackboneWithChildren
 			throw new IllegalArgumentException("Given node `search' is not a child of this node.");
 		Backbone oldChild = (Backbone) search;
 		
-		if (notify)
+		if (check)
 			this.allowsReplacement(oldChild, newChild);
-	}
-	
-	// =========================================================================
-	
-	protected final void appendChildNoNotify(Wom3Node child)
-	{
-		appendChildIntern(child, false);
-	}
-	
-	protected final void insertBeforeNoNotify(Wom3Node before, Wom3Node child)
-			throws IllegalArgumentException
-	{
-		insertBeforeIntern(before, child, false);
-	}
-	
-	protected final void removeChildNoNotify(Wom3Node child)
-	{
-		removeChildIntern(child, false);
-	}
-	
-	protected final void replaceChildNoNotify(Wom3Node search, Wom3Node replace)
-	{
-		replaceChildIntern(search, replace, false);
-		
-		Backbone oldChild = (Backbone) search;
-		Backbone newChild = (Backbone) replace;
 		
 		Backbone prev = oldChild.getPreviousSibling();
 		Backbone next = oldChild.getNextSibling();
+		
+		// Indicate change before performing it
+		++childrenChanges;
 		
 		oldChild.unlink();
 		
@@ -426,6 +329,98 @@ public abstract class BackboneWithChildren
 			setFirstChild(newChild);
 		if (oldChild == getLastChild())
 			setLastChild(newChild);
+		
+		++childrenChanges;
+		return prev;
+	}
+	
+	private final Backbone removeChildIntern(
+			Wom3Node child,
+			boolean check)
+	{
+		if (child == null)
+			throw new IllegalArgumentException("Argument `child' is null.");
+		
+		Backbone remove = Toolbox.expectType(Backbone.class, child, "child");
+		
+		if (child.getParentNode() != this)
+			throw new IllegalArgumentException("Given node `child' is not a child of this node.");
+		
+		if (check)
+			this.allowsRemoval(remove);
+		
+		Backbone prev = remove.getPreviousSibling();
+		Backbone next = remove.getNextSibling();
+		
+		// Indicate change before performing it
+		++childrenChanges;
+		
+		if (remove == getFirstChild())
+			setFirstChild(next);
+		if (remove == getLastChild())
+			setLastChild(prev);
+		remove.unlink();
+		
+		return prev;
+	}
+	
+	private final Backbone appendChildIntern(
+			Wom3Node child,
+			boolean check)
+	{
+		if (child == null)
+			throw new IllegalArgumentException("Argument `child' is null.");
+		
+		final Backbone newChild =
+				Toolbox.expectType(Backbone.class, child, "child");
+		
+		if (newChild.isLinked())
+			throw new IllegalStateException(
+					"Given node `child' is still child of another WOM node.");
+		
+		Backbone lastChild = (Backbone) getLastChild();
+		
+		if (check)
+			this.allowsInsertion(lastChild, newChild);
+		
+		// Indicate change before performing it
+		++childrenChanges;
+		
+		newChild.link(this, lastChild, null);
+		setLastChild(newChild);
+		if (getFirstChild() == null)
+			setFirstChild(newChild);
+		
+		return lastChild;
+	}
+	
+	// =========================================================================
+	
+	/* TODO: All these methods are called *NoNotify, and yes, they do not 
+	 * notify. Seeing how they are only used by the DefinitionListImpl that's 
+	 * probably the intention. However, they also prevent checks... is that 
+	 * intentional too? Should it be reflected in the name?
+	 */
+	
+	protected final void insertBeforeNoNotify(Wom3Node before, Wom3Node child)
+			throws IllegalArgumentException
+	{
+		insertBeforeIntern(before, child, true);
+	}
+	
+	protected final void replaceChildNoNotify(Wom3Node replace, Wom3Node search)
+	{
+		replaceChildIntern(replace, search, true);
+	}
+	
+	protected final void removeChildNoNotify(Wom3Node child)
+	{
+		removeChildIntern(child, true);
+	}
+	
+	protected final void appendChildNoNotify(Wom3Node child)
+	{
+		appendChildIntern(child, true);
 	}
 	
 	// =========================================================================
