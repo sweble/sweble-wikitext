@@ -225,16 +225,6 @@ public abstract class BackboneElement
 	
 	// =========================================================================
 	
-	protected final AttributeDescriptor getAttributeDescriptor(String name)
-	{
-		return getAttributeDescriptor(null, null, name);
-	}
-	
-	protected final AttributeDescriptor getAttributeDescriptorOrFail(String name)
-	{
-		return getAttributeDescriptorOrFail(null, null, name);
-	}
-	
 	/**
 	 * Override in sub classes to change behavior.
 	 */
@@ -244,6 +234,11 @@ public abstract class BackboneElement
 			String qualifiedName)
 	{
 		return null;
+	}
+	
+	protected final AttributeDescriptor getAttributeDescriptorOrFail(String name)
+	{
+		return getAttributeDescriptorOrFail(null, null, name);
 	}
 	
 	protected final AttributeDescriptor getAttributeDescriptorOrFail(
@@ -601,7 +596,7 @@ public abstract class BackboneElement
 		if (remove == null)
 			return;
 		
-		removeAttribute(getAttributeDescriptor(name), remove);
+		removeAttribute(getAttributeDescriptorOrFail(name), remove);
 	}
 	
 	@Override
@@ -614,7 +609,7 @@ public abstract class BackboneElement
 		if (remove == null)
 			return;
 		
-		removeAttribute(getAttributeDescriptor(namespaceUri, localName, remove.getName()), remove);
+		removeAttribute(getAttributeDescriptorOrFail(namespaceUri, localName, remove.getName()), remove);
 	}
 	
 	@Override
@@ -628,7 +623,7 @@ public abstract class BackboneElement
 		if (attr.getOwnerElement() != this)
 			throw new IllegalArgumentException("Given attribute `attr' is not an attribute of this XML element.");
 		
-		removeAttribute(getAttributeDescriptor(attr.getName()), (AttributeBase) attr);
+		removeAttribute(getAttributeDescriptorOrFail(attr.getName()), (AttributeBase) attr);
 		
 		return attr;
 	}
@@ -637,14 +632,7 @@ public abstract class BackboneElement
 			AttributeDescriptor descriptor,
 			AttributeBase attribute)
 	{
-		/**
-		 * Removing an attribute **node** does not fail if there is no attribute
-		 * descriptor on the assumption that when an attribute was attached,
-		 * there must have been an descriptor. This doesn't hold when strict
-		 * error checking is disabled -> descriptor might be null here.
-		 */
-		if (descriptor != null)
-			checkAttributeRemoval(attribute.getName(), descriptor);
+		checkAttributeRemoval(attribute.getName(), descriptor);
 		
 		Backbone parent = (Backbone) attribute.getOwnerElement();
 		
