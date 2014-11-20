@@ -21,22 +21,6 @@ import org.sweble.wom3.Wom3Node;
 
 public interface AttributeDescriptor
 {
-	//	/**
-	//	 * Check an attribute's value for well-formed-ness.
-	//	 * 
-	//	 * @param parent
-	//	 *            The parent node for which to verify the attribute.
-	//	 * @param value
-	//	 *            The value to check.
-	//	 * @return The value to set the attribute to. Most of the time this will be
-	//	 *         the input parameter "value". But if the value needs further
-	//	 *         normalization (apart from XML normalization of attributes), this
-	//	 *         method can return a normalized string to use as value.
-	//	 * @throws IllegalArgumentException
-	//	 *             Thrown if the given value is not well-formed.
-	//	 */
-	//	public abstract String verify(WomNode parent, String value) throws IllegalArgumentException;
-	
 	/**
 	 * @param parent
 	 *            The node that owns or will own the attribute.

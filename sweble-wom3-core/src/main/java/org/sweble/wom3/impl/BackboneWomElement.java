@@ -378,6 +378,8 @@ public abstract class BackboneWomElement
 		return setAttributeDirect(d, name, color);
 	}
 	
+	// =========================================================================
+	
 	public String getStringAttr(String name)
 	{
 		// getAttribute() would return "" for non-existing attributes.
