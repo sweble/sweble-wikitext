@@ -175,21 +175,6 @@ public class ArticleImpl
 	{
 		return (Wom3Redirect) replaceOrInsertBeforeOrAppend(
 				this.redirect, getFirstChild(), redirect, false);
-		/*
-		RedirectImpl old = this.redirect;
-		
-		if (redirect == this.redirect)
-			return redirect;
-		
-		if (old != null)
-			replaceChild(old, redirect);
-		else if (hasChildNodes())
-			insertBefore(redirect, getFirstChild());
-		else
-			appendChild(redirect);
-		
-		return old;
-		*/
 	}
 	
 	// ----------------------------------------
@@ -219,6 +204,8 @@ public class ArticleImpl
 	@Override
 	public Wom3Category removeCategory(String name) throws NullPointerException
 	{
+		assertWritable();
+		
 		if (name == null)
 			throw new NullPointerException();
 		ListIterator<CategoryImpl> i = categories.listIterator();
@@ -237,6 +224,8 @@ public class ArticleImpl
 	@Override
 	public Wom3Category addCategory(String name) throws NullPointerException
 	{
+		assertWritable();
+		
 		ListIterator<CategoryImpl> i = categories.listIterator();
 		while (i.hasNext())
 		{
@@ -262,23 +251,6 @@ public class ArticleImpl
 	@Override
 	public Wom3Body setBody(Wom3Body body) throws NullPointerException
 	{
-		/*
-		if (body == null)
-			throw new NullPointerException("Argument `body' is null");
-		
-		if (body == this.body)
-			return this.body;
-		
-		BodyImpl old = this.body;
-		
-		if (old != null)
-			replaceChild(old, body);
-		else
-			appendChild(body);
-		
-		return old;
-		*/
-		
 		return (Wom3Body) replaceOrAppend(this.body, body, true);
 	}
 	
@@ -314,65 +286,6 @@ public class ArticleImpl
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
-	/*
-	@Override
-	protected void allowsInsertion(Backbone prev, Backbone child)
-	{
-		if (child instanceof Wom2Redirect)
-		{
-			if (prev == null)
-				// Can only insert as first child
-				return;
-		}
-		else if (child instanceof WomCategory)
-		{
-			if ((prev instanceof WomCategory)
-					|| (prev instanceof Wom2Redirect)
-					|| (prev == null && redirect == null))
-				// Can only insert between redirect and body
-				return;
-		}
-		else if (child instanceof WomBody)
-		{
-			if (getLastChild() == null || prev == getLastChild())
-				// Can only insert as last child
-				return;
-		}
-		doesNotAcceptChild(prev, child);
-	}
-	
-	@Override
-	protected void allowsRemoval(Backbone child)
-	{
-		if (child != body)
-			return;
-		doesNotAllowRemoval(child);
-	}
-	
-	@Override
-	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
-	{
-		if ((newChild instanceof Wom2Redirect) && (
-				(oldChild == this.redirect) ||
-				(this.redirect == null && oldChild == getFirstChild() && oldChild != this.body)))
-			// A redirect node can replace the redirect node or the first node
-			// unless the first node is the body element
-			return;
-		if ((newChild instanceof WomCategory) && (
-				(oldChild instanceof WomCategory) ||
-				(oldChild == this.redirect)))
-			// A category node can replace another category node or the 
-			// redirect node
-			return;
-		if ((newChild instanceof WomBody) && (
-				(oldChild == this.body) ||
-				(oldChild == getLastChild())))
-			// A body node can replace the body node or the last node
-			return;
-		doesNotAllowReplacement(oldChild, newChild);
-	}
-	*/
 	
 	@Override
 	protected void childInserted(Backbone prev, Backbone added)

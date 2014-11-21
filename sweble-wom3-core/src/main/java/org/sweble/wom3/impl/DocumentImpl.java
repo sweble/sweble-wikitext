@@ -64,6 +64,8 @@ public class DocumentImpl
 	
 	private boolean strictErrorChecking = true;
 	
+	private boolean readOnly = false;
+	
 	// =========================================================================
 	
 	public DocumentImpl()
@@ -152,6 +154,7 @@ public class DocumentImpl
 	@Override
 	public AttributeImpl createAttribute(String name) throws DOMException
 	{
+		assertWritable();
 		return new AttributeImpl(this, name);
 	}
 	
@@ -160,18 +163,21 @@ public class DocumentImpl
 			String namespaceURI,
 			String qualifiedName) throws DOMException
 	{
+		assertWritable();
 		return new AttributeNsImpl(this, namespaceURI, qualifiedName);
 	}
 	
 	@Override
 	public XmlCommentImpl createComment(String data)
 	{
+		assertWritable();
 		return new XmlCommentImpl(this, data);
 	}
 	
 	@Override
 	public Wom3ElementNode createElement(String tagName) throws DOMException
 	{
+		assertWritable();
 		return impl.createElement(this, tagName);
 	}
 	
@@ -180,30 +186,36 @@ public class DocumentImpl
 			String namespaceURI,
 			String qualifiedName) throws DOMException
 	{
+		assertWritable();
 		return impl.createElement(this, namespaceURI, qualifiedName);
 	}
 	
 	@Override
 	public XmlTextImpl createTextNode(String data)
 	{
+		assertWritable();
 		return new XmlTextImpl(this, data);
 	}
 	
 	@Override
 	public CDATASection createCDATASection(String data) throws DOMException
 	{
+		assertWritable();
 		return new CdataSection(this, data);
 	}
 	
 	@Override
 	public Wom3DocumentFragment createDocumentFragment()
 	{
+		assertWritable();
 		return new DocumentFragmentImpl(this);
 	}
 	
 	@Override
 	public EntityReference createEntityReference(String name) throws DOMException
 	{
+		assertWritable();
+		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
 	
@@ -212,6 +224,8 @@ public class DocumentImpl
 			String target,
 			String data) throws DOMException
 	{
+		assertWritable();
+		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
 	
@@ -221,6 +235,9 @@ public class DocumentImpl
 	@Override
 	public Wom3Node adoptNode(Node source) throws DOMException
 	{
+		assertWritable();
+		Toolbox.expectType(Backbone.class, source).assertWritable();
+		
 		if (!isSameNode(source.getOwnerDocument()))
 			adoptRecursively(source);
 		
@@ -241,10 +258,7 @@ public class DocumentImpl
 	
 	private void adoptRecursively(Node source_)
 	{
-		if (!(source_ instanceof Backbone))
-			throw new UnsupportedOperationException();
-		
-		Backbone source = (Backbone) source_;
+		Backbone source = Toolbox.expectType(Backbone.class, source_);
 		switch (source.getNodeType())
 		{
 			case ATTRIBUTE_NODE:
@@ -285,7 +299,8 @@ public class DocumentImpl
 	@Override
 	public Node importNode(Node importedNode, boolean deep) throws DOMException
 	{
-		// TODO Auto-generated method stub
+		assertWritable();
+		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
 	
@@ -302,6 +317,21 @@ public class DocumentImpl
 	public void setStrictErrorChecking(boolean strictErrorChecking)
 	{
 		this.strictErrorChecking = strictErrorChecking;
+	}
+	
+	// =========================================================================
+	// Wom3Document - Read Only
+	
+	@Override
+	public boolean getReadOnly()
+	{
+		return readOnly;
+	}
+	
+	@Override
+	public void setReadOnly(boolean readOnly)
+	{
+		this.readOnly = readOnly;
 	}
 	
 	// =========================================================================
@@ -322,12 +352,14 @@ public class DocumentImpl
 	@Override
 	public void setXmlStandalone(boolean xmlStandalone) throws DOMException
 	{
+		assertWritable();
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
 	public void setXmlVersion(String xmlVersion) throws DOMException
 	{
+		assertWritable();
 		throw new UnsupportedOperationException();
 	}
 	
@@ -352,14 +384,15 @@ public class DocumentImpl
 	@Override
 	public DOMConfiguration getDomConfig()
 	{
-		// TODO Auto-generated method stub
+		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
 	public void normalizeDocument()
 	{
-		// TODO Auto-generated method stub
+		assertWritable();
+		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
 	
@@ -369,6 +402,8 @@ public class DocumentImpl
 	@Override
 	public Node renameNode(Node n, String namespaceURI, String qualifiedName) throws DOMException
 	{
+		assertWritable();
+		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
 	

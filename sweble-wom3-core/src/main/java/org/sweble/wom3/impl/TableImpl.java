@@ -87,14 +87,12 @@ public class TableImpl
 			if (child instanceof Wom3TableBody)
 				return;
 			doesNotAllowInsertion(prev, child);
-			//checkInsertion(prev, child, BODY_DESCRIPTOR);
 		}
 	}
 	
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
-		//checkRemoval(child, BODY_DESCRIPTOR);
 	}
 	
 	@Override
@@ -122,7 +120,6 @@ public class TableImpl
 				return;
 			
 			doesNotAllowReplacement(oldChild, newChild);
-			//checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 		}
 	}
 	
@@ -275,22 +272,6 @@ public class TableImpl
 	{
 		return (Wom3TableCaption) replaceOrInsertBeforeOrAppend(
 				this.caption, this.partitions.getFirstOrNull(), caption, false);
-		/*
-		WomTableCaption old = this.caption;
-		if (this.caption != null)
-		{
-			replaceChildNoNotify(this.caption, caption);
-		}
-		else
-		{
-			if (this.body != null)
-				insertBeforeNoNotify(this.body, caption);
-			else
-				appendChildNoNotify(caption);
-		}
-		this.caption = Toolbox.expectType(WomTableCaption.class, caption);
-		return old;
-		*/
 	}
 	
 	@Override
@@ -298,31 +279,6 @@ public class TableImpl
 	{
 		return Collections.unmodifiableCollection(this.partitions);
 	}
-	
-	//	@Override
-	//	public Wom3TableBody getBody()
-	//	{
-	//		return body;
-	//	}
-	//	
-	//	@Override
-	//	public Wom3TableBody setBody(Wom3TableBody body)
-	//	{
-	//		return (Wom3TableBody) replaceOrAppend(this.body, body, false);
-	//		/*
-	//		WomTableBody old = this.body;
-	//		if (this.body != null)
-	//		{
-	//			replaceChildNoNotify(this.body, body);
-	//		}
-	//		else
-	//		{
-	//			appendChildNoNotify(body);
-	//		}
-	//		this.body = Toolbox.expectType(WomTableBody.class, body);
-	//		return old;
-	//		*/
-	//	}
 	
 	// =========================================================================
 	

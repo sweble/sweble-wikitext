@@ -77,6 +77,9 @@ public abstract class Backbone
 	public void setNodeValue(String nodeValue) throws DOMException
 	{
 		// Doing nothing is the sensible default
+		
+		// Unless we are in read-only mode...
+		assertWritable();
 	}
 	
 	@Override
@@ -152,6 +155,9 @@ public abstract class Backbone
 	{
 		// DOM Level 1 implementation
 		// Do nothing since it's defined to be null for all types of nodes.
+		
+		// Unless we are in read-only mode...
+		assertWritable();
 	}
 	
 	@Override
@@ -229,6 +235,8 @@ public abstract class Backbone
 	{
 		// TODO: Implement
 		throw new UnsupportedOperationException();
+		
+		//assertWritable();
 	}
 	
 	@Override
@@ -449,6 +457,8 @@ public abstract class Backbone
 	@Override
 	public Object setUserData(String key, Object data, UserDataHandler handler)
 	{
+		assertWritable();
+		
 		Object oldValue;
 		if (data == null)
 		{
@@ -560,6 +570,28 @@ public abstract class Backbone
 	}
 	
 	// =========================================================================
+	
+	protected void assertWritable()
+	{
+		Wom3Document ownerDocument = getOwnerDocument();
+		if (ownerDocument == null)
+			ownerDocument = (Wom3Document) this;
+		
+		if (ownerDocument.getReadOnly())
+			throw new DOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR, "This document is read-only!");
+	}
+	
+	protected void assertWritable(
+			AttributeBase attributeBase,
+			AttributeDescriptor descriptor)
+	{
+		// An uninitialized attribute value may be written once, even if read-only
+		if ((attributeBase != null) && (attributeBase.getValue() != null))
+		{
+			if (descriptor.isReadOnly())
+				throw new DOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR, "This attribute is read-only!");
+		}
+	}
 	
 	protected Wom3Node doesNotSupportChildNodes() throws UnsupportedOperationException
 	{

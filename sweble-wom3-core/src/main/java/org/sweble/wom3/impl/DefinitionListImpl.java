@@ -95,6 +95,8 @@ public class DefinitionListImpl
 			int index,
 			Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
+		assertWritable();
+		
 		Wom3DefinitionListTerm old = getTerm(index);
 		terms.set(index, term);
 		replaceChildNoNotify(term, old);
@@ -106,6 +108,8 @@ public class DefinitionListImpl
 	@Override
 	public Wom3DefinitionListTerm removeTerm(int index) throws IndexOutOfBoundsException
 	{
+		assertWritable();
+		
 		Wom3DefinitionListTerm old = terms.remove(index);
 		removeChildNoNotify(old);
 		removeDefs(old);
@@ -115,6 +119,8 @@ public class DefinitionListImpl
 	@Override
 	public void appendTerm(Wom3DefinitionListTerm term)
 	{
+		assertWritable();
+		
 		terms.add(term);
 		appendChildNoNotify(term);
 		appendDefs(term);
@@ -123,8 +129,11 @@ public class DefinitionListImpl
 	@Override
 	public void insertTerm(int beforeIndex, Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
+		assertWritable();
+		
 		if (beforeIndex < 0 || beforeIndex > terms.size())
 			throw new IndexOutOfBoundsException();
+		
 		if (beforeIndex == terms.size())
 		{
 			appendTerm(term);
@@ -133,6 +142,7 @@ public class DefinitionListImpl
 		{
 			insertBeforeNoNotify(terms.get(beforeIndex), term);
 		}
+		
 		terms.add(beforeIndex, term);
 		appendDefs(term);
 	}
@@ -203,6 +213,7 @@ public class DefinitionListImpl
 		Wom3DefinitionListItem old = getItem(index);
 		if (old.getClass() != item.getClass())
 			throw new UnsupportedOperationException("Can only replace item with another item of the same type!");
+
 		replaceChild(item, old);
 		return old;
 	}

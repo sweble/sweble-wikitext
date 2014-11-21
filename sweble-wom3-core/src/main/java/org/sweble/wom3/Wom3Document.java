@@ -37,4 +37,8 @@ public interface Wom3Document
 	
 	@Override
 	public Wom3DomImplementation getImplementation();
+	
+	boolean getReadOnly();
+	
+	void setReadOnly(boolean readOnly);
 }

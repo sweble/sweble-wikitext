@@ -129,7 +129,7 @@ public abstract class TablePartitionImpl
 			throw new IllegalStateException("Table partition not part of a table");
 	}
 	
-	public boolean isAttachedToTable()
+	protected boolean isAttachedToTable()
 	{
 		return getParentNode() instanceof TableImpl;
 	}

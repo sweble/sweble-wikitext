@@ -230,6 +230,7 @@ public abstract class BackboneWithChildren
 	@Override
 	public void setTextContent(String textContent) throws DOMException
 	{
+		// Is expected to assertWritable();
 		clearChildren();
 		appendChild(getOwnerDocument().createTextNode(textContent));
 	}
@@ -265,6 +266,8 @@ public abstract class BackboneWithChildren
 			Wom3Node child,
 			boolean check)
 	{
+		assertWritable();
+		
 		if (before == null || child == null)
 			throw new IllegalArgumentException("Argument `before' and/or `child' is null.");
 		
@@ -299,6 +302,8 @@ public abstract class BackboneWithChildren
 			Wom3Node search,
 			boolean check)
 	{
+		assertWritable();
+		
 		if (search == null || replace == null)
 			throw new IllegalArgumentException("Argument `search' and/or `replace' is null.");
 		
@@ -338,6 +343,8 @@ public abstract class BackboneWithChildren
 			Wom3Node child,
 			boolean check)
 	{
+		assertWritable();
+		
 		if (child == null)
 			throw new IllegalArgumentException("Argument `child' is null.");
 		
@@ -368,6 +375,8 @@ public abstract class BackboneWithChildren
 			Wom3Node child,
 			boolean check)
 	{
+		assertWritable();
+		
 		if (child == null)
 			throw new IllegalArgumentException("Argument `child' is null.");
 		
@@ -427,9 +436,13 @@ public abstract class BackboneWithChildren
 	
 	/**
 	 * Remove all children from this node.
+	 * 
+	 * Checks assertWritable();
 	 */
 	protected final void clearChildren()
 	{
+		assertWritable();
+		
 		while (getFirstChild() != null)
 			removeChild(getFirstChild());
 	}
@@ -456,11 +469,17 @@ public abstract class BackboneWithChildren
 				removeChild(replace);
 			}
 			else
-				; // nothing to do
+			{
+				; // nothing to do, still let caller know that even though the 
+					// operation had no side effects, what he's trying to do is nasty.
+				assertWritable();
+			}
 		}
 		else if (replace == replacement)
 		{
-			; // nothing to do
+			; // nothing to do, still let caller know that even though the 
+				// operation had no side effects, what he's trying to do is nasty.
+			assertWritable();
 		}
 		else if (replace != null)
 		{
@@ -482,6 +501,8 @@ public abstract class BackboneWithChildren
 			Wom3Node replacement,
 			boolean required)
 	{
+		assertWritable();
+		
 		if (replacement == null)
 		{
 			if (required)
@@ -496,11 +517,17 @@ public abstract class BackboneWithChildren
 				removeChild(replace);
 			}
 			else
-				; // nothing to do
+			{
+				; // nothing to do, still let caller know that even though the 
+					// operation had no side effects, what he's trying to do is nasty.
+				assertWritable();
+			}
 		}
 		else if (replace == replacement)
 		{
-			; // nothing to do
+			; // nothing to do, still let caller know that even though the 
+				// operation had no side effects, what he's trying to do is nasty.
+			assertWritable();
 		}
 		else if (replace != null)
 		{
@@ -539,11 +566,17 @@ public abstract class BackboneWithChildren
 				removeChild(replace);
 			}
 			else
-				; // nothing to do
+			{
+				; // nothing to do, still let caller know that even though the 
+					// operation had no side effects, what he's trying to do is nasty.
+				assertWritable();
+			}
 		}
 		else if (replace == replacement)
 		{
-			; // nothing to do
+			; // nothing to do, still let caller know that even though the 
+				// operation had no side effects, what he's trying to do is nasty.
+			assertWritable();
 		}
 		else if (replace != null)
 		{

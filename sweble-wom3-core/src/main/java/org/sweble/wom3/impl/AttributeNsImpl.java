@@ -70,23 +70,14 @@ public class AttributeNsImpl
 	@Override
 	public void setPrefix(String prefix) throws DOMException
 	{
-		String newName = localName;
 		if (prefix != null && !prefix.isEmpty())
 		{
-			if (prefix.indexOf(':') >= 0)
-				throw new DOMException(
-						DOMException.NAMESPACE_ERR,
-						"Prefix must not contain ':'");
-			
-			checkNamespaceUriAndPrefix(prefix, namespaceUri);
-			
-			// FIXME: Must check according to XML version we have to support
-			Toolbox.checkValidXmlName(prefix);
-			
-			newName = prefix + ":" + localName;
+			setName(prefix + ":" + localName);
 		}
-		
-		super.setName(newName);
+		else
+		{
+			setName(localName);
+		}
 	}
 	
 	/**
@@ -150,12 +141,66 @@ public class AttributeNsImpl
 		// FIXME: Must check according to XML version we have to support
 		Toolbox.checkValidXmlName(localName);
 		
-		String old = setName(namespaceUri, localName, qualifiedName);
+		String old = this.getName();
+		
+		// Will do nothing if localName is unchanged.
+		// This method does not mess with namespaceUri and a prefix change does not change the nature of an attribute.
+		setNameIntern(namespaceUri, localName, qualifiedName);
 		
 		// Only set values after checks ran
 		this.prefix = prefix;
 		this.localName = localName;
+		
 		return old;
+	}
+	
+	protected String setNameIntern(
+			String namespaceUri,
+			String localName,
+			String name)
+	{
+		String old = getName();
+		if ((this.localName != null) && this.localName.equals(localName))
+			return old;
+		
+		validateNameChangeWithParent(namespaceUri, localName, name);
+		
+		return old;
+	}
+	
+	private void validateNameChangeWithParent(
+			String namespaceUri,
+			String localName,
+			String name)
+	{
+		BackboneElement parent = (BackboneElement) getOwnerElement();
+		
+		if (parent == null)
+		{
+			doSetName(name);
+		}
+		else
+		{
+			boolean exists = (localName != null) ?
+					(parent.getAttributeNodeNS(namespaceUri, localName) != null) :
+					(parent.getAttributeNode(name) != null);
+			
+			if (exists)
+				throw new IllegalArgumentException("Attribute with this name " +
+						"already exists for the corresponding element!");
+			
+			AttributeDescriptor oldDescriptor = parent.getAttributeDescriptorOrFail(
+					getNamespaceURI(),
+					getLocalName(),
+					getName());
+			
+			AttributeDescriptor newDescriptor = parent.getAttributeDescriptorOrFail(
+					namespaceUri,
+					localName,
+					name);
+			
+			validateNameChangeWithParent(name, parent, oldDescriptor, newDescriptor);
+		}
 	}
 	
 	private static void checkNamespaceUriAndName(

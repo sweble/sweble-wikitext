@@ -277,8 +277,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNode(name);
-			if (old != null)
-				removeAttribute(descriptor, old);
+			removeAttributeIfExists(descriptor, old);
 		}
 	}
 	
@@ -287,6 +286,8 @@ public abstract class BackboneElement
 			String name,
 			NativeAndStringValuePair verified)
 	{
+		assertWritable();
+		
 		AttributeBase newAttr = createAttribute(name, verified);
 		AttributeBase oldAttr = getAttributeNode(name);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
@@ -301,6 +302,8 @@ public abstract class BackboneElement
 			NativeAndStringValuePair verified)
 	{
 		AttributeBase attr = (AttributeBase) getOwnerDocument().createAttribute(name);
+		// We don't check an attribute descriptor for read-only since a new 
+		// attribute may be set once anyway.
 		attr.setValue(verified.value, verified.strValue);
 		return attr;
 	}
@@ -337,8 +340,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNodeNS(namespaceUri, localName);
-			if (old != null)
-				removeAttribute(descriptor, old);
+			removeAttributeIfExists(descriptor, old);
 		}
 	}
 	
@@ -349,6 +351,8 @@ public abstract class BackboneElement
 			String qualifiedName,
 			NativeAndStringValuePair verified)
 	{
+		assertWritable();
+		
 		AttributeBase newAttr = createAttributeNS(namespaceUri, qualifiedName, verified);
 		AttributeBase oldAttr = getAttributeNodeNS(namespaceUri, localName);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
@@ -364,6 +368,8 @@ public abstract class BackboneElement
 			NativeAndStringValuePair verified)
 	{
 		AttributeBase attr = (AttributeBase) getOwnerDocument().createAttributeNS(namespaceUri, qualifiedName);
+		// We don't check an attribute descriptor for read-only since a new 
+		// attribute may be set once anyway.
 		attr.setValue(verified.value, verified.strValue);
 		return attr;
 	}
@@ -402,8 +408,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNode(attr.getName());
-			if (old != null)
-				removeAttribute(descriptor, old);
+			removeAttributeIfExists(descriptor, old);
 			return old;
 		}
 	}
@@ -416,6 +421,8 @@ public abstract class BackboneElement
 		AttributeBase newAttr =
 				Toolbox.expectType(AttributeBase.class, attr, "attr");
 		
+		assertWritable(newAttr, descriptor);
+		// Is expected to assertWritable() on doc
 		newAttr.setValue(verified.value, verified.strValue);
 		
 		if (newAttr.isLinked())
@@ -458,8 +465,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNodeNS(namespaceUri, localName);
-			if (old != null)
-				removeAttribute(descriptor, old);
+			removeAttributeIfExists(descriptor, old);
 			return old;
 		}
 	}
@@ -472,6 +478,8 @@ public abstract class BackboneElement
 		AttributeBase newAttr =
 				Toolbox.expectType(AttributeBase.class, attr, "attr");
 		
+		assertWritable(newAttr, descriptor);
+		// Is expected to assertWritable() on doc
 		newAttr.setValue(verified.value, verified.strValue);
 		
 		if (newAttr.isLinked())
@@ -499,14 +507,14 @@ public abstract class BackboneElement
 		if (value != null && descriptor.verifyAndConvert(this, verified))
 		{
 			// keep attribute
+			// Is expected to assertWritable()
 			old = setAttribute(descriptor, name, verified);
 		}
 		else
 		{
 			// remove attribute
 			old = getAttributeNode(name);
-			if (old != null)
-				removeAttribute(descriptor, old);
+			removeAttributeIfExists(descriptor, old);
 		}
 		if (old == null)
 			return null;
@@ -522,6 +530,7 @@ public abstract class BackboneElement
 	protected final void setAttributeDirectNoChecks(String name, String value)
 	{
 		NativeAndStringValuePair verified = new NativeAndStringValuePair(value);
+		// Is expected to assertWritable()
 		setAttribute(null, name, verified);
 	}
 	
@@ -560,6 +569,8 @@ public abstract class BackboneElement
 	@Override
 	public void setIdAttribute(String name, boolean isId) throws DOMException
 	{
+		assertWritable();
+		
 		// TODO: Implement
 		if (isId)
 			throw new UnsupportedOperationException();
@@ -571,6 +582,8 @@ public abstract class BackboneElement
 			String localName,
 			boolean isId) throws DOMException
 	{
+		assertWritable();
+		
 		// TODO: Implement
 		if (isId)
 			throw new UnsupportedOperationException();
@@ -579,6 +592,8 @@ public abstract class BackboneElement
 	@Override
 	public void setIdAttributeNode(Attr idAttr, boolean isId) throws DOMException
 	{
+		assertWritable();
+		
 		// TODO: Implement
 		if (isId)
 			throw new UnsupportedOperationException();
@@ -628,10 +643,21 @@ public abstract class BackboneElement
 		return attr;
 	}
 	
+	private void removeAttributeIfExists(
+			AttributeDescriptor descriptor,
+			AttributeBase old)
+	{
+		if (old != null)
+			removeAttribute(descriptor, old);
+		else
+			assertWritable();
+	}
+	
 	private final void removeAttribute(
 			AttributeDescriptor descriptor,
 			AttributeBase attribute)
 	{
+		assertWritable();
 		checkAttributeRemoval(attribute.getName(), descriptor);
 		
 		Backbone parent = (Backbone) attribute.getOwnerElement();

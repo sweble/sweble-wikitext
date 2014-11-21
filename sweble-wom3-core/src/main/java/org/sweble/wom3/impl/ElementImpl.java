@@ -46,6 +46,7 @@ public class ElementImpl
 	
 	protected final void setNodeName(String name)
 	{
+		assertWritable();
 		this.name = name;
 	}
 	

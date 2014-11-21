@@ -82,6 +82,8 @@ public abstract class BackboneWomElement
 	@Override
 	public void setPrefix(String prefix) throws DOMException
 	{
+		assertWritable();
+		
 		if ((prefix != null) && prefix.isEmpty())
 			prefix = null;
 		
