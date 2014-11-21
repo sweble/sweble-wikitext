@@ -171,7 +171,7 @@ public class BackboneAttributeTest
 	}
 	
 	@Test
-	public void testSetValueOnAttachedAttributeTriggersCustomAction() throws Exception
+	public void testSetNameOnAttachedAttributeTriggersCustomAction() throws Exception
 	{
 		AttribImpl a = new AttribImpl("name", "value");
 		e.setAttributeNode(a);
@@ -179,6 +179,7 @@ public class BackboneAttributeTest
 		
 		a.setName("other");
 		assertEquals(Arrays.asList(
+				"getAttributeDescriptor",
 				"getAttributeDescriptor",
 				"customAction"), events);
 	}

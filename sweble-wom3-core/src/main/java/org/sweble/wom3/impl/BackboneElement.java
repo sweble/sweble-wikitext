@@ -551,7 +551,7 @@ public abstract class BackboneElement
 		if (getFirstAttr() == null || oldAttr == getFirstAttr())
 			setFirstAttr(newAttr);
 		
-		if (descriptor != null)
+		if ((descriptor != null) && (descriptor.hasCustomAction()))
 			descriptor.customAction(this, oldAttr, newAttr);
 	}
 	
@@ -641,11 +641,11 @@ public abstract class BackboneElement
 			setFirstAttr((AttributeBase) attribute.getNextSibling());
 		attribute.unlink();
 		
-		if (descriptor != null)
+		if ((descriptor != null) && (descriptor.hasCustomAction()))
 			descriptor.customAction(parent, attribute, null);
 	}
 	
-	private final void checkAttributeRemoval(
+	protected final void checkAttributeRemoval(
 			String name,
 			AttributeDescriptor descriptor)
 	{

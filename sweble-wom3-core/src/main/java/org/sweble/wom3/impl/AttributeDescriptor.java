@@ -63,8 +63,13 @@ public abstract class AttributeDescriptor
 	}
 	
 	/**
-	 * Called after the attribute was set to perform custom alterations on WOM
-	 * or AST.
+	 * Called after the attribute was (re-)set to perform custom alterations on
+	 * WOM. Also called when an attribute is renamed. In this case it is called
+	 * on the old descriptor with the {@code newAttr} parameter set to
+	 * {@code null}. Then it is called on the new descriptor with the
+	 * {@code oldAttr} set to {@code null}. If the old and new descriptor are
+	 * the same (== equality) then it is only called once on the new descriptor
+	 * with both {@code oldAttr} and {@code newAttr} set.
 	 * 
 	 * @param parent
 	 *            The parent node for which to verify the attribute.

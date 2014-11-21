@@ -208,11 +208,36 @@ public abstract class AttributeBase
 			throw new IllegalArgumentException("Attribute with this name " +
 					"already exists for the corresponding element!");
 		
-		// Check if attribute name is allowed on our parent node.
-		AttributeDescriptor descriptor = parent.getAttributeDescriptorOrFail(
-				namespaceUri, localName, name);
+		AttributeDescriptor oldDescriptor = parent.getAttributeDescriptorOrFail(
+				getNamespaceURI(),
+				getLocalName(),
+				getName());
 		
-		descriptor.customAction(parent, this, this);
+		AttributeDescriptor newDescriptor = parent.getAttributeDescriptorOrFail(
+				namespaceUri,
+				localName,
+				name);
+		
+		if (oldDescriptor != newDescriptor)
+		{
+			if (getOwnerDocument().getStrictErrorChecking())
+			{
+				if (!oldDescriptor.isRemovable())
+					throw new UnsupportedOperationException(
+							"Attribute `" + name + "' cannot be removed");
+			}
+			
+			if (oldDescriptor.hasCustomAction())
+				oldDescriptor.customAction(parent, this, null);
+			
+			if (newDescriptor.hasCustomAction())
+				newDescriptor.customAction(parent, null, this);
+		}
+		else
+		{
+			if (newDescriptor.hasCustomAction())
+				newDescriptor.customAction(parent, this, this);
+		}
 	}
 	
 	// =========================================================================
@@ -239,7 +264,8 @@ public abstract class AttributeBase
 		if ((value != null) && descriptor.verifyAndConvert(parent, verified))
 		{
 			setValue(verified.value, verified.strValue);
-			descriptor.customAction(parent, this, this);
+			if (descriptor.hasCustomAction())
+				descriptor.customAction(parent, this, this);
 		}
 		else
 		{
