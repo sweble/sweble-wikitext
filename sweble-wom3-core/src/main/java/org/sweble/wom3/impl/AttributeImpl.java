@@ -74,12 +74,24 @@ public class AttributeImpl
 	protected Object clone() throws CloneNotSupportedException
 	{
 		AttributeImpl newNode = (AttributeImpl) super.clone();
-		/* FIXME: This is horribly flawed....
-		 * One cannot clone arbitrary objects, but if we just copy the other objects
-		 * value, non-immutable values can have bad side effects since a change in one would affect all clones as well...
-		if (this.value != null)
-			newNode.value = this.value.clone();
-		*/
+		
+		// We MUST NOT clone the native value. It might be a mutable object!
+		// Well, to be honest, we cannot even clone it if we wanted...
+		if (value != null)
+		{
+			BackboneElement parent = (BackboneElement) getOwnerElement();
+			
+			AttributeDescriptor descriptor = parent.getAttributeDescriptorOrFail(
+					getNamespaceURI(),
+					getLocalName(),
+					getName());
+			
+			NativeAndStringValuePair verified = new NativeAndStringValuePair(strValue);
+			descriptor.verifyAndConvert(parent, verified);
+			
+			newNode.value = verified.value;
+		}
+		
 		return newNode;
 	}
 }
