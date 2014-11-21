@@ -20,12 +20,32 @@ package org.sweble.wom3.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.sweble.wom3.Wom3Node;
-
-public enum CoreAttributes implements AttributeDescriptor
+public abstract class CoreAttributes
 {
-	ID
+	public static final AttrDescId ATTR_DESC_ID = new AttrDescId();
+	
+	public static final AttrDescClass ATTR_DESC_CLASS = new AttrDescClass();
+	
+	public static final AttrDescStyle ATTR_DESC_STYLE = new AttrDescStyle();
+	
+	public static final AttrDescTitle ATTR_DESC_TITLE = new AttrDescTitle();
+	
+	// =========================================================================
+	
+	public static final class AttrDescId
+			extends
+				AttributeDescriptor
 	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -33,10 +53,24 @@ public enum CoreAttributes implements AttributeDescriptor
 		{
 			return AttributeVerifiers.ID.verifyAndConvert(parent, verified);
 		}
-	},
+	}
 	
-	CLASS
+	// =========================================================================
+	
+	public static final class AttrDescClass
+			extends
+				AttributeDescriptor
 	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -44,10 +78,24 @@ public enum CoreAttributes implements AttributeDescriptor
 		{
 			return AttributeVerifiers.NMTOKENS.verifyAndConvert(parent, verified);
 		}
-	},
+	}
 	
-	STYLE
+	// =========================================================================
+	
+	public static final class AttrDescStyle
+			extends
+				AttributeDescriptor
 	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -55,68 +103,54 @@ public enum CoreAttributes implements AttributeDescriptor
 		{
 			return AttributeVerifiers.STYLESHEET.verifyAndConvert(parent, verified);
 		}
-	},
+	}
 	
-	TITLE
+	// =========================================================================
+	
+	public static final class AttrDescTitle
+			extends
+				AttributeDescriptor
 	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
 				NativeAndStringValuePair verified)
 		{
-			return true;
+			return super.verifyAndConvert(parent, verified);
 		}
-	};
-	
-	// =========================================================================
-	
-	@Override
-	public boolean isRemovable()
-	{
-		return true;
-	}
-	
-	@Override
-	public Normalization getNormalizationMode()
-	{
-		return Normalization.NON_CDATA;
-	}
-	
-	@Override
-	public void customAction(
-			Wom3Node parent,
-			AttributeBase oldAttr,
-			AttributeBase newAttr)
-	{
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap;
+	private static Map<String, AttributeDescriptor> NAME_MAP;
 	
-	public static Map<String, AttributeDescriptor> getNameMap()
+	public synchronized static Map<String, AttributeDescriptor> getNameMap()
 	{
-		if (nameMap != null)
-			return nameMap;
-		
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.put("id", ID);
-		nameMap.put("class", CLASS);
-		nameMap.put("style", STYLE);
-		nameMap.put("title", TITLE);
-		
+		Map<String, AttributeDescriptor> nameMap = NAME_MAP;
+		if (nameMap == null)
+		{
+			nameMap = new HashMap<String, AttributeDescriptor>();
+			nameMap.put("id", ATTR_DESC_ID);
+			nameMap.put("class", ATTR_DESC_CLASS);
+			nameMap.put("style", ATTR_DESC_STYLE);
+			nameMap.put("title", ATTR_DESC_TITLE);
+			NAME_MAP = nameMap;
+		}
 		return nameMap;
-	}
-	
-	static
-	{
-		nameMap = getNameMap();
 	}
 	
 	public static AttributeDescriptor getDescriptor(String name)
 	{
-		return nameMap.get(name);
+		return getNameMap().get(name);
 	}
 }

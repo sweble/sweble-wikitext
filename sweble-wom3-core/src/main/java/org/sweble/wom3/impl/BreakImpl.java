@@ -22,7 +22,6 @@ import java.util.Map;
 
 import org.sweble.wom3.Wom3Break;
 import org.sweble.wom3.Wom3Clear;
-import org.sweble.wom3.Wom3Node;
 
 public class BreakImpl
 		extends
@@ -58,22 +57,17 @@ public class BreakImpl
 	@Override
 	public Wom3Clear setClear(Wom3Clear clear)
 	{
-		return setClearAttr(Attributes.CLEAR, "clear", clear);
+		return setClearAttr(CommonAttributeDescriptors.ATTR_DESC_CLEAR, "clear", clear);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(CoreAttributes.getNameMap());
-		nameMap.put("clear", Attributes.CLEAR);
-		
-		return nameMap;
+		NAME_MAP.putAll(CoreAttributes.getNameMap());
+		NAME_MAP.put("clear", CommonAttributeDescriptors.ATTR_DESC_CLEAR);
 	}
 	
 	@Override
@@ -82,42 +76,6 @@ public class BreakImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		CLEAR
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.CLEAR.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 }

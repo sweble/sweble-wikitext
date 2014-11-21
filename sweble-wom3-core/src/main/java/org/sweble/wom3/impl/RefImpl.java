@@ -17,7 +17,6 @@
  */
 package org.sweble.wom3.impl;
 
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Ref;
 
 public class RefImpl
@@ -54,10 +53,12 @@ public class RefImpl
 	@Override
 	public String setType(String type)
 	{
-		return setAttributeDirect(Attributes.TYPE, "type", type);
+		return setAttributeDirect(ATTR_DESC_REF, "type", type);
 	}
 	
 	// =========================================================================
+	
+	protected static final AttributeDescriptor ATTR_DESC_REF = new AttrDescRef();
 	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
@@ -66,42 +67,29 @@ public class RefImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
-				"type", Attributes.TYPE);
+				"type", ATTR_DESC_REF);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescRef
+			extends
+				AttributeDescriptor
 	{
-		TYPE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return true;
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return false;
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
+			return super.verifyAndConvert(parent, verified);
 		}
 	}
 }

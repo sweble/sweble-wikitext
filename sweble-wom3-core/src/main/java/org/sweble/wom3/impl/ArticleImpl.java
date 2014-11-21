@@ -129,7 +129,7 @@ public class ArticleImpl
 	@Override
 	public String setTitle(String title) throws IllegalArgumentException, NullPointerException
 	{
-		return setAttributeDirect(Attributes.TITLE, "title", title);
+		return setAttributeDirect(ATTR_DESC_TITLE, "title", title);
 	}
 	
 	@Override
@@ -141,7 +141,7 @@ public class ArticleImpl
 	@Override
 	public String setNamespace(String namespace)
 	{
-		return setAttributeDirect(Attributes.NAMESPACE, "namespace", namespace);
+		return setAttributeDirect(ATTR_DESC_NAMESPACE, "namespace", namespace);
 	}
 	
 	@Override
@@ -153,7 +153,7 @@ public class ArticleImpl
 	@Override
 	public String setPath(String path)
 	{
-		return setAttributeDirect(Attributes.PATH, "path", path);
+		return setAttributeDirect(ATTR_DESC_PATH, "path", path);
 	}
 	
 	// =========================================================================
@@ -413,20 +413,25 @@ public class ArticleImpl
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	protected static final AttrDescVersion ATTR_DESC_VERSION = new AttrDescVersion();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	protected static final AttrDescTitle ATTR_DESC_TITLE = new AttrDescTitle();
+	
+	protected static final AttrDescNamespace ATTR_DESC_NAMESPACE = new AttrDescNamespace();
+	
+	protected static final AttrDescPath ATTR_DESC_PATH = new AttrDescPath();
+	
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
+	
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.put("version", Attributes.VERSION);
-		nameMap.put("namespace", Attributes.NAMESPACE);
-		nameMap.put("path", Attributes.PATH);
-		nameMap.put("title", Attributes.TITLE);
-		
-		return nameMap;
+		NAME_MAP.put("version", ATTR_DESC_VERSION);
+		NAME_MAP.put("namespace", ATTR_DESC_NAMESPACE);
+		NAME_MAP.put("path", ATTR_DESC_PATH);
+		NAME_MAP.put("title", ATTR_DESC_TITLE);
 	}
+	
+	// =========================================================================
 	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
@@ -434,106 +439,112 @@ public class ArticleImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDescStrict(namespaceUri, localName, qualifiedName, nameMap);
+		return getAttrDescStrict(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescVersion
+			extends
+				AttributeDescriptor
 	{
-		VERSION
+		@Override
+		public int getFlags()
 		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (Wom3Node.VERSION.equals(verified.strValue))
-				{
-					verified.value = verified.strValue;
-					return true;
-				}
-				
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			super.verifyAndConvert(parent, verified);
+			if (!Wom3Node.VERSION.equals(verified.strValue))
 				throw new UnsupportedOperationException(
 						"Cannot alter read-only attribute `version'");
-			}
-			
-			@Override
-			public boolean isRemovable()
-			{
-				return false;
-			}
-		},
-		
-		TITLE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				
-				Toolbox.checkValidTitle(verified.strValue);
-				return true;
-			}
-			
-			@Override
-			public boolean isRemovable()
-			{
-				return false;
-			}
-		},
-		
-		NAMESPACE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				
-				verified.strValue = Toolbox.checkValidNamespace(verified.strValue);
-				verified.value = verified.strValue;
-				return verified.strValue != null;
-			}
-		},
-		
-		PATH
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				
-				verified.strValue = Toolbox.checkValidPath(verified.strValue);
-				verified.value = verified.strValue;
-				return verified.strValue != null;
-			}
-		};
-		
-		@Override
-		public boolean isRemovable()
-		{
 			return true;
 		}
-		
+	}
+	
+	public static final class AttrDescTitle
+			extends
+				AttributeDescriptor
+	{
 		@Override
-		public Normalization getNormalizationMode()
+		public int getFlags()
 		{
-			return Normalization.NONE;
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
+			super.verifyAndConvert(parent, verified);
+			Toolbox.checkValidTitle(verified.strValue);
+			return true;
+		}
+	}
+	
+	public static final class AttrDescNamespace
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			super.verifyAndConvert(parent, verified);
+			verified.value =
+					verified.strValue =
+							Toolbox.checkValidNamespace(verified.strValue);
+			return (verified.strValue != null);
+		}
+	}
+	
+	public static final class AttrDescPath
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			super.verifyAndConvert(parent, verified);
+			verified.value =
+					verified.strValue =
+							Toolbox.checkValidPath(verified.strValue);
+			return (verified.strValue != null);
 		}
 	}
 }

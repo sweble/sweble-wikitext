@@ -17,6 +17,8 @@
  */
 package org.sweble.wom3.impl;
 
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +60,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public String setAbbr(String abbr)
 	{
-		return setStringAttr(Attributes.ABBR, "abbr", abbr);
+		return setStringAttr(ATTR_DESC_ABBR, "abbr", abbr);
 	}
 	
 	@Override
@@ -70,7 +72,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public String setAxis(String axis)
 	{
-		return setStringAttr(Attributes.AXIS, "axis", axis);
+		return setStringAttr(ATTR_DESC_AXIS, "axis", axis);
 	}
 	
 	@Override
@@ -82,7 +84,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Wom3TableCellScope setScope(Wom3TableCellScope scope)
 	{
-		return setAttributeDirect(Attributes.SCOPE, "scope", scope);
+		return setAttributeDirect(ATTR_DESC_SCOPE, "scope", scope);
 	}
 	
 	@Override
@@ -94,7 +96,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
-		return setAlignAttr(Attributes.ALIGN, "align", align);
+		return setAlignAttr(ATTR_DESC_ALIGN_LCRJC, "align", align);
 	}
 	
 	@Override
@@ -106,7 +108,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Wom3TableVAlign setVAlign(Wom3TableVAlign valign)
 	{
-		return setTableVAlignAttr(Attributes.VALIGN, "valign", valign);
+		return setTableVAlignAttr(ATTR_DESC_ALIGN_TMBB, "valign", valign);
 	}
 	
 	@Override
@@ -118,7 +120,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Wom3Color setBgColor(Wom3Color color)
 	{
-		return setColorAttr(Attributes.BGCOLOR, "bgcolor", color);
+		return setColorAttr(ATTR_DESC_BGCOLOR, "bgcolor", color);
 	}
 	
 	@Override
@@ -130,7 +132,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Integer setColspan(Integer span) throws IllegalArgumentException
 	{
-		return setIntAttr(Attributes.COLSPAN, "colspan", span);
+		return setIntAttr(ATTR_DESC_COLSPAN, "colspan", span);
 	}
 	
 	@Override
@@ -142,7 +144,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Integer setRowspan(Integer span) throws IllegalArgumentException
 	{
-		return setIntAttr(Attributes.ROWSPAN, "rowspan", span);
+		return setIntAttr(ATTR_DESC_ROWSPAN, "rowspan", span);
 	}
 	
 	@Override
@@ -154,7 +156,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public boolean setNowrap(boolean nowrap)
 	{
-		return setBoolAttr(Attributes.NOWRAP, "nowrap", nowrap);
+		return setBoolAttr(ATTR_DESC_NOWRAP, "nowrap", nowrap);
 	}
 	
 	@Override
@@ -166,7 +168,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Wom3ValueWithUnit setWidth(Wom3ValueWithUnit width)
 	{
-		return setValueWithUnitAttr(Attributes.WIDTH, "width", width);
+		return setValueWithUnitAttr(ATTR_DESC_WIDTH_LENGTH, "width", width);
 	}
 	
 	@Override
@@ -178,7 +180,7 @@ public abstract class TableCellBaseImpl
 	@Override
 	public Wom3ValueWithUnit setHeight(Wom3ValueWithUnit height)
 	{
-		return setValueWithUnitAttr(Attributes.HEIGHT, "height", height);
+		return setValueWithUnitAttr(ATTR_DESC_HEIGHT_LENGTH, "height", height);
 	}
 	
 	// =========================================================================
@@ -238,27 +240,34 @@ public abstract class TableCellBaseImpl
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	protected static final AttributeDescriptor ATTR_DESC_ABBR = new AttrDescAbbr();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	protected static final AttributeDescriptor ATTR_DESC_AXIS = new AttrDescAxis();
+	
+	protected static final AttributeDescriptor ATTR_DESC_SCOPE = new AttrDescScope();
+	
+	protected static final AttributeDescriptor ATTR_DESC_COLSPAN = new AttrDescColSpan();
+	
+	protected static final AttributeDescriptor ATTR_DESC_ROWSPAN = new AttrDescRowSpan();
+	
+	protected static final AttributeDescriptor ATTR_DESC_NOWRAP = new AttrDescNoWrap();
+	
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
+	
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("abbr", Attributes.ABBR);
-		nameMap.put("axis", Attributes.AXIS);
-		nameMap.put("scope", Attributes.SCOPE);
-		nameMap.put("align", Attributes.ALIGN);
-		nameMap.put("valign", Attributes.VALIGN);
-		nameMap.put("bgcolor", Attributes.BGCOLOR);
-		nameMap.put("colspan", Attributes.COLSPAN);
-		nameMap.put("rowspan", Attributes.ROWSPAN);
-		nameMap.put("nowrap", Attributes.NOWRAP);
-		nameMap.put("width", Attributes.WIDTH);
-		nameMap.put("height", Attributes.HEIGHT);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("abbr", ATTR_DESC_ABBR);
+		NAME_MAP.put("axis", ATTR_DESC_AXIS);
+		NAME_MAP.put("scope", ATTR_DESC_SCOPE);
+		NAME_MAP.put("align", ATTR_DESC_ALIGN_LCRJC);
+		NAME_MAP.put("valign", ATTR_DESC_ALIGN_TMBB);
+		NAME_MAP.put("bgcolor", ATTR_DESC_BGCOLOR);
+		NAME_MAP.put("colspan", ATTR_DESC_COLSPAN);
+		NAME_MAP.put("rowspan", ATTR_DESC_ROWSPAN);
+		NAME_MAP.put("nowrap", ATTR_DESC_NOWRAP);
+		NAME_MAP.put("width", ATTR_DESC_WIDTH_LENGTH);
+		NAME_MAP.put("height", ATTR_DESC_HEIGHT_LENGTH);
 	}
 	
 	@Override
@@ -267,158 +276,101 @@ public abstract class TableCellBaseImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescAbbr
+			extends
+				AttributeDescriptor
 	{
-		ABBR
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return true;
-			}
-		},
-		AXIS
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return true;
-			}
-		},
-		SCOPE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.SCOPE.verifyAndConvert(parent, verified);
-			}
-		},
-		ALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LCRJC_ALIGN.verifyAndConvert(parent, verified);
-			}
-		},
-		VALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.TMBB_VALIGN.verifyAndConvert(parent, verified);
-			}
-		},
-		BGCOLOR
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.COLOR.verifyAndConvert(parent, verified);
-			}
-		},
-		COLSPAN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
-				if (((Integer) verified.value) <= 0)
-					throw new IllegalArgumentException("Illegal colspan: " + verified.strValue);
-				return true;
-			}
-			
-			@Override
-			public void customAction(
-					Wom3Node parent,
-					AttributeBase oldAttr,
-					AttributeBase newAttr)
-			{
-				((TableCellBaseImpl) parent).invalidate();
-			}
-		},
-		ROWSPAN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
-				if (((Integer) verified.value) <= 0)
-					throw new IllegalArgumentException("Illegal rowspan: " + verified.strValue);
-				return true;
-			}
-			
-			@Override
-			public void customAction(
-					Wom3Node parent,
-					AttributeBase oldAttr,
-					AttributeBase newAttr)
-			{
-				((TableCellBaseImpl) parent).invalidate();
-			}
-		},
-		NOWRAP
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.verifyAndConvertBool(parent, verified, "nowrap");
-			}
-		},
-		WIDTH
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
-			}
-		},
-		HEIGHT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return true;
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.NON_CDATA;
+			return super.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescAxis
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return super.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescScope
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.SCOPE.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescColSpan
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					true /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
+			if (((Integer) verified.value) <= 0)
+				throw new IllegalArgumentException("Illegal colspan: " + verified.strValue);
+			return true;
 		}
 		
 		@Override
@@ -427,6 +379,65 @@ public abstract class TableCellBaseImpl
 				AttributeBase oldAttr,
 				AttributeBase newAttr)
 		{
+			((TableCellBaseImpl) parent).invalidate();
+		}
+	}
+	
+	public static final class AttrDescRowSpan
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					true /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
+			if (((Integer) verified.value) <= 0)
+				throw new IllegalArgumentException("Illegal rowspan: " + verified.strValue);
+			return true;
+		}
+		
+		@Override
+		public void customAction(
+				Wom3Node parent,
+				AttributeBase oldAttr,
+				AttributeBase newAttr)
+		{
+			((TableCellBaseImpl) parent).invalidate();
+		}
+	}
+	
+	public static final class AttrDescNoWrap
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.verifyAndConvertBool(parent, verified, "nowrap");
 		}
 	}
 }

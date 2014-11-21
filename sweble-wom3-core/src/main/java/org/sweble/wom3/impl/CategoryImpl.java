@@ -18,7 +18,6 @@
 package org.sweble.wom3.impl;
 
 import org.sweble.wom3.Wom3Category;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Title;
 
 public class CategoryImpl
@@ -55,7 +54,7 @@ public class CategoryImpl
 	@Override
 	public String setName(String name)
 	{
-		return setAttributeDirect(Attributes.NAME, "name", name);
+		return setAttributeDirect(ATTR_DESC_NAME, "name", name);
 	}
 	
 	@Override
@@ -79,6 +78,8 @@ public class CategoryImpl
 	
 	// =========================================================================
 	
+	public static final AttrDescName ATTR_DESC_NAME = new AttrDescName();
+	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -86,50 +87,38 @@ public class CategoryImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
-				"name", Attributes.NAME);
+				"name", ATTR_DESC_NAME);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescName
+			extends
+				AttributeDescriptor
 	{
-		NAME
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				
-				Toolbox.checkValidCategory(verified.strValue);
-				
-				CategoryImpl catImpl = (CategoryImpl) parent;
-				ArticleImpl pageImpl = (ArticleImpl) catImpl.getParentNode();
-				if (pageImpl != null)
-					pageImpl.validateCategoryNameChange(catImpl, verified.strValue);
-				
-				return true;
-			}
-			
-			@Override
-			public void customAction(
-					Wom3Node parent,
-					AttributeBase oldAttr,
-					AttributeBase newAttr)
-			{
-			}
-		};
-		
 		@Override
-		public Normalization getNormalizationMode()
+		public int getFlags()
 		{
-			return Normalization.NON_CDATA;
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public boolean isRemovable()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return false;
+			super.verifyAndConvert(parent, verified);
+			
+			Toolbox.checkValidCategory(verified.strValue);
+			
+			CategoryImpl catImpl = (CategoryImpl) parent;
+			ArticleImpl pageImpl = (ArticleImpl) catImpl.getParentNode();
+			if (pageImpl != null)
+				pageImpl.validateCategoryNameChange(catImpl, verified.strValue);
+			
+			return true;
 		}
 	}
 }

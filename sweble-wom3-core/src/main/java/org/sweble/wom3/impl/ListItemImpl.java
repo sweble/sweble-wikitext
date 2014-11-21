@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.sweble.wom3.Wom3ListItem;
-import org.sweble.wom3.Wom3Node;
 
 public class ListItemImpl
 		extends
@@ -57,7 +56,7 @@ public class ListItemImpl
 	@Override
 	public String setItemType(String type)
 	{
-		return setAttributeDirect(Attributes.TYPE, "type", type);
+		return setAttributeDirect(ATTR_DESC_TYPE, "type", type);
 	}
 	
 	@Override
@@ -69,23 +68,22 @@ public class ListItemImpl
 	@Override
 	public Integer setItemValue(Integer value)
 	{
-		return setAttributeDirect(Attributes.VALUE, "value", value);
+		return setAttributeDirect(ATTR_DESC_VALUE, "value", value);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	protected static final AttributeDescriptor ATTR_DESC_TYPE = new AttrDescType();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	protected static final AttributeDescriptor ATTR_DESC_VALUE = new AttrDescValue();
+	
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
+	
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("type", Attributes.TYPE);
-		nameMap.put("value", Attributes.VALUE);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("type", ATTR_DESC_TYPE);
+		NAME_MAP.put("value", ATTR_DESC_VALUE);
 	}
 	
 	@Override
@@ -94,52 +92,52 @@ public class ListItemImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescType
+			extends
+				AttributeDescriptor
 	{
-		TYPE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.ITEMTYPE.verifyAndConvert(parent, verified);
-			}
-		},
-		VALUE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return true;
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.NON_CDATA;
+			return AttributeVerifiers.ITEMTYPE.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescValue
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
+			return AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
 		}
 	}
 }

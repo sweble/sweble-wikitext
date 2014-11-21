@@ -24,7 +24,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.sweble.wom3.Wom3Node;
-import org.sweble.wom3.impl.AttributeBase;
 import org.sweble.wom3.impl.AttributeDescriptor;
 import org.sweble.wom3.impl.AttributeVerifiers;
 import org.sweble.wom3.impl.Backbone;
@@ -129,7 +128,7 @@ public class TagExtensionImpl
 	@Override
 	public String setName(String name)
 	{
-		return setStringAttr(Attributes.NAME, "name", name);
+		return setStringAttr(ATTR_DESC_NAME, "name", name);
 	}
 	
 	// =========================================================================
@@ -203,6 +202,8 @@ public class TagExtensionImpl
 	
 	// =========================================================================
 	
+	protected static final AttributeDescriptor ATTR_DESC_NAME = new AttrDescName();
+	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceURL,
@@ -210,42 +211,29 @@ public class TagExtensionImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceURL, localName, qualifiedName,
-				"name", Attributes.NAME);
+				"name", ATTR_DESC_NAME);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescName
+			extends
+				AttributeDescriptor
 	{
-		NAME
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.XML_NAME.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return false;
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
+			return AttributeVerifiers.XML_NAME.verifyAndConvert(parent, verified);
 		}
 	}
 }

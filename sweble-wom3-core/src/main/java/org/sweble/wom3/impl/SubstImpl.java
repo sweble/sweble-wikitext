@@ -18,7 +18,6 @@
 package org.sweble.wom3.impl;
 
 import org.sweble.wom3.Wom3For;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Repl;
 import org.sweble.wom3.Wom3Subst;
 
@@ -64,7 +63,7 @@ public class SubstImpl
 	@Override
 	public String setDisplacementId(String did)
 	{
-		return setStringAttr(Attributes.DID, "did", did);
+		return setStringAttr(CommonAttributeDescriptors.ATTR_DESC_DID, "did", did);
 	}
 	
 	// =========================================================================
@@ -132,42 +131,6 @@ public class SubstImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
-				"did", Attributes.DID);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		DID
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.ID.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+				"did", CommonAttributeDescriptors.ATTR_DESC_DID);
 	}
 }

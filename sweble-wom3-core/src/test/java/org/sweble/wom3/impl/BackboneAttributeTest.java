@@ -337,7 +337,7 @@ public class BackboneAttributeTest
 	// =========================================================================
 	
 	class AttribDesc
-			implements
+			extends
 				AttributeDescriptor
 	{
 		@Override
@@ -394,6 +394,12 @@ public class BackboneAttributeTest
 				AttributeBase newAttr)
 		{
 			events.add("customAction");
+		}
+		
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(true, false, true, Normalization.NON_CDATA);
 		}
 	}
 	

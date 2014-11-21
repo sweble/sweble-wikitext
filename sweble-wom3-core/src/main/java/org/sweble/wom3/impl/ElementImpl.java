@@ -84,6 +84,6 @@ public class ElementImpl
 			String localName,
 			String qualifiedName)
 	{
-		return GenericAttributeDescriptor.get();
+		return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 	}
 }

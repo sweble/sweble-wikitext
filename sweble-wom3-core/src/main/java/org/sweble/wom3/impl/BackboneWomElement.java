@@ -129,7 +129,7 @@ public abstract class BackboneWomElement
 	{
 		if ((namespaceUri != null) && !namespaceUri.isEmpty())
 			// We accept any attribute in the global attribute partition
-			return GenericAttributeDescriptor.get();
+			return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 		
 		if ((localName == null) || localName.equals(qualifiedName))
 		{
@@ -143,7 +143,7 @@ public abstract class BackboneWomElement
 			
 			// We also always accept "xmlns" declarations.
 			if ("xmlns".equals(qualifiedName))
-				return GenericAttributeDescriptor.get();
+				return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 			
 			return null;
 		}
@@ -154,7 +154,7 @@ public abstract class BackboneWomElement
 			// FIXME: This is probably not correct. A prefix could be bound
 			// to the empty namespace, in which case the attribute would
 			// be in the per-element-type partition.
-			return GenericAttributeDescriptor.get();
+			return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 		}
 	}
 	
@@ -219,7 +219,7 @@ public abstract class BackboneWomElement
 	{
 		if ((namespaceUri != null) && !namespaceUri.isEmpty())
 			// We accept any attribute in the global attribute partition
-			return GenericAttributeDescriptor.get();
+			return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 		
 		if ((localName == null) || localName.equals(qualifiedName))
 		{
@@ -232,7 +232,7 @@ public abstract class BackboneWomElement
 			
 			// We also always accept "xmlns" declarations.
 			if ("xmlns".equals(qualifiedName))
-				return GenericAttributeDescriptor.get();
+				return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 			
 			return null;
 		}
@@ -243,7 +243,7 @@ public abstract class BackboneWomElement
 			// FIXME: This is probably not correct. A prefix could be bound
 			// to the empty namespace, in which case the attribute would
 			// be in the per-element-type partition.
-			return GenericAttributeDescriptor.get();
+			return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 		}
 	}
 	
@@ -271,7 +271,7 @@ public abstract class BackboneWomElement
 				return d;
 		}
 		
-		return GenericAttributeDescriptor.get();
+		return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 	}
 	
 	/**
@@ -298,7 +298,7 @@ public abstract class BackboneWomElement
 				return attr1Desc;
 		}
 		
-		return GenericAttributeDescriptor.get();
+		return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 	}
 	
 	// =========================================================================

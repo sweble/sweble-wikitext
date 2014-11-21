@@ -18,8 +18,8 @@
 package org.sweble.wom3.impl;
 
 import org.sweble.wom3.Wom3IntLink;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Title;
+import org.sweble.wom3.impl.ExtLinkImpl.AttrDescPlainUrl;
 
 public class IntLinkImpl
 		extends
@@ -101,7 +101,7 @@ public class IntLinkImpl
 	@Override
 	public String setTarget(String target)
 	{
-		return setAttributeDirect(Attributes.TARGET, "target", target);
+		return setAttributeDirect(ATTR_DESC_TARGET, "target", target);
 	}
 	
 	// =========================================================================
@@ -120,52 +120,42 @@ public class IntLinkImpl
 	
 	// =========================================================================
 	
+	public static final AttrDescTarget ATTR_DESC_TARGET = new AttrDescTarget();
+	
+	public static final AttrDescPlainUrl ATTR_DESC_PLAIN_URL = new AttrDescPlainUrl();
+	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
-			String namespaceUri,
+			String namespaceURL,
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
-				"target", Attributes.TARGET);
+		return getAttrDescStrict(namespaceURL, localName, qualifiedName,
+				"target", ATTR_DESC_TARGET);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescTarget
+			extends
+				AttributeDescriptor
 	{
-		TARGET
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				Toolbox.checkValidTarget(verified.strValue);
-				return true;
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return false;
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
+			super.verifyAndConvert(parent, verified);
+			Toolbox.checkValidTarget(verified.strValue);
+			return true;
 		}
 	}
 }

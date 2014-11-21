@@ -254,7 +254,7 @@ public abstract class BackboneElement
 				throw new IllegalArgumentException(
 						"An attribute named `" + namespaceUri + "' / `" + qualifiedName + "' is not supported by this element!");
 			
-			d = GenericAttributeDescriptor.get();
+			d = CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 		}
 		return d;
 	}

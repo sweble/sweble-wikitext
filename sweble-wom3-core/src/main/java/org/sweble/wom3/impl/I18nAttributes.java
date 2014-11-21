@@ -20,12 +20,30 @@ package org.sweble.wom3.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.sweble.wom3.Wom3Node;
-
-public enum I18nAttributes implements AttributeDescriptor
+public abstract class I18nAttributes
 {
-	DIR
+	public static final AttributeDescriptor ATTR_DESC_DIR = new AttrDescDir();
+	
+	public static final AttributeDescriptor ATTR_DESC_LANG = new AttrDescLang();
+	
+	public static final AttributeDescriptor ATTR_DESC_XML_LANG = new AttrDescXmlLang();
+	
+	// =========================================================================
+	
+	public static final class AttrDescDir
+			extends
+				AttributeDescriptor
 	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -33,10 +51,24 @@ public enum I18nAttributes implements AttributeDescriptor
 		{
 			return AttributeVerifiers.DIR.verifyAndConvert(parent, verified);
 		}
-	},
+	}
 	
-	LANG
+	// =========================================================================
+	
+	public static final class AttrDescLang
+			extends
+				AttributeDescriptor
 	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -44,10 +76,24 @@ public enum I18nAttributes implements AttributeDescriptor
 		{
 			return AttributeVerifiers.LANGUAGE_CODE.verifyAndConvert(parent, verified);
 		}
-	},
+	}
 	
-	XMLLANG
+	// =========================================================================
+	
+	public static final class AttrDescXmlLang
+			extends
+				AttributeDescriptor
 	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -55,56 +101,28 @@ public enum I18nAttributes implements AttributeDescriptor
 		{
 			return AttributeVerifiers.LANGUAGE_CODE.verifyAndConvert(parent, verified);
 		}
-	};
-	
-	// =========================================================================
-	
-	@Override
-	public boolean isRemovable()
-	{
-		return true;
-	}
-	
-	@Override
-	public Normalization getNormalizationMode()
-	{
-		return Normalization.NON_CDATA;
-	}
-	
-	@Override
-	public void customAction(
-			Wom3Node parent,
-			AttributeBase oldAttr,
-			AttributeBase newAttr)
-	{
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap;
+	private static Map<String, AttributeDescriptor> NAME_MAP;
 	
-	public static Map<String, AttributeDescriptor> getNameMap()
+	public synchronized static Map<String, AttributeDescriptor> getNameMap()
 	{
-		if (nameMap != null)
-			return nameMap;
-		
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.put("dir", DIR);
-		nameMap.put("lang", LANG);
-		nameMap.put("xml:lang", XMLLANG);
-		
+		Map<String, AttributeDescriptor> nameMap = NAME_MAP;
+		if (nameMap == null)
+		{
+			nameMap = new HashMap<String, AttributeDescriptor>();
+			nameMap.put("dir", ATTR_DESC_DIR);
+			nameMap.put("lang", ATTR_DESC_LANG);
+			nameMap.put("xml:lang", ATTR_DESC_XML_LANG);
+			NAME_MAP = nameMap;
+		}
 		return nameMap;
-	}
-	
-	static
-	{
-		nameMap = getNameMap();
 	}
 	
 	public static AttributeDescriptor getDescriptor(String name)
 	{
-		return nameMap.get(name);
+		return getNameMap().get(name);
 	}
 }

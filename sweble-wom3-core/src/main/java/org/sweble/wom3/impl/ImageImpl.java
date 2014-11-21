@@ -26,7 +26,6 @@ import org.sweble.wom3.Wom3ImageCaption;
 import org.sweble.wom3.Wom3ImageFormat;
 import org.sweble.wom3.Wom3ImageHAlign;
 import org.sweble.wom3.Wom3ImageVAlign;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Title;
 
 public class ImageImpl
@@ -103,7 +102,7 @@ public class ImageImpl
 	@Override
 	public String setSource(String source)
 	{
-		return setAttributeDirect(Attributes.SOURCE, "source", source);
+		return setAttributeDirect(ATTR_DESC_SOURCE, "source", source);
 	}
 	
 	@Override
@@ -115,7 +114,7 @@ public class ImageImpl
 	@Override
 	public Wom3ImageFormat setFormat(Wom3ImageFormat format) throws NullPointerException
 	{
-		return setAttributeDirect(Attributes.FORMAT, "format", format);
+		return setAttributeDirect(ATTR_DESC_FORMAT, "format", format);
 	}
 	
 	@Override
@@ -127,7 +126,7 @@ public class ImageImpl
 	@Override
 	public boolean setBorder(boolean border)
 	{
-		return setAttributeDirect(Attributes.BORDER, "border", border) != null;
+		return setAttributeDirect(ATTR_DESC_BORDER, "border", border) != null;
 	}
 	
 	@Override
@@ -139,7 +138,7 @@ public class ImageImpl
 	@Override
 	public Wom3ImageHAlign setHAlign(Wom3ImageHAlign halign)
 	{
-		return setAttributeDirect(Attributes.HALIGN, "halign", halign);
+		return setAttributeDirect(ATTR_DESC_HALIGN, "halign", halign);
 	}
 	
 	@Override
@@ -151,7 +150,7 @@ public class ImageImpl
 	@Override
 	public Wom3ImageVAlign setVAlign(Wom3ImageVAlign valign)
 	{
-		return setAttributeDirect(Attributes.VALIGN, "valign", valign);
+		return setAttributeDirect(ATTR_DESC_VALIGN, "valign", valign);
 	}
 	
 	@Override
@@ -163,7 +162,7 @@ public class ImageImpl
 	@Override
 	public Integer setWidth(Integer width)
 	{
-		return setAttributeDirect(Attributes.WIDTH, "width", width);
+		return setAttributeDirect(ATTR_DESC_WIDTH, "width", width);
 	}
 	
 	@Override
@@ -175,7 +174,7 @@ public class ImageImpl
 	@Override
 	public Integer setHeight(Integer height)
 	{
-		return setAttributeDirect(Attributes.HEIGHT, "height", height);
+		return setAttributeDirect(ATTR_DESC_HEIGHT, "height", height);
 	}
 	
 	@Override
@@ -187,7 +186,7 @@ public class ImageImpl
 	@Override
 	public boolean setUpright(boolean upright)
 	{
-		return setAttributeDirect(Attributes.UPRIGHT, "upright", upright) != null;
+		return setAttributeDirect(ATTR_DESC_UPRIGHT, "upright", upright) != null;
 	}
 	
 	@Override
@@ -199,7 +198,7 @@ public class ImageImpl
 	@Override
 	public URL setExtLink(URL url)
 	{
-		return setUrlAttr(Attributes.EXTLINK, "extlink", url);
+		return setUrlAttr(ATTR_DESC_EXTLINK, "extlink", url);
 	}
 	
 	@Override
@@ -211,7 +210,7 @@ public class ImageImpl
 	@Override
 	public String setIntLink(String target)
 	{
-		return setAttributeDirect(Attributes.INTLINK, "intlink", target);
+		return setAttributeDirect(ATTR_DESC_INTLINK, "intlink", target);
 	}
 	
 	@Override
@@ -223,7 +222,7 @@ public class ImageImpl
 	@Override
 	public String setAlt(String alt)
 	{
-		return setAttributeDirect(Attributes.ALT, "alt", alt);
+		return setAttributeDirect(ATTR_DESC_ALT, "alt", alt);
 	}
 	
 	// =========================================================================
@@ -269,26 +268,43 @@ public class ImageImpl
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	protected static final AttributeDescriptor ATTR_DESC_SOURCE = new AttrDescSource();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	protected static final AttributeDescriptor ATTR_DESC_FORMAT = new AttrDescFormat();
+	
+	protected static final AttributeDescriptor ATTR_DESC_BORDER = new AttrDescBorder();
+	
+	protected static final AttributeDescriptor ATTR_DESC_HALIGN = new AttrDescHAlign();
+	
+	protected static final AttributeDescriptor ATTR_DESC_VALIGN = new AttrDescVAlign();
+	
+	protected static final AttributeDescriptor ATTR_DESC_WIDTH = new AttrDescWidth();
+	
+	protected static final AttributeDescriptor ATTR_DESC_HEIGHT = new AttrDescHeight();
+	
+	protected static final AttributeDescriptor ATTR_DESC_UPRIGHT = new AttrDescUpright();
+	
+	protected static final AttributeDescriptor ATTR_DESC_EXTLINK = new AttrDescExtLink();
+	
+	protected static final AttributeDescriptor ATTR_DESC_INTLINK = new AttrDescIntLink();
+	
+	protected static final AttributeDescriptor ATTR_DESC_ALT = new AttrDescAlt();
+	
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
+	
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.put("source", Attributes.SOURCE);
-		nameMap.put("format", Attributes.FORMAT);
-		nameMap.put("border", Attributes.BORDER);
-		nameMap.put("halign", Attributes.HALIGN);
-		nameMap.put("valign", Attributes.VALIGN);
-		nameMap.put("width", Attributes.WIDTH);
-		nameMap.put("height", Attributes.HEIGHT);
-		nameMap.put("upright", Attributes.UPRIGHT);
-		nameMap.put("extlink", Attributes.EXTLINK);
-		nameMap.put("intlink", Attributes.INTLINK);
-		nameMap.put("alt", Attributes.ALT);
-		
-		return nameMap;
+		NAME_MAP.put("source", ATTR_DESC_SOURCE);
+		NAME_MAP.put("format", ATTR_DESC_FORMAT);
+		NAME_MAP.put("border", ATTR_DESC_BORDER);
+		NAME_MAP.put("halign", ATTR_DESC_HALIGN);
+		NAME_MAP.put("valign", ATTR_DESC_VALIGN);
+		NAME_MAP.put("width", ATTR_DESC_WIDTH);
+		NAME_MAP.put("height", ATTR_DESC_HEIGHT);
+		NAME_MAP.put("upright", ATTR_DESC_UPRIGHT);
+		NAME_MAP.put("extlink", ATTR_DESC_EXTLINK);
+		NAME_MAP.put("intlink", ATTR_DESC_INTLINK);
+		NAME_MAP.put("alt", ATTR_DESC_ALT);
 	}
 	
 	@Override
@@ -297,169 +313,279 @@ public class ImageImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDescStrict(namespaceUri, localName, qualifiedName, nameMap);
+		return getAttrDescStrict(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	// =========================================================================
+	
+	public static final class AttrDescSource
+			extends
+				AttributeDescriptor
 	{
-		SOURCE
+		@Override
+		public int getFlags()
 		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				
-				// TODO: Check if image target or just page
-				Toolbox.checkValidTarget(verified.strValue);
-				return true;
-			}
-			
-			@Override
-			public boolean isRemovable()
-			{
-				return false;
-			}
-		},
-		FORMAT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue != null)
-					verified.value = Toolbox.stringToImageFormat(verified.strValue);
-				else
-					verified.strValue = Toolbox.imageFormatToString((Wom3ImageFormat) verified.value);
-				return true;
-			}
-		},
-		BORDER
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.verifyAndConvertBool(parent, verified, "border");
-			}
-		},
-		HALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue != null)
-					verified.value = Toolbox.stringToImageHAlign(verified.strValue);
-				else
-					verified.strValue = Toolbox.imageHAlignToString((Wom3ImageHAlign) verified.value);
-				return true;
-			}
-		},
-		VALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue != null)
-					verified.value = Toolbox.stringToImageVAlign(verified.strValue);
-				else
-					verified.strValue = Toolbox.imageVAlignToString((Wom3ImageVAlign) verified.value);
-				return true;
-			}
-		},
-		WIDTH
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
-			}
-		},
-		HEIGHT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
-			}
-		},
-		UPRIGHT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.verifyAndConvertBool(parent, verified, "upright");
-			}
-		},
-		EXTLINK
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.URL.verifyAndConvert(parent, verified);
-			}
-		},
-		INTLINK
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				if (!verified.strValue.isEmpty())
-					Toolbox.checkValidTarget(verified.strValue);
-				return true;
-			}
-		},
-		ALT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return true;
-			}
-		};
-		
-		// =====================================================================
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
 		
 		@Override
-		public boolean isRemovable()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
+			super.verifyAndConvert(parent, verified);
+			Toolbox.checkValidTarget(verified.strValue);
 			return true;
 		}
-		
+	}
+	
+	public static final class AttrDescFormat
+			extends
+				AttributeDescriptor
+	{
 		@Override
-		public Normalization getNormalizationMode()
+		public int getFlags()
 		{
-			return Normalization.CDATA;
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
+			if (verified.strValue != null)
+				verified.value = Toolbox.stringToImageFormat(verified.strValue);
+			else
+				verified.strValue = Toolbox.imageFormatToString((Wom3ImageFormat) verified.value);
+			return true;
+		}
+	}
+	
+	public static final class AttrDescBorder
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.verifyAndConvertBool(parent, verified, "border");
+		}
+	}
+	
+	public static final class AttrDescHAlign
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			if (verified.strValue != null)
+				verified.value = Toolbox.stringToImageHAlign(verified.strValue);
+			else
+				verified.strValue = Toolbox.imageHAlignToString((Wom3ImageHAlign) verified.value);
+			return true;
+		}
+	}
+	
+	public static final class AttrDescVAlign
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			if (verified.strValue != null)
+				verified.value = Toolbox.stringToImageVAlign(verified.strValue);
+			else
+				verified.strValue = Toolbox.imageVAlignToString((Wom3ImageVAlign) verified.value);
+			return true;
+		}
+	}
+	
+	public static final class AttrDescWidth
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescHeight
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescUpright
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.verifyAndConvertBool(parent, verified, "upright");
+		}
+	}
+	
+	public static final class AttrDescExtLink
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.URL.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescIntLink
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			super.verifyAndConvert(parent, verified);
+			if ((verified.strValue != null) && (!verified.strValue.isEmpty()))
+				Toolbox.checkValidTarget(verified.strValue);
+			
+			return true;
+		}
+	}
+	
+	public static final class AttrDescAlt
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return super.verifyAndConvert(parent, verified);
 		}
 	}
 }

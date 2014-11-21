@@ -17,11 +17,12 @@
  */
 package org.sweble.wom3.impl;
 
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.sweble.wom3.Wom3HorizAlign;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3TableCellBase;
 import org.sweble.wom3.Wom3TableColumn;
 import org.sweble.wom3.Wom3TablePartition;
@@ -56,7 +57,7 @@ public abstract class TablePartitionImpl
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
-		return setAlignAttr(Attributes.ALIGN, "align", align);
+		return setAlignAttr(ATTR_DESC_ALIGN_LCRJC, "align", align);
 	}
 	
 	@Override
@@ -68,7 +69,7 @@ public abstract class TablePartitionImpl
 	@Override
 	public Wom3TableVAlign setTableVAlign(Wom3TableVAlign valign)
 	{
-		return setTableVAlignAttr(Attributes.VALIGN, "valign", valign);
+		return setTableVAlignAttr(ATTR_DESC_ALIGN_TMBB, "valign", valign);
 	}
 	
 	// =========================================================================
@@ -149,18 +150,13 @@ public abstract class TablePartitionImpl
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("align", Attributes.ALIGN);
-		nameMap.put("valign", Attributes.VALIGN);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("align", ATTR_DESC_ALIGN_LCRJC);
+		NAME_MAP.put("valign", ATTR_DESC_ALIGN_TMBB);
 	}
 	
 	@Override
@@ -169,52 +165,6 @@ public abstract class TablePartitionImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		ALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LCRJC_ALIGN.verifyAndConvert(parent, verified);
-			}
-		},
-		VALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.TMBB_VALIGN.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 }

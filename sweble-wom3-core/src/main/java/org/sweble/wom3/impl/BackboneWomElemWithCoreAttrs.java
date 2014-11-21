@@ -87,7 +87,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setId(String id) throws IllegalArgumentException
 	{
-		return setAttributeDirect(CoreAttributes.ID, "id", id);
+		return setAttributeDirect(CoreAttributes.ATTR_DESC_ID, "id", id);
 	}
 	
 	public String getClasses()
@@ -97,7 +97,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setClasses(String classes)
 	{
-		return setAttributeDirect(CoreAttributes.CLASS, "class", classes);
+		return setAttributeDirect(CoreAttributes.ATTR_DESC_CLASS, "class", classes);
 	}
 	
 	public String getStyle()
@@ -107,7 +107,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setStyle(String style)
 	{
-		return setAttributeDirect(CoreAttributes.STYLE, "style", style);
+		return setAttributeDirect(CoreAttributes.ATTR_DESC_STYLE, "style", style);
 	}
 	
 	public String getTitle()
@@ -117,7 +117,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setTitle(String title)
 	{
-		return setAttributeDirect(CoreAttributes.TITLE, "title", title);
+		return setAttributeDirect(CoreAttributes.ATTR_DESC_TITLE, "title", title);
 	}
 	
 	// ==[ I18n Attributes ]====================================================
@@ -129,7 +129,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public Wom3I18nDir setDir(Wom3I18nDir dir)
 	{
-		return setAttributeDirect(I18nAttributes.DIR, "dir", dir);
+		return setAttributeDirect(I18nAttributes.ATTR_DESC_DIR, "dir", dir);
 	}
 	
 	public String getLang()
@@ -139,7 +139,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setLang(String lang)
 	{
-		return setAttributeDirect(I18nAttributes.LANG, "lang", lang);
+		return setAttributeDirect(I18nAttributes.ATTR_DESC_LANG, "lang", lang);
 	}
 	
 	public String getXmlLang()
@@ -149,7 +149,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setXmlLang(String lang)
 	{
-		return setAttributeDirect(I18nAttributes.XMLLANG, "xml:lang", lang);
+		return setAttributeDirect(I18nAttributes.ATTR_DESC_XML_LANG, "xml:lang", lang);
 	}
 	
 	// ==[ Event Attributes ]===================================================
@@ -161,7 +161,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnclick(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONCLICK, "onclick", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONCLICK, "onclick", handler);
 	}
 	
 	public String getOndblclick()
@@ -171,7 +171,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOndblclick(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONDBLCLICK, "ondblclick", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONDBLCLICK, "ondblclick", handler);
 	}
 	
 	public String getOnmousedown()
@@ -181,7 +181,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnmousedown(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONMOUSEDOWN, "onmousedown", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONMOUSEDOWN, "onmousedown", handler);
 	}
 	
 	public String getOnmouseup()
@@ -191,7 +191,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnmouseup(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONMOUSEUP, "onmouseup", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONMOUSEUP, "onmouseup", handler);
 	}
 	
 	public String getOnmouseover()
@@ -201,7 +201,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnmouseover(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONMOUSEOVER, "onmouseover", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONMOUSEOVER, "onmouseover", handler);
 	}
 	
 	public String getOnmousemove()
@@ -211,7 +211,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnmousemove(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONMOUSEMOVE, "onmousemove", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONMOUSEMOVE, "onmousemove", handler);
 	}
 	
 	public String getOnmouseout()
@@ -221,7 +221,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnmouseout(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONMOUSEOUT, "onmouseout", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONMOUSEOUT, "onmouseout", handler);
 	}
 	
 	public String getOnkeypress()
@@ -231,7 +231,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnkeypress(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONKEYPRESS, "onkeypress", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONKEYPRESS, "onkeypress", handler);
 	}
 	
 	public String getOnkeydown()
@@ -241,7 +241,7 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnkeydown(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONKEYDOWN, "onkeydown", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONKEYDOWN, "onkeydown", handler);
 	}
 	
 	public String getOnkeyup()
@@ -251,6 +251,6 @@ public abstract class BackboneWomElemWithCoreAttrs
 	
 	public String setOnkeyup(String handler)
 	{
-		return setAttributeDirect(EventAttributes.ONKEYUP, "onkeyup", handler);
+		return setAttributeDirect(EventAttributes.ATTR_DESC_ONKEYUP, "onkeyup", handler);
 	}
 }
