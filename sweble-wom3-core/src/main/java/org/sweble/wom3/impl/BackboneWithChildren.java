@@ -27,8 +27,16 @@ public abstract class BackboneWithChildren
 {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * It's vital that this member is only accessed and modified through
+	 * get/setFirstChild().
+	 */
 	private Backbone firstChild;
 	
+	/**
+	 * It's vital that this member is only accessed and modified through
+	 * get/setLastChild().
+	 */
 	private Backbone lastChild;
 	
 	// =========================================================================
@@ -40,7 +48,7 @@ public abstract class BackboneWithChildren
 	
 	// =========================================================================
 	
-	private final void setFirstChild(Backbone firstChild)
+	protected void setFirstChild(Backbone firstChild)
 	{
 		this.firstChild = firstChild;
 	}
@@ -51,7 +59,7 @@ public abstract class BackboneWithChildren
 		return firstChild;
 	}
 	
-	private final void setLastChild(Backbone lastChild)
+	protected void setLastChild(Backbone lastChild)
 	{
 		this.lastChild = lastChild;
 	}
@@ -170,7 +178,7 @@ public abstract class BackboneWithChildren
 	// =========================================================================
 	
 	@Override
-	public final Wom3Node insertBefore(Node child_, Node before_)
+	public Wom3Node insertBefore(Node child_, Node before_)
 			throws DOMException
 	{
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
@@ -186,7 +194,7 @@ public abstract class BackboneWithChildren
 	}
 	
 	@Override
-	public final Wom3Node replaceChild(Node newChild_, Node oldChild_) throws DOMException
+	public Wom3Node replaceChild(Node newChild_, Node oldChild_) throws DOMException
 	{
 		Backbone newChild = Toolbox.expectType(Backbone.class, newChild_);
 		if (((Backbone) newChild).isContentWhitespace() && ignoresContentWhitespace())
@@ -203,7 +211,7 @@ public abstract class BackboneWithChildren
 	}
 	
 	@Override
-	public final Wom3Node removeChild(Node child_) throws DOMException
+	public Wom3Node removeChild(Node child_) throws DOMException
 	{
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
 		Backbone prev = removeChildIntern(child, true);
@@ -214,7 +222,7 @@ public abstract class BackboneWithChildren
 	}
 	
 	@Override
-	public final Wom3Node appendChild(Node child_) throws DOMException
+	public Wom3Node appendChild(Node child_) throws DOMException
 	{
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
 		if (((Backbone) child).isContentWhitespace() && ignoresContentWhitespace())
@@ -242,8 +250,8 @@ public abstract class BackboneWithChildren
 	{
 		BackboneWithChildren newNode = (BackboneWithChildren) super.cloneNode(deep);
 		
-		newNode.firstChild = null;
-		newNode.lastChild = null;
+		newNode.setFirstChild(null);
+		newNode.setLastChild(null);
 		
 		// Do a deep clone
 		if (deep)
@@ -439,7 +447,7 @@ public abstract class BackboneWithChildren
 	 * 
 	 * Checks assertWritable();
 	 */
-	protected final void clearChildren()
+	protected void clearChildren()
 	{
 		assertWritable();
 		

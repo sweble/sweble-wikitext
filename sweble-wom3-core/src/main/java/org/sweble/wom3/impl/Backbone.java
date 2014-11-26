@@ -563,7 +563,7 @@ public abstract class Backbone
 	/**
 	 * Override in text nodes which can potentially be content whitespace only.
 	 */
-	protected boolean isContentWhitespace()
+	public boolean isContentWhitespace()
 	{
 		// TODO: replace with isElementContentWhitespace()!
 		return false;
@@ -642,12 +642,12 @@ public abstract class Backbone
 		return parent;
 	}
 	
-	protected final boolean isLinked()
+	protected boolean isLinked()
 	{
 		return parent != null;
 	}
 	
-	protected final void unlink()
+	protected void unlink()
 	{
 		parent = null;
 		
@@ -660,7 +660,7 @@ public abstract class Backbone
 		nextSibling = null;
 	}
 	
-	protected final void link(
+	protected void link(
 			Backbone parent,
 			Backbone prevSibling,
 			Backbone nextSibling)
