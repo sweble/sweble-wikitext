@@ -154,7 +154,6 @@ public class DocumentImpl
 	@Override
 	public AttributeImpl createAttribute(String name) throws DOMException
 	{
-		assertWritable();
 		return new AttributeImpl(this, name);
 	}
 	
@@ -163,21 +162,18 @@ public class DocumentImpl
 			String namespaceURI,
 			String qualifiedName) throws DOMException
 	{
-		assertWritable();
 		return new AttributeNsImpl(this, namespaceURI, qualifiedName);
 	}
 	
 	@Override
 	public XmlCommentImpl createComment(String data)
 	{
-		assertWritable();
 		return new XmlCommentImpl(this, data);
 	}
 	
 	@Override
 	public Wom3ElementNode createElement(String tagName) throws DOMException
 	{
-		assertWritable();
 		return impl.createElement(this, tagName);
 	}
 	
@@ -186,35 +182,30 @@ public class DocumentImpl
 			String namespaceURI,
 			String qualifiedName) throws DOMException
 	{
-		assertWritable();
 		return impl.createElement(this, namespaceURI, qualifiedName);
 	}
 	
 	@Override
 	public XmlTextImpl createTextNode(String data)
 	{
-		assertWritable();
 		return new XmlTextImpl(this, data);
 	}
 	
 	@Override
 	public CDATASection createCDATASection(String data) throws DOMException
 	{
-		assertWritable();
 		return new CdataSection(this, data);
 	}
 	
 	@Override
 	public Wom3DocumentFragment createDocumentFragment()
 	{
-		assertWritable();
 		return new DocumentFragmentImpl(this);
 	}
 	
 	@Override
 	public EntityReference createEntityReference(String name) throws DOMException
 	{
-		assertWritable();
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
@@ -224,7 +215,6 @@ public class DocumentImpl
 			String target,
 			String data) throws DOMException
 	{
-		assertWritable();
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
@@ -235,7 +225,7 @@ public class DocumentImpl
 	@Override
 	public Wom3Node adoptNode(Node source) throws DOMException
 	{
-		assertWritable();
+		// Only the adopted node's document has to be writable
 		Toolbox.expectType(Backbone.class, source).assertWritable();
 		
 		if (!isSameNode(source.getOwnerDocument()))
