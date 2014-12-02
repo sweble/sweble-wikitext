@@ -42,7 +42,6 @@ import org.sweble.engine.serialization.CompressorFactory.CompressionFormat;
 import org.sweble.wom3.Wom3Document;
 import org.sweble.wom3.Wom3DocumentFragment;
 import org.sweble.wom3.Wom3Node;
-import org.sweble.wom3.impl.Backbone;
 import org.sweble.wom3.serialization.Wom3NodeCompactJsonTypeAdapter;
 import org.sweble.wom3.serialization.Wom3NodeJsonTypeAdapter;
 import org.w3c.dom.Node;
@@ -169,7 +168,7 @@ public class WomSerializer
 				Wom3DocumentFragment fragment = (Wom3DocumentFragment)
 						gson.fromJson(new String(serialized, CHARSET), Wom3Node.class);
 				result = fragment.getOwnerDocument();
-				Backbone root = fragment.getFirstChild();
+				Wom3Node root = fragment.getFirstChild();
 				fragment.removeChild(root);
 				result.replaceChild(root, result.getFirstChild());
 				break;
