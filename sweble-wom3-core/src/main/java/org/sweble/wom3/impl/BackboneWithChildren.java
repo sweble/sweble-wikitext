@@ -17,7 +17,11 @@
  */
 package org.sweble.wom3.impl;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.sweble.wom3.Wom3Node;
+import org.sweble.wom3.impl.AttributeDescriptor.Normalization;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 
@@ -646,6 +650,52 @@ public abstract class BackboneWithChildren
 			int flags)
 	{
 		return new ChildDescriptor(namespaceUri, tag, flags);
+	}
+	
+	protected static Map<String, AttributeDescriptor> attrDescMap(
+			RuntimeAttributeDescriptor... descriptors)
+	{
+		HashMap<String, AttributeDescriptor> map = new HashMap<String, AttributeDescriptor>();
+		for (RuntimeAttributeDescriptor desc : descriptors)
+			map.put(desc.getName(), desc);
+		return map;
+	}
+	
+	protected static RuntimeAttributeDescriptor attrDesc(String name)
+	{
+		return attrDesc(
+				name,
+				Normalization.NONE);
+	}
+	
+	protected static RuntimeAttributeDescriptor attrDesc(
+			String name,
+			Normalization normalization)
+	{
+		return attrDesc(
+				name,
+				true,
+				false,
+				null,
+				null,
+				normalization);
+	}
+	
+	protected static RuntimeAttributeDescriptor attrDesc(
+			String name,
+			boolean removable,
+			boolean readOnly,
+			AttributeVerificationAndConverion verifyAndConvert,
+			AttributeCustomAction customAction,
+			Normalization normalization)
+	{
+		return new RuntimeAttributeDescriptor(
+				name,
+				removable,
+				readOnly,
+				verifyAndConvert,
+				customAction,
+				normalization);
 	}
 	
 	// =========================================================================

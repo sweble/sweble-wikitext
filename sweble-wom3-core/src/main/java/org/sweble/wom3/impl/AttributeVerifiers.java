@@ -29,9 +29,8 @@ import org.sweble.wom3.Wom3TableRules;
 import org.sweble.wom3.Wom3TableVAlign;
 import org.sweble.wom3.Wom3ValueWithUnit;
 
-public enum AttributeVerifiers
+public enum AttributeVerifiers implements AttributeVerificationAndConverion
 {
-	
 	ID
 	{
 		@Override
@@ -404,10 +403,6 @@ public enum AttributeVerifiers
 	};
 	
 	// =========================================================================
-	
-	public abstract boolean verifyAndConvert(
-			Backbone parent,
-			NativeAndStringValuePair verified);
 	
 	public static boolean verifyAndConvertBool(
 			Backbone parent,

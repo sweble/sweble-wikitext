@@ -498,6 +498,18 @@ public abstract class BackboneElement
 	 * require conversion to string.
 	 */
 	protected final <T> T setAttributeDirect(
+			String name,
+			T value)
+	{
+		AttributeDescriptor descriptor = getAttributeDescriptorOrFail(name);
+		return setAttributeDirect(descriptor, name, value);
+	}
+	
+	/**
+	 * For use by direct setters which have access to the native value and thus
+	 * require conversion to string.
+	 */
+	protected final <T> T setAttributeDirect(
 			AttributeDescriptor descriptor,
 			String name,
 			T value)

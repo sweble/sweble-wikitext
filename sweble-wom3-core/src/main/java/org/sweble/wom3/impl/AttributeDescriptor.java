@@ -20,6 +20,9 @@ package org.sweble.wom3.impl;
 import org.sweble.wom3.Wom3Node;
 
 public abstract class AttributeDescriptor
+		implements
+			AttributeVerificationAndConverion,
+			AttributeCustomAction
 {
 	public static final int REMOVABLE = 0x01;
 	
@@ -49,6 +52,7 @@ public abstract class AttributeDescriptor
 	 * @return {@code true} when the attribute should be kept, {@code false} if
 	 *         the attributes should be removed.
 	 */
+	@Override
 	public boolean verifyAndConvert(
 			Backbone parent,
 			NativeAndStringValuePair verified)
@@ -79,6 +83,7 @@ public abstract class AttributeDescriptor
 	 *            The new attribute node or <code>null</code> if the old
 	 *            attribute was removed.
 	 */
+	@Override
 	public void customAction(
 			Wom3Node parent,
 			AttributeBase oldAttr,
