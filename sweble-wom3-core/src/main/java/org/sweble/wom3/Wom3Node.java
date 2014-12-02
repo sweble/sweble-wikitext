@@ -21,7 +21,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 
-import org.sweble.wom3.impl.Backbone;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -210,7 +209,7 @@ public interface Wom3Node
 	 * @since WOM Version 3
 	 */
 	@Override
-	public Backbone getFirstChild();
+	public Wom3Node getFirstChild();
 	
 	/**
 	 * The last child of this node. If there is no such node, this returns null.
@@ -219,7 +218,7 @@ public interface Wom3Node
 	 * @since WOM Version 3
 	 */
 	@Override
-	public Backbone getLastChild();
+	public Wom3Node getLastChild();
 	
 	/**
 	 * The node immediately following this node. If there is no such node, this
@@ -229,7 +228,7 @@ public interface Wom3Node
 	 * @since WOM Version 3
 	 */
 	@Override
-	public Backbone getPreviousSibling();
+	public Wom3Node getPreviousSibling();
 	
 	/**
 	 * The node immediately preceding this node. If there is no such node, this
@@ -239,7 +238,7 @@ public interface Wom3Node
 	 * @since WOM Version 3
 	 */
 	@Override
-	public Backbone getNextSibling();
+	public Wom3Node getNextSibling();
 	
 	/**
 	 * A NodeList that contains all children of this node. If there are no

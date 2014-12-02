@@ -114,13 +114,13 @@ public abstract class Backbone
 	}
 	
 	@Override
-	public final Backbone getPreviousSibling()
+	public Backbone getPreviousSibling()
 	{
 		return prevSibling;
 	}
 	
 	@Override
-	public final Backbone getNextSibling()
+	public Backbone getNextSibling()
 	{
 		return nextSibling;
 	}
