@@ -637,14 +637,14 @@ public abstract class Backbone
 	
 	// =========================================================================
 	
-	protected final Backbone getParentNodeIntern()
+	protected Backbone getParentNodeIntern()
 	{
 		return parent;
 	}
 	
 	protected boolean isLinked()
 	{
-		return parent != null;
+		return getParentNodeIntern() != null;
 	}
 	
 	protected void unlink()
