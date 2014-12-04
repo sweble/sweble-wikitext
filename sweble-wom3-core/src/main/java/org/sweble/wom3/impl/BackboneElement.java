@@ -277,7 +277,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNode(name);
-			removeAttributeIfExists(descriptor, old);
+			removeAttribute(descriptor, name, old);
 		}
 	}
 	
@@ -288,8 +288,11 @@ public abstract class BackboneElement
 	{
 		assertWritable();
 		
-		AttributeBase newAttr = createAttribute(name, verified);
 		AttributeBase oldAttr = getAttributeNode(name);
+		if ((oldAttr != null) && descriptor.isReadOnly())
+			throw new UnsupportedOperationException("Read-only attribute is '" + name + "' is already set!");
+		
+		AttributeBase newAttr = createAttribute(name, verified);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
 		return oldAttr;
 	}
@@ -340,7 +343,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNodeNS(namespaceUri, localName);
-			removeAttributeIfExists(descriptor, old);
+			removeAttribute(descriptor, localName, old);
 		}
 	}
 	
@@ -353,8 +356,11 @@ public abstract class BackboneElement
 	{
 		assertWritable();
 		
-		AttributeBase newAttr = createAttributeNS(namespaceUri, qualifiedName, verified);
 		AttributeBase oldAttr = getAttributeNodeNS(namespaceUri, localName);
+		if ((oldAttr != null) && descriptor.isReadOnly())
+			throw new UnsupportedOperationException("Read-only attribute is '" + qualifiedName + "' is already set!");
+		
+		AttributeBase newAttr = createAttributeNS(namespaceUri, qualifiedName, verified);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
 		return oldAttr;
 	}
@@ -392,7 +398,8 @@ public abstract class BackboneElement
 				|| ((attr.getPrefix() != null) && (!attr.getPrefix().isEmpty())))
 			return setAttributeNodeNS(attr_);
 		
-		AttributeDescriptor descriptor = getAttributeDescriptorOrFail(attr.getName());
+		String attrName = attr.getName();
+		AttributeDescriptor descriptor = getAttributeDescriptorOrFail(attrName);
 		
 		/* An attribute cannot verify its name/value when it is not attached to 
 		 * a node. Therefore we have to verify it when it gets attached to this 
@@ -407,8 +414,8 @@ public abstract class BackboneElement
 		else
 		{
 			// remove attribute
-			AttributeBase old = getAttributeNode(attr.getName());
-			removeAttributeIfExists(descriptor, old);
+			AttributeBase old = getAttributeNode(attrName);
+			removeAttribute(descriptor, attrName, old);
 			return old;
 		}
 	}
@@ -418,20 +425,9 @@ public abstract class BackboneElement
 			Wom3Attribute attr,
 			NativeAndStringValuePair verified)
 	{
-		AttributeBase newAttr =
-				Toolbox.expectType(AttributeBase.class, attr, "attr");
-		
-		assertWritable(newAttr, descriptor);
-		// Is expected to assertWritable() on doc
-		newAttr.setValue(verified.value, verified.strValue);
-		
-		if (newAttr.isLinked())
-			throw new IllegalStateException(
-					"Given attribute `attr' is still attribute of another WOM node.");
-		
-		AttributeBase oldAttr = getAttributeNode(attr.getName());
-		replaceAttributeInternal(descriptor, oldAttr, newAttr);
-		return oldAttr;
+		String attrName = attr.getName();
+		AttributeBase oldAttr = getAttributeNode(attrName);
+		return setAttribute(descriptor, attrName, attr, verified, oldAttr);
 	}
 	
 	@Override
@@ -465,7 +461,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNodeNS(namespaceUri, localName);
-			removeAttributeIfExists(descriptor, old);
+			removeAttribute(descriptor, localName, old);
 			return old;
 		}
 	}
@@ -475,6 +471,21 @@ public abstract class BackboneElement
 			Wom3Attribute attr,
 			NativeAndStringValuePair verified)
 	{
+		String attrLocalName = attr.getLocalName();
+		AttributeBase oldAttr = getAttributeNodeNS(attr.getNamespaceURI(), attrLocalName);
+		return setAttribute(descriptor, attrLocalName, attr, verified, oldAttr);
+	}
+	
+	private AttributeBase setAttribute(
+			AttributeDescriptor descriptor,
+			String attrName,
+			Wom3Attribute attr,
+			NativeAndStringValuePair verified,
+			AttributeBase oldAttr)
+	{
+		if ((oldAttr != null) && descriptor.isReadOnly())
+			throw new UnsupportedOperationException("Read-only attribute is '" + attrName + "' is already set!");
+		
 		AttributeBase newAttr =
 				Toolbox.expectType(AttributeBase.class, attr, "attr");
 		
@@ -486,7 +497,6 @@ public abstract class BackboneElement
 			throw new IllegalStateException(
 					"Given attribute `attr' is still attribute of another WOM node.");
 		
-		AttributeBase oldAttr = getAttributeNodeNS(attr.getNamespaceURI(), attr.getLocalName());
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
 		return oldAttr;
 	}
@@ -526,7 +536,7 @@ public abstract class BackboneElement
 		{
 			// remove attribute
 			old = getAttributeNode(name);
-			removeAttributeIfExists(descriptor, old);
+			removeAttribute(descriptor, name, old);
 		}
 		if (old == null)
 			return null;
@@ -619,11 +629,9 @@ public abstract class BackboneElement
 		if (name == null)
 			throw new IllegalArgumentException("Argument `name' is null.");
 		
+		AttributeDescriptor descriptor = getAttributeDescriptorOrFail(name);
 		AttributeBase remove = getAttributeNode(name);
-		if (remove == null)
-			return;
-		
-		removeAttribute(getAttributeDescriptorOrFail(name), remove);
+		removeAttribute(descriptor, name, remove);
 	}
 	
 	@Override
@@ -632,11 +640,9 @@ public abstract class BackboneElement
 		if (localName == null)
 			throw new IllegalArgumentException("Argument `localName' is null.");
 		
+		AttributeDescriptor descriptor = getAttributeDescriptorOrFail(namespaceUri, localName, localName);
 		AttributeBase remove = getAttributeNodeNS(namespaceUri, localName);
-		if (remove == null)
-			return;
-		
-		removeAttribute(getAttributeDescriptorOrFail(namespaceUri, localName, remove.getName()), remove);
+		removeAttribute(descriptor, localName, remove);
 	}
 	
 	@Override
@@ -650,37 +656,37 @@ public abstract class BackboneElement
 		if (attr.getOwnerElement() != this)
 			throw new IllegalArgumentException("Given attribute `attr' is not an attribute of this XML element.");
 		
-		removeAttribute(getAttributeDescriptorOrFail(attr.getName()), (AttributeBase) attr);
+		String attrName = attr.getName();
+		removeAttribute(getAttributeDescriptorOrFail(attrName), attrName, (AttributeBase) attr);
 		
 		return attr;
 	}
 	
-	private void removeAttributeIfExists(
-			AttributeDescriptor descriptor,
-			AttributeBase old)
-	{
-		if (old != null)
-			removeAttribute(descriptor, old);
-		else
-			assertWritable();
-	}
-	
 	private final void removeAttribute(
 			AttributeDescriptor descriptor,
+			String name,
 			AttributeBase attribute)
 	{
 		assertWritable();
-		checkAttributeRemoval(attribute.getName(), descriptor);
 		
-		Backbone parent = (Backbone) attribute.getOwnerElement();
-		
-		// remove from WOM
-		if (attribute == getFirstAttr())
-			setFirstAttr((AttributeBase) attribute.getNextSibling());
-		attribute.unlink();
-		
-		if ((descriptor != null) && (descriptor.hasCustomAction()))
-			descriptor.customAction(parent, attribute, null);
+		if (attribute != null)
+		{
+			checkAttributeRemoval(name, descriptor);
+			
+			Backbone parent = (Backbone) attribute.getOwnerElement();
+			
+			// remove from WOM
+			if (attribute == getFirstAttr())
+				setFirstAttr((AttributeBase) attribute.getNextSibling());
+			attribute.unlink();
+			
+			if ((descriptor != null) && (descriptor.hasCustomAction()))
+				descriptor.customAction(parent, attribute, null);
+		}
+		else
+		{
+			checkAttributeRemoval(name, descriptor);
+		}
 	}
 	
 	protected final void checkAttributeRemoval(
@@ -689,6 +695,9 @@ public abstract class BackboneElement
 	{
 		if (getOwnerDocument().getStrictErrorChecking())
 		{
+			if (descriptor.isReadOnly())
+				throw new UnsupportedOperationException("Read-only attribute is '" + name + "' is already set!");
+			
 			if (!descriptor.isRemovable())
 				throw new UnsupportedOperationException(
 						"Attribute `" + name + "' cannot be removed");
