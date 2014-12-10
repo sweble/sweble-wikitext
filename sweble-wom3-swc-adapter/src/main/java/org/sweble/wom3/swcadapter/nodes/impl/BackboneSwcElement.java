@@ -46,12 +46,12 @@ public abstract class BackboneSwcElement
 		return SwcNode.MWW_NS_URI;
 	}
 	
-	protected static ChildDescriptor childDesc(String tag)
+	public static ChildDescriptor childDesc(String tag)
 	{
 		return childDesc(SwcNode.MWW_NS_URI, tag, 0);
 	}
 	
-	protected static ChildDescriptor childDesc(String tag, int flags)
+	public static ChildDescriptor childDesc(String tag, int flags)
 	{
 		return childDesc(SwcNode.MWW_NS_URI, tag, flags);
 	}

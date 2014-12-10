@@ -629,22 +629,24 @@ public abstract class BackboneWithChildren
 			new BackboneChildOperationChecker(this).checkReplacement(oldChild, newChild, desc);
 	}
 	
-	protected static ChildDescriptor childDesc(String tag)
+	// =========================================================================
+	
+	public static ChildDescriptor childDesc(String tag)
 	{
 		return childDesc(WOM_NS_URI, tag, 0);
 	}
 	
-	protected static ChildDescriptor childDesc(String namespaceUri, String tag)
+	public static ChildDescriptor childDesc(String namespaceUri, String tag)
 	{
 		return new ChildDescriptor(namespaceUri, tag, 0);
 	}
 	
-	protected static ChildDescriptor childDesc(String tag, int flags)
+	public static ChildDescriptor childDesc(String tag, int flags)
 	{
 		return childDesc(WOM_NS_URI, tag, flags);
 	}
 	
-	protected static ChildDescriptor childDesc(
+	public static ChildDescriptor childDesc(
 			String namespaceUri,
 			String tag,
 			int flags)
@@ -652,7 +654,7 @@ public abstract class BackboneWithChildren
 		return new ChildDescriptor(namespaceUri, tag, flags);
 	}
 	
-	protected static Map<String, AttributeDescriptor> attrDescMap(
+	public static Map<String, AttributeDescriptor> attrDescMap(
 			RuntimeAttributeDescriptor... descriptors)
 	{
 		HashMap<String, AttributeDescriptor> map = new HashMap<String, AttributeDescriptor>();
@@ -661,14 +663,14 @@ public abstract class BackboneWithChildren
 		return map;
 	}
 	
-	protected static RuntimeAttributeDescriptor attrDesc(String name)
+	public static RuntimeAttributeDescriptor attrDesc(String name)
 	{
 		return attrDesc(
 				name,
 				Normalization.NONE);
 	}
 	
-	protected static RuntimeAttributeDescriptor attrDesc(
+	public static RuntimeAttributeDescriptor attrDesc(
 			String name,
 			Normalization normalization)
 	{
@@ -681,7 +683,7 @@ public abstract class BackboneWithChildren
 				normalization);
 	}
 	
-	protected static RuntimeAttributeDescriptor attrDesc(
+	public static RuntimeAttributeDescriptor attrDesc(
 			String name,
 			boolean removable,
 			boolean readOnly,
