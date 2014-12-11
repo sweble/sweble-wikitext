@@ -286,11 +286,10 @@ public abstract class BackboneElement
 			String name,
 			NativeAndStringValuePair verified)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		AttributeBase oldAttr = getAttributeNode(name);
-		if ((oldAttr != null) && descriptor.isReadOnly())
-			throw new UnsupportedOperationException("Read-only attribute is '" + name + "' is already set!");
+		assertWritable(oldAttr, descriptor);
 		
 		AttributeBase newAttr = createAttribute(name, verified);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
@@ -354,11 +353,10 @@ public abstract class BackboneElement
 			String qualifiedName,
 			NativeAndStringValuePair verified)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		AttributeBase oldAttr = getAttributeNodeNS(namespaceUri, localName);
-		if ((oldAttr != null) && descriptor.isReadOnly())
-			throw new UnsupportedOperationException("Read-only attribute is '" + qualifiedName + "' is already set!");
+		assertWritable(oldAttr, descriptor);
 		
 		AttributeBase newAttr = createAttributeNS(namespaceUri, qualifiedName, verified);
 		replaceAttributeInternal(descriptor, oldAttr, newAttr);
@@ -425,6 +423,8 @@ public abstract class BackboneElement
 			Wom3Attribute attr,
 			NativeAndStringValuePair verified)
 	{
+		assertWritableOnDocument();
+		
 		String attrName = attr.getName();
 		AttributeBase oldAttr = getAttributeNode(attrName);
 		return setAttribute(descriptor, attrName, attr, verified, oldAttr);
@@ -471,6 +471,8 @@ public abstract class BackboneElement
 			Wom3Attribute attr,
 			NativeAndStringValuePair verified)
 	{
+		assertWritableOnDocument();
+		
 		String attrLocalName = attr.getLocalName();
 		AttributeBase oldAttr = getAttributeNodeNS(attr.getNamespaceURI(), attrLocalName);
 		return setAttribute(descriptor, attrLocalName, attr, verified, oldAttr);
@@ -483,13 +485,11 @@ public abstract class BackboneElement
 			NativeAndStringValuePair verified,
 			AttributeBase oldAttr)
 	{
-		if ((oldAttr != null) && descriptor.isReadOnly())
-			throw new UnsupportedOperationException("Read-only attribute is '" + attrName + "' is already set!");
+		assertWritable(oldAttr, descriptor);
 		
 		AttributeBase newAttr =
 				Toolbox.expectType(AttributeBase.class, attr, "attr");
 		
-		assertWritable(newAttr, descriptor);
 		// Is expected to assertWritable() on doc
 		newAttr.setValue(verified.value, verified.strValue);
 		
@@ -591,7 +591,7 @@ public abstract class BackboneElement
 	@Override
 	public void setIdAttribute(String name, boolean isId) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		// TODO: Implement
 		if (isId)
@@ -604,7 +604,7 @@ public abstract class BackboneElement
 			String localName,
 			boolean isId) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		// TODO: Implement
 		if (isId)
@@ -614,7 +614,7 @@ public abstract class BackboneElement
 	@Override
 	public void setIdAttributeNode(Attr idAttr, boolean isId) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		// TODO: Implement
 		if (isId)
@@ -667,7 +667,7 @@ public abstract class BackboneElement
 			String name,
 			AttributeBase attribute)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		if (attribute != null)
 		{

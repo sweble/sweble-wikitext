@@ -74,7 +74,7 @@ public class ElementNsImpl
 	@Override
 	public void setPrefix(String prefix) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
@@ -96,7 +96,7 @@ public class ElementNsImpl
 	
 	protected void setPrefixAndLocalName(String qualifiedName)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		String prefix = null;
 		String localName = null;

@@ -68,7 +68,7 @@ public class CdataSection
 	@Override
 	public void setData(String data)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		this.data = data;
 	}
 }

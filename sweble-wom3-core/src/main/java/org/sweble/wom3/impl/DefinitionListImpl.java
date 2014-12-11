@@ -95,7 +95,7 @@ public class DefinitionListImpl
 			int index,
 			Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		Wom3DefinitionListTerm old = getTerm(index);
 		terms.set(index, term);
@@ -108,7 +108,7 @@ public class DefinitionListImpl
 	@Override
 	public Wom3DefinitionListTerm removeTerm(int index) throws IndexOutOfBoundsException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		Wom3DefinitionListTerm old = terms.remove(index);
 		removeChildNoNotify(old);
@@ -119,7 +119,7 @@ public class DefinitionListImpl
 	@Override
 	public void appendTerm(Wom3DefinitionListTerm term)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		terms.add(term);
 		appendChildNoNotify(term);
@@ -129,7 +129,7 @@ public class DefinitionListImpl
 	@Override
 	public void insertTerm(int beforeIndex, Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		if (beforeIndex < 0 || beforeIndex > terms.size())
 			throw new IndexOutOfBoundsException();

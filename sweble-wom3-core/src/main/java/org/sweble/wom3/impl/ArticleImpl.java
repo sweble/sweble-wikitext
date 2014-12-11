@@ -204,7 +204,7 @@ public class ArticleImpl
 	@Override
 	public Wom3Category removeCategory(String name) throws NullPointerException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		if (name == null)
 			throw new NullPointerException();
@@ -224,7 +224,7 @@ public class ArticleImpl
 	@Override
 	public Wom3Category addCategory(String name) throws NullPointerException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		ListIterator<CategoryImpl> i = categories.listIterator();
 		while (i.hasNext())

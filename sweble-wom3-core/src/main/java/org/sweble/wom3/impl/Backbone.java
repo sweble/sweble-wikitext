@@ -79,7 +79,7 @@ public abstract class Backbone
 		// Doing nothing is the sensible default
 		
 		// Unless we are in read-only mode...
-		assertWritable();
+		assertWritableOnDocument();
 	}
 	
 	@Override
@@ -157,7 +157,7 @@ public abstract class Backbone
 		// Do nothing since it's defined to be null for all types of nodes.
 		
 		// Unless we are in read-only mode...
-		assertWritable();
+		assertWritableOnDocument();
 	}
 	
 	@Override
@@ -457,7 +457,7 @@ public abstract class Backbone
 	@Override
 	public Object setUserData(String key, Object data, UserDataHandler handler)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		Object oldValue;
 		if (data == null)
@@ -571,7 +571,7 @@ public abstract class Backbone
 	
 	// =========================================================================
 	
-	protected void assertWritable()
+	protected void assertWritableOnDocument()
 	{
 		Wom3Document ownerDocument = getOwnerDocument();
 		if (ownerDocument == null)
@@ -586,10 +586,10 @@ public abstract class Backbone
 			AttributeDescriptor descriptor)
 	{
 		// An uninitialized attribute value may be written once, even if read-only
-		if ((attributeBase != null) && (attributeBase.getValue() != null))
+		if ((attributeBase != null) /*&& (attributeBase.getValue() != null)*/)
 		{
 			if (descriptor.isReadOnly())
-				throw new DOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR, "This attribute is read-only!");
+				throw new DOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR, "The attribute '" + attributeBase.getName() + "' is read-only!");
 		}
 	}
 	

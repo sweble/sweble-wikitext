@@ -59,7 +59,7 @@ public class AttributeImpl
 	
 	protected void setValue(Object value, String strValue)
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		
 		this.value = (value != null) ? value : strValue;
 		this.strValue = (strValue != null) ? strValue : (String) value;

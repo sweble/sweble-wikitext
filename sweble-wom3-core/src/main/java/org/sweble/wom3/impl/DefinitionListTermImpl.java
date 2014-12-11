@@ -83,7 +83,7 @@ public class DefinitionListTermImpl
 		}
 		else
 		{
-			assertWritable();
+			assertWritableOnDocument();
 			return defs.set(index, def);
 		}
 	}
@@ -101,7 +101,7 @@ public class DefinitionListTermImpl
 		}
 		else
 		{
-			assertWritable();
+			assertWritableOnDocument();
 			return defs.remove(index);
 		}
 	}
@@ -136,7 +136,7 @@ public class DefinitionListTermImpl
 		}
 		else
 		{
-			assertWritable();
+			assertWritableOnDocument();
 			defs.add(def);
 		}
 	}
@@ -163,7 +163,7 @@ public class DefinitionListTermImpl
 		}
 		else
 		{
-			assertWritable();
+			assertWritableOnDocument();
 			defs.add(beforeIndex, def);
 		}
 	}

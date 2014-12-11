@@ -153,6 +153,17 @@ public class BackboneAttributeTest
 				"set",
 				"getAttributeDescriptor",
 				"verifyAndConvert",
+				"set",
+				"customAction"), events);
+		
+		events.clear();
+		a = new AttribImpl("name", "value2");
+		e.setAttributeNode(a);
+		assertEquals(Arrays.asList(
+				"setValue",
+				"set",
+				"getAttributeDescriptor",
+				"verifyAndConvert",
 				"isReadOnly",
 				"set",
 				"customAction"), events);

@@ -226,7 +226,7 @@ public class DocumentImpl
 	public Wom3Node adoptNode(Node source) throws DOMException
 	{
 		// Only the adopted node's document has to be writable
-		Toolbox.expectType(Backbone.class, source).assertWritable();
+		Toolbox.expectType(Backbone.class, source).assertWritableOnDocument();
 		
 		if (!isSameNode(source.getOwnerDocument()))
 			adoptRecursively(source);
@@ -289,7 +289,7 @@ public class DocumentImpl
 	@Override
 	public Node importNode(Node importedNode, boolean deep) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
@@ -342,14 +342,14 @@ public class DocumentImpl
 	@Override
 	public void setXmlStandalone(boolean xmlStandalone) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
 	public void setXmlVersion(String xmlVersion) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		throw new UnsupportedOperationException();
 	}
 	
@@ -381,7 +381,7 @@ public class DocumentImpl
 	@Override
 	public void normalizeDocument()
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
@@ -392,7 +392,7 @@ public class DocumentImpl
 	@Override
 	public Node renameNode(Node n, String namespaceURI, String qualifiedName) throws DOMException
 	{
-		assertWritable();
+		assertWritableOnDocument();
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}

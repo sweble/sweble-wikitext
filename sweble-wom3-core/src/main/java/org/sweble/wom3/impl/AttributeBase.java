@@ -214,7 +214,7 @@ public abstract class AttributeBase
 			AttributeDescriptor newDescriptor)
 	{
 		// Assert writable before performing a custom action.
-		assertWritable();
+		assertWritableOnDocument();
 		
 		if (oldDescriptor != newDescriptor)
 		{
@@ -250,7 +250,7 @@ public abstract class AttributeBase
 	// =========================================================================
 	
 	/**
-	 * Is expected to check {@link #assertWritable()}
+	 * Is expected to check {@link #assertWritableOnDocument()}
 	 */
 	protected abstract void setValue(Object value, String strValue);
 	
