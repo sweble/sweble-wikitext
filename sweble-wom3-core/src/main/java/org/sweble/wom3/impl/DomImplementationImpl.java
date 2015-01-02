@@ -203,7 +203,7 @@ public class DomImplementationImpl
 	
 	// =========================================================================
 	
-	public Class<? extends Wom3ElementNode> addNodeImpl(
+	public Class<? extends Wom3ElementNode> addNodeImplementation(
 			String namespaceUri,
 			String localPart,
 			Class<? extends Wom3ElementNode> clazz)
@@ -318,7 +318,7 @@ public class DomImplementationImpl
 	
 	// =========================================================================
 	
-	protected static final class ElemTypeId
+	public static final class ElemTypeId
 	{
 		public final String namespaceUri;
 		
