@@ -942,4 +942,11 @@ public class WikiConfigImpl
 		setDefaultNamespace(getNamespace(namespaces.defaultNsId));
 		setTemplateNamespace(getNamespace(namespaces.templateNsId));
 	}
+
+	//By Manuel
+	@Override
+	public boolean isScriptingEnabled() {
+		//FIXME
+		return true;
+	}
 }
