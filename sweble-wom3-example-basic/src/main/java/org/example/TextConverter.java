@@ -98,7 +98,7 @@ public class TextConverter
 	}
 	
 	@Override
-	protected boolean before(Wom3Node node)
+	protected Wom3Node before(Wom3Node node)
 	{
 		// This method is called by go() before visitation starts
 		sb = new StringBuilder();
