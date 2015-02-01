@@ -67,7 +67,7 @@ public class PreprocessorToParserTransformer
 		// =====================================================================
 		
 		@Override
-		protected boolean before(WtNode node)
+		protected WtNode before(WtNode node)
 		{
 			builder = new StringBuilder();
 			return super.before(node);

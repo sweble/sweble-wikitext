@@ -44,7 +44,8 @@ public class BuiltInTagExtensions
 		addTagExtension(new TagExtensionPre(wikiConfig));
 		addTagExtension(new TagExtensionNowiki(wikiConfig));
 		if (wikiConfig.isScriptingEnabled()) {
-			addTagExtension(new TagExtensionScripting(wikiConfig));
+			addTagExtension(new TagExtensionScript(wikiConfig));
+			addTagExtension(new TagExtensionExternalScript(wikiConfig));
 		}
 	}
 	
@@ -137,7 +138,7 @@ public class BuiltInTagExtensions
 	// =========================================================================
 	// by Manuel
 	
-	public static final class TagExtensionScripting
+	public static final class TagExtensionScript
 			extends
 				TagExtensionBase
 	{
@@ -146,14 +147,49 @@ public class BuiltInTagExtensions
 		/**
 		 * For un-marshaling only.
 		 */
-		public TagExtensionScripting()
+		public TagExtensionScript()
 		{
 			super("script");
 		}
 		
-		public TagExtensionScripting(WikiConfig wikiConfig)
+		public TagExtensionScript(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "script");
+		}
+		
+		@Override
+		public WtNode invoke(
+				ExpansionFrame frame,
+				WtTagExtension tagExt,
+				Map<String, WtNodeList> attrs,
+				WtTagExtensionBody body)
+		{
+			WtXmlElement script = nf().elem(
+					"script",
+					tagExt.getXmlAttributes(),
+					nf().body(nf().list(nf().text(body.getContent()))));
+			script.setRtd(tagExt.getRtd());
+			return script;
+		}
+	}
+	
+	public static final class TagExtensionExternalScript
+			extends
+				TagExtensionBase
+	{
+		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * For un-marshaling only.
+		 */
+		public TagExtensionExternalScript()
+		{
+			super("external-script");
+		}
+		
+		public TagExtensionExternalScript(WikiConfig wikiConfig)
+		{
+			super(wikiConfig, "external-script");
 		}
 		
 		@Override

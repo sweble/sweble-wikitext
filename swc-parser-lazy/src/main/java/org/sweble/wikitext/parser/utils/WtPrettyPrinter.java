@@ -916,7 +916,7 @@ public class WtPrettyPrinter
 	// =========================================================================
 	
 	@Override
-	protected boolean before(WtNode node)
+	protected WtNode before(WtNode node)
 	{
 		p.eatNewlinesAndIndents(2);
 		return super.before(node);
