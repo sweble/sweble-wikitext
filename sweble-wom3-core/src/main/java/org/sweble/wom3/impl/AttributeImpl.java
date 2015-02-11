@@ -57,9 +57,10 @@ public class AttributeImpl
 		return strValue;
 	}
 	
-	protected void setValue(Object value, String strValue)
+	protected void setValue(Object value, String strValue, boolean cloning)
 	{
-		assertWritableOnDocument();
+		if (!cloning)
+			assertWritableOnDocument();
 		
 		this.value = (value != null) ? value : strValue;
 		this.strValue = (strValue != null) ? strValue : (String) value;

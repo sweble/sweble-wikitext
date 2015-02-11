@@ -252,7 +252,10 @@ public abstract class AttributeBase
 	/**
 	 * Is expected to check {@link #assertWritableOnDocument()}
 	 */
-	protected abstract void setValue(Object value, String strValue);
+	protected abstract void setValue(
+			Object value,
+			String strValue,
+			boolean cloning);
 	
 	private void validateValueChangeWithParentAndSet(String value)
 	{
@@ -261,7 +264,7 @@ public abstract class AttributeBase
 		
 		if (parent == null)
 		{
-			setValue(value, value);
+			setValue(value, value, false /* cloning */);
 		}
 		else
 		{
@@ -275,7 +278,7 @@ public abstract class AttributeBase
 			{
 				assertWritable(this, descriptor);
 				
-				setValue(verified.value, verified.strValue);
+				setValue(verified.value, verified.strValue, false /* cloning */);
 				
 				if (descriptor.hasCustomAction())
 					descriptor.customAction(parent, this, this);

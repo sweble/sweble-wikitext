@@ -228,11 +228,16 @@ public abstract class BackboneWithChildren
 	@Override
 	public Wom3Node appendChild(Node child_) throws DOMException
 	{
+		return appendChild(child_, false /* cloning */);
+	}
+	
+	public Wom3Node appendChild(Node child_, boolean cloning) throws DOMException
+	{
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
 		if (((Backbone) child).isContentWhitespace() && ignoresContentWhitespace())
 			return null;
 		
-		Backbone prev = appendChildIntern(child, true);
+		Backbone prev = appendChildIntern(child, true /* check */, cloning);
 		
 		this.childInserted(prev, (Backbone) child);
 		
@@ -263,7 +268,7 @@ public abstract class BackboneWithChildren
 			Backbone child = this.getFirstChild();
 			while (child != null)
 			{
-				newNode.appendChild(child.cloneNode(deep));
+				newNode.appendChild(child.cloneNode(deep), true /* cloning */);
 				child = child.getNextSibling();
 			}
 		}
@@ -385,9 +390,11 @@ public abstract class BackboneWithChildren
 	
 	private final Backbone appendChildIntern(
 			Wom3Node child,
-			boolean check)
+			boolean check,
+			boolean cloning)
 	{
-		assertWritableOnDocument();
+		if (!cloning)
+			assertWritableOnDocument();
 		
 		if (child == null)
 			throw new IllegalArgumentException("Argument `child' is null.");
@@ -441,7 +448,7 @@ public abstract class BackboneWithChildren
 	
 	protected final void appendChildNoNotify(Wom3Node child)
 	{
-		appendChildIntern(child, true);
+		appendChildIntern(child, true /* check */, false /* cloning */);
 	}
 	
 	// =========================================================================

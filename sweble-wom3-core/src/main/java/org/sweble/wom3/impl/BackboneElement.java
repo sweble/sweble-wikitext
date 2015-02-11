@@ -103,7 +103,7 @@ public abstract class BackboneElement
 		AttributeBase child = this.getFirstAttr();
 		while (child != null)
 		{
-			newNode.setAttributeNode((AttributeBase) child.cloneNode(deep));
+			newNode.setAttributeNode((AttributeBase) child.cloneNode(deep), true /* cloning */);
 			child = (AttributeBase) child.getNextSibling();
 		}
 		
@@ -306,7 +306,7 @@ public abstract class BackboneElement
 		AttributeBase attr = (AttributeBase) getOwnerDocument().createAttribute(name);
 		// We don't check an attribute descriptor for read-only since a new 
 		// attribute may be set once anyway.
-		attr.setValue(verified.value, verified.strValue);
+		attr.setValue(verified.value, verified.strValue, false /* cloning */);
 		return attr;
 	}
 	
@@ -374,12 +374,19 @@ public abstract class BackboneElement
 		AttributeBase attr = (AttributeBase) getOwnerDocument().createAttributeNS(namespaceUri, qualifiedName);
 		// We don't check an attribute descriptor for read-only since a new 
 		// attribute may be set once anyway.
-		attr.setValue(verified.value, verified.strValue);
+		attr.setValue(verified.value, verified.strValue, false /* cloning */);
 		return attr;
 	}
 	
 	@Override
 	public final Wom3Attribute setAttributeNode(Attr attr_) throws IllegalArgumentException, DOMException
+	{
+		return setAttributeNode(attr_, false /* cloning */);
+	}
+	
+	public final Wom3Attribute setAttributeNode(
+			Attr attr_,
+			boolean cloning) throws IllegalArgumentException, DOMException
 	{
 		if (attr_ == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");
@@ -394,7 +401,7 @@ public abstract class BackboneElement
 		// setAttributeNode and setAttributeNodeNS
 		if (((attr.getNamespaceURI() != null) && (!attr.getNamespaceURI().isEmpty()))
 				|| ((attr.getPrefix() != null) && (!attr.getPrefix().isEmpty())))
-			return setAttributeNodeNS(attr_);
+			return setAttributeNodeNS(attr_, cloning);
 		
 		String attrName = attr.getName();
 		AttributeDescriptor descriptor = getAttributeDescriptorOrFail(attrName);
@@ -407,31 +414,42 @@ public abstract class BackboneElement
 		if (attr.getNodeValue() == null || descriptor.verifyAndConvert(this, verified))
 		{
 			// keep attribute
-			return setAttributeNode(descriptor, attr, verified);
+			return setAttributeNode(descriptor, attr, verified, cloning);
 		}
-		else
+		else if (!cloning)
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNode(attrName);
 			removeAttribute(descriptor, attrName, old);
 			return old;
 		}
+		else
+		{
+			return null;
+		}
 	}
 	
 	private final AttributeBase setAttributeNode(
 			AttributeDescriptor descriptor,
 			Wom3Attribute attr,
-			NativeAndStringValuePair verified)
+			NativeAndStringValuePair verified,
+			boolean cloning)
 	{
-		assertWritableOnDocument();
+		if (!cloning)
+			assertWritableOnDocument();
 		
 		String attrName = attr.getName();
 		AttributeBase oldAttr = getAttributeNode(attrName);
-		return setAttribute(descriptor, attrName, attr, verified, oldAttr);
+		return setAttribute(descriptor, attrName, attr, verified, oldAttr, cloning);
 	}
 	
 	@Override
 	public final Wom3Attribute setAttributeNodeNS(Attr attr_) throws DOMException
+	{
+		return setAttributeNodeNS(attr_, false /* cloning */);
+	}
+	
+	public final Wom3Attribute setAttributeNodeNS(Attr attr_, boolean cloning) throws DOMException
 	{
 		if (attr_ == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");
@@ -455,27 +473,33 @@ public abstract class BackboneElement
 		if (attr.getNodeValue() == null || descriptor.verifyAndConvert(this, verified))
 		{
 			// keep attribute
-			return setAttributeNodeNS(descriptor, attr, verified);
+			return setAttributeNodeNS(descriptor, attr, verified, cloning);
 		}
-		else
+		else if (!cloning)
 		{
 			// remove attribute
 			AttributeBase old = getAttributeNodeNS(namespaceUri, localName);
 			removeAttribute(descriptor, localName, old);
 			return old;
 		}
+		else
+		{
+			return null;
+		}
 	}
 	
 	private final AttributeBase setAttributeNodeNS(
 			AttributeDescriptor descriptor,
 			Wom3Attribute attr,
-			NativeAndStringValuePair verified)
+			NativeAndStringValuePair verified,
+			boolean cloning)
 	{
-		assertWritableOnDocument();
+		if (!cloning)
+			assertWritableOnDocument();
 		
 		String attrLocalName = attr.getLocalName();
 		AttributeBase oldAttr = getAttributeNodeNS(attr.getNamespaceURI(), attrLocalName);
-		return setAttribute(descriptor, attrLocalName, attr, verified, oldAttr);
+		return setAttribute(descriptor, attrLocalName, attr, verified, oldAttr, cloning);
 	}
 	
 	private AttributeBase setAttribute(
@@ -483,15 +507,17 @@ public abstract class BackboneElement
 			String attrName,
 			Wom3Attribute attr,
 			NativeAndStringValuePair verified,
-			AttributeBase oldAttr)
+			AttributeBase oldAttr,
+			boolean cloning)
 	{
-		assertWritable(oldAttr, descriptor);
+		if (!cloning)
+			assertWritable(oldAttr, descriptor);
 		
 		AttributeBase newAttr =
 				Toolbox.expectType(AttributeBase.class, attr, "attr");
 		
 		// Is expected to assertWritable() on doc
-		newAttr.setValue(verified.value, verified.strValue);
+		newAttr.setValue(verified.value, verified.strValue, cloning);
 		
 		if (newAttr.isLinked())
 			throw new IllegalStateException(
