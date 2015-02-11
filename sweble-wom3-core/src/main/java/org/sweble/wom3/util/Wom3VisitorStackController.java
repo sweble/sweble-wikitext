@@ -23,25 +23,25 @@ import java.util.List;
 import org.sweble.wom3.Wom3Node;
 
 import de.fau.cs.osr.utils.visitor.StackedVisitorInterface;
-import de.fau.cs.osr.utils.visitor.VisitorStackProcessor;
+import de.fau.cs.osr.utils.visitor.VisitorStackController;
 
-public abstract class Wom3StackedVisitor
+public abstract class Wom3VisitorStackController
 		extends
-			VisitorStackProcessor<Wom3Node>
+			VisitorStackController<Wom3Node>
 {
 	public static final Object REMOVE = new Object();
 	
 	// =========================================================================
 	
-	public Wom3StackedVisitor(
+	public Wom3VisitorStackController(
 			String cacheName,
 			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack)
 	{
 		super(cacheName, visitorStack);
 	}
 	
-	public Wom3StackedVisitor(
-			VisitorStackProcessor.Cache cache,
+	public Wom3VisitorStackController(
+			VisitorStackController.Cache cache,
 			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack)
 	{
 		super(cache, visitorStack);
