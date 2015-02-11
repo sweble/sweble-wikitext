@@ -264,6 +264,8 @@ public class DocumentImpl
 				break;
 			case ELEMENT_NODE:
 				source.adoptTo(this);
+				for (Wom3Node child : source.getWomAttributes())
+					adoptRecursively(child);
 				for (Wom3Node child : source.getWomChildNodes())
 					adoptRecursively(child);
 				break;
@@ -290,7 +292,7 @@ public class DocumentImpl
 				// Fall through
 				
 			default:
-				throw new UnsupportedOperationException();
+				throw new UnsupportedOperationException("Cannot clone node: " + source.getNodeName());
 		}
 	}
 	
