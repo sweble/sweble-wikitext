@@ -18,11 +18,13 @@
 package org.sweble.wom3.swcadapter.utils;
 
 import org.sweble.wom3.Wom3Comment;
+import org.sweble.wom3.Wom3DocumentFragment;
 import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Rtd;
 import org.sweble.wom3.Wom3Text;
 import org.sweble.wom3.Wom3XmlComment;
 import org.sweble.wom3.Wom3XmlText;
+import org.sweble.wom3.swcadapter.nodes.SwcValue;
 
 public class SwcTextUtils
 {
@@ -35,34 +37,62 @@ public class SwcTextUtils
 		if (child == node.getLastChild())
 		{
 			if (isIgnorable(child))
+			{
 				return "";
-			
-			if (!isText(child))
+			}
+			else if (isContainer(child))
+			{
+				return womToText(new StringBuilder(), child).toString();
+			}
+			else if (isText(child))
+			{
+				return child.getTextContent();
+			}
+			else
+			{
 				throw new StringConversionException(child);
-			
-			return child.getTextContent();
+			}
 		}
 		else
 		{
-			StringBuffer sb = new StringBuffer();
-			for (; child != null; child = child.getNextSibling())
+			return womToText(new StringBuilder(), node).toString();
+		}
+	}
+	
+	protected static StringBuilder womToText(StringBuilder sb, Wom3Node node) throws StringConversionException
+	{
+		for (Wom3Node child : node)
+		{
+			if (isIgnorable(child))
 			{
-				if (isIgnorable(child))
-					continue;
-				
-				if (!isText(child))
-					throw new StringConversionException(child);
-				
+				continue;
+			}
+			else if (isContainer(child))
+			{
+				for (Wom3Node containerChild : child)
+					womToText(sb, containerChild);
+			}
+			else if (isText(child))
+			{
 				sb.append(child.getTextContent());
 			}
-			
-			return sb.toString();
+			else
+			{
+				throw new StringConversionException(child);
+			}
 		}
+		return sb;
 	}
 	
 	protected static boolean isText(Wom3Node child)
 	{
 		return (child instanceof Wom3Text);
+	}
+	
+	protected static boolean isContainer(Wom3Node child)
+	{
+		return (child instanceof Wom3DocumentFragment) ||
+				(child instanceof SwcValue);
 	}
 	
 	protected static boolean isIgnorable(Wom3Node child)
