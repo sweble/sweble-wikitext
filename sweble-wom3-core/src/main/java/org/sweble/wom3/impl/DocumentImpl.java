@@ -225,24 +225,32 @@ public class DocumentImpl
 	@Override
 	public Wom3Node adoptNode(Node source) throws DOMException
 	{
-		// Only the adopted node's document has to be writable
-		Toolbox.expectType(Backbone.class, source).assertWritableOnDocument();
-		
 		if (!isSameNode(source.getOwnerDocument()))
+		{
+			if (source.getNodeType() == Node.ATTRIBUTE_NODE)
+			{
+				Wom3Attribute attr = (Wom3Attribute) source;
+				if (attr.getOwnerElement() != null)
+				{
+					// Only the adopted node's document has to be writable
+					Toolbox.expectType(Backbone.class, source).assertWritableOnDocument();
+					
+					attr.getOwnerElement().removeAttributeNode(attr);
+				}
+			}
+			else
+			{
+				if (source.getParentNode() != null)
+				{
+					// Only the adopted node's document has to be writable
+					Toolbox.expectType(Backbone.class, source).assertWritableOnDocument();
+					
+					source.getParentNode().removeChild(source);
+				}
+			}
+			
 			adoptRecursively(source);
-		
-		if (source.getNodeType() == Node.ATTRIBUTE_NODE)
-		{
-			Wom3Attribute attr = (Wom3Attribute) source;
-			if (attr.getOwnerElement() != null)
-				attr.getOwnerElement().removeAttributeNode(attr);
 		}
-		else
-		{
-			if (source.getParentNode() != null)
-				source.getParentNode().removeChild(source);
-		}
-		
 		return (Wom3Node) source;
 	}
 	
@@ -256,6 +264,8 @@ public class DocumentImpl
 				break;
 			case ELEMENT_NODE:
 				source.adoptTo(this);
+				for (Wom3Node child : source.getWomAttributes())
+					adoptRecursively(child);
 				for (Wom3Node child : source.getWomChildNodes())
 					adoptRecursively(child);
 				break;
@@ -282,7 +292,7 @@ public class DocumentImpl
 				// Fall through
 				
 			default:
-				throw new UnsupportedOperationException();
+				throw new UnsupportedOperationException("Cannot clone node: " + source.getNodeName());
 		}
 	}
 	

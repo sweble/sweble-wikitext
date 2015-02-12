@@ -465,10 +465,10 @@ public class BackboneAttributeTest
 		}
 		
 		@Override
-		public void setValue(Object value, String strValue)
+		public void setValue(Object value, String strValue, boolean cloning)
 		{
 			events.add("set");
-			super.setValue(value, strValue);
+			super.setValue(value, strValue, cloning);
 		}
 	}
 	
