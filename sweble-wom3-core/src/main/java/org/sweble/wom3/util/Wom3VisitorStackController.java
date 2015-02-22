@@ -61,7 +61,8 @@ public abstract class Wom3VisitorStackController
 	{
 		if (node == null)
 			throw new NullPointerException();
-		return resolveAndVisit(node);
+		return resolveAndVisit(node, node);
+		//return resolveAndVisit(node, result); where result = before()
 	}
 	
 	// =========================================================================

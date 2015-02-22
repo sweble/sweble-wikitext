@@ -51,9 +51,21 @@ public class Wom3Visitor
 	 */
 	protected Object dispatch(Wom3Node node)
 	{
+		return dispatch(node, node);
+	}
+	
+	/**
+	 * Dispatches to the appropriate visit() method and returns the result of
+	 * the visitation. If the given node is <code>null</code> this method
+	 * returns immediately with <code>null</code> as result.
+	 * This method was modified for giving a initial "result" that is not the node itself.
+	 * Required by the before() visitor.
+	 */
+	protected Object dispatch(Wom3Node node, Object result)
+	{
 		if (node == null)
 			throw new NullPointerException();
-		return resolveAndVisit(node);
+		return resolveAndVisit(node, result);
 	}
 	
 	// =========================================================================
@@ -65,7 +77,7 @@ public class Wom3Visitor
 		Wom3Node n = node.getFirstChild();
 		while (n != null)
 		{
-			dispatch(n);
+			dispatch(n, n);
 			n = n.getNextSibling();
 		}
 	}
@@ -92,7 +104,7 @@ public class Wom3Visitor
 		Wom3Node n = node.getFirstChild();
 		while (n != null)
 		{
-			result.add(dispatch(n));
+			result.add(dispatch(n,n));
 			n = n.getNextSibling();
 		}
 		return result;

@@ -634,7 +634,7 @@ public class FixWomRtdBase
 		{
 			for (Wom3Node c = first;; c = c.getNextSibling())
 			{
-				dispatch(c);
+				dispatch(c,c);
 				if (c == last)
 					break;
 			}
