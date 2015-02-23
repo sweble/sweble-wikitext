@@ -1131,7 +1131,7 @@ public class AstToWomConverter
 	{
 		Wom3IntLink intLink = (Wom3IntLink) genPushWom("intlink");
 		{
-			intLink.setTarget(normalizedTarget);
+			intLink.setTarget(originalTarget);
 			
 			appendRtd(intLink, n, 0);
 			
