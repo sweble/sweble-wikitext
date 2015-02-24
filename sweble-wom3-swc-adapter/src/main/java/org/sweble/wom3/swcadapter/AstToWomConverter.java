@@ -1233,7 +1233,7 @@ public class AstToWomConverter
 		{
 			Wom3Image img = (Wom3Image) genPushWom("image");
 			{
-				img.setSource(normalizedTarget);
+				img.setSource(targetAsString);
 				img.setFormat(mapImgFormat(n.getFormat()));
 				img.setBorder(n.getBorder());
 				img.setHAlign(mapImgHAlign(n.getHAlign()));
