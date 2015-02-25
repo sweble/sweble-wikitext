@@ -19,14 +19,17 @@ package org.sweble.wom3.swcadapter.nodes;
 
 import java.util.Collection;
 
+import org.sweble.wom3.Wom3ElementNode;
+
 public interface SwcTagExtension
 		extends
-			SwcNode
+			SwcNode,
+			Wom3ElementNode
 {
 	String getName();
 	
 	String setName(String name);
-
+	
 	boolean hasBody();
 	
 	SwcTagExtBody getBody();

@@ -31,7 +31,9 @@ public class CommonAttributeDescriptors
 	
 	public static final AttributeDescriptor ATTR_DESC_BGCOLOR = new AttrDescAlignBgColor();
 	
-	public static final AttributeDescriptor ATTR_DESC_CITE = new AttrDescCite();
+	public static final AttributeDescriptor ATTR_DESC_CITE = new AttrDescUrl();
+	
+	public static final AttributeDescriptor ATTR_DESC_URL = new AttrDescUrl();
 	
 	public static final AttributeDescriptor ATTR_DESC_CLEAR = new AttrDescClear();
 	
@@ -209,7 +211,7 @@ public class CommonAttributeDescriptors
 	
 	// =========================================================================
 	
-	public static final class AttrDescCite
+	public static final class AttrDescUrl
 			extends
 				AttributeDescriptor
 	{

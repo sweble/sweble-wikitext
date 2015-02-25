@@ -66,7 +66,7 @@ public class DefaultSwcNodeImplementations
 	
 	static
 	{
-		// TODO: Still missing: xml-char-ref, xml-entity-ref, xmlelement, redirect
+		// TODO: Still missing: xml-char-ref, xml-entity-ref, redirect, mww:intlink
 		ArrayList<SwcNodeImplInfo> implsTmp = new ArrayList<SwcNodeImplInfo>();
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "arg", ArgImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "attr", AttrImpl.class));
@@ -78,6 +78,7 @@ public class DefaultSwcNodeImplementations
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "tagext-body", TagExtBodyImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "transclusion", TransclusionImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "value", ValueImpl.class));
+		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "xmlelement", XmlElementImpl.class));
 		
 		impls = Collections.unmodifiableList(implsTmp);
 	}

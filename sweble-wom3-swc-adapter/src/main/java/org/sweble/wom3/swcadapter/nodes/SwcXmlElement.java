@@ -17,20 +17,28 @@
  */
 package org.sweble.wom3.swcadapter.nodes;
 
+import java.util.Collection;
+
 import org.sweble.wom3.Wom3ElementNode;
 
-public interface SwcArg
+public interface SwcXmlElement
 		extends
 			SwcNode,
 			Wom3ElementNode
 {
-	boolean hasName();
+	String getTag();
 	
-	SwcName getName();
+	String setTag(String name);
 	
-	SwcName setName(SwcName name);
+	boolean hasBody();
 	
-	SwcValue getValue();
+	SwcBody getBody();
 	
-	SwcValue setValue(SwcValue value);
+	SwcBody setBody(SwcBody body);
+	
+	SwcAttr getXmlAttribute(int index);
+	
+	SwcAttr getXmlAttribute(String name);
+	
+	Collection<SwcAttr> getXmlAttributes();
 }
