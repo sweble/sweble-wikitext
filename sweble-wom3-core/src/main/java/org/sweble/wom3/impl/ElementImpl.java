@@ -18,6 +18,8 @@
 package org.sweble.wom3.impl;
 
 import org.sweble.wom3.Wom3Element;
+import org.sweble.wom3.Wom3Node;
+import org.w3c.dom.DOMException;
 
 public class ElementImpl
 		extends
@@ -26,6 +28,8 @@ public class ElementImpl
 			Wom3Element
 {
 	private static final long serialVersionUID = 1L;
+	public static final String MWW_NS_URI = "http://sweble.org/schema/mww30";
+	private static final String BODY_TAG = "body";
 	
 	private String name;
 	
@@ -86,5 +90,20 @@ public class ElementImpl
 			String qualifiedName)
 	{
 		return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
+	}
+
+	// this fixes the problem that getTextContent returned also the tag, i.e. <tag>textContent</tag>
+	@Override
+	public String getTextContent() throws DOMException {
+		Wom3Node child = this.getFirstChild();
+		while (child != null)
+		{
+			if (child.getLocalName().equals(BODY_TAG) && child.getNamespaceURI().equals(MWW_NS_URI))
+			{
+				return child.getTextContent();
+			}
+			child = child.getNextSibling();
+		}
+		return super.getTextContent(); // fallback
 	}
 }
