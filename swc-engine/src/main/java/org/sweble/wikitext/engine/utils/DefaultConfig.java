@@ -18,9 +18,7 @@
 package org.sweble.wikitext.engine.utils;
 
 import java.util.ArrayList;
-
 import java.util.Arrays;
-
 import org.sweble.wikitext.engine.config.EngineConfigImpl;
 import org.sweble.wikitext.engine.config.NamespaceImpl;
 import org.sweble.wikitext.engine.config.ParserConfigImpl;
@@ -42,7 +40,6 @@ import org.sweble.wikitext.engine.ext.math.MathTagExt;
 import org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionsPfnExt;
 import org.sweble.wikitext.engine.ext.ref.RefTagExt;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
-import org.sweble.wikitext.engine.ext.scripting.ScriptingTagExtensions;
 /**
  * Programmatically generate a default configuration for a Wiki.
  */
@@ -590,7 +587,5 @@ public class DefaultConfig
 		c.addTagExtensionGroup(MathTagExt.group(c));
 
 		c.addTagExtensionGroup(RefTagExt.group(c));
-		
-		c.addTagExtensionGroup(ScriptingTagExtensions.group(c)); // TODO modularize / plugin
 	}
 }
