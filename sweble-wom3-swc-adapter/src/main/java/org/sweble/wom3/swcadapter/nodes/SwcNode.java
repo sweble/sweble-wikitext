@@ -19,6 +19,9 @@ package org.sweble.wom3.swcadapter.nodes;
 
 import org.sweble.wom3.Wom3Node;
 
+/**
+ * MWW30 == MediaWiki Wom 3.0
+ */
 public interface SwcNode
 		extends
 			Wom3Node
