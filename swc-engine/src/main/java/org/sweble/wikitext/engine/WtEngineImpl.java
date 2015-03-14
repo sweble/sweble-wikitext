@@ -678,6 +678,17 @@ public class WtEngineImpl
 		{
 			WikitextPreprocessor preprocessor = new WikitextPreprocessor(parserConfig);
 			
+			/**
+			 * Entities generated and inserted into the source by the encoding
+			 * validator are recognized by the preprocessor parser and replaced
+			 * with the entities from the entity map (if present).
+			 * 
+			 * TODO: That's a lie I believe. In the preprocessor's State.rats
+			 * the getEntity() method always throws an InternalError suggesting
+			 * that the preprocessor cannot handle entites...
+			 * 
+			 * I think that's a bug!
+			 */
 			WtPreproWikitextPage preprocessedAst =
 					(WtPreproWikitextPage) preprocessor.parseArticle(
 							validatedWikitext,
@@ -822,7 +833,7 @@ public class WtEngineImpl
 	}
 	
 	/**
-	 * Parses a preprocessed page and substitutes entities.
+	 * Parses a preprocessed page.
 	 */
 	private WtParsedWikitextPage parse(
 			PageTitle title,
@@ -871,7 +882,8 @@ public class WtEngineImpl
 	}
 	
 	/**
-	 * Parses a preprocessed page and substitutes entities.
+	 * Parses a preprocessed page (wikitext+entities) and substitutes entities
+	 * afterwards.
 	 */
 	private WtParsedWikitextPage parse(
 			PageTitle title,
