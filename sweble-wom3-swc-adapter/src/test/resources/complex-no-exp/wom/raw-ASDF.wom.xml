@@ -66,7 +66,7 @@
             <text> Average Squared Difference Function, a mapping used in </text>
             <subst>
                <repl>
-                  <intlink target="Pitch_detection_algorithm">
+                  <intlink target="pitch detection algorithm">
                      <title>
                         <text>pitch detection algorithms</text>
                      </title>
@@ -100,7 +100,7 @@
             <text> asdf movie, a series of </text>
             <subst>
                <repl>
-                  <intlink target="Viral_video">
+                  <intlink target="viral video">
                      <title>
                         <text>viral videos</text>
                      </title>

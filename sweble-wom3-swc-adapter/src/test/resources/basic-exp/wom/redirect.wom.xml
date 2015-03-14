@@ -3,7 +3,7 @@
          xmlns:mww="http://sweble.org/schema/mww30"
          version="3.0"
          title="Redirect">
-   <redirect target="Me" did="0"/>
+   <redirect target="me" did="0"/>
    <body>
       <p topgap="0" bottomgap="0">
          <subst did="0">
