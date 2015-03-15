@@ -22,6 +22,7 @@ import java.util.List;
 
 import org.sweble.wom3.Wom3Node;
 
+import de.fau.cs.osr.utils.visitor.IncompatibleVisitorStackDefinition;
 import de.fau.cs.osr.utils.visitor.StackedVisitorInterface;
 import de.fau.cs.osr.utils.visitor.VisitorStackController;
 
@@ -35,14 +36,14 @@ public abstract class Wom3VisitorStackController
 	
 	public Wom3VisitorStackController(
 			String cacheName,
-			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack)
+			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack) throws IncompatibleVisitorStackDefinition
 	{
 		super(cacheName, visitorStack);
 	}
 	
 	public Wom3VisitorStackController(
 			VisitorStackController.Cache cache,
-			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack)
+			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack) throws IncompatibleVisitorStackDefinition
 	{
 		super(cache, visitorStack);
 	}

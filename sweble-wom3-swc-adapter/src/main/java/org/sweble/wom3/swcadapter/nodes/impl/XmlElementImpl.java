@@ -30,33 +30,32 @@ import org.sweble.wom3.impl.ChildDescriptor;
 import org.sweble.wom3.impl.DocumentImpl;
 import org.sweble.wom3.impl.NativeAndStringValuePair;
 import org.sweble.wom3.swcadapter.nodes.SwcAttr;
-import org.sweble.wom3.swcadapter.nodes.SwcNode;
-import org.sweble.wom3.swcadapter.nodes.SwcTagExtBody;
-import org.sweble.wom3.swcadapter.nodes.SwcTagExtension;
+import org.sweble.wom3.swcadapter.nodes.SwcBody;
+import org.sweble.wom3.swcadapter.nodes.SwcXmlElement;
 import org.sweble.wom3.swcadapter.utils.StringConversionException;
 import org.sweble.wom3.swcadapter.utils.SwcTextUtils;
 
-public class TagExtensionImpl
+public class XmlElementImpl
 		extends
 			BackboneSwcElement
 		implements
-			SwcTagExtension
+			SwcXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
-			childDesc(SwcNode.MWW_NS_URI, "attr", ChildDescriptor.MULTIPLE),
-			childDesc(SwcNode.MWW_NS_URI, "body") };
+			childDesc(MWW_NS_URI, "attr", ChildDescriptor.MULTIPLE),
+			childDesc(MWW_NS_URI, "body") };
 	
 	private Map<String, AttrImpl> argByName;
 	
 	private ArrayList<AttrImpl> argByIndex;
 	
-	private TagExtBodyImpl body;
+	private BodyImpl body;
 	
 	// =========================================================================
 	
-	public TagExtensionImpl(DocumentImpl owner)
+	public XmlElementImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
@@ -66,7 +65,7 @@ public class TagExtensionImpl
 	@Override
 	public String getSwcName()
 	{
-		return "tagext";
+		return "xmlelement";
 	}
 	
 	// =========================================================================
@@ -92,9 +91,9 @@ public class TagExtensionImpl
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
-		if (added instanceof SwcTagExtBody)
+		if (added instanceof SwcBody)
 		{
-			this.body = (TagExtBodyImpl) added;
+			this.body = (BodyImpl) added;
 		}
 		else if (added instanceof SwcAttr)
 		{
@@ -120,15 +119,15 @@ public class TagExtensionImpl
 	// =========================================================================
 	
 	@Override
-	public String getName()
+	public String getTag()
 	{
-		return getStringAttr("name");
+		return getStringAttr("tag");
 	}
 	
 	@Override
-	public String setName(String name)
+	public String setTag(String tag)
 	{
-		return setStringAttr(ATTR_DESC_NAME, "name", name);
+		return setStringAttr(ATTR_DESC_NAME, "tag", tag);
 	}
 	
 	// =========================================================================
@@ -140,15 +139,15 @@ public class TagExtensionImpl
 	}
 	
 	@Override
-	public TagExtBodyImpl getBody()
+	public BodyImpl getBody()
 	{
 		return this.body;
 	}
 	
 	@Override
-	public SwcTagExtBody setBody(SwcTagExtBody body)
+	public BodyImpl setBody(SwcBody body)
 	{
-		return (SwcTagExtBody) replaceOrAppend(this.body, body, false);
+		return (BodyImpl) replaceOrAppend(this.body, body, false);
 	}
 	
 	@Override
@@ -211,7 +210,7 @@ public class TagExtensionImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceURL, localName, qualifiedName,
-				"name", ATTR_DESC_NAME);
+				"tag", ATTR_DESC_NAME);
 	}
 	
 	public static final class AttrDescName

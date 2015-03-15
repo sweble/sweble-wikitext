@@ -20,6 +20,7 @@ package org.sweble.wom3.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.sweble.wom3.Wom3DocumentFragment;
 import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.impl.AttributeDescriptor.Normalization;
 import org.w3c.dom.DOMException;
@@ -190,9 +191,25 @@ public abstract class BackboneWithChildren
 			return null;
 		
 		Wom3Node before = Toolbox.expectType(Wom3Node.class, before_);
-		Backbone prev = insertBeforeIntern(before, child, true);
-		
-		this.childInserted(prev, (Backbone) child);
+		if (before instanceof Wom3DocumentFragment)
+		{
+			Wom3Node move = child.getFirstChild();
+			while (move != null)
+			{
+				Wom3Node next = move.getNextSibling();
+				child.removeChild(move);
+				
+				Backbone prev = insertBeforeIntern(before, move, true);
+				this.childInserted(prev, (Backbone) move);
+				
+				move = next;
+			}
+		}
+		else
+		{
+			Backbone prev = insertBeforeIntern(before, child, true);
+			this.childInserted(prev, (Backbone) child);
+		}
 		
 		return child;
 	}
@@ -206,12 +223,49 @@ public abstract class BackboneWithChildren
 		
 		Backbone oldChild = Toolbox.expectType(Backbone.class, oldChild_);
 		
-		Backbone prev = replaceChildIntern(newChild, oldChild, true);
+		//Backbone prev = replaceChildIntern(newChild, oldChild, true);
 		
-		this.childRemoved(prev, oldChild);
-		this.childInserted(prev, newChild);
+		Backbone prevSibling = oldChild.getPreviousSibling();
+		Backbone nextSibling = oldChild.getNextSibling();
+		
+		if (newChild instanceof Wom3DocumentFragment)
+		{
+			removeChildIntern(oldChild, true /* check */);
+			childRemoved(prevSibling, oldChild);
+			
+			Backbone move = newChild.getFirstChild();
+			while (move != null)
+			{
+				Backbone next = move.getNextSibling();
+				newChild.removeChild(move);
+				
+				insertOrAppendIntern(move, nextSibling);
+				childInserted(prevSibling, move);
+				
+				prevSibling = move;
+				move = next;
+			}
+		}
+		else
+		{
+			replaceChildIntern(newChild, oldChild, true /* check */);
+			childRemoved(prevSibling, oldChild);
+			childInserted(prevSibling, newChild);
+		}
 		
 		return oldChild;
+	}
+	
+	private void insertOrAppendIntern(Wom3Node newChild, Wom3Node nextSibling)
+	{
+		if (nextSibling != null)
+		{
+			insertBeforeIntern(nextSibling, newChild, true /* check */);
+		}
+		else
+		{
+			appendChildIntern(newChild, true /* check */, false /* cloning */);
+		}
 	}
 	
 	@Override
@@ -237,9 +291,25 @@ public abstract class BackboneWithChildren
 		if (((Backbone) child).isContentWhitespace() && ignoresContentWhitespace())
 			return null;
 		
-		Backbone prev = appendChildIntern(child, true /* check */, cloning);
-		
-		this.childInserted(prev, (Backbone) child);
+		if (child instanceof Wom3DocumentFragment)
+		{
+			Wom3Node move = child.getFirstChild();
+			while (move != null)
+			{
+				Wom3Node next = move.getNextSibling();
+				child.removeChild(move);
+				
+				Backbone prev = appendChildIntern(move, true /* check */, cloning);
+				childInserted(prev, (Backbone) move);
+				
+				move = next;
+			}
+		}
+		else
+		{
+			Backbone prev = appendChildIntern(child, true /* check */, cloning);
+			childInserted(prev, (Backbone) child);
+		}
 		
 		return child;
 	}
@@ -433,11 +503,13 @@ public abstract class BackboneWithChildren
 	protected final void insertBeforeNoNotify(Wom3Node before, Wom3Node child)
 			throws IllegalArgumentException
 	{
+		// FIXME: Does not treat DocumentFragment correctly.
 		insertBeforeIntern(before, child, true);
 	}
 	
 	protected final void replaceChildNoNotify(Wom3Node replace, Wom3Node search)
 	{
+		// FIXME: Does not treat DocumentFragment correctly.
 		replaceChildIntern(replace, search, true);
 	}
 	
@@ -448,6 +520,7 @@ public abstract class BackboneWithChildren
 	
 	protected final void appendChildNoNotify(Wom3Node child)
 	{
+		// FIXME: Does not treat DocumentFragment correctly.
 		appendChildIntern(child, true /* check */, false /* cloning */);
 	}
 	

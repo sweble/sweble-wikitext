@@ -17,9 +17,12 @@
  */
 package org.sweble.wom3.swcadapter.nodes;
 
+import org.sweble.wom3.Wom3ElementNode;
+
 public interface SwcArg
 		extends
-			SwcNode
+			SwcNode,
+			Wom3ElementNode
 {
 	boolean hasName();
 	

@@ -708,12 +708,10 @@ public abstract class Backbone
 	{
 		switch (getNodeType())
 		{
-			case Node.CDATA_SECTION_NODE:
 			case Node.ENTITY_REFERENCE_NODE:
 			case Node.ENTITY_NODE:
 			case Node.PROCESSING_INSTRUCTION_NODE:
 			case Node.DOCUMENT_TYPE_NODE:
-			case Node.DOCUMENT_FRAGMENT_NODE:
 			case Node.NOTATION_NODE:
 				// We don't support these
 				throw new InternalError();
@@ -731,6 +729,7 @@ public abstract class Backbone
 				b.append("-->");
 				break;
 			
+			case Node.DOCUMENT_FRAGMENT_NODE:
 			case Node.DOCUMENT_NODE:
 			case Node.ELEMENT_NODE:
 				b.append('<');
@@ -761,6 +760,12 @@ public abstract class Backbone
 				{
 					b.append(" />");
 				}
+				break;
+			
+			case Node.CDATA_SECTION_NODE:
+				b.append("<![CDATA[");
+				b.append(StringUtils.escHtml(getNodeValue()));
+				b.append("]]>");
 				break;
 			
 			case Node.TEXT_NODE:

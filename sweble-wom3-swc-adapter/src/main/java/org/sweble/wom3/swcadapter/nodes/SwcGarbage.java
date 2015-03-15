@@ -17,8 +17,11 @@
  */
 package org.sweble.wom3.swcadapter.nodes;
 
+import org.sweble.wom3.Wom3ElementNode;
+
 public interface SwcGarbage
 		extends
-			SwcNode
+			SwcNode,
+			Wom3ElementNode
 {
 }

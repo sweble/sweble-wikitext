@@ -19,9 +19,12 @@ package org.sweble.wom3.swcadapter.nodes;
 
 import java.util.Collection;
 
+import org.sweble.wom3.Wom3ElementNode;
+
 public interface SwcTransclusion
 		extends
-			SwcNode
+			SwcNode,
+			Wom3ElementNode
 {
 	SwcName getName();
 	

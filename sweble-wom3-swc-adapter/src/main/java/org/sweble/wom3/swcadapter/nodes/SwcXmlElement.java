@@ -17,16 +17,28 @@
  */
 package org.sweble.wom3.swcadapter.nodes;
 
-import org.sweble.wom3.Wom3Node;
+import java.util.Collection;
 
-/**
- * MWW30 == MediaWiki Wom 3.0
- */
-public interface SwcNode
+import org.sweble.wom3.Wom3ElementNode;
+
+public interface SwcXmlElement
 		extends
-			Wom3Node
+			SwcNode,
+			Wom3ElementNode
 {
-	public static final String MWW_NS_URI = "http://sweble.org/schema/mww30";
+	String getTag();
 	
-	public static final String DEFAULT_MWW_NS_PREFIX = "mww";
+	String setTag(String name);
+	
+	boolean hasBody();
+	
+	SwcBody getBody();
+	
+	SwcBody setBody(SwcBody body);
+	
+	SwcAttr getXmlAttribute(int index);
+	
+	SwcAttr getXmlAttribute(String name);
+	
+	Collection<SwcAttr> getXmlAttributes();
 }
