@@ -448,7 +448,7 @@ public class WtImageLink
 			@Override
 			public String asKeyword()
 			{
-				return "";
+				return "none";
 			}
 		},
 		UNSPECIFIED
