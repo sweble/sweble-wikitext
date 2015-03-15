@@ -112,8 +112,10 @@ public class WtWom3Toolbox
 	public Wom3Document astToWom(PageId pageId, EngProcessedPage ast)
 	{
 		Wom3Document womDoc = AstToWomConverter.convert(
-				getWikiConfig(),
-				pageId.getTitle(),
+				getWikiConfig().getParserConfig(),
+				null,
+				null,
+				pageId.getTitle().getTitle(),
 				"Mr. Tester",
 				DateTime.parse("2012-12-07T12:15:30.000+01:00"),
 				ast.getPage());

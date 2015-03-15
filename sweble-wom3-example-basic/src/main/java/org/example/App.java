@@ -90,8 +90,10 @@ public class App
 		
 		// Convert the AST to a WOM document
 		Wom3Document womDoc = AstToWomConverter.convert(
-				config,
-				pageId.getTitle(),
+				config.getParserConfig(),
+				null /*pageNamespace*/,
+				null /*pagePath*/,
+				pageId.getTitle().getTitle(),
 				"Mr. Tester",
 				DateTime.parse("2012-12-07T12:15:30.000+01:00"),
 				cp.getPage());
