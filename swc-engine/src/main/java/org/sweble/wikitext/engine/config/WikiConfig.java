@@ -131,6 +131,4 @@ public interface WikiConfig
 	public WikiRuntimeInfo getRuntimeInfo();
 	
 	public TimeZone getTimezone();
-	
-	public boolean isScriptingEnabled();
 }

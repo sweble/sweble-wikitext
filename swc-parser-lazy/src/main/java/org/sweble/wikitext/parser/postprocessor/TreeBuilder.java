@@ -200,7 +200,7 @@ public class TreeBuilder
 	
 	void processInInsertionMode(InsertionMode mode, WtNode n)
 	{
-		VisitorLogic.dispatchTo(getModeImpl(mode), n, n);
+		VisitorLogic.dispatchTo(getModeImpl(mode), n);
 	}
 	
 	void switchInsertionMode(InsertionMode mode)
