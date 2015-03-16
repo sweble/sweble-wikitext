@@ -102,8 +102,6 @@ public class FixWomRtdBase
 	@Override
 	protected Wom3Node before(Wom3Node node)
 	{
-		if (node==null)
-			return super.before(node);
 		doc = (Wom3Document) node.getOwnerDocument();
 		if (doc == null)
 			doc = (Wom3Document) node;
@@ -634,7 +632,7 @@ public class FixWomRtdBase
 		{
 			for (Wom3Node c = first;; c = c.getNextSibling())
 			{
-				dispatch(c,c);
+				dispatch(c);
 				if (c == last)
 					break;
 			}

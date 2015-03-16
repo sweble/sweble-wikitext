@@ -125,8 +125,7 @@ public class FixWomRtd
 	
 	public void visit(Wom3Document document)
 	{
-		Wom3Node documentElement=(Wom3Node) document.getDocumentElement();
-		dispatch(documentElement);
+		dispatch((Wom3Node) document.getDocumentElement());
 	}
 	
 	public void visit(Wom3Articles articles)

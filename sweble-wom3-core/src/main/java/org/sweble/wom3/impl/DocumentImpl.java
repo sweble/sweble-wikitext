@@ -455,10 +455,7 @@ public class DocumentImpl
 	@Override
 	public NodeList getElementsByTagName(String tagname)
 	{
-		// TODO: Implement
-		// by Manuel
-		return root.getElementsByTagName(tagname);
-		//throw new UnsupportedOperationException();
+		return new ElementsByTagNameNodeList(this, tagname);
 	}
 	
 	@Override
