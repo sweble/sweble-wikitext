@@ -20,7 +20,7 @@ package org.sweble.wikitext.parser.nodes;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -633,8 +633,8 @@ public class WikitextNodeFactoryImpl
 	@Override
 	public WtLctFlags lctFlags(List<String> flags)
 	{
-		Set<String> lctFlags = new HashSet<String>();
-		Set<String> lctVariants = new HashSet<String>();
+		Set<String> lctFlags = new LinkedHashSet<String>();
+		Set<String> lctVariants = new LinkedHashSet<String>();
 		List<String> lctGarbage = new ArrayList<String>();
 		for (String flag : flags)
 		{
