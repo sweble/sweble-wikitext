@@ -626,7 +626,6 @@ public class DumpConverter
 
 	}
 
-
 	private Page convertToPage_0_10(org.sweble.wikitext.dumpreader.export_0_10.PageType page) {
 		List<Revision> revisions = new ArrayList<Revision>();
 		List<Object> items = page.getRevisionOrUpload();
