@@ -305,6 +305,14 @@ public abstract class DumpReader
 		{
 			return ExportSchemaVersion.V0_8;
 		}
+		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.9/\""))
+		{
+			return ExportSchemaVersion.V0_9;
+		}
+		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.10/\""))
+		{
+			return ExportSchemaVersion.V0_10;
+		}
 		else
 		{
 			throw new IllegalArgumentException("Unknown xmlns");
