@@ -258,7 +258,7 @@ public abstract class DumpReader
 			
 			compressedInputStream = new CountingInputStream(dumpInputStream);
 			
-			decomp = new BZip2CompressorInputStream(compressedInputStream);
+			decomp = new BZip2CompressorInputStream(compressedInputStream, true);
 		}
 		else if (dumpUri.endsWith(".gz"))
 		{
