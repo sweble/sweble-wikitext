@@ -356,7 +356,7 @@ public class ParserConfigImpl
 	public NonStandardElementBehavior getNonStandardElementBehavior(
 			String elementName)
 	{
-		return null;
+		return NonStandardElementBehavior.UNSPECIFIED;
 	}
 	
 	// ==[ Language Conversion Tags ]===========================================
