@@ -17,9 +17,9 @@
 
 package org.sweble.wikitext.dumpreader.export_0_9;
 
-import org.sweble.wikitext.dumpreader.DumpReaderListener;
-
 import java.util.ArrayList;
+
+import org.sweble.wikitext.dumpreader.DumpReaderListener;
 
 public aspect PageTypeAspect
 {

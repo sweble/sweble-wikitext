@@ -30,9 +30,8 @@ import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventLocator;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import junit.framework.Assert;
-
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.dumpreader.export_0_5.CaseType;

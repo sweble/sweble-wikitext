@@ -30,12 +30,21 @@ import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventLocator;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import de.fau.cs.osr.utils.StringUtils;
-import junit.framework.Assert;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.sweble.wikitext.dumpreader.export_0_10.*;
+import org.sweble.wikitext.dumpreader.export_0_10.CaseType;
+import org.sweble.wikitext.dumpreader.export_0_10.CommentType;
+import org.sweble.wikitext.dumpreader.export_0_10.ContributorType;
+import org.sweble.wikitext.dumpreader.export_0_10.MediaWikiType;
+import org.sweble.wikitext.dumpreader.export_0_10.NamespaceType;
+import org.sweble.wikitext.dumpreader.export_0_10.PageType;
+import org.sweble.wikitext.dumpreader.export_0_10.RevisionType;
+import org.sweble.wikitext.dumpreader.export_0_10.SiteInfoType;
+import org.sweble.wikitext.dumpreader.export_0_10.TextType;
+
+import de.fau.cs.osr.utils.StringUtils;
 
 public class TestDumpReader_0_10
 {

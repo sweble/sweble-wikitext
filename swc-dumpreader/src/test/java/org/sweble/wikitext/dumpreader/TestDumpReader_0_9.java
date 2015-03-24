@@ -30,12 +30,21 @@ import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventLocator;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import de.fau.cs.osr.utils.StringUtils;
-import junit.framework.Assert;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.sweble.wikitext.dumpreader.export_0_9.*;
+import org.sweble.wikitext.dumpreader.export_0_9.CaseType;
+import org.sweble.wikitext.dumpreader.export_0_9.CommentType;
+import org.sweble.wikitext.dumpreader.export_0_9.ContributorType;
+import org.sweble.wikitext.dumpreader.export_0_9.MediaWikiType;
+import org.sweble.wikitext.dumpreader.export_0_9.NamespaceType;
+import org.sweble.wikitext.dumpreader.export_0_9.PageType;
+import org.sweble.wikitext.dumpreader.export_0_9.RevisionType;
+import org.sweble.wikitext.dumpreader.export_0_9.SiteInfoType;
+import org.sweble.wikitext.dumpreader.export_0_9.TextType;
+
+import de.fau.cs.osr.utils.StringUtils;
 
 public class TestDumpReader_0_9
 {
@@ -110,7 +119,7 @@ public class TestDumpReader_0_9
 					assertEquals("GENERATOR", siteinfo.getGenerator());
 					assertEquals("SITENAME", siteinfo.getSitename());
 					assertEquals("DBNAME", siteinfo.getDbname());
-
+					
 					{
 						List<NamespaceType> namespaces = siteinfo.getNamespaces().getNamespace();
 						assertEquals(3, namespaces.size());
