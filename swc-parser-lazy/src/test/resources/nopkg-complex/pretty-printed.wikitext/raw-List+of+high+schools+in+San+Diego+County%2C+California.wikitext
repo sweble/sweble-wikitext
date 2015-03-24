@@ -205,7 +205,7 @@ This is a '''list of high schools in [[San Diego County, California]]'''. It inc
 
 == References ==
 
-<references></references>
+<references />
 
 ==External links==
 

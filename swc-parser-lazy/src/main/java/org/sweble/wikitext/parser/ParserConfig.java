@@ -78,6 +78,8 @@ public interface ParserConfig
 	
 	Map<String, String> getXmlEntities();
 	
+	NonStandardElementBehavior getNonStandardElementBehavior(String elementName);
+	
 	// ==[ Language Conversion Tags ]===========================================
 	
 	boolean isLctFlag(String flag);

@@ -40,6 +40,7 @@ import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtListItem;
+import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -140,7 +141,7 @@ public final class TreeBuilderInBody
 		ElementType nodeType = getNodeType(n);
 		if (nodeType == null)
 		{
-			startTagR51(n);
+			startUnknownTag(n);
 			return;
 		}
 		
@@ -246,8 +247,43 @@ public final class TreeBuilderInBody
 				startTagR50(n);
 				break;
 			default:
-				startTagR51(n);
+				if (nodeType == UNKNOWN)
+					startUnknownTag(n);
+				else
+					startTagR51(n);
 				break;
+		}
+	}
+	
+	private void startUnknownTag(WtNode n)
+	{
+		if (n instanceof WtNamedXmlElement)
+		{
+			String name = ((WtNamedXmlElement) n).getName().toLowerCase();
+			switch (getNonStandardElementBehavior(name))
+			{
+				case LIKE_BR:
+					// br, img, ...
+					startTagR34(n);
+					break;
+				
+				case LIKE_DIV:
+					// div, ul, ...
+					startTagR12(n);
+					break;
+				
+				case LIKE_ANY_OTHER:
+				case UNSPECIFIED:
+				default:
+					// any other tag
+					startTagR51(n);
+					break;
+			}
+		}
+		else
+		{
+			// any other tag
+			startTagR51(n);
 		}
 	}
 	
@@ -256,7 +292,7 @@ public final class TreeBuilderInBody
 		ElementType nodeType = getNodeType(n);
 		if (nodeType == null)
 		{
-			endTagR52(n);
+			endUnknownTag(n);
 			return;
 		}
 		
@@ -327,7 +363,42 @@ public final class TreeBuilderInBody
 				endTagR47(n);
 				break;
 			default:
-				endTagR52(n);
+				if (nodeType == UNKNOWN)
+					endUnknownTag(n);
+				else
+					endTagR52(n);
+		}
+	}
+	
+	private void endUnknownTag(WtNode n)
+	{
+		if (n instanceof WtNamedXmlElement)
+		{
+			String name = ((WtNamedXmlElement) n).getName().toLowerCase();
+			switch (getNonStandardElementBehavior(name))
+			{
+				case LIKE_BR:
+					// br, img, ...
+					endTagR47(n);
+					break;
+				
+				case LIKE_DIV:
+					// div, ul, ...
+					endTagR20(n);
+					break;
+				
+				case LIKE_ANY_OTHER:
+				case UNSPECIFIED:
+				default:
+					// any other tag
+					endTagR52(n);
+					break;
+			}
+		}
+		else
+		{
+			// any other tag
+			endTagR52(n);
 		}
 	}
 	
@@ -934,7 +1005,37 @@ public final class TreeBuilderInBody
 	private void endTagR20(WtNode n)
 	{
 		ElementType elementType = getNodeType(n);
-		if (!tb.isElementTypeInScope(elementType))
+		if (elementType == UNKNOWN)
+		{
+			unknownEndTagR20(n);
+		}
+		else
+		{
+			if (!tb.isElementTypeInScope(elementType))
+			{
+				tb.error(n, "12.2.5.4.7 - R20 (1)");
+				tb.ignore(n);
+			}
+			else
+			{
+				tb.generateImpliedEndTags();
+				
+				if (getNodeType(tb.getCurrentNode()) != elementType)
+					tb.error(n, "12.2.5.4.7 - R20 (2)");
+				
+				addRtDataOfEndTag(
+						tb.popFromStackUntilIncluding(elementType),
+						n);
+			}
+		}
+	}
+	
+	/**
+	 * Like R20 but for unknown tags.
+	 */
+	private void unknownEndTagR20(WtNode n)
+	{
+		if (!tb.isNodeInSpecificScope(GENERAL_SCOPE, n))
 		{
 			tb.error(n, "12.2.5.4.7 - R20 (1)");
 			tb.ignore(n);
@@ -943,11 +1044,11 @@ public final class TreeBuilderInBody
 		{
 			tb.generateImpliedEndTags();
 			
-			if (getNodeType(tb.getCurrentNode()) != elementType)
+			if (!TreeBuilder.isSameTag(tb.getCurrentNode(), n))
 				tb.error(n, "12.2.5.4.7 - R20 (2)");
 			
 			addRtDataOfEndTag(
-					tb.popFromStackUntilIncluding(elementType),
+					tb.popFromStackUntilIncluding(n),
 					n);
 		}
 	}
@@ -1193,7 +1294,7 @@ public final class TreeBuilderInBody
 				tb.ignore(n);
 				return;
 			}
-			else if (!tb.isNodeInScope(fe))
+			else if (!tb.isNodeRefInScope(fe))
 			{
 				tb.error(n, "12.2.5.4.7 - R30 (2)");
 				tb.ignore(n);
@@ -1237,7 +1338,7 @@ public final class TreeBuilderInBody
 			
 			if (furthestBlock == null)
 			{
-				tb.popFromStackUntilIncluding(fe);
+				tb.popFromStackUntilIncludingRef(fe);
 				addRtDataOfEndTag(fe, n);
 				
 				tb.removeFromActiveFormattingElements(fe);
@@ -1375,7 +1476,7 @@ public final class TreeBuilderInBody
 	{
 		tb.error(n, "12.2.5.4.7 - R47");
 		// This is an exception for which the create() method knows a special rule
-		handleStartTag(getFactory().createElementRepairBr(n));
+		handleStartTag(getFactory().createElementRepair(n));
 	}
 	
 	/**
@@ -1396,6 +1497,9 @@ public final class TreeBuilderInBody
 		tb.reconstructActiveFormattingElements();
 		
 		tb.insertAnHtmlElement(n);
+		
+		if (n.getNodeType() == NT_XML_EMPTY_TAG)
+			tb.popFromStack();
 	}
 	
 	/**
@@ -1405,14 +1509,14 @@ public final class TreeBuilderInBody
 	{
 		for (WtNode node : tb.getStack())
 		{
-			if (tb.isSameTag(node, n))
+			if (TreeBuilder.isSameTag(node, n))
 			{
 				tb.generateImpliedEndTags(n);
 				
-				if (!tb.isSameTag(tb.getCurrentNode(), n))
+				if (!TreeBuilder.isSameTag(tb.getCurrentNode(), n))
 					tb.error(n, "12.2.5.4.7 - R52 (1)");
 				
-				tb.popFromStackUntilIncluding(node);
+				tb.popFromStackUntilIncludingRef(node);
 				addRtDataOfEndTag(node, n);
 				return;
 			}

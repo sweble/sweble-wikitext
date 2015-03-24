@@ -476,11 +476,13 @@ public class TreeBuilder
 				case NT_XML_ELEMENT:
 					content = nf.body(nf.list());
 					((WtXmlElement) node).setBody((WtBody) content);
-					
+					break;
+				
 				case NT_TABLE:
 					content = nf.body(nf.list());
 					((WtTable) node).setBody((WtBody) content);
-					
+					break;
+				
 				default:
 					throw new InternalError();
 			}
@@ -813,6 +815,20 @@ public class TreeBuilder
 		while (true)
 		{
 			WtNode node = i.next();
+			if (isSameTag(node, targetNode))
+				return true;
+			
+			if (scope.isInList(getNodeType(node)))
+				return false;
+		}
+	}
+	
+	boolean isNodeRefInSpecificScope(StackScope scope, WtNode targetNode)
+	{
+		Iterator<WtNode> i = getStack().iterator();
+		while (true)
+		{
+			WtNode node = i.next();
 			if (node == targetNode)
 				return true;
 			
@@ -821,9 +837,9 @@ public class TreeBuilder
 		}
 	}
 	
-	boolean isNodeInScope(WtNode targetNode)
+	boolean isNodeRefInScope(WtNode targetNode)
 	{
-		return isNodeInSpecificScope(GENERAL_SCOPE, targetNode);
+		return isNodeRefInSpecificScope(GENERAL_SCOPE, targetNode);
 	}
 	
 	// =========================================================================
@@ -862,6 +878,17 @@ public class TreeBuilder
 		return null;
 	}
 	
+	WtNode popFromStackUntilIncluding(WtNode nodeExample)
+	{
+		while (!getStack().isEmpty())
+		{
+			WtNode found = popFromStack();
+			if (isSameTag(nodeExample, found))
+				return found;
+		}
+		throw new InternalError("Everything's gone :(");
+	}
+	
 	WtNode popFromStackUntilIncluding(ElementType nodeType)
 	{
 		while (!getStack().isEmpty())
@@ -884,7 +911,7 @@ public class TreeBuilder
 		throw new InternalError("Everything's gone :(");
 	}
 	
-	void popFromStackUntilIncluding(WtNode node)
+	void popFromStackUntilIncludingRef(WtNode node)
 	{
 		while (popFromStack() != node)
 			;
@@ -1013,13 +1040,18 @@ public class TreeBuilder
 		}
 	}
 	
-	boolean isSameTag(WtNode n0, WtNode n1)
+	static boolean isSameTag(WtNode n0, WtNode n1)
 	{
 		ElementType t0 = getNodeType(n0);
 		ElementType t1 = getNodeType(n1);
-		if (t0 == t1)
+		if ((t0 == t1) && (t0 != UNKNOWN))
 		{
 			return true;
+		}
+		else if (t0 != t1)
+		{
+			// If only one node is UNKONWN they cannot be the same...
+			return false;
 		}
 		else if (n0 instanceof WtNamedXmlElement)
 		{

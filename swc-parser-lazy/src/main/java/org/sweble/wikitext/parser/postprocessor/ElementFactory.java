@@ -159,14 +159,12 @@ public class ElementFactory
 	}
 	
 	/**
-	 * Called only to create a &lt;br> element when what we really encountered
-	 * was a isolated &lt;/br> end tag.
+	 * Called to create a &lt;X> element when what we really encountered
+	 * was a isolated &lt;/X> end tag.
 	 */
-	public WtNode createElementRepairBr(WtNode template)
+	public WtNode createElementRepair(WtNode template)
 	{
 		WtXmlEndTag tag = (WtXmlEndTag) template;
-		if (getNodeType(tag) != BR)
-			throw new InternalError();
 		
 		WtXmlElement newElement = createEmptyElement(tag.getName());
 		copyNodeAttributes(tag, newElement);
@@ -403,7 +401,9 @@ public class ElementFactory
 						|| (nodeType == NT_XML_ELEMENT && !((WtXmlElement) template).hasBody()))
 					tb.error((WtNode) template, "12.2.4 Element should not be an empty tag!");
 				
-				element.setBody(createEmptyBody());
+				if (nodeType != NT_XML_EMPTY_TAG)
+					element.setBody(createEmptyBody());
+				
 				break;
 		}
 	}

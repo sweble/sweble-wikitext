@@ -21,10 +21,7 @@ WtParsedWikitextPage(
 				body = WtTagExtensionBody("[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]")
 			)
 	}
-	{P} warnings = C[
-		Warning: /nopkg-complex/input.wikitext/raw-List+of+high+schools+in+San+Diego+County%2C+California.wikitext:178:2: <no content> : 12.2.4 Element should not be an empty tag! @ WtXmlEmptyTag.,
-		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.
-	]
+	{P} warnings = C[ Warning: /nopkg-complex/input.wikitext/raw-List+of+high+schools+in+San+Diego+County%2C+California.wikitext:178:2: <no content> : 12.2.4 Element should not be an empty tag! @ WtXmlEmptyTag. ]
 	[0] = WtParagraph[
 		[0] = "This is a ",
 		[1] = WtBold(
@@ -1525,7 +1522,7 @@ WtParsedWikitextPage(
 					{P} name = "references"
 					{P} rtd = RTD[ "<references" <o> "/>" <o> "" ]
 					xmlAttributes = WtXmlAttributes[],
-					body = WtBody[]
+					body = -
 				)
 			],
 			[2] = "\n\n"
