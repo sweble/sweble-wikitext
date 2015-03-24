@@ -1,29 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--
-	This is an XML Schema description of the format
-	output by MediaWiki's Special:Export system.
-	
-	Version 0.2 adds optional basic file upload info support,
-	which is used by our OAI export/import submodule.
-	
-	Version 0.3 adds some site configuration information such
-	as a list of defined namespaces.
-	
-	Version 0.4 adds per-revision delete flags, log exports,
-	discussion threading data, a per-page redirect flag, and
-	per-namespace capitalization.
-
-	Version 0.5 adds byte count per revision.
-	
-	Version 0.6 adds a separate namespace tag, and resolves the
-	redirect target and adds a separate sha1 tag for each revision. 
-	
-	The canonical URL to the schema document is:
-	http://www.mediawiki.org/xml/export-0.6.xsd
-	
-	Use the namespace:
-	http://www.mediawiki.org/xml/export-0.6/
--->
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:mw="http://www.mediawiki.org/xml/export-0.6/"
         targetNamespace="http://www.mediawiki.org/xml/export-0.6/"
