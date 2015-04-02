@@ -17,6 +17,8 @@
  */
 package org.sweble.wom3.impl;
 
+import javax.xml.XMLConstants;
+
 import org.sweble.wom3.Wom3Element;
 import org.w3c.dom.DOMException;
 
@@ -75,8 +77,32 @@ public class ElementNsImpl
 	public void setPrefix(String prefix) throws DOMException
 	{
 		assertWritableOnDocument();
-		// TODO: Implement
-		throw new UnsupportedOperationException();
+		
+		if (getOwnerDocument().getStrictErrorChecking())
+		{
+			if ((prefix != null) && !prefix.isEmpty())
+			{
+				if ((getNamespaceURI() == null) || (prefix.indexOf(':') >= 0))
+				{
+					throw new DOMException(DOMException.NAMESPACE_ERR, "No namespace URI or prefix contains ':'");
+				}
+				else if (prefix.equals("xml") && !getNamespaceURI().equals(XMLConstants.XML_NS_URI))
+				{
+					throw new DOMException(DOMException.NAMESPACE_ERR, "Prefix must not be 'xml' unless namespace URI is XML namespace");
+				}
+			}
+		}
+		
+		if ((prefix != null) && !prefix.isEmpty())
+		{
+			this.prefix = prefix;
+			setNodeName(prefix + ':' + localName);
+		}
+		else
+		{
+			this.prefix = null;
+			setNodeName(localName);
+		}
 	}
 	
 	// =========================================================================
