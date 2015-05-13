@@ -230,7 +230,7 @@ public class AstToWomConverter
 			WtNode ast)
 	{
 		Wom3Document doc = DomImplementationImpl.get().createDocument(
-				Wom3Node.WOM_NS_URI, null, null);
+				null, null, null);
 		
 		for (SwcNodeImplInfo i : DefaultSwcNodeImplementations.get())
 			DomImplementationImpl.get().addNodeImplementation(
