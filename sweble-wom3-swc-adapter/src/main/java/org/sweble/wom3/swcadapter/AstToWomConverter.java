@@ -162,6 +162,7 @@ import org.sweble.wom3.swcadapter.nodes.SwcXmlElement;
 import org.sweble.wom3.swcadapter.nodes.impl.DefaultSwcNodeImplementations;
 import org.sweble.wom3.swcadapter.nodes.impl.DefaultSwcNodeImplementations.SwcNodeImplInfo;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.XmlGrammar;
@@ -229,7 +230,7 @@ public class AstToWomConverter
 			WtNode ast)
 	{
 		Wom3Document doc = DomImplementationImpl.get().createDocument(
-				Wom3Node.WOM_NS_URI, "article", null);
+				Wom3Node.WOM_NS_URI, null, null);
 		
 		for (SwcNodeImplInfo i : DefaultSwcNodeImplementations.get())
 			DomImplementationImpl.get().addNodeImplementation(
@@ -300,7 +301,10 @@ public class AstToWomConverter
 				"xmlns:" + DEFAULT_MWW_NS_PREFIX,
 				MWW_NS_URI);
 		
-		doc.replaceChild(root, doc.getDocumentElement());
+		Element docElem = doc.getDocumentElement();
+		if (docElem != null)
+			doc.removeChild(docElem);
+		doc.appendChild(root);
 		
 		return doc;
 	}
