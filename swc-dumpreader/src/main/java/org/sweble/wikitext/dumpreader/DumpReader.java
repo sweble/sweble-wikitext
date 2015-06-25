@@ -45,7 +45,6 @@ import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
-import org.apache.xerces.util.XMLCatalogResolver;
 
 import de.fau.cs.osr.utils.WrappedException;
 
@@ -140,9 +139,7 @@ public abstract class DumpReader
 		installCallbacks();
 		
 		if (useSchema)
-			setSchema(
-					DumpReader.class.getResource("/catalog.xml"),
-					DumpReader.class.getResource(schemaVersion.getSchema()));
+			setSchema(DumpReader.class.getResource(schemaVersion.getSchema()));
 		
 		xmlStreamReader = getXmlStreamReader(encoding);
 		
@@ -347,14 +344,12 @@ public abstract class DumpReader
 		}
 	}
 	
-	private void setSchema(URL catalog, URL schemaUrl) throws Exception
+	private void setSchema(URL schemaUrl) throws Exception
 	{
 		SchemaFactory sf = SchemaFactory.newInstance(
 				javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		
-		sf.setResourceResolver(
-				new XMLCatalogResolver(
-						new String[] { catalog.getFile() }));
+		sf.setResourceResolver(new LSResourceResolverImplementation());
 		
 		Schema schema = sf.newSchema(schemaUrl);
 		

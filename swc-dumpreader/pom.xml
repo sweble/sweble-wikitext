@@ -78,16 +78,6 @@
       <artifactId>log4j</artifactId>
     </dependency>
 
-    <!-- Apache Xerces -->
-    <dependency>
-      <groupId>xerces</groupId>
-      <artifactId>xercesImpl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>xml-resolver</groupId>
-      <artifactId>xml-resolver</artifactId>
-    </dependency>
-
     <!-- Utils -->
     <dependency>
       <groupId>de.fau.cs.osr.utils</groupId>
@@ -287,7 +277,7 @@
 
             <!-- Extra excludes for this project -->
             <exclude>**/*.log</exclude>
-            <exclude>src/main/schema/catalog/*.xsd</exclude>
+            <exclude>src/main/schema/xml.xsd</exclude>
             <exclude>src/main/schema/export-*.xsd</exclude>
           </excludes>
         </configuration>
