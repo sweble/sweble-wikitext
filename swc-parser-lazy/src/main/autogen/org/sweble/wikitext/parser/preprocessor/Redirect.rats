@@ -45,11 +45,11 @@ body
 // -- Redirect -----------------------------------------------------------------
 
 WtNode Redirect =
-  ws0:pWsStar keyword:RedirectKeyword &{ isRedirectKeyword(keyword) } ws1:pWsStar target:RedirectLink
+  ws0:pWsStar keyword:RedirectKeyword &{ isRedirectKeyword(keyword) } rt0:":"? ws1:pWsStar target:RedirectLink
   {
     yyValue = setRtd(
       nf.redirect(target.target),
-      ws0, keyword, ws1, target.rt0, SEP, target.rt1);
+      ws0, keyword, rt0, ws1, target.rt0, SEP, target.rt1);
   }
 ;
 
