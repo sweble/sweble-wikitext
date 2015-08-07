@@ -182,9 +182,9 @@
         <updatePolicy>daily</updatePolicy>
         <checksumPolicy>warn</checksumPolicy>
       </snapshots>
-      <id>osr-public-snapshots-repo</id>
-      <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
+      <id>osr-public-repo</id>
+      <name>OSR Public Repository</name>
+      <url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
     </repository>
   </repositories>
 
