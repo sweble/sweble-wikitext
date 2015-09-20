@@ -30,8 +30,8 @@ import org.sweble.wikitext.articlecruncher.JobTraceSet;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 import org.sweble.wikitext.dumpreader.DumpReader;
-import org.sweble.wikitext.dumpreader.export_0_6.PageType;
-import org.sweble.wikitext.dumpreader.export_0_6.RevisionType;
+import org.sweble.wikitext.dumpreader.export_0_10.PageType;
+import org.sweble.wikitext.dumpreader.export_0_10.RevisionType;
 
 public class DumpReaderJobGenerator
 		extends
@@ -125,7 +125,7 @@ public class DumpReaderJobGenerator
 	{
 		PageType page = (PageType) page_;
 		
-		for (Object o : page.getRevisionOrUploadOrLogitem())
+		for (Object o : page.getRevisionOrUpload())
 		{
 			if (o instanceof RevisionType)
 			{
