@@ -33,9 +33,9 @@ import org.sweble.wikitext.dumpreader.DumpReader;
 import org.sweble.wikitext.dumpreader.export_0_10.PageType;
 import org.sweble.wikitext.dumpreader.export_0_10.RevisionType;
 
-public class DumpReaderJobGenerator
-		extends
-			WorkerBase
+import de.fau.cs.osr.utils.WrappedException;
+
+public class DumpReaderJobGenerator extends WorkerBase
 {
 	private final BlockingQueue<Job> inTray;
 	
@@ -44,6 +44,8 @@ public class DumpReaderJobGenerator
 	private final DumpCruncher dumpCruncher;
 	
 	private final DumpReader dumpReader;
+
+	private InputStream is;
 	
 	// =========================================================================
 	
@@ -60,7 +62,6 @@ public class DumpReaderJobGenerator
 		this.inTray = inTray;
 		this.jobTraces = jobTraces;
 		
-		InputStream is = null;
 		try
 		{
 			is = new FileInputStream(dumpFile);
@@ -78,16 +79,31 @@ public class DumpReaderJobGenerator
 				}
 			};
 		}
-		finally
+		catch (Exception e)
 		{
-			if (is != null)
-				try
-				{
-					is.close();
-				}
-				finally
-				{
-				}
+			after();
+			throw new WrappedException(e);
+		}
+	}
+
+	@Override
+	public void after()
+	{
+		if (is != null)
+		{
+			try
+			{
+				info("Close the input stream");
+				is.close();
+				is = null;
+			}
+			catch (Exception e)
+			{
+				throw new RuntimeException(e);
+			}
+			finally
+			{
+			}
 		}
 	}
 	
