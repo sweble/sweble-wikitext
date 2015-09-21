@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.example;
+package ru.denplusplus.wikipedia.dumpcruncher;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -45,13 +45,12 @@ public class DumpReaderJobGenerator extends WorkerBase
 	
 	private final DumpReader dumpReader;
 
-	private InputStream is;
-	
 	// =========================================================================
 	
 	public DumpReaderJobGenerator(
 			DumpCruncher dumpCruncher,
-			File dumpFile,
+			InputStream is,
+			String dumpFilePath,
 			AbortHandler abortHandler,
 			BlockingQueue<Job> inTray,
 			JobTraceSet jobTraces) throws Exception
@@ -64,11 +63,10 @@ public class DumpReaderJobGenerator extends WorkerBase
 		
 		try
 		{
-			is = new FileInputStream(dumpFile);
 			this.dumpReader = new DumpReader(
 					is,
 					Charset.forName("UTF8"),
-					dumpFile.getPath(),
+					dumpFilePath,
 					getLogger(),
 					false)
 			{
@@ -86,27 +84,6 @@ public class DumpReaderJobGenerator extends WorkerBase
 		}
 	}
 
-	@Override
-	public void after()
-	{
-		if (is != null)
-		{
-			try
-			{
-				info("Close the input stream");
-				is.close();
-				is = null;
-			}
-			catch (Exception e)
-			{
-				throw new RuntimeException(e);
-			}
-			finally
-			{
-			}
-		}
-	}
-	
 	// =========================================================================
 	
 	public long getFileSize()
@@ -145,7 +122,7 @@ public class DumpReaderJobGenerator extends WorkerBase
 		{
 			if (o instanceof RevisionType)
 			{
-				RevisionJob job = new RevisionJob(page, (RevisionType) o);
+				RevisionJob job = new RevisionJob(page, (RevisionType)o);
 				
 				JobTrace trace = job.getTrace();
 				trace.signOff(getClass(), null);

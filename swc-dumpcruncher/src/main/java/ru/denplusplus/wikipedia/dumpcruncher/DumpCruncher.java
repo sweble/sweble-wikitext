@@ -15,14 +15,19 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.example;
+package ru.denplusplus.wikipedia.dumpcruncher;
 
 import java.io.File;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.OutputStreamWriter;
 import java.io.IOException;
-import java.util.Set;
 import java.util.concurrent.BlockingQueue;
-
-import joptsimple.OptionException;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.sweble.wikitext.articlecruncher.Job;
@@ -35,7 +40,6 @@ import org.sweble.wikitext.articlecruncher.Processor;
 import org.sweble.wikitext.articlecruncher.StorerFactory;
 import org.sweble.wikitext.articlecruncher.pnodes.LocalProcessingNode;
 import org.sweble.wikitext.articlecruncher.pnodes.LpnJobProcessorFactory;
-import org.sweble.wikitext.articlecruncher.storers.DummyStorer;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 import org.sweble.wikitext.engine.config.WikiConfig;
@@ -43,6 +47,7 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 
 import de.fau.cs.osr.utils.WrappedException;
 import de.fau.cs.osr.utils.getopt.Options;
+import joptsimple.OptionException;
 
 public class DumpCruncher
 {
@@ -55,6 +60,12 @@ public class DumpCruncher
 	private Gui gui;
 	
 	private WikiConfig wikiConfig;
+	
+	private InputStream is;
+	
+	private OutputStream os;
+	
+	private OutputStreamWriter sw;
 	
 	// =========================================================================
 	
@@ -92,12 +103,17 @@ public class DumpCruncher
 		
 		nexus = new Nexus();
 		
-		final File dumpFile = new File(options.value("dump"));
+		final String dumpFilePath = options.value("dump");
+		final File dumpFile = new File(dumpFilePath);
 		
 		nexus.setUp(
 				options.value("Nexus.InTrayCapacity", int.class),
 				options.value("Nexus.ProcessedJobsCapacity", int.class),
 				options.value("Nexus.OutTrayCapacity", int.class));
+		
+		is = new BufferedInputStream(new FileInputStream(dumpFile));
+		os = new BufferedOutputStream(new FileOutputStream("out.wiki"));
+		sw = new OutputStreamWriter(os);
 		
 		nexus.addJobGenerator(new JobGeneratorFactory()
 		{
@@ -111,7 +127,8 @@ public class DumpCruncher
 				{
 					return new DumpReaderJobGenerator(
 							DumpCruncher.this,
-							dumpFile,
+							is,
+							dumpFilePath,
 							abortHandler,
 							inTray,
 							jobTraces);
@@ -200,7 +217,7 @@ public class DumpCruncher
 			{
 				try
 				{
-					return new DummyStorer(abortHandler, jobTraces, outTray);
+					return new DumpStorer(abortHandler, jobTraces, outTray, sw);
 				}
 				catch (Exception e)
 				{
@@ -212,6 +229,45 @@ public class DumpCruncher
 		nexus.start();
 		
 		gui.close();
+		
+		close();
+	}
+	
+	public void close()
+	{
+		if (is != null)
+		{
+			try
+			{
+				logger.info("Close the input stream");
+				is.close();
+				is = null;
+			}
+			catch (Exception e)
+			{
+				throw new RuntimeException(e);
+			}
+			finally
+			{
+			}
+		}
+
+		if (os != null)
+		{
+			try
+			{
+				logger.info("Close the output stream");
+				os.close();
+				os = null;
+			}
+			catch (Exception e)
+			{
+				throw new RuntimeException(e);
+			}
+			finally
+			{
+			}
+		}
 	}
 	
 	// =========================================================================

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.example;
+package ru.denplusplus.wikipedia.dumpcruncher;
 
 import java.math.BigInteger;
 import java.util.Calendar;
@@ -31,9 +31,7 @@ import org.sweble.wikitext.dumpreader.export_0_10.PageType;
 import org.sweble.wikitext.dumpreader.export_0_10.RevisionType;
 import org.sweble.wikitext.dumpreader.export_0_10.TextType;
 
-public class RevisionJob
-		extends
-			Job
+public class RevisionJob extends Job
 {
 	// -- page info --
 	

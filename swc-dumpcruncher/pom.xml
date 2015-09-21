@@ -31,11 +31,11 @@
   <!-- This POM: Sweble Wikitext Components - Dump Cruncher Example -->
 
   <!-- Same groupId as parent -->
-  <artifactId>swc-example-dumpcruncher</artifactId>
+  <artifactId>swc-dumpcruncher</artifactId>
   <!-- Same version as parent -->
   <packaging>jar</packaging>
 
-  <name>SWC - Dump Cruncher Example</name>
+  <name>SWC - Dump Cruncher</name>
   <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-dumpcruncher</url>
   <inceptionYear>2012</inceptionYear>
   <description>
@@ -108,7 +108,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.sweble.wikitext.example.DumpCruncher</mainClass>
+              <mainClass>ru.denplusplus.wikipedia.dumpcruncher.DumpCruncher</mainClass>
               <classpathPrefix>lib/</classpathPrefix>
               <addClasspath>true</addClasspath>
             </manifest>
@@ -131,7 +131,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>org.sweble.wikitext.example.DumpCruncher</mainClass>
+                  <mainClass>ru.denplusplus.wikipedia.dumpcruncher.DumpCruncher</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -240,7 +240,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>org.sweble.wikitext.example.DumpCruncher</mainClass>
+                  <mainClass>ru.denplusplus.wikipedia.dumpcruncher.DumpCruncher</mainClass>
                 </manifest>
               </archive>
             </configuration>

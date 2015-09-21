@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.example;
+package ru.denplusplus.wikipedia.dumpcruncher;
 
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.Processor;
@@ -41,10 +41,6 @@ public class RevisionProcessor
 	@Override
 	public Object process(Job job) throws LinkTargetException, EngineException
 	{
-		Gui gui = dumpCruncher.getGui();
-		gui.processingStarted();
-		gui.redrawLater();
-		
 		RevisionJob revJob = (RevisionJob) job;
 		
 		WikiConfig config = dumpCruncher.getWikiConfig();
@@ -61,9 +57,6 @@ public class RevisionProcessor
 		
 		// Compile the retrieved page
 		EngProcessedPage cp = engine.postprocess(pageId, wikitext, null);
-		
-		gui.processingFinished();
-		gui.redrawLater();
 		
 		return cp;
 	}
