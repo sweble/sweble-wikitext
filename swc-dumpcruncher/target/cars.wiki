@@ -1386,3 +1386,657 @@ The [[Abarth]] 205 was a coupe sports car built by Austrian born tuning expert C
 [[Category:Abarth vehicles|205]]
 [[Category:Sports racing cars]]
 =======EOF=======
+{{use mdy dates|date=March 2012}}
+
+The '''Avanti''' is an American performance [[sports coupe]] based on the [[Studebaker Avanti]] and produced by a succession of five different ownership arrangements. After the closure of [[Studebaker]]'s [[South Bend]] factory on December 20, 1963, cars with the name Avanti were initially produced from left-over Studebaker components and later from [[General Motors]] and [[Ford Motor Company|Ford]] chassis and engines. These are not replica cars, for they were made by '''Avanti Motor Company'''. 
+
+==Altman and Newman==
+[[File:1976 Avanti II (Rahmi M. Koç Müzesi).jpg|thumb|1976 Avanti II]]
+After Studebaker ended production at South Bend, the "Avanti" model name, tooling, Studebaker truck production rights and parts and plant space were bought by local Studebaker dealers, Nate and Arnold Altman and Leo Newman, who incorporated as Avanti Motor Corporation and hand-built a small number of cars.<ref>[[#Langworth|Langworth]], p. 278</ref> Leo Newman ran the Studebaker truck parts division which enabled the company to be profitable at its outset. According to Stu Chapman, Studebaker Director of Advertising & Public Relations 1964-1966, in his book 'My Father The Car: Memoirs Of My Life With Studebaker', there was talk with Studebaker of reintroducing the Avanti to Studebaker showrooms in 1965/66, along with ambitious plans for rebadging an [[Isuzu Bellett]] as an entry level Studebaker, and combining with Canadian Motor Industries. This would have taken control and production away from the South Bend board who at the time was determined to discontinue auto production no matter that Studebaker was the only car company in history to discontinue a make that was still profitable.
+
+The Altman brothers introduced a slightly modified version of the car in 1965 under the brand name "Avanti II".<ref>[[#Langworth|Langworth]], p. 257</ref> which initially had a 327-in³ (5.4 L) [[Chevrolet Corvette]] engine. This evolved to the 400, then the [[Chevrolet small-block engine#350|small-block 350]], and then the [[Chevrolet small-block engine#305|305]] for 1981.<ref name=RT81a>{{cite journal | journal = Road & Track's Road Test Annual & Buyer's Guide 1981 | issue = January-February 1981 | title = 1981 Buyer's Guide | editor-first = Tony | editor-last = Hogg | page = 83 }}</ref> The 305 V8 had electronic engine controls, {{convert|155|hp|kW|0|abbr=on}}, and GM's Turbo 350 automatic transmission with [[Torque converter|lockout]]. Building one of the 1980's Avanti IIs required 10 to 12 weeks, depending on special color or upholstery orders.<ref name=RT81a/> The last Avanti II made came off the line with a [[V6 engine]] from Roush and only one was made. All Avanti&nbsp;IIs and their successors were built on the Studebaker-designed chassis, from 1963 to 1987.{{Citation needed|date=May 2010}} After Nate Altman's death, Arnold Altman ran the company until it was sold in 1982.
+
+{| class="wikitable"
+|-
+! Year !! Engine !! Power !! Wheelbase !! Length !! Width !! Chassis !! Transmission !! Instrumentation
+|-
+| 1965 || 327CID V8 || {{Convert|300|hp|kW|0|abbr=on}} || {{Convert|109|in|mm|0|abbr=on}}<ref name="oldcarbrochures1965">{{cite web|url=http://www.oldcarbrochures.com/static/NA/Avanti/1965_Avanti_II/1965_Avanti_II_Brochure/1965%20Avanti%20II-08.html |title=Avanti: 1965 Avanti II Brochure |publisher=Oldcarbrochures.com |year=1965 |accessdate=2011-11-20}}</ref> || {{Convert|192.5|in|mm|0|abbr=on}} || {{Convert|70.4|in|mm|0|abbr=on}} || Full perimeter with X || 4-speed manual or automatic<ref name="oldcarbrochures1965"/> || Speedometer, tachometer,<ref name="oldcarbrochures1965"/> [[fuel gauge]], [[ammeter]], temperature gauge, [[oil pressure]] gauge, vacuum pressure gauge<ref>{{cite web|url=http://www.avantisource.com/manual814.html |title=Manual 8 - 14 |publisher=Avantisource.com |date= |accessdate=2011-11-20}}</ref> 
+|}
+
+==Stephen H. Blake==
+On October 1, 1982, real-estate developer Stephen H. Blake bought the rights to the Avanti II.{{Citation needed|date=May 2010}} The state of Indiana guaranteed $1.9 million in loans to Avanti, as part of the financial package offered Blake when he bought the company.<ref>''Springfield Union'', January 27, 1985, Page 34.</ref> He made modifications to the car, which had remained unchanged since the production of the Avanti II model began in the mid-1960s. Rectangular headlights and modern plastic body-colored bumpers were introduced.<ref>''Oregonian'', October 14, 1983, Page 75.</ref> He also dropped the "II" in the car's name. All subsequent cars were called the "Avanti".{{Citation needed|date=May 2010}} Blake's company declared bankruptcy and he resigned in February 1986.<ref>''Plain Dealer'', February 27, 1986, Page 109.</ref>
+
+==Michael E. Kelly==
+[[File:1989 Avanti II convertible.jpg|thumb|1989, Kelly built Avanti II Convertible]]
+
+The Avanti Motor Company was re-purchased by [[Michael Eugene Kelly]]. He moved the production to Ohio in 1987.
+ 
+The company had the  second-generation Avanti's styling originated by Tom Kellogg, the youngest member of the original Avanti Studebaker design team, at first called the AVX in the mid 90's. Tom Kellogg was fatally injured in a car accident in California on August 14, 2003.<ref>{{cite news|last=Martin |first=Douglas |url=http://www.nytimes.com/2003/08/19/business/thomas-w-kellogg-71-a-studebaker-avanti-designer.html?pagewanted=al|title=Thomas W. Kellogg, 71; A Studebaker Avanti Designer | journal = The New York Times |publisher=Nytimes.com |date=2003-08-19 |accessdate=2015-07-14 }}</ref>
+
+==Cafaro years==
+[[File:1991 Avanti II sedan.jpg|thumb|1991 Avanti four-door sedan]]
+Real estate man John J. Cafaro purchased the rights to Avanti Motor Company in 1988. With the help of the State of Ohio, he moved all Avanti production from South Bend - its birthplace - to the [[Rust Belt]] area of [[Youngstown, Ohio]]. In 1988 and 1989 Avanti made two-door coupes and a convertible. The 1988 Avanti were called the "Silver Year" models, marking 25 years since the Avanti's introduction. The 1989 Avanti were given a ground effects packaging.
+
+Cafaro was noted for making the four door Avanti in 1990, an idea from the original designer, Raymond Loewy.{{cn|date=August 2015}} Cafaro concentrated on the four door to the detriment of the original coupe, the company's primary vehicle. Only 90 were made at the Youngstown plant. In 1991 Cafaro went back to building the convertible before the plant was closed later that year.
+
+==Michael E. Kelly returns==
+M. E. Kelly moved Avanti operations from Ohio to Georgia in 1999 and produced redesigned Avanti automobiles in [[Villa Rica, Georgia]] from 2000 to 2005, before moving to [[Cancun, Mexico]]. 
+From 2004, [[Ford Motor Company|Ford]] chassis and engines were used. In October 2005 an internet report said "Avanti Motors" had "recently announced a new relationship with Ford Motor Company and was planning a big comeback".<ref>Spinelli M, [http://jalopnik.com/cars/news/game-on-avanti-motors-hopes-to-survive-and-thrive-in-2006-130353.php Game On: Avanti Motors Hopes to Survive and Thrive in 2006] at jalopnik.com, October 11, 2005</ref>  An internet report in 2006 said Kelly had sold the company in 1988 and repurchased it in 1999 from Cafaro of Ohio; and that the company had established a new factory and showroom in [[Villa Rica]], [[Georgia (U.S. state)|Georgia]]. In early 2006, Kelly moved Avanti production to a new plant in [[Cancun]], [[Mexico]], but the company floundered after M. E. Kelly was arrested in December 2006 on fraud counts related to an alleged  [[ponzi scheme]] in the United States.
+
+The last Avanti to date rolled off the line in Cancun, Mexico in March of 2006. All the Mustang-based Avantis used V-8 engines, with the option of a Ford V-6. Only one 2006 Avanti was built with a Ford V-6 engine.  The factory and showroom were emptied in 2011 and have been sold. Many extremely rare Studebaker and Avanti concepts and racing vehicles that were on the second floor of the building in Cancun have been moved elsewhere and/or sold.<ref>{{cite web
+ | url = http://blogs.motortrend.com/1008583/car-news/avanti-motors-future-plans-in-flux-after-arrest-of-chairman/index.html
+ | title = Avanti Motors future plans in flux after arrest of chairman
+ | accessdate = 2008-11-20
+ | date= January 30, 2007
+ | work = Motortrend press report
+ }}</ref><ref>{{cite web
+ | url = http://www.sec.gov/litigation/litreleases/2007/lr20267.htm
+ | title = SEC Charges Twenty-Six Defendants in $428 Million Securities Fraud That Targeted Senior Citizens and Retirement Savings
+ | accessdate = 2008-08-21
+ | date= September 5, 2007
+ | work = Securities Exchange Commission
+ | archiveurl= http://web.archive.org/web/20080922193935/http://sec.gov/litigation/litreleases/2007/lr20267.htm| archivedate= September 22, 2008 <!--DASHBot-->| deadurl= no}}</ref><ref>{{cite web
+ | url = http://www.sec.gov/news/press/2007/2007-172.htm
+ | title = SEC Press Release
+ | accessdate = 2008-01-27
+ | date= September 5, 2007
+ | work = Securities Exchange Commission
+ | archiveurl= http://web.archive.org/web/20080121232622/http://www.sec.gov/news/press/2007/2007-172.htm| archivedate= January 21, 2008 <!--DASHBot-->| deadurl= no}}</ref><ref>{{cite web
+ | url = http://www.sec.gov/litigation/complaints/2007/comp20267.pdf
+ |format=PDF| title = SEC vs. Michael E Kelly, Michael P Kelly, Donald L Kelly and 23 others
+ | accessdate = 2008-01-27
+ | date= September 5, 2007
+ | work = Securities Exchange Commission
+ }}</ref>
+
+==References==
+*{{cite journal|ref = Langworth | title=Avanti II: Nate Altman can make you a car that you will love|last=Langworth|first=Richard M|journal=[http://www.autoquarterly.com Automobile Quarterly]|location=[[New Albany, Indiana|New Albany]], IN|pages=276–281|volume= X | issue = 3rd Quarter, 1972}}
+{{reflist|2}}
+
+==Further reading==
+*[http://ateupwithmotor.com/model-histories/sports-cars-and-muscle-cars/94-the-unlikely-studebaker-raymond-loewy-and-the-birth-and-rebirth-of-the-avanti.html The Unlikely Studebaker: Raymond Loewy and the Birth (and Rebirth) of the Avanti] at 'Ate up with Motor'
+
+==External links==
+*[http://www.aoai.org/ Avanti Owners Association International homepage] Association for owners of both Studebaker and non-Studebaker Avanti cars
+*[http://www.avantimotors.com/ Avanti Motors homepage] Link to last known Avanti Company website with pictures of 2007 models
+
+{{Automotive industry in the United States}}
+
+{{DEFAULTSORT:Avanti Cars (Non-Studebaker)}}
+[[Category:Sports cars]]
+=======EOF=======
+{{unreferenced|date=June 2010}}
+{{Racing car |
+  Car_name         = BAR 004 |
+  Image            = |
+  Category         = [[Formula One]] |
+  Constructor      = [[British American Racing|BAR]] |
+  Designer         = |
+  Predecessor      = [[BAR 003|003]] |
+  Successor        = [[BAR 005|005]] |
+  Team             = [[British American Racing|Lucky Strike BAR Honda]] |
+  Drivers          = 11. {{flagicon|CAN}} [[Jacques Villeneuve]]<br>12. {{flagicon|FRA}} [[Olivier Panis]] |
+  Chassis          = [[carbon fiber|Carbon-fibre]] [[monocoque]] |
+  Front suspension = independent, pushrod-activated, inboard spring |
+  Rear suspension  = independent, pushrod-activated, inboard spring |
+  Engine name      = [[Honda F1|Honda]] RA002E |
+  Capacity         = |
+  Configuration    = [[V10 engine|V10]] (90°) |
+  Turbo/NA         = [[naturally aspirated]] |
+  Engine position  = |
+  Gearbox name     = [[British American Racing|BAR]]/[[Xtrac]] |
+  Gears            = 7-speed|
+  Type             = longitudinal semi-automatic sequential |
+  Differential     = |
+  Fuel             = |
+  Tyres            = [[Bridgestone]] |
+  Debut            = [[2002 Australian Grand Prix]] |
+  Races            = 17 |
+  Wins             = 0 |
+  Cons_champ       = 0 |
+  Drivers_champ    = 0 |
+  Poles            = 0 |
+  Fastest_laps     = 0 |
+}}
+
+The '''BAR 004''' was the car with which the [[British American Racing]] team competed in the {{F1|2002}} [[Formula One]] season. It was driven by [[Jacques Villeneuve]] and [[Olivier Panis]].
+
+During the season the car was unreliable having a dismal start which saw the team fail to score a single championship point during the first half of the season. Also Olivier Panis failed to finish the first seven races. The team scored their first points when they finished fourth and fifth at the [[2002 British Grand Prix]] at [[Silverstone Circuit|Silverstone]]. Eventually the team finished eighth in the Constructors' Championship with 7 points.
+
+{{-}}
+
+==Complete Formula One results==
+([[:Template:F1 driver results legend 2|key]]) 
+{| class="wikitable" style="text-align:center; font-size:95%"
+! Year
+! Team
+! Engine
+! Tyres
+! Drivers
+! 1
+! 2
+! 3
+! 4
+! 5
+! 6
+! 7
+! 8
+! 9
+! 10
+! 11
+! 12
+! 13
+! 14
+! 15
+! 16
+! 17
+! Points
+! WCC
+|-
+| rowspan="3"| [[2002 Formula One season|2002]]
+| rowspan="3"| [[British American Racing]]
+| rowspan="3"| [[Honda Racing F1|Honda]] RA002E [[V10 engine|V10]]
+| rowspan="3"| {{Bridgestone}}
+||
+|| [[2002 Australian Grand Prix|AUS]]
+|| [[2002 Malaysian Grand Prix|MAL]]
+|| [[2002 Brazilian Grand Prix|BRA]]
+|| [[2002 San Marino Grand Prix|SMR]]
+|| [[2002 Spanish Grand Prix|ESP]]
+|| [[2002 Austrian Grand Prix|AUT]]
+|| [[2002 Monaco Grand Prix|MON]]
+|| [[2002 Canadian Grand Prix|CAN]]
+|| [[2002 European Grand Prix|EUR]]
+|| [[2002 British Grand Prix|GBR]]
+|| [[2002 French Grand Prix|FRA]]
+|| [[2002 German Grand Prix|GER]]
+|| [[2002 Hungarian Grand Prix|HUN]]
+|| [[2002 Belgian Grand Prix|BEL]]
+|| [[2002 Italian Grand Prix|ITA]]
+|| [[2002 United States Grand Prix|USA]]
+|| [[2002 Japanese Grand Prix|JPN]]
+| rowspan="3"|'''7'''
+| rowspan="3"|'''8th'''
+|-
+|align=left| {{flagicon|CAN}} [[Jacques Villeneuve]]
+|style="background:#EFCFFF;"| Ret
+|style="background:#CFCFFF;"| 8
+|style="background:#CFCFFF;"| 10
+|style="background:#CFCFFF;"| 7
+|style="background:#CFCFFF;"| 7
+|style="background:#CFCFFF;"| 10
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#CFCFFF;"| 12
+|style="background:#DFFFDF;"| 4
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#CFCFFF;"| 8
+|style="background:#CFCFFF;"| 9
+|style="background:#DFFFDF;"| 6
+|style="background:#EFCFFF;"| Ret
+|-
+|align=left| {{flagicon|FRA}} [[Olivier Panis]]
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#CFCFFF;"| 8
+|style="background:#CFCFFF;"| 9
+|style="background:#DFFFDF;"| 5
+|style="background:#EFCFFF;"| Ret
+|style="background:#EFCFFF;"| Ret
+|style="background:#CFCFFF;"| 12
+|style="background:#CFCFFF;"| 12
+|style="background:#DFFFDF;"| 6
+|style="background:#CFCFFF;"| 12
+|style="background:#EFCFFF;"| Ret
+|}
+
+{{British_American_Racing}}
+{{F1 cars 2002}}
+
+[[Category:BAR Formula One cars]]
+[[Category:2002 Formula One season cars]]
+=======EOF=======
+{{Racing car
+| Car_name         = Aston Martin RHAM/1
+| Image            = [[Image:Aston Martin RHAM1 Goodwood.jpg|250px|Aston Martin DBR1]]<br>''Aston Martin DBS V8, RHAM/1 at Goodwood Festival of Speed 2009''
+| Category         = [[24 Hours of Le Mans#Cars|Le Mans Racer]], [[Sports car racing]] 
+| Constructor      = [[Robin Hamilton (racing driver)|Robin Hamilton]], [[Aston Martin Lagonda Limited|Aston Martin Lagonda LTD]]
+| Designer         = Robin Hamilton
+| Team             = {{flagicon|UK}} [[SAS Robin Hamilton]]<br>{{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} [[Ault & Wiborg Ltd]]
+| Drivers          = {{flagicon|UK}} [[Mike Salmon (racing driver)|Mike Salmon]]<br>{{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} [[David Preece (racing driver)|David Preece]]<br>{{flagicon|UK}} [[Derek Bell (auto racer)|Derek Bell]]
+| Technical ref    = 
+| Chassis          = Highly modified [[Aston Martin DBS V8]] (DBSV8/10038/RC)<br>[[Fiberglass|Fibre glass]] panels, lowered roof and front bonnet line
+| Front suspension = [[Double wishbone suspension|Unequal wishbones]], front [[Sway bar|anti-roll bar]]
+| Rear suspension  = Reduced width [[De Dion tube]], [[Radius rod|radius arms]], [[Trailing arm|trailing links]], Koni [[Shock absorber|dampers]], custom [[coil spring]]s, nylon mountings
+| Length           = 15 ft 4.5 in (4,580 mm)
+| Width            = 6 ft 4 in (1,930 mm)
+| Height           = 4 ft 0.25 in (1,230 mm)
+| Wheelbase        = 8 ft 06 in (2,610 mm)
+| Track            = 
+| Engine name      = RH developed [[Aston Martin]]
+| Capacity         = 5,340 cc
+| Configuration    = [[Alloy]] [[V8 engine|V8]], Twin-[[Overhead camshaft|OHC]] per bank,
+| Turbo/NA         = Twin [[Garrett AiResearch]] [[Turbocharger|turbos]], Bosch [[fuel injection]] (1979)
+| Engine position  = [[Front-engine, rear-wheel drive layout|FR Layout]]<br>1977: {{convert|188|mi/h|km/h|abbr=on}}, {{convert|492|bhp|abbr=on}} @ 6,500 [[Revolutions per minute|rpm]] (Max 510 bhp @7000 rpm)<br>1979: {{convert|190|mi/h|km/h|abbr=on}}, 600 bhp @ 6,000 rpm (Max 800 bhp @ 7,000 rpm)
+| Gearbox name     = Custom built ZF
+| Gears            = 5-speed
+| Type             = [[Manual transmission|Manual]]<br>Close ratio 5th gear<br>AP [[Clutch#Multiple plate clutch|3 plate clutch]] (77), [[Clutch#Multiple plate clutch|4 plate]] (79)
+| Differential     = Modified [[Limited slip differential|LSD]] 
+| Weight           = 1977: 1516 kg (54%-46%, F-R)<br>1979: 1,486 kg
+| Fuel             = 
+| Tyres            = Custom made [[Dunlop Tyres|Dunlop]]
+| Debut            = [[1977 24 Hours of Le Mans]]
+| Races            =
+| Wins             = 
+| Cons_champ       = 
+| Drivers_champ    = 
+| Poles            = 
+| Fastest_laps     = 
+|}}
+The '''Aston Martin RHAM/1''' was a highly modified Aston Martin DBS V8 racing car, developed by [[Robin Hamilton (racing driver)|Robin Hamilton]], built with the intention of racing at the [[24 Hours of Le Mans]]. After development by Hamilton, RHAM/1 competed in the [[1977 24 Hours of Le Mans|1977]] and [[1979 24 Hours of Le Mans]], finishing 17th overall and 3rd in the [[IMSA GT Championship#The GTP Era|GTP]] class in the 1977 race. The car has also held the [[World Land Speed Record]], for towing a caravan, at the speed of 124.91&nbsp;mph.
+
+== Design ==
+
+After completing his apprenticeship with Rolls Royce in [[Derby]], Robin Hamilton set up Robin Hamilton Motors in Tutbry with David Jack. At Robin Hamilton Motors they specialised solely in [[Aston Martin]]s. Hamilton gained large experience with [[Aston Martin]] [[DBS V8]]'s and AM V8's while at the specialist. Hamilton's [[DBS V8]] (DBSV8/10038/RC) was only the second ever production [[Aston Martin V8]] to take to the track. Competing on 6 April 1974, with the first raced V8 being a DBS V8 in 1970 at the [[Aston Martin Owners Club|AMOC]] Curborough Sprint.
+
+With Hamilton's experience DBSV8/10038/RC was developed and developed and after large modifications to the car over the three years of 1974 to 1977, the car became unrecognisable and the original chassis number of DBSV8/10038/RC, was changed to RHAM/1 (Robin Hamilton Aston Martin #1). Which was the car that would finally fulfil Hamilton's intentions of racing at [[Le Mans]].
+
+Whilst this is not a works car, support was provided by the Aston Martin factory, and indeed lessons learned from the [[Motor Industry Research Association|MIRA]] wind tunnel test sessions were applied to the [[Aston Martin V8|V8 Vantage]] in the form of front air dam and rear spoiler.
+
+== Racing History ==
+
+=== 1974 ===
+
+In 1974, Staffordshire based Aston Martin specialist, [[Robin Hamilton (racing driver)|Robin Hamilton]] began competing a lightly modified 1969 DBS V8 (DBS/10038/RC) in [[Aston Martin Owners Club]] events. The first major alterations that were made to 10038/RC were made to make the car conform to Group 4 regulations and bring the car into line with the then current production AM V8 by fitting the latter's single headlight AM V8 front end.
+
+To make the Le Mans dreams possible the Aston Martin V8 was [[Homologation|homologated]] for racing, which involved registering the car with both the [[Motor Sports Association|RAC MSA]] (now [[Motor Sports Association|MSA]]) and the [[Fédération Internationale de l'Automobile|FIA]].
+
+=== 1975 ===
+
+Due to the large modifications to the aerodynamics of the car, DBSV8/10038/RC was not usable on the roads. At this stage the car was far quicker than any standard DBS V8, however only shared similar power outputs to the production V8 Vantage.
+
+With [[Le Mans]] the eventual target, the car was further developed to incorporate modified cylinder heads, revised camshafts, side-draft [[Weber carburetor|Weber]] carburettors and a race exhaust system, while the suspension and brakes were also upgraded, with stiffer and shorter springs, larger brakes, wider wheels and racing slick tyres. In this form DBSV8/10038/RC raced in [[Aston Martin Owners Club|AMOC]] events throughout 1975, competing up until September 1975. The car showed promise, proving to be a match for former [[Le Mans]] cars at the AMOC [[Silverstone Circuit|Silverstone]] meeting in July by finishing 3rd. Later that year, the car gained a quartet of dragster-style downdraft Weber carburettors, which were the height of half the [[Windshield|windscreen]] for the 1976 season.
+
+=== 1976 ===
+
+The DBS V8 appeared at the Jaguar Drivers Club meeting in April 1976 as after it had undergone wind tunnel testing at [[Motor Industry Research Association|MIRA]] (through backing from [[Aston Martin]]). The car's power output had not tested on a [[dynamometer]], nor a rolling road, with the only testing being held on straight stretch of {{convert|3|mi|km}} of local public road.
+
+The car only completed half of the events in 1976 due to the preparation for the scheduled [[Le Mans]] appearance. [[Robin Hamilton (racing driver)|Robin Hamilton]] hoped to race at the [[1976 24 Hours of Le Mans|1976 Le Mans race]], even preparing a sponsorship brochure, seeking financial support. With the brochure saying: "''The Aston Martin will run in Group 4, and although it is unlikely to finish 1st overall, stands an excellent chance of winning this Group, which would carry almost as much prestige as winning the race overall.''"<ref>Chudecki, Paul: Aston Martin V8 Race Cars, page 39, 1990</ref> In the personnel list, famous [[Aston Martin]] team manager [[John Wyer]] was listed as project consultant and [[Willie Green (racing driver)|Willie Green]] as second driver, with the third driver to be announced.
+
+Fred Hartley, an interim managing director at Aston Martin in 1976, had promised assistance to Hamilton, via a letter to him. But this financial assistance, nor a sponsor was found and the car did not go to the 1976 Le Mans race but this was probably a good Oman, as according to Hamilton, "''Actually it was just as well, because I don't think we would have been ready for it''." <ref>Chudecki, Paul: Aston Martin V8 Race Cars, page 36, 1990</ref>
+
+In November/December 1976 Hamilton was allowed 2 weeks of testing on the engine test-bed facilities at Aston Martin's Newport Pagnell factory . With liaison from Dave Morgan (experienced with Lola-Astons of the 1960s and later the Aston Martin Nimrod V8's), there was small development with the engine and "''suggestions about carburettors and bell-mouths''."<ref>Chudecki, Paul: Aston Martin V8 Race Cars, page 37, 1990</ref>
+
+Robin Hamilton went back to the Aston Martin Factory for financial backing (£20,000) for the project, suggesting an idea, for production of a powerful 380-{{convert|400|bhp|abbr=on}} limited edition [[Aston Martin V8]]. His idea being to increase the sale price by £1000, this £1000 funding his project. Aston Martin dismissed the idea, even though Hamilton had made drawings of the proposed car. In 1977 [[Aston Martin]] went on to introduce the [[Aston Martin V8 Vantage (1977)|V8 Vantage]], similar to Hamiltons idea, but only coincidental.
+
+Robin Hamilton got assistance from Mike Loasby, who paid for a wind tunnel test session. In which they made the spoiler and other pieces to make the Vantage. The car saw a 10% reduction in drag and increased downforce bodywork. The car now almost had the same body shape as the Vantage. All efforts were then put into making the 1976 24 Hours of Le Mans and a sponsor would eventually found.
+
+=== 1977 Le Mans 24 Hour ===
+
+[[Robin Hamilton (racing driver)|Robin Hamilton]] again released a sponsorship brochure for 1977, but again failed to get any large sponsorship backing. But Hamilton did gain a small sponsorship deal from SAS in London, a company who specialised in riot and security equipment. Hamilton received £25,000, which covered most of his costs for [[Le Mans]].
+
+The V8 engine of the car, had now been fitted with Nimonic steel valves, special forged [[Cosworth]] pistons and a redesigned sump. The engine would now produce {{convert|520|bhp|abbr=on}} at 6,750 rpm and 381&nbsp;bhp at the wheels. Plus over 400&nbsp;ft·lbf of torque at 5,250 rpm with [[Weber carburetor|Weber]] 50 IDA downdraught carburettors. The car by this stage was now a [[Group 5 (racing)|Group 5]] car rather than a [[Group 4 (racing)|Group 4]], which would mean it would have to race against the [[Turbocharger|turbocharged]] [[Porsche]]s. Another [[wind tunnel]] test showed that the car would have dangerous amounts of lift on the [[Mulsanne Straight]], so another change had to be made, and a rear tail spoiler needed to be fitted. The wind tunnel test also showed that the [[Radiator (engine cooling)|radiator]], (now moved to the back to change the weight bias), would gain then 10&nbsp;mph more in top speed, but it would cause the engine to run too hot, so it had to be moved back to its original location. Four oil coolers also ensured that the engine temperature never exceeded 110&nbsp;°C.
+
+The car also had other modifications made to it, with a redesign of the front bulkhead and mostly drilled box section included in the chassis modifications. RHAM/1 also had roller bearing drive shafts and peg-drive centre lock hubs for the one piece custom made [[BBS Kraftfahrzeugtechnik AG|BBS]] [[Alloy wheel|magnesium wheels]]. The wheels measured 19" in diameter, 15" wide at the rear, and 13" wide at the front and had special, custom made [[Dunlop Tyres|Dunlop tyres]] for them. The wheels themselves needed to be bigger than 16" to go over the twin [[Disc brake#Calipers|caliper]], 12½" Lockheed, ventilated [[disc brake]]s, with no servo assistance. All of which was needed to stop the 30 [[Centum weight|cwt]] [[Aston Martin]]. The alternator was switched to run off the gearbox (which itself had a closer ratio 5th gear) instead of the engine crankshaft. The clutch was now uprated to a triple plate. The suspension was almost standard, with standard rubber bushes but with slight geometry changes. Nylon mountings were also used for a reduced width Dion tube. The [[roll cage]] was a [[NASCAR]] (instead of [[FIA]]) specification cage, which was bolted to the chassis. This alone weighed 50&nbsp;kg.
+
+The car by then became known as RHAM/1 (its chassis number, Robin Hamilton Aston Martin #1) as it was unrecognisable from the original car. RHAM/1 made its debut at the [[Silverstone Circuit|Silverstone]] Six Hours<ref name="Complete Archive of Chassis RHAM/1">{{cite web|url=http://www.racingsportscars.com/chassis/archive/RHAM__001.html|title=Complete Archive of Chassis RHAM/1|publisher=Racing Sports Cars}}</ref> a pre event to the Le Mans race, on 15 May 1977. By this time Hamilton had gained some financial input from several [[Aston Martin Owners Club|AMOC]] members, whose names appeared on the rear wing for the race. At the Six Hour race, Hamilton drove alongside fellow AMOC member [[David Preece (racing driver)|David Preece]]. In practice Preece spun off, but not a lot of damage was caused to the car. RHAM/1 qualified on the eight row, in 1 minute 43.39 seconds. During the race, Le Mans gearing ratios and a rev limiter of 6,000 rpm meant the car lost over 100&nbsp;bhp. At a pit stop, heat soak from the in board rear brakes caused the differential oil seal to fail and 55 minutes were lost in the stop. Due to the regulations saying that they could not change the unit, they had to repair it. In order to save more complications, and to finish the race, the car raced on at a much slower pace. Hamilton and Preece did finish, but they failed to reach the final standings due to insufficient laps completed.
+
+After the race, Hamilton had to modify the cooling of the rear brakes, otherwise the car would never last the 24-hour period.
+
+RHAM/1 competed in its first 24 Hour event when it raced at the [[1977 24 Hours of Le Mans|1977 Le Mans 24 hour]] race.<ref name="Complete Archive of Chassis RHAM/1"/> With drivers David Preece, [[Mike Salmon (racing driver)|Mike Salmon]] (a Le Mans veteran, Salmon had driven the last Aston to race at the Sarthe, Peter Sutcliffe's [[Aston Martin DP214]], in 1964.) and Robin Hamilton himself. A request was made to move to the [[IMSA GT Championship#The GTP Era|GTP]] category (from the competitive Group 5, where opposition was deemed less strong. This request was granted by the organisers.
+
+The first practice was a wet session, and all drivers came accustomed to the wet conditions. With RHAM/1 putting in respectable lap times, being assisted by good tyre grip with the aid of huge 1516&nbsp;kg weight of the car (heaviest by 5½ [[Centum weight|cwt]]). The fastest time would have put them in the middle of the grid. In the next practice session the car ran with both [[Radiator (engine cooling)|radiator]] ducts open, which aided cooling down to 85&nbsp;°C, but gave the effect which was likened to losing a cylinder on the Mulsanne Straight, due to the increased drag. In the last hours of qualifying, Hamilton had to put in quick laps in the dark, in order to make the cut for the race. Hamilton put in a best time of 4 minutes 31.8 seconds, With the V8 engine producing 520&nbsp;bhp, RHAM/1 was recorded at 188&nbsp;mph on the Mulsanne Straight during qualifying. Hamiltons time was well inside the 4 minutes 48 seconds maximum time, however this was the slowest in the GTP class. The organisers for the race, then decided to reduce the field to 55 cars, which meant losing the slowest car in each class, which would have meant RHAM/1 would have been dropped. But one of the other GTP class racers had broken the rules and were cut instead, to the relief of Hamilton who only found out 5 hours before the race.
+
+In the race itself, the car started with a lower front spoiler to aid stability, but this lost the car 10&nbsp;mph in top speed. Hamilton drove the opening stint, but came into the pits after 11 minutes with brake vibration, but this was down to the brakes bedding in. Hamilton's stint was followed by Preece and then Salmon, with the Aston picking up 23 places in 2 hours. The Aston's fuel efficiency was good, better than first thought after the [[Silverstone Circuit|Silverstone]] Six Hour race, but this could have been improved, as GTP rules allowed for a 160 litre fuel tank to be used compared to the Aston's installed 120 litre tank to meet Group 5 regulations. But this could not be changed before the race.
+
+At a routine stop at 10.19pm, cracks in the front brake discs were discovered. They were replaced in a pit stop lasting 31 minutes, but a lack of further spares meant that they had to reduce the use of the brakes and therefore use engine braking as much as possible for the remaining 17 hours and 41 minutes. Even so lap times remained constant. The only other serious problem encountered was a split differential oil tank that needed regular patching and topping up resulting in one 27 minute pit stop. A few more problems had to be deal with before the end of the race, with a 2 minute stop having to be made to reset the lights on the car. Also the gear lever had to be replaced after Salmon broke it off and threw it out of the window during one of his stints. A marshal collected the gear knob and returned it to the garage, running all the way from his post.
+
+Running steadily to the flag, the Aston Martin crossed the finish line after 2,210.78 miles (261 laps) of racing with Robin Hamilton, who had driven longest of the three drivers, at the wheel. RHAM/1 finished in 17th place overall (from 55 starters) and 3rd in class (GTP category), ironically, if it had stayed in Group 5 it would have finished 2nd in class. Pit stops totalled 3 hours and fuel consumption worked out at 5.75 [[Miles per gallon|mpg]]. With RHAM/1 using a maximum engine speed of 6,400 rpm, averaging 92.12&nbsp;mph (including stops) or 104.70&nbsp;mph (excluding stops). The fastest lap in the car was by Hamilton, recording 4 minutes 34.2 seconds (average speed of 112.25&nbsp;mph). 18 of the 24 hours were driven with cracked front brake discs, the car was later given the name of 'Muncher' due to the rate that the car got through brake discs.
+
+Hamilton achieved a lifelong ambition by driving an Aston Martin across the Le Mans finishing line and also confounded the pundits who claimed that the heavyweight [[Aston Martin DBS|DBS V8]] was totally unsuitable for racing.
+
+=== 1978 ===
+
+For 1978, RHAM/1 was modified even more, now with and output of {{convert|800|bhp|abbr=on}} assisted by twin [[Garrett AiResearch]] turbos. But, fuel consumption dropped to 2.5 [[Miles per gallon|mpg]] (for the 1977 race, the average was 5.75 mpg) so the entry to [[Le Mans]] was withdrawn two weeks prior the race.<ref name="Complete Archive of Chassis RHAM/1"/>
+
+=== 1979 Le Mans 24 Hour ===
+
+RHAM/1 next appeared at the [[Silverstone Circuit|Silverstone]] Six Hours<ref name="Complete Archive of Chassis RHAM/1"/> in May 1979, considerably lightened and re-modeled with a lower roof line, steeply raked windscreen, huge front air dam and dropped bonnet line. While beneath the bonnet was a twin-turbocharged version of the Aston V8 engine with fuel injection in place of the [[Weber carburetor|Weber carburettors]], reducing boost pressure to give maximum power output of {{convert|650|bhp|abbr=on}} in race specification. But this reduced fuel consumption to around 4 [[Miles per gallon|mpg]]. The brakes were enlarged again, to 13" all round and water cooling was developed to help cool them (to be used at [[Le Mans]]). 350&nbsp;lb in weight was also removed, in non Le Mans trim (no extra lights or equipment).
+
+For the race at Silverstone Hamilton was joined by [[David Preece (racing driver)|David Preece]] and [[Derek Bell (auto racer)|Derek Bell]], but Hamilton would not race, only working in the pits. After a De Dion tube in the rear suspensison broke whilst Hamilton was driving in the practice. The car qualified 11th out of 25 entrants, with Bell recording 1 minute 37.54 seconds. In the race the car suffered trouble with brake fade and oil breathing problems, the car dropped down to 21st place after 1 hour 30 minutes, but back up to 17th after 3 hours. RHAM/1 finished 13th overall and 6th in class, after being hampered with more problems, of a blown tyre and small engine fire.
+
+Hamilton received sponsorshop for the [[1979 24 Hours of Le Mans|1979 Le Mans 24 hour]]<ref name="Complete Archive of Chassis RHAM/1"/> from fellow [[Aston Martin Owners Club|AMOC]] member, Peter Millward through his company Link Systems. The car would again compete in the [[IMSA GT Championship#The GTP Era|GTP]] class, weighing 1,546&nbsp;kg it was again the heaviest in the class. Before the race the gearbox and engine were changed due to not being able to select first gear. During the race (with the same set of drivers as Silverstone that year) the V8 proved capable of lapping many seconds quicker than in 1977 (7.32 seconds). But the car suffered more problems, with an ongoing oil leak and then, after it had only competed 2 hours and 45 minutes (21 laps) of the race, a connecting rod broke due to a melted and holed piston.
+
+=== 1980 ===
+
+The car's next race, was at [[Silverstone Circuit|Silverstone]] Six Hours<ref name="Complete Archive of Chassis RHAM/1"/> in 1980, where RHAM/1 now had a huge rear wing to counterbalance the downforce at the front of the car. Driven by Hamilton and Bell, the car retired early, as after just {{convert|61.5|mi|km}}, when the rear hub failed.
+
+On 14 October 1980 RHAM/1 set a new [[Land speed record|World Land Speed Record]] for towing a caravan on the runway at [[RAF Elvington|Elvington Airfield]], Yorkshire. Robin Hamilton towed an Alpha 14 caravan in the wet to an average speed of 124.91&nbsp;mph, having seen 152&nbsp;mph on the speedometer exiting the timed quarter mile. The speed beat the previous record of 108&nbsp;mph.
+
+=== 1981 ===
+[[Image:1977AstonMartinAMV8.jpg|right|thumb|250px|Aston Martin RHAM/1 at Goodwood Festival of Speed 2009]]
+With his first hand experience at [[Le Mans]], [[Robin Hamilton (racing driver)|Robin Hamilton]] went on to develop the [[Nimrod Racing Automobiles|Aston Martin Nimrod]] [[Group C]] racing car in the early 1980s.
+
+=== 1984 ===
+
+RHAM/1 was put up for sale by [[Robin Hamilton (racing driver)|Robin Hamilton]] in 1984 when he closed his business and was bought by Chris Crawford.
+
+=== 2005 ===
+
+In 2005 RHAM/1 was for sale with Nicholas Mee's [[Aston Martin]] Car Company.
+
+=== 2006 ===
+
+RHAM/1 was on sale at [[Bonhams|Bonhams']] [[Aston Martin]] auction held on 13 May 2006 at Works Service, Newport Pagnell
+
+=== Results ===
+
+{| class="wikitable" style="font-size: 95%;"
+|-
+! Year
+! Race
+! Track
+! Grid
+! Lap
+! Class
+! No
+! Team
+! scope="col" width="105" | Drivers
+! Colours
+! Sponsors
+! Pos
+|-
+! 1977
+| [[1000 km Silverstone|World Championship 6 Hours]]<ref name="1977 Silverstone World Championship 6 hours">{{cite web|url=http://www.racingsportscars.com/photo/Silverstone-1977-05-15.html|title=1977 Silverstone World Championship 6 hours|publisher=Racing Sports Cars}}</ref>
+| [[Silverstone Circuit|Silverstone]]
+| 15th 
+| 1:43.490
+| [[Group 5 (racing)|Gr. 5]]
+| 22
+| {{Flagicon|United Kingdom}} Robin Hamilton
+| {{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} David Preece
+| Red/white/blue
+| Robin Hamilton Aston Martin
+| NC
+|-
+! 1977
+| [[24 Hours of Le Mans]]<ref name="1977 Le Mans 24 Hours entry list">{{cite web|url=http://www.racingsportscars.com/covers/_Le_Mans-1977-06-12e.jpg|title=1977 Le Mans 24 Hours entry list|publisher=Racing Sports Cars}}</ref><ref name="1977 Le Mans 24 Hours results">{{cite web|url=http://www.racingsportscars.com/photo/Le_Mans-1977-06-12.html|title=1977 Le Mans 24 Hours results|publisher=Racing Sports Cars}}</ref>
+| [[Circuit de la Sarthe]]
+| 56th 
+| 4:31.800
+| [[IMSA GT Championship#The GTP Era|GTP]]
+| 83
+| {{Flagicon|United Kingdom}} SAS Robin Hamilton
+| {{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} David Preece<br>{{flagicon|UK}} Mike Salmon
+| Red/white/blue
+| SAS Group Exporters
+| 17th
+|-
+! 1978
+| [[24 Hours of Le Mans]]<ref name="1978 Le Mans 24 Hours results">{{cite web|url=http://www.racingsportscars.com/photo/Le_Mans-1978-06-11.html|title=1978 Le Mans 24 Hours results|publisher=Racing Sports Cars}}</ref>
+| Circuit de la Sarthe
+| 28th 
+| 1:48.030
+| GTP +3
+| 70
+| {{flagicon|UK}} Robin Hamilton
+| {{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} David Preece
+| 
+| 
+| DNA
+|-
+! 1979
+| [[1000 km Silverstone|World Manufacturers Championship 6 Hours]]<ref name="1979 Silverstone World Manufacturers Championship 6 hours">{{cite web|url=http://www.racingsportscars.com/photo/Silverstone-1979-05-06.html|title=1979 Silverstone World Manufacturers Championship 6 hours|publisher=Racing Sports Cars}}</ref><ref name="1979 Silverstone World Manufacturers Championship entry list">{{cite web|url=http://www.racingsportscars.com/covers/_Silverstone-1979-05-06e.jpg|title=1979 Silverstone World Manufacturers Championship entry list|publisher=Racing Sports Cars}}</ref>
+| Silverstone
+| 11th 
+| 1:37.540
+| Gr. 5
+| 12
+| {{flagicon|UK}} Robin Hamilton - Aston Martin Distributors
+| {{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} David Preece<br>{{flagicon|UK}} Derek Bell
+| White<br>(+red/blue)
+| PLS-FMS/Link Systems
+| 13th
+|-
+! 1979
+| [[24 Hours of Le Mans]]<ref name="1979 Le Mans 24 Hours entry list">{{cite web|url=http://www.racingsportscars.com/covers/_Le_Mans-1979-06-10e.jpg|title=1979 Le Mans 24 Hours entry list|publisher=Racing Sports Cars}}</ref><ref name="1979 Le Mans 24 Hours results">{{cite web|url=http://www.racingsportscars.com/photo/Le_Mans-1979-06-10.html|title=1979 Le Mans 24 Hours results|publisher=Racing Sports Cars}}</ref>
+| Circuit de la Sarthe
+| 55th 
+| 4:24.480
+| GTP +3
+| 50
+| {{flagicon|UK}} Robin Hamilton
+| {{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} David Preece<br>{{flagicon|UK}} Mike Salmon
+| White<br>(+red/blue)
+| Link Systems
+| DNF
+|-
+! 1980
+| [[1980 Silverstone 6 Hours|World Championship 6 Hours]]<ref name="1980 Silverstone World Championship 6 hours entry list">{{cite web|url=http://www.racingsportscars.com/covers/_Silverstone-1980-05-11e.jpg|title=1980 Silverstone World Championship 6 hours entry list|publisher=Racing Sports Cars}}</ref><ref name="1980 Silverstone World Championship 6 hours results">{{cite web|url=http://www.racingsportscars.com/photo/Silverstone-1980-05-11.html|title=1980 Silverstone World Championship 6 hours results|publisher=Racing Sports Cars}}</ref>
+| Silverstone
+| 24th 
+| 1:40.100
+| GTP
+| 10
+| {{Flagicon|United Kingdom}} [[Ault & Wiborg|Ault & Wiborg Ltd]]
+| {{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} Derek Bell<br>{{flagicon|UK}} Willie Green
+| White<br>(+red/blue)
+| Robin Hamilton
+| DNF
+|}
+
+== DBSV8/10071/R ==
+
+[[Robin Hamilton (racing driver)|Robin Hamilton]] built a second [[Le Mans]] styled [[Aston Martin V8|DBS V8]] car based on the look of RHAM/1 as it was in 1978. The car was assembled for Peter Griggs who wanted a replica of the car. The car, with chassis number DBSV8/10071/R featured a fibre glass front end and Piper prepared V8 engine, but the car had no [[turbocharger]]. Fuel injection was replaced by 48 IDA down-draught [[Weber carburetor|Weber carburettors]].
+
+The car had some success with Griggs, winning a race at the 1981 [[Aston Martin Owners Club|AMOC]] [[Brands Hatch]] meeting, even though the car was quite heavy. In 1982 the car finished 2nd at Brands Hatch and 4th at an Intermarque race at [[Silverstone Circuit|Silverstone]].
+
+Richard Williams bought the car in 1987 with intentions of upgrading the car with an experimental 6.3 litre V8 engine and racing it in the Intermarque events. However the disassembled car was sold to Marsh Plant Holdings where it was reassembled.
+
+== See also==
+* [[Aston Martin]]
+* [[Aston Martin#Race cars|Aston Martin race cars]]
+* [[Nimrod Racing Automobiles]]
+* [[24 Hours of Le Mans]]
+* [[Aston Martin Racing]]
+
+== References ==
+{{Reflist|2}}
+''Aston Martin Race Cars'' by Paul Chudecki ISBN 0-85045-973-7
+
+== External links ==
+*[http://www.supercars.net/cars/3478.html Supercars.net DBS V8 GTP Muncher]
+*[http://www.astonmartins.com/racing/rham1.htm Aston Martins.com RHAM/1]
+*[http://www.racingsportscars.com/chassis/RHAM__001.html Racing Sports Cars.com Chassis RHAM/1]
+
+{{Aston Martin Racing}}
+{{Aston Martin}}
+
+{{DEFAULTSORT:Aston Martin Rham 1}}
+[[Category:Aston Martin racing cars]]
+=======EOF=======
+{{Infobox automobile
+| image =Daihatsu Tanto Exe Custom.jpg
+| name = Daihatsu Tanto Exe
+| manufacturer = [[Daihatsu]]
+| aka = Subaru Lucra
+| production = 2009-2014 (Daihatsu)<br />2010-2015 (Subaru)
+| assembly =
+| predecessor = [[Subaru R2]]
+| successor =
+| class = [[Kei car]]
+| body_style = 5-door hatchback [[Mini MPV]]
+| layout = [[FF layout]] or [[4WD]]
+| platform =
+| engine = 659 cc petrol
+| transmission = 4 speed automatic<br>[[Continuously variable transmission|CVT]]
+| wheelbase = {{convert|2490|mm|in|1|abbr=on}}
+| length = {{convert|3395|mm|in|1|abbr=on}}
+| width = {{convert|1475|mm|in|1|abbr=on}}
+| height = {{convert|1730|mm|in|1|abbr=on}}
+| weight = {{convert|870|kg|lb|0|abbr=on}}
+| related = [[Daihatsu Copen]]<br>[[Daihatsu Esse]]<br>[[Daihatsu Mira]]<br>[[Daihatsu Mira Cocoa]]<br>[[Daihatsu Move]]<br>[[Daihatsu Sonica]]<br>[[Subaru Pleo]]
+| designer =
+}}
+The '''Daihatsu Tanto Exe''' is a [[Kei car]] produced by [[Daihatsu]]. The production version made its debut at the 2009 [[Tokyo Motor Show]] and was launched on December 24, 2009 by Daihatsu and April 20, 2010 by Subaru as the '''Subaru Lucra'''. The Tanto Exe was designed to compete with models such as the [[Honda Life]], [[Nissan Moco]] and [[Suzuki Wagon R]]. The Daihatsu Tanto Exe Custom, a more sports-oriented version of the Tanto Exe with sports styling, was launched simultaneously. The Daihatsu Tanto Exe and Tanto Exe Custom are both available with a 659cc petrol engine, mated to a 4-speed automatic gearbox on front wheel drive models and [[Continuously variable transmission|CVT]] on four wheel drive models.
+
+==Subaru Lucra==
+[[File:Subaru Lucra.jpg|250px|thumb|left|Subaru Lucra]]
+Due to Subaru's strengthened alliance with [[Daihatsu]] and [[Toyota]] (announced April 16, 2008), the company has been able to launch the Lucra to market. Essentially, the Subaru Lucra is a rebadged Daihatsu Tanto Exe, and the Subaru Lucra Custom is a rebadged Daihatsu Tanto Exe Custom.
+
+The Daihatsu Tanto Exe and Daihatsu Tanto Exe Custom were discontinued on October 2, 2014, due to declining sales caused by the launch of the third-generation Daihatsu Tanto and third-generation Daihatsu Tanto Custom the previous year. The discontinuation left the Subaru Lucra and Subaru Lucra Custom as original Subaru models, even though they were still both being manufactured by Daihatsu. The Subaru Lucra and Subaru Lucra Custom, however, lasted until April 1, 2015, when they were discontinued due to changing tax consumption rules.
+
+{{Daihatsu}}
+{{Daihatsu timeline}}
+{{Subaru}}
+
+[[Category:Daihatsu vehicles|Tanto Exe]]
+[[Category:Kei cars]]
+[[Category:Subaru vehicles|Lucra]]
+[[Category:2000s automobiles]]
+[[Category:2010s automobiles]]
+=======EOF=======
+{{Racing car
+| Car_name         = Gipfast Special (DP/801/H) 
+| Image            = 
+| Category         = [[24 Hours of Le Mans#Cars|Le Mans Racer]], [[Sports car racing]] 
+| Constructor      = David Preece, Ken Heywood
+| Designer         = 
+| Team             = {{flagicon|UK}} Simon Phillips Racing<ref name="1980 24 Hours of Le Mans entry list"/><br>{{flagicon|UK}} David Preece
+| Drivers          = {{flagicon|UK}} David Preece<ref name="1982 Brands Hatch 1000km entry list">{{cite web|url=http://www.racingsportscars.com/covers/_Brands_Hatch-1982-10-17e.jpg|title=1982 Brands Hatch 1000km entry list|publisher=Racing Sports Cars}}</ref><br>{{flagicon|UK}} Robin Hamilton<br>{{flagicon|UK}} Simon Phillips<br>{{flagicon|UK}} Richard Jenvey<br>{{flagicon|UK}}  François Duret
+| Technical ref    = 
+| Chassis          = Aluminium sheeted, spaceframed chassis with integral roll-cage, [[Fiberglass|fibre glass]] panels
+| Front suspension = In-board [[coil spring]]s and dampers with rocking arms
+| Rear suspension  = Reversed 'A' wishbones
+| Length           = 
+| Width            = 
+| Height           = 
+| Wheelbase        = 
+| Track            = 
+| Engine name      = [[Aston Martin]] 
+| Capacity         = 5,340 cc<ref name="Racing Sports Cars">{{cite web|url=http://www.racingsportscars.com/type/archive/Aston%20Martin/DPLM.html|title=Complete Archive of Aston Martin DPLM|publisher=Racing Sports Cars}}</ref>
+| Configuration    = [[V8 engine|V8]],<br>{{convert|480|bhp|abbr=on}} @ 7,000 [[Revolutions per minute|rpm]],
+| Turbo/NA         = [[Naturally-aspirated engine|naturally aspirated]]
+| Engine position  = [[Mid-mounted engine|mid-mounted]]
+| Gearbox name     = Hewland LG600
+| Gears            = 
+| Type             = [[Manual transmission|Manual]] gearbox, [[Clutch#Multiple plate clutch|4 plate clutch]] 
+| Differential     =  
+| Weight           = 1160 kg 
+| Fuel             = 
+| Tyres            = [[Dunlop Tyres|Dunlop]]<ref>{{cite web|url=http://www.racingsportscars.com/make/photo/Gipfast.html|title=Photos of Chassis DP/801/H|publisher=Racing Sports Cars}}</ref>
+| Debut            = [[1980 Silverstone 6 Hours]]
+| Races            = 1
+| Wins             = 0
+| Cons_champ       = 
+| Drivers_champ    = 
+| Poles            = 0
+| Fastest_laps     = 0
+|}}
+{{Racing car
+| Car_name         = Aston Martin DPLM (DP/812/H)
+| Image            = [[Image:Aston Martin DPLM 001.jpg|250px|Aston Martin DPLM]]
+| Category         = [[24 Hours of Le Mans#Cars|Le Mans Racer]], [[Sports car racing]] 
+| Constructor      = David Preece, Ken Heywood
+| Designer         = 
+| Team             = {{flagicon|UK}} David Preece
+| Drivers          = {{flagicon|UK}} David Preece<br>{{flagicon|UK}} Reg Woodcock
+| Technical ref    = 
+| Chassis          = Aluminium sheeted, spaceframed chassis with [[Fiberglass|fibre glass]] panels
+| Front suspension = [[Double wishbone suspension|Unequal wishbones]], coilover dampers and front [[Sway bar|anti-roll bar]]
+| Rear suspension  = 
+| Length           = 
+| Width            = 
+| Height           = 
+| Wheelbase        = 
+| Track            = 
+| Engine name      = [[Aston Martin]] 
+| Capacity         = 5,340 cc<ref name="Racing Sports Cars"/>
+| Configuration    = [[V8 engine|V8]],<br>{{convert|560|bhp|abbr=on}},
+| Turbo/NA         = [[Naturally-aspirated engine|naturally aspirated]],
+| Engine position  = [[Front-engine, rear-wheel drive layout|FR Layout]]
+| Gearbox name     = ZF
+| Gears            = 5-Speed 
+| Type             = [[Manual transmission|Manual]]
+| Differential     = Aston Martin/Sailsbury differential, Salisbury plate type LSD
+| Weight           = 1100 kg 
+| Fuel             = 
+| Tyres            = [[Dunlop Tyres|Dunlop]]
+| Debut            = 1982 [[1000 km Brands Hatch|Brands Hatch 1000 km]]
+| Races            = 1
+| Wins             = 0
+| Cons_champ       = 
+| Drivers_champ    = 
+| Poles            = 0
+| Fastest_laps     = 0
+|}}
+The '''Aston Martin DPLM''' (formally known as the '''Gipfast Special''') is a [[sports prototype]] racing car that was built by David Preece and Ken Heywood.  Utilizing an [[Aston Martin]] [[V8 engine]] tuned by AVJ Developments, the car was designed to participate in the [[World Sportscar Championship]] as well as the [[1980 24 Hours of Le Mans]].<ref name="1980 24 Hours of Le Mans entry list">{{cite web|url=http://www.racingsportscars.com/covers/_Le_Mans-1980-06-15e.jpg|title=1980 24 Hours of Le Mans entry list|publisher=Racing Sports Cars}}</ref>  The original Gipfast Special was damaged in its debut race in 1980, while a second chassis was constructed for use in 1982.  Despite the team's intentions, the DPLM only participated in two major races.
+
+==History==
+
+===DP/801/H===
+After partnering with Robin Hamilton in the [[1977 24 Hours of Le Mans]] in the unique [[Aston Martin RHAM/1]], Shropshire dentist David Preece set out to create his own car which could compete at Le Mans. During 1979 and 1980 Preece was joined by skilled engineer Ken Heywood to design and build the car which would eventually become known as the Gipfast Special. Other than the engine, most of the project was built in Preece's own garage.  The Gipfast was powered by a mid mounted Aston Martin V8 engine based on the production engine utilized in the [[Aston Martin V8]], similar to that used on the RHAM/1. The engine was tuned by AVJ Developments of Pershore, featuring dry sump lubrication and Cosworth DFV style fuel injection, producing around 480&nbsp;bhp.  The initial chassis, DP/801/H, was completed in early 1980 and entered in the World Championship [[1980 Silverstone 6 Hours|6 Hours  of Silverstone]] in May of that year.  Partnered alongside the returning RHAM/1 under the control of Simon Phillips Racing, the two Aston Martins ran under the title of sponsor Ault & Wiborg.  The Gipfast struggled for speed in its debut, qualifying 29th out of 30 entries and was slower than the RHAM/1.  At the start of the six hour endurance race, the DPLM suffered a suspension failure after only four laps and crashed heavily.  The damage to the car was unable to be repaired in time for Le Mans a month later and the car was abandoned later that year.
+
+===DP/812/H===
+After the demise of DP/801/H, Preece and Heywood spent 1981-82 developing a new car, now known as the DPLM (Dave Preece Le Mans).  The second chassis, DP/812/H, was front engined and retained the same AVJ built V8 engine now rumoured to be producing 560&nbsp;bhp.  Debuting in Britain once again at the [[World Sports Car Championship]] 1000 Kilometers at [[Brands Hatch]], the car qualified 28th out of 33 entrants.  The race performance was stunted as the DPLM crashed in the opening laps in treturous weather conditions.  Following the second failure for the DPLM project, the car was retired from competitive use and made successful appearances in [[Aston Martin Owners Club]] and other national events during the rest of the 1980s driven by Preece and later Barrie 'Whizzo' Williams, for the then owner Stewart Bond. The car was purchased from Bond around the year 2000 and was sympathetically restored and recommissioned by its current owners of the Hipwell family, appearing at the AMOC Horsfall meeting at Silverstone in 2003 where the car suffered from fuel feed problems and DNS.
+
+== See also==
+* [[Aston Martin RHAM/1]]
+* [[Aston Martin Nimrod]]
+
+==References==
+{{Reflist}}
+
+==Further reading==
+
+*Chudecki, Paul. (1990). ''Aston Martin V8 Race Cars'' (Osprey Publishing Limited). ISBN 0-85045-973-7.
+
+[[Category:Aston Martin racing cars|DPLM]]
+[[Category:24 Hours of Le Mans race cars]]
+[[Category:Sports prototypes]]
+=======EOF=======
+#REDIRECT [[Matich]]
+
+[[Category:Sports racing cars]]
+=======EOF=======
+#REDIRECT [[Matich]]
+
+[[Category:Sports racing cars]]
+=======EOF=======
+#REDIRECT [[Matich]]
+
+[[Category:Tasman Series cars]]
+[[Category:Formula 5000 cars]]
+=======EOF=======
+#REDIRECT [[Matich]]
+
+[[Category:Tasman Series cars]]
+[[Category:Formula 5000 cars]]
+=======EOF=======
+#REDIRECT [[Matich]]
+
+[[Category:Formula 5000 cars]]
+=======EOF=======
+#REDIRECT [[Matich]]
+
+[[Category:Sports racing cars]]
+=======EOF=======
+#REDIRECT [[Triumph Dolomite]]
+
+{{R with possibilities}}
+{{R to section}}
+{{R printworthy}}
+
+[[Category:Triumph vehicles|Dolomite Sprint]]
+[[Category:Rear-wheel-drive vehicles]]
+[[Category:Rally cars]]
+[[Category:Sports sedans]]
+[[Category:Vehicles introduced in 1973]]
+=======EOF=======
