@@ -64,9 +64,10 @@ public class DumpCruncher
 	
 	private InputStream is;
 	
-	private OutputStream os;
-	
-	private OutputStreamWriter sw;
+	private OutputStream osCars;
+	private OutputStreamWriter swCars;
+	private OutputStream osPersons;
+	private OutputStreamWriter swPersons;
 	
 	private AtomicInteger matchedCount;
 
@@ -115,8 +116,10 @@ public class DumpCruncher
 				options.value("Nexus.OutTrayCapacity", int.class));
 		
 		is = new BufferedInputStream(new FileInputStream(dumpFile));
-		os = new BufferedOutputStream(new FileOutputStream("out.wiki"));
-		sw = new OutputStreamWriter(os);
+		osCars = new BufferedOutputStream(new FileOutputStream("cars.wiki"));
+		swCars = new OutputStreamWriter(osCars);
+		osPersons = new BufferedOutputStream(new FileOutputStream("persons.wiki"));
+		swPersons  = new OutputStreamWriter(osPersons);
 		matchedCount = new AtomicInteger();
 		
 		nexus.addJobGenerator(new JobGeneratorFactory()
@@ -221,7 +224,7 @@ public class DumpCruncher
 			{
 				try
 				{
-					return new DumpStorer(abortHandler, jobTraces, outTray, sw, matchedCount);
+					return new DumpStorer(abortHandler, jobTraces, outTray, swCars, swPersons, matchedCount);
 				}
 				catch (Exception e)
 				{
@@ -256,13 +259,30 @@ public class DumpCruncher
 			}
 		}
 
-		if (os != null)
+		if (osCars != null)
 		{
 			try
 			{
 				logger.info("Close the output stream");
-				os.close();
-				os = null;
+				osCars.close();
+				osCars = null;
+			}
+			catch (Exception e)
+			{
+				throw new RuntimeException(e);
+			}
+			finally
+			{
+			}
+		}
+
+		if (osPersons != null)
+		{
+			try
+			{
+				logger.info("Close the output stream");
+				osPersons.close();
+				osPersons = null;
 			}
 			catch (Exception e)
 			{
