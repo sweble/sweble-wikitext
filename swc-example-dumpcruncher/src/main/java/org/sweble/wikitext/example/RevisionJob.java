@@ -58,7 +58,7 @@ public class RevisionJob
 	private final String textText;
 	
 	private final boolean isTextDeleted;
-	
+	 
 	// =========================================================================
 	
 	public RevisionJob(PageType page, RevisionType rev)

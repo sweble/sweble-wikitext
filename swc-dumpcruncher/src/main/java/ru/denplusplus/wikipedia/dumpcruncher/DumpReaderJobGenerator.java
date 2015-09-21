@@ -106,6 +106,11 @@ public class DumpReaderJobGenerator extends WorkerBase
 		return dumpReader.getParsedCount();
 	}
 	
+	public long getMatchedCount()
+	{
+		return dumpCruncher.getMatchedCount();
+	}
+	
 	// =========================================================================
 	
 	@Override
@@ -132,7 +137,7 @@ public class DumpReaderJobGenerator extends WorkerBase
 				inTray.put(job);
 				
 				Gui gui = dumpCruncher.getGui();
-				gui.setPageCount((int) getParsedCount());
+				gui.setPageCount((int)getParsedCount(), (int)getMatchedCount());
 				gui.setBytesRead(getCompressedBytesRead());
 				gui.redrawLater();
 			}

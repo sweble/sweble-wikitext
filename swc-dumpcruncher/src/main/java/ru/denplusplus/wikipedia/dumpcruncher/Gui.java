@@ -73,6 +73,8 @@ final class Gui implements Runnable
 	
 	private JLabel pagesRetrieved;
 	
+	private JLabel pagesMatched;
+	
 	private JLabel speed;
 	
 	private JLabel textRead;
@@ -204,13 +206,16 @@ final class Gui implements Runnable
 				
 				{
 					JLabel pagesRetrievedLabel;
+					JLabel pagesMatchedLabel;
 					JLabel speedLabel;
 					JLabel textReadLabel;
 					
 					dbReaderPanel = new JPanel();
 					pagesRetrievedLabel = new JLabel();
+					pagesMatchedLabel = new JLabel();
 					textReadLabel = new JLabel();
 					pagesRetrieved = new JLabel();
+					pagesMatched = new JLabel();
 					textRead = new JLabel();
 					speedLabel = new JLabel();
 					speed = new JLabel();
@@ -234,6 +239,13 @@ final class Gui implements Runnable
 					gridBagConstraints.anchor = GridBagConstraints.EAST;
 					dbReaderPanel.add(pagesRetrievedLabel, gridBagConstraints);
 					
+					pagesMatchedLabel.setText("Pages matched:");
+					gridBagConstraints = new GridBagConstraints();
+					gridBagConstraints.gridx = 4;
+					gridBagConstraints.gridy = 2;
+					gridBagConstraints.anchor = GridBagConstraints.EAST;
+					dbReaderPanel.add(pagesMatchedLabel, gridBagConstraints);
+					
 					textReadLabel.setText("Bytes of text read:");
 					gridBagConstraints = new GridBagConstraints();
 					gridBagConstraints.gridx = 0;
@@ -247,6 +259,13 @@ final class Gui implements Runnable
 					gridBagConstraints.gridy = 0;
 					gridBagConstraints.anchor = GridBagConstraints.EAST;
 					dbReaderPanel.add(pagesRetrieved, gridBagConstraints);
+					
+					pagesMatched.setText(space);
+					gridBagConstraints = new GridBagConstraints();
+					gridBagConstraints.gridx = 6;
+					gridBagConstraints.gridy = 2;
+					gridBagConstraints.anchor = GridBagConstraints.EAST;
+					dbReaderPanel.add(pagesMatched, gridBagConstraints);
 					
 					textRead.setText(space);
 					gridBagConstraints = new GridBagConstraints();
@@ -406,6 +425,8 @@ final class Gui implements Runnable
 	
 	private int pageCount;
 	
+	private int matchedPageCount;
+	
 	private long bytesRead;
 	
 	/*
@@ -431,9 +452,10 @@ final class Gui implements Runnable
 		}
 	}
 	
-	public synchronized void setPageCount(int pageCount)
+	public synchronized void setPageCount(int pageCount, int matchedPageCount)
 	{
 		this.pageCount = pageCount;
+		this.matchedPageCount = matchedPageCount;
 	}
 	
 	public synchronized void setBytesRead(long bytesRead)
@@ -484,6 +506,7 @@ final class Gui implements Runnable
 		
 		{
 			pagesRetrieved.setText(String.valueOf(pageCount));
+			pagesMatched.setText(String.valueOf(matchedPageCount));
 			
 			BinaryPrefix bytesReadP = new BinaryPrefix(bytesRead);
 			textRead.setText(String.format(

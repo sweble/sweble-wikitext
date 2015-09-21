@@ -147,7 +147,7 @@ public class App
 		@Override
 		public String makeUrl(WtUrl target)
 		{
-			if (target.getProtocol() == "")
+			if ("".equals(target.getProtocol()))
 				return target.getPath();
 			return target.getProtocol() + ":" + target.getPath();
 		}
@@ -156,7 +156,6 @@ public class App
 		public String makeUrlMissingTarget(String path)
 		{
 			return LOCAL_URL + "?title=" + path + "&amp;action=edit&amp;redlink=1";
-			
 		}
 	}
 }

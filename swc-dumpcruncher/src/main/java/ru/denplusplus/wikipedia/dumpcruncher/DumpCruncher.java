@@ -28,6 +28,7 @@ import java.io.OutputStreamWriter;
 import java.io.IOException;
 import java.util.concurrent.BlockingQueue;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.Logger;
 import org.sweble.wikitext.articlecruncher.Job;
@@ -67,6 +68,8 @@ public class DumpCruncher
 	
 	private OutputStreamWriter sw;
 	
+	private AtomicInteger matchedCount;
+
 	// =========================================================================
 	
 	public static void main(String[] args) throws Throwable
@@ -114,6 +117,7 @@ public class DumpCruncher
 		is = new BufferedInputStream(new FileInputStream(dumpFile));
 		os = new BufferedOutputStream(new FileOutputStream("out.wiki"));
 		sw = new OutputStreamWriter(os);
+		matchedCount = new AtomicInteger();
 		
 		nexus.addJobGenerator(new JobGeneratorFactory()
 		{
@@ -217,7 +221,7 @@ public class DumpCruncher
 			{
 				try
 				{
-					return new DumpStorer(abortHandler, jobTraces, outTray, sw);
+					return new DumpStorer(abortHandler, jobTraces, outTray, sw, matchedCount);
 				}
 				catch (Exception e)
 				{
@@ -291,7 +295,12 @@ public class DumpCruncher
 	{
 		return wikiConfig;
 	}
-	
+
+	public int getMatchedCount()
+	{
+		return matchedCount.get();
+	}
+
 	// =========================================================================
 	
 	private boolean options(String[] args) throws IOException

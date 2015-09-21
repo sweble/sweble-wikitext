@@ -52,6 +52,8 @@
     <module>swc-dumpreader</module>
     <module>swc-article-cruncher</module>
 
+    <module>swc-dumpcruncher</module>
+
     <!-- Examples -->
     <module>swc-example-basic</module>
     <module>swc-example-dumpcruncher</module>
