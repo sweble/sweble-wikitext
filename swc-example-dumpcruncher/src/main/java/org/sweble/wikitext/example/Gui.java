@@ -43,9 +43,7 @@ import org.sweble.wikitext.articlecruncher.utils.SpeedMeter;
 import de.fau.cs.osr.utils.BinaryPrefix;
 import de.fau.cs.osr.utils.StringUtils;
 
-final class Gui
-		implements
-			Runnable
+final class Gui implements Runnable
 {
 	private static final float UPDATES_PER_SECOND = 25;
 	
@@ -60,6 +58,8 @@ final class Gui
 	private final DumpCruncher dumpCruncher;
 	
 	private Container pane;
+	
+	private JFrame frame;
 	
 	private JDialog dialog;
 	
@@ -134,7 +134,9 @@ final class Gui
 					logger.warn(null, ex);
 				}
 				
-				dialog = new JDialog(new JFrame(), true);
+				frame = new JFrame();
+
+				dialog = new JDialog(frame, true);
 				dialog.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 				
 				pane = dialog.getContentPane();
@@ -369,6 +371,7 @@ final class Gui
 				logger.info("Gui setup finished.");
 				
 				// this blocks!
+				frame.setVisible(true);
 				dialog.setVisible(true);
 			}
 		});
@@ -377,10 +380,22 @@ final class Gui
 	public void close()
 	{
 		if (timer != null)
+		{
 			timer.stop();
+			timer = null;
+		}
 		
 		if (dialog != null)
+		{
 			dialog.dispose();
+			dialog = null;
+		}
+
+		if (frame != null)
+		{
+			frame.dispose();
+			frame = null;
+		}
 	}
 	
 	// =====================================================================
