@@ -25,11 +25,11 @@ import java.util.TimeZone;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.sweble.wikitext.articlecruncher.Job;
-import org.sweble.wikitext.dumpreader.export_0_6.CommentType;
-import org.sweble.wikitext.dumpreader.export_0_6.ContributorType;
-import org.sweble.wikitext.dumpreader.export_0_6.PageType;
-import org.sweble.wikitext.dumpreader.export_0_6.RevisionType;
-import org.sweble.wikitext.dumpreader.export_0_6.TextType;
+import org.sweble.wikitext.dumpreader.export_0_10.CommentType;
+import org.sweble.wikitext.dumpreader.export_0_10.ContributorType;
+import org.sweble.wikitext.dumpreader.export_0_10.PageType;
+import org.sweble.wikitext.dumpreader.export_0_10.RevisionType;
+import org.sweble.wikitext.dumpreader.export_0_10.TextType;
 
 public class RevisionJob
 		extends
@@ -79,7 +79,7 @@ public class RevisionJob
 		}
 		
 		page.getRestrictions();
-		page.getSha1();
+		rev.getSha1();
 		
 		this.pageTitle = page.getTitle();
 		
