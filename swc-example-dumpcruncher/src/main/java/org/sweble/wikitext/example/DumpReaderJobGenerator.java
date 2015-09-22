@@ -35,7 +35,9 @@ import org.sweble.wikitext.dumpreader.export_0_10.RevisionType;
 
 import de.fau.cs.osr.utils.WrappedException;
 
-public class DumpReaderJobGenerator extends WorkerBase
+public class DumpReaderJobGenerator
+		extends
+			WorkerBase
 {
 	private final BlockingQueue<Job> inTray;
 	
@@ -44,7 +46,7 @@ public class DumpReaderJobGenerator extends WorkerBase
 	private final DumpCruncher dumpCruncher;
 	
 	private final DumpReader dumpReader;
-
+	
 	private InputStream is;
 	
 	// =========================================================================
@@ -85,7 +87,7 @@ public class DumpReaderJobGenerator extends WorkerBase
 			throw new WrappedException(e);
 		}
 	}
-
+	
 	@Override
 	public void after()
 	{
@@ -100,9 +102,6 @@ public class DumpReaderJobGenerator extends WorkerBase
 			catch (Exception e)
 			{
 				throw new RuntimeException(e);
-			}
-			finally
-			{
 			}
 		}
 	}
