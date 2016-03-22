@@ -54,7 +54,7 @@ public abstract class ListBaseImpl
 	@Override
 	public boolean setCompact(boolean compact)
 	{
-		return setBoolAttr(Attributes.COMPACT, "compact", compact);
+		return setBoolAttr(CommonAttributeDescriptors.ATTR_DESC_COMPACT, "compact", compact);
 	}
 	
 	// =========================================================================
@@ -150,44 +150,6 @@ public abstract class ListBaseImpl
 			if (child == node)
 				return i;
 			child = child.getNextSibling();
-		}
-	}
-	
-	// =========================================================================
-	
-	static enum Attributes implements AttributeDescriptor
-	{
-		COMPACT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.verifyAndConvertBool(parent, verified, "compact");
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
 		}
 	}
 }

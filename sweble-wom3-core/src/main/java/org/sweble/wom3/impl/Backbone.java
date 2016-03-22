@@ -77,6 +77,9 @@ public abstract class Backbone
 	public void setNodeValue(String nodeValue) throws DOMException
 	{
 		// Doing nothing is the sensible default
+		
+		// Unless we are in read-only mode...
+		assertWritableOnDocument();
 	}
 	
 	@Override
@@ -88,6 +91,13 @@ public abstract class Backbone
 		return owner;
 	}
 	
+	/**
+	 * The {@code parent} attribute of a {@link Backbone} instance is always
+	 * properly set (can be {@code null}) but not all node types (especially
+	 * {@link AttributeBase}) return it when getParentNode() is called and
+	 * always return {@code null} instead. The {@code parent} attribute can only
+	 * be altered by the {@code Backbone} class.
+	 */
 	@Override
 	public abstract Backbone getParentNode();
 	
@@ -104,13 +114,13 @@ public abstract class Backbone
 	}
 	
 	@Override
-	public final Backbone getPreviousSibling()
+	public Backbone getPreviousSibling()
 	{
 		return prevSibling;
 	}
 	
 	@Override
-	public final Backbone getNextSibling()
+	public Backbone getNextSibling()
 	{
 		return nextSibling;
 	}
@@ -145,6 +155,9 @@ public abstract class Backbone
 	{
 		// DOM Level 1 implementation
 		// Do nothing since it's defined to be null for all types of nodes.
+		
+		// Unless we are in read-only mode...
+		assertWritableOnDocument();
 	}
 	
 	@Override
@@ -222,6 +235,8 @@ public abstract class Backbone
 	{
 		// TODO: Implement
 		throw new UnsupportedOperationException();
+		
+		//assertWritable();
 	}
 	
 	@Override
@@ -241,6 +256,7 @@ public abstract class Backbone
 	@Override
 	public boolean isDefaultNamespace(String namespaceURI)
 	{
+		// FIXME: This does not look like the correct implementation for this method?!
 		return (namespaceURI != null && namespaceURI.equals(WOM_NS_URI));
 	}
 	
@@ -441,6 +457,8 @@ public abstract class Backbone
 	@Override
 	public Object setUserData(String key, Object data, UserDataHandler handler)
 	{
+		assertWritableOnDocument();
+		
 		Object oldValue;
 		if (data == null)
 		{
@@ -545,13 +563,35 @@ public abstract class Backbone
 	/**
 	 * Override in text nodes which can potentially be content whitespace only.
 	 */
-	protected boolean isContentWhitespace()
+	public boolean isContentWhitespace()
 	{
 		// TODO: replace with isElementContentWhitespace()!
 		return false;
 	}
 	
 	// =========================================================================
+	
+	protected void assertWritableOnDocument()
+	{
+		Wom3Document ownerDocument = getOwnerDocument();
+		if (ownerDocument == null)
+			ownerDocument = (Wom3Document) this;
+		
+		if (ownerDocument.getReadOnly())
+			throw new DOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR, "This document is read-only!");
+	}
+	
+	protected void assertWritable(
+			AttributeBase attributeBase,
+			AttributeDescriptor descriptor)
+	{
+		// An uninitialized attribute value may be written once, even if read-only
+		if ((attributeBase != null) /*&& (attributeBase.getValue() != null)*/)
+		{
+			if (descriptor.isReadOnly())
+				throw new DOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR, "The attribute '" + attributeBase.getName() + "' is read-only!");
+		}
+	}
 	
 	protected Wom3Node doesNotSupportChildNodes() throws UnsupportedOperationException
 	{
@@ -597,17 +637,17 @@ public abstract class Backbone
 	
 	// =========================================================================
 	
-	protected final Backbone getParentNodeIntern()
+	protected Backbone getParentNodeIntern()
 	{
 		return parent;
 	}
 	
-	protected final boolean isLinked()
+	protected boolean isLinked()
 	{
-		return parent != null;
+		return getParentNodeIntern() != null;
 	}
 	
-	protected final void unlink()
+	protected void unlink()
 	{
 		parent = null;
 		
@@ -620,7 +660,7 @@ public abstract class Backbone
 		nextSibling = null;
 	}
 	
-	protected final void link(
+	protected void link(
 			Backbone parent,
 			Backbone prevSibling,
 			Backbone nextSibling)
@@ -668,12 +708,10 @@ public abstract class Backbone
 	{
 		switch (getNodeType())
 		{
-			case Node.CDATA_SECTION_NODE:
 			case Node.ENTITY_REFERENCE_NODE:
 			case Node.ENTITY_NODE:
 			case Node.PROCESSING_INSTRUCTION_NODE:
 			case Node.DOCUMENT_TYPE_NODE:
-			case Node.DOCUMENT_FRAGMENT_NODE:
 			case Node.NOTATION_NODE:
 				// We don't support these
 				throw new InternalError();
@@ -691,6 +729,7 @@ public abstract class Backbone
 				b.append("-->");
 				break;
 			
+			case Node.DOCUMENT_FRAGMENT_NODE:
 			case Node.DOCUMENT_NODE:
 			case Node.ELEMENT_NODE:
 				b.append('<');
@@ -721,6 +760,12 @@ public abstract class Backbone
 				{
 					b.append(" />");
 				}
+				break;
+			
+			case Node.CDATA_SECTION_NODE:
+				b.append("<![CDATA[");
+				b.append(StringUtils.escHtml(getNodeValue()));
+				b.append("]]>");
 				break;
 			
 			case Node.TEXT_NODE:

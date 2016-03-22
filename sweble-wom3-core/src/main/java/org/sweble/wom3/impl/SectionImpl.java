@@ -19,7 +19,6 @@ package org.sweble.wom3.impl;
 
 import org.sweble.wom3.Wom3Body;
 import org.sweble.wom3.Wom3Heading;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Section;
 
 public class SectionImpl
@@ -108,7 +107,7 @@ public class SectionImpl
 	
 	private Integer setLevelAttr(int level)
 	{
-		return setAttributeDirect(Attributes.LEVEL, "level", level);
+		return setAttributeDirect(ATTR_DESC_LEVEL, "level", level);
 	}
 	
 	// =========================================================================
@@ -140,6 +139,8 @@ public class SectionImpl
 	
 	// =========================================================================
 	
+	protected static final AttributeDescriptor ATTR_DESC_LEVEL = new AttrDescLevel();
+	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -147,43 +148,31 @@ public class SectionImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
-				"level", Attributes.LEVEL);
+				"level", ATTR_DESC_LEVEL);
 	}
 	
-	public static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescLevel
+			extends
+				AttributeDescriptor
 	{
-		LEVEL
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = String.valueOf(verified.value);
-				verified.value = AttributeVerifiers.verifyRange(verified.strValue, 1, 6);
-				return true;
-			}
-		};
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return false;
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.NONE;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
+			super.verifyAndConvert(parent, verified);
+			verified.value = AttributeVerifiers.verifyRange(verified.strValue, 1, 6);
+			return true;
 		}
 	}
 }

@@ -100,7 +100,7 @@ public class FixWomRtdBase
 	// =========================================================================
 	
 	@Override
-	protected boolean before(Wom3Node node)
+	protected Wom3Node before(Wom3Node node)
 	{
 		doc = (Wom3Document) node.getOwnerDocument();
 		if (doc == null)

@@ -26,7 +26,7 @@
   <parent>
     <groupId>org.sweble.wom3</groupId>
     <artifactId>sweble-wom3</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
   </parent>
 
   <!-- This POM: Sweble WOM 3.0 - JSON Tools -->
@@ -148,7 +148,7 @@
     <connection>scm:git://sweble.org/git/sweble-wom3.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wom3.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wom3.git;a=summary</url>
-    <tag>sweble-wom3-2.0.0</tag>
+    <tag>sweble-wom3-2.1.0</tag>
   </scm>
 
   <!--

@@ -105,6 +105,7 @@ public class BackboneAttributeTest
 		
 		e.setAttributeDirect(new AttribDesc(), "name", null);
 		assertEquals(Arrays.asList(
+				"isReadOnly",
 				"isRemovable",
 				"customAction"), events);
 		assertNull(e.getAttributeNode("name"));
@@ -120,6 +121,7 @@ public class BackboneAttributeTest
 		e.setAttribute("name", null);
 		assertEquals(Arrays.asList(
 				"getAttributeDescriptor",
+				"isReadOnly",
 				"isRemovable",
 				"customAction"), events);
 		assertNull(e.getAttributeNode("name"));
@@ -135,6 +137,7 @@ public class BackboneAttributeTest
 		e.setAttributeDirect(new AttribDesc(), "name", false);
 		assertEquals(Arrays.asList(
 				"verifyAndConvert",
+				"isReadOnly",
 				"isRemovable",
 				"customAction"), events);
 		assertNull(e.getAttributeNode("name"));
@@ -152,6 +155,18 @@ public class BackboneAttributeTest
 				"verifyAndConvert",
 				"set",
 				"customAction"), events);
+		
+		events.clear();
+		a = new AttribImpl("name", "value2");
+		e.setAttributeNode(a);
+		assertEquals(Arrays.asList(
+				"setValue",
+				"set",
+				"getAttributeDescriptor",
+				"verifyAndConvert",
+				"isReadOnly",
+				"set",
+				"customAction"), events);
 	}
 	
 	@Test
@@ -166,12 +181,13 @@ public class BackboneAttributeTest
 				"setValue",
 				"getAttributeDescriptor",
 				"verifyAndConvert",
+				"isReadOnly",
 				"set",
 				"customAction"), events);
 	}
 	
 	@Test
-	public void testSetValueOnAttachedAttributeTriggersCustomAction() throws Exception
+	public void testSetNameOnAttachedAttributeTriggersCustomAction() throws Exception
 	{
 		AttribImpl a = new AttribImpl("name", "value");
 		e.setAttributeNode(a);
@@ -179,6 +195,7 @@ public class BackboneAttributeTest
 		
 		a.setName("other");
 		assertEquals(Arrays.asList(
+				"getAttributeDescriptor",
 				"getAttributeDescriptor",
 				"customAction"), events);
 	}
@@ -193,7 +210,9 @@ public class BackboneAttributeTest
 				"setValue",
 				"set",
 				"getAttributeDescriptor",
-				"verifyAndConvert"), events);
+				"verifyAndConvert",
+				"isReadOnly",
+				"isRemovable"), events);
 		
 		e.setAttribute("name", "don't kill me");
 		events.clear();
@@ -204,6 +223,7 @@ public class BackboneAttributeTest
 				"set",
 				"getAttributeDescriptor",
 				"verifyAndConvert",
+				"isReadOnly",
 				"isRemovable",
 				"customAction"), events);
 	}
@@ -250,6 +270,7 @@ public class BackboneAttributeTest
 		e.removeAttribute("name");
 		assertEquals(Arrays.asList(
 				"getAttributeDescriptor",
+				"isReadOnly",
 				"isRemovable",
 				"customAction"), events);
 	}
@@ -258,7 +279,10 @@ public class BackboneAttributeTest
 	public void testRemovingAbsentAttributeDoesNotThrow() throws Exception
 	{
 		e.removeAttribute("name");
-		assertEquals(Arrays.asList(), events);
+		assertEquals(Arrays.asList(
+				"getAttributeDescriptor",
+				"isReadOnly",
+				"isRemovable"), events);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -337,7 +361,7 @@ public class BackboneAttributeTest
 	// =========================================================================
 	
 	class AttribDesc
-			implements
+			extends
 				AttributeDescriptor
 	{
 		@Override
@@ -381,6 +405,17 @@ public class BackboneAttributeTest
 		}
 		
 		@Override
+		public boolean isReadOnly()
+		{
+			events.add("isReadOnly");
+			switch (mode)
+			{
+				default:
+					return false;
+			}
+		}
+		
+		@Override
 		public Normalization getNormalizationMode()
 		{
 			events.add("getNormalizationMode");
@@ -394,6 +429,12 @@ public class BackboneAttributeTest
 				AttributeBase newAttr)
 		{
 			events.add("customAction");
+		}
+		
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(true, false, true, Normalization.NON_CDATA);
 		}
 	}
 	
@@ -424,10 +465,10 @@ public class BackboneAttributeTest
 		}
 		
 		@Override
-		public void setValue(Object value, String strValue)
+		public void setValue(Object value, String strValue, boolean cloning)
 		{
 			events.add("set");
-			super.setValue(value, strValue);
+			super.setValue(value, strValue, cloning);
 		}
 	}
 	

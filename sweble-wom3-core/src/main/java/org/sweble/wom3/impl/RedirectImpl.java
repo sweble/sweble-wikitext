@@ -17,7 +17,6 @@
  */
 package org.sweble.wom3.impl;
 
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Redirect;
 import org.sweble.wom3.Wom3Title;
 
@@ -56,7 +55,7 @@ public class RedirectImpl
 	@Override
 	public String setDisplacementId(String did)
 	{
-		return setStringAttr(Attributes.DID, "did", did);
+		return setStringAttr(CommonAttributeDescriptors.ATTR_DESC_DID, "did", did);
 	}
 	
 	@Override
@@ -68,7 +67,7 @@ public class RedirectImpl
 	@Override
 	public String setTarget(String page)
 	{
-		return setAttributeDirect(Attributes.TARGET, "target", page);
+		return setAttributeDirect(ATTR_DESC_TARGET, "target", page);
 	}
 	
 	@Override
@@ -90,6 +89,8 @@ public class RedirectImpl
 	
 	// =========================================================================
 	
+	protected static final AttributeDescriptor ATTR_DESC_TARGET = new AttrDescTarget();
+	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -97,63 +98,32 @@ public class RedirectImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
-				"target", Attributes.TARGET,
-				"did", Attributes.DID);
+				"target", ATTR_DESC_TARGET,
+				"did", CommonAttributeDescriptors.ATTR_DESC_DID);
 	}
 	
-	protected static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescTarget
+			extends
+				AttributeDescriptor
 	{
-		TARGET
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue == null)
-					verified.strValue = (String) verified.value;
-				
-				Toolbox.checkValidTarget(verified.strValue);
-				return true;
-			}
-		},
-		DID
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.ID.verifyAndConvert(parent, verified);
-			}
-			
-			@Override
-			public boolean isRemovable()
-			{
-				return true;
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return false;
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
+			super.verifyAndConvert(parent, verified);
+			Toolbox.checkValidTarget(verified.strValue);
+			return true;
 		}
 	}
 }

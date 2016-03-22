@@ -67,7 +67,7 @@ public class DefinitionListImpl
 	@Override
 	public boolean setCompact(boolean compact)
 	{
-		return setBoolAttr(Attributes.COMPACT, "compact", compact);
+		return setBoolAttr(CommonAttributeDescriptors.ATTR_DESC_COMPACT, "compact", compact);
 	}
 	
 	// =========================================================================
@@ -95,9 +95,11 @@ public class DefinitionListImpl
 			int index,
 			Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
+		assertWritableOnDocument();
+		
 		Wom3DefinitionListTerm old = getTerm(index);
 		terms.set(index, term);
-		replaceChildNoNotify(old, term);
+		replaceChildNoNotify(term, old);
 		removeDefs(old);
 		appendDefs(term);
 		return old;
@@ -106,6 +108,8 @@ public class DefinitionListImpl
 	@Override
 	public Wom3DefinitionListTerm removeTerm(int index) throws IndexOutOfBoundsException
 	{
+		assertWritableOnDocument();
+		
 		Wom3DefinitionListTerm old = terms.remove(index);
 		removeChildNoNotify(old);
 		removeDefs(old);
@@ -115,6 +119,8 @@ public class DefinitionListImpl
 	@Override
 	public void appendTerm(Wom3DefinitionListTerm term)
 	{
+		assertWritableOnDocument();
+		
 		terms.add(term);
 		appendChildNoNotify(term);
 		appendDefs(term);
@@ -123,8 +129,11 @@ public class DefinitionListImpl
 	@Override
 	public void insertTerm(int beforeIndex, Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
+		assertWritableOnDocument();
+		
 		if (beforeIndex < 0 || beforeIndex > terms.size())
 			throw new IndexOutOfBoundsException();
+		
 		if (beforeIndex == terms.size())
 		{
 			appendTerm(term);
@@ -133,6 +142,7 @@ public class DefinitionListImpl
 		{
 			insertBeforeNoNotify(terms.get(beforeIndex), term);
 		}
+		
 		terms.add(beforeIndex, term);
 		appendDefs(term);
 	}
@@ -203,6 +213,7 @@ public class DefinitionListImpl
 		Wom3DefinitionListItem old = getItem(index);
 		if (old.getClass() != item.getClass())
 			throw new UnsupportedOperationException("Can only replace item with another item of the same type!");
+
 		replaceChild(item, old);
 		return old;
 	}
@@ -366,17 +377,12 @@ public class DefinitionListImpl
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("compact", Attributes.COMPACT);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("compact", CommonAttributeDescriptors.ATTR_DESC_COMPACT);
 	}
 	
 	@Override
@@ -385,42 +391,6 @@ public class DefinitionListImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		COMPACT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.verifyAndConvertBool(parent, verified, "compact");
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 }

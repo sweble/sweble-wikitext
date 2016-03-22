@@ -29,9 +29,8 @@ import org.sweble.wom3.Wom3TableRules;
 import org.sweble.wom3.Wom3TableVAlign;
 import org.sweble.wom3.Wom3ValueWithUnit;
 
-public enum AttributeVerifiers
+public enum AttributeVerifiers implements AttributeVerificationAndConverion
 {
-	
 	ID
 	{
 		@Override
@@ -389,13 +388,21 @@ public enum AttributeVerifiers
 				verified.strValue = Toolbox.tableRulesToString((Wom3TableRules) verified.value);
 			return true;
 		}
+	},
+	XML_NAME
+	{
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			Toolbox.checkValidXmlName(
+					(verified.strValue == null) ? (String) verified.value : verified.strValue);
+			return true;
+		}
 	};
 	
 	// =========================================================================
-	
-	public abstract boolean verifyAndConvert(
-			Backbone parent,
-			NativeAndStringValuePair verified);
 	
 	public static boolean verifyAndConvertBool(
 			Backbone parent,

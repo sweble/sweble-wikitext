@@ -17,7 +17,12 @@
  */
 package org.sweble.wom3.impl;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.sweble.wom3.Wom3DocumentFragment;
 import org.sweble.wom3.Wom3Node;
+import org.sweble.wom3.impl.AttributeDescriptor.Normalization;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 
@@ -27,8 +32,16 @@ public abstract class BackboneWithChildren
 {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * It's vital that this member is only accessed and modified through
+	 * get/setFirstChild().
+	 */
 	private Backbone firstChild;
 	
+	/**
+	 * It's vital that this member is only accessed and modified through
+	 * get/setLastChild().
+	 */
 	private Backbone lastChild;
 	
 	// =========================================================================
@@ -40,7 +53,7 @@ public abstract class BackboneWithChildren
 	
 	// =========================================================================
 	
-	public final void setFirstChild(Backbone firstChild)
+	protected void setFirstChild(Backbone firstChild)
 	{
 		this.firstChild = firstChild;
 	}
@@ -51,7 +64,7 @@ public abstract class BackboneWithChildren
 		return firstChild;
 	}
 	
-	public final void setLastChild(Backbone lastChild)
+	protected void setLastChild(Backbone lastChild)
 	{
 		this.lastChild = lastChild;
 	}
@@ -170,7 +183,7 @@ public abstract class BackboneWithChildren
 	// =========================================================================
 	
 	@Override
-	public final Wom3Node insertBefore(Node child_, Node before_)
+	public Wom3Node insertBefore(Node child_, Node before_)
 			throws DOMException
 	{
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
@@ -178,50 +191,125 @@ public abstract class BackboneWithChildren
 			return null;
 		
 		Wom3Node before = Toolbox.expectType(Wom3Node.class, before_);
-		Backbone prev = insertBeforeIntern(before, child, true);
-		
-		++childrenChanges;
-		this.childInserted(prev, (Backbone) child);
+		if (before instanceof Wom3DocumentFragment)
+		{
+			Wom3Node move = child.getFirstChild();
+			while (move != null)
+			{
+				Wom3Node next = move.getNextSibling();
+				child.removeChild(move);
+				
+				Backbone prev = insertBeforeIntern(before, move, true);
+				this.childInserted(prev, (Backbone) move);
+				
+				move = next;
+			}
+		}
+		else
+		{
+			Backbone prev = insertBeforeIntern(before, child, true);
+			this.childInserted(prev, (Backbone) child);
+		}
 		
 		return child;
 	}
 	
 	@Override
-	public final Wom3Node replaceChild(Node newChild_, Node oldChild_) throws DOMException
+	public Wom3Node replaceChild(Node newChild_, Node oldChild_) throws DOMException
 	{
-		Wom3Node newChild = Toolbox.expectType(Wom3Node.class, newChild_);
+		Backbone newChild = Toolbox.expectType(Backbone.class, newChild_);
 		if (((Backbone) newChild).isContentWhitespace() && ignoresContentWhitespace())
 			return removeChild(oldChild_);
 		
-		Wom3Node oldChild = Toolbox.expectType(Wom3Node.class, oldChild_);
-		replaceChild(newChild, oldChild);
+		Backbone oldChild = Toolbox.expectType(Backbone.class, oldChild_);
+		
+		//Backbone prev = replaceChildIntern(newChild, oldChild, true);
+		
+		Backbone prevSibling = oldChild.getPreviousSibling();
+		Backbone nextSibling = oldChild.getNextSibling();
+		
+		if (newChild instanceof Wom3DocumentFragment)
+		{
+			removeChildIntern(oldChild, true /* check */);
+			childRemoved(prevSibling, oldChild);
+			
+			Backbone move = newChild.getFirstChild();
+			while (move != null)
+			{
+				Backbone next = move.getNextSibling();
+				newChild.removeChild(move);
+				
+				insertOrAppendIntern(move, nextSibling);
+				childInserted(prevSibling, move);
+				
+				prevSibling = move;
+				move = next;
+			}
+		}
+		else
+		{
+			replaceChildIntern(newChild, oldChild, true /* check */);
+			childRemoved(prevSibling, oldChild);
+			childInserted(prevSibling, newChild);
+		}
 		
 		return oldChild;
 	}
 	
+	private void insertOrAppendIntern(Wom3Node newChild, Wom3Node nextSibling)
+	{
+		if (nextSibling != null)
+		{
+			insertBeforeIntern(nextSibling, newChild, true /* check */);
+		}
+		else
+		{
+			appendChildIntern(newChild, true /* check */, false /* cloning */);
+		}
+	}
+	
 	@Override
-	public final Wom3Node removeChild(Node child_) throws DOMException
+	public Wom3Node removeChild(Node child_) throws DOMException
 	{
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
 		Backbone prev = removeChildIntern(child, true);
 		
-		++childrenChanges;
 		this.childRemoved(prev, (Backbone) child);
 		
 		return child;
 	}
 	
 	@Override
-	public final Wom3Node appendChild(Node child_) throws DOMException
+	public Wom3Node appendChild(Node child_) throws DOMException
+	{
+		return appendChild(child_, false /* cloning */);
+	}
+	
+	public Wom3Node appendChild(Node child_, boolean cloning) throws DOMException
 	{
 		Wom3Node child = Toolbox.expectType(Wom3Node.class, child_);
 		if (((Backbone) child).isContentWhitespace() && ignoresContentWhitespace())
 			return null;
 		
-		Backbone prev = appendChildIntern(child, true);
-		
-		++childrenChanges;
-		this.childInserted(prev, (Backbone) child);
+		if (child instanceof Wom3DocumentFragment)
+		{
+			Wom3Node move = child.getFirstChild();
+			while (move != null)
+			{
+				Wom3Node next = move.getNextSibling();
+				child.removeChild(move);
+				
+				Backbone prev = appendChildIntern(move, true /* check */, cloning);
+				childInserted(prev, (Backbone) move);
+				
+				move = next;
+			}
+		}
+		else
+		{
+			Backbone prev = appendChildIntern(child, true /* check */, cloning);
+			childInserted(prev, (Backbone) child);
+		}
 		
 		return child;
 	}
@@ -229,6 +317,7 @@ public abstract class BackboneWithChildren
 	@Override
 	public void setTextContent(String textContent) throws DOMException
 	{
+		// Is expected to assertWritable();
 		clearChildren();
 		appendChild(getOwnerDocument().createTextNode(textContent));
 	}
@@ -240,8 +329,8 @@ public abstract class BackboneWithChildren
 	{
 		BackboneWithChildren newNode = (BackboneWithChildren) super.cloneNode(deep);
 		
-		newNode.firstChild = null;
-		newNode.lastChild = null;
+		newNode.setFirstChild(null);
+		newNode.setLastChild(null);
 		
 		// Do a deep clone
 		if (deep)
@@ -249,7 +338,7 @@ public abstract class BackboneWithChildren
 			Backbone child = this.getFirstChild();
 			while (child != null)
 			{
-				newNode.appendChild(child.cloneNode(deep));
+				newNode.appendChild(child.cloneNode(deep), true /* cloning */);
 				child = child.getNextSibling();
 			}
 		}
@@ -259,38 +348,13 @@ public abstract class BackboneWithChildren
 	
 	// =========================================================================
 	
-	private Backbone appendChildIntern(
-			Wom3Node child,
-			boolean notify)
-	{
-		if (child == null)
-			throw new IllegalArgumentException("Argument `child' is null.");
-		
-		final Backbone newChild =
-				Toolbox.expectType(Backbone.class, child, "child");
-		
-		if (newChild.isLinked())
-			throw new IllegalStateException(
-					"Given node `child' is still child of another WOM node.");
-		
-		Backbone lastChild = (Backbone) getLastChild();
-		
-		if (notify)
-			this.allowsInsertion(lastChild, newChild);
-		
-		newChild.link(this, lastChild, null);
-		setLastChild(newChild);
-		if (getFirstChild() == null)
-			setFirstChild(newChild);
-		
-		return lastChild;
-	}
-	
-	private Backbone insertBeforeIntern(
+	private final Backbone insertBeforeIntern(
 			Wom3Node before,
 			Wom3Node child,
-			boolean notify)
+			boolean check)
 	{
+		assertWritableOnDocument();
+		
 		if (before == null || child == null)
 			throw new IllegalArgumentException("Argument `before' and/or `child' is null.");
 		
@@ -307,8 +371,11 @@ public abstract class BackboneWithChildren
 		
 		Backbone prev = p.getPreviousSibling();
 		
-		if (notify)
+		if (check)
 			this.allowsInsertion(prev, newChild);
+		
+		// Indicate change before performing it
+		++childrenChanges;
 		
 		newChild.link(this, prev, p);
 		if (p == getFirstChild())
@@ -317,62 +384,13 @@ public abstract class BackboneWithChildren
 		return prev;
 	}
 	
-	private Backbone removeChildIntern(
-			Wom3Node child,
-			boolean notify)
-	{
-		if (child == null)
-			throw new IllegalArgumentException("Argument `child' is null.");
-		
-		Backbone remove = Toolbox.expectType(Backbone.class, child, "child");
-		
-		if (child.getParentNode() != this)
-			throw new IllegalArgumentException("Given node `child' is not a child of this node.");
-		
-		if (notify)
-			this.allowsRemoval(remove);
-		/*remove.childAllowsRemoval(this);*/
-		
-		Backbone prev = remove.getPreviousSibling();
-		Backbone next = remove.getNextSibling();
-		
-		if (remove == getFirstChild())
-			setFirstChild(next);
-		if (remove == getLastChild())
-			setLastChild(prev);
-		remove.unlink();
-		
-		return prev;
-	}
-	
-	private void replaceChild(Wom3Node replace, Wom3Node search)
-	{
-		replaceChildIntern(search, replace, true);
-		
-		Backbone oldChild = (Backbone) search;
-		Backbone newChild = (Backbone) replace;
-		
-		Backbone prev = oldChild.getPreviousSibling();
-		Backbone next = oldChild.getNextSibling();
-		
-		oldChild.unlink();
-		
-		newChild.link(this, prev, next);
-		if (oldChild == getFirstChild())
-			setFirstChild(newChild);
-		if (oldChild == getLastChild())
-			setLastChild(newChild);
-		
-		++childrenChanges;
-		this.childRemoved(prev, oldChild);
-		this.childInserted(prev, newChild);
-	}
-	
-	private void replaceChildIntern(
-			Wom3Node search,
+	private Backbone replaceChildIntern(
 			Wom3Node replace,
-			boolean notify)
+			Wom3Node search,
+			boolean check)
 	{
+		assertWritableOnDocument();
+		
 		if (search == null || replace == null)
 			throw new IllegalArgumentException("Argument `search' and/or `replace' is null.");
 		
@@ -387,37 +405,14 @@ public abstract class BackboneWithChildren
 			throw new IllegalArgumentException("Given node `search' is not a child of this node.");
 		Backbone oldChild = (Backbone) search;
 		
-		if (notify)
+		if (check)
 			this.allowsReplacement(oldChild, newChild);
-	}
-	
-	// =========================================================================
-	
-	protected void appendChildNoNotify(Wom3Node child)
-	{
-		appendChildIntern(child, false);
-	}
-	
-	protected void insertBeforeNoNotify(Wom3Node before, Wom3Node child)
-			throws IllegalArgumentException
-	{
-		insertBeforeIntern(before, child, false);
-	}
-	
-	protected void removeChildNoNotify(Wom3Node child)
-	{
-		removeChildIntern(child, false);
-	}
-	
-	protected void replaceChildNoNotify(Wom3Node search, Wom3Node replace)
-	{
-		replaceChildIntern(search, replace, false);
-		
-		Backbone oldChild = (Backbone) search;
-		Backbone newChild = (Backbone) replace;
 		
 		Backbone prev = oldChild.getPreviousSibling();
 		Backbone next = oldChild.getNextSibling();
+		
+		// Indicate change before performing it
+		++childrenChanges;
 		
 		oldChild.unlink();
 		
@@ -426,15 +421,120 @@ public abstract class BackboneWithChildren
 			setFirstChild(newChild);
 		if (oldChild == getLastChild())
 			setLastChild(newChild);
+		
+		++childrenChanges;
+		return prev;
+	}
+	
+	private final Backbone removeChildIntern(
+			Wom3Node child,
+			boolean check)
+	{
+		assertWritableOnDocument();
+		
+		if (child == null)
+			throw new IllegalArgumentException("Argument `child' is null.");
+		
+		Backbone remove = Toolbox.expectType(Backbone.class, child, "child");
+		
+		if (child.getParentNode() != this)
+			throw new IllegalArgumentException("Given node `child' is not a child of this node.");
+		
+		if (check)
+			this.allowsRemoval(remove);
+		
+		Backbone prev = remove.getPreviousSibling();
+		Backbone next = remove.getNextSibling();
+		
+		// Indicate change before performing it
+		++childrenChanges;
+		
+		if (remove == getFirstChild())
+			setFirstChild(next);
+		if (remove == getLastChild())
+			setLastChild(prev);
+		remove.unlink();
+		
+		return prev;
+	}
+	
+	private final Backbone appendChildIntern(
+			Wom3Node child,
+			boolean check,
+			boolean cloning)
+	{
+		if (!cloning)
+			assertWritableOnDocument();
+		
+		if (child == null)
+			throw new IllegalArgumentException("Argument `child' is null.");
+		
+		final Backbone newChild =
+				Toolbox.expectType(Backbone.class, child, "child");
+		
+		if (newChild.isLinked())
+			throw new IllegalStateException(
+					"Given node `child' is still child of another WOM node.");
+		
+		Backbone lastChild = (Backbone) getLastChild();
+		
+		if (check)
+			this.allowsInsertion(lastChild, newChild);
+		
+		// Indicate change before performing it
+		++childrenChanges;
+		
+		newChild.link(this, lastChild, null);
+		setLastChild(newChild);
+		if (getFirstChild() == null)
+			setFirstChild(newChild);
+		
+		return lastChild;
+	}
+	
+	// =========================================================================
+	
+	/* TODO: All these methods are called *NoNotify, and yes, they do not 
+	 * notify. Seeing how they are only used by the DefinitionListImpl that's 
+	 * probably the intention. However, they also prevent checks... is that 
+	 * intentional too? Should it be reflected in the name?
+	 */
+	
+	protected final void insertBeforeNoNotify(Wom3Node before, Wom3Node child)
+			throws IllegalArgumentException
+	{
+		// FIXME: Does not treat DocumentFragment correctly.
+		insertBeforeIntern(before, child, true);
+	}
+	
+	protected final void replaceChildNoNotify(Wom3Node replace, Wom3Node search)
+	{
+		// FIXME: Does not treat DocumentFragment correctly.
+		replaceChildIntern(replace, search, true);
+	}
+	
+	protected final void removeChildNoNotify(Wom3Node child)
+	{
+		removeChildIntern(child, true);
+	}
+	
+	protected final void appendChildNoNotify(Wom3Node child)
+	{
+		// FIXME: Does not treat DocumentFragment correctly.
+		appendChildIntern(child, true /* check */, false /* cloning */);
 	}
 	
 	// =========================================================================
 	
 	/**
 	 * Remove all children from this node.
+	 * 
+	 * Checks assertWritable();
 	 */
 	protected void clearChildren()
 	{
+		assertWritableOnDocument();
+		
 		while (getFirstChild() != null)
 			removeChild(getFirstChild());
 	}
@@ -442,7 +542,7 @@ public abstract class BackboneWithChildren
 	/**
 	 * For setting the first child of a node with exactly one child.
 	 */
-	protected Wom3Node replaceOrAdd(
+	protected final Wom3Node replaceOrAdd(
 			Wom3Node replace,
 			Wom3Node replacement,
 			boolean required)
@@ -461,11 +561,17 @@ public abstract class BackboneWithChildren
 				removeChild(replace);
 			}
 			else
-				; // nothing to do
+			{
+				; // nothing to do, still let caller know that even though the 
+					// operation had no side effects, what he's trying to do is nasty.
+				assertWritableOnDocument();
+			}
 		}
 		else if (replace == replacement)
 		{
-			; // nothing to do
+			; // nothing to do, still let caller know that even though the 
+				// operation had no side effects, what he's trying to do is nasty.
+			assertWritableOnDocument();
 		}
 		else if (replace != null)
 		{
@@ -481,12 +587,14 @@ public abstract class BackboneWithChildren
 	/**
 	 * For setting the first child of a node with exactly two children.
 	 */
-	protected Wom3Node replaceOrInsertBeforeOrAppend(
+	protected final Wom3Node replaceOrInsertBeforeOrAppend(
 			Wom3Node replace,
 			Wom3Node before,
 			Wom3Node replacement,
 			boolean required)
 	{
+		assertWritableOnDocument();
+		
 		if (replacement == null)
 		{
 			if (required)
@@ -501,11 +609,17 @@ public abstract class BackboneWithChildren
 				removeChild(replace);
 			}
 			else
-				; // nothing to do
+			{
+				; // nothing to do, still let caller know that even though the 
+					// operation had no side effects, what he's trying to do is nasty.
+				assertWritableOnDocument();
+			}
 		}
 		else if (replace == replacement)
 		{
-			; // nothing to do
+			; // nothing to do, still let caller know that even though the 
+				// operation had no side effects, what he's trying to do is nasty.
+			assertWritableOnDocument();
 		}
 		else if (replace != null)
 		{
@@ -525,7 +639,7 @@ public abstract class BackboneWithChildren
 	/**
 	 * For setting the second child of a node with exactly two children.
 	 */
-	protected Wom3Node replaceOrAppend(
+	protected final Wom3Node replaceOrAppend(
 			Wom3Node replace,
 			Wom3Node replacement,
 			boolean required)
@@ -544,11 +658,17 @@ public abstract class BackboneWithChildren
 				removeChild(replace);
 			}
 			else
-				; // nothing to do
+			{
+				; // nothing to do, still let caller know that even though the 
+					// operation had no side effects, what he's trying to do is nasty.
+				assertWritableOnDocument();
+			}
 		}
 		else if (replace == replacement)
 		{
-			; // nothing to do
+			; // nothing to do, still let caller know that even though the 
+				// operation had no side effects, what he's trying to do is nasty.
+			assertWritableOnDocument();
 		}
 		else if (replace != null)
 		{
@@ -589,27 +709,75 @@ public abstract class BackboneWithChildren
 			new BackboneChildOperationChecker(this).checkReplacement(oldChild, newChild, desc);
 	}
 	
-	protected static ChildDescriptor childDesc(String tag)
+	// =========================================================================
+	
+	public static ChildDescriptor childDesc(String tag)
 	{
 		return childDesc(WOM_NS_URI, tag, 0);
 	}
 	
-	protected static ChildDescriptor childDesc(String namespaceUri, String tag)
+	public static ChildDescriptor childDesc(String namespaceUri, String tag)
 	{
 		return new ChildDescriptor(namespaceUri, tag, 0);
 	}
 	
-	protected static ChildDescriptor childDesc(String tag, int flags)
+	public static ChildDescriptor childDesc(String tag, int flags)
 	{
 		return childDesc(WOM_NS_URI, tag, flags);
 	}
 	
-	protected static ChildDescriptor childDesc(
+	public static ChildDescriptor childDesc(
 			String namespaceUri,
 			String tag,
 			int flags)
 	{
 		return new ChildDescriptor(namespaceUri, tag, flags);
+	}
+	
+	public static Map<String, AttributeDescriptor> attrDescMap(
+			RuntimeAttributeDescriptor... descriptors)
+	{
+		HashMap<String, AttributeDescriptor> map = new HashMap<String, AttributeDescriptor>();
+		for (RuntimeAttributeDescriptor desc : descriptors)
+			map.put(desc.getName(), desc);
+		return map;
+	}
+	
+	public static RuntimeAttributeDescriptor attrDesc(String name)
+	{
+		return attrDesc(
+				name,
+				Normalization.NONE);
+	}
+	
+	public static RuntimeAttributeDescriptor attrDesc(
+			String name,
+			Normalization normalization)
+	{
+		return attrDesc(
+				name,
+				true,
+				false,
+				null,
+				null,
+				normalization);
+	}
+	
+	public static RuntimeAttributeDescriptor attrDesc(
+			String name,
+			boolean removable,
+			boolean readOnly,
+			AttributeVerificationAndConverion verifyAndConvert,
+			AttributeCustomAction customAction,
+			Normalization normalization)
+	{
+		return new RuntimeAttributeDescriptor(
+				name,
+				removable,
+				readOnly,
+				verifyAndConvert,
+				customAction,
+				normalization);
 	}
 	
 	// =========================================================================

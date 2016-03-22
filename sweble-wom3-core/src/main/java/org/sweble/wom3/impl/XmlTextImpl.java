@@ -44,6 +44,7 @@ public class XmlTextImpl
 	@Override
 	public void setData(String data)
 	{
+		assertWritableOnDocument();
 		this.data = data;
 	}
 }

@@ -203,7 +203,7 @@ public class DomImplementationImpl
 	
 	// =========================================================================
 	
-	public Class<? extends Wom3ElementNode> addNodeImpl(
+	public Class<? extends Wom3ElementNode> addNodeImplementation(
 			String namespaceUri,
 			String localPart,
 			Class<? extends Wom3ElementNode> clazz)
@@ -226,7 +226,7 @@ public class DomImplementationImpl
 		if (impl == null)
 			return new ElementImpl(doc, tagName);
 		
-		return createElement(doc, impl);
+		return createElement(doc, impl, null);
 	}
 	
 	protected Wom3ElementNode createElement(
@@ -235,20 +235,30 @@ public class DomImplementationImpl
 			String qualifiedName)
 	{
 		int colon = qualifiedName.indexOf(':');
-		String localName = (colon < 0) ?
-				qualifiedName :
-				qualifiedName.substring(colon + 1);
+		String prefix;
+		String localName;
+		if (colon < 0)
+		{
+			prefix = null;
+			localName = qualifiedName;
+		}
+		else
+		{
+			prefix = qualifiedName.substring(0, colon);
+			localName = qualifiedName.substring(colon + 1);
+		}
 		
 		Class<? extends Wom3ElementNode> impl = getNodeImpl(namespaceURI, localName);
 		if (impl == null)
 			return new ElementNsImpl(doc, namespaceURI, qualifiedName);
 		
-		return createElement(doc, impl);
+		return createElement(doc, impl, prefix);
 	}
 	
 	protected Wom3ElementNode createElement(
 			DocumentImpl doc,
-			Class<? extends Wom3ElementNode> impl)
+			Class<? extends Wom3ElementNode> impl,
+			String prefix)
 	{
 		Constructor<?> ctor = null;
 		try
@@ -280,7 +290,10 @@ public class DomImplementationImpl
 		Exception e = null;
 		try
 		{
-			return (Wom3ElementNode) ctor.newInstance(doc);
+			Wom3ElementNode element = (Wom3ElementNode) ctor.newInstance(doc);
+			if (prefix != null)
+				element.setPrefix(prefix);
+			return element;
 		}
 		catch (InstantiationException e_)
 		{
@@ -305,7 +318,7 @@ public class DomImplementationImpl
 	
 	// =========================================================================
 	
-	protected static final class ElemTypeId
+	public static final class ElemTypeId
 	{
 		public final String namespaceUri;
 		

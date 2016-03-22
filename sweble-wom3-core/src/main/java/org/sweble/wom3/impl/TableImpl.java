@@ -17,6 +17,8 @@
  */
 package org.sweble.wom3.impl;
 
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,7 +26,6 @@ import java.util.Map;
 
 import org.sweble.wom3.Wom3Color;
 import org.sweble.wom3.Wom3HorizAlign;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Table;
 import org.sweble.wom3.Wom3TableBody;
 import org.sweble.wom3.Wom3TableCaption;
@@ -86,14 +87,12 @@ public class TableImpl
 			if (child instanceof Wom3TableBody)
 				return;
 			doesNotAllowInsertion(prev, child);
-			//checkInsertion(prev, child, BODY_DESCRIPTOR);
 		}
 	}
 	
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
-		//checkRemoval(child, BODY_DESCRIPTOR);
 	}
 	
 	@Override
@@ -121,7 +120,6 @@ public class TableImpl
 				return;
 			
 			doesNotAllowReplacement(oldChild, newChild);
-			//checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 		}
 	}
 	
@@ -162,7 +160,7 @@ public class TableImpl
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
-		return setAlignAttr(Attributes.ALIGN, "align", align);
+		return setAlignAttr(ATTR_DESC_ALIGN_LCR, "align", align);
 	}
 	
 	@Override
@@ -174,7 +172,7 @@ public class TableImpl
 	@Override
 	public Integer setBorder(Integer thickness)
 	{
-		return setIntAttr(Attributes.BORDER, "border", thickness);
+		return setIntAttr(ATTR_DESC_BORDER, "border", thickness);
 	}
 	
 	@Override
@@ -186,7 +184,7 @@ public class TableImpl
 	@Override
 	public Wom3Color setBgColor(Wom3Color color)
 	{
-		return setColorAttr(Attributes.BGCOLOR, "bgcolor", color);
+		return setColorAttr(ATTR_DESC_BGCOLOR, "bgcolor", color);
 	}
 	
 	@Override
@@ -198,7 +196,7 @@ public class TableImpl
 	@Override
 	public Wom3ValueWithUnit setCellPadding(Wom3ValueWithUnit padding)
 	{
-		return setValueWithUnitAttr(Attributes.CELLPADDING, "cellpadding", padding);
+		return setValueWithUnitAttr(ATTR_DESC_CELLPADDING, "cellpadding", padding);
 	}
 	
 	@Override
@@ -210,7 +208,7 @@ public class TableImpl
 	@Override
 	public Wom3ValueWithUnit setCellSpacing(Wom3ValueWithUnit spacing)
 	{
-		return setValueWithUnitAttr(Attributes.CELLSPACING, "cellspacing", spacing);
+		return setValueWithUnitAttr(ATTR_DESC_CELLSPACING, "cellspacing", spacing);
 	}
 	
 	@Override
@@ -222,7 +220,7 @@ public class TableImpl
 	@Override
 	public Wom3TableFrame setFrame(Wom3TableFrame frame)
 	{
-		return setAttributeDirect(Attributes.FRAME, "frame", frame);
+		return setAttributeDirect(ATTR_DESC_FRAME, "frame", frame);
 	}
 	
 	@Override
@@ -234,7 +232,7 @@ public class TableImpl
 	@Override
 	public Wom3TableRules setRules(Wom3TableRules rules)
 	{
-		return setAttributeDirect(Attributes.RULES, "rules", rules);
+		return setAttributeDirect(ATTR_DESC_RULES, "rules", rules);
 	}
 	
 	@Override
@@ -246,7 +244,7 @@ public class TableImpl
 	@Override
 	public String setSummary(String summary)
 	{
-		return setStringAttr(Attributes.SUMMARY, "summary", summary);
+		return setStringAttr(ATTR_DESC_SUMMARY, "summary", summary);
 	}
 	
 	@Override
@@ -258,7 +256,7 @@ public class TableImpl
 	@Override
 	public Wom3ValueWithUnit setWidth(Wom3ValueWithUnit width)
 	{
-		return setValueWithUnitAttr(Attributes.WIDTH, "width", width);
+		return setValueWithUnitAttr(ATTR_DESC_WIDTH_LENGTH, "width", width);
 	}
 	
 	// =========================================================================
@@ -274,22 +272,6 @@ public class TableImpl
 	{
 		return (Wom3TableCaption) replaceOrInsertBeforeOrAppend(
 				this.caption, this.partitions.getFirstOrNull(), caption, false);
-		/*
-		WomTableCaption old = this.caption;
-		if (this.caption != null)
-		{
-			replaceChildNoNotify(this.caption, caption);
-		}
-		else
-		{
-			if (this.body != null)
-				insertBeforeNoNotify(this.body, caption);
-			else
-				appendChildNoNotify(caption);
-		}
-		this.caption = Toolbox.expectType(WomTableCaption.class, caption);
-		return old;
-		*/
 	}
 	
 	@Override
@@ -298,52 +280,35 @@ public class TableImpl
 		return Collections.unmodifiableCollection(this.partitions);
 	}
 	
-	//	@Override
-	//	public Wom3TableBody getBody()
-	//	{
-	//		return body;
-	//	}
-	//	
-	//	@Override
-	//	public Wom3TableBody setBody(Wom3TableBody body)
-	//	{
-	//		return (Wom3TableBody) replaceOrAppend(this.body, body, false);
-	//		/*
-	//		WomTableBody old = this.body;
-	//		if (this.body != null)
-	//		{
-	//			replaceChildNoNotify(this.body, body);
-	//		}
-	//		else
-	//		{
-	//			appendChildNoNotify(body);
-	//		}
-	//		this.body = Toolbox.expectType(WomTableBody.class, body);
-	//		return old;
-	//		*/
-	//	}
-	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	protected static final AttributeDescriptor ATTR_DESC_BORDER = new AttrDescBorder();
 	
-	public static Map<String, AttributeDescriptor> getNameMap()
+	protected static final AttributeDescriptor ATTR_DESC_CELLPADDING = new AttrDescCellPadding();
+	
+	protected static final AttributeDescriptor ATTR_DESC_CELLSPACING = new AttrDescCellSpacing();
+	
+	protected static final AttributeDescriptor ATTR_DESC_FRAME = new AttrDescFrame();
+	
+	protected static final AttributeDescriptor ATTR_DESC_RULES = new AttrDescRules();
+	
+	protected static final AttributeDescriptor ATTR_DESC_SUMMARY = new AttrDescSummary();
+	
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
+	
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("align", Attributes.ALIGN);
-		nameMap.put("border", Attributes.BORDER);
-		nameMap.put("bgcolor", Attributes.BGCOLOR);
-		nameMap.put("cellpadding", Attributes.CELLPADDING);
-		nameMap.put("cellspacing", Attributes.CELLSPACING);
-		nameMap.put("frame", Attributes.FRAME);
-		nameMap.put("rules", Attributes.RULES);
-		nameMap.put("summary", Attributes.SUMMARY);
-		nameMap.put("width", Attributes.WIDTH);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("align", ATTR_DESC_ALIGN_LCR);
+		NAME_MAP.put("border", ATTR_DESC_BORDER);
+		NAME_MAP.put("bgcolor", ATTR_DESC_BGCOLOR);
+		NAME_MAP.put("cellpadding", ATTR_DESC_CELLPADDING);
+		NAME_MAP.put("cellspacing", ATTR_DESC_CELLSPACING);
+		NAME_MAP.put("frame", ATTR_DESC_FRAME);
+		NAME_MAP.put("rules", ATTR_DESC_RULES);
+		NAME_MAP.put("summary", ATTR_DESC_SUMMARY);
+		NAME_MAP.put("width", ATTR_DESC_WIDTH_LENGTH);
 	}
 	
 	@Override
@@ -352,123 +317,144 @@ public class TableImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 	
-	public static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescBorder
+			extends
+				AttributeDescriptor
 	{
-		ALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LCR_ALIGN.verifyAndConvert(parent, verified);
-			}
-		},
-		BORDER
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
-			}
-		},
-		BGCOLOR
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.COLOR.verifyAndConvert(parent, verified);
-			}
-		},
-		CELLPADDING
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
-			}
-		},
-		CELLSPACING
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
-			}
-		},
-		FRAME
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.FRAME.verifyAndConvert(parent, verified);
-			}
-		},
-		RULES
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.RULES.verifyAndConvert(parent, verified);
-			}
-		},
-		SUMMARY
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return true;
-			}
-		},
-		WIDTH
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return true;
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
+			return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
 		}
 	}
 	
+	public static final class AttrDescCellPadding
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescCellSpacing
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescFrame
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.FRAME.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescRules
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return AttributeVerifiers.RULES.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescSummary
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			return super.verifyAndConvert(parent, verified);
+		}
+	}
 }

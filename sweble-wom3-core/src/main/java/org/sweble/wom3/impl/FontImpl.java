@@ -17,12 +17,13 @@
  */
 package org.sweble.wom3.impl;
 
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.sweble.wom3.Wom3Color;
 import org.sweble.wom3.Wom3Font;
-import org.sweble.wom3.Wom3Node;
 
 public class FontImpl
 		extends
@@ -58,7 +59,7 @@ public class FontImpl
 	@Override
 	public Wom3Color setColor(Wom3Color color)
 	{
-		return setColorAttr(Attributes.COLOR, "color", color);
+		return setColorAttr(ATTR_DESC_COLOR, "color", color);
 	}
 	
 	@Override
@@ -70,7 +71,7 @@ public class FontImpl
 	@Override
 	public String setFace(String face)
 	{
-		return setStringAttr(Attributes.FACE, "face", face);
+		return setStringAttr(ATTR_DESC_FACE, "face", face);
 	}
 	
 	@Override
@@ -82,25 +83,20 @@ public class FontImpl
 	@Override
 	public Integer setSize(Integer size)
 	{
-		return setIntAttr(Attributes.SIZE, "size", size);
+		return setIntAttr(ATTR_DESC_FONT_SIZE, "size", size);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(CoreAttributes.getNameMap());
-		nameMap.putAll(I18nAttributes.getNameMap());
-		nameMap.put("color", Attributes.COLOR);
-		nameMap.put("face", Attributes.FACE);
-		nameMap.put("size", Attributes.SIZE);
-		
-		return nameMap;
+		NAME_MAP.putAll(CoreAttributes.getNameMap());
+		NAME_MAP.putAll(I18nAttributes.getNameMap());
+		NAME_MAP.put("color", ATTR_DESC_COLOR);
+		NAME_MAP.put("face", ATTR_DESC_FACE);
+		NAME_MAP.put("size", ATTR_DESC_FONT_SIZE);
 	}
 	
 	@Override
@@ -109,64 +105,6 @@ public class FontImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		COLOR
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.COLOR.verifyAndConvert(parent, verified);
-			}
-		},
-		
-		FACE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return true;
-			}
-		},
-		
-		SIZE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.FONTSIZE.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 }

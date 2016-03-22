@@ -18,7 +18,6 @@
 package org.sweble.wom3.impl;
 
 import org.joda.time.DateTime;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3Rtd;
 import org.sweble.wom3.Wom3Signature;
 import org.sweble.wom3.Wom3SignatureFormat;
@@ -60,7 +59,7 @@ public class SignatureImpl
 	@Override
 	public Wom3SignatureFormat setSignatureFormat(Wom3SignatureFormat format) throws NullPointerException
 	{
-		return setAttributeDirect(org.sweble.wom3.impl.SignatureImpl.Attributes.FORMAT, "format", format);
+		return setAttributeDirect(ATTR_DESC_FORMAT, "format", format);
 	}
 	
 	@Override
@@ -72,7 +71,7 @@ public class SignatureImpl
 	@Override
 	public String setAuthor(String author) throws IllegalArgumentException, NullPointerException
 	{
-		return setAttributeDirect(org.sweble.wom3.impl.SignatureImpl.Attributes.AUTHOR, "author", author);
+		return setAttributeDirect(ATTR_DESC_AUTHOR, "author", author);
 	}
 	
 	@Override
@@ -84,7 +83,7 @@ public class SignatureImpl
 	@Override
 	public DateTime setTimestamp(DateTime timestamp) throws NullPointerException
 	{
-		return setAttributeDirect(org.sweble.wom3.impl.SignatureImpl.Attributes.TIMESTAMP, "timestamp", timestamp);
+		return setAttributeDirect(ATTR_DESC_TIMESTAMP, "timestamp", timestamp);
 	}
 	
 	// =========================================================================
@@ -116,6 +115,12 @@ public class SignatureImpl
 	
 	// =========================================================================
 	
+	protected static final AttributeDescriptor ATTR_DESC_FORMAT = new AttrDescFormat();
+	
+	protected static final AttributeDescriptor ATTR_DESC_AUTHOR = new AttrDescAuthor();
+	
+	protected static final AttributeDescriptor ATTR_DESC_TIMESTAMP = new AttrDescTimestamp();
+	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -123,74 +128,85 @@ public class SignatureImpl
 			String qualifiedName)
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
-				"format", Attributes.FORMAT,
-				"author", Attributes.AUTHOR,
-				"timestamp", Attributes.TIMESTAMP);
+				"format", ATTR_DESC_FORMAT,
+				"author", ATTR_DESC_AUTHOR,
+				"timestamp", ATTR_DESC_TIMESTAMP);
 	}
 	
-	public static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescFormat
+			extends
+				AttributeDescriptor
 	{
-		FORMAT
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue != null)
-					verified.value = Toolbox.stringToSignatureFormat(verified.strValue);
-				else
-					verified.strValue = Toolbox.signatureFormatToString((Wom3SignatureFormat) verified.value);
-				return true;
-			}
-		},
-		
-		AUTHOR
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return true;
-			}
-		},
-		
-		TIMESTAMP
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				if (verified.strValue != null)
-					verified.value = Toolbox.stringToDateTime(verified.strValue);
-				else
-					verified.strValue = Toolbox.dateTimeToString((DateTime) verified.value);
-				return true;
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return false;
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.CDATA;
+			if (verified.strValue != null)
+				verified.value = Toolbox.stringToSignatureFormat(verified.strValue);
+			else
+				verified.strValue = Toolbox.signatureFormatToString((Wom3SignatureFormat) verified.value);
+			return true;
+		}
+	}
+	
+	public static final class AttrDescAuthor
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
+			return super.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescTimestamp
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					false /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
+		}
+		
+		@Override
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
+		{
+			if (verified.strValue != null)
+				verified.value = Toolbox.stringToDateTime(verified.strValue);
+			else
+				verified.strValue = Toolbox.dateTimeToString((DateTime) verified.value);
+			return true;
 		}
 	}
 }

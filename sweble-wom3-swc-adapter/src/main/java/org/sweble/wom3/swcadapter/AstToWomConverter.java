@@ -25,16 +25,9 @@ import java.util.ListIterator;
 import java.util.Map;
 
 import org.joda.time.DateTime;
-import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.nodes.CompleteEngineVisitor;
-import org.sweble.wikitext.engine.nodes.EngNowiki;
-import org.sweble.wikitext.engine.nodes.EngPage;
-import org.sweble.wikitext.engine.nodes.EngProcessedPage;
-import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
-import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
-import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
+import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
@@ -107,26 +100,37 @@ import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
-import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.postprocessor.WtNodeFlags;
+import org.sweble.wikitext.parser.utils.AstTextUtils;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 import org.sweble.wom3.Wom3Article;
 import org.sweble.wom3.Wom3Attribute;
+import org.sweble.wom3.Wom3Body;
+import org.sweble.wom3.Wom3Bold;
 import org.sweble.wom3.Wom3Comment;
+import org.sweble.wom3.Wom3DefinitionList;
+import org.sweble.wom3.Wom3DefinitionListDef;
+import org.sweble.wom3.Wom3DefinitionListTerm;
 import org.sweble.wom3.Wom3Document;
 import org.sweble.wom3.Wom3Element;
 import org.sweble.wom3.Wom3ElementNode;
 import org.sweble.wom3.Wom3ExtLink;
 import org.sweble.wom3.Wom3For;
+import org.sweble.wom3.Wom3Heading;
+import org.sweble.wom3.Wom3HorizontalRule;
 import org.sweble.wom3.Wom3Image;
+import org.sweble.wom3.Wom3ImageCaption;
 import org.sweble.wom3.Wom3ImageFormat;
 import org.sweble.wom3.Wom3ImageHAlign;
 import org.sweble.wom3.Wom3ImageVAlign;
 import org.sweble.wom3.Wom3IntLink;
+import org.sweble.wom3.Wom3Italics;
+import org.sweble.wom3.Wom3ListItem;
 import org.sweble.wom3.Wom3Node;
-import org.sweble.wom3.Wom3Nowiki;
+import org.sweble.wom3.Wom3OrderedList;
 import org.sweble.wom3.Wom3Paragraph;
+import org.sweble.wom3.Wom3Pre;
 import org.sweble.wom3.Wom3Redirect;
 import org.sweble.wom3.Wom3Repl;
 import org.sweble.wom3.Wom3Rtd;
@@ -135,14 +139,30 @@ import org.sweble.wom3.Wom3Signature;
 import org.sweble.wom3.Wom3SignatureFormat;
 import org.sweble.wom3.Wom3Subst;
 import org.sweble.wom3.Wom3Table;
+import org.sweble.wom3.Wom3TableBody;
 import org.sweble.wom3.Wom3TableCaption;
+import org.sweble.wom3.Wom3TableCell;
+import org.sweble.wom3.Wom3TableHeaderCell;
 import org.sweble.wom3.Wom3Text;
 import org.sweble.wom3.Wom3Title;
+import org.sweble.wom3.Wom3UnorderedList;
 import org.sweble.wom3.Wom3XmlText;
-import org.sweble.wom3.impl.DocumentImpl;
 import org.sweble.wom3.impl.DomImplementationImpl;
-import org.sweble.wom3.impl.Toolbox;
+import org.sweble.wom3.swcadapter.nodes.SwcArg;
+import org.sweble.wom3.swcadapter.nodes.SwcAttr;
+import org.sweble.wom3.swcadapter.nodes.SwcGarbage;
+import org.sweble.wom3.swcadapter.nodes.SwcName;
+import org.sweble.wom3.swcadapter.nodes.SwcNode;
+import org.sweble.wom3.swcadapter.nodes.SwcParam;
+import org.sweble.wom3.swcadapter.nodes.SwcTagExtBody;
+import org.sweble.wom3.swcadapter.nodes.SwcTagExtension;
+import org.sweble.wom3.swcadapter.nodes.SwcTransclusion;
+import org.sweble.wom3.swcadapter.nodes.SwcValue;
+import org.sweble.wom3.swcadapter.nodes.SwcXmlElement;
+import org.sweble.wom3.swcadapter.nodes.impl.DefaultSwcNodeImplementations;
+import org.sweble.wom3.swcadapter.nodes.impl.DefaultSwcNodeImplementations.SwcNodeImplInfo;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.XmlGrammar;
@@ -150,22 +170,18 @@ import de.fau.cs.osr.utils.XmlGrammar;
 public class AstToWomConverter
 		extends
 			AstVisitor<WtNode>
-		implements
-			CompleteEngineVisitor<Wom3Node>
 {
-	public static final String MWW_NS_URI = "http://sweble.org/schema/mww30";
+	public static final String MWW_NS_URI = SwcNode.MWW_NS_URI;
 	
-	public static final String DEFAULT_MWW_NS_PREFIX = "mww";
+	public static final String DEFAULT_MWW_NS_PREFIX = SwcNode.DEFAULT_MWW_NS_PREFIX;
 	
 	// =========================================================================
 	
-	private final WikiConfig wikiConfig;
-	
 	private final Map<String, HtmlElement> xhtmlElems;
 	
-	private final EngineAstTextUtils astTextUtils;
+	private AstTextUtils astTextUtils;
 	
-	private final EngineNodeFactory nodeFactory;
+	private WikitextNodeFactory nodeFactory;
 	
 	// =========================================================================
 	// Configuration
@@ -177,17 +193,24 @@ public class AstToWomConverter
 	private boolean addSubst = true;
 	
 	// =========================================================================
-	// Per AST/document state
+	// Document configuratoin
 	
-	private LinkedList<Wom3ElementNode> stack = new LinkedList<Wom3ElementNode>();
+	private String pageNamespace;
 	
-	private PageTitle pageTitle;
+	private String pagePath;
+	
+	private String pageTitle;
 	
 	private String author;
 	
 	private DateTime timestamp;
 	
 	private Document doc;
+	
+	// =========================================================================
+	// Per AST/document state
+	
+	private LinkedList<Wom3ElementNode> stack = new LinkedList<Wom3ElementNode>();
 	
 	private Wom3Article page;
 	
@@ -197,58 +220,60 @@ public class AstToWomConverter
 	
 	// =========================================================================
 	
-	public AstToWomConverter(WikiConfig config)
-	{
-		this.wikiConfig = config;
-		
-		this.xhtmlElems = new HashMap<String, HtmlElement>();
-		for (HtmlElement e : HtmlElement.values())
-			xhtmlElems.put(e.name().toLowerCase(), e);
-		
-		this.astTextUtils = wikiConfig.getAstTextUtils();
-		this.nodeFactory = wikiConfig.getNodeFactory();
-	}
-	
-	// =========================================================================
-	
 	public static Wom3Document convert(
-			WikiConfig config,
-			PageTitle pageTitle,
+			ParserConfig parserConfig,
+			String pageNamespace,
+			String pagePath,
+			String pageTitle,
 			String author,
 			DateTime timestamp,
 			WtNode ast)
 	{
 		Wom3Document doc = DomImplementationImpl.get().createDocument(
-				Wom3ElementNode.WOM_NS_URI, "article", null);
+				null, null, null);
 		
-		AstToWomConverter converter = new AstToWomConverter(config);
+		for (SwcNodeImplInfo i : DefaultSwcNodeImplementations.get())
+			DomImplementationImpl.get().addNodeImplementation(
+					i.getNamespaceUri(),
+					i.getLocalPart(),
+					i.getImpl());
 		
-		converter.convert(doc, pageTitle, author, timestamp, ast);
+		AstToWomConverter converter = new AstToWomConverter(parserConfig);
+		
+		converter.convert(doc, pageNamespace, pagePath, pageTitle, author, timestamp, ast);
 		
 		return doc;
 	}
 	
-	public Wom3Document convert(
-			PageTitle pageTitle,
-			String author,
-			DateTime timestamp,
-			WtNode ast)
+	// =========================================================================
+	
+	public AstToWomConverter(ParserConfig parserConfig)
 	{
-		DocumentImpl doc = DomImplementationImpl.get().createDocument(
-				Wom3ElementNode.WOM_NS_URI, "article", null);
+		this.xhtmlElems = new HashMap<String, HtmlElement>();
+		for (HtmlElement e : HtmlElement.values())
+			xhtmlElems.put(e.name().toLowerCase(), e);
 		
-		return convert(doc, pageTitle, author, timestamp, ast);
+		this.astTextUtils = parserConfig.getAstTextUtils();
+		this.nodeFactory = parserConfig.getNodeFactory();
 	}
 	
-	public Wom3Document convert(
-			Wom3Document doc,
-			PageTitle pageTitle,
+	// =========================================================================
+	
+	public Document convert(
+			Document doc,
+			String pageNamespace,
+			String pagePath,
+			String pageTitle,
 			String author,
 			DateTime timestamp,
 			WtNode ast)
 	{
 		this.doc = doc;
+		
+		this.pageNamespace = pageNamespace;
+		this.pagePath = pagePath;
 		this.pageTitle = pageTitle;
+		
 		this.author = author;
 		this.timestamp = timestamp;
 		
@@ -276,17 +301,15 @@ public class AstToWomConverter
 				"xmlns:" + DEFAULT_MWW_NS_PREFIX,
 				MWW_NS_URI);
 		
-		doc.replaceChild(root, doc.getDocumentElement());
+		Element docElem = doc.getDocumentElement();
+		if (docElem != null)
+			doc.removeChild(docElem);
+		doc.appendChild(root);
 		
 		return doc;
 	}
 	
 	// =========================================================================
-	
-	public WikiConfig getWikiConfig()
-	{
-		return wikiConfig;
-	}
 	
 	public boolean setPreserveRtd(boolean preserveRtd)
 	{
@@ -312,7 +335,6 @@ public class AstToWomConverter
 	
 	// == [ Encoding Validator ] ===============================================
 	
-	@Override
 	public Wom3ElementNode visit(WtIllegalCodePoint n)
 	{
 		// The & will be escaped and therefore the whole thing will be rendered 
@@ -324,10 +346,9 @@ public class AstToWomConverter
 	
 	// == [ Tag extension ] ====================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtTagExtension n)
 	{
-		Wom3Element tag = genPushMww("tagext");
+		SwcTagExtension tag = genPushMww("tagext");
 		{
 			tag.setAttribute("name", n.getName());
 			
@@ -345,10 +366,9 @@ public class AstToWomConverter
 		return pop(tag);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTagExtensionBody n)
 	{
-		Wom3Element body = genPushMww("body");
+		SwcTagExtBody body = genPushMww("tagext-body");
 		{
 			appendText(n.getContent());
 		}
@@ -357,10 +377,9 @@ public class AstToWomConverter
 	
 	// == [ Template ] =========================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtTemplate n)
 	{
-		Wom3Element template = genPushMww("transclusion");
+		SwcTransclusion template = genPushMww("transclusion");
 		{
 			appendRtd(template, n, 0);
 			
@@ -375,17 +394,15 @@ public class AstToWomConverter
 		return pop(template);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTemplateArguments n)
 	{
 		processContainerNode(n);
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTemplateArgument n)
 	{
-		Wom3Element arg = genPushMww("arg");
+		SwcArg arg = genPushMww("arg");
 		{
 			appendRtd(arg, n, 0);
 			
@@ -401,10 +418,9 @@ public class AstToWomConverter
 		return pop(arg);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTemplateParameter n)
 	{
-		Wom3Element param = genPushMww("param");
+		SwcParam param = genPushMww("param");
 		{
 			appendRtd(param, n, 0);
 			
@@ -419,7 +435,7 @@ public class AstToWomConverter
 			
 			if (!n.getGarbage().isEmpty())
 			{
-				Wom3Element garbage = genPushMww("garbage");
+				SwcGarbage garbage = genPushMww("garbage");
 				{
 					dispatchAppend(garbage, n.getGarbage());
 				}
@@ -433,7 +449,6 @@ public class AstToWomConverter
 	
 	// == [ XML references ] ===================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlCharRef n)
 	{
 		if (addSubst)
@@ -448,7 +463,7 @@ public class AstToWomConverter
 				
 				Wom3For for_ = (Wom3For) genPushWom("for");
 				{
-					Wom3Element charRef = genPushMww("xml-char-ref");
+					Wom3ElementNode charRef = genPushMwwNotYetImplemented("xml-char-ref");
 					{
 						charRef.setAttribute("code", String.valueOf(n.getCodePoint()));
 						
@@ -467,7 +482,7 @@ public class AstToWomConverter
 		}
 	}
 	
-	private Wom3ElementNode convertCharRef(WtXmlCharRef n)
+	private void convertCharRef(WtXmlCharRef n)
 	{
 		int codePoint = n.getCodePoint();
 		if (!XmlGrammar.isChar(codePoint))
@@ -481,10 +496,8 @@ public class AstToWomConverter
 		{
 			appendText(new String(Character.toChars(codePoint)));
 		}
-		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlEntityRef n)
 	{
 		if (addSubst)
@@ -499,7 +512,7 @@ public class AstToWomConverter
 				
 				Wom3For for_ = (Wom3For) genPushWom("for");
 				{
-					Wom3Element entityRef = genPushMww("xml-entity-ref");
+					Wom3ElementNode entityRef = genPushMwwNotYetImplemented("xml-entity-ref");
 					{
 						entityRef.setAttribute("name", String.valueOf(n.getName()));
 						appendRtd(entityRef, n, 0);
@@ -517,7 +530,7 @@ public class AstToWomConverter
 		}
 	}
 	
-	private Wom3ElementNode convertEntityRef(WtXmlEntityRef n)
+	private void convertEntityRef(WtXmlEntityRef n)
 	{
 		String resolved = n.getResolved();
 		if (resolved == null)
@@ -531,40 +544,34 @@ public class AstToWomConverter
 		{
 			appendText(resolved);
 		}
-		return null;
 	}
 	
 	// == [ Incomplete XML tags ] ==============================================
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlEmptyTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlStartTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlEndTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtImStartTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtImEndTag n)
 	{
 		appendInconvertible(n, false);
@@ -573,7 +580,6 @@ public class AstToWomConverter
 	
 	// == [ Pure XML Elements ] ================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlElement n)
 	{
 		String lowercaseName = n.getName().toLowerCase();
@@ -696,11 +702,11 @@ public class AstToWomConverter
 		throw new IllegalArgumentException("Unknown element type: " + elementType);
 	}
 	
-	private Wom3ElementNode convertGenericXmlElement(WtXmlElement n)
+	private SwcXmlElement convertGenericXmlElement(WtXmlElement n)
 	{
-		Wom3ElementNode element = genPushMww("xmlelement");
+		SwcXmlElement element = genPushMww("xmlelement");
 		{
-			element.setAttribute("tag", n.getName());
+			element.setTag(n.getName());
 			
 			appendRtd(element, n, 0);
 			
@@ -736,9 +742,9 @@ public class AstToWomConverter
 		return pop(womElement);
 	}
 	
-	private Wom3ElementNode preFromElement(WtXmlElement n)
+	private Wom3Pre preFromElement(WtXmlElement n)
 	{
-		Wom3ElementNode pre = genPushWom("pre");
+		Wom3Pre pre = genPushWom("pre");
 		{
 			appendRtd(pre, n, 0);
 			
@@ -754,7 +760,7 @@ public class AstToWomConverter
 		return pop(pre);
 	}
 	
-	private Wom3ElementNode tableFromElement(WtXmlElement n)
+	private Wom3Table tableFromElement(WtXmlElement n)
 	{
 		Wom3Table table = (Wom3Table) genPushWom("table");
 		inNoTextScope = true;
@@ -774,12 +780,12 @@ public class AstToWomConverter
 		return pop(table);
 	}
 	
-	private Wom3ElementNode tableBodyFromElement(WtXmlElement n)
+	private Wom3TableBody tableBodyFromElement(WtXmlElement n)
 	{
-		return womFromXmlElement(n, "tbody");
+		return (Wom3TableBody) womFromXmlElement(n, "tbody");
 	}
 	
-	private Wom3ElementNode tableCaptionFromElement(WtXmlElement n)
+	private Wom3TableCaption tableCaptionFromElement(WtXmlElement n)
 	{
 		Wom3ElementNode scope = getScope();
 		if (scope instanceof Wom3Table)
@@ -793,17 +799,17 @@ public class AstToWomConverter
 			}
 		}
 		
-		return tableXFromX(n, "caption");
+		return (Wom3TableCaption) tableXFromX(n, "caption");
 	}
 	
-	private Wom3ElementNode tableHeaderFromElement(WtXmlElement n)
+	private Wom3TableHeaderCell tableHeaderFromElement(WtXmlElement n)
 	{
-		return tableXFromX(n, "th");
+		return (Wom3TableHeaderCell) tableXFromX(n, "th");
 	}
 	
-	private Wom3ElementNode tableCellFromElement(WtXmlElement n)
+	private Wom3TableCell tableCellFromElement(WtXmlElement n)
 	{
-		return tableXFromX(n, "td");
+		return (Wom3TableCell) tableXFromX(n, "td");
 	}
 	
 	private Wom3ElementNode tableXFromX(WtXmlElement n, String womName)
@@ -821,7 +827,6 @@ public class AstToWomConverter
 	
 	// == [ XML Attributes ] ===================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlAttributes n)
 	{
 		boolean old = setSuppressRtd(n.getRtd());
@@ -832,8 +837,7 @@ public class AstToWomConverter
 		return null;
 	}
 	
-	@Override
-	public Wom3Node visit(WtXmlAttribute n)
+	public Wom3ElementNode visit(WtXmlAttribute n)
 	{
 		boolean failed = true;
 		tryBlock: try
@@ -875,7 +879,6 @@ public class AstToWomConverter
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlAttributeGarbage n)
 	{
 		appendInconvertible(n, true);
@@ -905,9 +908,9 @@ public class AstToWomConverter
 		appendRtd(womParent, xmlAttribs, 1);
 	}
 	
-	private Wom3Element convertToExplicitMwwAttribute(WtXmlAttribute wtAttr)
+	private SwcAttr convertToExplicitMwwAttribute(WtXmlAttribute wtAttr)
 	{
-		Wom3Element womAttr = genPushMww("attr");
+		SwcAttr womAttr = (SwcAttr) genPushMww("attr");
 		
 		appendRtd(womAttr, wtAttr, 0);
 		
@@ -920,12 +923,11 @@ public class AstToWomConverter
 		
 		appendRtd(womAttr, wtAttr, 2);
 		
-		return (Wom3Element) pop(womAttr);
+		return (SwcAttr) pop(womAttr);
 	}
 	
 	// == [ Redirect ] =========================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtRedirect n)
 	{
 		String targetAsString = getTargetAsString(n.getTarget());
@@ -953,7 +955,7 @@ public class AstToWomConverter
 					
 					Wom3For for_ = (Wom3For) genPushWom("for");
 					{
-						Wom3Element mwwRedirect = genPushMww("redirect");
+						Wom3Element mwwRedirect = genPushMwwNotYetImplemented("redirect");
 						{
 							appendRtd(mwwRedirect, n, 0);
 							
@@ -979,7 +981,6 @@ public class AstToWomConverter
 		}
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtPageName n)
 	{
 		try
@@ -1007,33 +1008,16 @@ public class AstToWomConverter
 		}
 	}
 	
-	private String getNormalizedTargetAsString(String targetAsString)
+	/**
+	 * Override it if you want to normalize link targets.
+	 */
+	protected String getNormalizedTargetAsString(String targetAsString)
 	{
-		try
-		{
-			PageTitle target = PageTitle.make(wikiConfig, targetAsString);
-			
-			String normalized = target.getNormalizedFullTitle();
-			if (target.getFragment() != null)
-				normalized += "#" + target.getFragment();
-			
-			Toolbox.checkValidTarget(normalized);
-			
-			return normalized;
-		}
-		catch (IllegalArgumentException e)
-		{
-			return null;
-		}
-		catch (LinkTargetException e)
-		{
-			return null;
-		}
+		return targetAsString;
 	}
 	
 	// == [ External Links ] ===================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtUrl n)
 	{
 		URL url = urlNodeToUrl(n);
@@ -1055,7 +1039,6 @@ public class AstToWomConverter
 		}
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtExternalLink n)
 	{
 		URL url = urlNodeToUrl(n.getTarget());
@@ -1102,7 +1085,6 @@ public class AstToWomConverter
 	
 	// == [ Internal Link ]= ===================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtInternalLink n)
 	{
 		String originalTarget = getTargetAsString(n.getTarget());
@@ -1122,14 +1104,14 @@ public class AstToWomConverter
 				nativeIntLink(n, originalTarget, normalizedTarget));
 	}
 	
-	private Wom3ElementNode nativeIntLink(
+	private Wom3IntLink nativeIntLink(
 			WtInternalLink n,
 			String originalTarget,
 			String normalizedTarget)
 	{
 		Wom3IntLink intLink = (Wom3IntLink) genPushWom("intlink");
 		{
-			intLink.setTarget(normalizedTarget);
+			intLink.setTarget(originalTarget);
 			
 			appendRtd(intLink, n, 0);
 			
@@ -1150,7 +1132,7 @@ public class AstToWomConverter
 		return pop(intLink);
 	}
 	
-	private Wom3ElementNode substIntLink(
+	private Wom3Subst substIntLink(
 			WtInternalLink n,
 			String originalTarget,
 			String normalizedTarget)
@@ -1196,7 +1178,7 @@ public class AstToWomConverter
 			
 			Wom3For for_ = (Wom3For) genPushWom("for");
 			{
-				Wom3ElementNode intLink = genPushMww("intlink");
+				Wom3Element intLink = genPushMwwNotYetImplemented("intlink");
 				{
 					intLink.setAttribute("target", originalTarget);
 					if (!n.getPostfix().isEmpty())
@@ -1222,7 +1204,6 @@ public class AstToWomConverter
 	
 	// == [ Image Link ] =======================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtImageLink n)
 	{
 		String targetAsString = getTargetAsString(n.getTarget());
@@ -1231,7 +1212,7 @@ public class AstToWomConverter
 		{
 			Wom3Image img = (Wom3Image) genPushWom("image");
 			{
-				img.setSource(normalizedTarget);
+				img.setSource(targetAsString);
 				img.setFormat(mapImgFormat(n.getFormat()));
 				img.setBorder(n.getBorder());
 				img.setHAlign(mapImgHAlign(n.getHAlign()));
@@ -1361,7 +1342,6 @@ public class AstToWomConverter
 		throw new IllegalArgumentException("Unknown image view format: " + format);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtLinkOptions n)
 	{
 		boolean old = setSuppressRtd(n.getRtd());
@@ -1372,35 +1352,30 @@ public class AstToWomConverter
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtLinkOptionLinkTarget n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtLinkOptionKeyword n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtLinkOptionResize n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtLinkOptionAltText n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtLinkOptionGarbage n)
 	{
 		appendInconvertible(n, true);
@@ -1409,7 +1384,6 @@ public class AstToWomConverter
 	
 	// == [ Section ] ==========================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtSection n)
 	{
 		Wom3Section section = (Wom3Section) genPushWom("section");
@@ -1429,53 +1403,45 @@ public class AstToWomConverter
 		return pop(section);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtHeading n)
 	{
-		return processChildrenPush(n, genWom("heading"));
+		return processChildrenPush(n, (Wom3Heading) genWom("heading"));
 	}
 	
 	// == [ Lists ] ============================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtOrderedList n)
 	{
-		return processChildrenPush(n, genWom("ol"));
+		return processChildrenPush(n, (Wom3OrderedList) genWom("ol"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtUnorderedList n)
 	{
-		return processChildrenPush(n, genWom("ul"));
+		return processChildrenPush(n, (Wom3UnorderedList) genWom("ul"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtListItem n)
 	{
-		return processChildrenPush(n, genWom("li"));
+		return processChildrenPush(n, (Wom3ListItem) genWom("li"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtDefinitionList n)
 	{
-		return processChildrenPush(n, genWom("dl"));
+		return processChildrenPush(n, (Wom3DefinitionList) genWom("dl"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtDefinitionListDef n)
 	{
-		return processChildrenPush(n, genWom("dd"));
+		return processChildrenPush(n, (Wom3DefinitionListDef) genWom("dd"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtDefinitionListTerm n)
 	{
-		return processChildrenPush(n, genWom("dt"));
+		return processChildrenPush(n, (Wom3DefinitionListTerm) genWom("dt"));
 	}
 	
 	// == [ Table ] ============================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtTable n)
 	{
 		Wom3Table table = (Wom3Table) genPushWom("table");
@@ -1495,7 +1461,6 @@ public class AstToWomConverter
 		return pop(table);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTableCaption n)
 	{
 		Wom3ElementNode scope = getScope();
@@ -1527,37 +1492,34 @@ public class AstToWomConverter
 		return pop(caption);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTableImplicitTableBody n)
 	{
-		return processChildrenPush(n.getBody(), genWom("tbody"));
+		return processChildrenPush(n.getBody(), (Wom3TableBody) genWom("tbody"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTableRow n)
 	{
 		return buildRowOrCell(n, n.getXmlAttributes(), n.getBody(), "tr");
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTableCell n)
 	{
 		inNoTextScope = false;
-		Wom3ElementNode cell = buildRowOrCell(n, n.getXmlAttributes(), n.getBody(), "td");
+		Wom3TableCell cell = buildRowOrCell(n, n.getXmlAttributes(), n.getBody(), "td");
 		inNoTextScope = true;
 		return cell;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtTableHeader n)
 	{
 		inNoTextScope = false;
-		Wom3ElementNode header = buildRowOrCell(n, n.getXmlAttributes(), n.getBody(), "th");
+		Wom3TableHeaderCell header = buildRowOrCell(n, n.getXmlAttributes(), n.getBody(), "th");
 		inNoTextScope = true;
 		return header;
 	}
 	
-	private Wom3ElementNode buildRowOrCell(
+	@SuppressWarnings("unchecked")
+	private <T extends Wom3ElementNode> T buildRowOrCell(
 			WtNode n,
 			WtXmlAttributes attrs,
 			WtBody body,
@@ -1575,43 +1537,41 @@ public class AstToWomConverter
 			
 			appendRtd(rowOrCell, n, 2);
 		}
-		return pop(rowOrCell);
+		return (T) pop(rowOrCell);
 	}
 	
 	// == [ Simple HTML equivalents ] ==========================================
 	
-	@Override
 	public Wom3ElementNode visit(WtHorizontalRule n)
 	{
-		Wom3ElementNode hr = genPushWom("hr");
+		Wom3HorizontalRule hr = genPushWom("hr");
 		{
 			appendRtd(hr, n, 0);
 		}
 		return pop(hr);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtItalics n)
 	{
-		return processChildrenPush(n, genWom("i"));
+		return processChildrenPush(n, (Wom3Italics) genWom("i"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtBold n)
 	{
-		return processChildrenPush(n, genWom("b"));
+		return processChildrenPush(n, (Wom3Bold) genWom("b"));
 	}
 	
 	// == [ Signature ] ========================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtSignature n)
 	{
 		Wom3Signature sig = (Wom3Signature) genPushWom("signature");
 		{
 			sig.setSignatureFormat(mapSignatureFormat(n));
-			sig.setAuthor(author);
-			sig.setTimestamp(timestamp);
+			if (author != null)
+				sig.setAuthor(author);
+			if (timestamp != null)
+				sig.setTimestamp(timestamp);
 			
 			appendRtd(sig, n, 0);
 		}
@@ -1637,7 +1597,6 @@ public class AstToWomConverter
 	
 	// == [ Paragraph ] ========================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtParagraph n)
 	{
 		Wom3Paragraph paragraph = (Wom3Paragraph) genPushWom("p");
@@ -1702,71 +1661,76 @@ public class AstToWomConverter
 	
 	// == [ Semi Pre ] =========================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtSemiPre n)
 	{
-		return processChildrenPush(n, genWom("pre"));
+		return processChildrenPush(n, (Wom3Pre) genWom("pre"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtSemiPreLine n)
 	{
-		return processContainerNode(n);
+		processContainerNode(n);
+		return null;
 	}
 	
 	// == [ Containers ] =======================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtNodeList n)
 	{
-		return processContainerNode(n);
+		if (page == null)
+		{
+			/**
+			 * Unknown root elements (Eng* nodes) will end up here, so we will
+			 * have to start the document.
+			 */
+			return createRootNode(n);
+		}
+		else
+		{
+			processContainerNode(n);
+			return null;
+		}
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtBody n)
 	{
-		return processChildrenPush(n, genWom("body"));
+		return processChildrenPush(n, (Wom3Body) genWom("body"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtLinkTitle n)
 	{
 		Wom3ElementNode parent = getScope();
 		if (parent instanceof Wom3Image)
 		{
-			return processChildrenPush(n, genWom("imgcaption"));
+			return processChildrenPush(n, (Wom3ImageCaption) genWom("imgcaption"));
 		}
 		else
 		{
-			return processChildrenPush(n, genWom("title"));
+			return processChildrenPush(n, (Wom3Title) genWom("title"));
 		}
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtName n)
 	{
-		return processChildrenPush(n, genMww("name"));
+		return processChildrenPush(n, (SwcName) genMww("name"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtValue n)
 	{
-		return processChildrenPush(n, genMww("value"));
+		return processChildrenPush(n, (SwcValue) genMww("value"));
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtWhitespace n)
 	{
-		return processContainerNode(n);
+		processContainerNode(n);
+		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtOnlyInclude n)
 	{
-		return processContainerNode(n);
+		processContainerNode(n);
+		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtIgnored n)
 	{
 		appendRtd(convertToText(n));
@@ -1775,7 +1739,6 @@ public class AstToWomConverter
 	
 	// == [ Page Switch ] ======================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtPageSwitch n)
 	{
 		throw new UnsupportedOperationException("not yet implemented");
@@ -1787,48 +1750,28 @@ public class AstToWomConverter
 	
 	// == [ Page roots ] =======================================================
 	
-	@Override
-	public Wom3ElementNode visit(EngProcessedPage n)
-	{
-		return (Wom3ElementNode) dispatch(n.getPage());
-	}
-	
-	@Override
-	public Wom3ElementNode visit(EngPage n)
-	{
-		return createRootNode(n);
-	}
-	
-	@Override
 	public Wom3ElementNode visit(WtParsedWikitextPage n)
 	{
 		return createRootNode(n);
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtPreproWikitextPage n)
 	{
 		return createRootNode(n);
 	}
 	
-	private Wom3ElementNode createRootNode(WtContentNode wtBody)
+	private Wom3Article createRootNode(WtNodeList wtBody)
 	{
-		String title = pageTitle.getDenormalizedTitle();
-		String path = null;
-		int i = title.lastIndexOf('/');
-		if (i != -1)
-		{
-			path = title.substring(0, i);
-			title = title.substring(i + 1);
-		}
-		
 		this.page = (Wom3Article) genPushWom("article");
 		{
-			this.page.setNamespace(pageTitle.getNamespaceAlias());
-			this.page.setPath(path);
-			this.page.setTitle(title);
+			if (pageNamespace != null)
+				this.page.setNamespace(pageNamespace);
+			if (pagePath != null)
+				this.page.setPath(pagePath);
+			if (pageTitle != null)
+				this.page.setTitle(pageTitle);
 			
-			Wom3ElementNode womBody = genPushWom("body");
+			Wom3Body womBody = genPushWom("body");
 			{
 				processChildrenNoPush(wtBody, womBody);
 			}
@@ -1839,7 +1782,6 @@ public class AstToWomConverter
 	
 	// == [ Intermediate Elements ] ============================================
 	
-	@Override
 	public Wom3ElementNode visit(WtTicks n)
 	{
 		// These should not be part of a fully processed AST any more...
@@ -1847,17 +1789,8 @@ public class AstToWomConverter
 		return null;
 	}
 	
-	// == [ Error Node ] =======================================================
-	
-	@Override
-	public Wom3ElementNode visit(EngSoftErrorNode n)
-	{
-		return visit((WtXmlElement) n);
-	}
-	
 	// == [ Comment ] ==========================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtXmlComment n)
 	{
 		WtRtData rtd = n.getRtd();
@@ -1892,46 +1825,8 @@ public class AstToWomConverter
 		}
 	}
 	
-	// == [ Nowiki ] ===========================================================
-	
-	@Override
-	public Wom3ElementNode visit(EngNowiki n)
-	{
-		WtRtData rtd = n.getRtd();
-		if (!rtd.isStringOnly(0))
-		{
-			appendInconvertible(n, false);
-			return null;
-		}
-		else
-		{
-			Wom3Nowiki nowiki = (Wom3Nowiki) genPushWom("nowiki");
-			{
-				String content = n.getContent();
-				String before = null;
-				String after = null;
-				
-				String rtdStr = rtd.toString(0);
-				int i = rtdStr.indexOf(content);
-				if (i != -1)
-				{
-					before = rtdStr.substring(0, i);
-					after = rtdStr.substring(i + content.length());
-				}
-				
-				appendRtd(nowiki, before);
-				
-				appendText(content);
-				
-				appendRtd(nowiki, after);
-			}
-			return pop(nowiki);
-		}
-	}
-	
 	// == [ Text ] =============================================================
 	
-	@Override
 	public Wom3ElementNode visit(WtText n)
 	{
 		if (inNoTextScope)
@@ -1945,7 +1840,6 @@ public class AstToWomConverter
 		return null;
 	}
 	
-	@Override
 	public Wom3ElementNode visit(WtNewline n)
 	{
 		appendText(n.getContent());
@@ -1965,27 +1859,42 @@ public class AstToWomConverter
 		return element;
 	}
 	
-	private Wom3ElementNode pop(Wom3Node expected)
+	private <T extends Wom3Node> T pop(T expected)
 	{
-		Wom3ElementNode popped = stack.pop();
+		@SuppressWarnings("unchecked")
+		T popped = (T) stack.pop();
 		if (popped != expected)
 			throw new InternalError();
 		return popped;
 	}
 	
-	private Wom3ElementNode genPushWom(final String name)
+	@SuppressWarnings("unchecked")
+	private <T extends Wom3ElementNode> T genPushWom(final String name)
 	{
-		return push(genWom(name));
+		return (T) push(genWom(name));
 	}
 	
-	private Wom3Element genPushMww(String name)
+	@SuppressWarnings("unchecked")
+	private <T extends SwcNode> T genPushMww(String name)
 	{
-		return push(genMww(name));
+		return (T) push(genMww(name));
 	}
 	
-	private Wom3ElementNode popAppend(Wom3ElementNode parent, Wom3Node expected)
+	/**
+	 * @deprecated
+	 */
+	@SuppressWarnings("unchecked")
+	private <T extends Wom3ElementNode> T genPushMwwNotYetImplemented(
+			String name)
 	{
-		Wom3ElementNode child = pop(expected);
+		return (T) push(genMww(name));
+	}
+	
+	private <T extends Wom3ElementNode> T popAppend(
+			Wom3ElementNode parent,
+			T expected)
+	{
+		T child = pop(expected);
 		parent.appendChild(child);
 		return child;
 	}
@@ -2025,10 +1934,9 @@ public class AstToWomConverter
 		getScope().appendChild(processChildrenPush(astNode, womNode));
 	}
 	
-	private Wom3ElementNode processContainerNode(WtNode n)
+	private void processContainerNode(WtNode n)
 	{
 		processChildrenNoPush(n, getScope());
-		return null;
 	}
 	
 	private Wom3ElementNode dispatchAppend(Wom3ElementNode parent, WtNode child)
@@ -2276,9 +2184,9 @@ public class AstToWomConverter
 				tag);
 	}
 	
-	private Wom3Element genMww(String type)
+	private Wom3ElementNode genMww(String type)
 	{
-		return (Wom3Element) doc.createElementNS(
+		return (Wom3ElementNode) doc.createElementNS(
 				MWW_NS_URI,
 				DEFAULT_MWW_NS_PREFIX + ":" + type);
 	}

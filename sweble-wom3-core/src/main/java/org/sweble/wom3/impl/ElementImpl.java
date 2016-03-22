@@ -46,6 +46,7 @@ public class ElementImpl
 	
 	protected final void setNodeName(String name)
 	{
+		assertWritableOnDocument();
 		this.name = name;
 	}
 	
@@ -84,6 +85,6 @@ public class ElementImpl
 			String localName,
 			String qualifiedName)
 	{
-		return GenericAttributeDescriptor.get();
+		return CommonAttributeDescriptors.ATTR_DESC_GENERIC;
 	}
 }

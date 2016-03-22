@@ -60,7 +60,7 @@ public abstract class XmlTextBase
 	}
 	
 	@Override
-	protected boolean isContentWhitespace()
+	public boolean isContentWhitespace()
 	{
 		// TODO: use isElementContentWhitespace() instead!
 		return StringUtils.isWhitespace(getTextContent());

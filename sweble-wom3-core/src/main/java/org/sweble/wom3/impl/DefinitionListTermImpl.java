@@ -77,11 +77,13 @@ public class DefinitionListTermImpl
 		if (parent != null)
 		{
 			Wom3DefinitionListDef old = getDef(index);
+			// Is expected to assertWritable();
 			parent.replaceChild(def, old);
 			return old;
 		}
 		else
 		{
+			assertWritableOnDocument();
 			return defs.set(index, def);
 		}
 	}
@@ -93,11 +95,13 @@ public class DefinitionListTermImpl
 		if (parent != null)
 		{
 			Wom3DefinitionListDef old = getDef(index);
+			// Is expected to assertWritable();
 			parent.removeChild(old);
 			return old;
 		}
 		else
 		{
+			assertWritableOnDocument();
 			return defs.remove(index);
 		}
 	}
@@ -118,17 +122,21 @@ public class DefinitionListTermImpl
 			{
 				before = this.getNextSibling();
 			}
+			
 			if (before == null)
 			{
+				// Is expected to assertWritable();
 				parent.appendChild(def);
 			}
 			else
 			{
+				// Is expected to assertWritable();
 				parent.insertBefore(def, before);
 			}
 		}
 		else
 		{
+			assertWritableOnDocument();
 			defs.add(def);
 		}
 	}
@@ -144,15 +152,18 @@ public class DefinitionListTermImpl
 				throw new IndexOutOfBoundsException();
 			if (beforeIndex == size)
 			{
+				// Is expected to assertWritable();
 				appendDef(def);
 			}
 			else
 			{
+				// Is expected to assertWritable();
 				parent.insertBefore(def, defs.get(beforeIndex));
 			}
 		}
 		else
 		{
+			assertWritableOnDocument();
 			defs.add(beforeIndex, def);
 		}
 	}
@@ -172,7 +183,7 @@ public class DefinitionListTermImpl
 		throw new InternalError();
 	}
 	
-	public void defAdded(Backbone prev, Wom3DefinitionListDef added)
+	protected void defAdded(Backbone prev, Wom3DefinitionListDef added)
 	{
 		int i = 0;
 		Backbone p = prev;
@@ -198,12 +209,12 @@ public class DefinitionListTermImpl
 		}
 	}
 	
-	public void appendAll(Collection<Wom3DefinitionListDef> defs)
+	protected void appendAll(Collection<Wom3DefinitionListDef> defs)
 	{
 		this.defs.addAll(defs);
 	}
 	
-	public void transfer(
+	protected void transfer(
 			Backbone sFirst,
 			Backbone sLast,
 			DefinitionListTermImpl other)

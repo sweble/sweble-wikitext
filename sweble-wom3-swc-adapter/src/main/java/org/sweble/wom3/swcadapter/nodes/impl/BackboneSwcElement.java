@@ -15,49 +15,46 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see http://www.gnu.org/licenses/.
  */
-package org.sweble.wom3.impl;
+package org.sweble.wom3.swcadapter.nodes.impl;
 
-import org.sweble.wom3.Wom3Node;
+import org.sweble.wom3.impl.BackboneWomElement;
+import org.sweble.wom3.impl.ChildDescriptor;
+import org.sweble.wom3.impl.DocumentImpl;
+import org.sweble.wom3.swcadapter.nodes.SwcNode;
 
-public class GenericAttributeDescriptor
+@SuppressWarnings("serial")
+public abstract class BackboneSwcElement
+		extends
+			BackboneWomElement
 		implements
-			AttributeDescriptor
+			SwcNode
 {
-	private static final GenericAttributeDescriptor SINGLETON = new GenericAttributeDescriptor();
-	
-	// =========================================================================
-	
-	public static GenericAttributeDescriptor get()
+	public BackboneSwcElement(DocumentImpl owner)
 	{
-		return SINGLETON;
-	}
-	
-	// =========================================================================
-	
-	public boolean verifyAndConvert(
-			Backbone parent,
-			NativeAndStringValuePair verified)
-	{
-		return true;
+		super(owner);
 	}
 	
 	@Override
-	public boolean isRemovable()
+	public final String getWomName()
 	{
-		return true;
+		return getSwcName();
 	}
 	
 	@Override
-	public Normalization getNormalizationMode()
+	public final String getNamespaceURI()
 	{
-		return Normalization.CDATA;
+		return SwcNode.MWW_NS_URI;
 	}
 	
-	@Override
-	public void customAction(
-			Wom3Node parent,
-			AttributeBase oldAttr,
-			AttributeBase newAttr)
+	public static ChildDescriptor childDesc(String tag)
 	{
+		return childDesc(SwcNode.MWW_NS_URI, tag, 0);
 	}
+	
+	public static ChildDescriptor childDesc(String tag, int flags)
+	{
+		return childDesc(SwcNode.MWW_NS_URI, tag, flags);
+	}
+	
+	public abstract String getSwcName();
 }

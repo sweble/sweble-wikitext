@@ -53,44 +53,24 @@ public abstract class AttributeBase
 	// =========================================================================
 	
 	@Override
-	public abstract String getValue();
-	
-	protected abstract Object getNativeValue();
-	
-	protected abstract void setValue(Object value, String strValue);
-	
-	// =========================================================================
-	
-	@Override
-	public String getNodeName()
-	{
-		return getName();
-	}
-	
-	@Override
-	public short getNodeType()
+	public final short getNodeType()
 	{
 		return Node.ATTRIBUTE_NODE;
 	}
 	
 	@Override
-	public Backbone getParentNode()
+	public final Backbone getParentNode()
 	{
 		return null;
 	}
 	
 	@Override
-	public Element getOwnerElement()
+	public final Element getOwnerElement()
 	{
 		return (Element) getParentNodeIntern();
 	}
 	
-	@Override
-	public void setTextContent(String textContent) throws DOMException
-	{
-		// TODO: Actually an attr can hold children and the node value is 
-		// composed of those children!
-	}
+	// =========================================================================
 	
 	@Override
 	public boolean getSpecified()
@@ -113,10 +93,18 @@ public abstract class AttributeBase
 		return false;
 	}
 	
+	// =========================================================================
+	
 	@Override
 	public String getName()
 	{
 		return name;
+	}
+	
+	@Override
+	public final String getNodeName()
+	{
+		return getName();
 	}
 	
 	@Override
@@ -129,81 +117,145 @@ public abstract class AttributeBase
 		
 		Toolbox.checkValidXmlName(name);
 		
-		return setName(null, null, name);
-	}
-	
-	@Override
-	public String getNodeValue() throws DOMException
-	{
-		// TODO: Actually an attr can hold children and the node value is 
-		// composed of those children!
-		return getValue();
-	}
-	
-	@Override
-	public void setValue(String value)
-	{
-		setNodeValue(value);
-	}
-	
-	@Override
-	public void setNodeValue(String nodeValue) throws DOMException
-	{
-		// TODO: Actually an attr can hold children and the node value is 
-		// composed of those children!
-		
-		if (nodeValue == null)
-			throw new NullPointerException();
-		
-		validateValueChangeWithParentAndSet(nodeValue);
+		return setNameIntern(name);
 	}
 	
 	// =========================================================================
 	
-	protected String setName(String namespaceUri, String localName, String name) throws IllegalArgumentException, NullPointerException
+	@Override
+	public abstract String getValue();
+	
+	@Override
+	public final String getNodeValue() throws DOMException
 	{
-		if ((this.name != null && this.name.equals(name)) &&
-				(getNamespaceURI() != null && getNamespaceURI().equals(namespaceUri)))
-			return this.name;
+		return getValue();
+	}
+	
+	protected abstract Object getNativeValue();
+	
+	// =========================================================================
+	
+	@Override
+	public void setValue(String value)
+	{
+		if (value == null)
+			throw new NullPointerException();
 		
-		validateNameChangeWithParent(namespaceUri, localName, name);
+		validateValueChangeWithParentAndSet(value);
+	}
+	
+	@Override
+	public final void setNodeValue(String nodeValue) throws DOMException
+	{
+		setValue(nodeValue);
+	}
+	
+	@Override
+	public void setTextContent(String textContent) throws DOMException
+	{
+		// TODO: Actually an attr can hold children and the node value is 
+		// composed of those children!
 		
+		setValue(textContent);
+	}
+	
+	@Override
+	public String getTextContent() throws DOMException
+	{
+		// TODO: Actually an attr can hold children and the node value is 
+		// composed of those children!
+		
+		return getValue();
+	}
+	
+	// =========================================================================
+	
+	private String setNameIntern(String name)
+	{
 		String old = getName();
-		setNameUnchecked(name);
+		if ((this.name != null) && this.name.equals(name))
+			return old;
+		
+		validateNameChangeWithParent(name);
+		
 		return old;
 	}
 	
-	protected void setNameUnchecked(String name)
+	// =========================================================================
+	
+	private void validateNameChangeWithParent(String name)
+	{
+		BackboneElement parent = (BackboneElement) getOwnerElement();
+		
+		if (parent == null)
+		{
+			doSetName(name);
+		}
+		else
+		{
+			if (parent.hasAttribute(name))
+				throw new IllegalArgumentException("Attribute with this name " +
+						"already exists for the corresponding element!");
+			
+			AttributeDescriptor oldDescriptor = parent.getAttributeDescriptorOrFail(
+					null, null, getName());
+			
+			AttributeDescriptor newDescriptor = parent.getAttributeDescriptorOrFail(
+					null, null, name);
+			
+			validateNameChangeWithParent(name, parent, oldDescriptor, newDescriptor);
+		}
+	}
+	
+	protected void validateNameChangeWithParent(
+			String name,
+			BackboneElement parent,
+			AttributeDescriptor oldDescriptor,
+			AttributeDescriptor newDescriptor)
+	{
+		// Assert writable before performing a custom action.
+		assertWritableOnDocument();
+		
+		if (oldDescriptor != newDescriptor)
+		{
+			if (getOwnerDocument().getStrictErrorChecking())
+			{
+				if (!oldDescriptor.isRemovable())
+					throw new UnsupportedOperationException(
+							"Attribute `" + name + "' cannot be removed");
+			}
+			
+			if (oldDescriptor.hasCustomAction())
+				oldDescriptor.customAction(parent, this, null);
+			
+			doSetName(name);
+			
+			if (newDescriptor.hasCustomAction())
+				newDescriptor.customAction(parent, null, this);
+		}
+		else
+		{
+			doSetName(name);
+			
+			if (newDescriptor.hasCustomAction())
+				newDescriptor.customAction(parent, this, this);
+		}
+	}
+	
+	protected void doSetName(String name)
 	{
 		this.name = name;
 	}
 	
 	// =========================================================================
 	
-	private void validateNameChangeWithParent(
-			String namespaceUri,
-			String localName,
-			String name)
-	{
-		BackboneElement parent = (BackboneElement) getOwnerElement();
-		
-		if (parent == null)
-			return;
-		
-		boolean exists = (localName != null) ?
-				(parent.getAttributeNodeNS(namespaceUri, localName) != null) :
-				(parent.getAttributeNode(name) != null);
-		
-		if (exists)
-			throw new IllegalArgumentException("Attribute with this name " +
-					"already exists for the corresponding element!");
-		
-		// Check if attribute name is allowed on our parent node.
-		AttributeDescriptor descriptor = parent.getAttributeDescriptorOrFail(
-				namespaceUri, localName, name);
-		
-		descriptor.customAction(parent, this, this);
-	}
+	/**
+	 * Is expected to check {@link #assertWritableOnDocument()}
+	 */
+	protected abstract void setValue(
+			Object value,
+			String strValue,
+			boolean cloning);
 	
 	private void validateValueChangeWithParentAndSet(String value)
 	{
@@ -212,25 +264,30 @@ public abstract class AttributeBase
 		
 		if (parent == null)
 		{
-			setValue(value, value);
-			return;
-		}
-		
-		String namespaceUri = getNamespaceURI();
-		String localName = getLocalName();
-		AttributeDescriptor descriptor = parent.getAttributeDescriptorOrFail(
-				namespaceUri, localName, name);
-		
-		NativeAndStringValuePair verified = new NativeAndStringValuePair(value);
-		if (value != null && descriptor.verifyAndConvert(parent, verified))
-		{
-			setValue(verified.value, verified.strValue);
-			descriptor.customAction(parent, this, this);
+			setValue(value, value, false /* cloning */);
 		}
 		else
 		{
-			throw new UnsupportedOperationException(
-					"Attribute `" + namespaceUri + "' / `" + name + "' cannot remove itself!");
+			String namespaceUri = getNamespaceURI();
+			String localName = getLocalName();
+			AttributeDescriptor descriptor = parent.getAttributeDescriptorOrFail(
+					namespaceUri, localName, name);
+			
+			NativeAndStringValuePair verified = new NativeAndStringValuePair(value);
+			if ((value != null) && descriptor.verifyAndConvert(parent, verified))
+			{
+				assertWritable(this, descriptor);
+				
+				setValue(verified.value, verified.strValue, false /* cloning */);
+				
+				if (descriptor.hasCustomAction())
+					descriptor.customAction(parent, this, this);
+			}
+			else
+			{
+				throw new UnsupportedOperationException(
+						"Attribute `" + namespaceUri + "' / `" + name + "' cannot remove itself!");
+			}
 		}
 	}
 }

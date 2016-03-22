@@ -67,6 +67,7 @@ public class XmlCommentImpl
 	@Override
 	public void setData(String data)
 	{
+		assertWritableOnDocument();
 		this.data = data;
 	}
 }

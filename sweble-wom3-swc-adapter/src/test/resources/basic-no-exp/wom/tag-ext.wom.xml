@@ -30,9 +30,9 @@
                <rtd>"</rtd>
             </mww:attr>
             <rtd>&gt;</rtd>
-            <mww:body>
+            <mww:tagext-body>
                <text>I'm a tag extension</text>
-            </mww:body>
+            </mww:tagext-body>
             <rtd>&lt;/pre&gt;</rtd>
          </mww:tagext>
       </p>

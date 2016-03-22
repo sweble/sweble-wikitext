@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.sweble.wom3.Wom3Blockquote;
-import org.sweble.wom3.Wom3Node;
 
 public class BlockquoteImpl
 		extends
@@ -58,22 +57,17 @@ public class BlockquoteImpl
 	@Override
 	public URL setCite(URL source)
 	{
-		return setUrlAttr(Attributes.CITE, "cite", source);
+		return setUrlAttr(CommonAttributeDescriptors.ATTR_DESC_CITE, "cite", source);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("cite", Attributes.CITE);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("cite", CommonAttributeDescriptors.ATTR_DESC_CITE);
 	}
 	
 	@Override
@@ -82,42 +76,6 @@ public class BlockquoteImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		CITE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.URL.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 }

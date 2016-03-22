@@ -20,7 +20,6 @@ package org.sweble.wom3.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3OrderedList;
 
 public class OrderedListImpl
@@ -57,7 +56,7 @@ public class OrderedListImpl
 	@Override
 	public Integer setStart(Integer start)
 	{
-		return setAttributeDirect(Attributes.START, "start", start);
+		return setAttributeDirect(ATTR_DESC_START, "start", start);
 	}
 	
 	@Override
@@ -69,24 +68,23 @@ public class OrderedListImpl
 	@Override
 	public String setItemType(String type)
 	{
-		return setAttributeDirect(Attributes.TYPE, "type", type);
+		return setAttributeDirect(ATTR_DESC_TYPE, "type", type);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	protected static final AttributeDescriptor ATTR_DESC_TYPE = new AttrDescType();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	protected static final AttributeDescriptor ATTR_DESC_START = new AttrDescStart();
+	
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
+	
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("compact", ListBaseImpl.Attributes.COMPACT);
-		nameMap.put("start", Attributes.START);
-		nameMap.put("type", Attributes.TYPE);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("compact", CommonAttributeDescriptors.ATTR_DESC_COMPACT);
+		NAME_MAP.put("start", ATTR_DESC_START);
+		NAME_MAP.put("type", ATTR_DESC_TYPE);
 	}
 	
 	@Override
@@ -95,52 +93,52 @@ public class OrderedListImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescType
+			extends
+				AttributeDescriptor
 	{
-		TYPE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.OLTYPE.verifyAndConvert(parent, verified);
-			}
-		},
-		START
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return true;
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.NON_CDATA;
+			return AttributeVerifiers.OLTYPE.verifyAndConvert(parent, verified);
+		}
+	}
+	
+	public static final class AttrDescStart
+			extends
+				AttributeDescriptor
+	{
+		@Override
+		public int getFlags()
+		{
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
+			return AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
 		}
 	}
 }

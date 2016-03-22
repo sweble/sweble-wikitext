@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.sweble.wom3.Wom3BulletStyle;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3UnorderedList;
 
 public class UnorderedListImpl
@@ -58,23 +57,20 @@ public class UnorderedListImpl
 	@Override
 	public Wom3BulletStyle setItemType(Wom3BulletStyle type)
 	{
-		return setAttributeDirect(Attributes.TYPE, "type", type);
+		return setAttributeDirect(ATTR_DESC_TYPE, "type", type);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	protected static final AttributeDescriptor ATTR_DESC_TYPE = new AttrDescType();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
+	
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("compact", ListBaseImpl.Attributes.COMPACT);
-		nameMap.put("type", Attributes.TYPE);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("compact", CommonAttributeDescriptors.ATTR_DESC_COMPACT);
+		NAME_MAP.put("type", ATTR_DESC_TYPE);
 	}
 	
 	@Override
@@ -83,42 +79,29 @@ public class UnorderedListImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 	
-	private static enum Attributes implements AttributeDescriptor
+	public static final class AttrDescType
+			extends
+				AttributeDescriptor
 	{
-		TYPE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.ULTYPE.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
 		@Override
-		public boolean isRemovable()
+		public int getFlags()
 		{
-			return true;
+			return makeFlags(
+					true /* removable */,
+					false /* readOnly */,
+					false /* customAction */,
+					Normalization.NON_CDATA);
 		}
 		
 		@Override
-		public Normalization getNormalizationMode()
+		public boolean verifyAndConvert(
+				Backbone parent,
+				NativeAndStringValuePair verified)
 		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
+			return AttributeVerifiers.ULTYPE.verifyAndConvert(parent, verified);
 		}
 	}
 }

@@ -17,12 +17,13 @@
  */
 package org.sweble.wom3.impl;
 
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.sweble.wom3.Wom3HorizAlign;
 import org.sweble.wom3.Wom3HorizontalRule;
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3ValueWithUnit;
 
 public class HorizontalRuleImpl
@@ -59,7 +60,7 @@ public class HorizontalRuleImpl
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
-		return setAlignAttr(Attributes.ALIGN, "align", align);
+		return setAlignAttr(ATTR_DESC_ALIGN_LCR, "align", align);
 	}
 	
 	@Override
@@ -71,7 +72,7 @@ public class HorizontalRuleImpl
 	@Override
 	public boolean setNoshade(boolean noshade)
 	{
-		return setBoolAttr(Attributes.NOSHADE, "noshade", noshade);
+		return setBoolAttr(ATTR_DESC_NOSHADE, "noshade", noshade);
 	}
 	
 	@Override
@@ -83,7 +84,7 @@ public class HorizontalRuleImpl
 	@Override
 	public Integer setSize(Integer size)
 	{
-		return setIntAttr(Attributes.SIZE, "size", size);
+		return setIntAttr(ATTR_DESC_SIZE, "size", size);
 	}
 	
 	@Override
@@ -95,25 +96,19 @@ public class HorizontalRuleImpl
 	@Override
 	public Wom3ValueWithUnit setWidth(Wom3ValueWithUnit width)
 	{
-		return setValueWithUnitAttr(Attributes.WIDTH, "width", width);
+		return setValueWithUnitAttr(ATTR_DESC_WIDTH_LENGTH, "width", width);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("align", Attributes.ALIGN);
-		nameMap.put("noshade", Attributes.NOSHADE);
-		nameMap.put("size", Attributes.SIZE);
-		nameMap.put("width", Attributes.WIDTH);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("align", ATTR_DESC_ALIGN_LCR);
+		NAME_MAP.put("noshade", ATTR_DESC_NOSHADE);
+		NAME_MAP.put("size", ATTR_DESC_SIZE);
+		NAME_MAP.put("width", ATTR_DESC_WIDTH_LENGTH);
 	}
 	
 	@Override
@@ -122,72 +117,6 @@ public class HorizontalRuleImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		ALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LCR_ALIGN.verifyAndConvert(parent, verified);
-			}
-		},
-		NOSHADE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.verifyAndConvertBool(parent, verified, "noshade");
-			}
-		},
-		SIZE
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
-			}
-		},
-		WIDTH
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 }

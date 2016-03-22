@@ -20,7 +20,6 @@ package org.sweble.wom3.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.Wom3TableCaption;
 import org.sweble.wom3.Wom3TableCaptionAlign;
 
@@ -58,22 +57,17 @@ public class TableCaptionImpl
 	@Override
 	public Wom3TableCaptionAlign setAlign(Wom3TableCaptionAlign align)
 	{
-		return setAttributeDirect(Attributes.ALIGN, "align", align);
+		return setAttributeDirect(CommonAttributeDescriptors.ATTR_DESC_ALIGN_TBLR, "align", align);
 	}
 	
 	// =========================================================================
 	
-	private static final Map<String, AttributeDescriptor> nameMap = getNameMap();
+	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
 	
-	private static Map<String, AttributeDescriptor> getNameMap()
+	static
 	{
-		Map<String, AttributeDescriptor> nameMap =
-				new HashMap<String, AttributeDescriptor>();
-		
-		nameMap.putAll(UniversalAttributes.getNameMap());
-		nameMap.put("align", Attributes.ALIGN);
-		
-		return nameMap;
+		NAME_MAP.putAll(UniversalAttributes.getNameMap());
+		NAME_MAP.put("align", CommonAttributeDescriptors.ATTR_DESC_ALIGN_TBLR);
 	}
 	
 	@Override
@@ -82,42 +76,6 @@ public class TableCaptionImpl
 			String localName,
 			String qualifiedName)
 	{
-		return getAttrDesc(namespaceUri, localName, qualifiedName, nameMap);
-	}
-	
-	private static enum Attributes implements AttributeDescriptor
-	{
-		ALIGN
-		{
-			@Override
-			public boolean verifyAndConvert(
-					Backbone parent,
-					NativeAndStringValuePair verified)
-			{
-				return AttributeVerifiers.TBLR_ALIGN.verifyAndConvert(parent, verified);
-			}
-		};
-		
-		// =====================================================================
-		
-		@Override
-		public boolean isRemovable()
-		{
-			return true;
-		}
-		
-		@Override
-		public Normalization getNormalizationMode()
-		{
-			return Normalization.NON_CDATA;
-		}
-		
-		@Override
-		public void customAction(
-				Wom3Node parent,
-				AttributeBase oldAttr,
-				AttributeBase newAttr)
-		{
-		}
+		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
 }

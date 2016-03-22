@@ -19,53 +19,61 @@ package org.sweble.wom3.impl;
 
 import org.sweble.wom3.Wom3Node;
 
-public interface AttributeDescriptor
+public abstract class AttributeDescriptor
+		implements
+			AttributeVerificationAndConverion,
+			AttributeCustomAction
 {
-	//	/**
-	//	 * Check an attribute's value for well-formed-ness.
-	//	 * 
-	//	 * @param parent
-	//	 *            The parent node for which to verify the attribute.
-	//	 * @param value
-	//	 *            The value to check.
-	//	 * @return The value to set the attribute to. Most of the time this will be
-	//	 *         the input parameter "value". But if the value needs further
-	//	 *         normalization (apart from XML normalization of attributes), this
-	//	 *         method can return a normalized string to use as value.
-	//	 * @throws IllegalArgumentException
-	//	 *             Thrown if the given value is not well-formed.
-	//	 */
-	//	public abstract String verify(WomNode parent, String value) throws IllegalArgumentException;
+	public static final int REMOVABLE = 0x01;
+	
+	public static final int READ_ONLY = 0x02;
+	
+	public static final int NORMALIZATION_MASK = 0x04 | 0x08;
+	
+	public static final int NORMALIZATION_NONE = 0x00;
+	
+	public static final int NORMALIZATION_NON_CDATA = 0x04;
+	
+	public static final int NORMALIZATION_CDATA = 0x08;
+	
+	public static final int CUSTOM_ACTION = 0x10;
+	
+	// =========================================================================
 	
 	/**
+	 * The default implementation only works for attributes whose native value
+	 * is of type string.
+	 * 
 	 * @param parent
 	 *            The node that owns or will own the attribute.
 	 * @param verified
-	 *            Write the string value to convert into this object. The
-	 *            converted and verified values will be written into this object
-	 *            as well.
+	 *            Stores the values to convert. The converted and verified
+	 *            values will be written into this object as well.
 	 * @return {@code true} when the attribute should be kept, {@code false} if
 	 *         the attributes should be removed.
 	 */
-	public abstract boolean verifyAndConvert(
+	@Override
+	public boolean verifyAndConvert(
 			Backbone parent,
-			NativeAndStringValuePair verified);
+			NativeAndStringValuePair verified)
+	{
+		if (verified.strValue != null)
+			verified.value = verified.strValue;
+		else
+			verified.strValue = String.valueOf(verified.value);
+		
+		return true;
+		
+	}
 	
 	/**
-	 * Ask whether this attribute can be removed from its parent node.
-	 */
-	public abstract boolean isRemovable();
-	
-	/**
-	 * Return the normalization mode for the attribute.
-	 * 
-	 * @return The normalization mode.
-	 */
-	public abstract Normalization getNormalizationMode();
-	
-	/**
-	 * Called after the attribute was set to perform custom alterations on WOM
-	 * or AST.
+	 * Called after the attribute was (re-)set to perform custom alterations on
+	 * WOM. Also called when an attribute is renamed. In this case it is called
+	 * on the old descriptor with the {@code newAttr} parameter set to
+	 * {@code null}. Then it is called on the new descriptor with the
+	 * {@code oldAttr} set to {@code null}. If the old and new descriptor are
+	 * the same (== equality) then it is only called once on the new descriptor
+	 * with both {@code oldAttr} and {@code newAttr} set.
 	 * 
 	 * @param parent
 	 *            The parent node for which to verify the attribute.
@@ -75,10 +83,104 @@ public interface AttributeDescriptor
 	 *            The new attribute node or <code>null</code> if the old
 	 *            attribute was removed.
 	 */
-	public abstract void customAction(
+	@Override
+	public void customAction(
 			Wom3Node parent,
 			AttributeBase oldAttr,
-			AttributeBase newAttr);
+			AttributeBase newAttr)
+	{
+	}
+	
+	/**
+	 * @return A set of flags that describe this attributes behavior.
+	 */
+	public abstract int getFlags();
+	
+	// =========================================================================
+	
+	/**
+	 * Ask whether this attribute can be removed from its parent node.
+	 */
+	public boolean isRemovable()
+	{
+		return (getFlags() & REMOVABLE) != 0;
+	}
+	
+	/**
+	 * Ask whether this attribute cannot be changed.
+	 */
+	public boolean isReadOnly()
+	{
+		return (getFlags() & READ_ONLY) != 0;
+	}
+	
+	/**
+	 * Return the normalization mode for the attribute.
+	 */
+	public Normalization getNormalizationMode()
+	{
+		return translateNormalization(getFlags() & NORMALIZATION_MASK);
+	}
+	
+	/**
+	 * Whether the descriptor implements the {@link customAction} method.
+	 */
+	public boolean hasCustomAction()
+	{
+		return (getFlags() & CUSTOM_ACTION) != 0;
+	}
+	
+	// =========================================================================
+	
+	public static int makeFlags(
+			boolean removable,
+			boolean readOnly,
+			boolean customAction,
+			Normalization normalization)
+	{
+		return (removable ? REMOVABLE : 0)
+				| (readOnly ? READ_ONLY : 0)
+				| translateNormalization(normalization)
+				| (customAction ? CUSTOM_ACTION : 0);
+	}
+	
+	// =========================================================================
+	
+	public static int translateNormalization(Normalization normalization)
+	{
+		switch (normalization)
+		{
+			case CDATA:
+				return NORMALIZATION_CDATA;
+				
+			case NON_CDATA:
+				return NORMALIZATION_NON_CDATA;
+				
+			case NONE:
+				return NORMALIZATION_NONE;
+				
+			default:
+				throw new AssertionError();
+		}
+	}
+	
+	public static Normalization translateNormalization(int flag) throws AssertionError
+	{
+		switch (flag)
+		{
+			case NORMALIZATION_CDATA:
+				return Normalization.NON_CDATA;
+				
+			case NORMALIZATION_NON_CDATA:
+				return Normalization.NON_CDATA;
+				
+			case NORMALIZATION_NONE:
+				return Normalization.NONE;
+				
+			default:
+				throw new AssertionError();
+		}
+	}
 	
 	// =========================================================================
 	

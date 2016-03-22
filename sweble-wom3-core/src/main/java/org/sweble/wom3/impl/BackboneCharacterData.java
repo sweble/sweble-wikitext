@@ -60,13 +60,13 @@ public abstract class BackboneCharacterData
 	@Override
 	public String getTextContent() throws DOMException
 	{
-		return getNodeValue();
+		return getData();
 	}
 	
 	@Override
 	public void setTextContent(String textContent) throws DOMException
 	{
-		setNodeValue(textContent);
+		setData(textContent);
 	}
 	
 	// =========================================================================
