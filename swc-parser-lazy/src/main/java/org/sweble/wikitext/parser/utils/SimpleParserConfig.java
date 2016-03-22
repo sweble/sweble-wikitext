@@ -23,6 +23,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.sweble.wikitext.parser.NonStandardElementBehavior;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
@@ -259,6 +260,13 @@ public class SimpleParserConfig
 	public Map<String, String> getXmlEntities()
 	{
 		return Collections.emptyMap();
+	}
+	
+	@Override
+	public NonStandardElementBehavior getNonStandardElementBehavior(
+			String elementName)
+	{
+		return NonStandardElementBehavior.UNSPECIFIED;
 	}
 	
 	// ==[ Language Conversion Tags ]===========================================

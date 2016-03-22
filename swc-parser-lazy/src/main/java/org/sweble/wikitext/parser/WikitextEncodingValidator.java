@@ -18,6 +18,7 @@
 package org.sweble.wikitext.parser;
 
 import java.io.IOException;
+import java.io.Reader;
 import java.io.StringReader;
 
 import org.sweble.wikitext.parser.encval.EncodingValidatorLexer;
@@ -49,7 +50,34 @@ public class WikitextEncodingValidator
 	
 	public ValidatedWikitext validate(
 			ParserConfig parserConfig,
+			WtEntityMap entityMap,
+			String title,
+			Reader source)
+			throws IOException
+	{
+		EncodingValidatorLexer lexer = new EncodingValidatorLexer(source);
+		
+		lexer.setFile(title);
+		lexer.setEntityMap(entityMap);
+		lexer.setWikitextNodeFactory(parserConfig.getNodeFactory());
+		
+		while (lexer.yylex() != null)
+			;
+		
+		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
+	}
+	
+	public ValidatedWikitext validate(
+			ParserConfig parserConfig,
 			String source,
+			String title) throws IOException
+	{
+		return validate(parserConfig, new WtEntityMapImpl(), title, source);
+	}
+	
+	public ValidatedWikitext validate(
+			ParserConfig parserConfig,
+			Reader source,
 			String title) throws IOException
 	{
 		return validate(parserConfig, new WtEntityMapImpl(), title, source);

@@ -334,6 +334,52 @@ public class WtEngineImpl
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
 	 * are performed:
 	 * <ul>
+	 * <li>Parsing</li>
+	 * <li>Postprocessing</li>
+	 * </ul>
+	 */
+	public EngProcessedPage parseAndPostprocess(
+			PageId pageId,
+			String wikitext,
+			ExpansionCallback callback)
+			throws EngineException
+	{
+		if (pageId == null)
+			throw new NullPointerException();
+		
+		PageTitle title = pageId.getTitle();
+		
+		EngLogProcessingPass log = nf().logProcessingPass();
+		log.setTitle(title.getDenormalizedFullTitle());
+		log.setRevision(pageId.getRevision());
+		
+		WtParsedWikitextPage pAst;
+		try
+		{
+			pAst = parse(title, wikitext, log);
+			
+			pAst = postprocess(title, pAst, log);
+		}
+		catch (EngineException e)
+		{
+			e.attachLog(log);
+			throw e;
+		}
+		catch (Throwable e)
+		{
+			throw new EngineException(title, "Compilation failed!", e, log);
+		}
+		
+		return nf().processedPage(
+				nf().page(pAst),
+				log,
+				pAst.getWarnings());
+	}
+	
+	/**
+	 * Takes wikitext and parses the wikitext for viewing. The following steps
+	 * are performed:
+	 * <ul>
 	 * <li>Validation</li>
 	 * <li>Preprocessing (for viewing)</li>
 	 * <li>Entity substitution</li>
@@ -632,6 +678,17 @@ public class WtEngineImpl
 		{
 			WikitextPreprocessor preprocessor = new WikitextPreprocessor(parserConfig);
 			
+			/**
+			 * Entities generated and inserted into the source by the encoding
+			 * validator are recognized by the preprocessor parser and replaced
+			 * with the entities from the entity map (if present).
+			 * 
+			 * TODO: That's a lie I believe. In the preprocessor's State.rats
+			 * the getEntity() method always throws an InternalError suggesting
+			 * that the preprocessor cannot handle entites...
+			 * 
+			 * I think that's a bug!
+			 */
 			WtPreproWikitextPage preprocessedAst =
 					(WtPreproWikitextPage) preprocessor.parseArticle(
 							validatedWikitext,
@@ -776,7 +833,57 @@ public class WtEngineImpl
 	}
 	
 	/**
-	 * Parses a preprocessed page and substitutes entities.
+	 * Parses a preprocessed page.
+	 */
+	private WtParsedWikitextPage parse(
+			PageTitle title,
+			String wikitext,
+			EngLogContainer parentLog)
+			throws EngineException
+	{
+		EngLogParserPass log = nf().logParserPass();
+		parentLog.add(log);
+		
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+		
+		try
+		{
+			WikitextParser parser = new WikitextParser(parserConfig);
+			
+			WtParsedWikitextPage parsedAst =
+					(WtParsedWikitextPage) parser.parseArticle(
+							wikitext,
+							title.getTitle());
+			
+			return parsedAst;
+		}
+		catch (xtc.parser.ParseException e)
+		{
+			log.add(nf().logParserError(e.getMessage()));
+			
+			throw new EngineException(title, "Parsing failed!", e);
+		}
+		catch (Exception e)
+		{
+			logger.error("Parsing failed!", e);
+			
+			StringWriter w = new StringWriter();
+			e.printStackTrace(new PrintWriter(w));
+			log.add(nf().logUnhandledError(e, w.toString()));
+			
+			throw new EngineException(title, "Parsing failed!", e);
+		}
+		finally
+		{
+			stopWatch.stop();
+			log.setTimeNeeded(stopWatch.getElapsedTime());
+		}
+	}
+	
+	/**
+	 * Parses a preprocessed page (wikitext+entities) and substitutes entities
+	 * afterwards.
 	 */
 	private WtParsedWikitextPage parse(
 			PageTitle title,

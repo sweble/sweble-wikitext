@@ -21,7 +21,7 @@
 
   <system
     systemId="http://www.w3.org/2001/xml.xsd"
-    uri="catalog/xml.xsd" />
+    uri="xml.xsd" />
 
   <system
     systemId="http://www.mediawiki.org/xml/export-0.5.xsd"

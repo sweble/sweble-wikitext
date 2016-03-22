@@ -37,7 +37,6 @@ import javax.xml.transform.Source;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
-import org.apache.xerces.util.XMLCatalogResolver;
 import org.sweble.wikitext.dumpreader.model.DumpConverter;
 import org.sweble.wikitext.dumpreader.model.Page;
 import org.sweble.wikitext.dumpreader.model.Revision;
@@ -71,9 +70,7 @@ public class DumpUnmarshaller
 		this.unmarshaller = context.createUnmarshaller();
 		
 		if (enableSchema)
-			setSchema(
-					getClass().getResource(CATALOG),
-					getClass().getResource(version.getFragmentsSchema()));
+			setSchema(getClass().getResource(version.getFragmentsSchema()));
 	}
 	
 	// =========================================================================
@@ -108,19 +105,7 @@ public class DumpUnmarshaller
 		SchemaFactory sf = SchemaFactory
 				.newInstance(javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		
-		unmarshaller.setSchema(sf.newSchema(schemaUrl));
-	}
-	
-	public void setSchema(URL catalog, URL schemaUrl) throws SAXException
-	{
-		if (catalog == null || schemaUrl == null)
-			throw new IllegalArgumentException();
-		
-		SchemaFactory sf = SchemaFactory
-				.newInstance(javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		
-		sf.setResourceResolver(new XMLCatalogResolver(
-				new String[] { catalog.getFile() }));
+		sf.setResourceResolver(new LSResourceResolverImplementation());
 		
 		unmarshaller.setSchema(sf.newSchema(schemaUrl));
 	}

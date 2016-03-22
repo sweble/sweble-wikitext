@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Dump Reader -->
@@ -76,16 +76,6 @@
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-    </dependency>
-
-    <!-- Apache Xerces -->
-    <dependency>
-      <groupId>xerces</groupId>
-      <artifactId>xercesImpl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>xml-resolver</groupId>
-      <artifactId>xml-resolver</artifactId>
     </dependency>
 
     <!-- Utils -->
@@ -219,6 +209,38 @@
               <forceRegenerate>true</forceRegenerate>
             </configuration>
           </execution>
+          <execution>
+            <id>compile-mw-schema-0.9</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.9.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_9</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
+          <execution>
+            <id>compile-mw-schema-0.10</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.10.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_10</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
@@ -255,7 +277,7 @@
 
             <!-- Extra excludes for this project -->
             <exclude>**/*.log</exclude>
-            <exclude>src/main/schema/catalog/*.xsd</exclude>
+            <exclude>src/main/schema/xml.xsd</exclude>
             <exclude>src/main/schema/export-*.xsd</exclude>
           </excludes>
         </configuration>
@@ -315,7 +337,7 @@
     <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>sweble-wikitext-2.0.0</tag>
+    <tag>sweble-wikitext-2.1.0</tag>
   </scm>
 
   <!--

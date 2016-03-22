@@ -17,6 +17,7 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
+import org.sweble.wikitext.parser.NonStandardElementBehavior;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -71,6 +72,12 @@ public class TreeBuilderModeBase
 	protected ElementFactory getFactory()
 	{
 		return tb.getFactory();
+	}
+	
+	protected NonStandardElementBehavior getNonStandardElementBehavior(
+			String elementName)
+	{
+		return tb.getConfig().getNonStandardElementBehavior(elementName);
 	}
 	
 	protected static boolean isNodeOneOf(WtNode node, ElementType... types)

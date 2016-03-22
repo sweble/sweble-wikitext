@@ -207,6 +207,100 @@ public enum ExportSchemaVersion
 		{
 			return org.sweble.wikitext.dumpreader.export_0_8.RevisionType.class;
 		}
+	},
+	
+	// =========================================================================
+	
+	V0_9
+	{
+		@Override
+		public String getSchema()
+		{
+			return "/export-0.9.xsd";
+		}
+		
+		@Override
+		public String getFragmentsSchema()
+		{
+			return "/export-0.9-fragments.xsd";
+		}
+		
+		@Override
+		public String getContextPath()
+		{
+			return "org.sweble.wikitext.dumpreader.export_0_9";
+		}
+		
+		@Override
+		public String getMediaWikiNamespace()
+		{
+			return "http://www.mediawiki.org/xml/export-0.9/";
+		}
+		
+		@Override
+		public Class<?> getMediaWikiType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_9.MediaWikiType.class;
+		}
+		
+		@Override
+		public Class<?> getPageType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_9.PageType.class;
+		}
+		
+		@Override
+		public Class<?> getRevisionType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_9.RevisionType.class;
+		}
+	},
+	
+	// =========================================================================
+	
+	V0_10
+	{
+		@Override
+		public String getSchema()
+		{
+			return "/export-0.10.xsd";
+		}
+		
+		@Override
+		public String getFragmentsSchema()
+		{
+			return "/export-0.10-fragments.xsd";
+		}
+		
+		@Override
+		public String getContextPath()
+		{
+			return "org.sweble.wikitext.dumpreader.export_0_10";
+		}
+		
+		@Override
+		public String getMediaWikiNamespace()
+		{
+			return "http://www.mediawiki.org/xml/export-0.10/";
+		}
+		
+		@Override
+		public Class<?> getMediaWikiType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_10.MediaWikiType.class;
+		}
+		
+		@Override
+		public Class<?> getPageType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_10.PageType.class;
+		}
+		
+		@Override
+		public Class<?> getRevisionType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_10.RevisionType.class;
+		}
 	};
 	
 	// =========================================================================

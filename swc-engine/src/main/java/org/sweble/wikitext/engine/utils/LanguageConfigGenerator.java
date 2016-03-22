@@ -12,7 +12,6 @@
  * limitations under the License.
  */
 
-
 package org.sweble.wikitext.engine.utils;
 
 import java.io.IOException;
@@ -37,57 +36,90 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-
-
-
-
-
 /**
  * @author Samy Ateia, samyateia@hotmail.de
- *
  */
 public class LanguageConfigGenerator
 {
+	public static final String API_ENDPOINT_MAGICWORDS = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=magicwords&format=xml";
 	
-	public static WikiConfig generateWikiConfig(String siteName, String siteURL, String languagePrefix) throws IOException, ParserConfigurationException, SAXException
+	public static final String API_ENDPOINT_INTERWIKIMAP = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=interwikimap&format=xml";
+	
+	public static final String API_ENDPOINT_NAMESPACES = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespaces&format=xml";
+	
+	public static final String API_ENDPOINT_NAMESPACEALIASES = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespacealiases&format=xml";
+	
+	// =========================================================================
+	
+	public static WikiConfig generateWikiConfig(String languagePrefix) throws IOException, ParserConfigurationException, SAXException
+	{
+		return generateWikiConfig(
+				languagePrefix + " wiki",
+				"https://" + languagePrefix + ".wikipedia.org",
+				languagePrefix);
+	}
+	
+	public static WikiConfig generateWikiConfig(
+			String siteName,
+			String siteURL,
+			String languagePrefix) throws IOException, ParserConfigurationException, SAXException
+	{
+		String endpointPrefix = "https://" + languagePrefix;
+		return generateWikiConfig(
+				siteName,
+				siteURL,
+				languagePrefix,
+				endpointPrefix + API_ENDPOINT_NAMESPACEALIASES,
+				endpointPrefix + API_ENDPOINT_NAMESPACES,
+				endpointPrefix + API_ENDPOINT_INTERWIKIMAP,
+				endpointPrefix + API_ENDPOINT_MAGICWORDS);
+	}
+	
+	public static WikiConfig generateWikiConfig(
+			String siteName,
+			String siteUrl,
+			String languagePrefix,
+			String apiUrlNamespacealiases,
+			String apiUrlNamespaces,
+			String apiUrlInterwikimap,
+			String apiUrlMagicwords) throws IOException, ParserConfigurationException, SAXException
 	{
 		WikiConfigImpl wikiConfig = new WikiConfigImpl();
 		wikiConfig.setSiteName(siteName);
-		wikiConfig.setWikiUrl(siteURL);
+		wikiConfig.setWikiUrl(siteUrl);
 		wikiConfig.setContentLang(languagePrefix);
 		wikiConfig.setIwPrefix(languagePrefix);
 		
 		DefaultConfigEnWp config = new DefaultConfigEnWp();
 		config.configureEngine(wikiConfig);
 		
-		addNamespaces(wikiConfig, wikiConfig.getInterwikiPrefix());
-		addInterwikis(wikiConfig, wikiConfig.getInterwikiPrefix());
-		addi18NAliases(wikiConfig, wikiConfig.getInterwikiPrefix());
+		MultiValueMap namespaceAliases = getNamespaceAliases(apiUrlNamespacealiases);
+		addNamespaces(wikiConfig, apiUrlNamespaces, namespaceAliases);
+		addInterwikis(wikiConfig, apiUrlInterwikimap);
+		addi18NAliases(wikiConfig, apiUrlMagicwords);
 		
-		config.addParserFunctions(wikiConfig);	
+		config.addParserFunctions(wikiConfig);
 		config.addTagExtensions(wikiConfig);
-		
 		
 		return wikiConfig;
 	}
 	
-	public static void addi18NAliases(WikiConfigImpl wikiConfig, String iwPrefix) throws IOException, ParserConfigurationException, SAXException
+	public static void addi18NAliases(
+			WikiConfigImpl wikiConfig,
+			String apiUrlMagicWords) throws IOException, ParserConfigurationException, SAXException
 	{
-		String urlString = "http://"
-			+ iwPrefix
-			+ ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=magicwords&format=xml";
-		Document document = getXMLFromUlr(urlString);
+		Document document = getXMLFromUlr(apiUrlMagicWords);
 		NodeList apiI18NAliases = document.getElementsByTagName("magicword");
 		
-		for(int i=0; i< apiI18NAliases.getLength(); i++)
+		for (int i = 0; i < apiI18NAliases.getLength(); i++)
 		{
 			Node apii18NAlias = apiI18NAliases.item(i);
 			NamedNodeMap attributes = apii18NAlias.getAttributes();
 			
-			String name = attributes.getNamedItem("name").getNodeValue();			
+			String name = attributes.getNamedItem("name").getNodeValue();
 			boolean iscaseSensitive = false;
 			Node caseSensitive = attributes.getNamedItem("case-sensitive");
-			if(caseSensitive != null)
+			if (caseSensitive != null)
 			{
 				iscaseSensitive = true;
 			}
@@ -95,62 +127,61 @@ public class LanguageConfigGenerator
 			Node aliasesNode = apii18NAlias.getFirstChild();
 			NodeList aliasesList = aliasesNode.getChildNodes();
 			ArrayList<String> aliases = new ArrayList<String>();
-			for(int j = 0; j< aliasesList.getLength(); j++)
+			for (int j = 0; j < aliasesList.getLength(); j++)
 			{
 				Node aliasNode = aliasesList.item(j);
 				String aliasString = aliasNode.getTextContent();
 				aliases.add(aliasString);
 			}
 			I18nAliasImpl I18Alias = new I18nAliasImpl(name, iscaseSensitive, aliases);
-			try{
-				wikiConfig.addI18nAlias(I18Alias);
-			}catch(Exception e)
+			try
 			{
-				//TODO resolve conflicts problem
+				wikiConfig.addI18nAlias(I18Alias);
+			}
+			catch (Exception e)
+			{
+				// TODO resolve conflicts problem
 				e.printStackTrace();
 			}
 		}
 	}
 	
-	public static void addInterwikis(WikiConfigImpl wikiConfig, String iwPrefix) throws IOException, ParserConfigurationException, SAXException
+	public static void addInterwikis(
+			WikiConfigImpl wikiConfig,
+			String apiUrlInterwikiMap) throws IOException, ParserConfigurationException, SAXException
 	{
-		String urlString = "http://"
-			+ iwPrefix
-			+ ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=interwikimap&format=xml";
-		Document document = getXMLFromUlr(urlString);
+		Document document = getXMLFromUlr(apiUrlInterwikiMap);
 		NodeList apiInterwikis = document.getElementsByTagName("iw");
 		
-		
-		for(int i=0; i< apiInterwikis.getLength(); i++)
+		for (int i = 0; i < apiInterwikis.getLength(); i++)
 		{
 			Node apiInterWiki = apiInterwikis.item(i);
 			NamedNodeMap attributes = apiInterWiki.getAttributes();
 			
-			String prefixString = attributes.getNamedItem("prefix").getNodeValue(); //same as prefix in api
-			boolean isLocal = false; //if present set true else false
+			String prefixString = attributes.getNamedItem("prefix").getNodeValue();
+			
+			boolean isLocal = false; // if present set true else false
 			Node localNode = attributes.getNamedItem("local");
-			if(localNode != null)
+			if (localNode != null)
 			{
 				isLocal = true;
 			}
-			boolean isTrans = false; //TODO always false?
-			String urlStringApi = attributes.getNamedItem("url").getNodeValue();//same as url in api
+			boolean isTrans = false; // TODO check dokumentation if really always false?
+			String urlStringApi = attributes.getNamedItem("url").getNodeValue();
 			
-			InterwikiImpl interwiki = new InterwikiImpl(prefixString,urlStringApi,isLocal,isTrans);
+			InterwikiImpl interwiki = new InterwikiImpl(prefixString, urlStringApi, isLocal, isTrans);
 			wikiConfig.addInterwiki(interwiki);
 		}
 	}
-
-	public static void addNamespaces(WikiConfigImpl wikiConfig, String iwPrefix) throws IOException,
-		ParserConfigurationException, SAXException
+	
+	public static void addNamespaces(
+			WikiConfigImpl wikiConfig,
+			String apiUrlNamespaces,
+			MultiValueMap nameSpaceAliases) throws IOException, ParserConfigurationException, SAXException
 	{
-		String urlString = "http://"
-			+ iwPrefix
-			+ ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespaces&format=xml";
-		Document document = getXMLFromUlr(urlString);
+		Document document = getXMLFromUlr(apiUrlNamespaces);
 		NodeList apiNamespaces = document.getElementsByTagName("ns");
-		MultiValueMap namespaceAliases = getNamespaceAliases(iwPrefix);
-				
+		
 		for (int i = 0; i < apiNamespaces.getLength(); i++)
 		{
 			Node apiNamespace = apiNamespaces.item(i);
@@ -168,7 +199,7 @@ public class LanguageConfigGenerator
 			{
 				fileNs = true;
 			}
-
+			
 			Node subpages = attributes.getNamedItem("subpages");
 			boolean canHaveSubpages = false;
 			if (subpages != null)
@@ -177,39 +208,37 @@ public class LanguageConfigGenerator
 			}
 			
 			Collection<String> aliases = new ArrayList<String>();
-			if(namespaceAliases.containsKey(id))
+			if (nameSpaceAliases.containsKey(id))
 			{
 				@SuppressWarnings("unchecked")
-				Collection<String> tmp = (Collection<String>) namespaceAliases.getCollection(id);
-				aliases = tmp;	
+				Collection<String> tmp = nameSpaceAliases.getCollection(id);
+				aliases = tmp;
 			}
 			
-			NamespaceImpl namespace = new NamespaceImpl(id.intValue(), name, canonical, canHaveSubpages, fileNs, aliases);
+			NamespaceImpl namespace = new NamespaceImpl(id.intValue(), name, canonical, canHaveSubpages, fileNs,
+					aliases);
 			wikiConfig.addNamespace(namespace);
-
 			
 			if (canonical.equals("Template"))
 			{
 				wikiConfig.setTemplateNamespace(namespace);
-			}else if(id.intValue() == 0)
+			}
+			else if (id.intValue() == 0)
 			{
 				wikiConfig.setDefaultNamespace(namespace);
 			}
-
+			
 		}
 	}
 	
-	public static MultiValueMap getNamespaceAliases(String iwPrefix) throws IOException, ParserConfigurationException, SAXException
+	public static MultiValueMap getNamespaceAliases(
+			String apiUrlNamespaceAliases) throws IOException, ParserConfigurationException, SAXException
 	{
-		String urlString = "http://"
-			+ iwPrefix
-			+ ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespacealiases&format=xml";
-		
-		Document document = getXMLFromUlr(urlString);
+		Document document = getXMLFromUlr(apiUrlNamespaceAliases);
 		NodeList namespaceAliasess = document.getElementsByTagName("ns");
 		MultiValueMap namespaces = new MultiValueMap();
 		
-		for(int i = 0; i< namespaceAliasess.getLength(); i++)
+		for (int i = 0; i < namespaceAliasess.getLength(); i++)
 		{
 			Node aliasNode = namespaceAliasess.item(i);
 			NamedNodeMap attributes = aliasNode.getAttributes();
@@ -221,16 +250,14 @@ public class LanguageConfigGenerator
 		return namespaces;
 	}
 	
-	public static Document getXMLFromUlr(String urlString) throws IOException, ParserConfigurationException, SAXException
+	public static Document getXMLFromUlr(String urlString) throws IOException, ParserConfigurationException,
+			SAXException
 	{
 		URL url = new URL(urlString);
 		URLConnection connection = url.openConnection();
-		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
-			.newInstance();
-		DocumentBuilder docBuilder = documentBuilderFactory
-			.newDocumentBuilder();
+		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder = documentBuilderFactory.newDocumentBuilder();
 		Document document = docBuilder.parse(connection.getInputStream());
 		return document;
 	}
-
 }

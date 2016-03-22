@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
+import org.sweble.wikitext.parser.NonStandardElementBehavior;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
@@ -346,6 +347,16 @@ public class ParserConfigImpl
 	public boolean isValidXmlEntityRef(String name)
 	{
 		return resolveXmlEntity(name) != null;
+	}
+	
+	/**
+	 * @TODO: Add proper implementation.
+	 */
+	@Override
+	public NonStandardElementBehavior getNonStandardElementBehavior(
+			String elementName)
+	{
+		return NonStandardElementBehavior.UNSPECIFIED;
 	}
 	
 	// ==[ Language Conversion Tags ]===========================================

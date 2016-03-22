@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:mw="http://www.mediawiki.org/xml/export-0.10/"
+        targetNamespace="http://www.mediawiki.org/xml/export-0.10/"
+        elementFormDefault="qualified">
+
+	<annotation>
+		<documentation xml:lang="en">
+			MediaWiki's page export format extended with a page element
+		</documentation>
+	</annotation>
+
+	<include schemaLocation="http://www.mediawiki.org/xml/export-0.10.xsd" />
+
+    <element name="page" type="mw:PageType" />
+    <element name="revision" type="mw:RevisionType" />
+
+</schema>

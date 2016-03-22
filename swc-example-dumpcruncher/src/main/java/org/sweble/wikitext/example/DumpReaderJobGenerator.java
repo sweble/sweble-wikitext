@@ -30,8 +30,10 @@ import org.sweble.wikitext.articlecruncher.JobTraceSet;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 import org.sweble.wikitext.dumpreader.DumpReader;
-import org.sweble.wikitext.dumpreader.export_0_6.PageType;
-import org.sweble.wikitext.dumpreader.export_0_6.RevisionType;
+import org.sweble.wikitext.dumpreader.export_0_10.PageType;
+import org.sweble.wikitext.dumpreader.export_0_10.RevisionType;
+
+import de.fau.cs.osr.utils.WrappedException;
 
 public class DumpReaderJobGenerator
 		extends
@@ -44,6 +46,8 @@ public class DumpReaderJobGenerator
 	private final DumpCruncher dumpCruncher;
 	
 	private final DumpReader dumpReader;
+	
+	private InputStream is;
 	
 	// =========================================================================
 	
@@ -60,7 +64,6 @@ public class DumpReaderJobGenerator
 		this.inTray = inTray;
 		this.jobTraces = jobTraces;
 		
-		InputStream is = null;
 		try
 		{
 			is = new FileInputStream(dumpFile);
@@ -78,16 +81,28 @@ public class DumpReaderJobGenerator
 				}
 			};
 		}
-		finally
+		catch (Exception e)
 		{
-			if (is != null)
-				try
-				{
-					is.close();
-				}
-				finally
-				{
-				}
+			after();
+			throw new WrappedException(e);
+		}
+	}
+	
+	@Override
+	public void after()
+	{
+		if (is != null)
+		{
+			try
+			{
+				info("Close the input stream");
+				is.close();
+				is = null;
+			}
+			catch (Exception e)
+			{
+				throw new RuntimeException(e);
+			}
 		}
 	}
 	
@@ -125,7 +140,7 @@ public class DumpReaderJobGenerator
 	{
 		PageType page = (PageType) page_;
 		
-		for (Object o : page.getRevisionOrUploadOrLogitem())
+		for (Object o : page.getRevisionOrUpload())
 		{
 			if (o instanceof RevisionType)
 			{

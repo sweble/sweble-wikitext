@@ -1,0 +1,57 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: /nopkg-tree/input.wikitext/unknown-elements.wikitext:5:2: <no content> : 12.2.4 Element should not be an empty tag! @ WtXmlEmptyTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-tree/input.wikitext/unknown-elements.wikitext:7:2: <no content> : 12.2.4 Element should not be an empty tag! @ WtXmlEmptyTag.,
+		Warning: /nopkg-tree/input.wikitext/unknown-elements.wikitext:8:3: <no content> : 12.2.5.4.7 - R52 (2) @ WtXmlEndTag.
+	]
+	[0] = "\n",
+	[1] = WtParagraph[ [0] = "Hello World" ],
+	[2] = "\n\n",
+	[3] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "form"
+			{P} rtd = RTD[ "<form" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[
+				[0] = "\n",
+				[1] = WtXmlElement(
+					{P} name = "input"
+					{P} rtd = RTD[ "<input" <o> " />" <o> "" ]
+					xmlAttributes = WtXmlAttributes[
+						[0] = WtXmlAttribute(
+							{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+							name = WtName[ [0] = "type" ],
+							value = WtValue[ [0] = "text" ]
+						)
+					],
+					body = -
+				)
+			]
+		)
+	],
+	[4] = "\n\n",
+	[5] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "input"
+			{P} rtd = RTD[ "<input" <o> " />" <o> "" ]
+			xmlAttributes = WtXmlAttributes[
+				[0] = WtXmlAttribute(
+					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+					name = WtName[ [0] = "type" ],
+					value = WtValue[ [0] = "submit" ]
+				)
+			],
+			body = -
+		),
+		[1] = "\n",
+		[2] = WtXmlEndTag(
+			{P} name = "form"
+			{P} rtd = RTD[ "</form>" ]
+		)
+	],
+	[6] = "\n\n",
+	[7] = WtParagraph[ [0] = "Bye bye!" ],
+	[8] = "\n"
+)
