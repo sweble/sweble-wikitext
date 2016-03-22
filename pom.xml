@@ -25,7 +25,7 @@
   <parent>
     <groupId>de.fau.cs.osr</groupId>
     <artifactId>tooling</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <relativePath>../tooling/pom.xml</relativePath>
   </parent>
 
@@ -164,7 +164,7 @@
     <connection>scm:git://sweble.org/git/sweble.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble.git;a=summary</url>
-    <tag>sweble-2.0.0</tag>
+    <tag>sweble-2.1.0</tag>
   </scm>
 
   <!--
@@ -182,113 +182,15 @@
         <updatePolicy>daily</updatePolicy>
         <checksumPolicy>warn</checksumPolicy>
       </snapshots>
-      <id>osr-public-snapshots-repo</id>
-      <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
+      <id>osr-public-repo</id>
+      <name>OSR Public Repository</name>
+      <url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
     </repository>
   </repositories>
 
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
-
-    <!--
-      This profile is used to release artifacts to Maven Central. Each module
-      has to build its main artifacts including javadoc and source. Signing of
-      the artifacts is also required (see "sign" profile).
-    -->
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-
-          <!--
-            Maven Javadoc Plugin.
-            Build a javadoc JAR archive for each individual module.
-          -->
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-javadoc-jar</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <quiet>true</quiet>
-            </configuration>
-          </plugin>
-
-          <!--
-            Maven Source Plugin.
-            Build a source JAR archive for each individual module.
-          -->
-          <plugin>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-sources-jar</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-          <!--
-            Maven Deploy Plugin.
-            We have to explicitly define it here to force the right execution order of plugins
-          -->
-          <plugin>
-            <artifactId>maven-deploy-plugin</artifactId> 
-            <executions> 
-              <execution> 
-                <id>deploy</id>
-                <phase>deploy</phase>
-                <goals>
-                  <goal>deploy</goal>
-                </goals> 
-              </execution> 
-            </executions> 
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
-    <!--
-      Sign the generated artifacts. Usually used in conjunction with the
-      "release" profile to deploy artifacts to Maven Central. The key name has
-      to be given as option on the command line and the key should be unlocked
-      and held by the gpg agent (-Dgpg.keyname=...).
-    -->
-    <profile>
-      <id>sign</id>
-      <build>
-        <plugins>
-
-          <!-- Maven GPG Plugin -->
-          <plugin>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
   </profiles>
 
 </project>
