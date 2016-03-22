@@ -26,7 +26,7 @@
   <parent>
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
@@ -72,14 +72,14 @@
       <dependency>
         <groupId>org.sweble.wom3</groupId>
         <artifactId>sweble-wom3-json-tools</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.0</version>
       </dependency>
 
       <!-- Sweble - WOM 3.0 SWC Adapter -->
       <dependency>
         <groupId>org.sweble.wom3</groupId>
         <artifactId>sweble-wom3-swc-adapter</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.0</version>
       </dependency>
 
     </dependencies>
@@ -201,7 +201,7 @@
     <connection>scm:git://sweble.org/git/sweble-engine.git</connection>
     <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-engine.git</developerConnection>
     <url>http://sweble.org/gitweb/?p=sweble-engine.git;a=summary</url>
-    <tag>sweble-engine-2.0.0</tag>
+    <tag>sweble-engine-2.1.0</tag>
   </scm>
 
   <!--
@@ -219,9 +219,9 @@
         <updatePolicy>daily</updatePolicy>
         <checksumPolicy>warn</checksumPolicy>
       </snapshots>
-      <id>osr-public-snapshots-repo</id>
-      <name>OSR Public Snapshots Repository</name>
-      <url>http://mojo.cs.fau.de/nexus/content/repositories/public</url>
+      <id>osr-public-repo</id>
+      <name>OSR Public Repository</name>
+      <url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
     </repository>
   </repositories>
 
