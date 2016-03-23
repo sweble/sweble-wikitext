@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Tooling -->
+
+  <parent>
+    <groupId>de.fau.cs.osr</groupId>
+    <artifactId>tooling</artifactId>
+    <version>2.1.0</version>
+    <relativePath>../tooling/pom.xml</relativePath>
+  </parent>
+
+  <!-- This POM: Sweble -->
+
+  <groupId>org.sweble</groupId>
+  <artifactId>sweble</artifactId>
+  <!-- Same version as parent -->
+  <packaging>pom</packaging>
+
+  <name>Sweble</name>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble</url>
+  <inceptionYear>2010</inceptionYear>
+  <description>
+    The next generation Wiki platform project.
+  </description>
+
+  <!-- ==[ Submodules ]===================================================== -->
+
+    <!-- The Sweble POM must not link to its submodules -->
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+  </properties>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <header>etc/license-header.txt</header>
+          <strictCheck>true</strictCheck>
+          <failIfMissing>true</failIfMissing>
+          <excludes>
+            <exclude>**/.gitignore</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement>
+    </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+  -->
+
+  <developers>
+    <developer>
+      <id>driehle</id>
+      <name>Dirk Riehle</name>
+      <email>dirk.riehle@fau.de</email>
+      <roles>
+        <role>Director</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>hdohrn</id>
+      <name>Hannes Dohrn</name>
+      <email>hannes.dohrn@fau.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <!--
+    see parent: <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble.git;a=summary</url>
+    <tag>sweble-2.1.0</tag>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+  -->
+
+  <!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>osr-public-repo</id>
+      <name>OSR Public Repository</name>
+      <url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
+    </repository>
+  </repositories>
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+  </profiles>
+
+</project>
