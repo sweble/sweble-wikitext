@@ -1,0 +1,42 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Xml-table">
+   <body>
+      <table class="a">
+         <rtd>&lt;table class="a"&gt;
+ </rtd>
+         <caption class="b">
+            <rtd>&lt;caption class="b"&gt;</rtd>
+            <text>the caption</text>
+            <rtd>&lt;/caption&gt;</rtd>
+         </caption>
+         <rtd>
+ </rtd>
+         <tbody>
+            <tr class="c">
+               <rtd>&lt;tr class="c"&gt;
+  </rtd>
+               <td class="d">
+                  <rtd>&lt;td class="d"&gt;</rtd>
+                  <text>a header cell...</text>
+                  <rtd>&lt;/td&gt;</rtd>
+               </td>
+               <rtd>
+  </rtd>
+               <td class="e">
+                  <rtd>&lt;td class="e"&gt;</rtd>
+                  <text>a cell ...</text>
+                  <rtd>&lt;/td&gt;</rtd>
+               </td>
+               <rtd>
+ &lt;/tr&gt;</rtd>
+            </tr>
+            <rtd>
+</rtd>
+         </tbody>
+         <rtd>&lt;/table&gt;</rtd>
+      </table>
+   </body>
+</article>

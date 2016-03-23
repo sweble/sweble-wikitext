@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses/.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble -->
+
+  <parent>
+    <groupId>org.sweble</groupId>
+    <artifactId>sweble</artifactId>
+    <version>2.1.0</version>
+    <relativePath>../sweble/pom.xml</relativePath>
+  </parent>
+
+  <!-- This POM: Sweble WOM 3.0 -->
+
+  <groupId>org.sweble.wom3</groupId>
+  <artifactId>sweble-wom3</artifactId>
+  <!-- Same version as parent -->
+  <packaging>pom</packaging>
+
+  <name>Sweble Wiki Object Model Version 3</name>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wom3</url>
+  <inceptionYear>2013</inceptionYear>
+  <description>
+    The Sweble Wiki Object Model Version 3 (WOM v3.0) Specification.
+  </description>
+
+  <!-- ==[ Submodules ]===================================================== -->
+
+  <modules>
+    <module>sweble-wom3-core</module>
+    <module>sweble-wom3-json-tools</module>
+    <module>sweble-wom3-swc-adapter</module>
+
+    <!-- Examples -->
+    <module>sweble-wom3-example-basic</module>
+  </modules>
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+
+    <sweble-wom3.basedir>${project.basedir}</sweble-wom3.basedir>
+    <sweble-wom3.etc>${sweble-wom3.basedir}/etc</sweble-wom3.etc>
+
+    <!-- Dependency versions -->
+    <version.dep.gson>2.1</version.dep.gson>
+    <version.dep.Saxon-HE>9.4</version.dep.Saxon-HE>
+
+    <!-- Plugin dependency versions -->
+    <!-- ... -->
+
+  </properties>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- Google Gson -->
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${version.dep.gson}</version>
+      </dependency>
+
+      <!-- The XSLT and XQuery Processor (Saxon Home Edition) -->
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>Saxon-HE</artifactId>
+        <version>${version.dep.Saxon-HE}</version>
+      </dependency>
+
+      <!-- Utils -->
+      <dependency>
+        <groupId>de.fau.cs.osr.utils</groupId>
+        <artifactId>utils</artifactId>
+        <version>2.1.0</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-engine</artifactId>
+        <version>2.1.0</version>
+      </dependency>
+
+      <!-- Sweble - WOM 3.0 Core -->
+      <dependency>
+        <groupId>org.sweble.wom3</groupId>
+        <artifactId>sweble-wom3-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Sweble WOM 3.0 - SWC Adapter -->
+      <dependency>
+        <groupId>org.sweble.wom3</groupId>
+        <artifactId>sweble-wom3-swc-adapter</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <header>${sweble-wom3.etc}/license-header.txt</header>
+          <validHeaders>
+            <validHeader>${sweble-wom3.etc}/license-header-no-copyright.txt</validHeader>
+          </validHeaders>
+          <headerDefinitions>
+            <headerDefinition>${sweble-wom3.etc}/license-header-apt-style.xml</headerDefinition>
+          </headerDefinitions>
+          <mapping>
+             <apt>PTK_APT_STYLE</apt>
+             <txt>SCRIPT_STYLE</txt>
+             <xslt>XML_STYLE</xslt>
+          </mapping>
+          <strictCheck>true</strictCheck>
+          <failIfMissing>true</failIfMissing>
+          <excludes>
+            <exclude>**/*.log</exclude>
+            <exclude>**/.gitignore</exclude>
+            <exclude>etc/license-header.txt</exclude>
+            <exclude>etc/license-header-no-copyright.txt</exclude>
+            <exclude>etc/license-header-only-copyright.txt</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Make Git information available as properties -->
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement />
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+  -->
+
+  <developers>
+    <developer>
+      <id>driehle</id>
+      <name>Dirk Riehle</name>
+      <email>dirk.riehle@fau.de</email>
+      <roles>
+        <role>Director</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>hdohrn</id>
+      <name>Hannes Dohrn</name>
+      <email>hannes.dohrn@fau.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <contributors />
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wom3.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wom3.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wom3.git;a=summary</url>
+    <tag>sweble-wom3-2.1.0</tag>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+  -->
+
+  <!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>osr-public-repo</id>
+      <name>OSR Public Repository</name>
+      <url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
+    </repository>
+  </repositories>
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+  </profiles>
+
+</project>
