@@ -1,0 +1,6 @@
+1. Simple Page
+--------------
+
+This is a **simple page**. It contains a link, a list and a table.
+
+<ul /><table />CYA!

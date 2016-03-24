@@ -1,0 +1,111 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Template">
+   <body>
+      <p topgap="0" bottomgap="0">
+         <mww:transclusion>
+            <rtd>{{</rtd>
+            <mww:name>
+               <text>tmpl</text>
+            </mww:name>
+            <rtd>}}</rtd>
+         </mww:transclusion>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <mww:transclusion>
+            <rtd>{{</rtd>
+            <mww:name>
+               <text>tmpl</text>
+            </mww:name>
+            <mww:arg>
+               <rtd>|</rtd>
+               <mww:value>
+                  <text>arg0</text>
+               </mww:value>
+            </mww:arg>
+            <rtd>}}</rtd>
+         </mww:transclusion>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <mww:transclusion>
+            <rtd>{{</rtd>
+            <mww:name>
+               <text>tmpl</text>
+            </mww:name>
+            <mww:arg>
+               <rtd>|</rtd>
+               <mww:name>
+                  <text>arg0</text>
+               </mww:name>
+               <rtd>=</rtd>
+               <mww:value>
+                  <text>value</text>
+               </mww:value>
+            </mww:arg>
+            <rtd>}}</rtd>
+         </mww:transclusion>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <mww:transclusion>
+            <rtd>{{</rtd>
+            <mww:name>
+               <mww:transclusion>
+                  <rtd>{{</rtd>
+                  <mww:name>
+                     <text>name providing template</text>
+                  </mww:name>
+                  <rtd>}}</rtd>
+               </mww:transclusion>
+            </mww:name>
+            <mww:arg>
+               <rtd>|</rtd>
+               <mww:name>
+                  <mww:transclusion>
+                     <rtd>{{</rtd>
+                     <mww:name>
+                        <text>foo</text>
+                     </mww:name>
+                     <mww:arg>
+                        <rtd>|</rtd>
+                        <mww:value>
+                           <text>baz</text>
+                        </mww:value>
+                     </mww:arg>
+                     <rtd>}}</rtd>
+                  </mww:transclusion>
+               </mww:name>
+               <rtd>=</rtd>
+               <mww:value>
+                  <mww:transclusion>
+                     <rtd>{{</rtd>
+                     <mww:name>
+                        <text>bar</text>
+                     </mww:name>
+                     <mww:arg>
+                        <rtd>|</rtd>
+                        <mww:value>
+                           <text>foobar</text>
+                        </mww:value>
+                     </mww:arg>
+                     <rtd>}}</rtd>
+                  </mww:transclusion>
+               </mww:value>
+            </mww:arg>
+            <rtd>}}</rtd>
+         </mww:transclusion>
+      </p>
+      <text>
+</text>
+   </body>
+</article>
