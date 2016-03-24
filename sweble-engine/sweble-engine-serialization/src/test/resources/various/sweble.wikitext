@@ -1,0 +1,14 @@
+The '''Sweble''' Wikitext parser is an 
+[[Open-source software|open-source tool]] 
+to [[Parsing|parse]] the [[Wikitext]] 
+[[markup language]] used by [[MediaWiki]], 
+the software behind [[Wikipedia]]. 
+
+== The current state of parsing ==
+* list item 1
+* list item 2
+
+== How Sweble works ==
+another section
+
+[[Category:Parsing]]
