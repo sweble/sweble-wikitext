@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sweble.sweble-parent</groupId>
+		<artifactId>sweble-parent</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.sweble.wikitext</groupId>
+	<artifactId>sweble-wikitext-components-parent</artifactId>
+	<packaging>pom</packaging>
+	<name>Sweble Wikitext Components Parent</name>
+	<inceptionYear>2009</inceptionYear>
+	<description>
+		The Sweble Wikitext Components module provides a parser for MediaWiki's
+		wikitext and an engine trying to emulate the behavior of a MediaWiki.
+	</description>
+
+	<modules>
+		<module>swc-parser-lazy</module>
+		<module>swc-engine</module>
+		<module>swc-dumpreader</module>
+		<module>swc-article-cruncher</module>
+
+		<!-- Examples -->
+		<module>swc-example-basic</module>
+		<module>swc-example-dumpcruncher</module>
+		<module>swc-example-serialization</module>
+		<module>swc-example-xpath</module>
+	</modules>
+
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
+
+	<properties>
+		<swc-parent.path>${project.basedir}</swc-parent.path>
+		<sweble-parent.path>${swc-parent.path}/../</sweble-parent.path>
+
+		<!-- Plugin dependency versions -->
+		<maven-jaxb2-plugin.version>0.8.0</maven-jaxb2-plugin.version>
+		<maven-jflex-plugin.version>1.4.3</maven-jflex-plugin.version>
+		<maven-rats-plugin.version>1.3.0.1</maven-rats-plugin.version>
+
+		<jopt-simple.version>4.3</jopt-simple.version>
+		<rats-runtime.version>1.15.0</rats-runtime.version>
+		<xstream.version>1.4.8</xstream.version>
+	</properties>
+
+	<!-- =================================================================== -->
+	<!-- Dependency Management - Dependency Management - Dependency Manageme -->
+	<!-- =================================================================== -->
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- JOpt Simple -->
+			<dependency>
+				<groupId>net.sf.jopt-simple</groupId>
+				<artifactId>jopt-simple</artifactId>
+				<version>${jopt-simple.version}</version>
+			</dependency>
+
+			<!-- Rats! -->
+			<dependency>
+				<groupId>xtc</groupId>
+				<artifactId>rats-runtime</artifactId>
+				<version>${rats-runtime.version}</version>
+			</dependency>
+
+			<!-- XStream -->
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>${xstream.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+
+		<!-- =============================================================== -->
+		<!-- Plugin Management - Plugin Management - Plugin Management - Plu -->
+		<!-- =============================================================== -->
+
+		<pluginManagement>
+			<plugins>
+		
+				<!-- Check and format license headers -->
+				<plugin>
+					<groupId>com.mycila</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<configuration>
+						<mapping>
+							<rats>JAVADOC_STYLE</rats>
+							<jflex>JAVADOC_STYLE</jflex>
+							<txt>SCRIPT_STYLE</txt>
+						</mapping>
+					</configuration>
+				</plugin>
+
+				<!-- JAXB Maven Plugin -->
+				<plugin>
+					<groupId>org.jvnet.jaxb2.maven2</groupId>
+					<artifactId>maven-jaxb2-plugin</artifactId>
+					<version>${maven-jaxb2-plugin.version}</version>
+				</plugin>
+
+				<!-- Maven JFlex Plugin -->
+				<plugin>
+					<groupId>de.jflex</groupId>
+					<artifactId>maven-jflex-plugin</artifactId>
+					<version>${maven-jflex-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>jflex-generate</id>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- Maven Rats Plugin -->
+				<plugin>
+					<groupId>de.fau.cs.osr.maven.plugins</groupId>
+					<artifactId>maven-rats-plugin</artifactId>
+					<version>${maven-rats-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>rats-generate</id>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!--
+					This plugin's configuration is used to store Eclipse m2e 
+					settings only. It has no influence on the Maven build 
+					itself.
+				-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.google.code.maven-replacer-plugin</groupId>
+										<artifactId>maven-replacer-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>replace</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>de.fau.cs.osr.maven.plugins</groupId>
+										<artifactId>maven-rats-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>de.jflex</groupId>
+										<artifactId>maven-jflex-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- =================================================================== -->
+	<!-- More Project Information - More Project Information - More Project  -->
+	<!-- =================================================================== -->
+
+	<contributors>
+		<contributor>
+			<name>Daniel Naber</name>
+			<email>naber@danielnaber.de</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</contributor>
+	</contributors>
+</project>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sweble.wikitext</groupId>
+		<artifactId>sweble-wikitext-components-parent</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>swc-dumpreader</artifactId>
+	<packaging>jar</packaging>
+	<name>SWC - Sweble Dump Reader</name>
+	<inceptionYear>2012</inceptionYear>
+	<description>
+		A small library for reading in Wikipedia dumps.
+	</description>
+
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
+
+	<properties>
+		<swc-parent.path>../</swc-parent.path>
+
+		<schema-sources.directory>src/main/schema</schema-sources.directory>
+		<generated-sources.directory>${project.build.directory}/generated-sources</generated-sources.directory>
+	</properties>
+
+	<!-- =================================================================== -->
+	<!-- Dependencies - Dependencies - Dependencies - Dependencies - Depende -->
+	<!-- =================================================================== -->
+
+	<dependencies>
+
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+
+		<!-- Apache Commons - Compress -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Also add signature "commons-io-unsafe-<ver>" to forbiddenapis plugin -->
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+
+		<!-- Joda-Time - Java date and time API -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+
+		<!-- SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<!-- Utils -->
+		<dependency>
+			<groupId>de.fau.cs.osr.utils</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
+
+		<!-- =============================================================== -->
+		<!-- Testing - Testing - Testing - Testing - Testing - Testing - Tes -->
+		<!-- =============================================================== -->
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<!-- =============================================================== -->
+		<!-- Resources - Resources - Resources - Resources - Resources - Res -->
+		<!-- =============================================================== -->
+
+		<resources>
+			<resource>
+				<!-- Required to get the .xsd schema files included in the jar file -->
+				<directory>${schema-sources.directory}</directory>
+			</resource>
+		</resources>
+
+		<!-- =============================================================== -->
+		<!-- Plugins - Plugins - Plugins - Plugins - Plugins - Plugins - Plu -->
+		<!-- =============================================================== -->
+
+		<plugins>
+
+			<!-- Check and format license headers -->
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<configuration>
+					<excludes combine.children="append">
+						<exclude>src/main/schema/xml.xsd</exclude>
+						<exclude>src/main/schema/export-*.xsd</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<!-- Add various source directories -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${schema-sources.directory}</source>
+								<source>${generated-sources.directory}</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Compile schema files -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<configuration>
+					<schemaDirectory>${schema-sources.directory}</schemaDirectory>
+					<generateDirectory>${generated-sources.directory}</generateDirectory>
+					<catalog>${schema-sources.directory}/catalog.xml</catalog>
+					<strict>true</strict>
+					<forceRegenerate>true</forceRegenerate>
+				</configuration>
+				<executions>
+					<execution>
+						<id>compile-mw-schema-0.5</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.5.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_5</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.6</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.6-fixed.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_6</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.7</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.7.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_7</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.8</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.8.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_8</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.9</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.9.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_9</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.10</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.10.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_10</generatePackage>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Maven AspectJ Plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<inherited>false</inherited>
+			</plugin>
+
+			<!-- Add the AspectJ nature to the eclipse project -->
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<ajdtVersion>1.5</ajdtVersion>
+				</configuration>
+			</plugin>
+
+			<!-- Forbidden APIs -->
+			<plugin>
+				<groupId>de.thetaphi</groupId>
+				<artifactId>forbiddenapis</artifactId>
+				<configuration>
+					<bundledSignatures combine.children="append">
+						<bundledSignature>commons-io-unsafe-1.4</bundledSignature>
+					</bundledSignatures>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

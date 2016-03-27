@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses/.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sweble.wom3</groupId>
+		<artifactId>sweble-wom3-parent</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>sweble-wom3-json-tools</artifactId>
+	<packaging>jar</packaging>
+	<name>Sweble WOM 3.0 JSON Tools</name>
+	<inceptionYear>2013</inceptionYear>
+	<description>
+		Serialize a WOM 3.0 structure to and from json.
+	</description>
+
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
+
+	<properties>
+		<sweble-wom3-parent.path>../</sweble-wom3-parent.path>
+	</properties>
+
+	<!-- =================================================================== -->
+	<!-- Dependencies - Dependencies - Dependencies - Dependencies - Depende -->
+	<!-- =================================================================== -->
+
+	<dependencies>
+
+		<!-- XML APIs -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+		</dependency>
+
+		<!-- Gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<!-- Sweble - WOM 3.0 Core -->
+		<dependency>
+			<groupId>org.sweble.wom3</groupId>
+			<artifactId>sweble-wom3-core</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>

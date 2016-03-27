@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses/.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sweble.sweble-parent</groupId>
+		<artifactId>sweble-parent</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.sweble.wom3</groupId>
+	<artifactId>sweble-wom3-parent</artifactId>
+	<packaging>pom</packaging>
+	<name>Sweble WOM v3 Parent</name>
+	<inceptionYear>2013</inceptionYear>
+	<description>
+		The Sweble Wiki Object Model Version 3 (WOM v3.0) Specification.
+	</description>
+
+	<modules>
+		<module>sweble-wom3-core</module>
+		<module>sweble-wom3-json-tools</module>
+		<module>sweble-wom3-swc-adapter</module>
+
+		<!-- Examples -->
+		<module>sweble-wom3-example-basic</module>
+	</modules>
+
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
+
+	<properties>
+		<sweble-wom3-parent.path>${project.basedir}</sweble-wom3-parent.path>
+		<sweble-parent.path>${sweble-wom3-parent.path}/../</sweble-parent.path>
+	</properties>
+
+	<build>
+
+		<!-- =============================================================== -->
+		<!-- Plugin Management - Plugin Management - Plugin Management - Plu -->
+		<!-- =============================================================== -->
+
+		<pluginManagement>
+			<plugins>
+
+				<!-- Check and format license headers -->
+				<plugin>
+					<groupId>com.mycila</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<configuration>
+						<header>${sweble-parent.etc-path}/agpl-v3-header.txt</header>
+						<validHeaders>
+							<validHeader>${sweble-parent.etc-path}/agpl-v3-header-no-copyright.txt</validHeader>
+						</validHeaders>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- =================================================================== -->
+	<!-- More Project Information - More Project Information - More Project  -->
+	<!-- =================================================================== -->
+
+	<licenses>
+		<license>
+			<name>GNU Affero General Public License</name>
+			<url>http://www.gnu.org/licenses/agpl-3.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+</project>

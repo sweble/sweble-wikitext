@@ -28,20 +28,20 @@
 		<version>3.0.0-SNAPSHOT</version>
 	</parent>
 
-	<groupId>org.sweble.F00</groupId>
-	<artifactId>F00</artifactId>
+	<groupId>org.sweble.sweble-parent</groupId>
+	<artifactId>sweble-parent</artifactId>
 	<!--<version>3.0.0-SNAPSHOT</version>-->
 	<packaging>pom</packaging>
-	<name>F00</name>
+	<name>Sweble Parent</name>
 	<inceptionYear>2010</inceptionYear>
 	<description>
 		The next generation Wiki platform project.
 	</description>
 
 	<modules>
-		<module>sweble-engine</module>
-		<module>sweble-wikitext</module>
-		<module>sweble-wom3</module>
+		<module>sweble-engine-parent</module>
+		<module>sweble-wikitext-components-parent</module>
+		<module>sweble-wom3-parent</module>
 	</modules>
 
 	<!-- =================================================================== -->
@@ -49,11 +49,11 @@
 	<!-- =================================================================== -->
 
 	<properties>
-		<F00.path>${project.basedir}</F00.path>
-		<F00.etc-path>${F00.path}/etc</F00.etc-path>
-		<tooling.etc-path>${F00.etc-path}</tooling.etc-path>
+		<sweble-parent.path>${project.basedir}</sweble-parent.path>
+		<sweble-parent.etc-path>${sweble-parent.path}/etc</sweble-parent.etc-path>
+		<tooling.etc-path>${sweble-parent.etc-path}</tooling.etc-path>
 
-		<!-- F00 currently does not conform :( -->
+		<!-- sweble-parent currently does not conform :( -->
 		<maven-checkstyle-plugin.skip>true</maven-checkstyle-plugin.skip>
 
 		<!-- Dependencies -->
@@ -205,9 +205,9 @@
 					<groupId>com.mycila</groupId>
 					<artifactId>license-maven-plugin</artifactId>
 					<configuration>
-						<header>${F00.etc-path}/apache-license-v2-header.txt</header>
+						<header>${sweble-parent.etc-path}/apache-license-v2-header.txt</header>
 						<validHeaders>
-							<validHeader>${F00.etc-path}/apache-license-v2-header-no-copyright.txt</validHeader>
+							<validHeader>${sweble-parent.etc-path}/apache-license-v2-header-no-copyright.txt</validHeader>
 						</validHeaders>
 						<excludes combine.children="append">
 							<exclude>etc/apache-license-v2-header-no-copyright.txt</exclude>
@@ -240,13 +240,13 @@
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/sweble/F00/issues</url>
+		<url>https://github.com/sweble/sweble-parent/issues</url>
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git://git@github.com/sweble/F00.git</connection>
-		<developerConnection>scm:git://git@mojo-forge.cs.fau.de/sweble-public/F00.git</developerConnection>
-		<url>https://github.com/sweble/F00</url>
+		<connection>scm:git://git@github.com/sweble/sweble-parent.git</connection>
+		<developerConnection>scm:git://git@mojo-forge.cs.fau.de/sweble-public/sweble-parent.git</developerConnection>
+		<url>https://github.com/sweble/sweble-parent</url>
 		<tag>HEAD</tag>
 	</scm>
 
