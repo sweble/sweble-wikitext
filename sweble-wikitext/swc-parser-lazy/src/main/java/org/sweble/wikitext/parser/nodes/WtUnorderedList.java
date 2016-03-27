@@ -24,18 +24,18 @@ public class WtUnorderedList
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtUnorderedList()
 	{
 	}
-	
+
 	protected WtUnorderedList(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

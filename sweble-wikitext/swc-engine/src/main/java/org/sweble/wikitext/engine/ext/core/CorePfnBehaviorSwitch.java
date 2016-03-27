@@ -31,9 +31,9 @@ public abstract class CorePfnBehaviorSwitch
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -43,16 +43,16 @@ public abstract class CorePfnBehaviorSwitch
 		// conversions.
 		super(PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
 	}
-	
+
 	public CorePfnBehaviorSwitch(WikiConfig wikiConfig, String name)
 	{
 		// Page Switches don't take arguments so don't waste time with funny 
 		// conversions.
 		super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public final WtNode invoke(
 			WtNode pageSwitch,
@@ -61,6 +61,6 @@ public abstract class CorePfnBehaviorSwitch
 	{
 		return invoke((WtPageSwitch) pageSwitch, frame);
 	}
-	
+
 	protected abstract WtNode invoke(WtPageSwitch var, ExpansionFrame frame);
 }

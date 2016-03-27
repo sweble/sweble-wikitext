@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.utils;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfig;
@@ -26,11 +26,11 @@ import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 public class EngineTextUtilsTest
 {
 	WikiConfig config = DefaultConfigEnWp.generate();
-	
+
 	EngineNodeFactory nf = config.getNodeFactory();
-	
+
 	EngineAstTextUtils tu = config.getAstTextUtils();
-	
+
 	@Test
 	public void testTrimLeftLeavesUntrimmableTextUnaltered() throws Exception
 	{
@@ -38,7 +38,7 @@ public class EngineTextUtilsTest
 				nf.text("Hello World"),
 				tu.trimLeft(nf.text("Hello World")));
 	}
-	
+
 	@Test
 	public void testTrimLeftTrimsLeftWhitespace() throws Exception
 	{
@@ -46,7 +46,7 @@ public class EngineTextUtilsTest
 				nf.text("Hello World"),
 				tu.trimLeft(nf.text("  Hello World")));
 	}
-	
+
 	@Test
 	public void testTrimLeftCullsWhitespaceOnlyNodes() throws Exception
 	{
@@ -54,7 +54,7 @@ public class EngineTextUtilsTest
 				nf.list(nf.text("Hello World")),
 				tu.trimLeft(nf.list(nf.text("  "), nf.text("  Hello World"))));
 	}
-	
+
 	@Test
 	public void testTrimLeftIgnoresCommentsAndIgnoredItems() throws Exception
 	{
@@ -62,9 +62,9 @@ public class EngineTextUtilsTest
 				nf.list(nf.comment("Comment"), nf.ignored(""), nf.text("Hello World")),
 				tu.trimLeft(nf.list(nf.text("  "), nf.comment("Comment"), nf.ignored(""), nf.text("  Hello World"))));
 	}
-	
+
 	// -------
-	
+
 	@Test
 	public void testTrimRightLeavesUntrimmableTextUnaltered() throws Exception
 	{
@@ -72,7 +72,7 @@ public class EngineTextUtilsTest
 				nf.text("Hello World"),
 				tu.trimRight(nf.text("Hello World")));
 	}
-	
+
 	@Test
 	public void testTrimRightTrimsRightWhitespace() throws Exception
 	{
@@ -80,7 +80,7 @@ public class EngineTextUtilsTest
 				nf.text("Hello World"),
 				tu.trimRight(nf.text("Hello World  ")));
 	}
-	
+
 	@Test
 	public void testTrimRightCullsWhitespaceOnlyNodes() throws Exception
 	{
@@ -88,7 +88,7 @@ public class EngineTextUtilsTest
 				nf.list(nf.text("Hello World")),
 				tu.trimRight(nf.list(nf.text("Hello World  "), nf.text("  "))));
 	}
-	
+
 	@Test
 	public void testTrimRightIgnoresCommentsAndIgnoredItems() throws Exception
 	{

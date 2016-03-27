@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.fau.cs.osr</groupId>
+		<artifactId>tooling</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.sweble.F00</groupId>
+	<artifactId>F00</artifactId>
+	<!--<version>3.0.0-SNAPSHOT</version>-->
+	<packaging>pom</packaging>
+	<name>F00</name>
+	<inceptionYear>2010</inceptionYear>
+	<description>
+		The next generation Wiki platform project.
+	</description>
+
+	<modules>
+		<module>sweble-engine</module>
+		<module>sweble-wikitext</module>
+		<module>sweble-wom3</module>
+	</modules>
+
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
+
+	<properties>
+		<F00.path>${project.basedir}</F00.path>
+		<F00.etc-path>${F00.path}/etc</F00.etc-path>
+		<tooling.etc-path>${F00.etc-path}</tooling.etc-path>
+
+		<!-- F00 currently does not conform :( -->
+		<maven-checkstyle-plugin.skip>true</maven-checkstyle-plugin.skip>
+
+		<!-- Dependencies -->
+		<osr-common.version>3.0.0-SNAPSHOT</osr-common.version>
+	</properties>
+
+	<!-- =================================================================== -->
+	<!-- Dependency Management - Dependency Management - Dependency Manageme -->
+	<!-- =================================================================== -->
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- =========================================================== -->
+			<!-- OSR Common - OSR Common - OSR Common - OSR Common - OSR Com -->
+			<!-- =========================================================== -->
+
+			<!-- Utils -->
+			<dependency>
+				<groupId>de.fau.cs.osr.utils</groupId>
+				<artifactId>utils</artifactId>
+				<version>${osr-common.version}</version>
+			</dependency>
+
+			<!-- Utils - Testing -->
+			<dependency>
+				<groupId>de.fau.cs.osr.utils</groupId>
+				<artifactId>utils-testing</artifactId>
+				<version>${osr-common.version}</version>
+			</dependency>
+
+			<!-- Utils - Testing -->
+			<dependency>
+				<groupId>de.fau.cs.osr.utils</groupId>
+				<artifactId>utils-getopt</artifactId>
+				<version>${osr-common.version}</version>
+			</dependency>
+
+			<!-- Parser Toolkit - Common -->
+			<dependency>
+				<groupId>de.fau.cs.osr.ptk</groupId>
+				<artifactId>ptk-common</artifactId>
+				<version>${osr-common.version}</version>
+			</dependency>
+
+			<!-- Parser Toolkit - XPath -->
+			<dependency>
+				<groupId>de.fau.cs.osr.ptk</groupId>
+				<artifactId>ptk-xpath</artifactId>
+				<version>${osr-common.version}</version>
+			</dependency>
+
+			<!-- Parser Toolkit - XML Tools -->
+			<dependency>
+				<groupId>de.fau.cs.osr.ptk</groupId>
+				<artifactId>ptk-xml-tools</artifactId>
+				<version>${osr-common.version}</version>
+			</dependency>
+
+			<!-- Parser Toolkit - JSON Tools -->
+			<dependency>
+				<groupId>de.fau.cs.osr.ptk</groupId>
+				<artifactId>ptk-json-tools</artifactId>
+				<version>${osr-common.version}</version>
+			</dependency>
+
+			<!-- =========================================================== -->
+			<!-- SWC - SWC - SWC - SWC - SWC - SWC - SWC - SWC - SWC - SWC - -->
+			<!-- =========================================================== -->
+
+			<!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
+			<dependency>
+				<groupId>org.sweble.wikitext</groupId>
+				<artifactId>swc-parser-lazy</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Sweble Wikitext Components - Engine -->
+			<dependency>
+				<groupId>org.sweble.wikitext</groupId>
+				<artifactId>swc-engine</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Sweble Wikitext Components - Dump Reader -->
+			<dependency>
+				<groupId>org.sweble.wikitext</groupId>
+				<artifactId>swc-dumpreader</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Sweble Wikitext Components - Article Cruncher -->
+			<dependency>
+				<groupId>org.sweble.wikitext</groupId>
+				<artifactId>swc-article-cruncher</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- =========================================================== -->
+			<!-- WOM v3 - WOM v3 - WOM v3 - WOM v3 - WOM v3 - WOM v3 - WOM v -->
+			<!-- =========================================================== -->
+
+			<!-- Sweble - WOM 3.0 Core -->
+			<dependency>
+				<groupId>org.sweble.wom3</groupId>
+				<artifactId>sweble-wom3-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Sweble - WOM 3.0 JSON Tools -->
+			<dependency>
+				<groupId>org.sweble.wom3</groupId>
+				<artifactId>sweble-wom3-json-tools</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Sweble WOM 3.0 - SWC Adapter -->
+			<dependency>
+				<groupId>org.sweble.wom3</groupId>
+				<artifactId>sweble-wom3-swc-adapter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<!-- =========================================================== -->
+			<!-- Engine - Engine - Engine - Engine - Engine - Engine - Engin -->
+			<!-- =========================================================== -->
+			
+			<!-- Sweble Engine - Serialization -->
+			<dependency>
+				<groupId>org.sweble.engine</groupId>
+				<artifactId>sweble-engine-serialization</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+
+		<!-- =============================================================== -->
+		<!-- Plugin Management - Plugin Management - Plugin Management - Plu -->
+		<!-- =============================================================== -->
+
+		<pluginManagement>
+			<plugins>
+
+				<!-- Check and format license headers -->
+				<plugin>
+					<groupId>com.mycila</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<configuration>
+						<header>${F00.etc-path}/apache-license-v2-header.txt</header>
+						<validHeaders>
+							<validHeader>${F00.etc-path}/apache-license-v2-header-no-copyright.txt</validHeader>
+						</validHeaders>
+						<excludes combine.children="append">
+							<exclude>etc/apache-license-v2-header-no-copyright.txt</exclude>
+							<exclude>etc/agpl-v3-header.txt</exclude>
+							<exclude>etc/agpl-v3-header-no-copyright.txt</exclude>
+							<exclude>sweble*/**</exclude>
+						</excludes>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- =================================================================== -->
+	<!-- More Project Information - More Project Information - More Project  -->
+	<!-- =================================================================== -->
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<!-- =================================================================== -->
+	<!-- Environment Settings - Environment Settings - Environment Settings  -->
+	<!-- =================================================================== -->
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/sweble/F00/issues</url>
+	</issueManagement>
+
+	<scm>
+		<connection>scm:git://git@github.com/sweble/F00.git</connection>
+		<developerConnection>scm:git://git@mojo-forge.cs.fau.de/sweble-public/F00.git</developerConnection>
+		<url>https://github.com/sweble/F00</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+			<id>osr-public-repo</id>
+			<name>OSR Public Repository</name>
+			<url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
+		</repository>
+	</repositories>
+</project>

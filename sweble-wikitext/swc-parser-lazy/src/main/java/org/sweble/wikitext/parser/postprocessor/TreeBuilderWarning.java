@@ -31,34 +31,34 @@ public final class TreeBuilderWarning
 			Serializable
 {
 	private static final long serialVersionUID = -3629058682383966718L;
-	
+
 	protected final WtNode trigger;
-	
+
 	// =========================================================================
-	
+
 	public TreeBuilderWarning(WtNode trigger, String message)
 	{
 		super(new Span(trigger.getNativeLocation(), null),
 				TreeBuilder.class,
 				makeMessage(trigger, message));
-		
+
 		this.trigger = trigger;
 	}
-	
+
 	private static String makeMessage(WtNode trigger, String message)
 	{
 		return String.format("%s @ %s", message, trigger.getNodeName());
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtNode getTrigger()
 	{
 		return trigger;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -67,7 +67,7 @@ public final class TreeBuilderWarning
 		result = prime * result + ((trigger == null) ? 0 : trigger.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{

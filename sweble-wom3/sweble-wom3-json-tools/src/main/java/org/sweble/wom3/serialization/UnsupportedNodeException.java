@@ -28,33 +28,33 @@ public class UnsupportedNodeException
 			RuntimeException
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final Node node;
-	
+
 	public UnsupportedNodeException(Node node)
 	{
 		super(String.format("Node name: %s; Node type: %d", node.getNodeName(), node.getNodeType()));
 		this.node = node;
 	}
-	
+
 	public UnsupportedNodeException(Node node, String message, Throwable cause)
 	{
 		super(message, cause);
 		this.node = node;
 	}
-	
+
 	public UnsupportedNodeException(Node node, String message)
 	{
 		super(message);
 		this.node = node;
 	}
-	
+
 	public UnsupportedNodeException(Node node, Throwable cause)
 	{
 		super(cause);
 		this.node = node;
 	}
-	
+
 	public Node getNode()
 	{
 		return node;

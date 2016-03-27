@@ -35,33 +35,33 @@ public class BuiltInTagExtensions
 			TagExtensionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected BuiltInTagExtensions(WikiConfig wikiConfig)
 	{
 		super("Built-in Tag Extensions");
 		addTagExtension(new TagExtensionPre(wikiConfig));
 		addTagExtension(new TagExtensionNowiki(wikiConfig));
 	}
-	
+
 	public static BuiltInTagExtensions group(WikiConfig wikiConfig)
 	{
 		return new BuiltInTagExtensions(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == <pre>
 	// ==
 	// =========================================================================
-	
+
 	public static final class TagExtensionPre
 			extends
 				TagExtensionBase
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -69,12 +69,12 @@ public class BuiltInTagExtensions
 		{
 			super("pre");
 		}
-		
+
 		public TagExtensionPre(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "pre");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
@@ -90,19 +90,19 @@ public class BuiltInTagExtensions
 			return pre;
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == <nowiki>
 	// ==
 	// =========================================================================
-	
+
 	public static final class TagExtensionNowiki
 			extends
 				TagExtensionBase
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -110,12 +110,12 @@ public class BuiltInTagExtensions
 		{
 			super("nowiki");
 		}
-		
+
 		public TagExtensionNowiki(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "nowiki");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,

@@ -23,10 +23,10 @@ public interface CompleteEngineVisitor<T>
 			CompleteWikitextVisitor<T>
 {
 	public T visit(EngProcessedPage n);
-	
+
 	public T visit(EngNowiki n);
-	
+
 	public T visit(EngPage n);
-	
+
 	public T visit(EngSoftErrorNode n);
 }

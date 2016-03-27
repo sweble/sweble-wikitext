@@ -38,7 +38,7 @@ public interface Wom3ListItem
 	 *         not specified.
 	 */
 	public String getItemType();
-	
+
 	/**
 	 * Get the type of bullet point the list item uses.
 	 * 
@@ -50,7 +50,7 @@ public interface Wom3ListItem
 	 * @return The old type of bullet point.
 	 */
 	public String setItemType(String type);
-	
+
 	/**
 	 * Get the number of the list item.
 	 * 
@@ -60,7 +60,7 @@ public interface Wom3ListItem
 	 *         is not specified.
 	 */
 	public Integer getItemValue();
-	
+
 	/**
 	 * Set the number of the list item.
 	 * 

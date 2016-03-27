@@ -1,0 +1,170 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+module org.sweble.wikitext.parser.parser.RatsWikitextParser;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.State;
+
+// ...
+import org.sweble.wikitext.parser.parser.ExternalLink;
+import org.sweble.wikitext.parser.parser.HorizontalRule;
+import org.sweble.wikitext.parser.parser.InternalLink;
+import org.sweble.wikitext.parser.parser.List;
+import org.sweble.wikitext.parser.parser.Section;
+import org.sweble.wikitext.parser.parser.SemiPre;
+import org.sweble.wikitext.parser.parser.Signature;
+import org.sweble.wikitext.parser.parser.Table;
+import org.sweble.wikitext.parser.parser.TableCaption;
+import org.sweble.wikitext.parser.parser.TableCell;
+import org.sweble.wikitext.parser.parser.TableHeader;
+import org.sweble.wikitext.parser.parser.TableRow;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+
+
+
+// -- Header / Body / Footer ---------------------------------------------------
+
+header
+{
+  import org.sweble.wikitext.parser.*;
+  import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
+  import org.sweble.wikitext.parser.nodes.*;
+  import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
+  import org.sweble.wikitext.parser.utils.ParserShouldNotBeHereException;
+  import org.sweble.wikitext.parser.utils.ParserStats;
+
+  import org.sweble.wikitext.parser.nodes.WtBody.WtBodyImpl;
+  import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtLinkOptionAltTextImpl;
+  import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
+  import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
+  import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtLinkTitleImpl;
+  import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
+  import org.sweble.wikitext.parser.nodes.WtValue.WtValueImpl;
+  import org.sweble.wikitext.parser.nodes.WtXmlAttributes.WtXmlAttributesImpl;
+
+  import de.fau.cs.osr.ptk.common.*;
+  import de.fau.cs.osr.ptk.common.ast.*;
+  import de.fau.cs.osr.utils.StringTools;
+  import de.fau.cs.osr.utils.WrappedException;
+
+  import java.util.Collections;
+  import java.util.ListIterator;
+
+  import org.apache.commons.lang3.StringUtils;
+}
+
+body
+{
+  private WtNodeList fixNewlinesAtBoa(WtNodeList content)
+  {
+    WtNodeList result = nf.list();
+
+    ArrayList<WtNode> tmp = new ArrayList<WtNode>();
+
+    int count = 0;
+
+    Iterator<WtNode> i = content.iterator();
+    outer: while (i.hasNext())
+    {
+      WtNode n = i.next();
+      switch (n.getNodeType())
+      {
+        case WtNode.NT_NEWLINE:
+          ++count;
+          // FALL THROUGH
+        case WtNode.NT_TEXT:
+          if (count >= 2)
+            tmp.add(n);
+          else
+            result.add(n);
+          break;
+
+        case WtNode.NT_IM_START_TAG:
+          if (count >= 2)
+          {
+            result.add(n);
+            for (WtNode n2 : tmp)
+              result.add(n2);
+            while (i.hasNext())
+              result.add(i.next());
+            return result;
+          }
+          else
+            break outer;
+
+        default:
+          break outer;
+      }
+    }
+
+    return content;
+  }
+}
+
+option
+  // Enabling verbose requires the GPL licensed Rats! library
+  // Due to the GPL license this can only be done during development and must
+  // never be released!
+  //verbose,
+  withLocation,
+  parser(org.sweble.wikitext.parser.parser.RatsWikitextParser);
+
+
+
+
+// -- Article ------------------------------------------------------------------
+
+public
+transient
+WtParsedWikitextPage
+Article =
+  {
+    enter(ParserScopes.PAGE);
+  }
+  content:BolBlockContent &Eof
+  {
+    yyValue = nf.parsedPage(
+        fixNewlinesAtBoa(content),
+        getState().getEntityMap());
+  }
+;
+
+
+// -- Stuff that must not be optimized away ------------------------------------
+//    although the grammar doesn't reference it
+
+public
+transient
+void grmbl =
+  ListMemoized              InternalLinkMemoized      TableMemoized
+  ListTransient             InternalLinkTransient     TableTransient
+  TableCaptionMemoized      TableRowMemoized          TableHeaderMemoized
+  TableCaptionTransient     TableRowTransient         TableHeaderTransient
+  TableCellMemoized         pExtWsStarMemoized        ListMemoized
+  TableCellTransient        pExtWsStarTransient       ListTransient
+  SemiPreMemoized           SectionsMemoized          HeadingMemoized
+  SemiPreTransient          SectionsTransient         HeadingTransient
+  HorizontalRuleMemoized    ExternalLinkMemoized      ParagraphMemoized
+  HorizontalRuleTransient   ExternalLinkTransient     ParagraphTransient
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

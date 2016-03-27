@@ -41,7 +41,7 @@ public interface Wom3Table
 	 * @return The caption of the table.
 	 */
 	public Wom3TableCaption getCaption();
-	
+
 	/**
 	 * Set the caption of the table.
 	 * 
@@ -54,7 +54,7 @@ public interface Wom3Table
 	 * @return The old caption of the table.
 	 */
 	public Wom3TableCaption setCaption(Wom3TableCaption caption);
-	
+
 	//	/**
 	//	 * Get the body of the table.
 	//	 * 
@@ -77,11 +77,11 @@ public interface Wom3Table
 	//	 * @return The old body of the table.
 	//	 */
 	//	public Wom3TableBody setBody(Wom3TableBody body);
-	
+
 	public Collection<Wom3TablePartition> getPartitions();
-	
+
 	// ==[ The XHTML Attributes ]===============================================
-	
+
 	/**
 	 * Get the alignment of the table.
 	 * 
@@ -91,7 +91,7 @@ public interface Wom3Table
 	 *         is not specified.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the alignment of the table.
 	 * 
@@ -104,7 +104,7 @@ public interface Wom3Table
 	 * @return The old alignment of the table.
 	 */
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align);
-	
+
 	/**
 	 * Get the thickness of the table border.
 	 * 
@@ -114,7 +114,7 @@ public interface Wom3Table
 	 *         if the attribute is not given.
 	 */
 	public Integer getBorder();
-	
+
 	/**
 	 * The the thickness of the table border.
 	 * 
@@ -126,7 +126,7 @@ public interface Wom3Table
 	 * @return The old thickness in pixels.
 	 */
 	public Integer setBorder(Integer thickness);
-	
+
 	/**
 	 * Get the background color of the table.
 	 * 
@@ -136,7 +136,7 @@ public interface Wom3Table
 	 *         attribute is not specified.
 	 */
 	public Wom3Color getBgColor();
-	
+
 	/**
 	 * Set the background color of the table.
 	 * 
@@ -148,7 +148,7 @@ public interface Wom3Table
 	 * @return The old background color of the table.
 	 */
 	public Wom3Color setBgColor(Wom3Color color);
-	
+
 	/**
 	 * Get the spacing between cell wall and cell content.
 	 * 
@@ -158,7 +158,7 @@ public interface Wom3Table
 	 *         <code>null</code> if the attribute is not specified.
 	 */
 	public Wom3ValueWithUnit getCellPadding();
-	
+
 	/**
 	 * Set the spacing between cell wall and cell content.
 	 * 
@@ -170,7 +170,7 @@ public interface Wom3Table
 	 * @return The old spacing between cell wall and content in pixels.
 	 */
 	public Wom3ValueWithUnit setCellPadding(Wom3ValueWithUnit padding);
-	
+
 	/**
 	 * Get the space between cells.
 	 * 
@@ -180,7 +180,7 @@ public interface Wom3Table
 	 *         attribute is not specified.
 	 */
 	public Wom3ValueWithUnit getCellSpacing();
-	
+
 	/**
 	 * Set the space between cells.
 	 * 
@@ -192,7 +192,7 @@ public interface Wom3Table
 	 * @return The old space between cells in pixels.
 	 */
 	public Wom3ValueWithUnit setCellSpacing(Wom3ValueWithUnit spacing);
-	
+
 	/**
 	 * Get the outer border parts that will be rendered.
 	 * 
@@ -202,7 +202,7 @@ public interface Wom3Table
 	 *         if the attribute is not specified.
 	 */
 	public Wom3TableFrame getFrame();
-	
+
 	/**
 	 * Set the outer border parts to be rendered.
 	 * 
@@ -214,7 +214,7 @@ public interface Wom3Table
 	 * @return The old setting.
 	 */
 	public Wom3TableFrame setFrame(Wom3TableFrame frame);
-	
+
 	/**
 	 * Get the inner border parts that will be rendered.
 	 * 
@@ -224,7 +224,7 @@ public interface Wom3Table
 	 *         if the attribute is not specified.
 	 */
 	public Wom3TableRules getRules();
-	
+
 	/**
 	 * Set the inner border parts to be rendered.
 	 * 
@@ -236,7 +236,7 @@ public interface Wom3Table
 	 * @return The old setting.
 	 */
 	public Wom3TableRules setRules(Wom3TableRules rules);
-	
+
 	/**
 	 * Get a textual summary of the table's content.
 	 * 
@@ -245,7 +245,7 @@ public interface Wom3Table
 	 * @return A summary or <code>null</code> if the attribute is not specified.
 	 */
 	public String getSummary();
-	
+
 	/**
 	 * Set a textual summary of the table's content.
 	 * 
@@ -256,7 +256,7 @@ public interface Wom3Table
 	 * @return The old summary.
 	 */
 	public String setSummary(String summary);
-	
+
 	/**
 	 * Get the table width.
 	 * 
@@ -266,7 +266,7 @@ public interface Wom3Table
 	 *         attribute is not specified.
 	 */
 	public Wom3ValueWithUnit getWidth();
-	
+
 	/**
 	 * Set the table width.
 	 * 

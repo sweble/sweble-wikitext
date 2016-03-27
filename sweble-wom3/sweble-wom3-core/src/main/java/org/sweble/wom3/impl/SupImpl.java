@@ -26,16 +26,16 @@ public class SupImpl
 			Wom3Sup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public SupImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{

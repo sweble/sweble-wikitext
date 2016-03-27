@@ -39,124 +39,124 @@ public class DocumentImpl
 			Wom3Document
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final DomImplementationImpl impl;
-	
+
 	private Wom3ElementNode root;
-	
+
 	/**
 	 * As long as we don't support creating doctypes or appending them to this
 	 * document, this variable will always be null.
 	 */
 	private final DocumentType doctype = null;
-	
+
 	private String documentUri;
-	
+
 	/**
 	 * Always null for now.
 	 */
 	private final String xmlEncoding = null;
-	
+
 	/**
 	 * Always null for now.
 	 */
 	private final String inputEncoding = null;
-	
+
 	private boolean strictErrorChecking = true;
-	
+
 	private boolean readOnly = false;
-	
+
 	// =========================================================================
-	
+
 	public DocumentImpl()
 	{
 		this(DomImplementationImpl.get());
 	}
-	
+
 	public DocumentImpl(DomImplementationImpl impl)
 	{
 		super(null);
 		this.impl = impl;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getNodeName()
 	{
 		return "#document";
 	}
-	
+
 	@Override
 	public short getNodeType()
 	{
 		return Node.DOCUMENT_NODE;
 	}
-	
+
 	@Override
 	public Backbone getParentNode()
 	{
 		return null;
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Getters
-	
+
 	@Override
 	public DomImplementationImpl getImplementation()
 	{
 		return impl;
 	}
-	
+
 	@Override
 	public DocumentType getDoctype()
 	{
 		return doctype;
 	}
-	
+
 	@Override
 	public Wom3ElementNode getDocumentElement()
 	{
 		return root;
 	}
-	
+
 	@Override
 	public Element getElementById(String elementId)
 	{
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public String getTextContent() throws DOMException
 	{
 		return null;
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Document URI
-	
+
 	@Override
 	public String getDocumentURI()
 	{
 		return documentUri;
 	}
-	
+
 	@Override
 	public void setDocumentURI(String documentURI)
 	{
 		this.documentUri = documentURI;
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Creation
-	
+
 	@Override
 	public AttributeImpl createAttribute(String name) throws DOMException
 	{
 		return new AttributeImpl(this, name);
 	}
-	
+
 	@Override
 	public AttributeImpl createAttributeNS(
 			String namespaceURI,
@@ -164,19 +164,19 @@ public class DocumentImpl
 	{
 		return new AttributeNsImpl(this, namespaceURI, qualifiedName);
 	}
-	
+
 	@Override
 	public XmlCommentImpl createComment(String data)
 	{
 		return new XmlCommentImpl(this, data);
 	}
-	
+
 	@Override
 	public Wom3ElementNode createElement(String tagName) throws DOMException
 	{
 		return impl.createElement(this, tagName);
 	}
-	
+
 	@Override
 	public Wom3ElementNode createElementNS(
 			String namespaceURI,
@@ -184,32 +184,32 @@ public class DocumentImpl
 	{
 		return impl.createElement(this, namespaceURI, qualifiedName);
 	}
-	
+
 	@Override
 	public XmlTextImpl createTextNode(String data)
 	{
 		return new XmlTextImpl(this, data);
 	}
-	
+
 	@Override
 	public CDATASection createCDATASection(String data) throws DOMException
 	{
 		return new CdataSection(this, data);
 	}
-	
+
 	@Override
 	public Wom3DocumentFragment createDocumentFragment()
 	{
 		return new DocumentFragmentImpl(this);
 	}
-	
+
 	@Override
 	public EntityReference createEntityReference(String name) throws DOMException
 	{
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public ProcessingInstruction createProcessingInstruction(
 			String target,
@@ -218,10 +218,10 @@ public class DocumentImpl
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Node adoption
-	
+
 	@Override
 	public Wom3Node adoptNode(Node source) throws DOMException
 	{
@@ -234,7 +234,7 @@ public class DocumentImpl
 				{
 					// Only the adopted node's document has to be writable
 					Toolbox.expectType(Backbone.class, source).assertWritableOnDocument();
-					
+
 					attr.getOwnerElement().removeAttributeNode(attr);
 				}
 			}
@@ -244,16 +244,16 @@ public class DocumentImpl
 				{
 					// Only the adopted node's document has to be writable
 					Toolbox.expectType(Backbone.class, source).assertWritableOnDocument();
-					
+
 					source.getParentNode().removeChild(source);
 				}
 			}
-			
+
 			adoptRecursively(source);
 		}
 		return (Wom3Node) source;
 	}
-	
+
 	private void adoptRecursively(Node source_)
 	{
 		Backbone source = Toolbox.expectType(Backbone.class, source_);
@@ -272,30 +272,30 @@ public class DocumentImpl
 			case TEXT_NODE:
 				source.adoptTo(this);
 				break;
-			
+
 			case DOCUMENT_FRAGMENT_NODE:
 			case ENTITY_REFERENCE_NODE:
 				// Can be adopted (specifics!), only we don't ...
 				// Fall through
-				
+
 			case PROCESSING_INSTRUCTION_NODE:
 			case CDATA_SECTION_NODE:
 			case COMMENT_NODE:
 				// Can all be adopted (no specifics), only we don't ...
 				// Fall through
-				
+
 			case DOCUMENT_NODE:
 			case DOCUMENT_TYPE_NODE:
 			case ENTITY_NODE:
 			case NOTATION_NODE:
 				// Cannot be adopted
 				// Fall through
-				
+
 			default:
 				throw new UnsupportedOperationException("Cannot clone node: " + source.getNodeName());
 		}
 	}
-	
+
 	@Override
 	public Node importNode(Node importedNode, boolean deep) throws DOMException
 	{
@@ -303,91 +303,91 @@ public class DocumentImpl
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Error checking
-	
+
 	@Override
 	public boolean getStrictErrorChecking()
 	{
 		return strictErrorChecking;
 	}
-	
+
 	@Override
 	public void setStrictErrorChecking(boolean strictErrorChecking)
 	{
 		this.strictErrorChecking = strictErrorChecking;
 	}
-	
+
 	// =========================================================================
 	// Wom3Document - Read Only
-	
+
 	@Override
 	public boolean getReadOnly()
 	{
 		return readOnly;
 	}
-	
+
 	@Override
 	public void setReadOnly(boolean readOnly)
 	{
 		this.readOnly = readOnly;
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - XML
-	
+
 	@Override
 	public boolean getXmlStandalone()
 	{
 		return false;
 	}
-	
+
 	@Override
 	public String getXmlVersion()
 	{
 		return "1.1";
 	}
-	
+
 	@Override
 	public void setXmlStandalone(boolean xmlStandalone) throws DOMException
 	{
 		assertWritableOnDocument();
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public void setXmlVersion(String xmlVersion) throws DOMException
 	{
 		assertWritableOnDocument();
 		throw new UnsupportedOperationException();
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Encoding
-	
+
 	@Override
 	public String getXmlEncoding()
 	{
 		return xmlEncoding;
 	}
-	
+
 	@Override
 	public String getInputEncoding()
 	{
 		return inputEncoding;
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Document normalization
-	
+
 	@Override
 	public DOMConfiguration getDomConfig()
 	{
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public void normalizeDocument()
 	{
@@ -395,10 +395,10 @@ public class DocumentImpl
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
-	
+
 	// =========================================================================
 	// org.w3c.dom.Document - Node renaming
-	
+
 	@Override
 	public Node renameNode(Node n, String namespaceURI, String qualifiedName) throws DOMException
 	{
@@ -406,17 +406,17 @@ public class DocumentImpl
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Node cloneNode(boolean deep)
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
@@ -424,12 +424,12 @@ public class DocumentImpl
 			return;
 		doesNotAllowInsertion(prev, child);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
@@ -437,27 +437,27 @@ public class DocumentImpl
 			return;
 		doesNotAllowInsertion(oldChild, newChild);
 	}
-	
+
 	@Override
 	protected void childInserted(Backbone prev, Backbone added)
 	{
 		if (added instanceof Wom3ElementNode)
 			root = (Wom3ElementNode) added;
 	}
-	
+
 	@Override
 	protected void childRemoved(Backbone prev, Backbone removed)
 	{
 		if (removed == root)
 			root = null;
 	}
-	
+
 	@Override
 	public NodeList getElementsByTagName(String tagname)
 	{
 		return new ElementsByTagNameNodeList(this, tagname);
 	}
-	
+
 	@Override
 	public NodeList getElementsByTagNameNS(String namespaceURI, String localName)
 	{

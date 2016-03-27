@@ -107,14 +107,14 @@ import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 
 import de.fau.cs.osr.ptk.common.serialization.AstConverterBase;
 import de.fau.cs.osr.ptk.common.serialization.AstNodeConverterBase;
-import de.fau.cs.osr.utils.SimpleTypeNameMapper;
+import de.fau.cs.osr.ptk.common.serialization.SimpleTypeNameMapper;
 
 public class EngineAstNodeConverter
 {
 	private static final ReadOnlyTypeNameMapper tnm = new ReadOnlyTypeNameMapper();
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * The returned type name mapper is read-only!
 	 */
@@ -122,14 +122,14 @@ public class EngineAstNodeConverter
 	{
 		return tnm;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static void setup(AstConverterBase converter)
 	{
 		setupTypeNameMapper(converter);
 	}
-	
+
 	public static void setup(
 			WikiConfig config,
 			AstNodeConverterBase<WtNode> converter)
@@ -139,69 +139,69 @@ public class EngineAstNodeConverter
 		setupOutputMinification(converter);
 		setupTypeNameMapper(converter);
 	}
-	
+
 	public static void setupBasicTypes(AstNodeConverterBase<WtNode> converter)
 	{
 		converter.setStringNodeType(WtText.class);
 	}
-	
+
 	public static void setupDefaultNodeFactory(
 			WikiConfig config,
 			AstNodeConverterBase<WtNode> converter)
 	{
 		converter.setNodeFactory(config.getNodeFactory());
 	}
-	
+
 	public static void setupOutputMinification(
 			AstNodeConverterBase<WtNode> converter)
 	{
 		converter.suppressNode(WtNoTagExtensionBody.class);
 		converter.suppressTypeInfo(WtTagExtensionBodyImpl.class);
-		
+
 		converter.suppressNode(WtNoLinkOptionAltText.class);
 		converter.suppressTypeInfo(WtLinkOptionAltTextImpl.class);
-		
+
 		converter.suppressNode(WtNoLinkTitle.class);
 		converter.suppressTypeInfo(WtLinkTitleImpl.class);
-		
+
 		converter.suppressNode(WtNoLctFlags.class);
 		converter.suppressTypeInfo(WtLctFlagsImpl.class);
-		
+
 		converter.suppressNode(WtNoLink.class);
-		
+
 		converter.suppressNode(WtNoName.class);
 		converter.suppressTypeInfo(WtNameImpl.class);
-		
+
 		converter.suppressNode(WtNoValue.class);
 		converter.suppressTypeInfo(WtValueImpl.class);
-		
+
 		converter.suppressNode(WtNoBody.class);
 		converter.suppressTypeInfo(WtEmptyBody.class);
 		converter.suppressTypeInfo(WtBodyImpl.class);
-		
+
 		converter.suppressTypeInfo(WtEmptyLinkOptions.class);
 		converter.suppressTypeInfo(WtLinkOptionsImpl.class);
-		
+
 		converter.suppressTypeInfo(WtEmptyNodeList.class);
 		converter.suppressTypeInfo(WtNodeListImpl.class);
-		
+
 		converter.suppressTypeInfo(WtEmptyTemplateArguments.class);
 		converter.suppressTypeInfo(WtTemplateArgumentsImpl.class);
-		
+
 		converter.suppressTypeInfo(WtEmptyXmlAttributes.class);
 		converter.suppressTypeInfo(WtXmlAttributesImpl.class);
-		
+
 		converter.setSuppressEmptyStringNodes(true);
 		converter.setSuppressEmptyStringProperties(true);
 	}
-	
+
 	private static void setupTypeNameMapper(AstConverterBase converter)
 	{
 		converter.setTypeNameMapper(tnm);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class ReadOnlyTypeNameMapper
 			extends
 				SimpleTypeNameMapper
@@ -211,15 +211,15 @@ public class EngineAstNodeConverter
 		{
 			throw new UnsupportedOperationException("This is a read-only type name mapper!");
 		}
-		
+
 		protected void privateAdd(Class<?> type, String name)
 		{
 			super.add(type, name);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	static
 	{
 		tnm.privateAdd(WtBodyImpl.class, "body");

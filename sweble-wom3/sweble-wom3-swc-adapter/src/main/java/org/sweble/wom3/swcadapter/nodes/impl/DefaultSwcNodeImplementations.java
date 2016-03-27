@@ -28,15 +28,15 @@ import org.sweble.wom3.swcadapter.nodes.SwcNode;
 public class DefaultSwcNodeImplementations
 {
 	private static final List<SwcNodeImplInfo> impls;
-	
+
 	public static final class SwcNodeImplInfo
 	{
 		private final String namespaceUri;
-		
+
 		private final String localPart;
-		
+
 		private final Class<? extends Wom3ElementNode> clazz;
-		
+
 		public SwcNodeImplInfo(
 				String namespaceUri,
 				String localPart,
@@ -47,23 +47,23 @@ public class DefaultSwcNodeImplementations
 			this.localPart = localPart;
 			this.clazz = clazz;
 		}
-		
+
 		public Class<? extends Wom3ElementNode> getImpl()
 		{
 			return clazz;
 		}
-		
+
 		public String getLocalPart()
 		{
 			return localPart;
 		}
-		
+
 		public String getNamespaceUri()
 		{
 			return namespaceUri;
 		}
 	}
-	
+
 	static
 	{
 		// TODO: Still missing: xml-char-ref, xml-entity-ref, redirect, mww:intlink
@@ -79,10 +79,10 @@ public class DefaultSwcNodeImplementations
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "transclusion", TransclusionImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "value", ValueImpl.class));
 		implsTmp.add(new SwcNodeImplInfo(SwcNode.MWW_NS_URI, "xmlelement", XmlElementImpl.class));
-		
+
 		impls = Collections.unmodifiableList(implsTmp);
 	}
-	
+
 	public static Collection<SwcNodeImplInfo> get()
 	{
 		return impls;

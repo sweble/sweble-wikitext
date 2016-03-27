@@ -34,24 +34,24 @@ public class ElementsByTagNameNodeList
 			Wom3NodeList
 {
 	private final String tagName;
-	
+
 	private final String namespaceUri;
-	
+
 	private Wom3Node root;
-	
+
 	private boolean withNs = false;
-	
+
 	private ArrayList<Wom3Node> nodes = null;
-	
+
 	// =========================================================================
-	
+
 	public ElementsByTagNameNodeList(Wom3Node root, String tagName)
 	{
 		this.root = root;
 		this.namespaceUri = null;
 		this.tagName = tagName;
 	}
-	
+
 	public ElementsByTagNameNodeList(
 			Wom3Node root,
 			String namespaceURI,
@@ -64,16 +64,16 @@ public class ElementsByTagNameNodeList
 		this.namespaceUri = namespaceURI;
 		this.tagName = localName;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getLength()
 	{
 		item(Integer.MAX_VALUE);
 		return (nodes != null) ? nodes.size() : 0;
 	}
-	
+
 	@Override
 	public Wom3Node item(int index)
 	{
@@ -94,7 +94,7 @@ public class ElementsByTagNameNodeList
 			if (nodes != null && !nodes.isEmpty())
 				// ... or continue
 				current = nodes.get(nodes.size() - 1);
-			
+
 			while (true)
 			{
 				current = advance(current);
@@ -115,36 +115,36 @@ public class ElementsByTagNameNodeList
 			}
 		}
 	}
-	
+
 	private boolean isMatch(Wom3Node current)
 	{
 		// We're searching for elements only
 		if (current.getNodeType() != Node.ELEMENT_NODE)
 			return false;
-		
+
 		Wom3ElementNode e = (Wom3ElementNode) current;
-		
+
 		if (withNs)
 			return isNsMatch(e) && isLocalNameMatch(e);
-		
+
 		return isTagNameMatch(e);
 	}
-	
+
 	private boolean isTagNameMatch(Wom3ElementNode e)
 	{
 		if (tagName.equals("*"))
 			return true;
 		return tagName.equals(e.getTagName());
 	}
-	
+
 	private boolean isLocalNameMatch(Wom3ElementNode e)
 	{
 		if (tagName.equals("*"))
 			return true;
-		
+
 		return tagName.equals(e.getLocalName());
 	}
-	
+
 	private boolean isNsMatch(Wom3ElementNode e)
 	{
 		if (namespaceUri != null)
@@ -155,7 +155,7 @@ public class ElementsByTagNameNodeList
 		}
 		return (e.getNamespaceURI() == null);
 	}
-	
+
 	private Wom3Node advance(Wom3Node current)
 	{
 		Wom3Node next = current.getFirstChild();
@@ -181,22 +181,22 @@ public class ElementsByTagNameNodeList
 			return next;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Iterator<Wom3Node> iterator()
 	{
 		return new Iterator<Wom3Node>()
 		{
 			private int index = 0;
-			
+
 			@Override
 			public boolean hasNext()
 			{
 				return item(index) != null;
 			}
-			
+
 			@Override
 			public Wom3Node next()
 			{
@@ -206,7 +206,7 @@ public class ElementsByTagNameNodeList
 				++index;
 				return item;
 			}
-			
+
 			@Override
 			public void remove()
 			{

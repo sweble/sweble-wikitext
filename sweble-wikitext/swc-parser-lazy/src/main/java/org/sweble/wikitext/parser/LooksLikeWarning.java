@@ -24,11 +24,11 @@ public class LooksLikeWarning
 			WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final String looksLikeWhat;
-	
+
 	// =========================================================================
-	
+
 	public LooksLikeWarning(
 			Span span,
 			WarningSeverity severity,
@@ -39,7 +39,7 @@ public class LooksLikeWarning
 		super(span, severity, origin, makeMessage(message, looksLikeWhat));
 		this.looksLikeWhat = looksLikeWhat;
 	}
-	
+
 	public LooksLikeWarning(
 			Span span,
 			WarningSeverity severity,
@@ -50,21 +50,21 @@ public class LooksLikeWarning
 		super(span, severity, origin, makeMessage(message, looksLikeWhat));
 		this.looksLikeWhat = looksLikeWhat;
 	}
-	
+
 	private static String makeMessage(String message, String looksLikeWhat)
 	{
 		return "This looks like a " + looksLikeWhat + ", however " + message;
 	}
-	
+
 	// =========================================================================
-	
+
 	public String getLooksLikeWhat()
 	{
 		return looksLikeWhat;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -73,7 +73,7 @@ public class LooksLikeWarning
 		result = prime * result + ((looksLikeWhat == null) ? 0 : looksLikeWhat.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{

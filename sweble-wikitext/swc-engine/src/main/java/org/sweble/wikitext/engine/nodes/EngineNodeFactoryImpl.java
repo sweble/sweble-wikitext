@@ -39,7 +39,7 @@ public final class EngineNodeFactoryImpl
 	public EngineNodeFactoryImpl(ParserConfig parserConfig)
 	{
 		super(parserConfig);
-		
+
 		{
 			Map<Class<?>, WtNode> prototypes = super.getPrototypes();
 			prototypes.put(EngProcessedPage.class, new EngProcessedPage());
@@ -47,27 +47,27 @@ public final class EngineNodeFactoryImpl
 			prototypes.put(EngPage.class, new EngPage());
 			prototypes.put(EngSoftErrorNode.class, new EngSoftErrorNode());
 		}
-		
+
 		{
 			Map<NamedMemberId, Object> defaultValueImmutables = super.getDefaultValueImmutables();
 			defaultValueImmutables.put(new NamedMemberId(EngSoftErrorNode.class, "body"), WtBody.EMPTY);
 		}
 	}
-	
+
 	// --[ Wikitext specific ]--------------------------------------------------
-	
+
 	@Override
 	public EngNowiki nowiki(String text)
 	{
 		return new EngNowiki(text);
 	}
-	
+
 	@Override
 	public EngSoftErrorNode softError(String message)
 	{
 		return softError(text(message));
 	}
-	
+
 	@Override
 	public EngSoftErrorNode softError(WtNode content)
 	{
@@ -78,7 +78,7 @@ public final class EngineNodeFactoryImpl
 						value(list(text("error")))))),
 				body(list(content)));
 	}
-	
+
 	@Override
 	public EngSoftErrorNode softError(WtNodeList content, Exception e)
 	{
@@ -86,7 +86,7 @@ public final class EngineNodeFactoryImpl
 		error.setAttribute("exception", e);
 		return error;
 	}
-	
+
 	@Override
 	public EngProcessedPage processedPage(
 			EngPage page,
@@ -95,7 +95,7 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngProcessedPage(page, log, warnings);
 	}
-	
+
 	@Override
 	public EngProcessedPage processedPage(
 			EngPage page,
@@ -105,51 +105,51 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngProcessedPage(page, log, warnings, entityMap);
 	}
-	
+
 	@Override
 	public EngPage page(WtNodeList content)
 	{
 		return new EngPage(content);
 	}
-	
+
 	// --[ Log nodes ]----------------------------------------------------------
-	
+
 	@Override
 	public EngLogExpansionPass logExpansionPass()
 	{
 		return new EngLogExpansionPass();
 	}
-	
+
 	@Override
 	public EngLogParserPass logParserPass()
 	{
 		return new EngLogParserPass();
 	}
-	
+
 	@Override
 	public EngLogPostprocessorPass logPostprocessorPass()
 	{
 		return new EngLogPostprocessorPass();
 	}
-	
+
 	@Override
 	public EngLogPreprocessorPass logPreprocessorPass()
 	{
 		return new EngLogPreprocessorPass();
 	}
-	
+
 	@Override
 	public EngLogProcessingPass logProcessingPass()
 	{
 		return new EngLogProcessingPass();
 	}
-	
+
 	@Override
 	public EngLogValidatorPass logValidatorPass()
 	{
 		return new EngLogValidatorPass();
 	}
-	
+
 	@Override
 	public EngLogMagicWordResolution logMagicWordResolution(
 			String name,
@@ -157,7 +157,7 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngLogMagicWordResolution(name, success);
 	}
-	
+
 	@Override
 	public EngLogParameterResolution logParameterResolution(
 			String name,
@@ -165,7 +165,7 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngLogParameterResolution(name, success);
 	}
-	
+
 	@Override
 	public EngLogParserFunctionResolution logParserFunctionResolution(
 			String name,
@@ -173,7 +173,7 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngLogParserFunctionResolution(name, success);
 	}
-	
+
 	@Override
 	public EngLogRedirectResolution logRedirectResolution(
 			String target,
@@ -181,7 +181,7 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngLogRedirectResolution(target, success);
 	}
-	
+
 	@Override
 	public EngLogTagExtensionResolution logTagExtensionResolution(
 			String target,
@@ -189,7 +189,7 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngLogTagExtensionResolution(target, success);
 	}
-	
+
 	@Override
 	public EngLogTransclusionResolution logTransclusionResolution(
 			String target,
@@ -197,13 +197,13 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngLogTransclusionResolution(target, success);
 	}
-	
+
 	@Override
 	public EngLogParserError logParserError(String message)
 	{
 		return new EngLogParserError(message);
 	}
-	
+
 	@Override
 	public EngLogUnhandledError logUnhandledError(
 			Throwable exception,
@@ -211,29 +211,29 @@ public final class EngineNodeFactoryImpl
 	{
 		return new EngLogUnhandledError(exception, dump);
 	}
-	
+
 	// --[ Modification ]-------------------------------------------------------
-	
+
 	@Override
 	public <T extends WtXmlElement> T addCssClass(T elem, String cssClass)
 	{
 		if (elem.getXmlAttributes().isEmpty())
 			elem.setXmlAttributes(attrs(list()));
-		
+
 		for (WtNode attr : elem.getXmlAttributes())
 		{
 			if (attr == null || !(attr instanceof WtXmlAttribute))
 				continue;
-			
+
 			WtXmlAttribute a = (WtXmlAttribute) attr;
 			if (!a.getName().equals("class"))
 				continue;
-			
+
 			if (!a.hasValue())
 				a.setValue(value(list()));
 			a.getValue().add(text(" " + cssClass));
 		}
-		
+
 		return elem;
 	}
 }

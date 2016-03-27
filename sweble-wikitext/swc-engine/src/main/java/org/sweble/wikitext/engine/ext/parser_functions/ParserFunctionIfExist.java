@@ -32,7 +32,7 @@ public class ParserFunctionIfExist
 			ParserFunctionsExtPfn.IfThenElseStmt
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -40,7 +40,7 @@ public class ParserFunctionIfExist
 	{
 		super("ifexist", 1 /* thenArgIndex */);
 	}
-	
+
 	/**
 	 * <pre>
 	 * {{#ifexist: 
@@ -54,7 +54,7 @@ public class ParserFunctionIfExist
 	{
 		super(wikiConfig, "ifexist", 1 /* thenArgIndex */);
 	}
-	
+
 	@Override
 	protected boolean evaluateCondition(
 			WtTemplate pfn,
@@ -62,14 +62,14 @@ public class ParserFunctionIfExist
 			List<? extends WtNode> args)
 	{
 		WtNode test = frame.expand(args.get(0));
-		
+
 		String testStr = null;
 		try
 		{
 			testStr = tu().astToText(test).trim();
-			
+
 			PageTitle pageTitle = PageTitle.make(frame.getWikiConfig(), testStr);
-			
+
 			return frame.existsPage(pageTitle);
 		}
 		catch (StringConversionException e1)

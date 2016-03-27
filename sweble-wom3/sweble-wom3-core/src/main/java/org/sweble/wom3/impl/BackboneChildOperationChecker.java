@@ -31,25 +31,25 @@ import org.sweble.wom3.Wom3XmlText;
 public final class BackboneChildOperationChecker
 {
 	private final BackboneWithChildren node;
-	
+
 	private ChildDescriptor current = null;
-	
+
 	private int pos = 0;
-	
+
 	// =========================================================================
-	
+
 	BackboneChildOperationChecker(BackboneWithChildren node)
 	{
 		this.node = node;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected boolean isIgnored(Backbone child)
 	{
 		return isIgnoredDefault(child);
 	}
-	
+
 	/**
 	 * By default we ignore RTD node, content whitespace, XML comments and
 	 * Wom3Comment nodes as well as every non-WOM node (namespace URI test).
@@ -64,9 +64,9 @@ public final class BackboneChildOperationChecker
 				(child instanceof Wom3XmlComment) ||
 				((child instanceof Wom3XmlText) && (((Wom3XmlText) child).isElementContentWhitespace()));
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * This method is not supposed to make sure that the body is valid. It's
 	 * supposed to make sure that the body does not become invalid. Therefore,
@@ -75,15 +75,15 @@ public final class BackboneChildOperationChecker
 	protected void checkInsertion(
 			Backbone prev,
 			Backbone child,
-			
+
 			ChildDescriptor[] desc)
 	{
 		if (isIgnored(child))
 			// Ignored nodes can always be inserted anywhere
 			return;
-		
+
 		forwardDescriptor(prev, desc);
-		
+
 		if (current != null && current.isMultiple() && current.matches(child))
 		{
 			// Yay!
@@ -108,13 +108,13 @@ public final class BackboneChildOperationChecker
 						continue;
 					}
 				}
-				
+
 				this.node.doesNotAllowInsertion(prev, child);
 			}
-			
+
 		}
 	}
-	
+
 	/**
 	 * This method is not supposed to make sure that the body is valid. It's
 	 * supposed to make sure that the body does not become invalid. Therefore,
@@ -123,7 +123,7 @@ public final class BackboneChildOperationChecker
 	protected void checkRemoval(Backbone child, ChildDescriptor[] desc)
 	{
 		forwardDescriptor(child, desc);
-		
+
 		if (current != null)
 		{
 			// We're removing a node that we cannot ignore
@@ -132,7 +132,7 @@ public final class BackboneChildOperationChecker
 				this.node.doesNotAllowRemoval(child);
 		}
 	}
-	
+
 	/**
 	 * This method is not supposed to make sure that the body is valid. It's
 	 * supposed to make sure that the body does not become invalid. Therefore,
@@ -144,7 +144,7 @@ public final class BackboneChildOperationChecker
 			ChildDescriptor[] desc)
 	{
 		forwardDescriptor(oldChild, desc);
-		
+
 		if (current != null)
 		{
 			// We're replacing a node that we cannot ignore
@@ -160,7 +160,7 @@ public final class BackboneChildOperationChecker
 				this.node.doesNotAllowReplacement(oldChild, newChild);
 			}
 		}
-		
+
 		// Find out if the new node fits in
 		if (isIgnored(newChild))
 		{
@@ -194,19 +194,19 @@ public final class BackboneChildOperationChecker
 						continue;
 					}
 				}
-				
+
 				this.node.doesNotAllowReplacement(oldChild, newChild);
 			}
 		}
 	}
-	
+
 	private void forwardDescriptor(Backbone to, ChildDescriptor[] desc) throws AssertionError
 	{
 		ChildDescriptor active = null;
-		
+
 		if (to == null)
 			return;
-		
+
 		for (Backbone n = this.node.getFirstChild();; n = n.getNextSibling())
 		{
 			if (n == null)
@@ -244,7 +244,7 @@ public final class BackboneChildOperationChecker
 					*/
 				}
 			}
-			
+
 			if (n == to)
 				break;
 		}

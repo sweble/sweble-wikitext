@@ -27,9 +27,9 @@ public interface WtTagExtensionBody
 			WtPreproNode
 {
 	public static final WtNoTagExtensionBody NO_BODY = new WtNoTagExtensionBody();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoTagExtensionBody
 			extends
 				WtNoStringNode
@@ -37,31 +37,31 @@ public interface WtTagExtensionBody
 				WtTagExtensionBody
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtNoTagExtensionBody()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_TAG_EXTENSION_BODY;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtTagExtensionBody.class.getSimpleName();
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtTagExtensionBody.NO_BODY;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtTagExtensionBodyImpl
 			extends
 				WtStringNodeImpl
@@ -69,9 +69,9 @@ public interface WtTagExtensionBody
 				WtTagExtensionBody
 	{
 		private static final long serialVersionUID = -6588373105033239206L;
-		
+
 		// =====================================================================
-		
+
 		/**
 		 * Only for use by de-serialization code.
 		 */
@@ -79,18 +79,18 @@ public interface WtTagExtensionBody
 		{
 			super(Uninitialized.X);
 		}
-		
+
 		protected WtTagExtensionBodyImpl(String content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_TAG_EXTENSION_BODY;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{

@@ -22,21 +22,21 @@ public class SerializationException
 			Exception
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	public SerializationException()
 	{
 	}
-	
+
 	public SerializationException(String message, Throwable cause)
 	{
 		super(message, cause);
 	}
-	
+
 	public SerializationException(String message)
 	{
 		super(message);
 	}
-	
+
 	public SerializationException(Throwable cause)
 	{
 		super(cause);

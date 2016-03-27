@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -52,30 +52,30 @@ import org.sweble.wikitext.parser.parser.LinkTargetException;
 import de.fau.cs.osr.utils.NamedParametrizedSuites;
 import de.fau.cs.osr.utils.NamedParametrizedSuites.NamedParametrizedSuite;
 import de.fau.cs.osr.utils.NamedParametrizedSuites.Suites;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 import de.fau.cs.osr.utils.TestResourcesFixture;
 
 @RunWith(value = NamedParametrizedSuites.class)
 public class MassExpansionTest
 {
 	private static final String TESTS_DIR = "engine/mass-expansion";
-	
+
 	// =========================================================================
-	
+
 	private static final Pattern FILE_URL_RX = Pattern.compile("fileUrl-(.*?)-(-?\\d+)-(-?\\d+).txt");
-	
+
 	private static final Pattern ARTICLE_RX = Pattern.compile("retrieveWikitext-(.*?)-(\\d+).wikitext");
-	
+
 	private static final Pattern TEST_RX = Pattern.compile("(.*?).txt");
-	
+
 	// =========================================================================
-	
+
 	@Suites
 	public static List<NamedParametrizedSuite> enumerateSuites() throws Exception
 	{
 		File dir = TestResourcesFixture.resourceNameToFile(
 				MassExpansionTest.class, "/" + TESTS_DIR);
-		
+
 		String[] testSetDirs = dir.list(new FilenameFilter()
 		{
 			@Override
@@ -84,7 +84,7 @@ public class MassExpansionTest
 				return new File(dir, name).isDirectory();
 			}
 		});
-		
+
 		String[] testSetZips = dir.list(new FilenameFilter()
 		{
 			@Override
@@ -93,20 +93,20 @@ public class MassExpansionTest
 				return name.toLowerCase().endsWith(".zip");
 			}
 		});
-		
+
 		List<NamedParametrizedSuite> suites = new ArrayList<NamedParametrizedSuite>();
-		
+
 		for (String testDir : testSetDirs)
 			suites.add(enumerateSuiteTestCases(new File(dir, testDir)));
-		
+
 		for (String testZip : testSetZips)
 			suites.add(enumerateSuiteTestCasesFromZip(new File(dir, testZip)));
-		
+
 		Collections.sort(suites);
-		
+
 		return suites;
 	}
-	
+
 	private static NamedParametrizedSuite enumerateSuiteTestCasesFromZip(
 			File zipFile) throws IOException
 	{
@@ -114,7 +114,7 @@ public class MassExpansionTest
 		try
 		{
 			Enumeration<? extends ZipEntry> entries = zf.entries();
-			
+
 			String suiteName;
 			{
 				String zfname = zipFile.getName();
@@ -122,34 +122,34 @@ public class MassExpansionTest
 					throw new InternalError();
 				suiteName = zfname.substring(0, zfname.length() - 4);
 			}
-			
+
 			String testPrefix = suiteName + "/tests/";
 			String resourcesPrefix = suiteName + "/resources/";
-			
+
 			Map<FileUrlKey, String> fileUrls =
 					new HashMap<FileUrlKey, String>();
-			
+
 			Map<String, ArticleDesc> articles =
 					new HashMap<String, ArticleDesc>();
-			
+
 			List<Object[]> testCases = new ArrayList<Object[]>();
-			
+
 			while (entries.hasMoreElements())
 			{
 				ZipEntry ze = (ZipEntry) entries.nextElement();
-				
+
 				// Skip directories
 				if (ze.getName().endsWith("/"))
 					continue;
-				
+
 				long longSize = ze.getSize();
 				if (longSize > Integer.MAX_VALUE)
 					throw new IllegalArgumentException("Archives contains files too big to process!");
-				
+
 				InputStream is = zf.getInputStream(ze);
 				byte[] content = IOUtils.toByteArray(is);
 				is.close();
-				
+
 				String filename = ze.getName();
 				if (filename.startsWith(resourcesPrefix + "fileUrl-") && filename.endsWith(".txt"))
 				{
@@ -157,11 +157,11 @@ public class MassExpansionTest
 					Matcher m = FILE_URL_RX.matcher(filename);
 					if (!m.matches())
 						throw new IllegalArgumentException("Wrong 'fileUrl' pattern: " + ze.getName());
-					
+
 					String encName = m.group(1);
 					int width = Integer.parseInt(m.group(2));
 					int height = Integer.parseInt(m.group(3));
-					
+
 					FileUrlKey key = new FileUrlKey(encName, width, height);
 					fileUrls.put(key, new String(content, "UTF8"));
 				}
@@ -171,14 +171,14 @@ public class MassExpansionTest
 					Matcher m = ARTICLE_RX.matcher(filename);
 					if (!m.matches())
 						throw new IllegalArgumentException("Wrong 'retrieveWikitext' pattern: " + ze.getName());
-					
+
 					String encName = m.group(1);
 					long revision = Long.parseLong(m.group(2));
-					
+
 					ArticleDesc article = new ArticleDesc(
 							revision,
 							new String(content, "UTF8"));
-					
+
 					articles.put(encName, article);
 				}
 				else if (filename.startsWith(testPrefix) && filename.endsWith(".txt"))
@@ -187,10 +187,10 @@ public class MassExpansionTest
 					Matcher m = TEST_RX.matcher(filename);
 					if (!m.matches())
 						throw new IllegalArgumentException("Invalid test case filename: " + ze.getName());
-					
+
 					String title = m.group(1);
 					String test = new String(content, "UTF8");
-					
+
 					testCases.add(new Object[] {
 							title,
 							fileUrls,
@@ -203,7 +203,7 @@ public class MassExpansionTest
 					continue;
 				}
 			}
-			
+
 			Collections.sort(testCases, new Comparator<Object[]>()
 			{
 				@Override
@@ -212,7 +212,7 @@ public class MassExpansionTest
 					return ((String) o1[0]).compareTo((String) o2[0]);
 				}
 			});
-			
+
 			return new NamedParametrizedSuite(
 					zipFile.getName(),
 					MassExpansionTest.class.getSimpleName(),
@@ -223,18 +223,18 @@ public class MassExpansionTest
 			zf.close();
 		}
 	}
-	
+
 	private static NamedParametrizedSuite enumerateSuiteTestCases(File dir) throws IOException
 	{
 		Map<FileUrlKey, String> fileUrls =
 				new HashMap<FileUrlKey, String>();
-		
+
 		Map<String, ArticleDesc> articles =
 				new HashMap<String, ArticleDesc>();
-		
+
 		File resourcesDir = new File(dir, "resources");
 		File testCasesDir = new File(dir, "tests");
-		
+
 		String[] fileUrlFiles = resourcesDir.list(new FilenameFilter()
 		{
 			@Override
@@ -243,7 +243,7 @@ public class MassExpansionTest
 				return name.startsWith("fileUrl-") && name.endsWith(".txt");
 			}
 		});
-		
+
 		String[] articleFiles = resourcesDir.list(new FilenameFilter()
 		{
 			@Override
@@ -252,41 +252,41 @@ public class MassExpansionTest
 				return name.startsWith("retrieveWikitext-") && name.endsWith(".wikitext");
 			}
 		});
-		
+
 		for (String fileUrlFilename : fileUrlFiles)
 		{
 			Matcher m = FILE_URL_RX.matcher(fileUrlFilename);
 			if (!m.matches())
 				throw new IllegalArgumentException("Wrong 'fileUrl' pattern: " + fileUrlFilename);
-			
+
 			String encName = m.group(1);
 			int width = Integer.parseInt(m.group(2));
 			int height = Integer.parseInt(m.group(3));
-			
+
 			File fileUrlFile = new File(resourcesDir, fileUrlFilename);
 			String url = FileUtils.readFileToString(fileUrlFile, "UTF8");
-			
+
 			FileUrlKey key = new FileUrlKey(encName, width, height);
 			fileUrls.put(key, url);
 		}
-		
+
 		for (String articleFilename : articleFiles)
 		{
 			Matcher m = ARTICLE_RX.matcher(articleFilename);
 			if (!m.matches())
 				throw new IllegalArgumentException("Wrong 'retrieveWikitext' pattern: " + articleFilename);
-			
+
 			String encName = m.group(1);
 			long revision = Long.parseLong(m.group(2));
-			
+
 			File fileUrlFile = new File(resourcesDir, articleFilename);
 			String content = FileUtils.readFileToString(fileUrlFile, "UTF8");
-			
+
 			articles.put(encName, new ArticleDesc(revision, content));
 		}
-		
+
 		List<Object[]> testCases = new ArrayList<Object[]>();
-		
+
 		String[] testCaseFiles = testCasesDir.list(new FilenameFilter()
 		{
 			@Override
@@ -295,43 +295,43 @@ public class MassExpansionTest
 				return name.endsWith(".txt");
 			}
 		});
-		
+
 		Arrays.sort(testCaseFiles);
-		
+
 		for (String filename : testCaseFiles)
 		{
 			File file = new File(testCasesDir, filename);
 			String content = FileUtils.readFileToString(file, "UTF-8");
-			
+
 			testCases.add(new Object[] {
 					filename,
 					fileUrls,
 					articles,
 					content });
 		}
-		
+
 		return new NamedParametrizedSuite(
 				dir.getName(),
 				MassExpansionTest.class.getSimpleName(),
 				testCases);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final WikiConfigImpl config;
-	
+
 	private final WtEngineImpl engine;
-	
+
 	private final String title;
-	
+
 	private final Map<FileUrlKey, String> fileUrls;
-	
+
 	private final Map<String, ArticleDesc> articles;
-	
+
 	private final String inputFileContent;
-	
+
 	// =========================================================================
-	
+
 	public MassExpansionTest(
 			String title,
 			Map<FileUrlKey, String> fileUrls,
@@ -340,19 +340,19 @@ public class MassExpansionTest
 	{
 		this.config = fixConfig(DefaultConfigEnWp.generate());
 		this.engine = new WtEngineImpl(config);
-		
+
 		this.title = title;
 		this.fileUrls = fileUrls;
 		this.articles = articles;
 		this.inputFileContent = inputFileContent;
 	}
-	
+
 	// =========================================================================
-	
+
 	private WikiConfigImpl fixConfig(WikiConfigImpl config)
 	{
 		config.setSiteName("English Wikipedia");
-		
+
 		config.setRuntimeInfo(new WikiRuntimeInfo()
 		{
 			@Override
@@ -363,28 +363,28 @@ public class MassExpansionTest
 				timestamp.set(2012, 9, 18, 14, 25, 13);
 				return timestamp;
 			}
-			
+
 			@Override
 			public Calendar getDateAndTime()
 			{
 				return getDateAndTime(Locale.getDefault());
 			}
 		});
-		
+
 		return config;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testOurExpansionMatchesReference() throws Exception
 	{
 		ExpansionCallback callback = new MassExpansionCallback();
-		
+
 		boolean forInclusion = false;
-		
+
 		TestDesc desc = buildTest();
-		
+
 		PageTitle title = desc.getTitle();
 		PageId pageId = new PageId(title, -1);
 		EngProcessedPage ast = engine.expand(
@@ -392,13 +392,13 @@ public class MassExpansionTest
 				desc.getStmt(),
 				forInclusion,
 				callback);
-		
+
 		String raw = NoTransparentRtDataPrinter.print(ast);
 		String actual = polishRawResult(raw);
-		
+
 		assertEquals(desc.getExpected(), actual);
 	}
-	
+
 	/**
 	 * Convert XML char refs to chars and convert "<nowiki></nowiki>" to an
 	 * empty tag.
@@ -406,7 +406,7 @@ public class MassExpansionTest
 	private String polishRawResult(String raw)
 	{
 		StringBuilder b = new StringBuilder();
-		
+
 		int copyFrom = 0;
 		int searchFrom = 0;
 		int i;
@@ -416,7 +416,7 @@ public class MassExpansionTest
 			int j = raw.indexOf(';', searchFrom);
 			if (j == -1 || j > i + 12)
 				continue;
-			
+
 			int ch = Integer.valueOf(raw.substring(i + 3, j), 0x10);
 			switch (ch)
 			{
@@ -430,100 +430,100 @@ public class MassExpansionTest
 			}
 			b.append(raw.substring(copyFrom, i));
 			b.append(Character.toChars(ch));
-			
+
 			searchFrom = copyFrom = j + 1;
 		}
 		b.append(raw.substring(copyFrom, raw.length()));
-		
+
 		return b.toString().replace("<nowiki></nowiki>", "<nowiki />");
 	}
-	
+
 	// =========================================================================
-	
+
 	private TestDesc buildTest() throws IOException, LinkTargetException
 	{
 		String content = inputFileContent;
-		
+
 		String i0Delim = "==[ TITLE ]=====================================================================\n";
 		int i0 = content.indexOf(i0Delim);
 		if (i0 != 0)
 			wrongArticleFormat();
 		int from0 = i0 + i0Delim.length();
-		
+
 		String i1Delim = "\n==[ STATEMENT ]=================================================================\n";
 		int i1 = content.indexOf(i1Delim, from0);
 		if (i1 < 0)
 			wrongArticleFormat();
 		int from1 = i1 + i1Delim.length();
-		
+
 		String i2Delim = "\n==[ EXPECTED EXPANSION ]========================================================\n";
 		int i2 = content.indexOf(i2Delim, from1);
 		if (i2 < 0)
 			wrongArticleFormat();
 		int from2 = i2 + i2Delim.length();
-		
+
 		String i3Delim = "\n==[ END ]=======================================================================\n";
 		int i3 = content.indexOf(i3Delim, from2);
 		if (i3 < 0)
 			wrongArticleFormat();
-		
+
 		PageTitle pageTitle = PageTitle.make(config, content.substring(from0, i1));
 		String stmt = content.substring(from1, i2);
 		String expected = content.substring(from2, i3);
 		return new TestDesc(pageTitle, stmt, expected);
 	}
-	
+
 	private void wrongArticleFormat()
 	{
 		throw new IllegalArgumentException("Wrong test case file format: " + title);
 	}
-	
+
 	// =========================================================================
-	
+
 	public final class MassExpansionCallback
 			implements
 				ExpansionCallback
 	{
-		
+
 		@Override
 		public FullPage retrieveWikitext(
 				ExpansionFrame expansionFrame,
-				PageTitle pageTitle) throws Exception
+				PageTitle pageTitle)
 		{
-			String title = StringUtils.safeFilename(
+			String title = StringTools.safeFilename(
 					pageTitle.getNormalizedFullTitle());
-			
+
 			ArticleDesc article = articles.get(title);
 			if (article == null)
 				return null;
-			
+
 			PageId pageId = new PageId(pageTitle, article.getRevision());
 			return new FullPage(pageId, article.getContent());
 		}
-		
+
 		@Override
-		public String fileUrl(PageTitle pageTitle, int width, int height) throws Exception
+		public String fileUrl(PageTitle pageTitle, int width, int height)
 		{
-			String title = StringUtils.safeFilename(
+			String title = StringTools.safeFilename(
 					pageTitle.getNormalizedFullTitle());
-			
+
 			FileUrlKey key = new FileUrlKey(title, width, height);
-			
+
 			return fileUrls.get(key);
 		}
-		
+
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TestDesc
 	{
 		private final PageTitle title;
-		
+
 		private final String stmt;
-		
+
 		private final String expected;
-		
+
 		public TestDesc(PageTitle title, String stmt, String expected)
 		{
 			super();
@@ -531,73 +531,73 @@ public class MassExpansionTest
 			this.stmt = stmt;
 			this.expected = expected;
 		}
-		
+
 		public PageTitle getTitle()
 		{
 			return title;
 		}
-		
+
 		public String getStmt()
 		{
 			return stmt;
 		}
-		
+
 		public String getExpected()
 		{
 			return expected;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class ArticleDesc
 	{
 		private final long revision;
-		
+
 		private final String content;
-		
+
 		public ArticleDesc(long revision, String content)
 		{
 			super();
 			this.revision = revision;
 			this.content = content;
 		}
-		
+
 		public long getRevision()
 		{
 			return revision;
 		}
-		
+
 		public String getContent()
 		{
 			return content;
 		}
-		
+
 		@Override
 		public String toString()
 		{
 			return "ArticleDesc [revision=" + revision + ", content=" + content + "]";
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class FileUrlKey
 	{
-		
+
 		private String encName;
-		
+
 		private int width;
-		
+
 		private int height;
-		
+
 		public FileUrlKey(String encName, int width, int height)
 		{
 			this.encName = encName;
 			this.width = width;
 			this.height = height;
 		}
-		
+
 		@Override
 		public int hashCode()
 		{
@@ -608,7 +608,7 @@ public class MassExpansionTest
 			result = prime * result + (int) (width ^ (width >>> 32));
 			return result;
 		}
-		
+
 		@Override
 		public boolean equals(Object obj)
 		{
@@ -632,7 +632,7 @@ public class MassExpansionTest
 				return false;
 			return true;
 		}
-		
+
 		@Override
 		public String toString()
 		{

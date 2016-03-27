@@ -27,43 +27,43 @@ public class XmlCommentImpl
 			Wom3XmlComment
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String data;
-	
+
 	// =========================================================================
-	
+
 	public XmlCommentImpl(DocumentImpl owner, String data)
 	{
 		super(owner);
 		setData(data);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getNodeName()
 	{
 		return "#comment";
 	}
-	
+
 	@Override
 	public short getNodeType()
 	{
 		return Node.COMMENT_NODE;
 	}
-	
+
 	@Override
 	public Backbone getParentNode()
 	{
 		return getParentNodeIntern();
 	}
-	
+
 	@Override
 	public String getData()
 	{
 		return data;
 	}
-	
+
 	@Override
 	public void setData(String data)
 	{

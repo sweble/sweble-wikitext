@@ -30,34 +30,34 @@ public abstract class EngLogContainer
 			EngLogNode
 {
 	private static final long serialVersionUID = -1365120120054529928L;
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private Long timeNeeded;
-	
+
 	public final Long getTimeNeeded()
 	{
 		return this.timeNeeded;
 	}
-	
+
 	public final void setTimeNeeded(Long timeNeeded)
 	{
 		this.timeNeeded = timeNeeded;
 	}
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1;
 	}
-	
+
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
 		return new EngLogContainerPropertyIterator();
 	}
-	
+
 	protected class EngLogContainerPropertyIterator
 			extends
 				AstNodePropertyIterator
@@ -67,7 +67,7 @@ public abstract class EngLogContainer
 		{
 			return EngLogContainer.this.getPropertyCount();
 		}
-		
+
 		@Override
 		protected String getName(int index)
 		{
@@ -75,12 +75,12 @@ public abstract class EngLogContainer
 			{
 				case 0:
 					return "timeNeeded";
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object getValue(int index)
 		{
@@ -88,12 +88,12 @@ public abstract class EngLogContainer
 			{
 				case 0:
 					return EngLogContainer.this.getTimeNeeded();
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object setValue(int index, Object value)
 		{
@@ -105,7 +105,7 @@ public abstract class EngLogContainer
 					EngLogContainer.this.setTimeNeeded((Long) value);
 					return old;
 				}
-				
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}

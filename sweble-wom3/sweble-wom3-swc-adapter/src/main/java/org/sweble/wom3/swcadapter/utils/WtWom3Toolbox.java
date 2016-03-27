@@ -18,73 +18,83 @@
 package org.sweble.wom3.swcadapter.utils;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.joda.time.DateTime;
+import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.WtEngineToolbox;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wom3.Wom3Document;
 import org.sweble.wom3.swcadapter.AstToWomConverter;
+import org.sweble.wom3.util.SaxonWomTransformations;
 import org.sweble.wom3.util.Wom3Toolbox;
 import org.w3c.dom.Element;
 
-import de.fau.cs.osr.utils.FileContent;
-import de.fau.cs.osr.utils.TestResourcesFixture;
+import de.fau.cs.osr.utils.StringTools;
 
 public class WtWom3Toolbox
 		extends
 			WtEngineToolbox
 {
-	public static final String WOM_NS_DEFAULT_PREFIX = Wom3Toolbox.WOM_NS_DEFAULT_PREFIX;
-	
+	private static File resourceNameToFile(Class<?> clazz, String testFile)
+	{
+		URL wmUrl = clazz.getResource(testFile);
+		if (wmUrl != null)
+			return new File(StringTools.decodeUsingDefaultCharset(wmUrl.getFile()));
+		return null;
+	}
+
 	// =========================================================================
 	//  WM <-> AST <-> WOM helpers
 	// =========================================================================
-	
-	public Artifacts wmToWom(String wmPath) throws Exception
+
+	public Artifacts wmToWom(String wmPath, String charset) throws LinkTargetException, IOException, EngineException
 	{
-		File wmFile = TestResourcesFixture.resourceNameToFile(getClass(), wmPath);
+		File wmFile = resourceNameToFile(getClass(), wmPath);
 		String title = FilenameUtils.getBaseName(wmFile.getName());
 		PageId pageId = makePageId(title);
-		return wmToWom(wmFile, pageId);
+		return wmToWom(wmFile, pageId, charset);
 	}
-	
-	public Artifacts wmToWom(File wmFile) throws Exception
+
+	public Artifacts wmToWom(File wmFile, String charset) throws LinkTargetException, IOException, EngineException
 	{
 		String title = FilenameUtils.getBaseName(wmFile.getName());
 		PageId pageId = makePageId(title);
-		return wmToWom(wmFile, pageId);
+		return wmToWom(wmFile, pageId, charset);
 	}
-	
-	public Artifacts wmToWom(File inputFile, PageId pageId) throws Exception
+
+	public Artifacts wmToWom(File inputFile, PageId pageId, String charset) throws IOException, EngineException
 	{
-		FileContent inputFileContent = new FileContent(inputFile);
-		return wmToWom(inputFile, inputFileContent.getContent(), pageId);
+		return wmToWom(inputFile, FileUtils.readFileToString(inputFile, charset), pageId);
 	}
-	
-	public Artifacts wmToWom(File inputFile, String wikitext, PageId pageId) throws Exception
+
+	public Artifacts wmToWom(File inputFile, String wikitext, PageId pageId) throws EngineException
 	{
 		TestExpansionCallback expCallback = new TestExpansionCallback();
 		return wmToWom(inputFile, wikitext, pageId, expCallback);
 	}
-	
+
 	public Artifacts wmToWom(
 			File inputFile,
 			PageId pageId,
-			ExpansionCallback callback) throws Exception
+			ExpansionCallback callback,
+			String charset) throws IOException, EngineException
 	{
-		FileContent inputFileContent = new FileContent(inputFile);
-		return wmToWom(inputFile, inputFileContent.getContent(), pageId, callback);
+		return wmToWom(inputFile, FileUtils.readFileToString(inputFile, charset), pageId, callback);
 	}
-	
+
 	public Artifacts wmToWom(
 			File inputFile,
 			String wikitext,
 			PageId pageId,
-			ExpansionCallback callback) throws Exception
+			ExpansionCallback callback) throws EngineException
 	{
 		Artifacts a = new Artifacts();
 		a.wmFile = inputFile;
@@ -94,11 +104,11 @@ public class WtWom3Toolbox
 		a.womDoc = astToWom(pageId, a.ast);
 		return a;
 	}
-	
+
 	public Artifacts astToWom(
 			EngProcessedPage ast,
 			PageId pageId,
-			ExpansionCallback callback) throws Exception
+			ExpansionCallback callback)
 	{
 		Artifacts a = new Artifacts();
 		a.wmFile = null;
@@ -108,7 +118,7 @@ public class WtWom3Toolbox
 		a.womDoc = astToWom(pageId, a.ast);
 		return a;
 	}
-	
+
 	public Wom3Document astToWom(PageId pageId, EngProcessedPage ast)
 	{
 		Wom3Document womDoc = AstToWomConverter.convert(
@@ -119,37 +129,47 @@ public class WtWom3Toolbox
 				"Mr. Tester",
 				DateTime.parse("2012-12-07T12:15:30.000+01:00"),
 				ast.getPage());
-		
+
 		return womDoc;
 	}
-	
-	public String wmToWomXml(PageId pageId, String wm) throws Exception
+
+	/**
+	 * Requires dependency:
+	 * 
+	 * <pre>
+	 *   &lt;dependency>
+	 *     &lt;groupId>net.sf.saxon&lt;/groupId>
+	 *     &lt;artifactId>Saxon-HE&lt;/artifactId>
+	 *   &lt;/dependency>
+	 * </pre>
+	 */
+	public String wmToWomXml(PageId pageId, String wm) throws EngineException
 	{
-		return Wom3Toolbox.printWom(astToWom(
+		return SaxonWomTransformations.printWom(astToWom(
 				pageId,
 				wmToAst(pageId, wm)));
 	}
-	
+
 	// =========================================================================
 	//  WOM query & manipulation
 	// =========================================================================
-	
+
 	public static Wom3Document wrapMultipleArticles(Artifacts afs)
 	{
 		Wom3Document womDoc = Wom3Toolbox.createDocument("articles");
-		
+
 		Element articles = womDoc.getDocumentElement();
 		Element article = afs.womDoc.getDocumentElement();
 		womDoc.adoptNode(article);
 		articles.appendChild(article);
-		
+
 		return womDoc;
 	}
-	
+
 	public static Wom3Document wrapMultipleArticles(Map<String, Artifacts> afs)
 	{
 		Wom3Document womDoc = Wom3Toolbox.createDocument("articles");
-		
+
 		Element articles = womDoc.getDocumentElement();
 		for (Artifacts a : afs.values())
 		{
@@ -157,22 +177,22 @@ public class WtWom3Toolbox
 			womDoc.adoptNode(article);
 			articles.appendChild(article);
 		}
-		
+
 		return womDoc;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class Artifacts
 	{
 		public File wmFile;
-		
+
 		public PageId pageId;
-		
+
 		public String wm;
-		
+
 		public EngProcessedPage ast;
-		
+
 		public Wom3Document womDoc;
 	}
 }

@@ -44,7 +44,8 @@ import javax.xml.validation.SchemaFactory;
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.xml.sax.SAXException;
 
 import de.fau.cs.osr.utils.WrappedException;
 
@@ -53,55 +54,55 @@ public abstract class DumpReader
 			Closeable
 {
 	private final InputStream dumpInputStream;
-	
+
 	private final String dumpUri;
-	
+
 	private final Logger logger;
-	
+
 	private final XMLStreamReader xmlStreamReader;
-	
+
 	private final Unmarshaller unmarshaller;
-	
+
 	private final ExportSchemaVersion schemaVersion;
-	
+
 	private CountingInputStream decompressedInputStream;
-	
+
 	private CountingInputStream compressedInputStream;
-	
+
 	private long fileLength;
-	
+
 	private long parsedCount;
-	
+
 	private boolean decompress;
-	
+
 	private static final int LOOKAHEAD = 4096;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Use a constructor that expects an encoding to prevent bug in xerces
 	 * parser code.
 	 * 
 	 * @deprecated
 	 */
-	public DumpReader(File dumpFile, Logger logger) throws Exception
+	public DumpReader(File dumpFile, Logger logger) throws JAXBException, FactoryConfigurationError, XMLStreamException, IOException, SAXException
 	{
 		this(new FileInputStream(dumpFile), dumpFile.getAbsolutePath(), logger);
-		
+
 		fileLength = dumpFile.length();
 	}
-	
+
 	/**
 	 * Use a constructor that expects an encoding to prevent bug in xerces
 	 * parser code.
 	 * 
 	 * @deprecated
 	 */
-	public DumpReader(InputStream is, String url, Logger logger) throws Exception
+	public DumpReader(InputStream is, String url, Logger logger) throws JAXBException, FactoryConfigurationError, XMLStreamException, IOException, SAXException
 	{
 		this(is, null, url, logger, true);
 	}
-	
+
 	/**
 	 * Use a constructor that expects an encoding to prevent bug in xerces
 	 * parser code.
@@ -112,43 +113,43 @@ public abstract class DumpReader
 			InputStream is,
 			String url,
 			Logger logger,
-			boolean useSchema) throws Exception
+			boolean useSchema) throws JAXBException, FactoryConfigurationError, XMLStreamException, IOException, SAXException
 	{
 		this(is, null, url, logger, useSchema);
 	}
-	
+
 	public DumpReader(
 			InputStream is,
 			Charset encoding,
 			String url,
 			Logger logger,
-			boolean useSchema) throws Exception
+			boolean useSchema) throws JAXBException, FactoryConfigurationError, XMLStreamException, IOException, SAXException
 	{
 		this.dumpInputStream = is;
 		this.dumpUri = url;
 		this.logger = logger;
-		
+
 		logger.info("Setting up parser for file " + dumpUri);
-		
+
 		getDumpInputStream();
-		
+
 		schemaVersion = determineExportVersion();
-		
+
 		unmarshaller = createUnmarshaller(schemaVersion.getContextPath());
-		
+
 		installCallbacks();
-		
+
 		if (useSchema)
 			setSchema(DumpReader.class.getResource(schemaVersion.getSchema()));
-		
+
 		xmlStreamReader = getXmlStreamReader(encoding);
-		
+
 		fileLength = -1;
 		parsedCount = 0;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void unmarshal() throws JAXBException, XMLStreamException
 	{
 		try
@@ -160,30 +161,30 @@ public abstract class DumpReader
 			closeStreams();
 		}
 	}
-	
+
 	@Override
 	public void close() throws IOException
 	{
 		closeStreams();
 	}
-	
+
 	private void closeStreams()
 	{
 		IOUtils.closeQuietly(decompressedInputStream);
 		IOUtils.closeQuietly(compressedInputStream);
 		IOUtils.closeQuietly(dumpInputStream);
 	}
-	
+
 	public long getFileSize()
 	{
 		return fileLength;
 	}
-	
+
 	public long getDecompressedBytesRead() throws IOException
 	{
 		return decompressedInputStream.getCount();
 	}
-	
+
 	public long getCompressedBytesRead() throws IOException
 	{
 		if (decompress)
@@ -195,25 +196,25 @@ public abstract class DumpReader
 			return getDecompressedBytesRead();
 		}
 	}
-	
+
 	public long getParsedCount()
 	{
 		return parsedCount;
 	}
-	
+
 	// =========================================================================
-	
-	protected abstract void processPage(Object mediaWiki, Object page) throws Exception;
-	
-	protected boolean processRevision(Object page, Object revision) throws Exception
+
+	protected abstract void processPage(Object mediaWiki, Object page);
+
+	protected boolean processRevision(Object page, Object revision)
 	{
 		// Add by default
 		return true;
 	}
-	
+
 	protected boolean processEvent(
 			ValidationEvent ve,
-			ValidationEventLocator vel) throws Exception
+			ValidationEventLocator vel)
 	{
 		logger.warn(String.format(
 				"%s:%d:%d: %s",
@@ -221,71 +222,71 @@ public abstract class DumpReader
 				vel.getLineNumber(),
 				vel.getColumnNumber(),
 				ve.getMessage()));
-		
+
 		return true;
 	}
-	
+
 	// =========================================================================
-	
-	private void handlePage(Object mediaWiki, Object page) throws Exception
+
+	private void handlePage(Object mediaWiki, Object page)
 	{
 		++parsedCount;
-		
+
 		processPage(mediaWiki, page);
 	}
-	
-	private boolean handleRevision(Object page, Object revision) throws Exception
+
+	private boolean handleRevision(Object page, Object revision)
 	{
 		return processRevision(page, revision);
 	}
-	
-	protected boolean handleEvent(ValidationEvent ve, ValidationEventLocator vel) throws Exception
+
+	protected boolean handleEvent(ValidationEvent ve, ValidationEventLocator vel)
 	{
 		return processEvent(ve, vel);
 	}
-	
+
 	// =========================================================================
-	
-	private void getDumpInputStream() throws Exception
+
+	private void getDumpInputStream() throws IOException
 	{
 		InputStream decomp;
 		if (dumpUri.endsWith(".bz2"))
 		{
 			decompress = true;
-			
+
 			compressedInputStream = new CountingInputStream(dumpInputStream);
-			
+
 			decomp = new BZip2CompressorInputStream(compressedInputStream, true);
 		}
 		else if (dumpUri.endsWith(".gz"))
 		{
 			decompress = true;
-			
+
 			compressedInputStream = new CountingInputStream(dumpInputStream);
-			
+
 			decomp = new GzipCompressorInputStream(compressedInputStream);
 		}
 		else
 		{
 			decompress = false;
-			
+
 			decomp = dumpInputStream;
 		}
-		
+
 		decompressedInputStream = new CountingInputStream(
 				new BufferedInputStream(decomp, LOOKAHEAD));
 	}
-	
-	private ExportSchemaVersion determineExportVersion() throws Exception
+
+	private ExportSchemaVersion determineExportVersion() throws IOException
 	{
 		byte[] b = new byte[LOOKAHEAD];
-		
+
 		decompressedInputStream.mark(LOOKAHEAD);
 		int read = decompressedInputStream.read(b, 0, LOOKAHEAD);
 		decompressedInputStream.reset();
-		
+
 		String header = new String(b, 0, read);
-		
+
 		if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.5/\""))
 		{
 			return ExportSchemaVersion.V0_5;
@@ -315,7 +316,7 @@ public abstract class DumpReader
 			throw new IllegalArgumentException("Unknown xmlns");
 		}
 	}
-	
+
 	/**
 	 * The xerces UTF8Reader is broken. If the xerces XML parser is given an
 	 * input stream, it will instantiate a reader for the encoding found in the
@@ -332,7 +333,7 @@ public abstract class DumpReader
 	private XMLStreamReader getXmlStreamReader(Charset encoding) throws FactoryConfigurationError, XMLStreamException, UnsupportedEncodingException
 	{
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-		
+
 		if (encoding != null)
 		{
 			InputStreamReader isr = new InputStreamReader(decompressedInputStream, encoding);
@@ -343,18 +344,18 @@ public abstract class DumpReader
 			return xmlInputFactory.createXMLStreamReader(decompressedInputStream);
 		}
 	}
-	
-	private void setSchema(URL schemaUrl) throws Exception
+
+	private void setSchema(URL schemaUrl) throws SAXException, JAXBException
 	{
 		SchemaFactory sf = SchemaFactory.newInstance(
 				javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		
+
 		sf.setResourceResolver(new LSResourceResolverImplementation());
-		
+
 		Schema schema = sf.newSchema(schemaUrl);
-		
+
 		unmarshaller.setSchema(schema);
-		
+
 		unmarshaller.setEventHandler(
 				new ValidationEventHandler()
 				{
@@ -375,7 +376,7 @@ public abstract class DumpReader
 					}
 				});
 	}
-	
+
 	private void installCallbacks()
 	{
 		final DumpReaderListener pageListener = new DumpReaderListener()
@@ -396,7 +397,7 @@ public abstract class DumpReader
 					throw new WrappedException(e);
 				}
 			}
-			
+
 			@Override
 			public boolean handleRevisionOrUploadOrLogitem(
 					Object page,
@@ -416,25 +417,25 @@ public abstract class DumpReader
 				}
 			}
 		};
-		
+
 		unmarshaller.setListener(new Unmarshaller.Listener()
 		{
 			public void beforeUnmarshal(Object target, Object parent)
 			{
 				schemaVersion.setPageListener(target, pageListener);
 			}
-			
+
 			public void afterUnmarshal(Object target, Object parent)
 			{
 				schemaVersion.setPageListener(target, pageListener);
 			}
 		});
 	}
-	
+
 	private Unmarshaller createUnmarshaller(String contextPath) throws JAXBException
 	{
 		JAXBContext context = JAXBContext.newInstance(contextPath);
-		
+
 		return context.createUnmarshaller();
 	}
 }

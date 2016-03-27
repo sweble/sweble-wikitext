@@ -22,20 +22,20 @@ import org.sweble.wikitext.parser.WtEntityMap;
 public class ValidatedWikitext
 {
 	private String wikitext;
-	
+
 	private WtEntityMap entityMap;
-	
+
 	public ValidatedWikitext(String wikitext, WtEntityMap entityMap)
 	{
 		this.wikitext = wikitext;
 		this.entityMap = entityMap;
 	}
-	
+
 	public String getWikitext()
 	{
 		return wikitext;
 	}
-	
+
 	public WtEntityMap getEntityMap()
 	{
 		return entityMap;

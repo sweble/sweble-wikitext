@@ -26,9 +26,9 @@ public interface WtLinkOptions
 			WtContentNode
 {
 	public static final WtLinkOptions EMPTY = new WtEmptyLinkOptions();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtEmptyLinkOptions
 			extends
 				WtEmptyContentNode
@@ -36,23 +36,23 @@ public interface WtLinkOptions
 				WtLinkOptions
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtEmptyLinkOptions()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LINK_OPTIONS;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtLinkOptions.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{
@@ -62,15 +62,15 @@ public interface WtLinkOptions
 				return AstNodeImpl.equalsNoTypeCheck(this, (WtLinkOptionsImpl) other);
 			return super.equals(other);
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtLinkOptions.EMPTY;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtLinkOptionsImpl
 			extends
 				WtContentNodeImpl
@@ -78,30 +78,30 @@ public interface WtLinkOptions
 				WtLinkOptions
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtLinkOptionsImpl()
 		{
 		}
-		
+
 		protected WtLinkOptionsImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LINK_OPTIONS;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtLinkOptions.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{

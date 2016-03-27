@@ -27,13 +27,13 @@ public class Gatherer
 			WorkerBase
 {
 	private final BlockingQueue<Job> inTray;
-	
+
 	private final BlockingQueue<Job> processedJobs;
-	
+
 	private final BlockingQueue<Job> outTray;
-	
+
 	// =========================================================================
-	
+
 	public Gatherer(
 			AbortHandler abortHandler,
 			BlockingQueue<Job> inTray,
@@ -41,23 +41,23 @@ public class Gatherer
 			BlockingQueue<Job> outTray)
 	{
 		super(getClassName(), abortHandler);
-		
+
 		Thread.currentThread().setName(getClassName());
-		
+
 		this.inTray = inTray;
 		this.processedJobs = processedJobs;
 		this.outTray = outTray;
 	}
-	
+
 	private static String getClassName()
 	{
 		return Gatherer.class.getSimpleName();
 	}
-	
+
 	// =========================================================================
-	
+
 	private int count = 0;
-	
+
 	@Override
 	protected void work() throws Throwable
 	{
@@ -65,12 +65,12 @@ public class Gatherer
 		{
 			Job processed = processedJobs.take();
 			++count;
-			
+
 			processed.signOff(getClass(), null);
-			
+
 			// TODO: Decide what to do with it.
 			boolean tryAgain = false;
-			
+
 			if (tryAgain)
 			{
 				inTray.put(processed);
@@ -81,7 +81,7 @@ public class Gatherer
 			}
 		}
 	}
-	
+
 	@Override
 	protected void after()
 	{

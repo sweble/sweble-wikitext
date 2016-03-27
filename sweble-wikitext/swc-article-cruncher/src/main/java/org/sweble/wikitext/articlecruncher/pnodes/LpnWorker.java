@@ -19,7 +19,8 @@ package org.sweble.wikitext.articlecruncher.pnodes;
 
 import java.util.concurrent.Callable;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.Processor;
 
@@ -27,40 +28,40 @@ final class LpnWorker
 		implements
 			Callable<Job>
 {
-	private static final Logger logger = Logger.getLogger(LpnWorker.class.getSimpleName());
-	
+	private static final Logger logger = LoggerFactory.getLogger(LpnWorker.class.getSimpleName());
+
 	private final LpnJobProcessorFactory jobProcessorFactory;
-	
+
 	private final Job job;
-	
+
 	// =========================================================================
-	
+
 	LpnWorker(LpnJobProcessorFactory jobProcessorFactory, Job jobHistory)
 	{
 		this.jobProcessorFactory = jobProcessorFactory;
 		this.job = jobHistory;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
-	public Job call() throws Exception
+	public Job call()
 	{
 		try
 		{
 			job.signOff(getClass(), null);
-			
+
 			Processor processor = jobProcessorFactory.createProcessor();
-			
+
 			job.processed(processor.process(job));
 		}
 		catch (Exception t)
 		{
 			logger.warn("Processing failed with exception", t);
-			
+
 			job.failed(t);
 		}
-		
+
 		return job;
 	}
 }

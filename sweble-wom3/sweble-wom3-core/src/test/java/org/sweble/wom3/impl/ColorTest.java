@@ -17,7 +17,7 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -31,7 +31,7 @@ public class ColorTest
 		assertEquals(0x90, color.getGreen());
 		assertEquals(0xFF, color.getBlue());
 	}
-	
+
 	@Test
 	public void testGetByLongCode() throws Exception
 	{
@@ -40,7 +40,7 @@ public class ColorTest
 		assertEquals(0x90, color.getGreen());
 		assertEquals(0xFF, color.getBlue());
 	}
-	
+
 	@Test
 	public void testGetByShortCode() throws Exception
 	{
@@ -49,25 +49,25 @@ public class ColorTest
 		assertEquals(0x99, color.getGreen());
 		assertEquals(0xFF, color.getBlue());
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testInvalidColorName() throws Exception
 	{
 		ColorImpl.valueOf("foo");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testInvalidHexCode() throws Exception
 	{
 		ColorImpl.valueOf("#11gg11");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testInvalidColorCode() throws Exception
 	{
 		ColorImpl.valueOf("#1fff");
 	}
-	
+
 	@Test
 	public void testToString() throws Exception
 	{

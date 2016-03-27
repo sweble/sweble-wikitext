@@ -26,40 +26,40 @@ public class RefImpl
 			Wom3Ref
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public RefImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "ref";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getType()
 	{
 		return (String) getAttributeNativeData("type");
 	}
-	
+
 	@Override
 	public String setType(String type)
 	{
 		return setAttributeDirect(ATTR_DESC_REF, "type", type);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_REF = new AttrDescRef();
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -69,7 +69,7 @@ public class RefImpl
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
 				"type", ATTR_DESC_REF);
 	}
-	
+
 	public static final class AttrDescRef
 			extends
 				AttributeDescriptor
@@ -83,7 +83,7 @@ public class RefImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

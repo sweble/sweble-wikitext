@@ -17,7 +17,9 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_COLOR;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_FACE;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_FONT_SIZE;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,64 +34,64 @@ public class FontImpl
 			Wom3Font
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public FontImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "font";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Color getColor()
 	{
 		return getColorAttr("color");
 	}
-	
+
 	@Override
 	public Wom3Color setColor(Wom3Color color)
 	{
 		return setColorAttr(ATTR_DESC_COLOR, "color", color);
 	}
-	
+
 	@Override
 	public String getFace()
 	{
 		return getStringAttr("face");
 	}
-	
+
 	@Override
 	public String setFace(String face)
 	{
 		return setStringAttr(ATTR_DESC_FACE, "face", face);
 	}
-	
+
 	@Override
 	public Integer getSize()
 	{
 		return getIntAttr("size");
 	}
-	
+
 	@Override
 	public Integer setSize(Integer size)
 	{
 		return setIntAttr(ATTR_DESC_FONT_SIZE, "size", size);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(CoreAttributes.getNameMap());
@@ -98,7 +100,7 @@ public class FontImpl
 		NAME_MAP.put("face", ATTR_DESC_FACE);
 		NAME_MAP.put("size", ATTR_DESC_FONT_SIZE);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

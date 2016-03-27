@@ -26,16 +26,16 @@ public class TeletypeImpl
 			Wom3Teletype
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public TeletypeImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{

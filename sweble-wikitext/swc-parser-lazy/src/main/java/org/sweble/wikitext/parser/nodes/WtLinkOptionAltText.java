@@ -24,9 +24,9 @@ public interface WtLinkOptionAltText
 			WtContentNode
 {
 	public static final WtNoLinkOptionAltText NO_ALT = new WtNoLinkOptionAltText();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoLinkOptionAltText
 			extends
 				WtAbsentContentNode
@@ -34,31 +34,31 @@ public interface WtLinkOptionAltText
 				WtLinkOptionAltText
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtNoLinkOptionAltText()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LINK_OPTION_ALT_TEXT;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtLinkOptionAltText.class.getSimpleName();
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtLinkOptionAltText.NO_ALT;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtLinkOptionAltTextImpl
 			extends
 				WtContentNodeImpl
@@ -66,24 +66,24 @@ public interface WtLinkOptionAltText
 				WtLinkOptionAltText
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtLinkOptionAltTextImpl()
 		{
 		}
-		
+
 		protected WtLinkOptionAltTextImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LINK_OPTION_ALT_TEXT;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{

@@ -24,18 +24,18 @@ public class WtSemiPre
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtSemiPre()
 	{
 	}
-	
+
 	protected WtSemiPre(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

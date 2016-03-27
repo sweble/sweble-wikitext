@@ -41,7 +41,7 @@ public enum StackScope
 			}
 		}
 	},
-	
+
 	GENERAL_SCOPE
 	{
 		@Override
@@ -56,7 +56,7 @@ public enum StackScope
 			}
 		}
 	},
-	
+
 	BUTTON_SCOPE
 	{
 		@Override
@@ -73,7 +73,7 @@ public enum StackScope
 			}
 		}
 	},
-	
+
 	LIST_ITEM_SCOPE
 	{
 		@Override
@@ -89,7 +89,7 @@ public enum StackScope
 			}
 		}
 	},
-	
+
 	TABLE_SCOPE
 	{
 		@Override
@@ -109,6 +109,6 @@ public enum StackScope
 			}
 		}
 	};
-	
+
 	public abstract boolean isInList(ElementType nodeType);
 }

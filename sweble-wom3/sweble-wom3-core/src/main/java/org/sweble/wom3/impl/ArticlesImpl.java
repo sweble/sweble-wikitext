@@ -26,22 +26,22 @@ public class ArticlesImpl
 			Wom3Articles
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public ArticlesImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "articles";
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

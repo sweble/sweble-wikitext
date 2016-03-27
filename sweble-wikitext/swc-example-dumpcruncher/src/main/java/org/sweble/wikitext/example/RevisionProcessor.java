@@ -19,52 +19,59 @@ package org.sweble.wikitext.example;
 
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.Processor;
-import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngineImpl;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
-import org.sweble.wikitext.parser.parser.LinkTargetException;
+
+import de.fau.cs.osr.utils.WrappedException;
 
 public class RevisionProcessor
 		implements
 			Processor
 {
 	private final DumpCruncher dumpCruncher;
-	
+
 	public RevisionProcessor(DumpCruncher dumpCruncher)
 	{
 		this.dumpCruncher = dumpCruncher;
 	}
-	
+
 	@Override
-	public Object process(Job job) throws LinkTargetException, EngineException
+	public Object process(Job job)
 	{
-		Gui gui = dumpCruncher.getGui();
-		gui.processingStarted();
-		gui.redrawLater();
-		
-		RevisionJob revJob = (RevisionJob) job;
-		
-		WikiConfig config = dumpCruncher.getWikiConfig();
-		
-		// Instantiate a compiler for wiki pages
-		WtEngineImpl engine = new WtEngineImpl(config);
-		
-		// Retrieve a page
-		PageTitle pageTitle = PageTitle.make(config, revJob.getPageTitle());
-		
-		PageId pageId = new PageId(pageTitle, revJob.getId().longValue());
-		
-		String wikitext = revJob.getTextText();
-		
-		// Compile the retrieved page
-		EngProcessedPage cp = engine.postprocess(pageId, wikitext, null);
-		
-		gui.processingFinished();
-		gui.redrawLater();
-		
-		return cp;
+		try
+		{
+			Gui gui = dumpCruncher.getGui();
+			gui.processingStarted();
+			gui.redrawLater();
+
+			RevisionJob revJob = (RevisionJob) job;
+
+			WikiConfig config = dumpCruncher.getWikiConfig();
+
+			// Instantiate a compiler for wiki pages
+			WtEngineImpl engine = new WtEngineImpl(config);
+
+			// Retrieve a page
+			PageTitle pageTitle = PageTitle.make(config, revJob.getPageTitle());
+
+			PageId pageId = new PageId(pageTitle, revJob.getId().longValue());
+
+			String wikitext = revJob.getTextText();
+
+			// Compile the retrieved page
+			EngProcessedPage cp = engine.postprocess(pageId, wikitext, null);
+
+			gui.processingFinished();
+			gui.redrawLater();
+
+			return cp;
+		}
+		catch (Exception e)
+		{
+			throw new WrappedException(e);
+		}
 	}
 }

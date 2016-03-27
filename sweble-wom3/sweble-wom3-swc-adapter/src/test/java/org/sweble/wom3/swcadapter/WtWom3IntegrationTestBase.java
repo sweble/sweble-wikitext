@@ -19,13 +19,17 @@ package org.sweble.wom3.swcadapter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import org.apache.commons.io.FilenameUtils;
+import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wom3.swcadapter.utils.WtWom3Toolbox;
-import org.sweble.wom3.util.Wom3Toolbox;
+import org.sweble.wom3.util.SaxonWomTransformations;
+import org.sweble.wom3.util.SaxonWomXPath;
 
 import de.fau.cs.osr.utils.FileCompare;
 import de.fau.cs.osr.utils.TestResourcesFixture;
@@ -36,16 +40,16 @@ public class WtWom3IntegrationTestBase
 			WtWom3Toolbox
 {
 	private final TestResourcesFixture resources;
-	
+
 	// =========================================================================
-	
+
 	protected static TestResourcesFixture getTestResourcesFixture()
 	{
 		try
 		{
 			File path = TestResourcesFixture.resourceNameToFile(
 					WtWom3IntegrationTestBase.class, "/");
-			
+
 			return new TestResourcesFixture(path);
 		}
 		catch (FileNotFoundException e)
@@ -53,34 +57,34 @@ public class WtWom3IntegrationTestBase
 			throw new WrappedException(e);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected WtWom3IntegrationTestBase(TestResourcesFixture resources)
 	{
 		this.resources = resources;
-		
+
 		// For testing we don't want stuff to be removed
 		getWikiConfig().getEngineConfig().setTrimTransparentBeforeParsing(false);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected TestResourcesFixture getResources()
 	{
 		return resources;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void convertPrintAndCompare(
 			EngProcessedPage ast,
 			File fakeInputFile,
 			String inputSubDir,
-			String expectedSubDir) throws Exception
+			String expectedSubDir) throws IOException, LinkTargetException
 	{
 		ExpansionCallback callback = new TestExpansionCallback();
-		
+
 		convertPrintAndCompare(
 				ast,
 				fakeInputFile,
@@ -88,21 +92,21 @@ public class WtWom3IntegrationTestBase
 				expectedSubDir,
 				callback);
 	}
-	
+
 	public void parsePrintAndCompare(
 			File inputFile,
 			String inputSubDir,
-			String expectedSubDir) throws Exception
+			String expectedSubDir) throws LinkTargetException, IOException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback();
-		
+
 		parsePrintAndCompare(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
 				callback);
 	}
-	
+
 	/**
 	 * Parse Wikitext to an AST and convert this AST to a WOM tree. Print the
 	 * WOM tree as XML and compare with expected XML from file.
@@ -111,27 +115,27 @@ public class WtWom3IntegrationTestBase
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir,
-			ExpansionCallback callback) throws Exception
+			ExpansionCallback callback) throws LinkTargetException, IOException, EngineException
 	{
 		String fileTitle = FilenameUtils.getBaseName(inputFile.getName());
-		
+
 		PageId pageId = makePageId(fileTitle);
-		
-		Artifacts afs = wmToWom(inputFile, pageId, callback);
-		
-		String actual = Wom3Toolbox.printWom(afs.womDoc);
-		
+
+		Artifacts afs = wmToWom(inputFile, pageId, callback, "UTF8");
+
+		String actual = SaxonWomTransformations.printWom(afs.womDoc);
+
 		File expectedFile = TestResourcesFixture.rebase(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
 				"wom.xml",
 				true /* don't throw if file doesn't exist */);
-		
+
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
-	
+
 	/**
 	 * Convert an AST to a WOM tree. Print the WOM tree as XML and compare with
 	 * expected XML from file.
@@ -141,25 +145,25 @@ public class WtWom3IntegrationTestBase
 			File fakeInputFile,
 			String inputSubDir,
 			String expectedSubDir,
-			ExpansionCallback callback) throws Exception
+			ExpansionCallback callback) throws IOException, LinkTargetException
 	{
 		PageId pageId = makePageId("-");
-		
+
 		Artifacts afs = astToWom(ast, pageId, callback);
-		
-		String actual = Wom3Toolbox.printWom(afs.womDoc);
-		
+
+		String actual = SaxonWomTransformations.printWom(afs.womDoc);
+
 		File expectedFile = TestResourcesFixture.rebase(
 				fakeInputFile,
 				inputSubDir,
 				expectedSubDir,
 				"wom.xml",
 				true /* don't throw if file doesn't exist */);
-		
+
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
-	
+
 	/**
 	 * Parse Wikitext to an AST and convert this AST to a WOM tree. Restore the
 	 * original Wiki from the WOM tree using an XPath expression. Compare the
@@ -167,16 +171,16 @@ public class WtWom3IntegrationTestBase
 	 */
 	public void parsePrintExtractRtdAndCompare(
 			File inputFile,
-			String inputSubDir) throws Exception
+			String inputSubDir) throws LinkTargetException, IOException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback();
-		
+
 		parsePrintExtractRtdAndCompare(
 				inputFile,
 				inputSubDir,
 				callback);
 	}
-	
+
 	/**
 	 * Parse Wikitext to an AST and convert this AST to a WOM tree. Restore the
 	 * original Wiki from the WOM tree using an XPath expression. Compare the
@@ -185,16 +189,16 @@ public class WtWom3IntegrationTestBase
 	public void parsePrintExtractRtdAndCompare(
 			File inputFile,
 			String inputSubDir,
-			ExpansionCallback callback) throws Exception
+			ExpansionCallback callback) throws LinkTargetException, IOException, EngineException
 	{
 		String fileTitle = FilenameUtils.getBaseName(inputFile.getName());
-		
+
 		PageId pageId = makePageId(fileTitle);
-		
-		Artifacts afs = wmToWom(inputFile, pageId, callback);
-		
-		String actual = Wom3Toolbox.womToWmXPath(afs.womDoc);
-		
+
+		Artifacts afs = wmToWom(inputFile, pageId, callback, "UTF8");
+
+		String actual = SaxonWomXPath.womToWmXPath(afs.womDoc);
+
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(inputFile, actual);
 	}

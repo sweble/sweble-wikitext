@@ -23,13 +23,13 @@ import java.util.Map;
 public abstract class I18nAttributes
 {
 	public static final AttributeDescriptor ATTR_DESC_DIR = new AttrDescDir();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_LANG = new AttrDescLang();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_XML_LANG = new AttrDescXmlLang();
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescDir
 			extends
 				AttributeDescriptor
@@ -43,7 +43,7 @@ public abstract class I18nAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -52,9 +52,9 @@ public abstract class I18nAttributes
 			return AttributeVerifiers.DIR.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescLang
 			extends
 				AttributeDescriptor
@@ -68,7 +68,7 @@ public abstract class I18nAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -77,9 +77,9 @@ public abstract class I18nAttributes
 			return AttributeVerifiers.LANGUAGE_CODE.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescXmlLang
 			extends
 				AttributeDescriptor
@@ -93,7 +93,7 @@ public abstract class I18nAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -102,11 +102,11 @@ public abstract class I18nAttributes
 			return AttributeVerifiers.LANGUAGE_CODE.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static Map<String, AttributeDescriptor> NAME_MAP;
-	
+
 	public synchronized static Map<String, AttributeDescriptor> getNameMap()
 	{
 		Map<String, AttributeDescriptor> nameMap = NAME_MAP;
@@ -120,7 +120,7 @@ public abstract class I18nAttributes
 		}
 		return nameMap;
 	}
-	
+
 	public static AttributeDescriptor getDescriptor(String name)
 	{
 		return getNameMap().get(name);

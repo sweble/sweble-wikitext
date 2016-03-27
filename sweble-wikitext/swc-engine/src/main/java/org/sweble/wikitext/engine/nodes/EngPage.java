@@ -26,18 +26,18 @@ public class EngPage
 			EngNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngPage()
 	{
 	}
-	
+
 	protected EngPage(WtNodeList content)
 	{
 		addAll(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

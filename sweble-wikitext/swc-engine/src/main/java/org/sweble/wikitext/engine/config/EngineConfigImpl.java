@@ -35,23 +35,23 @@ public class EngineConfigImpl
 {
 	@XmlElement()
 	private boolean trimTransparentBeforeParsing;
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean isTrimTransparentBeforeParsing()
 	{
 		return trimTransparentBeforeParsing;
 	}
-	
+
 	public void setTrimTransparentBeforeParsing(
 			boolean trimTransparentBeforeParsing)
 	{
 		this.trimTransparentBeforeParsing = trimTransparentBeforeParsing;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -60,7 +60,7 @@ public class EngineConfigImpl
 		result = prime * result + (trimTransparentBeforeParsing ? 1231 : 1237);
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{

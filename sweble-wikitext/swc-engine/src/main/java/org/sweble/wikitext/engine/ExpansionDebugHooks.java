@@ -42,9 +42,9 @@ public abstract class ExpansionDebugHooks
 	{
 		private static final long serialVersionUID = 1L;
 	};
-	
+
 	// =========================================================================
-	
+
 	public WtNode beforeResolveRedirect(
 			ExpansionVisitor expansionVisitor,
 			WtRedirect n,
@@ -52,7 +52,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return PROCEED;
 	}
-	
+
 	public WtNode afterResolveRedirect(
 			ExpansionVisitor expansionVisitor,
 			WtRedirect n,
@@ -62,7 +62,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return result;
 	}
-	
+
 	public WtNode beforeResolveParserFunction(
 			ExpansionVisitor expansionVisitor,
 			WtTemplate n,
@@ -71,7 +71,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return PROCEED;
 	}
-	
+
 	public WtNode afterResolveParserFunction(
 			ExpansionVisitor expansionVisitor,
 			WtTemplate n,
@@ -82,7 +82,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return result;
 	}
-	
+
 	public WtNode beforeResolveTransclusion(
 			ExpansionVisitor expansionVisitor,
 			WtTemplate n,
@@ -91,7 +91,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return PROCEED;
 	}
-	
+
 	public WtNode afterResolveTransclusion(
 			ExpansionVisitor expansionVisitor,
 			WtTemplate n,
@@ -102,7 +102,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return result;
 	}
-	
+
 	public WtNode beforeResolveParameter(
 			ExpansionVisitor expansionVisitor,
 			WtTemplateParameter n,
@@ -110,7 +110,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return PROCEED;
 	}
-	
+
 	public WtNode afterResolveParameter(
 			ExpansionVisitor expansionVisitor,
 			WtTemplateParameter n,
@@ -120,7 +120,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return result;
 	}
-	
+
 	public WtNode beforeResolveTagExtension(
 			ExpansionVisitor expansionVisitor,
 			WtTagExtension n,
@@ -130,7 +130,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return PROCEED;
 	}
-	
+
 	public WtNode afterResolveTagExtension(
 			ExpansionVisitor expansionVisitor,
 			WtTagExtension n,
@@ -142,7 +142,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return result;
 	}
-	
+
 	public WtNode beforeResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
 			WtPageSwitch n,
@@ -150,7 +150,7 @@ public abstract class ExpansionDebugHooks
 	{
 		return PROCEED;
 	}
-	
+
 	public WtNode afterResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
 			WtPageSwitch n,

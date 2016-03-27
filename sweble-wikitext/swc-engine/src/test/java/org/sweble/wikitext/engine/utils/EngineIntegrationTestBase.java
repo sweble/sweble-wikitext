@@ -22,7 +22,8 @@ import java.io.IOException;
 import java.io.StringWriter;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.ExpansionFrame;
@@ -37,29 +38,30 @@ import org.sweble.wikitext.parser.parser.LinkTargetException;
 import de.fau.cs.osr.ptk.common.PrinterInterface;
 import de.fau.cs.osr.utils.FileCompare;
 import de.fau.cs.osr.utils.FileContent;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.FileTools;
+import de.fau.cs.osr.utils.StringTools;
 import de.fau.cs.osr.utils.TestResourcesFixture;
 import de.fau.cs.osr.utils.WrappedException;
 
 public abstract class EngineIntegrationTestBase
 {
-	private static final Logger logger = Logger.getLogger(EngineIntegrationTestBase.class);
-	
+	private static final Logger logger = LoggerFactory.getLogger(EngineIntegrationTestBase.class);
+
 	private final TestResourcesFixture resources;
-	
+
 	private final WikiConfigImpl config;
-	
+
 	private final WtEngineImpl engine;
-	
+
 	// =========================================================================
-	
+
 	protected static TestResourcesFixture getTestResourcesFixture()
 	{
 		try
 		{
 			File path = TestResourcesFixture.resourceNameToFile(
 					EngineIntegrationTestBase.class, "/");
-			
+
 			return new TestResourcesFixture(path);
 		}
 		catch (FileNotFoundException e)
@@ -67,35 +69,35 @@ public abstract class EngineIntegrationTestBase
 			throw new WrappedException(e);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public EngineIntegrationTestBase(TestResourcesFixture resources)
 	{
 		this.resources = resources;
 		this.config = DefaultConfigEnWp.generate();
 		this.engine = new WtEngineImpl(config);
 	}
-	
+
 	// =========================================================================
-	
+
 	public TestResourcesFixture getResources()
 	{
 		return resources;
 	}
-	
+
 	public WikiConfigImpl getConfig()
 	{
 		return config;
 	}
-	
+
 	public WtEngineImpl getEngine()
 	{
 		return engine;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
@@ -105,12 +107,12 @@ public abstract class EngineIntegrationTestBase
 			PrinterInterface printer) throws IOException, LinkTargetException, EngineException
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
-		
+
 		String fileTitle = inputFile.getName();
 		int i = fileTitle.lastIndexOf('.');
 		if (i != -1)
 			fileTitle = fileTitle.substring(0, i);
-		
+
 		PageTitle title = PageTitle.make(config, fileTitle);
 		PageId pageId = new PageId(title, -1);
 		EngProcessedPage ast = engine.expand(
@@ -118,20 +120,20 @@ public abstract class EngineIntegrationTestBase
 				inputFileContent.getContent(),
 				forInclusion,
 				callback);
-		
+
 		String actual = printToString(ast.getPage(), printer);
-		
+
 		File expectedFile = TestResourcesFixture.rebase(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
 				printer.getPrintoutType(),
 				true /* don't throw if file doesn't exist */);
-		
+
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
-	
+
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
@@ -142,7 +144,7 @@ public abstract class EngineIntegrationTestBase
 		TypedEnginePrettyPrinter printer = new TypedEnginePrettyPrinter();
 		expandPrintAndCompare(inputFile, inputSubDir, expectedSubDir, callback, forInclusion, printer);
 	}
-	
+
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
@@ -155,7 +157,7 @@ public abstract class EngineIntegrationTestBase
 				expectedSubDir,
 				printer);
 	}
-	
+
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
@@ -163,9 +165,9 @@ public abstract class EngineIntegrationTestBase
 			PrinterInterface printer) throws IOException, LinkTargetException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
-		
+
 		boolean forInclusion = false;
-		
+
 		expandPrintAndCompare(
 				inputFile,
 				inputSubDir,
@@ -174,44 +176,44 @@ public abstract class EngineIntegrationTestBase
 				forInclusion,
 				printer);
 	}
-	
+
 	// =========================================================================
-	
+
 	public String printToString(Object ast, PrinterInterface printer) throws IOException
 	{
 		StringWriter writer = new StringWriter();
-		
+
 		printer.print(ast, writer);
-		
+
 		String result = writer.toString();
-		
+
 		// We always operate with UNIX line end '\n':
-		result = de.fau.cs.osr.utils.FileUtils.lineEndToUnix(result);
-		
+		result = FileTools.lineEndToUnix(result);
+
 		return resources.stripBaseDirectoryAndFixPath(result);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final class TestExpansionCallback
 			implements
 				ExpansionCallback
 	{
 		private final String searchDir;
-		
+
 		public TestExpansionCallback(String searchDir)
 		{
 			this.searchDir = searchDir;
 		}
-		
+
 		@Override
 		public FullPage retrieveWikitext(
 				ExpansionFrame expansionFrame,
-				PageTitle pageTitle) throws Exception
+				PageTitle pageTitle)
 		{
 			String fileTitle = pageTitle.getNormalizedFullTitle();
 			File base = new File(getResources().getBaseDirectory(), searchDir);
-			File file = new File(base, StringUtils.safeFilename(fileTitle));
+			File file = new File(base, StringTools.safeFilename(fileTitle));
 			if (!file.exists())
 			{
 				logger.warn("Could not find page " + pageTitle + " at " + file);
@@ -221,13 +223,21 @@ public abstract class EngineIntegrationTestBase
 			{
 				logger.trace("Retrieving wikitext: " + file);
 				PageId pageId = new PageId(pageTitle, -1);
-				String text = FileUtils.readFileToString(file, "UTF8");
-				return new FullPage(pageId, text);
+				try
+				{
+					String text = FileUtils.readFileToString(file, "UTF8");
+					return new FullPage(pageId, text);
+				}
+				catch (IOException e)
+				{
+					logger.warn("Failed to retrieve wikitext for page " + pageTitle + " at " + file, e);
+					return null;
+				}
 			}
 		}
-		
+
 		@Override
-		public String fileUrl(PageTitle pageTitle, int width, int height) throws Exception
+		public String fileUrl(PageTitle pageTitle, int width, int height)
 		{
 			return null;
 		}

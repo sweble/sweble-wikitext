@@ -30,53 +30,53 @@ public class WtRtData
 			RtData
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	public static final WtRtData SUPPRESS = new WtRtDataSuppressSingleton();
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Constructor for SUPPRESS singleton.
 	 */
 	private WtRtData()
 	{
 	}
-	
+
 	public WtRtData(AstNode<?> node, Object... glue)
 	{
 		super(node, glue);
 	}
-	
+
 	public WtRtData(AstNode<?> node, String... glue)
 	{
 		super(node, glue);
 	}
-	
+
 	public WtRtData(AstNode<?> node)
 	{
 		super(node);
 	}
-	
+
 	public WtRtData(int size, Object... glue)
 	{
 		super(size, glue);
 	}
-	
+
 	public WtRtData(int size, String... glue)
 	{
 		super(size, glue);
 	}
-	
+
 	public WtRtData(int size)
 	{
 		super(size);
 	}
-	
+
 	public WtRtData(WtRtData rtData)
 	{
 		super(rtData);
 	}
-	
+
 	// =========================================================================
 
 	@Override
@@ -84,9 +84,9 @@ public class WtRtData
 	{
 		return this == SUPPRESS;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void addNodeOrObject(ArrayList<Object> result, Object o)
 	{
@@ -100,82 +100,82 @@ public class WtRtData
 			super.addNodeOrObject(result, o);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return super.toString();
 	}
-	
+
 	@Override
 	public Object clone() throws CloneNotSupportedException
 	{
 		return new WtRtData(this);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static class WtRtDataSuppressSingleton
 			extends
 				WtRtData
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		@Override
 		public void set(Object... glue)
 		{
 			notSupported();
 		}
-		
+
 		@Override
 		public void set(String... glue)
 		{
 			notSupported();
 		}
-		
+
 		@Override
 		public void setField(int field, Object... glue)
 		{
 			notSupported();
 		}
-		
+
 		@Override
 		public void setField(int field, String glue)
 		{
 			notSupported();
 		}
-		
+
 		@Override
 		public void setField(int field, String... glue)
 		{
 			notSupported();
 		}
-		
+
 		@Override
 		public void prepend(String text)
 		{
 			notSupported();
 		}
-		
+
 		@Override
 		public void append(Object... glue)
 		{
 			notSupported();
 		}
-		
+
 		@Override
 		public void prepend(Object... glue)
 		{
 			notSupported();
 		}
-		
+
 		private void notSupported()
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public boolean equals(Object obj)
 		{
@@ -183,7 +183,7 @@ public class WtRtData
 				return true;
 			return false;
 		}
-		
+
 		@Override
 		public Object clone() throws CloneNotSupportedException
 		{

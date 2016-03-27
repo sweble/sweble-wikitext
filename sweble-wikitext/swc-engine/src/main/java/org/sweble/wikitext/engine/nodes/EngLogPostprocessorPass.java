@@ -21,9 +21,9 @@ public class EngLogPostprocessorPass
 			EngLogPass
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogPostprocessorPass()
 	{
 	}

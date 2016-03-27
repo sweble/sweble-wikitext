@@ -21,13 +21,13 @@ public class EngLogParserFunctionResolution
 			EngLogNameResolution
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogParserFunctionResolution()
 	{
 	}
-	
+
 	protected EngLogParserFunctionResolution(String name, boolean success)
 	{
 		super(name, success);

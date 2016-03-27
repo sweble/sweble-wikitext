@@ -24,21 +24,21 @@ public class WtLinkOptionGarbage
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtLinkOptionGarbage()
 	{
 	}
-	
+
 	protected WtLinkOptionGarbage(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

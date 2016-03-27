@@ -26,9 +26,9 @@ public interface WtTemplateArguments
 			WtContentNode
 {
 	public static final WtEmptyTemplateArguments EMPTY = new WtEmptyTemplateArguments();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtEmptyTemplateArguments
 			extends
 				WtEmptyContentNode
@@ -36,23 +36,23 @@ public interface WtTemplateArguments
 				WtTemplateArguments
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtEmptyTemplateArguments()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_TEMPLATE_ARGUMENTS;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtTemplateArguments.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{
@@ -62,15 +62,15 @@ public interface WtTemplateArguments
 				return AstNodeImpl.equalsNoTypeCheck(this, (WtTemplateArgumentsImpl) other);
 			return super.equals(other);
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtTemplateArguments.EMPTY;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtTemplateArgumentsImpl
 			extends
 				WtContentNodeImpl
@@ -78,30 +78,30 @@ public interface WtTemplateArguments
 				WtTemplateArguments
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtTemplateArgumentsImpl()
 		{
 		}
-		
+
 		protected WtTemplateArgumentsImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_TEMPLATE_ARGUMENTS;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtTemplateArguments.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{

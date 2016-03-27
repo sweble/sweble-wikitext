@@ -17,18 +17,49 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.nodes.WtNode.*;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_BODY;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_BOLD;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_DEFINITION_LIST;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_DEFINITION_LIST_DEF;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_DEFINITION_LIST_TERM;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_EXTERNAL_LINK;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_HEADING;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_HORIZONTAL_RULE;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_IMAGE_LINK;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_IM_END_TAG;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_IM_START_TAG;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_INTERNAL_LINK;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_ITALICS;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_LCT_VAR_CONV;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_LIST_ITEM;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_ORDERED_LIST;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_PARAGRAPH;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_PARSED_WIKITEXT_PAGE;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_SECTION;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_SEMI_PRE;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CAPTION;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CELL;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_HEADER;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_IMPLICIT_TBODY;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_ROW;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_UNORDERED_LIST;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_URL;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_ELEMENT;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_EMPTY_TAG;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_END_TAG;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_START_TAG;
 
-import org.apache.commons.collections.BidiMap;
-import org.apache.commons.collections.bidimap.DualHashBidiMap;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
+import de.fau.cs.osr.utils.DualHashBidiMap;
+
 public enum ElementType
 {
 	// == Meta Element Types ===================================================
-	
+
 	PAGE,
 	SECTION,
 	SECTION_HEADING,
@@ -38,14 +69,14 @@ public enum ElementType
 	FRAMED_IMG,
 	LCT_VAR_CONV,
 	UNKNOWN,
-	
+
 	// A replacements
 	INT_LINK,
 	EXT_LINK,
 	URL,
-	
+
 	// == HTML Version 4.01 ====================================================
-	
+
 	/*
 	A,
 	*/
@@ -135,14 +166,14 @@ public enum ElementType
 	UL,
 	VAR, // Normal Tag 
 	;
-	
+
 	// =========================================================================
-	
+
 	public String getXmlTagName()
 	{
 		return (String) xmlElementTypeMap.getKey(this);
 	}
-	
+
 	public boolean isSpecial()
 	{
 		switch (this)
@@ -153,9 +184,9 @@ public enum ElementType
 			case SEMIPRE:
 			case INLINE_IMG:
 			case FRAMED_IMG:
-				
+
 				// --------------
-				
+
 			case ADDRESS:
 				// case APPLET:
 			case AREA:
@@ -238,12 +269,12 @@ public enum ElementType
 				// case WBR:
 				// case XMP:
 				return true;
-				
+
 			default:
 				return false;
 		}
 	}
-	
+
 	public boolean isFormatting()
 	{
 		switch (this)
@@ -267,16 +298,16 @@ public enum ElementType
 			case TT:
 			case U:
 				return true;
-				
+
 			default:
 				return false;
 		}
 	}
-	
+
 	// =========================================================================
-	
-	private static final BidiMap xmlElementTypeMap = new DualHashBidiMap();
-	
+
+	private static final DualHashBidiMap xmlElementTypeMap = new DualHashBidiMap();
+
 	static
 	{
 		/* Bug 35: We must not recognize <a> tags!
@@ -285,7 +316,7 @@ public enum ElementType
 		xmlElementTypeMap.put("#int-link", INT_LINK);
 		xmlElementTypeMap.put("#ext-link", EXT_LINK);
 		xmlElementTypeMap.put("#url", URL);
-		
+
 		xmlElementTypeMap.put("abbr", ABBR);
 		xmlElementTypeMap.put("acronym", ACRONYM);
 		xmlElementTypeMap.put("address", ADDRESS);
@@ -348,10 +379,10 @@ public enum ElementType
 		xmlElementTypeMap.put("u", U);
 		xmlElementTypeMap.put("ul", UL);
 		xmlElementTypeMap.put("var", VAR);
-		
+
 		// It's a BIDI map, the following lines would remove the 
 		// non-intermediate tags!
-		
+
 		// Intermediate tags
 		//xmlElementTypeMap.put("@b", B);
 		//xmlElementTypeMap.put("@i", I);
@@ -361,9 +392,9 @@ public enum ElementType
 		xmlElementTypeMap.put("#semipre", SEMIPRE);
 		xmlElementTypeMap.put("#lct-var-conv", LCT_VAR_CONV);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static ElementType getType(WtNode n)
 	{
 		switch (n.getNodeType())
@@ -378,7 +409,7 @@ public enum ElementType
 				// FIXME: Pretending that body can only be a section body might 
 				//        be dangerous?
 				return SECTION_BODY;
-				
+
 			case NT_DEFINITION_LIST:
 				return DL;
 			case NT_ORDERED_LIST:
@@ -413,19 +444,19 @@ public enum ElementType
 				return SEMIPRE;
 			case NT_HORIZONTAL_RULE:
 				return HR;
-				
+
 			case NT_IMAGE_LINK:
 				return TreeBuilder.isInlineImage((WtImageLink) n) ?
 						INLINE_IMG :
 						FRAMED_IMG;
-				
+
 			case NT_INTERNAL_LINK:
 				return INT_LINK;
 			case NT_EXTERNAL_LINK:
 				return EXT_LINK;
 			case NT_URL:
 				return URL;
-				
+
 			case NT_XML_START_TAG:
 			case NT_IM_START_TAG:
 			case NT_XML_END_TAG:
@@ -433,21 +464,21 @@ public enum ElementType
 			case NT_XML_EMPTY_TAG:
 			case NT_XML_ELEMENT:
 				return getType((WtNamedXmlElement) n);
-				
+
 			case NT_LCT_VAR_CONV:
 				return LCT_VAR_CONV;
-				
+
 			default:
 				throw new InternalError();
 		}
 	}
-	
+
 	public static ElementType getType(WtNamedXmlElement e)
 	{
 		String name = e.getName().toLowerCase();
 		if (name.isEmpty())
 			throw new InternalError();
-		
+
 		if (name.charAt(0) == '@')
 		{
 			return (ElementType) xmlElementTypeMap.get(name.substring(1));
@@ -457,7 +488,7 @@ public enum ElementType
 			ElementType type = (ElementType) xmlElementTypeMap.get(name);
 			if (type == null)
 				return UNKNOWN;
-			
+
 			return type;
 		}
 	}

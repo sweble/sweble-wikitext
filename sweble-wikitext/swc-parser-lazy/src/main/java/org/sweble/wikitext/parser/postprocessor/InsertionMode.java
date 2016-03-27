@@ -27,5 +27,5 @@ public enum InsertionMode
 	IN_TABLE_BODY,
 	IN_CELL,
 	IN_ROW
-	
+
 }

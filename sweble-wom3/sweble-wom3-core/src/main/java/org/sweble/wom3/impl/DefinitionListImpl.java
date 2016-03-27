@@ -36,67 +36,67 @@ public class DefinitionListImpl
 			Wom3DefinitionList
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private DefinitionListTermImpl implicitFirstDt;
-	
+
 	private ArrayList<Wom3DefinitionListTerm> terms = new ArrayList<Wom3DefinitionListTerm>();
-	
+
 	// =========================================================================
-	
+
 	public DefinitionListImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "dl";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean isCompact()
 	{
 		return getBoolAttr("compact");
 	}
-	
+
 	@Override
 	public boolean setCompact(boolean compact)
 	{
 		return setBoolAttr(CommonAttributeDescriptors.ATTR_DESC_COMPACT, "compact", compact);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getTermNum()
 	{
 		return terms.size();
 	}
-	
+
 	@Override
 	public Collection<Wom3DefinitionListTerm> getTerms()
 	{
 		return Collections.unmodifiableCollection(terms);
 	}
-	
+
 	@Override
 	public Wom3DefinitionListTerm getTerm(int index) throws IndexOutOfBoundsException
 	{
 		return terms.get(index);
 	}
-	
+
 	@Override
 	public Wom3DefinitionListTerm replaceTerm(
 			int index,
 			Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
 		assertWritableOnDocument();
-		
+
 		Wom3DefinitionListTerm old = getTerm(index);
 		terms.set(index, term);
 		replaceChildNoNotify(term, old);
@@ -104,36 +104,36 @@ public class DefinitionListImpl
 		appendDefs(term);
 		return old;
 	}
-	
+
 	@Override
 	public Wom3DefinitionListTerm removeTerm(int index) throws IndexOutOfBoundsException
 	{
 		assertWritableOnDocument();
-		
+
 		Wom3DefinitionListTerm old = terms.remove(index);
 		removeChildNoNotify(old);
 		removeDefs(old);
 		return old;
 	}
-	
+
 	@Override
 	public void appendTerm(Wom3DefinitionListTerm term)
 	{
 		assertWritableOnDocument();
-		
+
 		terms.add(term);
 		appendChildNoNotify(term);
 		appendDefs(term);
 	}
-	
+
 	@Override
 	public void insertTerm(int beforeIndex, Wom3DefinitionListTerm term) throws IndexOutOfBoundsException
 	{
 		assertWritableOnDocument();
-		
+
 		if (beforeIndex < 0 || beforeIndex > terms.size())
 			throw new IndexOutOfBoundsException();
-		
+
 		if (beforeIndex == terms.size())
 		{
 			appendTerm(term);
@@ -142,11 +142,11 @@ public class DefinitionListImpl
 		{
 			insertBeforeNoNotify(terms.get(beforeIndex), term);
 		}
-		
+
 		terms.add(beforeIndex, term);
 		appendDefs(term);
 	}
-	
+
 	private void removeDefs(Wom3DefinitionListTerm removedTerm)
 	{
 		// The term itself keeps its children. We just unlink them from this 
@@ -154,7 +154,7 @@ public class DefinitionListImpl
 		for (Wom3DefinitionListDef dd : removedTerm.getDefs())
 			removeChildNoNotify(dd);
 	}
-	
+
 	private void appendDefs(Wom3DefinitionListTerm addedTerm)
 	{
 		Wom3Node before = addedTerm.getNextSibling();
@@ -169,9 +169,9 @@ public class DefinitionListImpl
 				appendChildNoNotify(dd);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getItemNum()
 	{
@@ -180,7 +180,7 @@ public class DefinitionListImpl
 			count += 1 + term.getDefNum();
 		return count;
 	}
-	
+
 	@Override
 	public Collection<Wom3DefinitionListItem> getItems()
 	{
@@ -195,7 +195,7 @@ public class DefinitionListImpl
 		}
 		return Collections.unmodifiableCollection(items);
 	}
-	
+
 	@Override
 	public Wom3DefinitionListItem getItem(int index) throws IndexOutOfBoundsException
 	{
@@ -204,7 +204,7 @@ public class DefinitionListImpl
 			throw new IndexOutOfBoundsException();
 		return item;
 	}
-	
+
 	@Override
 	public Wom3DefinitionListItem replaceItem(
 			int index,
@@ -217,7 +217,7 @@ public class DefinitionListImpl
 		replaceChild(item, old);
 		return old;
 	}
-	
+
 	@Override
 	public Wom3DefinitionListItem removeItem(int index) throws IndexOutOfBoundsException
 	{
@@ -225,13 +225,13 @@ public class DefinitionListImpl
 		removeChild(old);
 		return old;
 	}
-	
+
 	@Override
 	public void appendItem(Wom3DefinitionListItem item)
 	{
 		appendChild(item);
 	}
-	
+
 	@Override
 	public void insertItem(int beforeIndex, Wom3DefinitionListItem item) throws IndexOutOfBoundsException
 	{
@@ -245,7 +245,7 @@ public class DefinitionListImpl
 			insertBefore(item, before);
 		}
 	}
-	
+
 	private Wom3DefinitionListItem getItemOrNullAtSize(int index)
 	{
 		int count = 0;
@@ -272,9 +272,9 @@ public class DefinitionListImpl
 			return null;
 		throw new IndexOutOfBoundsException();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -288,11 +288,11 @@ public class DefinitionListImpl
 		else if (added instanceof Wom3DefinitionListTerm)
 		{
 			DefinitionListTermImpl addedTerm = (DefinitionListTermImpl) added;
-			
+
 			int i = (prev == null) ? 0 : indexOfTerm(prev) + 1;
 			DefinitionListTermImpl stealFrom = (DefinitionListTermImpl)
 					((i > 0) ? terms.get(i - 1) : implicitFirstDt);
-			
+
 			// If the term was added in between the defs of another term, we 
 			// have to steal the other term's defs which now are located behind 
 			// the inserted term
@@ -310,12 +310,12 @@ public class DefinitionListImpl
 				}
 				sFirst = addedTerm.getNextSibling();
 			}
-			
+
 			// Insert term into term array and add the term's defs directly 
 			// after the term
 			terms.add(i, addedTerm);
 			appendDefs(addedTerm);
-			
+
 			if (sLast != addedTerm)
 			{
 				stealFrom.transfer(sFirst, sLast, addedTerm);
@@ -324,7 +324,7 @@ public class DefinitionListImpl
 			}
 		}
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -340,7 +340,7 @@ public class DefinitionListImpl
 			removeDefs((Wom3DefinitionListTerm) removed);
 		}
 	}
-	
+
 	private Backbone searchTermForDef(Backbone prev)
 	{
 		// Search backwards for the term to which the added definition will belong
@@ -352,7 +352,7 @@ public class DefinitionListImpl
 			p = getImplicitFirstDt();
 		return p;
 	}
-	
+
 	private Backbone getImplicitFirstDt()
 	{
 		if (implicitFirstDt == null)
@@ -360,7 +360,7 @@ public class DefinitionListImpl
 					getOwnerDocument().createElementNS(Wom3Node.WOM_NS_URI, "dt");
 		return implicitFirstDt;
 	}
-	
+
 	private int indexOfTerm(Wom3Node node)
 	{
 		int i = -1;
@@ -374,17 +374,17 @@ public class DefinitionListImpl
 			child = child.getNextSibling();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("compact", CommonAttributeDescriptors.ATTR_DESC_COMPACT);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

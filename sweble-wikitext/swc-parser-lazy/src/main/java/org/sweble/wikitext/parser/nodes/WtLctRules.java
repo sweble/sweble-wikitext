@@ -24,24 +24,24 @@ public class WtLctRules
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =====================================================================
-	
+
 	protected WtLctRules()
 	{
 	}
-	
+
 	protected WtLctRules(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_LCT_RULES;
 	}
-	
+
 	@Override
 	public String getNodeName()
 	{

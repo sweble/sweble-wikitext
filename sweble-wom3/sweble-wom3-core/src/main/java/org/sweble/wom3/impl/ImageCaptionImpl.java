@@ -26,22 +26,22 @@ public class ImageCaptionImpl
 			Wom3ImageCaption
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public ImageCaptionImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "imgcaption";
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

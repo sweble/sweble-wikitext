@@ -35,218 +35,218 @@ public class ImageImpl
 			Wom3Image
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc("imgcaption") };
-	
+
 	private Wom3ImageCaption caption;
-	
+
 	// =========================================================================
-	
+
 	public ImageImpl(DocumentImpl owner)
 	{
 		super(owner);
 		setSource("unknown");
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "image";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
 		if (added instanceof Wom3ImageCaption)
 			this.caption = (Wom3ImageCaption) added;
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
 		if (removed == this.caption)
 			this.caption = null;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getSource()
 	{
 		return getStringAttr("source");
 	}
-	
+
 	@Override
 	public String setSource(String source)
 	{
 		return setAttributeDirect(ATTR_DESC_SOURCE, "source", source);
 	}
-	
+
 	@Override
 	public Wom3ImageFormat getFormat()
 	{
 		return (Wom3ImageFormat) getAttributeNativeData("format");
 	}
-	
+
 	@Override
 	public Wom3ImageFormat setFormat(Wom3ImageFormat format) throws NullPointerException
 	{
 		return setAttributeDirect(ATTR_DESC_FORMAT, "format", format);
 	}
-	
+
 	@Override
 	public boolean isBorder()
 	{
 		return getAttributeNativeData("border") != null;
 	}
-	
+
 	@Override
 	public boolean setBorder(boolean border)
 	{
 		return setAttributeDirect(ATTR_DESC_BORDER, "border", border) != null;
 	}
-	
+
 	@Override
 	public Wom3ImageHAlign getHAlign()
 	{
 		return (Wom3ImageHAlign) getAttributeNativeData("halign");
 	}
-	
+
 	@Override
 	public Wom3ImageHAlign setHAlign(Wom3ImageHAlign halign)
 	{
 		return setAttributeDirect(ATTR_DESC_HALIGN, "halign", halign);
 	}
-	
+
 	@Override
 	public Wom3ImageVAlign getVAlign()
 	{
 		return (Wom3ImageVAlign) getAttributeNativeData("valign");
 	}
-	
+
 	@Override
 	public Wom3ImageVAlign setVAlign(Wom3ImageVAlign valign)
 	{
 		return setAttributeDirect(ATTR_DESC_VALIGN, "valign", valign);
 	}
-	
+
 	@Override
 	public Integer getWidth()
 	{
 		return (Integer) getAttributeNativeData("width");
 	}
-	
+
 	@Override
 	public Integer setWidth(Integer width)
 	{
 		return setAttributeDirect(ATTR_DESC_WIDTH, "width", width);
 	}
-	
+
 	@Override
 	public Integer getHeight()
 	{
 		return (Integer) getAttributeNativeData("height");
 	}
-	
+
 	@Override
 	public Integer setHeight(Integer height)
 	{
 		return setAttributeDirect(ATTR_DESC_HEIGHT, "height", height);
 	}
-	
+
 	@Override
 	public boolean isUpright()
 	{
 		return getAttributeNativeData("upright") != null;
 	}
-	
+
 	@Override
 	public boolean setUpright(boolean upright)
 	{
 		return setAttributeDirect(ATTR_DESC_UPRIGHT, "upright", upright) != null;
 	}
-	
+
 	@Override
 	public URL getExtLink()
 	{
 		return getUrlAttr("extlink");
 	}
-	
+
 	@Override
 	public URL setExtLink(URL url)
 	{
 		return setUrlAttr(ATTR_DESC_EXTLINK, "extlink", url);
 	}
-	
+
 	@Override
 	public String getIntLink()
 	{
 		return getStringAttr("intlink");
 	}
-	
+
 	@Override
 	public String setIntLink(String target)
 	{
 		return setAttributeDirect(ATTR_DESC_INTLINK, "intlink", target);
 	}
-	
+
 	@Override
 	public String getAlt()
 	{
 		return getStringAttr("alt");
 	}
-	
+
 	@Override
 	public String setAlt(String alt)
 	{
 		return setAttributeDirect(ATTR_DESC_ALT, "alt", alt);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3ImageCaption setCaption(Wom3ImageCaption caption) throws NullPointerException
 	{
 		return (Wom3ImageCaption) replaceOrAppend(this.caption, caption, false);
 	}
-	
+
 	@Override
 	public Wom3ImageCaption getCaption()
 	{
 		return caption;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Title getLinkTitle()
 	{
 		// TODO: Implement
 		throw new UnsupportedOperationException();
-		
+
 		/*
 		String title = getSource();
 		if (getAlt() != null)
@@ -256,7 +256,7 @@ public class ImageImpl
 		return titleImpl;
 		*/
 	}
-	
+
 	@Override
 	public String getLinkTarget()
 	{
@@ -265,33 +265,33 @@ public class ImageImpl
 			return intLink;
 		return getSource();
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_SOURCE = new AttrDescSource();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_FORMAT = new AttrDescFormat();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_BORDER = new AttrDescBorder();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_HALIGN = new AttrDescHAlign();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_VALIGN = new AttrDescVAlign();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_WIDTH = new AttrDescWidth();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_HEIGHT = new AttrDescHeight();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_UPRIGHT = new AttrDescUpright();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_EXTLINK = new AttrDescExtLink();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_INTLINK = new AttrDescIntLink();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_ALT = new AttrDescAlt();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.put("source", ATTR_DESC_SOURCE);
@@ -306,7 +306,7 @@ public class ImageImpl
 		NAME_MAP.put("intlink", ATTR_DESC_INTLINK);
 		NAME_MAP.put("alt", ATTR_DESC_ALT);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -315,9 +315,9 @@ public class ImageImpl
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescSource
 			extends
 				AttributeDescriptor
@@ -331,7 +331,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -342,7 +342,7 @@ public class ImageImpl
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescFormat
 			extends
 				AttributeDescriptor
@@ -356,7 +356,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -369,7 +369,7 @@ public class ImageImpl
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescBorder
 			extends
 				AttributeDescriptor
@@ -383,7 +383,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -392,7 +392,7 @@ public class ImageImpl
 			return AttributeVerifiers.verifyAndConvertBool(parent, verified, "border");
 		}
 	}
-	
+
 	public static final class AttrDescHAlign
 			extends
 				AttributeDescriptor
@@ -406,7 +406,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -419,7 +419,7 @@ public class ImageImpl
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescVAlign
 			extends
 				AttributeDescriptor
@@ -433,7 +433,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -446,7 +446,7 @@ public class ImageImpl
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescWidth
 			extends
 				AttributeDescriptor
@@ -460,7 +460,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -469,7 +469,7 @@ public class ImageImpl
 			return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescHeight
 			extends
 				AttributeDescriptor
@@ -483,7 +483,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -492,7 +492,7 @@ public class ImageImpl
 			return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescUpright
 			extends
 				AttributeDescriptor
@@ -506,7 +506,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -515,7 +515,7 @@ public class ImageImpl
 			return AttributeVerifiers.verifyAndConvertBool(parent, verified, "upright");
 		}
 	}
-	
+
 	public static final class AttrDescExtLink
 			extends
 				AttributeDescriptor
@@ -529,7 +529,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -538,7 +538,7 @@ public class ImageImpl
 			return AttributeVerifiers.URL.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescIntLink
 			extends
 				AttributeDescriptor
@@ -552,7 +552,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -561,11 +561,11 @@ public class ImageImpl
 			super.verifyAndConvert(parent, verified);
 			if ((verified.strValue != null) && (!verified.strValue.isEmpty()))
 				Toolbox.checkValidTarget(verified.strValue);
-			
+
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescAlt
 			extends
 				AttributeDescriptor
@@ -579,7 +579,7 @@ public class ImageImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

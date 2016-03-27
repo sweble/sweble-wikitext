@@ -31,7 +31,7 @@ public interface Wom3CoreAttributes
 	 *         attribute is not specified.
 	 */
 	public String getId();
-	
+
 	/**
 	 * Set the unique id of the element.
 	 * 
@@ -43,7 +43,7 @@ public interface Wom3CoreAttributes
 	 * @return The old unique id of the element.
 	 */
 	public String setId(String id) throws IllegalArgumentException;
-	
+
 	/**
 	 * Get the stylesheet classes assigned to this element.
 	 * 
@@ -54,7 +54,7 @@ public interface Wom3CoreAttributes
 	 *         specified.
 	 */
 	public String getClasses();
-	
+
 	/**
 	 * Set the stylesheet classes assigned to this element.
 	 * 
@@ -66,7 +66,7 @@ public interface Wom3CoreAttributes
 	 * @return A string containing the old classes.
 	 */
 	public String setClasses(String classes);
-	
+
 	/**
 	 * Get CSS styles directly associated with this element.
 	 * 
@@ -76,7 +76,7 @@ public interface Wom3CoreAttributes
 	 *         <code>null</code> if the attribute is not specified.
 	 */
 	public String getStyle();
-	
+
 	/**
 	 * Directly associate CSS styles with this element.
 	 * 
@@ -88,7 +88,7 @@ public interface Wom3CoreAttributes
 	 * @return The old CSS styles that were associated with this element.
 	 */
 	public String setStyle(String style);
-	
+
 	/**
 	 * Get the title of the element.
 	 * 
@@ -98,7 +98,7 @@ public interface Wom3CoreAttributes
 	 *         not specified.
 	 */
 	public String getTitle();
-	
+
 	/**
 	 * Get the title of the element.
 	 * 

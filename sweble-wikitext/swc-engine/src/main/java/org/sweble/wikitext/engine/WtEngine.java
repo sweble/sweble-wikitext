@@ -24,27 +24,27 @@ import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 
 public interface WtEngine
 {
-	
+
 	public void setDebugHooks(ExpansionDebugHooks hooks);
-	
+
 	public void setNoRedirect(boolean noRedirect);
-	
+
 	public void setTimingEnabled(boolean timingEnabled);
-	
+
 	public void setCatchAll(boolean catchAll);
-	
+
 	public WikiConfig getWikiConfig();
-	
+
 	public ExpansionDebugHooks getDebugHooks();
-	
+
 	public boolean isNoRedirect();
-	
+
 	public boolean isTimingEnabled();
-	
+
 	public boolean isCatchAll();
-	
+
 	public EngineNodeFactory nf();
-	
+
 	/**
 	 * Takes wikitext and preprocesses the wikitext (without performing
 	 * expansion). The following steps are performed:
@@ -61,7 +61,7 @@ public interface WtEngine
 			boolean forInclusion,
 			ExpansionCallback callback)
 			throws EngineException;
-	
+
 	/**
 	 * Takes wikitext and expands the wikitext. The following steps are
 	 * performed:
@@ -77,7 +77,7 @@ public interface WtEngine
 			String wikitext,
 			ExpansionCallback callback)
 			throws EngineException;
-	
+
 	/**
 	 * Takes wikitext and expands the wikitext. The following steps are
 	 * performed:
@@ -94,7 +94,7 @@ public interface WtEngine
 			boolean forInclusion,
 			ExpansionCallback callback)
 			throws EngineException;
-	
+
 	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
 	 * are performed:
@@ -112,7 +112,7 @@ public interface WtEngine
 			String wikitext,
 			ExpansionCallback callback)
 			throws EngineException;
-	
+
 	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
 	 * are performed:
@@ -131,7 +131,7 @@ public interface WtEngine
 			String wikitext,
 			ExpansionCallback callback)
 			throws EngineException;
-	
+
 	/**
 	 * Takes an AST after preprocessing or after expansion and performs the
 	 * following steps:
@@ -145,5 +145,5 @@ public interface WtEngine
 			PageId pageId,
 			WtPreproWikitextPage pprAst)
 			throws EngineException;
-	
+
 }

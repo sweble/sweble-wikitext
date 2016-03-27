@@ -35,26 +35,26 @@ public class RedirectTest
 			EngineIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
-	
+
 	private static final String INPUT_SUB_DIR = "redirect/wikitext";
-	
+
 	private static final String EXPECTED_AST_SUB_DIR = "redirect/ast";
-	
+
 	// =========================================================================
-	
+
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		TestResourcesFixture resources = getTestResourcesFixture();
 		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final File inputFile;
-	
+
 	// =========================================================================
-	
+
 	public RedirectTest(
 			String title,
 			TestResourcesFixture resources,
@@ -64,9 +64,9 @@ public class RedirectTest
 		this.inputFile = inputFile;
 		getConfig().getI18nAliasById("redirect").getAliases().add("#重定向");
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testAstAfterPostprocessingMatchesReference() throws Exception
 	{

@@ -27,44 +27,44 @@ public class CdataSection
 			Wom3CdataSection
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String data;
-	
+
 	// =========================================================================
-	
+
 	public CdataSection(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	public CdataSection(DocumentImpl owner, String data)
 	{
 		super(owner);
 		this.data = data;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public short getNodeType()
 	{
 		return Node.CDATA_SECTION_NODE;
 	}
-	
+
 	@Override
 	public String getNodeName()
 	{
 		return "#cdata-section";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getData()
 	{
 		return data;
 	}
-	
+
 	@Override
 	public void setData(String data)
 	{

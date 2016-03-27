@@ -25,19 +25,19 @@ public class CorePfnFunctionsLocalization
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnFunctionsLocalization(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - Localization");
 	}
-	
+
 	public static CorePfnFunctionsLocalization group(WikiConfig wikiConfig)
 	{
 		return new CorePfnFunctionsLocalization(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{plural:2|is|are}}

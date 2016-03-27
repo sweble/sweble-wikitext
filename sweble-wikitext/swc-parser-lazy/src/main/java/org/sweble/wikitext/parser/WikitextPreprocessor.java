@@ -26,64 +26,64 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 
+import de.fau.cs.osr.ptk.common.ParserCommon;
 import xtc.parser.ParseError;
 import xtc.parser.ParseException;
 import xtc.parser.Result;
 import xtc.parser.SemanticValue;
-import de.fau.cs.osr.ptk.common.ParserCommon;
 
 public class WikitextPreprocessor
 		extends
 			ParserCommon<WtNode>
 {
 	private RatsWikitextPreprocessor preprocessor = null;
-	
+
 	private final ParserConfig config;
-	
+
 	// =========================================================================
-	
+
 	public WikitextPreprocessor(ParserConfig config)
 	{
 		this.config = config;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Object getConfig()
 	{
 		return config;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
 		return parseArticle(new ValidatedWikitext(src, new WtEntityMapImpl()), title, false);
 	}
-	
+
 	public WtNode parseArticle(
 			ValidatedWikitext wikitext,
 			String title,
 			boolean forInclusion) throws IOException, ParseException
 	{
 		Reader in = new StringReader(wikitext.getWikitext());
-		
+
 		int inputSize = wikitext.getWikitext().getBytes().length;
-		
+
 		preprocessor = new RatsWikitextPreprocessor(in, title, inputSize);
-		
+
 		preprocessor.getState().init(config, wikitext.getEntityMap(), forInclusion);
-		
+
 		preprocessor.setNodeFactory(config.getNodeFactory());
-		
+
 		Result r = this.preprocessor.pArticle(0);
-		
+
 		if (r.hasValue())
 		{
 			SemanticValue v = (SemanticValue) r;
-			
+
 			if (v.value instanceof WtPreproWikitextPage)
 			{
 				return (WtNode) process((WtPreproWikitextPage) v.value);
@@ -98,7 +98,7 @@ public class WikitextPreprocessor
 		else
 		{
 			ParseError err = (ParseError) r;
-			
+
 			if (err.index == -1)
 			{
 				throw new ParseException(

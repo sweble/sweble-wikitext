@@ -31,43 +31,43 @@ public class TagExtBodyImpl
 			SwcTagExtBody
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc(Wom3Node.WOM_NS_URI, "text", ChildDescriptor.MULTIPLE) };
-	
+
 	// =========================================================================
-	
+
 	public TagExtBodyImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getSwcName()
 	{
 		return "tagext-body";
 	}
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

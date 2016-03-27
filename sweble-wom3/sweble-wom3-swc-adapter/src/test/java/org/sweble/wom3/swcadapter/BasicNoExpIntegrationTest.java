@@ -39,26 +39,26 @@ public class BasicNoExpIntegrationTest
 			WtWom3IntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
-	
+
 	private static final String INPUT_SUB_DIR = "basic-no-exp/wikitext";
-	
+
 	private static final String EXPECTED_WOM_SUB_DIR = "basic-no-exp/wom";
-	
+
 	// =========================================================================
-	
+
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		TestResourcesFixture resources = getTestResourcesFixture();
 		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final File inputFile;
-	
+
 	// =========================================================================
-	
+
 	public BasicNoExpIntegrationTest(
 			String title,
 			TestResourcesFixture resources,
@@ -67,9 +67,9 @@ public class BasicNoExpIntegrationTest
 		super(resources);
 		this.inputFile = inputFile;
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Wikitext -( no expansion )-> AST -> WOM == expected WOM?
 	 */
@@ -83,7 +83,7 @@ public class BasicNoExpIntegrationTest
 				EXPECTED_WOM_SUB_DIR,
 				null);
 	}
-	
+
 	/**
 	 * Wikitext -( no expansion )-> AST -> WOM -> Wikitext == original Wikitext?
 	 */

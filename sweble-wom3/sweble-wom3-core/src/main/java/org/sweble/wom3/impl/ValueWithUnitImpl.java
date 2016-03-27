@@ -28,51 +28,51 @@ public class ValueWithUnitImpl
 			Serializable
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private Wom3Unit unit;
-	
+
 	private float value;
-	
+
 	private int intValue;
-	
+
 	// =========================================================================
-	
+
 	public ValueWithUnitImpl(Wom3Unit unit, float value)
 	{
 		this.unit = unit;
 		this.value = value;
 		this.intValue = (int) value;
 	}
-	
+
 	public ValueWithUnitImpl(Wom3Unit unit, int value)
 	{
 		this.unit = unit;
 		this.value = value;
 		this.intValue = value;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Unit getUnit()
 	{
 		return unit;
 	}
-	
+
 	@Override
 	public float getValue()
 	{
 		return value;
 	}
-	
+
 	@Override
 	public int getIntValue()
 	{
 		return intValue;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
@@ -86,9 +86,9 @@ public class ValueWithUnitImpl
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -99,7 +99,7 @@ public class ValueWithUnitImpl
 		result = prime * result + Float.floatToIntBits(value);
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{

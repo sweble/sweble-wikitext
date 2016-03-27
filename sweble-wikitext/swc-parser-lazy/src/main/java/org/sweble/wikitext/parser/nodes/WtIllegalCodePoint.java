@@ -24,70 +24,70 @@ public class WtIllegalCodePoint
 			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtIllegalCodePoint()
 	{
 	}
-	
+
 	protected WtIllegalCodePoint(String codePoint, IllegalCodePointType type)
 	{
 		setCodePoint(codePoint);
 		setType(type);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_ILLEGAL_CODE_POINT;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String codePoint;
-	
+
 	public final String getCodePoint()
 	{
 		return this.codePoint;
 	}
-	
+
 	public final void setCodePoint(String codePoint)
 	{
 		if (codePoint == null)
 			throw new NullPointerException();
 		this.codePoint = codePoint;
 	}
-	
+
 	private IllegalCodePointType type;
-	
+
 	public final IllegalCodePointType getType()
 	{
 		return this.type;
 	}
-	
+
 	public final void setType(IllegalCodePointType type)
 	{
 		if (type == null)
 			throw new NullPointerException();
 		this.type = type;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 2 + getSuperPropertyCount();
 	}
-	
+
 	public int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -98,7 +98,7 @@ public class WtIllegalCodePoint
 			{
 				return WtIllegalCodePoint.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -108,12 +108,12 @@ public class WtIllegalCodePoint
 						return "codePoint";
 					case 1:
 						return "type";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -123,12 +123,12 @@ public class WtIllegalCodePoint
 						return WtIllegalCodePoint.this.getCodePoint();
 					case 1:
 						return WtIllegalCodePoint.this.getType();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -146,16 +146,16 @@ public class WtIllegalCodePoint
 						WtIllegalCodePoint.this.setType((IllegalCodePointType) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
-	
+
 	public enum IllegalCodePointType
 	{
 		ISOLATED_SURROGATE,

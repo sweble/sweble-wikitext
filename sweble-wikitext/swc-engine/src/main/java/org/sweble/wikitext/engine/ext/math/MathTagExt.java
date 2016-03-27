@@ -33,32 +33,32 @@ public class MathTagExt
 			TagExtensionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected MathTagExt(WikiConfig wikiConfig)
 	{
 		super("Extension - Math");
 		addTagExtension(new MathTagExtImpl(wikiConfig));
 	}
-	
+
 	public static MathTagExt group(WikiConfig wikiConfig)
 	{
 		return new MathTagExt(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == <math>
 	// ==
 	// =========================================================================
-	
+
 	public static final class MathTagExtImpl
 			extends
 				TagExtensionBase
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -66,12 +66,12 @@ public class MathTagExt
 		{
 			super("math");
 		}
-		
+
 		public MathTagExtImpl(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "math");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,

@@ -23,39 +23,39 @@ public class EngLogPreprocessorPass
 			EngLogPass
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogPreprocessorPass()
 	{
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private boolean forInclusion;
-	
+
 	public final boolean getForInclusion()
 	{
 		return this.forInclusion;
 	}
-	
+
 	public final void setForInclusion(boolean forInclusion)
 	{
 		this.forInclusion = forInclusion;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -66,7 +66,7 @@ public class EngLogPreprocessorPass
 			{
 				return EngLogPreprocessorPass.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -74,12 +74,12 @@ public class EngLogPreprocessorPass
 				{
 					case 0:
 						return "forInclusion";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -87,12 +87,12 @@ public class EngLogPreprocessorPass
 				{
 					case 0:
 						return EngLogPreprocessorPass.this.getForInclusion();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -104,7 +104,7 @@ public class EngLogPreprocessorPass
 						EngLogPreprocessorPass.this.setForInclusion((Boolean) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

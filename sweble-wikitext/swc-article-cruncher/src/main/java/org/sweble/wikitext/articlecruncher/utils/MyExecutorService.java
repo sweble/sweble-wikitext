@@ -30,50 +30,50 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 public class MyExecutorService
 		implements
 			ExecutorService
 {
 	private static final long SHUTDOWN_TIMEOUT_IN_SECONDS = 60 * 5;
-	
+
 	// =========================================================================
-	
+
 	private final Logger logger;
-	
+
 	private final ExecutorService executor;
-	
+
 	private final DaemonThreadFactory threadFactory;
-	
+
 	// =========================================================================
-	
+
 	public MyExecutorService(ExecutorType type, Logger logger)
 	{
 		this(type, logger, null);
 	}
-	
+
 	public MyExecutorService(
 			ExecutorType type,
 			Logger logger,
 			ThreadGroup threadGroup)
 	{
 		this.logger = logger;
-		
+
 		this.threadFactory = new DaemonThreadFactory(
 				logger.getName(), threadGroup);
-		
+
 		switch (type)
 		{
 			case CACHED_THREAD_POOL:
 				this.executor = Executors.newCachedThreadPool(threadFactory);
 				break;
-			
+
 			default:
 				throw new IllegalArgumentException("Invalid executor type");
 		}
 	}
-	
+
 	public MyExecutorService(
 			Logger logger,
 			int corePoolSize,
@@ -84,7 +84,7 @@ public class MyExecutorService
 	{
 		this(logger, corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, null);
 	}
-	
+
 	public MyExecutorService(
 			Logger logger,
 			int corePoolSize,
@@ -95,10 +95,10 @@ public class MyExecutorService
 			ThreadGroup threadGroup)
 	{
 		this.logger = logger;
-		
+
 		this.threadFactory = new DaemonThreadFactory(
 				logger.getName(), threadGroup);
-		
+
 		this.executor = new ThreadPoolExecutor(
 				corePoolSize,
 				maximumPoolSize,
@@ -107,7 +107,7 @@ public class MyExecutorService
 				workQueue,
 				threadFactory);
 	}
-	
+
 	public MyExecutorService(
 			Logger logger,
 			int corePoolSize,
@@ -119,10 +119,10 @@ public class MyExecutorService
 			RejectedExecutionHandler handler)
 	{
 		this.logger = logger;
-		
+
 		this.threadFactory = new DaemonThreadFactory(
 				logger.getName(), threadGroup);
-		
+
 		this.executor = new ThreadPoolExecutor(
 				corePoolSize,
 				maximumPoolSize,
@@ -132,26 +132,26 @@ public class MyExecutorService
 				threadFactory,
 				handler);
 	}
-	
+
 	// =========================================================================
-	
+
 	public ExecutorService getExecutor()
 	{
 		return executor;
 	}
-	
+
 	public ThreadGroup getThreadGroup()
 	{
 		return threadFactory.getThreadGroup();
 	}
-	
+
 	public void setThreadNameTemplate(String threadNameTemplate)
 	{
 		this.threadFactory.setThreadNameTemplate(threadNameTemplate);
 	}
-	
+
 	// =========================================================================
-	
+
 	/*
 	 * Taken from usage example from:
 	 * http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/ExecutorService.html
@@ -159,20 +159,20 @@ public class MyExecutorService
 	public synchronized void shutdownAndAwaitTermination()
 	{
 		logger.info("Shutting down workers");
-		
+
 		// Disable new tasks from being submitted
 		executor.shutdown();
-		
+
 		try
 		{
 			logger.info("Waiting for workers to terminate");
 			if (!executor.awaitTermination(SHUTDOWN_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS))
 			{
 				logger.error("Workers are not responding to shutdown! Forcing shutdown.");
-				
+
 				// Cancel currently executing tasks
 				executor.shutdownNow();
-				
+
 				// Wait a while for tasks to respond to being cancelled
 				if (!executor.awaitTermination(SHUTDOWN_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS))
 					logger.error("Workers did not terminate!");
@@ -181,77 +181,77 @@ public class MyExecutorService
 		catch (InterruptedException ie)
 		{
 			logger.error("Worker shutdown interrupted! Forcing shutdown.");
-			
+
 			// (Re-)Cancel if current thread also interrupted
 			executor.shutdownNow();
-			
+
 			// Preserve interrupt status
 			Thread.currentThread().interrupt();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void execute(Runnable command)
 	{
 		executor.execute(command);
 	}
-	
+
 	@Override
 	public void shutdown()
 	{
 		executor.shutdown();
 	}
-	
+
 	@Override
 	public List<Runnable> shutdownNow()
 	{
 		return executor.shutdownNow();
 	}
-	
+
 	@Override
 	public boolean isShutdown()
 	{
 		return executor.isShutdown();
 	}
-	
+
 	@Override
 	public boolean isTerminated()
 	{
 		return executor.isTerminated();
 	}
-	
+
 	@Override
 	public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException
 	{
 		return executor.awaitTermination(timeout, unit);
 	}
-	
+
 	@Override
 	public <T> Future<T> submit(Callable<T> task)
 	{
 		return executor.submit(task);
 	}
-	
+
 	@Override
 	public <T> Future<T> submit(Runnable task, T result)
 	{
 		return executor.submit(task, result);
 	}
-	
+
 	@Override
 	public Future<?> submit(Runnable task)
 	{
 		return executor.submit(task);
 	}
-	
+
 	@Override
 	public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException
 	{
 		return executor.invokeAll(tasks);
 	}
-	
+
 	@Override
 	public <T> List<Future<T>> invokeAll(
 			Collection<? extends Callable<T>> tasks,
@@ -260,13 +260,13 @@ public class MyExecutorService
 	{
 		return executor.invokeAll(tasks, timeout, unit);
 	}
-	
+
 	@Override
 	public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException
 	{
 		return executor.invokeAny(tasks);
 	}
-	
+
 	@Override
 	public <T> T invokeAny(
 			Collection<? extends Callable<T>> tasks,

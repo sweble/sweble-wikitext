@@ -41,22 +41,22 @@ import org.sweble.wom3.swcadapter.utils.AnalyzingStringBuffer;
 import org.sweble.wom3.util.Wom3Visitor;
 import org.w3c.dom.Node;
 
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class FixWomRtdBase
 		extends
 			Wom3Visitor
 {
 	private final AnalyzingStringBuffer wm = new AnalyzingStringBuffer();
-	
+
 	private static Map<String, ElementProperties> elements;
-	
+
 	private static Set<String> blockElementSet;
-	
+
 	private Wom3Document doc;
-	
+
 	// =========================================================================
-	
+
 	public FixWomRtdBase()
 	{
 		synchronized (FixWomRtdBase.class)
@@ -67,11 +67,11 @@ public class FixWomRtdBase
 				for (ElementProperties e : ElementProperties.values())
 					elements.put(e.toString(), e);
 			}
-			
+
 			if (blockElementSet == null)
 			{
 				blockElementSet = new HashSet<String>();
-				
+
 				blockElementSet.add("address");
 				blockElementSet.add("blockquote");
 				blockElementSet.add("center");
@@ -89,16 +89,16 @@ public class FixWomRtdBase
 			}
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static ElementProperties getInfo(String tagName)
 	{
 		return elements.get(tagName);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected Wom3Node before(Wom3Node node)
 	{
@@ -107,21 +107,21 @@ public class FixWomRtdBase
 			doc = (Wom3Document) node;
 		return super.before(node);
 	}
-	
+
 	@Override
 	protected Object after(Wom3Node node, Object result)
 	{
 		//Assert.assertEquals(womToWmFast(node), wm.toString());
 		return super.after(node, result);
 	}
-	
+
 	public String womToWmFast(Wom3Node wom)
 	{
 		StringBuilder sb = new StringBuilder();
 		restoreWmFromWomFast(sb, wom);
 		return sb.toString();
 	}
-	
+
 	private void restoreWmFromWomFast(StringBuilder sb, Wom3Node wom)
 	{
 		if (wom instanceof Wom3Rtd || wom instanceof Wom3Text)
@@ -129,14 +129,14 @@ public class FixWomRtdBase
 			sb.append(wom.getTextContent());
 			return;
 		}
-		
+
 		if ((wom instanceof Wom3Repl)
 				|| (wom instanceof Wom3Comment))
 		{
 			// Ignore stuff
 			return;
 		}
-		
+
 		if (wom instanceof Wom3Element)
 		{
 			Wom3Element element = (Wom3Element) wom;
@@ -153,33 +153,33 @@ public class FixWomRtdBase
 				sb.append("{{N|...}}");
 				return;
 			}
-			
+
 			// Fall through
 		}
-		
+
 		for (Wom3Node c : wom)
 			restoreWmFromWomFast(sb, c);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void appendWm(String text)
 	{
 		wm.append(text);
 	}
-	
+
 	protected void discardWm(int wmPosBeforeChildren)
 	{
 		wm.discard(wmPosBeforeChildren);
 	}
-	
+
 	private void rollbackWm(int count)
 	{
 		wm.rollback(count);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Used to turn node content into a string (basically an XML document). This
 	 * can become necessary to compare subtrees in a WOM document when text
@@ -190,21 +190,21 @@ public class FixWomRtdBase
 	{
 		if (node == null)
 			throw new NullPointerException();
-		
+
 		StringBuilder b = new StringBuilder();
 		for (Wom3Node c = node.getFirstChild(); c != null; c = c.getNextSibling())
 			stringify(b, c);
 		return b.toString();
 	}
-	
+
 	private void stringify(StringBuilder b, Wom3Node node)
 	{
 		if (node == null)
 			throw new NullPointerException();
-		
+
 		if (node instanceof Wom3Rtd)
 			return;
-		
+
 		boolean isText = node instanceof Wom3Text;
 		if (!isText)
 		{
@@ -212,10 +212,10 @@ public class FixWomRtdBase
 			b.append(node.getNodeName());
 			stringifyAttrs(b, node.getWomAttributes());
 			b.append('>');
-			
+
 			for (Wom3Node c = node.getFirstChild(); c != null; c = c.getNextSibling())
 				stringify(b, c);
-			
+
 			b.append("</");
 			b.append(node.getNodeName());
 			b.append('>');
@@ -227,14 +227,14 @@ public class FixWomRtdBase
 				b.append(text);
 		}
 	}
-	
+
 	private void stringifyAttrs(
 			StringBuilder b,
 			Collection<Wom3Attribute> attributes)
 	{
 		if (attributes.isEmpty())
 			return;
-		
+
 		ArrayList<Wom3Attribute> attrs = new ArrayList<Wom3Attribute>(attributes);
 		Collections.sort(attrs, new Comparator<Wom3Attribute>()
 		{
@@ -244,7 +244,7 @@ public class FixWomRtdBase
 				return o1.getName().compareTo(o2.getName());
 			}
 		});
-		
+
 		for (Wom3Attribute attr : attrs)
 		{
 			b.append(' ');
@@ -254,9 +254,9 @@ public class FixWomRtdBase
 			b.append('"');
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected int lastIndexOfOneOf(String haystack, String needleSet)
 	{
 		int len = haystack.length();
@@ -268,16 +268,16 @@ public class FixWomRtdBase
 		}
 		return -1;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected Wom3Text text(String text)
 	{
 		Wom3Text node = (Wom3Text) doc.createElementNS(Wom3Node.WOM_NS_URI, "text");
 		node.setTextContent(text);
 		return node;
 	}
-	
+
 	/**
 	 * Inserts a &lt;text> node in front of node {@code n}. If there is already
 	 * a &lt;text> node in front of {@code n}, the text is appended to that
@@ -296,7 +296,7 @@ public class FixWomRtdBase
 			n.getParentNode().insertBefore(text(text), n);
 		}
 	}
-	
+
 	/**
 	 * Like {@code insertTextBefore()} but assumes that the RTD node was already
 	 * processed and adds the newlines to the wiki markup manually.
@@ -306,7 +306,7 @@ public class FixWomRtdBase
 		insertTextBefore(n, text);
 		appendWm(text);
 	}
-	
+
 	/**
 	 * Prepends an &lt;text> node to the children of node {@code n}. If the
 	 * first child of node {@code n} is already an &lt;text> node, the text is
@@ -325,7 +325,7 @@ public class FixWomRtdBase
 			prependNode(n, text(text));
 		}
 	}
-	
+
 	/**
 	 * Appends a &lt;text> node to the children of node {@code n}. If the last
 	 * child of node {@code n} is already a &lt;text> node, the text is appended
@@ -344,7 +344,7 @@ public class FixWomRtdBase
 			n.appendChild(text(text));
 		}
 	}
-	
+
 	/**
 	 * Inserts a &lt;text> node after node {@code n}.
 	 */
@@ -358,14 +358,14 @@ public class FixWomRtdBase
 			n.getParentNode().appendChild(newText);
 		return newText;
 	}
-	
+
 	protected Wom3Nowiki nowiki(String text)
 	{
 		Wom3Nowiki node = (Wom3Nowiki) doc.createElementNS(Wom3Node.WOM_NS_URI, "nowiki");
 		node.appendChild(text(text));
 		return node;
 	}
-	
+
 	/**
 	 * Inserts a &lt;nowiki> node after node {@code n}. If {@code n} is a nowiki
 	 * node the given text will be appended to the xml text within {@code n}.
@@ -391,14 +391,14 @@ public class FixWomRtdBase
 		}
 		return newNowiki;
 	}
-	
+
 	protected Wom3Rtd rtd(String text)
 	{
 		Wom3Rtd node = (Wom3Rtd) doc.createElementNS(Wom3Node.WOM_NS_URI, "rtd");
 		node.setTextContent(text);
 		return node;
 	}
-	
+
 	/**
 	 * Inserts an &lt;rtd> node in front of node {@code n}. If there is already
 	 * a &lt;rtd> node in front of {@code n}, the text is appended to that
@@ -417,7 +417,7 @@ public class FixWomRtdBase
 			n.getParentNode().insertBefore(rtd(rtd), n);
 		}
 	}
-	
+
 	/**
 	 * Prepends an &lt;rtd> node to the children of node {@code n}. If the first
 	 * child of node {@code n} is already an &lt;rtd> node, the text is
@@ -441,7 +441,7 @@ public class FixWomRtdBase
 			return rtdNode;
 		}
 	}
-	
+
 	/**
 	 * Appends an &lt;rtd> node to the children of node {@code n}. If the last
 	 * child of node {@code n} is already an &lt;rtd> node, the text is appended
@@ -460,7 +460,7 @@ public class FixWomRtdBase
 			n.appendChild(rtd(rtd));
 		}
 	}
-	
+
 	/**
 	 * Like {@code appendRtd()} but assumes that the RTD node was already
 	 * processed and adds the newlines to the wiki markup manually.
@@ -470,7 +470,7 @@ public class FixWomRtdBase
 		appendRtd(node, newlines);
 		appendWm(newlines);
 	}
-	
+
 	/**
 	 * Inserts the given {@code child} node as first child of node
 	 * {@code parent}.
@@ -487,7 +487,7 @@ public class FixWomRtdBase
 			parent.appendChild(child);
 		}
 	}
-	
+
 	/**
 	 * This method assures that there is a certain number of newlines in an RTD
 	 * element. This method assumes that the contents of the RTD element have
@@ -497,7 +497,7 @@ public class FixWomRtdBase
 	{
 		String text = n.getTextContent();
 		int len = text.length();
-		
+
 		int count = 0;
 		outer: for (int i = 0; i < len; ++i)
 		{
@@ -533,11 +533,11 @@ public class FixWomRtdBase
 					break outer;
 			}
 		}
-		
+
 		if (count < topGap)
 			n.setTextContent(genNewlines(topGap - count) + text);
 	}
-	
+
 	/**
 	 * Adds newlines text in front of node {@code current} and, assuming that
 	 * the everything in front of {@code current} has been processed already,
@@ -549,7 +549,7 @@ public class FixWomRtdBase
 		insertTextBefore(current, missing);
 		appendWm(missing);
 	}
-	
+
 	/**
 	 * Remove newlines from RTD and text nodes preceding node {@code current} in
 	 * document order (not restricted to siblings!).
@@ -558,15 +558,15 @@ public class FixWomRtdBase
 	{
 		if (count <= 0)
 			throw new IllegalArgumentException();
-		
+
 		int rollback = 0;
-		
+
 		Wom3Node n = current;
 		while (true)
 		{
 			// Go to previous node in document order.
 			n = toPreviousXmlTextInDocumentOrder(n);
-			
+
 			Wom3Node p = n.getParentNode();
 			if ((p instanceof Wom3Text)
 					|| (p instanceof Wom3Rtd))
@@ -586,7 +586,7 @@ public class FixWomRtdBase
 									p.getParentNode().removeChild(p);
 								else
 									((Wom3XmlText) n).deleteData(i, l - i);
-								
+
 								rollbackWm(rollback + 1);
 								return;
 							}
@@ -598,7 +598,7 @@ public class FixWomRtdBase
 							throw new RuntimeException("Should not happen");
 					}
 				}
-				
+
 				// The whole text/RTD node has to go. Since these nodes have 
 				// already been processed we can remove them without confusing
 				// the visitation process
@@ -606,7 +606,7 @@ public class FixWomRtdBase
 			}
 		}
 	}
-	
+
 	/**
 	 * @param container
 	 *            has to be a descendant of {@code x}.
@@ -625,9 +625,9 @@ public class FixWomRtdBase
 			parent.insertBefore(c, x);
 			c = n;
 		}
-		
+
 		parent.removeChild(x);
-		
+
 		if (first != null)
 		{
 			for (Wom3Node c = first;; c = c.getNextSibling())
@@ -638,7 +638,7 @@ public class FixWomRtdBase
 			}
 		}
 	}
-	
+
 	protected void clearChildren(Wom3Element n)
 	{
 		for (Wom3Node c = n.getFirstChild(); c != null;)
@@ -648,7 +648,7 @@ public class FixWomRtdBase
 			n.removeChild(remove);
 		}
 	}
-	
+
 	/**
 	 * Remove newlines from RTD and text nodes preceding node {@code current} in
 	 * document order (not restricted to siblings!).
@@ -658,41 +658,41 @@ public class FixWomRtdBase
 		// TODO: Implement
 		throw new UnsupportedOperationException();
 	}
-	
+
 	protected String genNewlines(int n)
 	{
-		return StringUtils.strrep('\n', n);
+		return StringTools.strrep('\n', n);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected int getNewlineCount()
 	{
 		return wm.newlineCount();
 	}
-	
+
 	protected boolean isAtPageStart()
 	{
 		return wm.noContentYet();
 	}
-	
+
 	protected boolean hadSpaceAfterLastNewline()
 	{
 		return wm.hadSpaceAfterLastNewline();
 	}
-	
+
 	protected int countNewlinesSince(int wmPosBeforeListItem)
 	{
 		return wm.countNewlinesSince(wmPosBeforeListItem);
 	}
-	
+
 	protected int getWmPos()
 	{
 		return wm.length();
 	}
-	
+
 	// =========================================================================
-	
+
 	private Wom3XmlText toPreviousXmlTextInDocumentOrder(Wom3Node n)
 	{
 		while (true)
@@ -708,20 +708,20 @@ public class FixWomRtdBase
 					break;
 				n = n.getParentNode();
 			}
-			
+
 			// Found the predecessor (not necessary a sibling), now go down to the 
 			// last descendant of the predecessor
 			while (p.hasChildNodes())
 				p = p.getLastChild();
-			
+
 			if (p.getNodeType() == Node.TEXT_NODE)
 				return (Wom3XmlText) p;
-			
+
 			// Not an xml text node, search continues ...
 			n = p;
 		}
 	}
-	
+
 	/**
 	 * Searches among the children, not the descendants!
 	 */
@@ -740,7 +740,7 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Searches among the children, not the descendants!
 	 */
@@ -759,7 +759,7 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	protected boolean hasHtmlTagRtd(Wom3Node n)
 	{
 		Wom3Node rtd = getFirstRtdNode(n);
@@ -774,7 +774,7 @@ public class FixWomRtdBase
 			return false;
 		return true;
 	}
-	
+
 	protected Wom3Rtd getFirstRtdNode(Wom3Node parent)
 	{
 		for (Wom3Node n = parent.getFirstChild(); n != null; n = n.getNextSibling())
@@ -786,7 +786,7 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	protected Wom3Text getFirstTextNode(Wom3Node parent)
 	{
 		for (Wom3Node n = parent.getFirstChild(); n != null; n = n.getNextSibling())
@@ -798,7 +798,7 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	protected Wom3Rtd getLastRtdNode(Wom3Node parent)
 	{
 		for (Wom3Node n = parent.getLastChild(); n != null; n = n.getPreviousSibling())
@@ -810,7 +810,7 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	protected Wom3Node findFirstNonWhitespaceNode(Wom3Node parent)
 	{
 		for (Wom3Node n = parent.getFirstChild(); n != null; n = n.getNextSibling())
@@ -820,17 +820,17 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	protected boolean isElementContentWhitespace(Wom3Node n)
 	{
 		/* TODO: Revisit once Wom3XmlText.isElementContentWhitespace() is 
 		 * implemented.
 		 */
-		
+
 		return (n instanceof Wom3XmlText)
-				&& StringUtils.isWhitespace(((Wom3XmlText) n).getTextContent());
+				&& StringTools.isWhitespace(((Wom3XmlText) n).getTextContent());
 	}
-	
+
 	protected boolean isAtStartOfParagraph(Wom3Node node)
 	{
 		for (Wom3Node prev;; node = prev)
@@ -850,7 +850,7 @@ public class FixWomRtdBase
 											|| (p instanceof Wom3TableCaption)
 											|| (p instanceof Wom3TableCellBase)*/;
 	}
-	
+
 	/**
 	 * Returns the paragraph node that is a preceding sibling of node {@code n}.
 	 * If another non RTD/WS/comment node comes first the search is aborted.
@@ -868,7 +868,7 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Returns true if node is the first non RTD/WS/comment node in a body or
 	 * similar container.
@@ -888,7 +888,7 @@ public class FixWomRtdBase
 		*/
 		return true;
 	}
-	
+
 	protected Wom3Node getPrecedingNonWsNode(Wom3Node n)
 	{
 		for (Wom3Node prev = n.getPreviousSibling(); prev != null; prev = prev.getPreviousSibling())
@@ -900,18 +900,18 @@ public class FixWomRtdBase
 		}
 		return null;
 	}
-	
+
 	protected boolean isNonHtmlBlockElement(Wom3Node pnws)
 	{
 		return (blockElementSet.contains(pnws.getNodeName()) && !hasHtmlTagRtd(pnws));
 	}
-	
+
 	protected boolean isTextWhitespace(Wom3Node n)
 	{
 		return (n instanceof Wom3Text)
-				&& StringUtils.isWhitespace(n.getTextContent());
+				&& StringTools.isWhitespace(n.getTextContent());
 	}
-	
+
 	/**
 	 * Checks if a nodes first starts with a &lt;rtd> node, irgnoring &lt;text>
 	 * nodes in the search.
@@ -929,7 +929,7 @@ public class FixWomRtdBase
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Checks if a nodes first starts with a &lt;text> node, irgnoring &lt;text>
 	 * nodes in the search.

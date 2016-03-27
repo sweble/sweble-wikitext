@@ -31,21 +31,21 @@ import de.fau.cs.osr.utils.WrappedException;
 public class CruncherTestBase
 {
 	protected static final long NUM_JOBS_TO_GENERATE = (long) Math.pow(2, 20);
-	
+
 	protected AtomicLong generated = new AtomicLong(0);
-	
+
 	protected AtomicLong stored = new AtomicLong(0);
-	
+
 	// =========================================================================
-	
+
 	protected static final class TestJob
 			extends
 				Job
 	{
 	}
-	
+
 	// =========================================================================
-	
+
 	protected JobGeneratorFactory createJobFactory()
 	{
 		return new JobGeneratorFactory()
@@ -68,12 +68,12 @@ public class CruncherTestBase
 								// generate jobs out of thin air.
 								Job job = new TestJob();
 								generated.incrementAndGet();
-								
+
 								JobTrace trace = job.getTrace();
 								trace.signOff(getClass(), null);
-								
+
 								jobTraces.add(trace);
-								
+
 								inTray.put(job);
 							}
 						}
@@ -86,7 +86,7 @@ public class CruncherTestBase
 			}
 		};
 	}
-	
+
 	protected StorerFactory createStorerFactory()
 	{
 		return new StorerFactory()
@@ -105,13 +105,13 @@ public class CruncherTestBase
 						while (true)
 						{
 							TestJob job = (TestJob) outTray.take();
-							
+
 							JobTrace trace = job.getTrace();
 							trace.signOff(getClass(), null);
-							
+
 							// do store.
 							stored.incrementAndGet();
-							
+
 							if (!jobTraces.remove(trace))
 								throw new InternalError("Missing job trace");
 						}

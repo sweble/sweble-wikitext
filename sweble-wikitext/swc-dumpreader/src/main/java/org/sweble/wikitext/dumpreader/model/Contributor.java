@@ -24,15 +24,15 @@ public class Contributor
 			Serializable
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final BigInteger id;
-	
+
 	private final boolean deleted;
-	
+
 	private final String username;
-	
+
 	// =========================================================================
-	
+
 	public Contributor(BigInteger id, boolean deleted, String username)
 	{
 		super();
@@ -40,26 +40,26 @@ public class Contributor
 		this.deleted = deleted;
 		this.username = username;
 	}
-	
+
 	// =========================================================================
-	
+
 	public BigInteger getId()
 	{
 		return id;
 	}
-	
+
 	public boolean isDeleted()
 	{
 		return deleted;
 	}
-	
+
 	public String getUsername()
 	{
 		return username;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{

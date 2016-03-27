@@ -21,13 +21,13 @@ public class EngLogTagExtensionResolution
 			EngLogTargetResolution
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogTagExtensionResolution()
 	{
 	}
-	
+
 	protected EngLogTagExtensionResolution(String target, boolean success)
 	{
 		super(target, success);

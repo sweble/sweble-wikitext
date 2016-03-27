@@ -17,7 +17,8 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_ALIGN_LCRJC;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_ALIGN_TMBB;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,129 +37,129 @@ public abstract class TablePartitionImpl
 			Wom3TablePartition
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private transient TableField tableField = null;
-	
+
 	// =========================================================================
-	
+
 	public TablePartitionImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3HorizAlign getAlign()
 	{
 		return getAlignAttr("align");
 	}
-	
+
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
 		return setAlignAttr(ATTR_DESC_ALIGN_LCRJC, "align", align);
 	}
-	
+
 	@Override
 	public Wom3TableVAlign getVAlign()
 	{
 		return getTableVAlignAttr("valign");
 	}
-	
+
 	@Override
 	public Wom3TableVAlign setTableVAlign(Wom3TableVAlign valign)
 	{
 		return setTableVAlignAttr(ATTR_DESC_ALIGN_TMBB, "valign", valign);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getNumCols()
 	{
 		checkAttachedToTable();
 		return tf().getNumCols();
 	}
-	
+
 	@Override
 	public int getNumRows()
 	{
 		checkAttachedToTable();
 		return tf().getNumRows();
 	}
-	
+
 	@Override
 	public Wom3TableRow getRow(int row) throws IndexOutOfBoundsException
 	{
 		checkAttachedToTable();
 		return tf().getRow(row);
 	}
-	
+
 	@Override
 	public Wom3TableColumn getCol(int col) throws IndexOutOfBoundsException
 	{
 		checkAttachedToTable();
 		return new TableColumnImpl(this, col);
 	}
-	
+
 	@Override
 	public Wom3TableCellBase getCell(int row, int col) throws IndexOutOfBoundsException
 	{
 		checkAttachedToTable();
 		return tf().getCell(row, col);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected TableField tf()
 	{
 		if (tableField == null)
 			tableField = new TableField(this);
 		return tableField;
 	}
-	
+
 	protected void invalidate()
 	{
 		tableField = null;
 	}
-	
+
 	protected void checkAttachedToTable()
 	{
 		if (!isAttachedToTable())
 			throw new IllegalStateException("Table partition not part of a table");
 	}
-	
+
 	protected boolean isAttachedToTable()
 	{
 		return getParentNode() instanceof TableImpl;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
 		invalidate();
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
 		invalidate();
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("align", ATTR_DESC_ALIGN_LCRJC);
 		NAME_MAP.put("valign", ATTR_DESC_ALIGN_TMBB);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

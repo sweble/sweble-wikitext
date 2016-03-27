@@ -29,46 +29,46 @@ public class PreImpl
 			Wom3Pre
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public PreImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "pre";
 	}
-	
+
 	// =========================================================================
-	
+
 	public Integer getWidth()
 	{
 		return (Integer) getAttributeNativeData("width");
 	}
-	
+
 	public Integer setWidth(Integer width)
 	{
 		return setAttributeDirect(ATTR_DESC_WIDTH, "width", width);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_WIDTH = new AttrDescWidth();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("width", ATTR_DESC_WIDTH);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -77,7 +77,7 @@ public class PreImpl
 	{
 		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescWidth
 			extends
 				AttributeDescriptor
@@ -91,7 +91,7 @@ public class PreImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

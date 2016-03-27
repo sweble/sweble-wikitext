@@ -17,7 +17,8 @@
 
 package org.sweble.wikitext.engine.utils;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,14 +47,14 @@ public class MediaWikiTestGenerator
 			List<File> testCollectionFiles) throws Exception
 	{
 		List<TestDesc> tests = new ArrayList<TestDesc>();
-		
+
 		Map<String, String> articles = new HashMap<String, String>();
-		
+
 		for (File inputFile : testCollectionFiles)
 			readTestcases(inputFile, tests, articles);
-		
+
 		assertFalse(tests.isEmpty());
-		
+
 		List<Object[]> inputs = new ArrayList<Object[]>(tests.size());
 		for (TestDesc test : tests)
 		{
@@ -61,7 +62,7 @@ public class MediaWikiTestGenerator
 					"%s - %s",
 					test.getInputFile().getName(),
 					test.getName());
-			
+
 			int eol1 = name.indexOf('\n');
 			int eol2 = name.indexOf('\r');
 			int par = name.indexOf('(');
@@ -74,27 +75,27 @@ public class MediaWikiTestGenerator
 				i = eol2;
 			if (i != -1)
 				name = name.substring(0, i);
-			
+
 			inputs.add(new Object[] { name, resources, test, articles });
 		}
-		
+
 		return inputs;
 	}
-	
+
 	// =========================================================================
-	
+
 	private static void readTestcases(
 			File inputFile,
 			List<TestDesc> tests,
 			Map<String, String> articles) throws IOException
 	{
 		String src = FileUtils.readFileToString(inputFile, "UTF-8");
-		
+
 		Pattern p = Pattern.compile(
 				"(?m)^[ \t]*!![ \t]*(\\w+):?[ \t]*(?:\r\n?|\n)");
-		
+
 		Matcher m = p.matcher(src);
-		
+
 		int i = 0;
 		while (m.find(i))
 		{
@@ -129,14 +130,14 @@ public class MediaWikiTestGenerator
 			{
 				String last = "test";
 				int start = m.end();
-				
+
 				String test = null;
 				String options = null;
 				String config = null;
 				String input = null;
 				String result = null;
 				boolean ok = false;
-				
+
 				while (m.find(start))
 				{
 					String str = src.substring(start, m.start());
@@ -170,7 +171,7 @@ public class MediaWikiTestGenerator
 							break;
 						result = str;
 					}
-					
+
 					last = m.group(1);
 					if ("end".equals(last))
 					{
@@ -186,10 +187,10 @@ public class MediaWikiTestGenerator
 					{
 						break;
 					}
-					
+
 					start = m.end();
 				}
-				
+
 				if (ok)
 				{
 					tests.add(new TestDesc(inputFile, test, options, input, config, result));
@@ -197,7 +198,7 @@ public class MediaWikiTestGenerator
 					continue;
 				}
 			}
-			
+
 			StringWriter sw = new StringWriter();
 			PrintWriter w = new PrintWriter(sw);
 			w.println("Syntax error @ " + m.start());
@@ -208,29 +209,29 @@ public class MediaWikiTestGenerator
 			w.println(src.substring(m.start(), end));
 			w.println();
 			fail(sw.toString());
-			
+
 			i = m.end();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TestDesc
 	{
 		private final File inputFile;
-		
+
 		private final String name;
-		
+
 		private final String options;
-		
+
 		private final String input;
-		
+
 		private final String config;
-		
+
 		private final String result;
-		
+
 		// =====================================================================
-		
+
 		public TestDesc(
 				File inputFile,
 				String name,
@@ -246,34 +247,34 @@ public class MediaWikiTestGenerator
 			this.config = config;
 			this.result = result;
 		}
-		
+
 		// =====================================================================
-		
+
 		public File getInputFile()
 		{
 			return inputFile;
 		}
-		
+
 		public String getName()
 		{
 			return name;
 		}
-		
+
 		public String getOptions()
 		{
 			return options;
 		}
-		
+
 		public String getInput()
 		{
 			return input;
 		}
-		
+
 		public String getConfig()
 		{
 			return config;
 		}
-		
+
 		public String getResult()
 		{
 			return result;

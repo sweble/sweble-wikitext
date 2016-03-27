@@ -34,26 +34,26 @@ public class ParserFunctionIntegrationTest
 			EngineIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
-	
+
 	private static final String INPUT_SUB_DIR = "ext/pfn/wikitext";
-	
+
 	private static final String EXPECTED_AST_SUB_DIR = "ext/pfn/expanded";
-	
+
 	// =========================================================================
-	
+
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		TestResourcesFixture resources = getTestResourcesFixture();
 		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final File inputFile;
-	
+
 	// =========================================================================
-	
+
 	public ParserFunctionIntegrationTest(
 			String title,
 			TestResourcesFixture resources,
@@ -63,9 +63,9 @@ public class ParserFunctionIntegrationTest
 		this.inputFile = inputFile;
 		getEngine().setCatchAll(false);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testAstAfterPostprocessingMatchesReference() throws Exception
 	{

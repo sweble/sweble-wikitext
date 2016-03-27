@@ -31,7 +31,7 @@ public class ParserFunctionIfError
 			ParserFunctionsExtPfn.IfThenElseStmt
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -39,7 +39,7 @@ public class ParserFunctionIfError
 	{
 		super("iferror", 1, true);
 	}
-	
+
 	/**
 	 * <pre>
 	 * {{#iferror: 
@@ -53,7 +53,7 @@ public class ParserFunctionIfError
 	{
 		super(wikiConfig, "iferror", 1, true);
 	}
-	
+
 	@Override
 	protected boolean evaluateCondition(
 			WtTemplate pfn,
@@ -61,17 +61,17 @@ public class ParserFunctionIfError
 			List<? extends WtNode> args)
 	{
 		WtNode arg0 = frame.expand(args.get(0));
-		
+
 		boolean hasError = searchErrorNode(arg0);
-		
+
 		// If NO error occurred the test statement becomes the default result
 		setDefault(hasError ? nf().list() : arg0);
 		//		if (!eval)
 		//			setDefault(arg0);
-		
+
 		return hasError;
 	}
-	
+
 	private static boolean searchErrorNode(WtNode arg0)
 	{
 		if (arg0.getNodeType() == EngNode.NT_SOFT_ERROR)
@@ -98,7 +98,7 @@ public class ParserFunctionIfError
 				if (searchErrorNode(n))
 					return true;
 			}
-			
+
 			return false;
 		}
 	}

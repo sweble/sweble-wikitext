@@ -21,22 +21,22 @@ public class UnsupportedDumpFormat
 			RuntimeException
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	public UnsupportedDumpFormat()
 	{
 		super();
 	}
-	
+
 	public UnsupportedDumpFormat(String message, Throwable cause)
 	{
 		super(message, cause);
 	}
-	
+
 	public UnsupportedDumpFormat(String message)
 	{
 		super(message);
 	}
-	
+
 	public UnsupportedDumpFormat(Throwable cause)
 	{
 		super(cause);

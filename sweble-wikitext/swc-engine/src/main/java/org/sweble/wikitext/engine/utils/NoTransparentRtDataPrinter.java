@@ -35,32 +35,32 @@ public final class NoTransparentRtDataPrinter
 			case WtNode.NT_IGNORED:
 			case WtNode.NT_XML_COMMENT:
 				break;
-			
+
 			case WtNode.NT_ONLY_INCLUDE:
 				printNodeList((WtNodeList) node);
 				break;
-			
+
 			default:
 				super.dispatch(node);
 				break;
 		}
 	}
-	
+
 	// =====================================================================
-	
+
 	public static String print(WtNode node)
 	{
 		return print(new StringWriter(), node).toString();
 	}
-	
+
 	public static Writer print(Writer writer, WtNode node)
 	{
 		new NoTransparentRtDataPrinter(writer).go(node);
 		return writer;
 	}
-	
+
 	// =====================================================================
-	
+
 	public NoTransparentRtDataPrinter(Writer writer)
 	{
 		super(writer);

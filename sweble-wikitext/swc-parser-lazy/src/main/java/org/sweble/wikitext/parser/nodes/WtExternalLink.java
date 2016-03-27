@@ -24,9 +24,9 @@ public class WtExternalLink
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -34,53 +34,53 @@ public class WtExternalLink
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtExternalLink(WtUrl target)
 	{
 		super(target, WtLinkTitle.NO_TITLE);
 	}
-	
+
 	protected WtExternalLink(WtUrl target, WtLinkTitle title)
 	{
 		super(target, title);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_EXTERNAL_LINK;
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setTarget(WtUrl target)
 	{
 		set(0, target);
 	}
-	
+
 	public final WtUrl getTarget()
 	{
 		return (WtUrl) get(0);
 	}
-	
+
 	public final boolean hasTitle()
 	{
 		return getTitle() != WtLinkTitle.NO_TITLE;
 	}
-	
+
 	public final void setTitle(WtLinkTitle title)
 	{
 		set(1, title);
 	}
-	
+
 	public final WtLinkTitle getTitle()
 	{
 		return (WtLinkTitle) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "target", "title" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

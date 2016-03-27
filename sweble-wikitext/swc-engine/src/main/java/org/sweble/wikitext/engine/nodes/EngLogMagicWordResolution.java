@@ -21,13 +21,13 @@ public class EngLogMagicWordResolution
 			EngLogNameResolution
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogMagicWordResolution()
 	{
 	}
-	
+
 	protected EngLogMagicWordResolution(String name, boolean success)
 	{
 		super(name, success);

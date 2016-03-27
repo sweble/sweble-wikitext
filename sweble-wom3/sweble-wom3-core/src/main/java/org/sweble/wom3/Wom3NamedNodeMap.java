@@ -26,16 +26,16 @@ public interface Wom3NamedNodeMap
 			NamedNodeMap
 {
 	public Wom3Node getNamedItem(String name);
-	
+
 	public Wom3Node setNamedItem(Node arg) throws DOMException;
-	
+
 	public Wom3Node removeNamedItem(String name) throws DOMException;
-	
+
 	public Wom3Node item(int index);
-	
+
 	public Wom3Node getNamedItemNS(String namespaceURI, String localName) throws DOMException;
-	
+
 	public Wom3Node setNamedItemNS(Node arg) throws DOMException;
-	
+
 	public Wom3Node removeNamedItemNS(String namespaceURI, String localName) throws DOMException;
 }

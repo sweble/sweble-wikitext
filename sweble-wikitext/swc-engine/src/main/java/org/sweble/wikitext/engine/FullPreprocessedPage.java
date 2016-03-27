@@ -22,13 +22,13 @@ import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 public class FullPreprocessedPage
 {
 	private final PageId id;
-	
+
 	private final boolean forInclusion;
-	
+
 	private final EngProcessedPage page;
-	
+
 	// =========================================================================
-	
+
 	public FullPreprocessedPage(
 			PageId pageId,
 			boolean forInclusion,
@@ -39,19 +39,19 @@ public class FullPreprocessedPage
 		this.forInclusion = forInclusion;
 		this.page = page;
 	}
-	
+
 	// =========================================================================
-	
+
 	public PageId getId()
 	{
 		return id;
 	}
-	
+
 	public boolean isForInclusion()
 	{
 		return forInclusion;
 	}
-	
+
 	public EngProcessedPage getPage()
 	{
 		return page;

@@ -34,9 +34,9 @@ public class CompressorFactory
 			{
 				return (new CompressorStreamFactory()).createCompressorOutputStream(
 						CompressorStreamFactory.BZIP2, out);
-				
+
 			}
-			
+
 			@Override
 			public InputStream createCompressorInputStream(InputStream in) throws CompressorException
 			{
@@ -51,9 +51,9 @@ public class CompressorFactory
 			{
 				return (new CompressorStreamFactory()).createCompressorOutputStream(
 						CompressorStreamFactory.GZIP, out);
-				
+
 			}
-			
+
 			@Override
 			public InputStream createCompressorInputStream(InputStream in) throws CompressorException
 			{
@@ -68,9 +68,9 @@ public class CompressorFactory
 			{
 				return (new CompressorStreamFactory()).createCompressorOutputStream(
 						CompressorStreamFactory.XZ, out);
-				
+
 			}
-			
+
 			@Override
 			public InputStream createCompressorInputStream(InputStream in) throws CompressorException
 			{
@@ -78,14 +78,14 @@ public class CompressorFactory
 						CompressorStreamFactory.XZ, in);
 			}
 		};
-		
+
 		public abstract OutputStream createCompressorOutputStream(
-				OutputStream out) throws Exception;
-		
+				OutputStream out) throws CompressorException;
+
 		public abstract InputStream createCompressorInputStream(
 				InputStream in) throws CompressorException;
 	}
-	
+
 	public static OutputStream createCompressorOutputStream(
 			CompressionFormat compressionFormat,
 			OutputStream out) throws CompressorFactoryException
@@ -99,7 +99,7 @@ public class CompressorFactory
 			throw new CompressorFactoryException(e);
 		}
 	}
-	
+
 	public static InputStream createCompressorInputStream(
 			CompressionFormat compressionFormat,
 			InputStream in) throws CompressorFactoryException

@@ -29,56 +29,56 @@ public class OrderedListImpl
 			Wom3OrderedList
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public OrderedListImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "ol";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Integer getStart()
 	{
 		return (Integer) getAttributeNativeData("start");
 	}
-	
+
 	@Override
 	public Integer setStart(Integer start)
 	{
 		return setAttributeDirect(ATTR_DESC_START, "start", start);
 	}
-	
+
 	@Override
 	public String getItemType()
 	{
 		return (String) getAttributeNativeData("type");
 	}
-	
+
 	@Override
 	public String setItemType(String type)
 	{
 		return setAttributeDirect(ATTR_DESC_TYPE, "type", type);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_TYPE = new AttrDescType();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_START = new AttrDescStart();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
@@ -86,7 +86,7 @@ public class OrderedListImpl
 		NAME_MAP.put("start", ATTR_DESC_START);
 		NAME_MAP.put("type", ATTR_DESC_TYPE);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -95,7 +95,7 @@ public class OrderedListImpl
 	{
 		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescType
 			extends
 				AttributeDescriptor
@@ -109,7 +109,7 @@ public class OrderedListImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -118,7 +118,7 @@ public class OrderedListImpl
 			return AttributeVerifiers.OLTYPE.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescStart
 			extends
 				AttributeDescriptor
@@ -132,7 +132,7 @@ public class OrderedListImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

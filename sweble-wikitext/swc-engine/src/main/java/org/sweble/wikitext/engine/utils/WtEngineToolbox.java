@@ -16,6 +16,7 @@
  */
 package org.sweble.wikitext.engine.utils;
 
+import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.FullPage;
@@ -26,6 +27,7 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
 
@@ -35,79 +37,79 @@ import de.fau.cs.osr.ptk.common.AstPrinter;
 public class WtEngineToolbox
 {
 	private WikiConfigImpl wikiConfig;
-	
+
 	private WtEngineImpl engine;
-	
+
 	// =========================================================================
-	
+
 	public WtEngineToolbox()
 	{
 		restartEngine(DefaultConfigEnWp.generate());
 	}
-	
+
 	// =========================================================================
-	
+
 	public void restartEngine(WikiConfigImpl wikiConfig)
 	{
 		this.wikiConfig = wikiConfig;
 		this.engine = new WtEngineImpl(wikiConfig);
 	}
-	
+
 	public WikiConfigImpl getWikiConfig()
 	{
 		return wikiConfig;
 	}
-	
+
 	public WtEngineImpl getEngine()
 	{
 		return engine;
 	}
-	
+
 	// =========================================================================
 	//  AST helpers
 	// =========================================================================
-	
-	public PageId makePageId(String title) throws Exception
+
+	public PageId makePageId(String title) throws LinkTargetException
 	{
 		return makePageId(wikiConfig, title);
 	}
-	
-	public PageId makePageId(String title, long id) throws Exception
+
+	public PageId makePageId(String title, long id) throws LinkTargetException
 	{
 		return makePageId(wikiConfig, title, id);
 	}
-	
-	public static PageId makePageId(WikiConfig wikiConfig, String title) throws Exception
+
+	public static PageId makePageId(WikiConfig wikiConfig, String title) throws LinkTargetException
 	{
 		return makePageId(wikiConfig, title, -1);
 	}
-	
-	public static PageId makePageId(WikiConfig wikiConfig, String title, long id) throws Exception
+
+	public static PageId makePageId(WikiConfig wikiConfig, String title, long id) throws LinkTargetException
 	{
 		PageTitle pageTitle = PageTitle.make(wikiConfig, title);
 		return new PageId(pageTitle, id);
 	}
-	
-	public EngProcessedPage wmToAst(PageId pageId, String wikitext) throws Exception
+
+	public EngProcessedPage wmToAst(PageId pageId, String wikitext) throws EngineException
 	{
 		return wmToAst(pageId, wikitext, new TestExpansionCallback());
 	}
-	
+
 	public EngProcessedPage wmToAst(
 			PageId pageId,
 			String wikitext,
-			ExpansionCallback callback) throws Exception
+			ExpansionCallback callback) throws EngineException
 	{
 		return engine.postprocess(pageId, wikitext, callback);
 	}
-	
+
 	public static String printAst(EngProcessedPage ast)
 	{
 		return AstPrinter.print((WtNode) ast.getPage());
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TestExpansionCallback
 			implements
 				ExpansionCallback
@@ -115,13 +117,13 @@ public class WtEngineToolbox
 		@Override
 		public FullPage retrieveWikitext(
 				ExpansionFrame expansionFrame,
-				PageTitle pageTitle) throws Exception
+				PageTitle pageTitle)
 		{
 			return null;
 		}
-		
+
 		@Override
-		public String fileUrl(PageTitle pageTitle, int width, int height) throws Exception
+		public String fileUrl(PageTitle pageTitle, int width, int height)
 		{
 			return null;
 		}

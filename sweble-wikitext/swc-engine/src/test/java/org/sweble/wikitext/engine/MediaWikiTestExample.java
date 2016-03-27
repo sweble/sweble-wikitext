@@ -38,35 +38,35 @@ public class MediaWikiTestExample
 			EngineIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.mwtest";
-	
+
 	private static final String INPUT_SUB_DIR = "mediawiki";
-	
+
 	// =========================================================================
-	
+
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		TestResourcesFixture resources = getTestResourcesFixture();
-		
+
 		List<File> testCollectionFiles =
 				resources.gather(INPUT_SUB_DIR, FILTER_RX, false);
-		
+
 		return MediaWikiTestGenerator.enumerateInputs(resources, testCollectionFiles);
 	}
-	
+
 	// =========================================================================
-	
+
 	@SuppressWarnings("unused")
 	private final String name;
-	
+
 	@SuppressWarnings("unused")
 	private final TestDesc test;
-	
+
 	@SuppressWarnings("unused")
 	private final Map<String, String> articles;
-	
+
 	// =========================================================================
-	
+
 	public MediaWikiTestExample(
 			String name,
 			TestResourcesFixture resources,
@@ -78,7 +78,7 @@ public class MediaWikiTestExample
 		this.test = test;
 		this.articles = articles;
 	}
-	
+
 	@Test
 	@Ignore
 	public void testAstAfterPostprocessingMatchesReference() throws Exception

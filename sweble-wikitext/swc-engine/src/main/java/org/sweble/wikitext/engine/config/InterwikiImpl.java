@@ -37,21 +37,21 @@ public class InterwikiImpl
 			Comparable<Interwiki>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String prefix;
-	
+
 	private String url;
-	
+
 	private boolean local;
-	
+
 	private boolean trans;
-	
+
 	// =========================================================================
-	
+
 	public InterwikiImpl()
 	{
 	}
-	
+
 	public InterwikiImpl(String prefix, String url, boolean local, boolean trans)
 	{
 		super();
@@ -60,27 +60,27 @@ public class InterwikiImpl
 		this.local = local;
 		this.trans = trans;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	@XmlAttribute
 	public String getPrefix()
 	{
 		return prefix;
 	}
-	
+
 	public void setPrefix(String prefix)
 	{
 		this.prefix = prefix;
 	}
-	
+
 	@XmlAttribute
 	public String getUrl()
 	{
 		return url;
 	}
-	
+
 	@Override
 	public URL getUrl(PageTitle title)
 	{
@@ -96,38 +96,38 @@ public class InterwikiImpl
 			throw new WikiConfigurationException(e);
 		}
 	}
-	
+
 	public void setUrl(String url)
 	{
 		this.url = url;
 	}
-	
+
 	@Override
 	@XmlAttribute
 	public boolean isLocal()
 	{
 		return local;
 	}
-	
+
 	public void setLocal(boolean local)
 	{
 		this.local = local;
 	}
-	
+
 	@Override
 	@XmlAttribute
 	public boolean isTrans()
 	{
 		return trans;
 	}
-	
+
 	public void setTrans(boolean trans)
 	{
 		this.trans = trans;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -139,7 +139,7 @@ public class InterwikiImpl
 		result = prime * result + ((url == null) ? 0 : url.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -170,17 +170,17 @@ public class InterwikiImpl
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return "InterwikiImpl [prefix=" + prefix + ", url=" + url + ", local=" + local + ", trans=" + trans + "]";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int compareTo(Interwiki o)
 	{

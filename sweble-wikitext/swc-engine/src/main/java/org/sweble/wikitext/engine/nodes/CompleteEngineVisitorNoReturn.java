@@ -23,10 +23,10 @@ public interface CompleteEngineVisitorNoReturn
 			CompleteWikitextVisitorNoReturn
 {
 	public void visit(EngProcessedPage n);
-	
+
 	public void visit(EngNowiki n);
-	
+
 	public void visit(EngPage n);
-	
+
 	public void visit(EngSoftErrorNode n);
 }

@@ -24,15 +24,15 @@ public interface WtName
 			WtContentNode
 {
 	public static final WtNoName NO_NAME = new WtNoName();
-	
+
 	// =========================================================================
-	
+
 	public boolean isResolved();
-	
+
 	public String getAsString();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoName
 			extends
 				WtAbsentContentNode
@@ -40,43 +40,43 @@ public interface WtName
 				WtName
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtNoName()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_NAME;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtName.class.getSimpleName();
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtName.NO_NAME;
 		}
-		
+
 		// =====================================================================
-		
+
 		public boolean isResolved()
 		{
 			return false;
 		}
-		
+
 		public String getAsString()
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static class WtNameImpl
 			extends
 				WtContentNodeImpl
@@ -84,37 +84,37 @@ public interface WtName
 				WtName
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtNameImpl()
 		{
 		}
-		
+
 		protected WtNameImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_NAME;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtName.class.getSimpleName();
 		}
-		
+
 		// =====================================================================
-		
+
 		public boolean isResolved()
 		{
 			return (size() == 1) && get(0).isNodeType(NT_TEXT);
 		}
-		
+
 		public String getAsString()
 		{
 			if (!isResolved())

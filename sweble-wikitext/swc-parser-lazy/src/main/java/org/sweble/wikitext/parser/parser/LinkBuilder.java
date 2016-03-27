@@ -39,45 +39,45 @@ import de.fau.cs.osr.ptk.common.Warning;
 public class LinkBuilder
 {
 	private final WtPageName target;
-	
+
 	// -- format
-	
+
 	private int width;
-	
+
 	private int height;
-	
+
 	private boolean upright;
-	
+
 	private ImageHorizAlign hAlign;
-	
+
 	private ImageVertAlign vAlign;
-	
+
 	private ImageViewFormat format;
-	
+
 	private boolean border;
-	
+
 	// -- warnings picked up along the way
-	
+
 	private ArrayList<Warning> warnings;
-	
+
 	// -- internal state
-	
+
 	private final ParserConfig parserConfig;
-	
+
 	private final LinkType targetType;
-	
+
 	// =========================================================================
-	
+
 	public LinkBuilder(ParserConfig parserConfig, WtPageName target)
 	{
 		this.target = target;
 		this.parserConfig = parserConfig;
-		
+
 		LinkType targetType = LinkType.INVALID;
 		if (target.isResolved())
 			targetType = parserConfig.classifyTarget(target.getAsString());
 		this.targetType = targetType;
-		
+
 		this.width = -1;
 		this.height = -1;
 		this.upright = false;
@@ -86,19 +86,19 @@ public class LinkBuilder
 		this.format = null;
 		this.border = false;
 	}
-	
+
 	// =========================================================================
-	
+
 	public boolean isImageTarget()
 	{
 		return targetType == LinkType.IMAGE;
 	}
-	
+
 	public boolean isValidTarget()
 	{
 		return targetType != LinkType.INVALID;
 	}
-	
+
 	public boolean isKeyword(String keyword)
 	{
 		return (ImageViewFormat.which(keyword) != null) ||
@@ -107,15 +107,15 @@ public class LinkBuilder
 				(keyword.equals("border")) ||
 				(keyword.equals("upright"));
 	}
-	
+
 	// =========================================================================
-	
+
 	public void addOption(WtLinkOptionKeyword option)
 	{
 		ImageViewFormat f;
 		ImageHorizAlign h;
 		ImageVertAlign v;
-		
+
 		String keyword = option.getKeyword();
 		if ((f = ImageViewFormat.which(keyword)) != null)
 		{
@@ -138,42 +138,42 @@ public class LinkBuilder
 			upright = true;
 		}
 	}
-	
+
 	public void addOption(WtLinkOptionResize option)
 	{
 		int width = option.getWidth();
 		if (width >= 0)
 			this.width = width;
-		
+
 		int height = option.getHeight();
 		if (height >= 0)
 			this.height = height;
 	}
-	
+
 	public void addWarning(Warning warning)
 	{
 		if (warnings == null)
 			warnings = new ArrayList<Warning>();
 		warnings.add(warning);
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtNode build(WtLinkOptions options, String postfix)
 	{
 		WtLinkTitle title = findTitle(options);
-		
+
 		if (this.targetType == LinkType.IMAGE)
 		{
 			if (hAlign == null)
 				hAlign = ImageHorizAlign.UNSPECIFIED;
-			
+
 			if (vAlign == null)
 				vAlign = ImageVertAlign.MIDDLE;
-			
+
 			if (format == null)
 				format = ImageViewFormat.UNRESTRAINED;
-			
+
 			WtImageLink result = parserConfig.getNodeFactory().img(
 					target,
 					options,
@@ -184,12 +184,12 @@ public class LinkBuilder
 					width,
 					height,
 					upright);
-			
+
 			/*
 			if (title != null)
 				result.setTitle(title);
 			*/
-			
+
 			finish(result);
 			return result;
 		}
@@ -197,20 +197,20 @@ public class LinkBuilder
 		{
 			if (postfix == null)
 				postfix = "";
-			
+
 			WtInternalLink result = parserConfig.getNodeFactory().intLink(
 					"",
 					target,
 					postfix);
-			
+
 			if (title != null)
 				result.setTitle(title);
-			
+
 			finish(result);
 			return result;
 		}
 	}
-	
+
 	/**
 	 * Converts all but the last title option node into garbage nodes (since
 	 * only the last is really considered). The last node becomes the title node
@@ -242,15 +242,15 @@ public class LinkBuilder
 		}
 		return title;
 	}
-	
+
 	public void finish(WtNode n)
 	{
 		if (warnings != null && !warnings.isEmpty())
 			n.setAttribute("warnings", warnings);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static enum LinkType
 	{
 		INVALID,

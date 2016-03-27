@@ -24,18 +24,18 @@ public class WtDefinitionListDef
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtDefinitionListDef()
 	{
 	}
-	
+
 	protected WtDefinitionListDef(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

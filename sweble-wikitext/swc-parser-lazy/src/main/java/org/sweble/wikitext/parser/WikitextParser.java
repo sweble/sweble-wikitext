@@ -26,71 +26,71 @@ import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.parser.RatsWikitextParser;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
+import de.fau.cs.osr.ptk.common.ParserCommon;
 import xtc.parser.ParseError;
 import xtc.parser.ParseException;
 import xtc.parser.Result;
 import xtc.parser.SemanticValue;
-import de.fau.cs.osr.ptk.common.ParserCommon;
 
 public class WikitextParser
 		extends
 			ParserCommon<WtNode>
 {
 	private final ParserConfig config;
-	
+
 	private RatsWikitextParser parser;
-	
+
 	// =========================================================================
-	
+
 	public WikitextParser(ParserConfig config)
 	{
 		this.config = config;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Object getConfig()
 	{
 		return config;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
 		PreprocessedWikitext ppWt =
 				new PreprocessedWikitext(src, new WtEntityMapImpl());
-		
+
 		return parseArticle(ppWt, title);
 	}
-	
+
 	public WtNode parseArticle(PreprocessedWikitext wikitext, String title) throws IOException, ParseException
 	{
 		Reader in = new StringReader(wikitext.getWikitext());
-		
+
 		int inputSize = wikitext.getWikitext().getBytes().length;
-		
+
 		parser = new RatsWikitextParser(in, title, inputSize);
-		
+
 		parser.getState().init(config, wikitext.getEntityMap());
-		
+
 		parser.setNodeFactory(config.getNodeFactory());
-		
+
 		Result r = null;
-		
+
 		//RatsWikitextParser.enableStats();
 		{
 			r = this.parser.pArticle(0);
 		}
 		if (RatsWikitextParser.isStatsEnabled())
 			RatsWikitextParser.getStats().dump(System.err);
-		
+
 		if (r.hasValue())
 		{
 			SemanticValue v = (SemanticValue) r;
-			
+
 			if (v.value instanceof WtParsedWikitextPage)
 			{
 				return (WtNode) process((WtParsedWikitextPage) v.value);
@@ -104,7 +104,7 @@ public class WikitextParser
 		else
 		{
 			ParseError err = (ParseError) r;
-			
+
 			if (err.index == -1)
 			{
 				throw new ParseException(

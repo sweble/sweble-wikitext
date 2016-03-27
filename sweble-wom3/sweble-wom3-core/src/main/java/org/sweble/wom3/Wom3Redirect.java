@@ -23,9 +23,9 @@ public interface Wom3Redirect
 			Wom3Link
 {
 	public String getDisplacementId();
-	
+
 	public String setDisplacementId(String did);
-	
+
 	/**
 	 * Return the target page of the redirection.
 	 * 
@@ -34,7 +34,7 @@ public interface Wom3Redirect
 	 * @return The target page to redirect to.
 	 */
 	public String getTarget();
-	
+
 	/**
 	 * Set the target page of the redirection.
 	 * 
@@ -45,9 +45,9 @@ public interface Wom3Redirect
 	 * @return The old target of the redirection.
 	 */
 	public String setTarget(String page);
-	
+
 	// ==[ Link interface ]=====================================================
-	
+
 	/**
 	 * Returns an empty title since redirection statements do not provide a
 	 * title.
@@ -56,7 +56,7 @@ public interface Wom3Redirect
 	 */
 	@Override
 	public Wom3Title getLinkTitle();
-	
+
 	/**
 	 * Return the target page of the redirection.
 	 * 

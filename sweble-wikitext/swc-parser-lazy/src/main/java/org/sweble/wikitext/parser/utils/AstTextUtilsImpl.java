@@ -35,28 +35,28 @@ public class AstTextUtilsImpl
 			AstTextUtils
 {
 	protected final ParserConfig parserConfig;
-	
+
 	// =========================================================================
-	
+
 	public AstTextUtilsImpl(ParserConfig parserConfig)
 	{
 		this.parserConfig = parserConfig;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String astToText(WtNode node) throws StringConversionException
 	{
 		return astToText(node, new SimpleStringConverter());
 	}
-	
+
 	@Override
 	public String astToText(WtNode node, int... options) throws StringConversionException
 	{
 		return astToText(node, new SimpleStringConverter(options));
 	}
-	
+
 	protected String astToText(WtNode node, SimpleStringConverter sc) throws StringConversionException
 	{
 		/* We will not resolve content nodes into strings unless the specified 
@@ -65,23 +65,23 @@ public class AstTextUtilsImpl
 		int nodeType = node.getNodeType();
 		if (node instanceof WtContentNode)
 			nodeType = WtNode.NT_NODE_LIST;
-		
+
 		sc.dispatch(node, nodeType);
 		return sc.toString();
 	}
-	
+
 	@Override
 	public PartialConversion astToTextPartial(WtNode node)
 	{
 		return astToTextPartial(node, new PartialStringConverter());
 	}
-	
+
 	@Override
 	public PartialConversion astToTextPartial(WtNode node, int... options)
 	{
 		return astToTextPartial(node, new PartialStringConverter(options));
 	}
-	
+
 	protected PartialConversion astToTextPartial(
 			WtNode node,
 			final PartialStringConverter sc)
@@ -92,7 +92,7 @@ public class AstTextUtilsImpl
 		int nodeType = node.getNodeType();
 		if (node instanceof WtContentNode)
 			nodeType = WtNode.NT_NODE_LIST;
-		
+
 		try
 		{
 			sc.dispatch(node, nodeType);
@@ -103,7 +103,7 @@ public class AstTextUtilsImpl
 			// converted.
 			sc.tail = nf().list(node);
 		}
-		
+
 		return new PartialConversion()
 		{
 			@Override
@@ -111,7 +111,7 @@ public class AstTextUtilsImpl
 			{
 				return sc.toString();
 			}
-			
+
 			@Override
 			public WtNodeList getTail()
 			{
@@ -119,34 +119,34 @@ public class AstTextUtilsImpl
 			}
 		};
 	}
-	
+
 	// =========================================================================
-	
+
 	protected WikitextNodeFactory nf()
 	{
 		return this.parserConfig.getNodeFactory();
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static class SimpleStringConverter
 	{
 		protected boolean failOnUnresolvedEntityRef;
-		
+
 		protected StringBuilder b = new StringBuilder();
-		
+
 		public SimpleStringConverter()
 		{
 			failOnUnresolvedEntityRef = false;
 		}
-		
+
 		public SimpleStringConverter(int[] options)
 		{
 			this();
 			for (int option : options)
 				setOption(option);
 		}
-		
+
 		protected void setOption(int option)
 		{
 			switch (option)
@@ -158,12 +158,12 @@ public class AstTextUtilsImpl
 					throw new IllegalArgumentException("Unknown option");
 			}
 		}
-		
+
 		public String toString()
 		{
 			return b.toString();
 		}
-		
+
 		public void dispatch(WtNode node, int nodeType) throws StringConversionException
 		{
 			switch (nodeType)
@@ -191,29 +191,29 @@ public class AstTextUtilsImpl
 					break;
 			}
 		}
-		
+
 		protected void visitNotFound(WtNode node) throws StringConversionException
 		{
 			throw new StringConversionException(node);
 		}
-		
+
 		protected void visit(WtIgnored node)
 		{
 			// Ignore
 		}
-		
+
 		protected void visit(WtXmlComment node)
 		{
 			// Ignore
 		}
-		
+
 		protected void visit(WtXmlEntityRef node) throws StringConversionException
 		{
 			if (node.getResolved() == null)
 			{
 				if (failOnUnresolvedEntityRef)
 					throw new StringConversionException(node);
-				
+
 				b.append('&');
 				b.append(node.getName());
 				b.append(';');
@@ -223,41 +223,41 @@ public class AstTextUtilsImpl
 				b.append(node.getResolved());
 			}
 		}
-		
+
 		protected void visit(WtXmlCharRef node)
 		{
 			b.append(Character.toChars(node.getCodePoint()));
 		}
-		
+
 		protected void visit(WtText node)
 		{
 			b.append(node.getContent());
 		}
-		
+
 		protected void visit(WtNodeList node) throws StringConversionException
 		{
 			for (WtNode n : node)
 				dispatch(n, n.getNodeType());
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected class PartialStringConverter
 			extends
 				SimpleStringConverter
 	{
 		WtNodeList tail = nf().emptyList();
-		
+
 		public PartialStringConverter()
 		{
 		}
-		
+
 		public PartialStringConverter(int[] options)
 		{
 			super(options);
 		}
-		
+
 		@Override
 		public void visit(WtNodeList node) throws StringConversionException
 		{
@@ -275,7 +275,7 @@ public class AstTextUtilsImpl
 					tail.add(c);
 					while (i.hasNext())
 						tail.add(i.next());
-					
+
 					return;
 				}
 			}

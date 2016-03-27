@@ -24,21 +24,21 @@ public class WtXmlAttributeGarbage
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtXmlAttributeGarbage()
 	{
 	}
-	
+
 	protected WtXmlAttributeGarbage(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

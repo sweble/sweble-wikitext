@@ -35,9 +35,9 @@ public class CorePfnVariablesNamespaces
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnVariablesNamespaces(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Namespaces");
@@ -45,24 +45,24 @@ public class CorePfnVariablesNamespaces
 		addParserFunction(new TalkspacePfn(wikiConfig));
 		addParserFunction(new SubjectspacePfn(wikiConfig));
 	}
-	
+
 	public static CorePfnVariablesNamespaces group(WikiConfig wikiConfig)
 	{
 		return new CorePfnVariablesNamespaces(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == {{NAMESPACE}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class NamespacePfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -70,12 +70,12 @@ public class CorePfnVariablesNamespaces
 		{
 			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "namespace");
 		}
-		
+
 		public NamespacePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "namespace");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate var,
@@ -86,11 +86,11 @@ public class CorePfnVariablesNamespaces
 			if (argsValues.size() > 0)
 			{
 				WtNode titleNode = argsValues.get(0);
-				
+
 				try
 				{
 					String titleStr = tu().astToText(titleNode);
-					
+
 					title = PageTitle.make(frame.getWikiConfig(), titleStr);
 				}
 				catch (StringConversionException e)
@@ -106,30 +106,30 @@ public class CorePfnVariablesNamespaces
 			{
 				title = frame.getRootFrame().getTitle();
 			}
-			
+
 			return nf().text(title.getNamespace().getName());
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{NAMESPACEE}}
 	// == TODO: {{NAMESPACENUMBER}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{SUBJECTSPACE}}, {{ARTICLESPACE}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class SubjectspacePfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -137,42 +137,42 @@ public class CorePfnVariablesNamespaces
 		{
 			super("subjectspace");
 		}
-		
+
 		public SubjectspacePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "subjectspace");
 		}
-		
+
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
-			
+
 			Namespace talkNs =
 					frame.getWikiConfig().getSubjectNamespaceFor(title.getNamespace());
-			
+
 			return nf().text(talkNs.getName());
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{SUBJECTSPACEE}}, {{ARTICLESPACEE}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == {{TALKSPACE}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class TalkspacePfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -180,24 +180,24 @@ public class CorePfnVariablesNamespaces
 		{
 			super("talkspace");
 		}
-		
+
 		public TalkspacePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "talkspace");
 		}
-		
+
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
-			
+
 			Namespace talkNs =
 					frame.getWikiConfig().getTalkNamespaceFor(title.getNamespace());
-			
+
 			return nf().text(talkNs.getName());
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{TALKSPACEE}}

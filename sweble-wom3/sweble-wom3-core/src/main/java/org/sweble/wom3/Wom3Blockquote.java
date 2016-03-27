@@ -40,7 +40,7 @@ public interface Wom3Blockquote
 	 *         is not specified.
 	 */
 	public URL getCite();
-	
+
 	/**
 	 * Set the source of the quotation.
 	 * 

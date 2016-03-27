@@ -33,21 +33,21 @@ public interface Wom3Color
 	 * @return A value between 0 and 255.
 	 */
 	public int getRed();
-	
+
 	/**
 	 * Get the green color component.
 	 * 
 	 * @return A value between 0 and 255.
 	 */
 	public int getGreen();
-	
+
 	/**
 	 * Get the blue color component.
 	 * 
 	 * @return A value between 0 and 255.
 	 */
 	public int getBlue();
-	
+
 	/**
 	 * Format color as #RRGGBB.
 	 */

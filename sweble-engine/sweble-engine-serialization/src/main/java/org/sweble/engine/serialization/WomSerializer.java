@@ -56,24 +56,24 @@ import com.google.gson.GsonBuilder;
 public class WomSerializer
 {
 	private static final Charset CHARSET = Charset.forName("UTF8");
-	
+
 	// =========================================================================
-	
+
 	public static enum SerializationFormat
 	{
 		JAVA,
 		JSON,
 		XML
 	}
-	
+
 	// =========================================================================
-	
+
 	private Transformer prettyXmlTransformer;
-	
+
 	private Transformer normalXmlTransformer;
-	
+
 	// =========================================================================
-	
+
 	public byte[] serialize(
 			Wom3Node wom,
 			SerializationFormat serializationFormat,
@@ -132,7 +132,7 @@ public class WomSerializer
 		}
 		return result;
 	}
-	
+
 	public Wom3Node deserialize(
 			byte[] serialized,
 			SerializationFormat serializationFormat,
@@ -199,7 +199,7 @@ public class WomSerializer
 		}
 		return result;
 	}
-	
+
 	public byte[] compress(
 			byte[] serialized,
 			CompressionFormat compressionFormat) throws IOException, CompressionException
@@ -226,7 +226,7 @@ public class WomSerializer
 		}
 		return out.toByteArray();
 	}
-	
+
 	public byte[] decompress(
 			byte[] compressed,
 			CompressionFormat compressionFormat) throws IOException, CompressionException
@@ -253,7 +253,7 @@ public class WomSerializer
 		}
 		return out.toByteArray();
 	}
-	
+
 	public byte[] serializeAndCompress(
 			Wom3Document wom,
 			CompressionFormat compressionFormat,
@@ -324,7 +324,7 @@ public class WomSerializer
 		}
 		return out.toByteArray();
 	}
-	
+
 	public Wom3Node decompressAndDeserialize(
 			byte[] compressed,
 			CompressionFormat compressionFormat,
@@ -337,7 +337,7 @@ public class WomSerializer
 		{
 			in = new ByteArrayInputStream(compressed);
 			cin = CompressorFactory.createCompressorInputStream(compressionFormat, in);
-			
+
 			Wom3Node result;
 			switch (serializationFormat)
 			{
@@ -401,20 +401,20 @@ public class WomSerializer
 			IOUtils.closeQuietly(in);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private Transformer getNormalXmlTransformer() throws TransformerConfigurationException
 	{
 		if (normalXmlTransformer == null)
 		{
 			TransformerFactory tf = TransformerFactory.newInstance();
-			
+
 			normalXmlTransformer = tf.newTransformer();
 		}
 		return normalXmlTransformer;
 	}
-	
+
 	private Transformer getPrettyXmlTransformer() throws TransformerConfigurationException
 	{
 		if (prettyXmlTransformer == null)
@@ -422,21 +422,21 @@ public class WomSerializer
 			TransformerFactory tf = TransformerFactory.newInstance(
 					"net.sf.saxon.TransformerFactoryImpl",
 					null);
-			
+
 			InputStream xslt = getClass().getResourceAsStream("/org/sweble/wom3/pretty-print.xslt");
-			
+
 			prettyXmlTransformer = tf.newTransformer(new StreamSource(xslt));
 		}
 		return prettyXmlTransformer;
 	}
-	
+
 	private Transformer getXmlTransformer(boolean pretty) throws TransformerConfigurationException
 	{
 		return pretty ?
 				getPrettyXmlTransformer() :
 				getNormalXmlTransformer();
 	}
-	
+
 	private DOMParser getXmlParser() throws SAXNotRecognizedException, SAXNotSupportedException
 	{
 		DOMParser parser = new DOMParser();
@@ -445,24 +445,24 @@ public class WomSerializer
 				"org.sweble.wom3.impl.DocumentImpl");
 		return parser;
 	}
-	
+
 	// =========================================================================
-	
+
 	private Gson getGson(boolean compact, boolean pretty)
 	{
 		GsonBuilder builder = new GsonBuilder();
-		
+
 		builder.registerTypeHierarchyAdapter(
 				Node.class,
 				(compact ?
 						(new Wom3NodeCompactJsonTypeAdapter()) :
 						(new Wom3NodeJsonTypeAdapter())));
-		
+
 		builder.serializeNulls();
-		
+
 		if (pretty)
 			builder.setPrettyPrinting();
-		
+
 		return builder.create();
 	}
 }

@@ -28,51 +28,51 @@ public class SectionImpl
 			Wom3Section
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc("heading", ChildDescriptor.REQUIRED),
 			childDesc("body", ChildDescriptor.REQUIRED) };
-	
+
 	private Wom3Heading heading;
-	
+
 	private Wom3Body body;
-	
+
 	// =========================================================================
-	
+
 	public SectionImpl(DocumentImpl owner)
 	{
 		super(owner);
 		setLevelAttr(1);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "section";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -81,7 +81,7 @@ public class SectionImpl
 		else if (added instanceof Wom3Body)
 			this.body = (Wom3Body) added;
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -90,57 +90,57 @@ public class SectionImpl
 		else if (removed == body)
 			this.body = null;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getLevel()
 	{
 		return (Integer) getAttributeNativeData("level");
 	}
-	
+
 	@Override
 	public int setLevel(int level) throws IllegalArgumentException
 	{
 		return setLevelAttr(level);
 	}
-	
+
 	private Integer setLevelAttr(int level)
 	{
 		return setAttributeDirect(ATTR_DESC_LEVEL, "level", level);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Heading getHeading()
 	{
 		return heading;
 	}
-	
+
 	@Override
 	public Wom3Heading setHeading(Wom3Heading heading)
 	{
 		return (Wom3Heading) replaceOrInsertBeforeOrAppend(
 				this.heading, this.body, heading, true);
 	}
-	
+
 	@Override
 	public Wom3Body getBody()
 	{
 		return body;
 	}
-	
+
 	@Override
 	public Wom3Body setBody(Wom3Body body) throws NullPointerException
 	{
 		return (Wom3Body) replaceOrAppend(this.body, body, true);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_LEVEL = new AttrDescLevel();
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -150,7 +150,7 @@ public class SectionImpl
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName,
 				"level", ATTR_DESC_LEVEL);
 	}
-	
+
 	public static final class AttrDescLevel
 			extends
 				AttributeDescriptor
@@ -164,7 +164,7 @@ public class SectionImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

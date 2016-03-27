@@ -24,18 +24,18 @@ public class WtBold
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtBold()
 	{
 	}
-	
+
 	protected WtBold(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

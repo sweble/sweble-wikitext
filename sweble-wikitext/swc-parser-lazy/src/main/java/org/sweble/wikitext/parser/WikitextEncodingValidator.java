@@ -35,19 +35,19 @@ public class WikitextEncodingValidator
 	{
 		StringReader in = new StringReader(source);
 		EncodingValidatorLexer lexer = new EncodingValidatorLexer(in);
-		
+
 		lexer.setFile(title);
 		lexer.setEntityMap(entityMap);
 		lexer.setWikitextNodeFactory(parserConfig.getNodeFactory());
-		
+
 		while (lexer.yylex() != null)
 			;
-		
+
 		in.close();
-		
+
 		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
 	}
-	
+
 	public ValidatedWikitext validate(
 			ParserConfig parserConfig,
 			WtEntityMap entityMap,
@@ -56,17 +56,17 @@ public class WikitextEncodingValidator
 			throws IOException
 	{
 		EncodingValidatorLexer lexer = new EncodingValidatorLexer(source);
-		
+
 		lexer.setFile(title);
 		lexer.setEntityMap(entityMap);
 		lexer.setWikitextNodeFactory(parserConfig.getNodeFactory());
-		
+
 		while (lexer.yylex() != null)
 			;
-		
+
 		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
 	}
-	
+
 	public ValidatedWikitext validate(
 			ParserConfig parserConfig,
 			String source,
@@ -74,7 +74,7 @@ public class WikitextEncodingValidator
 	{
 		return validate(parserConfig, new WtEntityMapImpl(), title, source);
 	}
-	
+
 	public ValidatedWikitext validate(
 			ParserConfig parserConfig,
 			Reader source,

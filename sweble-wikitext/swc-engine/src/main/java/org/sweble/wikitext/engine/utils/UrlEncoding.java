@@ -39,7 +39,7 @@ public enum UrlEncoding
 			}
 		}
 	},
-	
+
 	WIKI
 	{
 		@Override
@@ -54,7 +54,7 @@ public enum UrlEncoding
 			{
 				throw new WrappedException(e);
 			}
-			
+
 			StringBuilder b = new StringBuilder();
 			for (int i = 0; i < text.length(); ++i)
 			{
@@ -63,7 +63,7 @@ public enum UrlEncoding
 				{
 					char ch1 = text.charAt(++i);
 					char ch2 = text.charAt(++i);
-					
+
 					int code = hexToDec(ch1) * 0x10 + hexToDec(ch2);
 					switch (code)
 					{
@@ -79,7 +79,7 @@ public enum UrlEncoding
 						case 0x40:
 							b.append((char) code);
 							break;
-						
+
 						default:
 							b.append(ch);
 							b.append(ch1);
@@ -92,7 +92,7 @@ public enum UrlEncoding
 			}
 			return b.toString();
 		}
-		
+
 		private int hexToDec(char ch)
 		{
 			if (ch >= 'A' && ch <= 'F')
@@ -105,7 +105,7 @@ public enum UrlEncoding
 				throw new IllegalArgumentException("Not a valid hex digit!");
 		}
 	},
-	
+
 	PATH
 	{
 		@Override
@@ -121,8 +121,8 @@ public enum UrlEncoding
 			}
 		}
 	};
-	
+
 	// =====================================================================
-	
+
 	public abstract String encode(String text);
 }

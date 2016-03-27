@@ -29,9 +29,9 @@ public class WtXmlElement
 			WtNamedXmlElement
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -39,7 +39,7 @@ public class WtXmlElement
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtXmlElement(
 			String name,
 			WtXmlAttributes xmlAttributes)
@@ -47,7 +47,7 @@ public class WtXmlElement
 		super(xmlAttributes, WtBody.NO_BODY);
 		setName(name);
 	}
-	
+
 	protected WtXmlElement(
 			String name,
 			WtXmlAttributes xmlAttributes,
@@ -56,39 +56,39 @@ public class WtXmlElement
 		super(xmlAttributes, body);
 		setName(name);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_XML_ELEMENT;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String name;
-	
+
 	public final String getName()
 	{
 		return this.name;
 	}
-	
+
 	public final void setName(String name)
 	{
 		this.name = name;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -99,7 +99,7 @@ public class WtXmlElement
 			{
 				return WtXmlElement.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -107,12 +107,12 @@ public class WtXmlElement
 				{
 					case 0:
 						return "name";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -120,12 +120,12 @@ public class WtXmlElement
 				{
 					case 0:
 						return WtXmlElement.this.getName();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -137,51 +137,51 @@ public class WtXmlElement
 						WtXmlElement.this.setName((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
-	
+
 	public final WtXmlAttributes getXmlAttributes()
 	{
 		return (WtXmlAttributes) get(0);
 	}
-	
+
 	public final boolean hasBody()
 	{
 		return getBody() != WtBody.NO_BODY;
 	}
-	
+
 	public final void setBody(WtBody body)
 	{
 		set(1, body);
 	}
-	
+
 	public final WtBody getBody()
 	{
 		return (WtBody) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void toString(Appendable out) throws IOException
 	{
@@ -190,7 +190,7 @@ public class WtXmlElement
 		out.append(name);
 		out.append(']');
 		out.append('(');
-		
+
 		boolean first = true;
 		for (WtNode node : this)
 		{
@@ -202,11 +202,11 @@ public class WtXmlElement
 			{
 				out.append(", ");
 			}
-			
+
 			node.toString(out);
-			
+
 		}
-		
+
 		out.append(')');
 	}
 }

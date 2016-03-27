@@ -1,0 +1,243 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * Templates
+ * ---------
+ *   - Arguments are parsed in the same way for transclusions and template
+ *     parameters, although template parameters only take one default value.
+ *     That's ok since MediaWiki too treats arguments for both the same way and
+ *     only takes the value after the first pipe as default value for the
+ *     template parameter.
+ *
+ */
+
+module org.sweble.wikitext.parser.preprocessor.Template;
+
+import org.sweble.wikitext.parser.utils.Whitespace;
+
+import org.sweble.wikitext.parser.preprocessor.State;
+import org.sweble.wikitext.parser.preprocessor.ContentTemplateArgumentName;
+import org.sweble.wikitext.parser.preprocessor.ContentTemplateArgumentValue;
+import org.sweble.wikitext.parser.preprocessor.ContentTemplateName;
+
+
+
+
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TemplateTailPart2
+      extends
+          WtTempNode
+  {
+    WtName name;
+    WtTemplateArguments args;
+  }
+}
+
+
+
+
+// -- Article ------------------------------------------------------------------
+
+stateful WtNode Template =
+    eol:pEol? braces:Braces1Plus
+    {
+      /* ALL PRODUCTIONS THAT DEPEND ON THE NUMBER OF BRANCES MUST
+       * BE TRANSIENT! THAT'S ALSO TRUE FOR PRODUCTIONS WHICH USE
+       * PRODUCTIONS THAT DEPEND ON THE BRACE COUNT
+       */
+      getState().setTemplateBraces(braces.length());
+    }
+    yyValue:TemplateTail
+    {
+      if (eol != null)
+      {
+        WtNode tmpl = yyValue;
+        if (yyValue instanceof WtNodeList)
+        {
+          WtNodeList list = (WtNodeList) yyValue;
+          tmpl = list.get(list.size() - 1);
+        }
+        else if (yyValue instanceof WtTemplate)
+        {
+          ((WtTemplate) yyValue).setPrecededByNewline(true);
+        }
+        else
+        {
+          ((WtTemplateParameter) yyValue).setPrecededByNewline(true);
+        }
+
+        yyValue = nf.list(nf.text(eol), yyValue);
+      }
+    }
+  / eol:pEol? braces:Braces1Plus
+    {
+      yyValue = nf.text((eol != null) ? eol + braces : braces);
+    }
+;
+
+private transient String Braces1Plus = "{" "{"+ ;
+
+/* Template tail generating one template/parameter or two nested template
+ *
+ * Multiple opening braces without interjacent spaces can generate at most two
+ * nested templates. This production tries to identify these nested templates.
+ *
+ * ITS VITALLY IMPORTANT TO NOT SPLIT THIS PRODUCTION INTO TWO CHOICES
+ * where the first choice expects two TemplateTailPart's and the second
+ * choice is satisfied with only one TemplateTailPart. The reason:
+ * If the first choice fails, the template brace count has already changed!
+ * If the Rats! parser generator does not collapse the common prefix, the
+ * second choice will try to parse the TemplateTailPart again, but this time
+ * with the wrong brace count!
+ *
+ * This production returns a parameter, a template or a list
+ */
+private transient WtNode TemplateTail =
+  inner:TemplateTailPart outer:TemplateTailPart?
+  {
+    if (outer != null)
+    {
+      // insert inner template in front of the name of the outer template
+      outer.get(0).add(0, inner);
+      yyValue = outer;
+    }
+    else
+    {
+      yyValue = inner;
+    }
+
+    // if more braces were openend than can be consumed by at most two
+    // templates/parameters we have to restore the remaining braces in front
+    // of the recognized templates.
+    int stillOpen = getState().getTemplateBraces();
+    if (stillOpen > 0)
+    {
+      String braces = StringTools.strrep('{', stillOpen);
+      yyValue = nf.list(nf.text(braces), yyValue);
+
+      getState().setTemplateBraces(0);
+    }
+  }
+;
+
+/* Template tail part generating either a Template or a Parameter
+ * Eats 2 or 3 closing braces
+ * ... [name] [arguments] }}}?
+ */
+private transient WtNode TemplateTailPart =
+    content:TemplateTailPart2 TemplateTailPart3
+    {
+      WtValue defaultValue = nf.noValue();
+      WtTemplateArguments garbage = nf.emptyTmplArgs();
+
+      Object rtd2 = null;
+      WtTemplateArguments args = content.args;
+      if (args.size() > 0)
+      {
+        WtTemplateArgument arg0 = (WtTemplateArgument) args.get(0);
+        WtNodeList arg0Value = nf.list();
+        if (arg0.hasName())
+        {
+          arg0Value.addAll(arg0.getName());
+          arg0Value.add(nf.text("="));
+        }
+        arg0Value.addAll(arg0.getValue());
+        defaultValue = nf.value(arg0Value);
+        rtd2 = "|";
+        if (args.size() > 1)
+          garbage = nf.tmplArgs(nf.list(args.subList(1, args.size())));
+      }
+
+      yyValue = setRtd(
+        nf.tmplParam(content.name, defaultValue, garbage),
+        "{{{", SEP, rtd2, SEP, SEP, "}}}");
+
+      getState().eatTemplateBraces(3);
+    }
+  / content:TemplateTailPart2
+    {
+      yyValue = setRtd(
+        nf.tmpl(content.name, content.args),
+        "{{", SEP, SEP, "}}");
+
+      getState().eatTemplateBraces(2);
+    }
+;
+
+/* Template tail part.
+ * Eats 2 closing braces
+ * ... [name] [arguments] }}
+ *
+ * It MUST BE TempalteName>Star<
+ * Example:
+ *   {{{{{param}}<no content here for example>}}}
+ */
+
+private transient TemplateTailPart2 TemplateTailPart2 =
+  &{ hasAtLeastTemplateBraces(2) } name:TemplateNameStar args:TemplateArgumentStar "}}"
+  {
+    yyValue = new TemplateTailPart2();
+    yyValue.name = nf.name(name);
+    yyValue.args = nf.tmplArgs(args);
+  }
+;
+
+/* Template tail part.
+ * Eats the third closing brace
+ * ... }
+ */
+
+private transient void TemplateTailPart3 =
+  &{ hasAtLeastTemplateBraces(3) } '}'
+;
+
+
+
+
+// -- Template/Parameter arguments ---------------------------------------------
+
+private transient WtTemplateArgument TemplateArgumentChoice =
+    parameter:TemplateArgumentNamePlus '=' value:TemplateArgumentValueStar
+    {
+      yyValue = setRtd(
+        nf.tmplArg(nf.name(parameter), nf.value(value)),
+        '|', SEP, '=', SEP);
+    }
+  / value:TemplateArgumentValueStar
+    {
+      yyValue = setRtd(
+        nf.tmplArg(nf.value(value)),
+        '|', SEP, SEP);
+    }
+;
+
+private transient WtNodeList TemplateArgumentStar =
+  args:( void:'|' TemplateArgumentChoice )*
+  {
+    yyValue = nf.list(args);
+  }
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

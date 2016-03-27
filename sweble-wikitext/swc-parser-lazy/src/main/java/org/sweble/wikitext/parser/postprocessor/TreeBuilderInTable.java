@@ -17,7 +17,14 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.postprocessor.ElementType.*;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.CAPTION;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.COL;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.COLGROUP;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TABLE;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TBODY;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TD;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TH;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TR;
 
 import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -31,7 +38,7 @@ import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 import de.fau.cs.osr.utils.visitor.VisitorLogic;
 
 public final class TreeBuilderInTable
@@ -43,9 +50,9 @@ public final class TreeBuilderInTable
 	{
 		super(logic, treeBuilder);
 	}
-	
+
 	// =========================================================================
-	
+
 	public void visit(WtXmlStartTag n)
 	{
 		ElementType nodeType = getNodeType(n);
@@ -54,7 +61,7 @@ public final class TreeBuilderInTable
 			anythingElseR16(n);
 			return;
 		}
-		
+
 		switch (nodeType)
 		{
 			case CAPTION:
@@ -84,7 +91,7 @@ public final class TreeBuilderInTable
 				return;
 		}
 	}
-	
+
 	public void visit(WtXmlEndTag n)
 	{
 		ElementType nodeType = getNodeType(n);
@@ -93,7 +100,7 @@ public final class TreeBuilderInTable
 			anythingElseR16(n);
 			return;
 		}
-		
+
 		switch (nodeType)
 		{
 			case TABLE:
@@ -116,14 +123,14 @@ public final class TreeBuilderInTable
 				break;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public void visit(WtNode n)
 	{
 		anythingElseR16(n);
 	}
-	
+
 	public void visit(WtText n)
 	{
 		ElementType nodeType = getNodeType(tb.getCurrentNode());
@@ -132,7 +139,7 @@ public final class TreeBuilderInTable
 			anythingElseR16(n);
 			return;
 		}
-		
+
 		switch (nodeType)
 		{
 			case TABLE:
@@ -142,23 +149,23 @@ public final class TreeBuilderInTable
 			case TR:
 				tokenR01(n);
 				break;
-			
+
 			default:
 				anythingElseR16(n);
 				break;
 		}
 	}
-	
+
 	public void visit(WtNewline n)
 	{
 		dispatch(getFactory().text(n.getContent()));
 	}
-	
+
 	public void visit(WtXmlComment n)
 	{
 		tokenR02(n);
 	}
-	
+
 	/*
 	public void visit(WtTableImplicitTableBody n)
 	{
@@ -167,40 +174,40 @@ public final class TreeBuilderInTable
 		dispatch(getFactory().synEndTag(TBODY));
 	}
 	*/
-	
+
 	public void visit(WtTableCaption n)
 	{
 		startTagR04(n);
 		iterate(n.getBody());
 		dispatch(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtTableCell n)
 	{
 		// startTagR08 re-dispatches
 		startTagR08(n);
 	}
-	
+
 	public void visit(WtTableHeader n)
 	{
 		// startTagR08 re-dispatches
 		startTagR08(n);
 	}
-	
+
 	public void visit(WtTableRow n)
 	{
 		// startTagR08 re-dispatches
 		startTagR08(n);
 	}
-	
+
 	public void visit(WtTable n)
 	{
 		// startTagR09 re-dispatches
 		startTagR09(n);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * R01: A character token, if the current node is table, tbody, tfoot,
 	 * thead, or tr element
@@ -213,7 +220,7 @@ public final class TreeBuilderInTable
 		tb.switchInsertionMode(InsertionMode.IN_TABLE_TEXT);
 		dispatch(node);
 	}
-	
+
 	/**
 	 * R02: A comment token
 	 * 
@@ -222,7 +229,7 @@ public final class TreeBuilderInTable
 	{
 		tb.appendToCurrentNode(n);
 	}
-	
+
 	/**
 	 * R04: A start tag whose tag name is caption
 	 * 
@@ -234,7 +241,7 @@ public final class TreeBuilderInTable
 		tb.insertAnHtmlElement(n);
 		tb.switchInsertionMode(InsertionMode.IN_CAPTION);
 	}
-	
+
 	/**
 	 * R05: A start tag whose tag name is colgroup
 	 * 
@@ -245,7 +252,7 @@ public final class TreeBuilderInTable
 		tb.insertAnHtmlElement(n);
 		tb.switchInsertionMode(InsertionMode.IN_COLUMN_GROUP);
 	}
-	
+
 	/**
 	 * R06: A start tag whose tag name is col
 	 * 
@@ -255,7 +262,7 @@ public final class TreeBuilderInTable
 		dispatch(getFactory().createMissingRepairStartTag(COLGROUP));
 		dispatch(n);
 	}
-	
+
 	/**
 	 * R07: A start tag whose tag name is one of: tbody, tfoot, thead
 	 * 
@@ -266,7 +273,7 @@ public final class TreeBuilderInTable
 		tb.insertAnHtmlElement(n);
 		tb.switchInsertionMode(InsertionMode.IN_TABLE_BODY);
 	}
-	
+
 	/**
 	 * R08: A start tag whose tag name is one of: td, th, tr
 	 * 
@@ -278,7 +285,7 @@ public final class TreeBuilderInTable
 		dispatch(itbody);
 		dispatch(n);
 	}
-	
+
 	/**
 	 * R09: A start tag whose tag name is table
 	 */
@@ -289,7 +296,7 @@ public final class TreeBuilderInTable
 		// Since we have no fragment case, the fake token cannot be ignored
 		dispatch(n);
 	}
-	
+
 	/**
 	 * R10: An end tag whose tag name is table
 	 */
@@ -297,14 +304,14 @@ public final class TreeBuilderInTable
 	{
 		// We don't have a fragment case
 		// -> No scope checking
-		
+
 		addRtDataOfEndTag(
 				tb.popFromStackUntilIncluding(TABLE),
 				n);
-		
+
 		tb.resetInsertionMode();
 	}
-	
+
 	/**
 	 * R11: An end tag whose tag name is one of: body, caption, col, colgroup,
 	 * html, tbody, td, tfoot, th, thead, tr
@@ -314,7 +321,7 @@ public final class TreeBuilderInTable
 		tb.error(n, "12.2.5.4.9 R11");
 		tb.ignore(n);
 	}
-	
+
 	/**
 	 * R16: Anything else
 	 */
@@ -325,9 +332,9 @@ public final class TreeBuilderInTable
 		tb.processInInsertionMode(InsertionMode.IN_BODY, n);
 		tb.setFosterParentingMode(false);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TreeBuilderInTableText
 			extends
 				TreeBuilderModeBase
@@ -337,11 +344,11 @@ public final class TreeBuilderInTable
 		{
 			super(logic, treeBuilder);
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			WtText textNode = getFactory().text(tb.getPendingTableCharTokens());
-			if (StringUtils.isWhitespace(textNode.getContent()))
+			if (StringTools.isWhitespace(textNode.getContent()))
 			{
 				tb.insertText(textNode);
 			}
@@ -350,25 +357,25 @@ public final class TreeBuilderInTable
 				((TreeBuilderInTable) tb.getModeImpl(InsertionMode.IN_TABLE))
 						.anythingElseR16(textNode);
 			}
-			
+
 			tb.resetToOriginalInsertionMode();
-			
+
 			dispatch(n);
 		}
-		
+
 		public void visit(WtText n)
 		{
 			tb.appendToPendingTableCharTokens(n.getContent());
 		}
-		
+
 		public void visit(WtNewline n)
 		{
 			dispatch(getFactory().text(n.getContent()));
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TreeBuilderInCaption
 			extends
 				TreeBuilderModeBase
@@ -378,7 +385,7 @@ public final class TreeBuilderInTable
 		{
 			super(logic, treeBuilder);
 		}
-		
+
 		public void visit(WtXmlStartTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -387,7 +394,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case CAPTION:
@@ -406,7 +413,7 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtXmlEndTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -415,19 +422,19 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case CAPTION:
 				{
 					// We don't have a fragment case
 					// -> No scope checking
-					
+
 					tb.generateImpliedEndTags();
-					
+
 					if (!isNodeOneOf(tb.getCurrentNode(), CAPTION))
 						tb.error(n, "12.2.5.4.11 R01 (2)");
-					
+
 					addRtDataOfEndTag(
 							tb.popFromStackUntilIncluding(CAPTION),
 							n);
@@ -455,13 +462,13 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
 			// throw new InternalError();
 		}
-		
+
 		private void rule02(WtNode n)
 		{
 			tb.error(n, "12.2.5.4.11 R02");
@@ -469,39 +476,39 @@ public final class TreeBuilderInTable
 			// Since we have no fragment case, the fake token cannot be ignored
 			dispatch(n);
 		}
-		
+
 		public void visit(WtTableCaption n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableCell n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableHeader n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableRow n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		private void anythingElse(WtNode n)
 		{
 			tb.processInInsertionMode(InsertionMode.IN_BODY, n);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TreeBuilderInColumnGroup
 			extends
 				TreeBuilderModeBase
@@ -511,7 +518,7 @@ public final class TreeBuilderInTable
 		{
 			super(logic, treeBuilder);
 		}
-		
+
 		public void visit(WtXmlStartTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -529,7 +536,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 			}
 		}
-		
+
 		public void visit(WtXmlEndTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -554,16 +561,16 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 			}
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			// anythingElse(n);
 			throw new InternalError();
 		}
-		
+
 		public void visit(WtText n)
 		{
-			if (StringUtils.isWhitespace(n.getContent()))
+			if (StringTools.isWhitespace(n.getContent()))
 			{
 				tb.insertText(n);
 			}
@@ -572,17 +579,17 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 			}
 		}
-		
+
 		public void visit(WtNewline n)
 		{
 			dispatch(getFactory().text(n.getContent()));
 		}
-		
+
 		public void visit(WtXmlComment n)
 		{
 			tb.appendToCurrentNode(n);
 		}
-		
+
 		private void anythingElse(WtNode n)
 		{
 			dispatch(getFactory().createMissingRepairEndTag(COLGROUP));
@@ -590,9 +597,9 @@ public final class TreeBuilderInTable
 			dispatch(n);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TreeBuilderInTableBody
 			extends
 				TreeBuilderModeBase
@@ -602,7 +609,7 @@ public final class TreeBuilderInTable
 		{
 			super(logic, treeBuilder);
 		}
-		
+
 		public void visit(WtXmlStartTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -611,7 +618,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case TR:
@@ -634,7 +641,7 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtXmlEndTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -643,7 +650,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case TBODY:
@@ -679,45 +686,45 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
 			// throw new InternalError();
 		}
-		
+
 		public void visit(WtTableRow n)
 		{
 			rule01(n);
 			iterate(n.getBody());
 			dispatch(getFactory().createSyntheticEndTag(n));
 		}
-		
+
 		public void visit(WtTableHeader n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableCell n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableCaption n)
 		{
 			// rule04 re-dispatches
 			rule04(n);
 		}
-		
+
 		private void rule01(WtNode n)
 		{
 			tb.clearStackBackToTableBodyContext();
 			tb.insertAnHtmlElement(n);
 			tb.switchInsertionMode(InsertionMode.IN_ROW);
 		}
-		
+
 		private void rule02(WtNode n)
 		{
 			/*
@@ -743,7 +750,7 @@ public final class TreeBuilderInTable
 				dispatch(n);
 			}
 		}
-		
+
 		/**
 		 * Iterate through the elements of the "new" table that we already
 		 * processed to see if the table already has a row attached.
@@ -781,13 +788,13 @@ public final class TreeBuilderInTable
 			}
 			return false;
 		}
-		
+
 		private void rule04(WtNode n)
 		{
 			// We have no fragment case!
-			
+
 			tb.clearStackBackToTableBodyContext();
-			
+
 			ElementType curNodeType = getNodeType(tb.getCurrentNode());
 			switch (curNodeType)
 			{
@@ -799,18 +806,18 @@ public final class TreeBuilderInTable
 				default:
 					throw new InternalError();
 			}
-			
+
 			dispatch(n);
 		}
-		
+
 		private void anythingElse(WtNode n)
 		{
 			tb.processInInsertionMode(InsertionMode.IN_TABLE, n);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TreeBuilderInRow
 			extends
 				TreeBuilderModeBase
@@ -820,7 +827,7 @@ public final class TreeBuilderInTable
 		{
 			super(logic, treeBuilder);
 		}
-		
+
 		public void visit(WtXmlStartTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -829,7 +836,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case TH:
@@ -850,7 +857,7 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtXmlEndTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -859,7 +866,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case TR:
@@ -904,39 +911,39 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
 			// throw new InternalError(n.toString());
 		}
-		
+
 		public void visit(WtTableCell n)
 		{
 			rule01(n);
 			iterate(n.getBody());
 			dispatch(getFactory().createSyntheticEndTag(n));
 		}
-		
+
 		public void visit(WtTableHeader n)
 		{
 			rule01(n);
 			iterate(n.getBody());
 			dispatch(getFactory().createSyntheticEndTag(n));
 		}
-		
+
 		public void visit(WtTableCaption n)
 		{
 			// rule03 re-dispatches
 			rule03(n);
 		}
-		
+
 		public void visit(WtTableRow n)
 		{
 			// rule03 re-dispatches
 			rule03(n);
 		}
-		
+
 		private void rule01(WtNode n)
 		{
 			tb.clearStackBackToTableRowContext();
@@ -944,22 +951,22 @@ public final class TreeBuilderInTable
 			tb.switchInsertionMode(InsertionMode.IN_CELL);
 			tb.insertMarkerInActiveFormattingElements();
 		}
-		
+
 		private void rule03(WtNode n)
 		{
 			dispatch(getFactory().createMissingRepairEndTag(TR));
 			// We don't have a fragment case!
 			dispatch(n);
 		}
-		
+
 		private void anythingElse(WtNode n)
 		{
 			tb.processInInsertionMode(InsertionMode.IN_TABLE, n);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class TreeBuilderInCell
 			extends
 				TreeBuilderModeBase
@@ -969,7 +976,7 @@ public final class TreeBuilderInTable
 		{
 			super(logic, treeBuilder);
 		}
-		
+
 		public void visit(WtXmlStartTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -978,7 +985,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case CAPTION:
@@ -997,7 +1004,7 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtXmlEndTag n)
 		{
 			ElementType nodeType = getNodeType(n);
@@ -1006,7 +1013,7 @@ public final class TreeBuilderInTable
 				anythingElse(n);
 				return;
 			}
-			
+
 			switch (nodeType)
 			{
 				case TD:
@@ -1068,49 +1075,49 @@ public final class TreeBuilderInTable
 					break;
 			}
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
 			// throw new InternalError(n.toString());
 		}
-		
+
 		public void visit(WtTableCaption n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableCell n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableHeader n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		public void visit(WtTableRow n)
 		{
 			// rule02 re-dispatches
 			rule02(n);
 		}
-		
+
 		private void rule02(WtNode n)
 		{
 			// We don't have a fragment case!
 			closeCell();
 			dispatch(n);
 		}
-		
+
 		private void anythingElse(WtNode n)
 		{
 			tb.processInInsertionMode(InsertionMode.IN_BODY, n);
 		}
-		
+
 		/**
 		 * This method is only called if a cell has to be closed forcefully.
 		 */

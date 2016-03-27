@@ -48,45 +48,45 @@ import org.sweble.wikitext.articlecruncher.JobTrace.Signer;
 public abstract class Job
 {
 	private final JobTrace trace;
-	
+
 	private JobHistory history;
-	
+
 	// =========================================================================
-	
+
 	public Job()
 	{
 		this.trace = new JobTrace();
 	}
-	
+
 	public Job(JobTrace trace)
 	{
 		this.trace = trace;
 	}
-	
+
 	// =========================================================================
-	
+
 	public JobTrace getTrace()
 	{
 		return trace;
 	}
-	
+
 	public long getJobId()
 	{
 		return trace.getJobId();
 	}
-	
+
 	public List<Signer> getSigners()
 	{
 		return trace.getSigners();
 	}
-	
+
 	public void signOff(Class<?> signer, String signature)
 	{
 		trace.signOff(signer, signature);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Retrieve the latest history element of the job. The history of a job
 	 * forms a chain. The head element (the element returned by this getter)
@@ -98,7 +98,7 @@ public abstract class Job
 	{
 		return history;
 	}
-	
+
 	/**
 	 * Set the result of a successfully processed job.
 	 */
@@ -106,7 +106,7 @@ public abstract class Job
 	{
 		history = new JobHistory(history, result);
 	}
-	
+
 	/**
 	 * Set the exception of a job for which processing failed.
 	 * 
@@ -116,9 +116,9 @@ public abstract class Job
 	{
 		history = new JobHistory(history, exception);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Returns the state of this job.
 	 */
@@ -126,7 +126,7 @@ public abstract class Job
 	{
 		return history != null ? history.getState() : JobProcessingState.UNPROCESSED;
 	}
-	
+
 	/**
 	 * Returns the result produced in the last processing run.
 	 * 
@@ -138,7 +138,7 @@ public abstract class Job
 	{
 		return (getState() == JobProcessingState.HAS_RESULT) ? history.getResult() : null;
 	}
-	
+
 	/**
 	 * Returns the exception that occurred in the last processing run.
 	 * 

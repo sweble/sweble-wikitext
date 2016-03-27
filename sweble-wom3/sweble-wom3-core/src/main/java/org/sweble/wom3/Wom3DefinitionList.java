@@ -50,21 +50,21 @@ public interface Wom3DefinitionList
 			Wom3UniversalAttributes
 {
 	// ==[ Term-oriented interface ]============================================
-	
+
 	/**
 	 * Get the number of terms in this list.
 	 * 
 	 * @return The number of terms in this list.
 	 */
 	public int getTermNum();
-	
+
 	/**
 	 * Get a collection containing all terms.
 	 * 
 	 * @return A collection containing all terms.
 	 */
 	public Collection<Wom3DefinitionListTerm> getTerms();
-	
+
 	/**
 	 * Get a certain term from the list.
 	 * 
@@ -76,7 +76,7 @@ public interface Wom3DefinitionList
 	 *             Thrown if the given index is out of range.
 	 */
 	public Wom3DefinitionListTerm getTerm(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Replace a certain term and all its definitions by another term and its
 	 * definitions.
@@ -93,7 +93,7 @@ public interface Wom3DefinitionList
 	public Wom3DefinitionListTerm replaceTerm(
 			int index,
 			Wom3DefinitionListTerm term) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Remove a term and all its definitions from the list.
 	 * 
@@ -104,7 +104,7 @@ public interface Wom3DefinitionList
 	 *             Thrown if the given index is out of range.
 	 */
 	public Wom3DefinitionListTerm removeTerm(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Append a term and its definitions to the list.
 	 * 
@@ -112,7 +112,7 @@ public interface Wom3DefinitionList
 	 *            The term to append.
 	 */
 	public void appendTerm(Wom3DefinitionListTerm term);
-	
+
 	/**
 	 * Insert a term and its definitions at the given index into the list.
 	 * 
@@ -127,23 +127,23 @@ public interface Wom3DefinitionList
 	 *             not hold.
 	 */
 	public void insertTerm(int beforeIndex, Wom3DefinitionListTerm term) throws IndexOutOfBoundsException;
-	
+
 	// ==[ Item-oriented interface ]===========================================
-	
+
 	/**
 	 * Get the number of terms and definitions in this list.
 	 * 
 	 * @return The number of terms and definitions in this list.
 	 */
 	public int getItemNum();
-	
+
 	/**
 	 * Get a collection containing all terms and definitions.
 	 * 
 	 * @return A collection with all items of the list.
 	 */
 	public Collection<Wom3DefinitionListItem> getItems();
-	
+
 	/**
 	 * Get a certain term or definition from the list.
 	 * 
@@ -154,7 +154,7 @@ public interface Wom3DefinitionList
 	 *             If the given index is out of range.
 	 */
 	public Wom3DefinitionListItem getItem(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Replace a certain term or definition in the list.
 	 * 
@@ -173,7 +173,7 @@ public interface Wom3DefinitionList
 	public Wom3DefinitionListItem replaceItem(
 			int index,
 			Wom3DefinitionListItem item) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Remove a term or definition from the list.
 	 * 
@@ -188,7 +188,7 @@ public interface Wom3DefinitionList
 	 *             If the given index is out of range.
 	 */
 	public Wom3DefinitionListItem removeItem(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Append term or definition to the list.
 	 * 
@@ -200,7 +200,7 @@ public interface Wom3DefinitionList
 	 *            The item to append.
 	 */
 	public void appendItem(Wom3DefinitionListItem item);
-	
+
 	/**
 	 * Insert a term or definition at the given index into the list.
 	 * 
@@ -219,9 +219,9 @@ public interface Wom3DefinitionList
 	 *             not hold.
 	 */
 	public void insertItem(int beforeIndex, Wom3DefinitionListItem item) throws IndexOutOfBoundsException;
-	
+
 	// ==[ The XHTML Attributes ]===============================================
-	
+
 	/**
 	 * Tells whether the list should be displayed as compact list.
 	 * 
@@ -230,7 +230,7 @@ public interface Wom3DefinitionList
 	 * @return Whether the "compact" flag is given or not.
 	 */
 	public boolean isCompact();
-	
+
 	/**
 	 * Set whether the list should be displayed as compact list.
 	 * 

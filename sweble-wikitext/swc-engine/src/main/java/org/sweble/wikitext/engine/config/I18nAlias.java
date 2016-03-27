@@ -21,13 +21,13 @@ import java.util.Set;
 
 public interface I18nAlias
 {
-	
+
 	public abstract String getId();
-	
+
 	public abstract boolean isCaseSensitive();
-	
+
 	public abstract Set<String> getAliases();
-	
+
 	public abstract boolean hasAlias(String alias);
-	
+
 }

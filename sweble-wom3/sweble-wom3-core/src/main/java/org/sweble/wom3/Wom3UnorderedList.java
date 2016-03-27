@@ -37,7 +37,7 @@ public interface Wom3UnorderedList
 	 *         not specified.
 	 */
 	public Wom3BulletStyle getItemType();
-	
+
 	/**
 	 * Set the type of bullet point the list items should use.
 	 * 

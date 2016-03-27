@@ -36,39 +36,39 @@ public class ParserFunctionGroup
 			Comparable<ParserFunctionGroup>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	@XmlAttribute
 	private String name;
-	
+
 	/** Just used to check for duplicates. */
 	private transient final HashSet<String> pfnIds = new HashSet<String>();
-	
+
 	private final HashSet<ParserFunctionBase> pfns =
 			new HashSet<ParserFunctionBase>();
-	
+
 	// =========================================================================
-	
+
 	public ParserFunctionGroup()
 	{
 	}
-	
+
 	public ParserFunctionGroup(String name)
 	{
 		this.name = name;
 	}
-	
+
 	// =========================================================================
-	
+
 	public String getName()
 	{
 		return name;
 	}
-	
+
 	public Collection<ParserFunctionBase> getParserFunctions()
 	{
 		return Collections.unmodifiableCollection(pfns);
 	}
-	
+
 	public void addParserFunction(ParserFunctionBase pfn)
 	{
 		if (pfnIds.contains(pfn.getId()))
@@ -76,9 +76,9 @@ public class ParserFunctionGroup
 		this.pfnIds.add(pfn.getId());
 		this.pfns.add(pfn);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -88,7 +88,7 @@ public class ParserFunctionGroup
 		result = prime * result + ((pfns == null) ? 0 : pfns.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -115,25 +115,25 @@ public class ParserFunctionGroup
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return "ParserFunctionGroup [name=" + name + ", pfns=" + pfns + "]";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int compareTo(ParserFunctionGroup o)
 	{
 		return this.name.compareTo(o.getName());
 	}
-	
+
 	// =========================================================================
-	
+
 	@XmlElement(name = "pfn")
 	private ArrayList<ParserFunctionBase> getPfns()
 	{
@@ -141,7 +141,7 @@ public class ParserFunctionGroup
 		Collections.sort(sorted);
 		return sorted;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setPfns(ArrayList<ParserFunctionBase> pfns)
 	{

@@ -28,7 +28,7 @@ public abstract class ProcessingNode
 	{
 		super(workerName, abortHandler);
 	}
-	
+
 	public ProcessingNode(String workerName)
 	{
 		super(workerName);

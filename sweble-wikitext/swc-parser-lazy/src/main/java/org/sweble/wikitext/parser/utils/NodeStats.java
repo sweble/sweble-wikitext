@@ -26,7 +26,7 @@ import java.util.Map;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class NodeStats
 {
@@ -34,72 +34,72 @@ public class NodeStats
 	{
 		new NodeStatsVisitor().go(astNode);
 	}
-	
+
 	protected static final class NodeStatsVisitor
 			extends
 				AstVisitor<WtNode>
 	{
 		private final Map<String, Integer> nodeCounts =
 				new HashMap<String, Integer>();
-		
+
 		private int varCount = 0;
-		
+
 		private int varEmptyCount = 0;
-		
+
 		private int varChildCount = 0;
-		
+
 		private int varMaxChildCount = -1;
-		
+
 		private int fixCount = 0;
-		
+
 		private int fixChildCount = 0;
-		
+
 		private int leafCount = 0;
-		
+
 		@Override
 		protected Object after(WtNode node, Object result)
 		{
 			System.out.println("Analysis:");
-			
+
 			List<String> nodeNames = new ArrayList<String>(nodeCounts.keySet());
 			Collections.sort(nodeNames);
-			
+
 			int sum = 0;
 			for (String name : nodeNames)
 			{
 				int count = nodeCounts.get(name);
 				sum += count;
-				
-				String space = StringUtils.strrep('.', 80 - name.length());
-				
+
+				String space = StringTools.strrep('.', 80 - name.length());
+
 				System.out.format("  %s %s %5d\n", name, space, count);
 			}
-			
-			System.out.println("  " + StringUtils.strrep('=', 87));
-			System.out.format("  %s%5d\n", StringUtils.strrep(' ', 82), sum);
-			
+
+			System.out.println("  " + StringTools.strrep('=', 87));
+			System.out.format("  %s%5d\n", StringTools.strrep(' ', 82), sum);
+
 			System.out.println();
 			System.out.println("  Nodes with variable number of children: ");
 			System.out.format("     Count:   %5d\n", varCount);
 			System.out.format("     Leaf:    %5d\n", varEmptyCount);
 			System.out.format("     Biggest: %5d\n", varMaxChildCount);
 			System.out.format("     Average:    %5.2f\n", varChildCount / (float) (varCount - varEmptyCount));
-			
+
 			System.out.println();
 			System.out.println("  Nodes with fixed number of children: ");
 			System.out.format("     Inner:   %5d\n", fixCount);
 			System.out.format("     Leafs:   %5d\n", leafCount);
 			System.out.format("     Average:    %5.2f\n", fixChildCount / (float) fixCount);
-			
+
 			return super.after(node, result);
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			if (n != null)
 			{
 				countNode(n);
-				
+
 				int size = n.size();
 				if (n.isList())
 				{
@@ -122,20 +122,20 @@ public class NodeStats
 						++leafCount;
 					}
 				}
-				
+
 				iterate(n);
 			}
 		}
-		
+
 		private void countNode(WtNode n)
 		{
 			Class<? extends WtNode> clazz = n.getClass();
 			String name = clazz.getName();
-			
+
 			Integer i = nodeCounts.get(name);
 			if (i == null)
 				i = 0;
-			
+
 			nodeCounts.put(name, i + 1);
 		}
 	}

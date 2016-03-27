@@ -44,14 +44,14 @@ public interface Wom3List
 	 * @return The number of items in the list.
 	 */
 	public int getItemNum();
-	
+
 	/**
 	 * Get a collection containing all items.
 	 * 
 	 * @return A collection with all items of the list.
 	 */
 	public Collection<Wom3ListItem> getItems();
-	
+
 	/**
 	 * Get a certain item from the list.
 	 * 
@@ -62,7 +62,7 @@ public interface Wom3List
 	 *             If the given index is out of range.
 	 */
 	public Wom3ListItem getItem(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Replace a certain item in the list.
 	 * 
@@ -75,7 +75,7 @@ public interface Wom3List
 	 *             If the given index is out of range.
 	 */
 	public Wom3ListItem replaceItem(int index, Wom3ListItem item) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Remove an item from the list.
 	 * 
@@ -87,7 +87,7 @@ public interface Wom3List
 	 *             If the given index is out of range.
 	 */
 	public Wom3ListItem removeItem(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Append an item to the list.
 	 * 
@@ -95,7 +95,7 @@ public interface Wom3List
 	 *            The item to append.
 	 */
 	public void appendItem(Wom3ListItem item);
-	
+
 	/**
 	 * Insert an item at the given index into the list.
 	 * 
@@ -110,9 +110,9 @@ public interface Wom3List
 	 *             not hold.
 	 */
 	public void insertItem(int beforeIndex, Wom3ListItem item) throws IndexOutOfBoundsException;
-	
+
 	// ==[ The XHTML Attributes ]===============================================
-	
+
 	/**
 	 * Tells whether the list should be displayed as compact list.
 	 * 
@@ -121,7 +121,7 @@ public interface Wom3List
 	 * @return Whether the "compact" flag is given or not.
 	 */
 	public boolean isCompact();
-	
+
 	/**
 	 * Set whether the list should be displayed as compact list.
 	 * 

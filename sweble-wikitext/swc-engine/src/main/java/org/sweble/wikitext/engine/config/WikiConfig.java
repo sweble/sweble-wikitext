@@ -29,106 +29,106 @@ import org.sweble.wikitext.parser.ParserConfig;
 public interface WikiConfig
 {
 	// ==[ Parser Configuration ]===============================================
-	
+
 	public ParserConfig getParserConfig();
-	
+
 	// ==[ Engine Configuration ]===============================================
-	
+
 	public EngineConfig getEngineConfig();
-	
+
 	// ==[ AST creation/processing ]============================================
-	
+
 	/**
 	 * Should return the same instance as getParserConfig().getNodeFactory().
 	 */
 	public EngineNodeFactory getNodeFactory();
-	
+
 	/**
 	 * Should return the same instance as getParserConfig().getAstTextUtils().
 	 */
 	public EngineAstTextUtils getAstTextUtils();
-	
+
 	// ==[ Namespaces ]=========================================================
-	
+
 	public Namespace getNamespace(String name);
-	
+
 	public Namespace getNamespace(int id);
-	
+
 	public Collection<Namespace> getNamespaces();
-	
+
 	public Namespace getDefaultNamespace();
-	
+
 	public Namespace getTemplateNamespace();
-	
+
 	public Namespace getFileNamespace();
-	
+
 	public Namespace getSubjectNamespaceFor(Namespace namespace);
-	
+
 	public Namespace getTalkNamespaceFor(Namespace namespace);
-	
+
 	// ==[ Known Wikis ]========================================================
-	
+
 	public Interwiki getInterwiki(String prefix);
-	
+
 	public Collection<Interwiki> getInterwikis();
-	
+
 	// ==[ Internationalization ]===============================================
-	
+
 	public I18nAlias getI18nAlias(String name);
-	
+
 	public Collection<I18nAlias> getI18nAliases();
-	
+
 	// ==[ Tag extensions, parser functions and page switches ]=================
-	
+
 	/**
 	 * Returns parser functions and page switches.
 	 */
 	public Collection<ParserFunctionBase> getParserFunctions();
-	
+
 	/**
 	 * Cannot retrieve page switches.
 	 */
 	public ParserFunctionBase getParserFunction(String name);
-	
+
 	/**
 	 * Page switches are a special form of parser function. They are therefore
 	 * listed in getParserFunctions(). However, retrieval works only over
 	 * getPageSwitch().
 	 */
 	public ParserFunctionBase getPageSwitch(String name);
-	
+
 	public Collection<TagExtensionBase> getTagExtensions();
-	
+
 	public TagExtensionBase getTagExtension(String name);
-	
+
 	// ==[ Properties of the wiki instance ]====================================
-	
+
 	/**
 	 * Name of this wiki.
 	 */
 	public String getSiteName();
-	
+
 	/**
 	 * The equivalent of MediaWiki's $wgScript.
 	 */
 	public String getWikiUrl();
-	
+
 	/**
 	 * The equivalent of MediaWiki's $wgArticlePath.
 	 */
 	public String getArticlePath();
-	
+
 	public String getContentLanguage();
-	
+
 	/**
 	 * Returns the interwiki prefix for the configured wiki instance or null if
 	 * this wiki itself does not have an interwiki prefix.
 	 */
 	public Object getInterwikiPrefix();
-	
+
 	// ==[ Runtime information ]================================================
-	
+
 	public WikiRuntimeInfo getRuntimeInfo();
-	
+
 	public TimeZone getTimezone();
 }

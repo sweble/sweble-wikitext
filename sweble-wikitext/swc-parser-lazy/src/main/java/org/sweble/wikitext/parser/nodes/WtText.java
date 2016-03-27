@@ -29,9 +29,9 @@ public class WtText
 			WtStringNode
 {
 	private static final long serialVersionUID = 7333107598118095040L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -39,43 +39,43 @@ public class WtText
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtText(String content)
 	{
 		super(content);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public void setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public void setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public WtRtData getRtd()
 	{
 		return null;
 	}
-	
+
 	@Override
 	public void clearRtd()
 	{
 	}
-	
+
 	@Override
 	public void suppressRtd()
 	{

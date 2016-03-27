@@ -38,7 +38,7 @@ public interface Wom3Category
 	 *         specifier.
 	 */
 	public String getName();
-	
+
 	/**
 	 * Set the name of the category.
 	 * 
@@ -55,9 +55,9 @@ public interface Wom3Category
 	 *             associated with this page.
 	 */
 	public String setName(String name) throws NullPointerException, IllegalArgumentException;
-	
+
 	// ==[ Link interface ]=====================================================
-	
+
 	/**
 	 * Returns an empty title since category statements do not provide a title.
 	 * 
@@ -65,7 +65,7 @@ public interface Wom3Category
 	 */
 	@Override
 	public Wom3Title getLinkTitle();
-	
+
 	/**
 	 * Return the name of the category this statement is pointing to.
 	 * 

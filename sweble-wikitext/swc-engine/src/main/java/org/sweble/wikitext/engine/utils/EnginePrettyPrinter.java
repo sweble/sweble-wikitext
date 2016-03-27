@@ -20,9 +20,9 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitorNoReturn;
-import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngNowiki;
 import org.sweble.wikitext.engine.nodes.EngPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
@@ -47,40 +47,40 @@ public class EnginePrettyPrinter
 			p.print("</nowiki>");
 		}
 	}
-	
+
 	@Override
 	public void visit(EngProcessedPage n)
 	{
 		dispatch(n.getPage());
 	}
-	
+
 	@Override
 	public void visit(EngPage n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(EngSoftErrorNode n)
 	{
 		visit((WtXmlElement) n);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static <T extends WtNode> String print(T node)
 	{
 		return print(new StringWriter(), node).toString();
 	}
-	
+
 	public static <T extends WtNode> Writer print(Writer writer, T node)
 	{
 		new EnginePrettyPrinter(writer).go(node);
 		return writer;
 	}
-	
+
 	// =========================================================================
-	
+
 	public EnginePrettyPrinter(Writer writer)
 	{
 		super(writer);

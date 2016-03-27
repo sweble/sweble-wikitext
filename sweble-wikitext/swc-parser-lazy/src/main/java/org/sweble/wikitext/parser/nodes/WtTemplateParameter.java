@@ -27,9 +27,9 @@ public class WtTemplateParameter
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -37,17 +37,17 @@ public class WtTemplateParameter
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtTemplateParameter(WtName name)
 	{
 		super(name, WtValue.NO_VALUE, WtTemplateArguments.EMPTY);
 	}
-	
+
 	protected WtTemplateParameter(WtName name, WtValue defaultValue)
 	{
 		super(name, defaultValue, WtTemplateArguments.EMPTY);
 	}
-	
+
 	protected WtTemplateParameter(
 			WtName name,
 			WtValue defaultValue,
@@ -55,39 +55,39 @@ public class WtTemplateParameter
 	{
 		super(name, defaultValue, garbage);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_TEMPLATE_PARAMETER;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private boolean precededByNewline;
-	
+
 	public final boolean getPrecededByNewline()
 	{
 		return this.precededByNewline;
 	}
-	
+
 	public final void setPrecededByNewline(boolean precededByNewline)
 	{
 		this.precededByNewline = precededByNewline;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -98,7 +98,7 @@ public class WtTemplateParameter
 			{
 				return WtTemplateParameter.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -106,12 +106,12 @@ public class WtTemplateParameter
 				{
 					case 0:
 						return "precededByNewline";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -119,12 +119,12 @@ public class WtTemplateParameter
 				{
 					case 0:
 						return WtTemplateParameter.this.getPrecededByNewline();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -136,54 +136,54 @@ public class WtTemplateParameter
 						WtTemplateParameter.this.setPrecededByNewline((Boolean) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setName(WtName name)
 	{
 		set(0, name);
 	}
-	
+
 	public final WtName getName()
 	{
 		return (WtName) get(0);
 	}
-	
+
 	public final boolean hasDefault()
 	{
 		return getDefault() != WtValue.NO_VALUE;
 	}
-	
+
 	public final void setDefault(WtValue _default)
 	{
 		set(1, _default);
 	}
-	
+
 	public final WtValue getDefault()
 	{
 		return (WtValue) get(1);
 	}
-	
+
 	public final void setGarbage(WtTemplateArguments garbage)
 	{
 		set(2, garbage);
 	}
-	
+
 	public final WtTemplateArguments getGarbage()
 	{
 		return (WtTemplateArguments) get(2);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "name", "default", "garbage" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

@@ -23,22 +23,22 @@ import org.sweble.wom3.Wom3ElementNode;
 public class ListItemTest
 {
 	private final Wom3ElementNode n;
-	
+
 	// =========================================================================
-	
+
 	public ListItemTest()
 	{
 		this.n = TestHelperDoc.genElem("li");
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testTypeAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(this.n, "type", "getItemType", "setItemType", "i");
 	}
-	
+
 	@Test
 	public void testValueAttribute() throws Exception
 	{

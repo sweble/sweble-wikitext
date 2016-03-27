@@ -24,53 +24,53 @@ public class WtSignature
 			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtSignature()
 	{
 	}
-	
+
 	protected WtSignature(int tildeCount)
 	{
 		setTildeCount(tildeCount);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_SIGNATURE;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private int tildeCount;
-	
+
 	public final int getTildeCount()
 	{
 		return this.tildeCount;
 	}
-	
+
 	public final void setTildeCount(int tildeCount)
 	{
 		this.tildeCount = tildeCount;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -81,7 +81,7 @@ public class WtSignature
 			{
 				return WtSignature.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -89,12 +89,12 @@ public class WtSignature
 				{
 					case 0:
 						return "tildeCount";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -102,12 +102,12 @@ public class WtSignature
 				{
 					case 0:
 						return WtSignature.this.getTildeCount();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -119,7 +119,7 @@ public class WtSignature
 						WtSignature.this.setTildeCount((Integer) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

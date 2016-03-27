@@ -22,21 +22,21 @@ public class CompressorFactoryException
 			Exception
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	public CompressorFactoryException()
 	{
 	}
-	
+
 	public CompressorFactoryException(String message, Throwable cause)
 	{
 		super(message, cause);
 	}
-	
+
 	public CompressorFactoryException(String message)
 	{
 		super(message);
 	}
-	
+
 	public CompressorFactoryException(Throwable cause)
 	{
 		super(cause);

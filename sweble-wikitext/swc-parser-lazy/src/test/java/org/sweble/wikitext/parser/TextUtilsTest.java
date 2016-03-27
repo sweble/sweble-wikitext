@@ -17,7 +17,8 @@
 
 package org.sweble.wikitext.parser;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -33,30 +34,30 @@ public class TextUtilsTest
 {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	
+
 	private final ParserConfig config;
-	
+
 	private final AstTextUtils tu;
-	
+
 	private final WikitextNodeFactory nf;
-	
+
 	// =========================================================================
-	
+
 	public TextUtilsTest()
 	{
 		config = new SimpleParserConfig();
 		tu = config.getAstTextUtils();
 		nf = config.getNodeFactory();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testJustOneTextNode() throws Exception
 	{
 		assertEquals("Hallo!", tu.astToText(nf.text("Hallo!")));
 	}
-	
+
 	@Test
 	public void testTwoTextNodes() throws Exception
 	{
@@ -64,7 +65,7 @@ public class TextUtilsTest
 				nf.text("Hallo "),
 				nf.text("Welt!"))));
 	}
-	
+
 	@Test
 	public void testTwoTextNodesAndEntityRef() throws Exception
 	{
@@ -73,7 +74,7 @@ public class TextUtilsTest
 				nf.entityRef("amp", "&"),
 				nf.text(" No"))));
 	}
-	
+
 	@Test
 	public void testTwoTextNodesAndUnresolvedEntityRef() throws Exception
 	{
@@ -84,7 +85,7 @@ public class TextUtilsTest
 				nf.text(" No")),
 				AstTextUtils.FAIL_ON_UNRESOLVED_ENTITY_REF);
 	}
-	
+
 	@Test
 	public void testIgnoresTransparentNodes() throws Exception
 	{
@@ -95,7 +96,7 @@ public class TextUtilsTest
 				nf.comment("Ignored"),
 				nf.text(" No"))));
 	}
-	
+
 	@Test
 	public void testFailsOnUnkonwnNodes() throws Exception
 	{
@@ -105,9 +106,9 @@ public class TextUtilsTest
 				nf.url("http", "//example.com"),
 				nf.text(" No")));
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testPartialJustOneTextNode() throws Exception
 	{
@@ -115,7 +116,7 @@ public class TextUtilsTest
 		assertEquals("Hallo!", result.getText());
 		assertTrue(result.getTail().isEmpty());
 	}
-	
+
 	@Test
 	public void testPartialTwoTextNodes() throws Exception
 	{
@@ -125,7 +126,7 @@ public class TextUtilsTest
 		assertEquals("Hallo Welt!", result.getText());
 		assertTrue(result.getTail().isEmpty());
 	}
-	
+
 	@Test
 	public void testPartialTwoTextNodesAndEntityRef() throws Exception
 	{
@@ -136,7 +137,7 @@ public class TextUtilsTest
 		assertEquals("Yes & No", result.getText());
 		assertTrue(result.getTail().isEmpty());
 	}
-	
+
 	@Test
 	public void testPartialTwoTextNodesAndUnresolvedEntityRef() throws Exception
 	{
@@ -152,7 +153,7 @@ public class TextUtilsTest
 		assertEquals(ast.get(1), result.getTail().get(0));
 		assertEquals(ast.get(2), result.getTail().get(1));
 	}
-	
+
 	@Test
 	public void testPartialDoesNotFailOnUnkonwnNodes() throws Exception
 	{
@@ -166,5 +167,5 @@ public class TextUtilsTest
 		assertEquals(ast.get(1), result.getTail().get(0));
 		assertEquals(ast.get(2), result.getTail().get(1));
 	}
-	
+
 }

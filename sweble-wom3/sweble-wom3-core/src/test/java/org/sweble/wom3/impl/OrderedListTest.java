@@ -23,22 +23,22 @@ import org.sweble.wom3.Wom3ElementNode;
 public class OrderedListTest
 {
 	private final Wom3ElementNode n;
-	
+
 	// =========================================================================
-	
+
 	public OrderedListTest()
 	{
 		this.n = TestHelperDoc.genElem("ol");
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testStartAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(this.n, "start", "getStart", "setStart", 5, "5");
 	}
-	
+
 	@Test
 	public void testTypeAttribute() throws Exception
 	{

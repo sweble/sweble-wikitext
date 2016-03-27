@@ -25,33 +25,33 @@ import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 public class MyExecutorCompletionService<V>
 		implements
 			CompletionService<V>
 {
 	private final ExecutorCompletionService<V> execComplServ;
-	
+
 	private final MyExecutorService executor;
-	
+
 	// =========================================================================
-	
+
 	public MyExecutorCompletionService(ExecutorType type, Logger logger)
 	{
 		this(type, logger, null);
 	}
-	
+
 	public MyExecutorCompletionService(
 			ExecutorType type,
 			Logger logger,
 			ThreadGroup threadGroup)
 	{
 		executor = new MyExecutorService(type, logger, threadGroup);
-		
+
 		execComplServ = new ExecutorCompletionService<V>(executor);
 	}
-	
+
 	public MyExecutorCompletionService(
 			Logger logger,
 			int corePoolSize,
@@ -68,7 +68,7 @@ public class MyExecutorCompletionService<V>
 				workQueue,
 				(ThreadGroup) null);
 	}
-	
+
 	public MyExecutorCompletionService(
 			Logger logger,
 			int corePoolSize,
@@ -87,7 +87,7 @@ public class MyExecutorCompletionService<V>
 				null,
 				handler);
 	}
-	
+
 	public MyExecutorCompletionService(
 			Logger logger,
 			int corePoolSize,
@@ -106,10 +106,10 @@ public class MyExecutorCompletionService<V>
 						unit,
 						workQueue,
 						threadGroup);
-		
+
 		execComplServ = new ExecutorCompletionService<V>(executor);
 	}
-	
+
 	public MyExecutorCompletionService(
 			Logger logger,
 			int corePoolSize,
@@ -129,49 +129,49 @@ public class MyExecutorCompletionService<V>
 				workQueue,
 				threadGroup,
 				handler);
-		
+
 		execComplServ = new ExecutorCompletionService<V>(executor);
 	}
-	
+
 	// =========================================================================
-	
+
 	public MyExecutorService getExecutor()
 	{
 		return executor;
 	}
-	
+
 	public void shutdownAndAwaitTermination()
 	{
 		executor.shutdownAndAwaitTermination();
 	}
-	
+
 	public void setThreadNameTemplate(String threadNameTemplate)
 	{
 		executor.setThreadNameTemplate(threadNameTemplate);
 	}
-	
+
 	// =========================================================================
-	
+
 	public Future<V> submit(Callable<V> task)
 	{
 		return execComplServ.submit(task);
 	}
-	
+
 	public Future<V> submit(Runnable task, V result)
 	{
 		return execComplServ.submit(task, result);
 	}
-	
+
 	public Future<V> take() throws InterruptedException
 	{
 		return execComplServ.take();
 	}
-	
+
 	public Future<V> poll()
 	{
 		return execComplServ.poll();
 	}
-	
+
 	public Future<V> poll(long timeout, TimeUnit unit) throws InterruptedException
 	{
 		return execComplServ.poll(timeout, unit);

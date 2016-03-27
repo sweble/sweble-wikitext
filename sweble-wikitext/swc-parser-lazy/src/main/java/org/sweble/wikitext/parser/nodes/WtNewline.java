@@ -26,9 +26,9 @@ public class WtNewline
 			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -36,12 +36,12 @@ public class WtNewline
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtNewline(String content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

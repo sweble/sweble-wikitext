@@ -24,9 +24,9 @@ public interface WtValue
 			WtContentNode
 {
 	public static final WtNoValue NO_VALUE = new WtNoValue();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoValue
 			extends
 				WtAbsentContentNode
@@ -34,31 +34,31 @@ public interface WtValue
 				WtValue
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtNoValue()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_VALUE;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtValue.class.getSimpleName();
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtValue.NO_VALUE;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtValueImpl
 			extends
 				WtContentNodeImpl
@@ -66,24 +66,24 @@ public interface WtValue
 				WtValue
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtValueImpl()
 		{
 		}
-		
+
 		protected WtValueImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_VALUE;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{

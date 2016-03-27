@@ -61,16 +61,16 @@ final class LSResourceResolverImplementation
 					publicId,
 					systemId,
 					baseURI));
-			
+
 			return null;
 		}
 	}
-	
+
 	private static boolean isExportXsd(Class<?> clazz, String systemId)
 	{
 		return (getExportXsdFileNameIfExists(clazz, systemId) != null);
 	}
-	
+
 	private static String getExportXsdFileNameIfExists(
 			Class<?> clazz,
 			String systemId)
@@ -88,19 +88,19 @@ final class LSResourceResolverImplementation
 		}
 		return null;
 	}
-	
+
 	// =========================================================================
-	
+
 	private final class LSInputImplementation
 			implements
 				LSInput
 	{
 		private final String xsdPath;
-		
+
 		private final String systemId;
-		
+
 		private final String baseURI;
-		
+
 		private LSInputImplementation(
 				String xsdPath,
 				String systemId,
@@ -110,97 +110,97 @@ final class LSResourceResolverImplementation
 			this.systemId = systemId;
 			this.baseURI = baseURI;
 		}
-		
+
 		@Override
 		public void setSystemId(String systemId)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setStringData(String stringData)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setPublicId(String publicId)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setEncoding(String encoding)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setCharacterStream(Reader characterStream)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setCertifiedText(boolean certifiedText)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setByteStream(InputStream byteStream)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setBaseURI(String baseURI)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public String getSystemId()
 		{
 			return systemId;
 		}
-		
+
 		@Override
 		public String getStringData()
 		{
 			return null;
 		}
-		
+
 		@Override
 		public String getPublicId()
 		{
 			return null;
 		}
-		
+
 		@Override
 		public String getEncoding()
 		{
 			return "UTF-8";
 		}
-		
+
 		@Override
 		public Reader getCharacterStream()
 		{
 			return null;
 		}
-		
+
 		@Override
 		public boolean getCertifiedText()
 		{
 			return false;
 		}
-		
+
 		@Override
 		public InputStream getByteStream()
 		{
 			return getClass().getResourceAsStream(xsdPath);
 		}
-		
+
 		@Override
 		public String getBaseURI()
 		{

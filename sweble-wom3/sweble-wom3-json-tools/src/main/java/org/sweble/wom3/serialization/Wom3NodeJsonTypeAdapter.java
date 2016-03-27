@@ -43,17 +43,17 @@ public class Wom3NodeJsonTypeAdapter
 			Wom3JsonTypeAdapterBase
 {
 	private static final String PROPERTY_PREFIX = "!";
-	
+
 	private static final String PROPERTY_TYPE = PROPERTY_PREFIX + "type";
-	
+
 	private static final String PROPERTY_VALUE = PROPERTY_PREFIX + "value";
-	
+
 	private static final String PROPERTY_CHILDREN = PROPERTY_PREFIX + "children";
-	
+
 	private static final String TYPE_ENTITY_REF = SPECIAL_TYPE_PREFIX + "entity-reference";
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public JsonElement serialize(
 			Node src,
@@ -62,7 +62,7 @@ public class Wom3NodeJsonTypeAdapter
 	{
 		return toJson(src, true, new ScopeStack());
 	}
-	
+
 	private static JsonElement toJson(
 			Node node,
 			boolean first,
@@ -72,7 +72,7 @@ public class Wom3NodeJsonTypeAdapter
 		{
 			case Node.ELEMENT_NODE:
 				return elementToJson(node, scopeStack);
-				
+
 			case Node.TEXT_NODE:
 			case Node.CDATA_SECTION_NODE:
 			case Node.COMMENT_NODE:
@@ -82,7 +82,7 @@ public class Wom3NodeJsonTypeAdapter
 				o.add(PROPERTY_VALUE, new JsonPrimitive(node.getNodeValue()));
 				return o;
 			}
-			
+
 			case Node.ENTITY_REFERENCE_NODE:
 			{
 				JsonObject o = new JsonObject();
@@ -90,13 +90,13 @@ public class Wom3NodeJsonTypeAdapter
 				o.add(PROPERTY_VALUE, new JsonPrimitive(node.getNodeValue()));
 				return o;
 			}
-			
+
 			case Node.DOCUMENT_NODE:
 				if (first)
 					return toJson(((Document) node).getDocumentElement(), false, scopeStack);
-				
+
 				// FALL THROUGH
-				
+
 			case Node.ATTRIBUTE_NODE:
 			case Node.ENTITY_NODE:
 			case Node.PROCESSING_INSTRUCTION_NODE:
@@ -106,21 +106,21 @@ public class Wom3NodeJsonTypeAdapter
 				throw new UnsupportedNodeException(node);
 		}
 	}
-	
+
 	private static JsonElement elementToJson(Node node, ScopeStack scopeStack)
 	{
 		Scope scope = null;
-		
+
 		NamedNodeMap attrs = node.getAttributes();
 		if (attrs != null)
 			// Document fragments don't have attributes
 			scope = registerNsDecls(scopeStack, scope, attrs);
-		
+
 		// Write node type and required required prefix declarations
 		JsonObject o = new JsonObject();
 		o.add(PROPERTY_TYPE, new JsonPrimitive(node.getNodeName()));
 		scope = addPrefixDecls(scopeStack, scope, o, node);
-		
+
 		// Write node attributes and required prefix declarations
 		if (attrs != null)
 		{
@@ -132,7 +132,7 @@ public class Wom3NodeJsonTypeAdapter
 				o.add(ATTRIBUTE_PREFIX + attr.getNodeName(), new JsonPrimitive(attr.getNodeValue()));
 			}
 		}
-		
+
 		// Write children
 		JsonArray jsonChildren = new JsonArray();
 		NodeList children = node.getChildNodes();
@@ -142,16 +142,16 @@ public class Wom3NodeJsonTypeAdapter
 			jsonChildren.add(toJson(child, false, scopeStack));
 		}
 		o.add(PROPERTY_CHILDREN, jsonChildren);
-		
+
 		if (scope != null)
 			// Pop scope if we opened one
 			scopeStack.pop();
-		
+
 		return o;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Node deserialize(
 			JsonElement json,
@@ -163,7 +163,7 @@ public class Wom3NodeJsonTypeAdapter
 		fragment.appendChild(fromJson(doc, json, new ScopeStack()));
 		return fragment;
 	}
-	
+
 	private static Node fromJson(
 			Wom3Document doc,
 			JsonElement json,
@@ -174,19 +174,19 @@ public class Wom3NodeJsonTypeAdapter
 			throw new JsonParseException("Expected JsonObject");
 		JsonObject o = json.getAsJsonObject();
 		Set<Entry<String, JsonElement>> entries = o.entrySet();
-		
+
 		// Get node type
 		JsonElement type = o.get(PROPERTY_TYPE);
 		if (type == null)
 			throw new JsonParseException("Missing member '" + PROPERTY_TYPE + "'");
 		if (!type.isJsonPrimitive())
 			throw new JsonParseException("Expected member '" + PROPERTY_TYPE + "' to be a string");
-		
+
 		Element elem = null;
 		ValueTypes valueType = null;
 		Scope scope = null;
 		String defaultNsUri = null;
-		
+
 		String typeQName = type.getAsString();
 		if (typeQName.startsWith(SPECIAL_TYPE_PREFIX))
 		{
@@ -214,18 +214,18 @@ public class Wom3NodeJsonTypeAdapter
 		else
 		{
 			scope = registerNsDecls(entries, scopeStack, scope);
-			
+
 			defaultNsUri = scopeStack.getXmlns();
 			if (defaultNsUri != null && defaultNsUri.isEmpty())
 				defaultNsUri = null;
-			
+
 			elem = createElement(doc, scopeStack, defaultNsUri, typeQName);
 		}
-		
+
 		int countType = 0;
 		int countChildren = 0;
 		String nodeValue = null;
-		
+
 		for (Entry<String, JsonElement> e : entries)
 		{
 			String entryName = e.getKey();
@@ -234,7 +234,7 @@ public class Wom3NodeJsonTypeAdapter
 			{
 				if (elem == null)
 					throw new JsonParseException("Node type '" + typeQName + "' cannot have attributes");
-				
+
 				parseAttribute(scopeStack, elem, entryName, entryValue);
 			}
 			else if (entryName.startsWith(PROPERTY_PREFIX))
@@ -271,10 +271,10 @@ public class Wom3NodeJsonTypeAdapter
 			else
 				throw new JsonParseException("Unexpected field: '" + entryName + "'");
 		}
-		
+
 		if (scope != null)
 			scopeStack.pop();
-		
+
 		return (valueType != null) ?
 				valueType.create(doc, nodeValue) :
 				elem;

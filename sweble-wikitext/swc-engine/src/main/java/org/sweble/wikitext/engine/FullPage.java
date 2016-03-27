@@ -20,25 +20,25 @@ package org.sweble.wikitext.engine;
 public class FullPage
 {
 	private final PageId id;
-	
+
 	private final String text;
-	
+
 	// =========================================================================
-	
+
 	public FullPage(PageId id, String text)
 	{
 		super();
 		this.id = id;
 		this.text = text;
 	}
-	
+
 	// =========================================================================
-	
+
 	public PageId getId()
 	{
 		return id;
 	}
-	
+
 	public String getText()
 	{
 		return text;

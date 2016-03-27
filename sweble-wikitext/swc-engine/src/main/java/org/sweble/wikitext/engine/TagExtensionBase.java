@@ -42,20 +42,20 @@ public abstract class TagExtensionBase
 			Comparable<TagExtensionBase>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final String id;
-	
+
 	/**
 	 * Can't be final since it cannot be set during un-marshaling.
 	 */
 	private WikiConfig wikiConfig;
-	
+
 	private EngineAstTextUtils tu;
-	
+
 	private EngineNodeFactory nf;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -65,15 +65,15 @@ public abstract class TagExtensionBase
 			throw new IllegalArgumentException();
 		this.id = id;
 	}
-	
+
 	protected TagExtensionBase(WikiConfig wikiConfig, String id)
 	{
 		this(id);
 		setWikiConfig(wikiConfig);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For internal use only!
 	 */
@@ -81,40 +81,40 @@ public abstract class TagExtensionBase
 	{
 		if (wikiConfig == null)
 			throw new IllegalArgumentException();
-		
+
 		this.wikiConfig = wikiConfig;
 		this.nf = wikiConfig.getNodeFactory();
 		this.tu = wikiConfig.getAstTextUtils();
 	}
-	
+
 	public WikiConfig getWikiConfig()
 	{
 		return wikiConfig;
 	}
-	
+
 	public String getId()
 	{
 		return id;
 	}
-	
+
 	protected EngineNodeFactory nf()
 	{
 		return nf;
 	}
-	
+
 	protected EngineAstTextUtils tu()
 	{
 		return tu;
 	}
-	
+
 	public abstract WtNode invoke(
 			ExpansionFrame preprocessorFrame,
 			WtTagExtension wtTagExtension,
 			Map<String, WtNodeList> attributes,
 			WtTagExtensionBody wtTagExtensionBody);
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -123,7 +123,7 @@ public abstract class TagExtensionBase
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -135,40 +135,40 @@ public abstract class TagExtensionBase
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int compareTo(TagExtensionBase o)
 	{
 		return this.id.compareTo(o.getId());
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return "TagExtensionBase [id=" + id + "]";
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final class TagExtensionRef
 	{
 		@XmlAttribute(name = "class")
 		public String className;
-		
+
 		public TagExtensionRef()
 		{
 		}
-		
+
 		public TagExtensionRef(String name)
 		{
 			this.className = name;
 		}
 	}
-	
+
 	public static final class TagExtensionAdapter
 			extends
 				XmlAdapter<TagExtensionRef, TagExtensionBase>
@@ -176,15 +176,15 @@ public abstract class TagExtensionBase
 		public TagExtensionAdapter()
 		{
 		}
-		
+
 		@Override
-		public TagExtensionRef marshal(TagExtensionBase v) throws Exception
+		public TagExtensionRef marshal(TagExtensionBase v)
 		{
 			return new TagExtensionRef(v.getClass().getName());
 		}
-		
+
 		@Override
-		public TagExtensionBase unmarshal(TagExtensionRef v) throws Exception
+		public TagExtensionBase unmarshal(TagExtensionRef v) throws ClassNotFoundException, InstantiationException, IllegalAccessException
 		{
 			Class<?> clazz = Class.forName(v.className);
 			/*

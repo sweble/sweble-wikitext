@@ -19,10 +19,10 @@ package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.WtRtData;
 
-import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstAbstractInnerNode.AstInnerNode3;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.Uninitialized;
+import xtc.tree.Location;
 
 public abstract class WtInnerNode3
 		extends
@@ -31,21 +31,21 @@ public abstract class WtInnerNode3
 			WtNode
 {
 	private static final long serialVersionUID = 3962368845249207297L;
-	
+
 	private WtRtData rtd = null;
-	
+
 	// =========================================================================
-	
+
 	protected WtInnerNode3(Uninitialized u)
 	{
 		super(u);
 	}
-	
+
 	protected WtInnerNode3(WtNode n0, WtNode n1, WtNode n2)
 	{
 		super(n0, n1, n2);
 	}
-	
+
 	protected WtInnerNode3(
 			Location arg0,
 			WtNode n0,
@@ -54,14 +54,14 @@ public abstract class WtInnerNode3
 	{
 		super(arg0, n0, n1, n2);
 	}
-	
+
 	protected WtInnerNode3(Location arg0)
 	{
 		super(arg0);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void setRtd(WtRtData rtd)
 	{
@@ -69,31 +69,31 @@ public abstract class WtInnerNode3
 			throw new IllegalArgumentException();
 		this.rtd = rtd;
 	}
-	
+
 	@Override
 	public void setRtd(Object... glue)
 	{
 		rtd = new WtRtData(this, glue);
 	}
-	
+
 	@Override
 	public void setRtd(String... glue)
 	{
 		rtd = new WtRtData(this, glue);
 	}
-	
+
 	@Override
 	public WtRtData getRtd()
 	{
 		return rtd;
 	}
-	
+
 	@Override
 	public void clearRtd()
 	{
 		rtd = null;
 	}
-	
+
 	@Override
 	public void suppressRtd()
 	{
@@ -101,19 +101,19 @@ public abstract class WtInnerNode3
 	}
 
 	// =========================================================================
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1;
 	}
-	
+
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
 		return new WtInnerNode3PropertyIterator();
 	}
-	
+
 	protected class WtInnerNode3PropertyIterator
 			extends
 				AstNodePropertyIterator
@@ -123,7 +123,7 @@ public abstract class WtInnerNode3
 		{
 			return WtInnerNode3.this.getPropertyCount();
 		}
-		
+
 		@Override
 		protected String getName(int index)
 		{
@@ -131,12 +131,12 @@ public abstract class WtInnerNode3
 			{
 				case 0:
 					return "rtd";
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object getValue(int index)
 		{
@@ -144,12 +144,12 @@ public abstract class WtInnerNode3
 			{
 				case 0:
 					return WtInnerNode3.this.getRtd();
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object setValue(int index, Object value)
 		{
@@ -161,7 +161,7 @@ public abstract class WtInnerNode3
 					WtInnerNode3.this.setRtd((WtRtData) value);
 					return old;
 				}
-				
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}

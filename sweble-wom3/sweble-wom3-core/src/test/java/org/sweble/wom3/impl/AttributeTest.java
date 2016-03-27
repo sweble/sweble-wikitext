@@ -17,7 +17,10 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.sweble.wom3.Wom3Attribute;
@@ -27,28 +30,28 @@ import org.w3c.dom.Node;
 public class AttributeTest
 {
 	private Wom3Attribute a = TestHelperDoc.genAttr("name", "value");
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testNodeNameEqualsAttributeName() throws Exception
 	{
 		assertEquals(a.getName(), a.getNodeName());
 	}
-	
+
 	@Test
 	public void testNodeTypeIsAttribute() throws Exception
 	{
 		assertEquals(Node.ATTRIBUTE_NODE, a.getNodeType());
 	}
-	
+
 	@Test
 	public void testNameAndValueAreCorrect() throws Exception
 	{
 		assertEquals("name", a.getName());
 		assertEquals("value", a.getValue());
 	}
-	
+
 	@Test
 	public void testCanChangeAttributeNameWhenAttached() throws Exception
 	{
@@ -59,7 +62,7 @@ public class AttributeTest
 		assertTrue(a == b.getAttributeNode("name2"));
 		assertNull(b.getAttributeNode("name"));
 	}
-	
+
 	@Test
 	public void testSetNameWithoutChangingItWhenAttachedDoesNotThrow() throws Exception
 	{
@@ -68,7 +71,7 @@ public class AttributeTest
 		assertTrue(a == b.getAttributeNode("name"));
 		a.setName("name");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testCannotSetNameToNameOfAnotherAttributeWhenAttached() throws Exception
 	{
@@ -79,13 +82,13 @@ public class AttributeTest
 		assertNotNull(b.getAttribute("another"));
 		a.setName("another");
 	}
-	
+
 	@Test(expected = NullPointerException.class)
 	public void testCannotSetNameToNull() throws Exception
 	{
 		a.setName(null);
 	}
-	
+
 	/**
 	 * Apparently the xerces implementaiton of the DOM won't fail on a null
 	 * argument.

@@ -20,6 +20,6 @@ package org.sweble.wom3.impl;
 public interface SiblingCollectionBounds
 {
 	public Backbone getPred();
-	
+
 	public Backbone getSucc();
 }

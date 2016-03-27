@@ -20,6 +20,7 @@ package org.sweble.wom3.impl;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
 import org.w3c.dom.UserDataHandler;
 
 public class BackboneUserData
@@ -94,7 +95,8 @@ public class BackboneUserData
 				onlyValue = null;
 			}
 		}
-		else // if (map != null)
+		else
+		// if (map != null)
 		{
 			oldValue = map.put(key, data);
 		}

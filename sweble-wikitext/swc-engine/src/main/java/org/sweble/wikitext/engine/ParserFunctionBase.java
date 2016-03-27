@@ -39,24 +39,24 @@ public abstract class ParserFunctionBase
 			Comparable<ParserFunctionBase>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final String id;
-	
+
 	private final PfnArgumentMode argMode;
-	
+
 	private final boolean pageSwitch;
-	
+
 	/**
 	 * Can't be final since it cannot be set during un-marshaling.
 	 */
 	private WikiConfig wikiConfig;
-	
+
 	private EngineAstTextUtils tu;
-	
+
 	private EngineNodeFactory nf;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -64,7 +64,7 @@ public abstract class ParserFunctionBase
 	{
 		this(PfnArgumentMode.UNEXPANDED_VALUES, false, id);
 	}
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -72,7 +72,7 @@ public abstract class ParserFunctionBase
 	{
 		this(argMode, false, id);
 	}
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -83,17 +83,17 @@ public abstract class ParserFunctionBase
 	{
 		if (id == null || id.isEmpty())
 			throw new IllegalArgumentException();
-		
+
 		this.argMode = argMode;
 		this.pageSwitch = pageSwitch;
 		this.id = id;
 	}
-	
+
 	public ParserFunctionBase(WikiConfig wikiConfig, String id)
 	{
 		this(wikiConfig, PfnArgumentMode.UNEXPANDED_VALUES, false, id);
 	}
-	
+
 	public ParserFunctionBase(
 			WikiConfig wikiConfig,
 			PfnArgumentMode argMode,
@@ -101,7 +101,7 @@ public abstract class ParserFunctionBase
 	{
 		this(wikiConfig, argMode, false, id);
 	}
-	
+
 	public ParserFunctionBase(
 			WikiConfig wikiConfig,
 			PfnArgumentMode argMode,
@@ -111,9 +111,9 @@ public abstract class ParserFunctionBase
 		this(argMode, pageSwitch, id);
 		setWikiConfig(wikiConfig);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For internal use only!
 	 */
@@ -121,42 +121,42 @@ public abstract class ParserFunctionBase
 	{
 		if (wikiConfig == null)
 			throw new IllegalArgumentException();
-		
+
 		this.wikiConfig = wikiConfig;
 		this.nf = wikiConfig.getNodeFactory();
 		this.tu = wikiConfig.getAstTextUtils();
 	}
-	
+
 	public WikiConfig getWikiConfig()
 	{
 		return wikiConfig;
 	}
-	
+
 	public String getId()
 	{
 		return id;
 	}
-	
+
 	public PfnArgumentMode getArgMode()
 	{
 		return argMode;
 	}
-	
+
 	public boolean isPageSwitch()
 	{
 		return pageSwitch;
 	}
-	
+
 	protected EngineNodeFactory nf()
 	{
 		return nf;
 	}
-	
+
 	protected EngineAstTextUtils tu()
 	{
 		return tu;
 	}
-	
+
 	/**
 	 * WtNode can either be a WtTemplate or a WtPageSwitch
 	 */
@@ -164,9 +164,9 @@ public abstract class ParserFunctionBase
 			WtNode template,
 			ExpansionFrame preprocessorFrame,
 			List<? extends WtNode> argsValues);
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -175,7 +175,7 @@ public abstract class ParserFunctionBase
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -187,40 +187,40 @@ public abstract class ParserFunctionBase
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int compareTo(ParserFunctionBase o)
 	{
 		return this.id.compareTo(o.getId());
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return "ParserFunctionBase [id=" + id + ", argMode=" + argMode + ", pageSwitch=" + pageSwitch + "]";
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final class ParserFunctionRef
 	{
 		@XmlAttribute(name = "class")
 		public String className;
-		
+
 		public ParserFunctionRef()
 		{
 		}
-		
+
 		public ParserFunctionRef(String name)
 		{
 			this.className = name;
 		}
 	}
-	
+
 	public static final class ParserFunctionAdapter
 			extends
 				XmlAdapter<ParserFunctionRef, ParserFunctionBase>
@@ -228,15 +228,15 @@ public abstract class ParserFunctionBase
 		public ParserFunctionAdapter()
 		{
 		}
-		
+
 		@Override
-		public ParserFunctionRef marshal(ParserFunctionBase v) throws Exception
+		public ParserFunctionRef marshal(ParserFunctionBase v)
 		{
 			return new ParserFunctionRef(v.getClass().getName());
 		}
-		
+
 		@Override
-		public ParserFunctionBase unmarshal(ParserFunctionRef v) throws Exception
+		public ParserFunctionBase unmarshal(ParserFunctionRef v) throws ClassNotFoundException, InstantiationException, IllegalAccessException
 		{
 			Class<?> clazz = Class.forName(v.className);
 			/*

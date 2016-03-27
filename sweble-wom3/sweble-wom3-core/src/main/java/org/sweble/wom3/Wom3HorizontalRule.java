@@ -38,7 +38,7 @@ public interface Wom3HorizontalRule
 	 *         attribute is not specified.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the alignment of the horizontal rule.
 	 * 
@@ -50,7 +50,7 @@ public interface Wom3HorizontalRule
 	 * @return The old alignment of the horizontal rule.
 	 */
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align);
-	
+
 	/**
 	 * Get whether the horizontal rule is display with a 3-D effect (shade) or
 	 * without (no-shade).
@@ -61,7 +61,7 @@ public interface Wom3HorizontalRule
 	 *         effect.
 	 */
 	public boolean isNoshade();
-	
+
 	/**
 	 * Set whether the horizontal rule is display with a 3-D effect (shade) or
 	 * without (no-shade).
@@ -73,7 +73,7 @@ public interface Wom3HorizontalRule
 	 * @return The old setting.
 	 */
 	public boolean setNoshade(boolean noshade);
-	
+
 	/**
 	 * Get the thickness of the horizontal rule in pixels.
 	 * 
@@ -83,7 +83,7 @@ public interface Wom3HorizontalRule
 	 *         not specified.
 	 */
 	public Integer getSize();
-	
+
 	/**
 	 * Set the thickness of the horizontal rule in pixels.
 	 * 
@@ -95,7 +95,7 @@ public interface Wom3HorizontalRule
 	 * @return The old thickness in pixels.
 	 */
 	public Integer setSize(Integer size);
-	
+
 	/**
 	 * Get the width of the horizontal rule.
 	 * 
@@ -105,7 +105,7 @@ public interface Wom3HorizontalRule
 	 *         attribute is not specified.
 	 */
 	public Wom3ValueWithUnit getWidth();
-	
+
 	/**
 	 * Set the width of the horizontal rule.
 	 * 

@@ -33,7 +33,7 @@ public class SwcTextUtils
 		Wom3Node child = node.getFirstChild();
 		if (child == null)
 			return "";
-		
+
 		if (child == node.getLastChild())
 		{
 			if (isIgnorable(child))
@@ -58,7 +58,7 @@ public class SwcTextUtils
 			return womToText(new StringBuilder(), node).toString();
 		}
 	}
-	
+
 	protected static StringBuilder womToText(StringBuilder sb, Wom3Node node) throws StringConversionException
 	{
 		for (Wom3Node child : node)
@@ -83,18 +83,18 @@ public class SwcTextUtils
 		}
 		return sb;
 	}
-	
+
 	protected static boolean isText(Wom3Node child)
 	{
 		return (child instanceof Wom3Text);
 	}
-	
+
 	protected static boolean isContainer(Wom3Node child)
 	{
 		return (child instanceof Wom3DocumentFragment) ||
 				(child instanceof SwcValue);
 	}
-	
+
 	protected static boolean isIgnorable(Wom3Node child)
 	{
 		return (child instanceof Wom3Rtd) ||

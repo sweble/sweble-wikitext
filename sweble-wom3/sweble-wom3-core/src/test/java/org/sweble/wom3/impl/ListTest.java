@@ -17,7 +17,9 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Iterator;
 
@@ -29,20 +31,20 @@ import org.sweble.wom3.Wom3Node;
 public class ListTest
 {
 	private OrderedListImpl list;
-	
+
 	@Before
 	public void setUp()
 	{
 		this.list = (OrderedListImpl) TestHelperDoc.genElem("ol");
 	}
-	
+
 	@Test
 	public void testEmptyListIsEmpty() throws Exception
 	{
 		assertEquals(0, list.getItemNum());
 		assertTrue(list.getItems().isEmpty());
 	}
-	
+
 	@Test
 	public void testAddListItemShowsInList() throws Exception
 	{
@@ -50,7 +52,7 @@ public class ListTest
 		assertEquals(1, list.getItemNum());
 		assertEquals(1, list.getItems().size());
 	}
-	
+
 	@Test
 	public void testAddNonListItemDoesNotShowInList() throws Exception
 	{
@@ -60,7 +62,7 @@ public class ListTest
 		assertEquals(0, list.getItems().size());
 		assertTrue(list.hasChildNodes());
 	}
-	
+
 	@Test
 	public void testAddItemWithAppendChildShowsInList() throws Exception
 	{
@@ -68,7 +70,7 @@ public class ListTest
 		assertEquals(1, list.getItemNum());
 		assertEquals(1, list.getItems().size());
 	}
-	
+
 	@Test
 	public void testGetByIndex() throws Exception
 	{
@@ -81,14 +83,14 @@ public class ListTest
 		Wom3ListItem l3 = gen(5);
 		list.appendChild(l3);
 		list.appendChild(genBold(6));
-		
+
 		assertEquals(3, list.getItemNum());
 		assertEquals(3, list.getItems().size());
 		assertTrue(list.getItem(0) == l1);
 		assertTrue(list.getItem(1) == l2);
 		assertTrue(list.getItem(2) == l3);
 	}
-	
+
 	@Test
 	public void testRemoveByIndex() throws Exception
 	{
@@ -98,9 +100,9 @@ public class ListTest
 		list.appendChild(genBold(3));
 		list.appendChild(gen(4));
 		list.appendChild(genBold(5));
-		
+
 		list.removeItem(1);
-		
+
 		assertEquals(2, list.getItemNum());
 		assertEquals(2, list.getItems().size());
 		int i = 1;
@@ -108,7 +110,7 @@ public class ListTest
 		while (j.hasNext())
 			assertEquals(i++, Integer.parseInt(j.next().getFirstChild().getTextContent()));
 	}
-	
+
 	@Test
 	public void testRemoveChild() throws Exception
 	{
@@ -124,11 +126,11 @@ public class ListTest
 		Wom3Node b5 = genBold(6);
 		list.appendChild(b5);
 		list.appendChild(genBold(6));
-		
+
 		list.removeChild(l2);
 		list.removeChild(b5);
 		list.removeChild(l1);
-		
+
 		assertEquals(3, list.getItemNum());
 		assertEquals(3, list.getItems().size());
 		int i = 1;
@@ -136,7 +138,7 @@ public class ListTest
 		while (j.hasNext())
 			assertEquals(i++, Integer.parseInt(j.next().getFirstChild().getTextContent()));
 	}
-	
+
 	@Test
 	public void testReplaceItem() throws Exception
 	{
@@ -144,9 +146,9 @@ public class ListTest
 		Wom3ListItem l2 = gen(2);
 		list.appendChild(l2);
 		list.appendChild(genBold(3));
-		
+
 		list.replaceItem(0, gen(2));
-		
+
 		assertEquals(1, list.getItemNum());
 		assertEquals(1, list.getItems().size());
 		int i = 1;
@@ -158,7 +160,7 @@ public class ListTest
 			assertEquals(i++, Integer.parseInt(next.getFirstChild().getTextContent()));
 		}
 	}
-	
+
 	@Test
 	public void testInsertItem() throws Exception
 	{
@@ -170,41 +172,41 @@ public class ListTest
 		list.appendChild(genBold(5));
 		Wom3ListItem l2 = gen(3);
 		list.insertItem(1, l2);
-		
+
 		assertEquals(3, list.getItemNum());
 		assertEquals(3, list.getItems().size());
 		assertTrue(list.getItem(0) == l1);
 		assertTrue(list.getItem(1) == l2);
 		assertTrue(list.getItem(2) == l3);
-		
+
 		int i = 1;
 		Iterator<Wom3Node> j = list.iterator();
 		while (j.hasNext())
 			assertEquals(i++, Integer.parseInt(j.next().getFirstChild().getTextContent()));
 	}
-	
+
 	@Test
 	public void testCompactAttribute() throws Exception
 	{
 		TestHelperAttribute.testBooleanAttribute(list, "compact", "isCompact", "setCompact");
 	}
-	
+
 	// =========================================================================
-	
+
 	private Wom3Node genBold(int i)
 	{
 		BoldImpl bold = (BoldImpl) TestHelperDoc.genElem("b");
 		bold.appendChild(genText(i));
 		return bold;
 	}
-	
+
 	private Wom3ListItem gen(int i)
 	{
 		ListItemImpl item = (ListItemImpl) TestHelperDoc.genElem("li");
 		item.appendChild(genText(i));
 		return item;
 	}
-	
+
 	private TextImpl genText(int i)
 	{
 		TextImpl text = (TextImpl) TestHelperDoc.genElem("text");

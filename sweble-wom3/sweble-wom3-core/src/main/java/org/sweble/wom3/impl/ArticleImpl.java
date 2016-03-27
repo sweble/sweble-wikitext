@@ -37,67 +37,67 @@ public class ArticleImpl
 			Wom3Article
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc("redirect"),
 			childDesc("category", ChildDescriptor.MULTIPLE),
 			childDesc("body", ChildDescriptor.REQUIRED) };
-	
+
 	private RedirectImpl redirect = null;
-	
+
 	private SiblingRangeCollection<ArticleImpl, CategoryImpl> categories;
-	
+
 	private BodyImpl body;
-	
+
 	// =========================================================================
-	
+
 	public ArticleImpl(DocumentImpl owner)
 	{
 		super(owner);
-		
+
 		setAttributeDirectNoChecks("version", Wom3Node.VERSION);
-		
+
 		categories = new SiblingRangeCollection<ArticleImpl, CategoryImpl>(
 				this, new SiblingCollectionsBoundIml());
 	}
-	
+
 	private final class SiblingCollectionsBoundIml
 			implements
 				SiblingCollectionBounds,
 				Serializable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		@Override
 		public Backbone getPred()
 		{
 			return redirect;
 		}
-		
+
 		@Override
 		public Backbone getSucc()
 		{
 			return body;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "article";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getName()
 	{
 		String namespace = getNamespace();
 		String path = getPath();
 		String title = getTitle();
-		
+
 		String name = "";
 		if (namespace != null)
 		{
@@ -110,75 +110,75 @@ public class ArticleImpl
 			name += '/';
 		}
 		name += title;
-		
+
 		return name;
 	}
-	
+
 	@Override
 	public String getVersion()
 	{
 		return Wom3Node.VERSION;
 	}
-	
+
 	@Override
 	public String getTitle()
 	{
 		return getStringAttr("title");
 	}
-	
+
 	@Override
 	public String setTitle(String title) throws IllegalArgumentException, NullPointerException
 	{
 		return setAttributeDirect(ATTR_DESC_TITLE, "title", title);
 	}
-	
+
 	@Override
 	public String getNamespace()
 	{
 		return getStringAttr("namespace");
 	}
-	
+
 	@Override
 	public String setNamespace(String namespace)
 	{
 		return setAttributeDirect(ATTR_DESC_NAMESPACE, "namespace", namespace);
 	}
-	
+
 	@Override
 	public String getPath()
 	{
 		return getStringAttr("path");
 	}
-	
+
 	@Override
 	public String setPath(String path)
 	{
 		return setAttributeDirect(ATTR_DESC_PATH, "path", path);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean isRedirect()
 	{
 		return redirect != null;
 	}
-	
+
 	@Override
 	public Wom3Redirect getRedirect()
 	{
 		return redirect;
 	}
-	
+
 	@Override
 	public Wom3Redirect setRedirect(Wom3Redirect redirect)
 	{
 		return (Wom3Redirect) replaceOrInsertBeforeOrAppend(
 				this.redirect, getFirstChild(), redirect, false);
 	}
-	
+
 	// ----------------------------------------
-	
+
 	@Override
 	public Collection<Wom3Category> getCategories()
 	{
@@ -187,7 +187,7 @@ public class ArticleImpl
 				(Collection) Collections.unmodifiableCollection(categories);
 		return uc;
 	}
-	
+
 	@Override
 	public boolean hasCategory(String name) throws NullPointerException
 	{
@@ -200,12 +200,12 @@ public class ArticleImpl
 		}
 		return false;
 	}
-	
+
 	@Override
 	public Wom3Category removeCategory(String name) throws NullPointerException
 	{
 		assertWritableOnDocument();
-		
+
 		if (name == null)
 			throw new NullPointerException();
 		ListIterator<CategoryImpl> i = categories.listIterator();
@@ -220,12 +220,12 @@ public class ArticleImpl
 		}
 		return null;
 	}
-	
+
 	@Override
 	public Wom3Category addCategory(String name) throws NullPointerException
 	{
 		assertWritableOnDocument();
-		
+
 		ListIterator<CategoryImpl> i = categories.listIterator();
 		while (i.hasNext())
 		{
@@ -239,54 +239,54 @@ public class ArticleImpl
 		i.add(cat);
 		return cat;
 	}
-	
+
 	// ----------------------------------------
-	
+
 	@Override
 	public Wom3Body getBody()
 	{
 		return body;
 	}
-	
+
 	@Override
 	public Wom3Body setBody(Wom3Body body) throws NullPointerException
 	{
 		return (Wom3Body) replaceOrAppend(this.body, body, true);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Node cloneNode(boolean deep)
 	{
 		ArticleImpl newNode = (ArticleImpl) super.cloneNode(deep);
-		
+
 		newNode.categories = new SiblingRangeCollection<ArticleImpl, CategoryImpl>(
 				this, new SiblingCollectionsBoundIml());
-		
+
 		return newNode;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void childInserted(Backbone prev, Backbone added)
 	{
@@ -295,16 +295,16 @@ public class ArticleImpl
 		else if (added instanceof Wom3Body)
 			body = (BodyImpl) added;
 	}
-	
+
 	@Override
 	protected void childRemoved(Backbone prev, Backbone removed)
 	{
 		if (removed == redirect)
 			redirect = null;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void validateCategoryNameChange(
 			CategoryImpl catImpl,
 			String newName)
@@ -317,25 +317,25 @@ public class ArticleImpl
 			{
 				if (cat == catImpl)
 					return;
-				
+
 				throw new IllegalStateException(
 						"Renaming the attribute leads to name collision in parent node!");
 			}
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttrDescVersion ATTR_DESC_VERSION = new AttrDescVersion();
-	
+
 	protected static final AttrDescTitle ATTR_DESC_TITLE = new AttrDescTitle();
-	
+
 	protected static final AttrDescNamespace ATTR_DESC_NAMESPACE = new AttrDescNamespace();
-	
+
 	protected static final AttrDescPath ATTR_DESC_PATH = new AttrDescPath();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.put("version", ATTR_DESC_VERSION);
@@ -343,9 +343,9 @@ public class ArticleImpl
 		NAME_MAP.put("path", ATTR_DESC_PATH);
 		NAME_MAP.put("title", ATTR_DESC_TITLE);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -354,7 +354,7 @@ public class ArticleImpl
 	{
 		return getAttrDescStrict(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescVersion
 			extends
 				AttributeDescriptor
@@ -368,7 +368,7 @@ public class ArticleImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -381,7 +381,7 @@ public class ArticleImpl
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescTitle
 			extends
 				AttributeDescriptor
@@ -395,7 +395,7 @@ public class ArticleImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -406,7 +406,7 @@ public class ArticleImpl
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescNamespace
 			extends
 				AttributeDescriptor
@@ -420,7 +420,7 @@ public class ArticleImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -433,7 +433,7 @@ public class ArticleImpl
 			return (verified.strValue != null);
 		}
 	}
-	
+
 	public static final class AttrDescPath
 			extends
 				AttributeDescriptor
@@ -447,7 +447,7 @@ public class ArticleImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

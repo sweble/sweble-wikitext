@@ -25,9 +25,9 @@ public class WtInternalLink
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -35,7 +35,7 @@ public class WtInternalLink
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtInternalLink(
 			String prefix,
 			WtPageName target,
@@ -45,55 +45,55 @@ public class WtInternalLink
 		setPrefix(prefix);
 		setPostfix(postfix);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_INTERNAL_LINK;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String prefix;
-	
+
 	public final String getPrefix()
 	{
 		return this.prefix;
 	}
-	
+
 	public final void setPrefix(String prefix)
 	{
 		if (prefix == null)
 			throw new NullPointerException();
 		this.prefix = prefix;
 	}
-	
+
 	private String postfix;
-	
+
 	public final String getPostfix()
 	{
 		return this.postfix;
 	}
-	
+
 	public final void setPostfix(String postfix)
 	{
 		if (postfix == null)
 			throw new NullPointerException();
 		this.postfix = postfix;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 2 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -104,7 +104,7 @@ public class WtInternalLink
 			{
 				return WtInternalLink.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -114,12 +114,12 @@ public class WtInternalLink
 						return "prefix";
 					case 1:
 						return "postfix";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -129,12 +129,12 @@ public class WtInternalLink
 						return WtInternalLink.this.getPrefix();
 					case 1:
 						return WtInternalLink.this.getPostfix();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -152,44 +152,44 @@ public class WtInternalLink
 						WtInternalLink.this.setPostfix((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setTarget(WtPageName target)
 	{
 		set(0, target);
 	}
-	
+
 	public final WtPageName getTarget()
 	{
 		return (WtPageName) get(0);
 	}
-	
+
 	public boolean hasTitle()
 	{
 		return getTitle() != WtLinkTitle.NO_TITLE;
 	}
-	
+
 	public final void setTitle(WtLinkTitle title)
 	{
 		set(1, title);
 	}
-	
+
 	public final WtLinkTitle getTitle()
 	{
 		return (WtLinkTitle) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "target", "title" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

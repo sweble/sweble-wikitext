@@ -18,22 +18,22 @@
 package org.sweble.wikitext.parser.utils;
 
 import de.fau.cs.osr.ptk.common.ast.AstLocation;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class ParserShouldNotBeHereException
 		extends
 			RuntimeException
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final AstLocation location;
-	
+
 	private final String context;
-	
+
 	private final int pos;
-	
+
 	// =========================================================================
-	
+
 	public ParserShouldNotBeHereException(
 			AstLocation location,
 			String context,
@@ -43,7 +43,7 @@ public class ParserShouldNotBeHereException
 		this.context = context;
 		this.pos = pos;
 	}
-	
+
 	public ParserShouldNotBeHereException(
 			xtc.tree.Location location,
 			String context,
@@ -51,26 +51,26 @@ public class ParserShouldNotBeHereException
 	{
 		this(new AstLocation(location), context, pos);
 	}
-	
+
 	// =========================================================================
-	
+
 	public AstLocation getLocation()
 	{
 		return location;
 	}
-	
+
 	public String getContext()
 	{
 		return context;
 	}
-	
+
 	public int getPos()
 	{
 		return pos;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
@@ -78,12 +78,12 @@ public class ParserShouldNotBeHereException
 		String before = "";
 		if (context.length() < p)
 			p = context.length();
-		StringUtils.escJava(context.substring(0, p));
-		
+		StringTools.escJava(context.substring(0, p));
+
 		String after = "";
 		if (context.length() > p)
-			after = StringUtils.escJava(context.substring(p));
-		
+			after = StringTools.escJava(context.substring(p));
+
 		if (before.isEmpty() && after.isEmpty())
 		{
 			return String.format(

@@ -39,4 +39,12 @@
     systemId="http://www.mediawiki.org/xml/export-0.8.xsd"
     uri="export-0.8.xsd" />
  
+  <system
+    systemId="http://www.mediawiki.org/xml/export-0.9.xsd"
+    uri="export-0.9.xsd" />
+ 
+  <system
+    systemId="http://www.mediawiki.org/xml/export-0.10.xsd"
+    uri="export-0.10.xsd" />
+ 
 </catalog>

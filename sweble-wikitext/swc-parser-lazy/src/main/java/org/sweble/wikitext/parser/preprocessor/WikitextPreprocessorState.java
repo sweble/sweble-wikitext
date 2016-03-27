@@ -27,86 +27,86 @@ public class WikitextPreprocessorState
 			ParserState<WikitextPreprocessorContext>
 {
 	private ParserConfig config;
-	
+
 	private WtEntityMap entityMap;
-	
+
 	private boolean autoCorrect;
-	
+
 	private boolean warningsEnabled;
-	
+
 	private boolean gatherRtData;
-	
+
 	// =========================================================================
-	
+
 	private boolean hasOnlyInclude;
-	
+
 	private boolean parseForInclusion;
-	
+
 	// =========================================================================
-	
+
 	public WikitextPreprocessorState()
 	{
 		super(WikitextPreprocessorContext.class);
-		
+
 		this.hasOnlyInclude = false;
-		
+
 		this.parseForInclusion = false;
 	}
-	
+
 	// =========================================================================
-	
+
 	public ParserConfig getConfig()
 	{
 		return config;
 	}
-	
+
 	public void init(
 			ParserConfig config,
 			WtEntityMap entityMap,
 			boolean forInclusion)
 	{
 		this.config = config;
-		
+
 		this.entityMap = entityMap;
-		
+
 		this.parseForInclusion = forInclusion;
-		
+
 		this.autoCorrect = config.isAutoCorrect();
-		
+
 		this.warningsEnabled = config.isWarningsEnabled();
-		
+
 		this.gatherRtData = config.isGatherRtData();
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}
-	
+
 	public boolean isAutoCorrect()
 	{
 		return autoCorrect;
 	}
-	
+
 	public boolean isWarnignsEnabled()
 	{
 		return warningsEnabled;
 	}
-	
+
 	public boolean isGatherRtData()
 	{
 		return gatherRtData;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void setTagExtensionName(String name)
 	{
 		getTop().setTagExtensionName(name);
 	}
-	
+
 	public boolean isValidClosingTag(String name)
 	{
 		String cur = getTop().getTagExtensionName();
@@ -114,45 +114,45 @@ public class WikitextPreprocessorState
 			return false;
 		return name.compareToIgnoreCase(cur) == 0;
 	}
-	
+
 	public void setTemplateBraces(int i)
 	{
 		getTop().setTemplateBraces(i);
 	}
-	
+
 	public int getTemplateBraces()
 	{
 		return getTop().getTemplateBraces();
 	}
-	
+
 	public boolean hasAtLeastTemplateBraces(int i)
 	{
 		return getTop().getTemplateBraces() >= i;
 	}
-	
+
 	public void eatTemplateBraces(int i)
 	{
 		getTop().setTemplateBraces(
 				getTop().getTemplateBraces() - i);
 	}
-	
+
 	// =========================================================================
-	
+
 	public boolean isHasOnlyInclude()
 	{
 		return hasOnlyInclude;
 	}
-	
+
 	public void setHasOnlyInclude(boolean hasOnlyInclude)
 	{
 		this.hasOnlyInclude = hasOnlyInclude;
 	}
-	
+
 	public boolean isParseForInclusion()
 	{
 		return parseForInclusion;
 	}
-	
+
 	public boolean isIgnoredElement(String name)
 	{
 		String lcName = name.toLowerCase();
@@ -165,7 +165,7 @@ public class WikitextPreprocessorState
 			return "includeonly".compareTo(lcName) == 0;
 		}
 	}
-	
+
 	public boolean isIgnoredTag(String name)
 	{
 		String lcName = name.toLowerCase();
@@ -179,7 +179,7 @@ public class WikitextPreprocessorState
 					("onlyinclude".compareTo(lcName) == 0);
 		}
 	}
-	
+
 	public boolean isRedirectKeyword(String keyword)
 	{
 		return config.isRedirectKeyword(keyword);

@@ -24,18 +24,18 @@ public class WtItalics
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtItalics()
 	{
 	}
-	
+
 	protected WtItalics(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

@@ -23,7 +23,8 @@ import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.ExecutorType;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorService;
@@ -39,49 +40,49 @@ public class Nexus
 		RUNNING,
 		SHUTDOWN
 	}
-	
+
 	// =========================================================================
-	
-	private static final Logger logger = Logger.getLogger(Nexus.class);
-	
+
+	private static final Logger logger = LoggerFactory.getLogger(Nexus.class);
+
 	private static final int COMPLETION_TIMEOUT_IN_SECONDS = 60 * 5;
-	
+
 	// =========================================================================
-	
+
 	private BlockingQueue<Job> inTray;
-	
+
 	private BlockingQueue<Job> processedJobs;
-	
+
 	private BlockingQueue<Job> outTray;
-	
+
 	private JobTraceSet jobTraces = new JobTraceSet();
-	
+
 	private MyExecutorService executor;
-	
+
 	private Throwable emergencyCause;
-	
+
 	private WorkerLauncher gatherer;
-	
+
 	private NexusState state;
-	
+
 	private AbortHandler abortHandler;
-	
+
 	private WorkerSynchronizer synchronizer = new WorkerSynchronizer();
-	
+
 	private List<WorkerLauncher> jobGenerators = new ArrayList<WorkerLauncher>();
-	
+
 	private List<WorkerLauncher> processingNodes = new ArrayList<WorkerLauncher>();
-	
+
 	private List<WorkerLauncher> storers = new ArrayList<WorkerLauncher>();
-	
+
 	// =========================================================================
-	
+
 	public Nexus()
 	{
 	}
-	
+
 	// =========================================================================
-	
+
 	public void setUp(
 			int inTrayCapacity,
 			int processedJobsCapacity,
@@ -91,19 +92,19 @@ public class Nexus
 		{
 			if (state != null)
 				throw new IllegalStateException("Can only set-up Nexus once");
-			
+
 			try
 			{
 				logger.info("Nexus starting");
-				
+
 				inTray = new LinkedBlockingDeque<Job>(inTrayCapacity);
-				
+
 				processedJobs = new LinkedBlockingDeque<Job>(processedJobsCapacity);
-				
+
 				outTray = new LinkedBlockingDeque<Job>(outTrayCapacity);
-				
+
 				executor = new MyExecutorService(ExecutorType.CACHED_THREAD_POOL, logger);
-				
+
 				abortHandler = new AbortHandler()
 				{
 					@Override
@@ -112,7 +113,7 @@ public class Nexus
 						emergencyShutdown(t);
 					}
 				};
-				
+
 				gatherer = new WorkerLauncher(new WorkerInstantiator()
 				{
 					@Override
@@ -121,7 +122,7 @@ public class Nexus
 						return new Gatherer(abortHandler, inTray, processedJobs, outTray);
 					}
 				}, abortHandler);
-				
+
 				state = NexusState.INITIALIZED;
 			}
 			catch (Throwable t)
@@ -132,7 +133,7 @@ public class Nexus
 			}
 		}
 	}
-	
+
 	public void start() throws Throwable
 	{
 		try
@@ -141,21 +142,21 @@ public class Nexus
 			{
 				if (state != NexusState.INITIALIZED)
 					throw new IllegalStateException("Can only start Nexus after initialization");
-				
+
 				state = NexusState.RUNNING;
-				
+
 				try
 				{
 					logger.info("Nexus starting workers");
-					
+
 					gatherer.start(executor);
-					
+
 					logger.info("Nexus waiting for end of input stream");
 					synchronizer.waitForAll(1);
 				}
 				catch (InterruptedException e)
 				{
-					logger.fatal("Nexus interrupted unexpectedly", e);
+					logger.error("Nexus interrupted unexpectedly", e);
 					setEmergencyCause(e);
 				}
 				catch (Throwable t)
@@ -164,7 +165,7 @@ public class Nexus
 					setEmergencyCause(t);
 				}
 			}
-			
+
 			if (emergencyCause == null)
 			{
 				logger.info("Nexus waiting for processing to finish");
@@ -179,13 +180,13 @@ public class Nexus
 				logger.info("Nexus shutting down");
 				exec = stopAll();
 			}
-			
+
 			if (exec != null)
 				exec.shutdownAndAwaitTermination();
 			nexusStopped();
 		}
 	}
-	
+
 	public void addJobGenerator(final JobGeneratorFactory factory)
 	{
 		synchronized (synchronizer.getMonitor())
@@ -196,7 +197,7 @@ public class Nexus
 				case RUNNING:
 				{
 					logger.info("Adding job generator");
-					
+
 					WorkerLauncher wl = new WorkerLauncher(new WorkerInstantiator()
 					{
 						@Override
@@ -205,11 +206,11 @@ public class Nexus
 							return factory.create(abortHandler, inTray, jobTraces);
 						}
 					}, abortHandler);
-					
+
 					jobGenerators.add(wl);
-					
+
 					wl.start(executor, synchronizer);
-					
+
 					break;
 				}
 				default:
@@ -217,7 +218,7 @@ public class Nexus
 			}
 		}
 	}
-	
+
 	public void addProcessingNode(final ProcessingNodeFactory factory)
 	{
 		synchronized (synchronizer.getMonitor())
@@ -228,7 +229,7 @@ public class Nexus
 				case RUNNING:
 				{
 					logger.info("Adding processing node");
-					
+
 					WorkerLauncher wl = new WorkerLauncher(new WorkerInstantiator()
 					{
 						@Override
@@ -240,11 +241,11 @@ public class Nexus
 									processedJobs);
 						}
 					}, abortHandler);
-					
+
 					processingNodes.add(wl);
-					
+
 					wl.start(executor);
-					
+
 					break;
 				}
 				default:
@@ -252,7 +253,7 @@ public class Nexus
 			}
 		}
 	}
-	
+
 	public void addStorer(final StorerFactory factory)
 	{
 		synchronized (synchronizer.getMonitor())
@@ -263,7 +264,7 @@ public class Nexus
 				case RUNNING:
 				{
 					logger.info("Adding storer");
-					
+
 					WorkerLauncher wl = new WorkerLauncher(new WorkerInstantiator()
 					{
 						@Override
@@ -272,11 +273,11 @@ public class Nexus
 							return factory.create(abortHandler, jobTraces, outTray);
 						}
 					}, abortHandler);
-					
+
 					storers.add(wl);
-					
+
 					wl.start(executor);
-					
+
 					break;
 				}
 				default:
@@ -284,34 +285,34 @@ public class Nexus
 			}
 		}
 	}
-	
+
 	public Set<JobTrace> getJobTraces()
 	{
 		return jobTraces.getTraces();
 	}
-	
+
 	public BlockingQueue<Job> getInTray()
 	{
 		return inTray;
 	}
-	
+
 	public BlockingQueue<Job> getOutTray()
 	{
 		return outTray;
 	}
-	
+
 	public/*static*/void shutdown()
 	{
 		internalShutdown(null);
 	}
-	
+
 	public/*static*/void emergencyShutdown(Throwable t)
 	{
 		internalShutdown(t);
 	}
-	
+
 	// =========================================================================
-	
+
 	private/*static*/void internalShutdown(Throwable t)
 	{
 		synchronized (/*get().*/synchronizer.getMonitor())
@@ -324,68 +325,68 @@ public class Nexus
 					if (!sync.isSynchronized() && !sync.isAborted())
 					{
 						/*get().*/setEmergencyCause(t);
-						
+
 						logger.info(t == null ?
 								"Nexus performing orderly shutdown" :
 								"Nexus performing emergency shutdown");
-						
+
 						sync.abort();
 					}
 					break;
 				}
-				
+
 				default:
 					throw new IllegalStateException("Can only shutdown running Nexus");
 			}
 		}
 	}
-	
+
 	private void setEmergencyCause(Throwable t)
 	{
 		// Don't overwrite original cause
 		if (emergencyCause == null)
 			emergencyCause = t;
 	}
-	
+
 	private MyExecutorService stopAll()
 	{
 		synchronized (synchronizer.getMonitor())
 		{
 			MyExecutorService exec = null;
-			
+
 			// TODO: We should wait for them to complete their work ... 
 			// if it's not an emergency shutdown
-			
+
 			logger.info("Stopping workers");
-			
+
 			for (WorkerLauncher jg : jobGenerators)
 				jg.stop();
-			
+
 			for (WorkerLauncher pn : processingNodes)
 				pn.stop();
-			
+
 			if (gatherer != null)
 				gatherer.stop();
-			
+
 			for (WorkerLauncher s : storers)
 				s.stop();
-			
+
 			if (executor != null)
 			{
 				exec = executor;
 				executor = null;
 			}
-			
+
 			return exec;
 		}
 	}
-	
+
 	private void nexusStopped() throws Throwable
 	{
 		state = NexusState.SHUTDOWN;
-		
+
 		logger.info("Nexus stopped");
-		
+
 		if (emergencyCause != null)
 			throw emergencyCause;
 	}

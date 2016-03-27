@@ -26,11 +26,11 @@ public interface WtBody
 			WtContentNode
 {
 	public static final WtNoBody NO_BODY = new WtNoBody();
-	
+
 	public static final WtEmptyBody EMPTY = new WtEmptyBody();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoBody
 			extends
 				WtAbsentContentNode
@@ -38,31 +38,31 @@ public interface WtBody
 				WtBody
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtNoBody()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_BODY;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtBody.class.getSimpleName();
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtBody.NO_BODY;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtEmptyBody
 			extends
 				WtEmptyContentNode
@@ -70,23 +70,23 @@ public interface WtBody
 				WtBody
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtEmptyBody()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_BODY;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtBody.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{
@@ -96,15 +96,15 @@ public interface WtBody
 				return AstNodeImpl.equalsNoTypeCheck(this, (WtBodyImpl) other);
 			return super.equals(other);
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtBody.EMPTY;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtBodyImpl
 			extends
 				WtContentNodeImpl
@@ -112,30 +112,30 @@ public interface WtBody
 				WtBody
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtBodyImpl()
 		{
 		}
-		
+
 		protected WtBodyImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_BODY;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtBody.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{

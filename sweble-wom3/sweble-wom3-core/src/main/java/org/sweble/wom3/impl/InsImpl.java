@@ -31,59 +31,59 @@ public class InsImpl
 			Wom3Ins
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public InsImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "ins";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public URL getCite()
 	{
 		return getUrlAttr("cite");
 	}
-	
+
 	@Override
 	public URL setCite(URL url)
 	{
 		return setUrlAttr(CommonAttributeDescriptors.ATTR_DESC_CITE, "cite", url);
 	}
-	
+
 	@Override
 	public DateTime getDatetime()
 	{
 		return setDatetimeAttr("datetime");
 	}
-	
+
 	@Override
 	public DateTime setDatetime(DateTime timestamp)
 	{
 		return setDatetimeAttr(CommonAttributeDescriptors.ATTR_DESC_DATETIME, "datetime", timestamp);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("cite", CommonAttributeDescriptors.ATTR_DESC_CITE);
 		NAME_MAP.put("datetime", CommonAttributeDescriptors.ATTR_DESC_DATETIME);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

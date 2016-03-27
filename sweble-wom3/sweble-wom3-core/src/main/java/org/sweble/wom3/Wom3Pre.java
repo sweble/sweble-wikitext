@@ -31,7 +31,7 @@ public interface Wom3Pre
 	 *         attribute is not specified.
 	 */
 	public Integer getWidth();
-	
+
 	/**
 	 * Set the number of characters per line.
 	 * 

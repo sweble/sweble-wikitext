@@ -21,13 +21,13 @@ public class EngLogTransclusionResolution
 			EngLogTargetResolution
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogTransclusionResolution()
 	{
 	}
-	
+
 	protected EngLogTransclusionResolution(String target, boolean success)
 	{
 		super(target, success);

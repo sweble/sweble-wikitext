@@ -24,10 +24,10 @@ import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 
 public interface ProcessingNodeFactory
 {
-	
+
 	WorkerBase create(
 			AbortHandler abortHandler,
 			BlockingQueue<Job> inTray,
 			BlockingQueue<Job> processedJobs);
-	
+
 }

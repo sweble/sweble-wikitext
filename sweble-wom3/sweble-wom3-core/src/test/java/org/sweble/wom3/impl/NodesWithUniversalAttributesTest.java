@@ -17,7 +17,7 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class NodesWithUniversalAttributesTest
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		List<Object[]> inputs = new ArrayList<Object[]>();
-		
+
 		inputs.add(new Object[] { "hr" });
 		inputs.add(new Object[] { "table" });
 		inputs.add(new Object[] { "pre" });
@@ -78,134 +78,134 @@ public class NodesWithUniversalAttributesTest
 		inputs.add(new Object[] { "td" });
 		inputs.add(new Object[] { "th" });
 		inputs.add(new Object[] { "tr" });
-		
+
 		return inputs;
 	}
-	
+
 	// =========================================================================
-	
+
 	private final Wom3ElementNode n;
-	
+
 	private final DocumentImpl doc;
-	
+
 	public NodesWithUniversalAttributesTest(String name) throws InstantiationException, IllegalAccessException
 	{
 		DomImplementationImpl domImpl = DomImplementationImpl.get();
 		doc = domImpl.createDocument(Wom3Node.WOM_NS_URI, "article", null);
 		this.n = (Wom3ElementNode) doc.createElementNS(Wom3Node.WOM_NS_URI, name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testCanSetArbitraryAttributes() throws Exception
 	{
 		n.setAttribute("foo", "bar");
 		assertEquals("bar", n.getAttribute("foo"));
 	}
-	
+
 	// ==[ Core Attributes ]====================================================
-	
+
 	@Test
 	public void testClassAttribute() throws Exception
 	{
 		TestHelperAttribute.testClassAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testIdAttribute() throws Exception
 	{
 		TestHelperAttribute.testIdAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testStyleAttribute() throws Exception
 	{
 		TestHelperAttribute.testStyleAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testTitleAttribute() throws Exception
 	{
 		TestHelperAttribute.testTitleAttribute(this.n);
 	}
-	
+
 	// ==[ I18n Attributes ]====================================================
-	
+
 	@Test
 	public void testDirAttribute() throws Exception
 	{
 		TestHelperAttribute.testDirAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testLangAttribute() throws Exception
 	{
 		TestHelperAttribute.testLangAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testXmlLangAttribute() throws Exception
 	{
 		TestHelperAttribute.testXmlLangAttribute(this.n);
 	}
-	
+
 	// ==[ Event Attributes ]===================================================
-	
+
 	@Test
 	public void testOnClickAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnClickAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnDblClickAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnDblClickAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnMouseDownAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnMouseDownAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnMouseUpAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnMouseUpAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnMouseOverAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnMouseOverAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnMouseMoveAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnMouseMoveAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnMouseOutAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnMouseOutAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnKeyPressAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnKeyPressAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnKeyUpAttribute() throws Exception
 	{
 		TestHelperAttribute.testOnKeyUpAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testOnKeyDownAttribute() throws Exception
 	{

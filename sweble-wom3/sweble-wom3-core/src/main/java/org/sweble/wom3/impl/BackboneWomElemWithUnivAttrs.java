@@ -27,16 +27,16 @@ public abstract class BackboneWomElemWithUnivAttrs
 			BackboneWomElemWithCoreAttrs
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public BackboneWomElemWithUnivAttrs(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

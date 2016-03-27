@@ -30,46 +30,46 @@ public class BreakImpl
 			Wom3Break
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public BreakImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "br";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Clear getClear()
 	{
 		return getClearAttr("clear");
 	}
-	
+
 	@Override
 	public Wom3Clear setClear(Wom3Clear clear)
 	{
 		return setClearAttr(CommonAttributeDescriptors.ATTR_DESC_CLEAR, "clear", clear);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(CoreAttributes.getNameMap());
 		NAME_MAP.put("clear", CommonAttributeDescriptors.ATTR_DESC_CLEAR);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

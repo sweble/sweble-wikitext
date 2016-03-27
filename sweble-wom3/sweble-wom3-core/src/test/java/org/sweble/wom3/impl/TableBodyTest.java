@@ -24,7 +24,7 @@ import org.sweble.wom3.Wom3TableVAlign;
 public class TableBodyTest
 {
 	private TableBodyImpl n = (TableBodyImpl) TestHelperDoc.genElem("tbody");
-	
+
 	@Test
 	public void testAlignAttribute() throws Exception
 	{
@@ -33,13 +33,13 @@ public class TableBodyTest
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.LEFT, "left");
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.RIGHT, "right");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testAlignAttributeDoesNotAllowChar() throws Exception
 	{
 		n.setAttribute("align", "char");
 	}
-	
+
 	@Test
 	public void testTableVAlignAttribute() throws Exception
 	{

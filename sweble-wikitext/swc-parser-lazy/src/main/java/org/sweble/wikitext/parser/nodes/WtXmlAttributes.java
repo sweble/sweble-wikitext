@@ -26,9 +26,9 @@ public interface WtXmlAttributes
 			WtContentNode
 {
 	public static final WtXmlAttributes EMPTY = new WtEmptyXmlAttributes();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtEmptyXmlAttributes
 			extends
 				WtEmptyContentNode
@@ -36,23 +36,23 @@ public interface WtXmlAttributes
 				WtXmlAttributes
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtEmptyXmlAttributes()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_XML_ATTRIBUTES;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtXmlAttributes.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{
@@ -62,15 +62,15 @@ public interface WtXmlAttributes
 				return AstNodeImpl.equalsNoTypeCheck(this, (WtXmlAttributesImpl) other);
 			return super.equals(other);
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtXmlAttributes.EMPTY;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtXmlAttributesImpl
 			extends
 				WtContentNodeImpl
@@ -78,30 +78,30 @@ public interface WtXmlAttributes
 				WtXmlAttributes
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtXmlAttributesImpl()
 		{
 		}
-		
+
 		protected WtXmlAttributesImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_XML_ATTRIBUTES;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtXmlAttributes.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{

@@ -24,14 +24,14 @@ public class StringConversionException
 			Exception
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final Wom3Node node;
-	
+
 	public StringConversionException(Wom3Node node)
 	{
 		this.node = node;
 	}
-	
+
 	public Wom3Node getNode()
 	{
 		return node;

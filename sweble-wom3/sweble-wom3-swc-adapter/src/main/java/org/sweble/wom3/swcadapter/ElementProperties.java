@@ -26,14 +26,14 @@ public enum ElementProperties
 		{
 			return "p";
 		}
-		
+
 		@Override
 		public boolean isBlockElement()
 		{
 			return true;
 		}
 	};
-	
+
 	public boolean isBlockElement()
 	{
 		return false;

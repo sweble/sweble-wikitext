@@ -24,19 +24,19 @@ public class WtImEndTag
 			WtXmlEndTag
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/* No default ctor. This node should not get de-/serialized
 	 */
-	
+
 	protected WtImEndTag(IntermediateTags type)
 	{
 		super(type.getElementName());
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getNodeType()
 	{

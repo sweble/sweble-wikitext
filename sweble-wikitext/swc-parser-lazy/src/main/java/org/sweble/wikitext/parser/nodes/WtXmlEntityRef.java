@@ -24,16 +24,16 @@ public class WtXmlEntityRef
 			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtXmlEntityRef()
 	{
 	}
-	
+
 	/**
 	 * @param resolved
 	 *            <code>null</code> allowed to indicate failed resolution.
@@ -43,53 +43,53 @@ public class WtXmlEntityRef
 		setName(name);
 		setResolved(resolved);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_XML_ENTITY_REF;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String name;
-	
+
 	public final String getName()
 	{
 		return this.name;
 	}
-	
+
 	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
 		this.name = name;
 	}
-	
+
 	private String resolved;
-	
+
 	public final String getResolved()
 	{
 		return this.resolved;
 	}
-	
+
 	public final void setResolved(String resolved)
 	{
 		this.resolved = resolved;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 2 + getSuperPropertyCount();
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -100,7 +100,7 @@ public class WtXmlEntityRef
 			{
 				return WtXmlEntityRef.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -110,12 +110,12 @@ public class WtXmlEntityRef
 						return "name";
 					case 1:
 						return "resolved";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -125,12 +125,12 @@ public class WtXmlEntityRef
 						return WtXmlEntityRef.this.getName();
 					case 1:
 						return WtXmlEntityRef.this.getResolved();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -148,7 +148,7 @@ public class WtXmlEntityRef
 						WtXmlEntityRef.this.setResolved((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

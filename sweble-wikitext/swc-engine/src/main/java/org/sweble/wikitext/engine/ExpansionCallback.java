@@ -24,8 +24,8 @@ public interface ExpansionCallback
 	 * 
 	 * @return The requested article or null if no such article could be found.
 	 */
-	FullPage retrieveWikitext(ExpansionFrame expansionFrame, PageTitle pageTitle) throws Exception;
-	
+	FullPage retrieveWikitext(ExpansionFrame expansionFrame, PageTitle pageTitle);
+
 	/**
 	 * Retrieve the full URL of a file.
 	 * 
@@ -51,12 +51,12 @@ public interface ExpansionCallback
 	 *            parameter is ignored if it is less than 1px.
 	 * @return The full URL.
 	 */
-	String fileUrl(PageTitle pageTitle, int width, int height) throws Exception;
-	
+	String fileUrl(PageTitle pageTitle, int width, int height);
+
 	/*
 	 * Retrieves the specified revision of the article.
 	 *
-	String retrieveWikitext(ExpansionFrame expansionFrame, PageId pageId) throws Exception;
+	String retrieveWikitext(ExpansionFrame expansionFrame, PageId pageId);
 	void cachePreprocessedPage(ExpansionFrame expansionFrame, FullPreprocessedPage page);
 	FullPreprocessedPage retrievePreprocessedPage(ExpansionFrame expansionFrame, PageTitle pageTitle, boolean forInclusion);
 	 */

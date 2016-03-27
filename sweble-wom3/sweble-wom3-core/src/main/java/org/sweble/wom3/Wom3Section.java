@@ -37,7 +37,7 @@ public interface Wom3Section
 	 * @return The level of the section.
 	 */
 	public int getLevel();
-	
+
 	/**
 	 * Set the level of the section. Ranges from 1 (most important) to 6 (least
 	 * important). A section with level <code>x</code> cannot be contained in a
@@ -56,7 +56,7 @@ public interface Wom3Section
 	 *             the range [1,6].
 	 */
 	public int setLevel(int level) throws IllegalArgumentException;
-	
+
 	/**
 	 * Return the heading of this section.
 	 * 
@@ -66,7 +66,7 @@ public interface Wom3Section
 	 * @return This heading of this section.
 	 */
 	public Wom3Heading getHeading();
-	
+
 	/**
 	 * Set the heading of this section.
 	 * 
@@ -80,7 +80,7 @@ public interface Wom3Section
 	 *             Thrown if <code>null</code> is given as heading.
 	 */
 	public Wom3Heading setHeading(Wom3Heading heading) throws NullPointerException;
-	
+
 	/**
 	 * Return the body of this section.
 	 * 
@@ -89,7 +89,7 @@ public interface Wom3Section
 	 * @return The body of this section.
 	 */
 	public Wom3Body getBody();
-	
+
 	/**
 	 * Set the body of this section.
 	 * 

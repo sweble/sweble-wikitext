@@ -17,7 +17,7 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class ElementTest
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		List<Object[]> inputs = new ArrayList<Object[]>();
-		
+
 		inputs.add(new Object[] { "hr" });
 		inputs.add(new Object[] { "category" });
 		inputs.add(new Object[] { "redirect" });
@@ -92,18 +92,18 @@ public class ElementTest
 		inputs.add(new Object[] { "tt" });
 		inputs.add(new Object[] { "u" });
 		inputs.add(new Object[] { "var" });
-		
+
 		return inputs;
 	}
-	
+
 	// =========================================================================
-	
+
 	private final Wom3Node n;
-	
+
 	private final String name;
-	
+
 	private final DocumentImpl doc;
-	
+
 	public ElementTest(String name) throws InstantiationException, IllegalAccessException
 	{
 		this.name = name;
@@ -111,15 +111,15 @@ public class ElementTest
 		doc = domImpl.createDocument(Wom3Node.WOM_NS_URI, "article", null);
 		this.n = (Wom3Node) doc.createElementNS(Wom3Node.WOM_NS_URI, name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testNodeHasCorrectName() throws Exception
 	{
 		assertEquals(name, n.getNodeName());
 	}
-	
+
 	@Test
 	public void testIsElement() throws Exception
 	{

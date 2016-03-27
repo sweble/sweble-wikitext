@@ -29,11 +29,11 @@ public abstract class WtLeafNode
 			WtNode
 {
 	private static final long serialVersionUID = -2024251471331960556L;
-	
+
 	private WtRtData rtd = null;
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void setRtd(WtRtData rtd)
 	{
@@ -41,51 +41,51 @@ public abstract class WtLeafNode
 			throw new IllegalArgumentException();
 		this.rtd = rtd;
 	}
-	
+
 	@Override
 	public void setRtd(Object... glue)
 	{
 		rtd = new WtRtData(this, glue);
 	}
-	
+
 	@Override
 	public void setRtd(String... glue)
 	{
 		rtd = new WtRtData(this, glue);
 	}
-	
+
 	@Override
 	public WtRtData getRtd()
 	{
 		return rtd;
 	}
-	
+
 	@Override
 	public void clearRtd()
 	{
 		rtd = null;
 	}
-	
+
 	@Override
 	public void suppressRtd()
 	{
 		rtd = WtRtData.SUPPRESS;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1;
 	}
-	
+
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
 		return new WtLeafNodePropertyIterator();
 	}
-	
+
 	protected class WtLeafNodePropertyIterator
 			extends
 				AstNodePropertyIterator
@@ -95,7 +95,7 @@ public abstract class WtLeafNode
 		{
 			return WtLeafNode.this.getPropertyCount();
 		}
-		
+
 		@Override
 		protected String getName(int index)
 		{
@@ -103,12 +103,12 @@ public abstract class WtLeafNode
 			{
 				case 0:
 					return "rtd";
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object getValue(int index)
 		{
@@ -116,12 +116,12 @@ public abstract class WtLeafNode
 			{
 				case 0:
 					return WtLeafNode.this.getRtd();
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object setValue(int index, Object value)
 		{
@@ -133,7 +133,7 @@ public abstract class WtLeafNode
 					WtLeafNode.this.setRtd((WtRtData) value);
 					return old;
 				}
-				
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}

@@ -35,7 +35,7 @@ public class SerializationLabToolbox
 				(new Wom3NodeCompactJsonTypeAdapter()) :
 				(new Wom3NodeJsonTypeAdapter()));
 	}
-	
+
 	public static GsonBuilder registerWom3GsonAdapter(
 			GsonBuilder builder,
 			boolean compact)
@@ -45,7 +45,7 @@ public class SerializationLabToolbox
 		builder.serializeNulls();
 		return builder;
 	}
-	
+
 	public static Gson createWom3Gson(boolean compact, boolean pretty)
 	{
 		GsonBuilder builder = registerWom3GsonAdapter(new GsonBuilder(), compact);
@@ -53,7 +53,7 @@ public class SerializationLabToolbox
 			builder.setPrettyPrinting();
 		return builder.create();
 	}
-	
+
 	public static String womToJson(
 			Wom3Node what,
 			boolean compact,
@@ -61,7 +61,7 @@ public class SerializationLabToolbox
 	{
 		return createWom3Gson(compact, pretty).toJson(what);
 	}
-	
+
 	public static Wom3Node jsonToWom(
 			String json,
 			boolean compact,

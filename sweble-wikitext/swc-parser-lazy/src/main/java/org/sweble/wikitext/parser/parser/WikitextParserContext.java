@@ -27,13 +27,13 @@ public class WikitextParserContext
 			ParserContext
 {
 	private int stickingScopes;
-	
+
 	private ParserScopes scope;
-	
+
 	private LinkBuilder linkBuilder;
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public final void clear()
 	{
@@ -41,7 +41,7 @@ public class WikitextParserContext
 		this.stickingScopes = 0;
 		this.linkBuilder = null;
 	}
-	
+
 	@Override
 	public final void init(ParserContext parent)
 	{
@@ -50,43 +50,43 @@ public class WikitextParserContext
 		this.scope = p.scope;
 		this.linkBuilder = p.linkBuilder; //null;
 	}
-	
+
 	// =========================================================================
-	
+
 	public final ParserScopes getScope()
 	{
 		return scope;
 	}
-	
+
 	public final void setScope(ParserScopes scope)
 	{
 		this.scope = scope;
 	}
-	
+
 	public final int getStickingScopes()
 	{
 		return stickingScopes;
 	}
-	
+
 	public final void addStickingScope(ParserScopes scope)
 	{
 		stickingScopes |= 1 << scope.ordinal();
 	}
-	
+
 	public final LinkBuilder getLinkBuilder()
 	{
 		return linkBuilder;
 	}
-	
+
 	public final void initLinkBuilder(
 			ParserConfig parserConfig,
 			WtPageName target)
 	{
 		this.linkBuilder = new LinkBuilder(parserConfig, target);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public final int hashCode()
 	{
@@ -96,7 +96,7 @@ public class WikitextParserContext
 		result = prime * result + stickingScopes;
 		return result;
 	}
-	
+
 	@Override
 	public final boolean equals(Object obj)
 	{
@@ -108,7 +108,7 @@ public class WikitextParserContext
 			return false;
 		return equals((WikitextParserContext) obj);
 	}
-	
+
 	public final boolean equals(WikitextParserContext other)
 	{
 		if (this == other)

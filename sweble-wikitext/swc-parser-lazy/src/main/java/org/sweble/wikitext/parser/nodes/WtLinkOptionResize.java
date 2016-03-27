@@ -24,66 +24,66 @@ public class WtLinkOptionResize
 			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtLinkOptionResize()
 	{
 	}
-	
+
 	protected WtLinkOptionResize(int width, int height)
 	{
 		setWidth(width);
 		setHeight(height);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_LINK_OPTION_RESIZE;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private int width;
-	
+
 	public final int getWidth()
 	{
 		return this.width;
 	}
-	
+
 	public final void setWidth(int width)
 	{
 		this.width = width;
 	}
-	
+
 	private int height;
-	
+
 	public final int getHeight()
 	{
 		return this.height;
 	}
-	
+
 	public final void setHeight(int height)
 	{
 		this.height = height;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 2 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -94,7 +94,7 @@ public class WtLinkOptionResize
 			{
 				return WtLinkOptionResize.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -104,12 +104,12 @@ public class WtLinkOptionResize
 						return "width";
 					case 1:
 						return "height";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -119,12 +119,12 @@ public class WtLinkOptionResize
 						return WtLinkOptionResize.this.getWidth();
 					case 1:
 						return WtLinkOptionResize.this.getHeight();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -142,7 +142,7 @@ public class WtLinkOptionResize
 						WtLinkOptionResize.this.setHeight((Integer) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

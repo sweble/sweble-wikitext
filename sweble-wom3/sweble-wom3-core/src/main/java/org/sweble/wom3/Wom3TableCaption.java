@@ -38,7 +38,7 @@ public interface Wom3TableCaption
 	 *         attribute is not specified.
 	 */
 	public Wom3TableCaptionAlign getAlign();
-	
+
 	/**
 	 * Set the alignment of the caption.
 	 * 

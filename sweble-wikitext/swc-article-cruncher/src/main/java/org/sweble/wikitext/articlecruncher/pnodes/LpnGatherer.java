@@ -32,19 +32,19 @@ public class LpnGatherer
 			WorkerBase
 {
 	private final CompletionService<Job> execCompServ;
-	
+
 	private final BlockingQueue<Job> processedJobs;
-	
+
 	private final Semaphore backPressure;
-	
+
 	private int count = 0;
-	
+
 	private int failureCount = 0;
-	
+
 	private int successCount = 0;
-	
+
 	// =========================================================================
-	
+
 	public LpnGatherer(
 			AbortHandler abortHandler,
 			CompletionService<Job> execCompServ,
@@ -52,21 +52,21 @@ public class LpnGatherer
 			Semaphore backPressure)
 	{
 		super(getClassName(), abortHandler);
-		
+
 		Thread.currentThread().setName(getClassName());
-		
+
 		this.execCompServ = execCompServ;
 		this.processedJobs = processedJobs;
 		this.backPressure = backPressure;
 	}
-	
+
 	private static String getClassName()
 	{
 		return LpnGatherer.class.getSimpleName();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void work() throws Throwable
 	{
@@ -74,37 +74,37 @@ public class LpnGatherer
 		{
 			Future<Job> f = execCompServ.take();
 			++count;
-			
+
 			try
 			{
 				Job processedJob = f.get();
-				
+
 				switch (processedJob.getState())
 				{
 					case FAILED:
 						++failureCount;
 						break;
-					
+
 					case HAS_RESULT:
 						++successCount;
 						break;
-					
+
 					default:
 						throw new InternalError();
 				}
-				
+
 				processedJobs.put(processedJob);
 				backPressure.release();
 			}
 			catch (ExecutionException e)
 			{
-				fatal(LpnWorker.class.getSimpleName() + " failed with unhandled expection", e.getCause());
-				
+				error(LpnWorker.class.getSimpleName() + " failed with unhandled expection", e.getCause());
+
 				abort(e.getCause());
 			}
 		}
 	}
-	
+
 	@Override
 	protected void after()
 	{

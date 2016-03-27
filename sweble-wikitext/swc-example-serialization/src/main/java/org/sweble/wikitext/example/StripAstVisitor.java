@@ -26,13 +26,13 @@ public final class StripAstVisitor
 			AstVisitor<WtNode>
 {
 	private boolean stripAllAttributes;
-	
+
 	private boolean stripRtdAttributes;
-	
+
 	private boolean stripLocations;
-	
+
 	// =========================================================================
-	
+
 	public StripAstVisitor(
 			boolean stripAllAttributes,
 			boolean stripRtdAttributes,
@@ -42,9 +42,9 @@ public final class StripAstVisitor
 		this.stripRtdAttributes = stripRtdAttributes;
 		this.stripLocations = stripLocations;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void visit(WtNode n)
 	{
 		if (stripAllAttributes)
@@ -55,10 +55,10 @@ public final class StripAstVisitor
 		{
 			n.removeAttribute("RTD");
 		}
-		
+
 		if (stripLocations)
 			n.setNativeLocation((AstLocation) null);
-		
+
 		iterate(n);
 	}
 }

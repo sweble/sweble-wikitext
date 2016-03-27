@@ -43,26 +43,26 @@ public class HtmlRendererTest
 			EngineIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
-	
+
 	private static final String INPUT_SUB_DIR = "engine/output/wikitext";
-	
+
 	private static final String EXPECTED_AST_SUB_DIR = "engine/output/rendered";
-	
+
 	// =========================================================================
-	
+
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		TestResourcesFixture resources = getTestResourcesFixture();
 		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final File inputFile;
-	
+
 	// =========================================================================
-	
+
 	public HtmlRendererTest(
 			String title,
 			TestResourcesFixture resources,
@@ -71,60 +71,60 @@ public class HtmlRendererTest
 		super(resources);
 		this.inputFile = inputFile;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	@Ignore
 	public void testRenderHtml() throws Exception
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
-		
+
 		WikiConfig wikiConfig = getConfig();
 		PageTitle pageTitle = PageTitle.make(wikiConfig, inputFile.getName());
 		PageId pageId = new PageId(pageTitle, -1);
 		String wikitext = inputFileContent.getContent();
 		ExpansionCallback expCallback = null;
-		
+
 		EngProcessedPage ast = getEngine().postprocess(pageId, wikitext, expCallback);
-		
+
 		TestCallback rendererCallback = new TestCallback();
-		
+
 		String actual = HtmlRenderer.print(rendererCallback, wikiConfig, pageTitle, ast);
-		
+
 		File expectedFile = TestResourcesFixture.rebase(
 				inputFile,
 				INPUT_SUB_DIR,
 				EXPECTED_AST_SUB_DIR,
 				"html",
 				true /* don't throw if file doesn't exist */);
-		
+
 		FileCompare cmp = new FileCompare(getResources());
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class TestCallback
 			implements
 				HtmlRendererCallback
 	{
 		protected static final String LOCAL_URL = "/mediawiki/index.php/";
-		
+
 		@Override
 		public boolean resourceExists(PageTitle target)
 		{
 			// TODO: Add proper check
 			return false;
 		}
-		
+
 		@Override
-		public MediaInfo getMediaInfo(String title, int width, int height) throws Exception
+		public MediaInfo getMediaInfo(String title, int width, int height)
 		{
 			// TODO: Return proper media info
 			return null;
 		}
-		
+
 		@Override
 		public String makeUrl(PageTitle target)
 		{
@@ -135,7 +135,7 @@ public class HtmlRendererTest
 				url = page + "#" + UrlEncoding.WIKI.encode(f);
 			return LOCAL_URL + "/" + url;
 		}
-		
+
 		@Override
 		public String makeUrl(WtUrl target)
 		{
@@ -143,12 +143,12 @@ public class HtmlRendererTest
 				return target.getPath();
 			return target.getProtocol() + ":" + target.getPath();
 		}
-		
+
 		@Override
 		public String makeUrlMissingTarget(String path)
 		{
 			return LOCAL_URL + "?title=" + path + "&amp;action=edit&amp;redlink=1";
-			
+
 		}
 	}
 }

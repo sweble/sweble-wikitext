@@ -23,7 +23,7 @@ import org.sweble.wom3.Wom3TableCaptionAlign;
 public class TableCaptionTest
 {
 	private TableCaptionImpl n = (TableCaptionImpl) TestHelperDoc.genElem("caption");
-	
+
 	@Test
 	public void testTableVAlignAttribute() throws Exception
 	{

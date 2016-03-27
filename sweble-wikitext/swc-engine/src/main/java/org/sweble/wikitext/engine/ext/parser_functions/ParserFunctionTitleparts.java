@@ -20,7 +20,7 @@ package org.sweble.wikitext.engine.ext.parser_functions;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
@@ -34,7 +34,7 @@ public class ParserFunctionTitleparts
 			ParserFunctionsExtPfn
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -42,12 +42,12 @@ public class ParserFunctionTitleparts
 	{
 		super("titleparts");
 	}
-	
+
 	public ParserFunctionTitleparts(WikiConfig wikiConfig)
 	{
 		super(wikiConfig, "titleparts");
 	}
-	
+
 	@Override
 	public WtNode invoke(
 			WtTemplate pfn,
@@ -56,12 +56,12 @@ public class ParserFunctionTitleparts
 	{
 		if (args.size() < 1)
 			return pfn;
-		
+
 		WtNode arg0 = frame.expand(args.get(0));
-		
+
 		if (args.size() < 2)
 			return arg0;
-		
+
 		PageTitle pageTitle;
 		Integer partCount = null;
 		Integer firstPart = null;
@@ -69,7 +69,7 @@ public class ParserFunctionTitleparts
 		{
 			String titleStr = tu().astToText(arg0).trim();
 			pageTitle = PageTitle.make(frame.getWikiConfig(), titleStr);
-			
+
 			WtNode arg1 = frame.expand(args.get(1));
 			String countStr = tu().astToText(arg1).trim();
 			try
@@ -79,7 +79,7 @@ public class ParserFunctionTitleparts
 			catch (NumberFormatException e)
 			{
 			}
-			
+
 			if (args.size() > 2)
 			{
 				WtNode arg2 = frame.expand(args.get(2));
@@ -103,11 +103,11 @@ public class ParserFunctionTitleparts
 			// A page with an illegal name cannot be split properly.
 			return pfn;
 		}
-		
+
 		String title = pageTitle.getTitle();
-		
+
 		String[] parts = title.split("/", 25);
-		
+
 		if (partCount != null)
 		{
 			if (partCount < 0)
@@ -123,7 +123,7 @@ public class ParserFunctionTitleparts
 		}
 		else
 			partCount = parts.length;
-		
+
 		if (firstPart != null)
 		{
 			if (firstPart > parts.length)
@@ -139,11 +139,11 @@ public class ParserFunctionTitleparts
 		}
 		else
 			firstPart = 1;
-		
+
 		int from = firstPart - 1;
 		int to = Math.min(from + partCount, parts.length);
 		String newTitle = StringUtils.join(Arrays.copyOfRange(parts, from, to), "/");
-		
+
 		return nf().text(pageTitle.newWithTitle(newTitle).getDenormalizedFullTitle());
 	}
 }

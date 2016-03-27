@@ -31,9 +31,9 @@ public class CorePfnVariablesDateAndTime
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnVariablesDateAndTime(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Date and Time");
@@ -41,24 +41,24 @@ public class CorePfnVariablesDateAndTime
 		addParserFunction(new CurrentMonthPfn(wikiConfig));
 		addParserFunction(new CurrentDayPfn(wikiConfig));
 	}
-	
+
 	public static CorePfnVariablesDateAndTime group(WikiConfig wikiConfig)
 	{
 		return new CorePfnVariablesDateAndTime(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == {{CURRENTYEAR}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class CurrentYearPfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -66,12 +66,12 @@ public class CorePfnVariablesDateAndTime
 		{
 			super("currentyear");
 		}
-		
+
 		public CurrentYearPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "currentyear");
 		}
-		
+
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
@@ -79,19 +79,19 @@ public class CorePfnVariablesDateAndTime
 			return nf().text(String.valueOf(cal.get(GregorianCalendar.YEAR)));
 		}
 	}
-	
+
 	// =========================================================================
 	// == 
 	// == TODO: {{CURRENTMONTH}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class CurrentMonthPfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -99,12 +99,12 @@ public class CorePfnVariablesDateAndTime
 		{
 			super("currentmonth");
 		}
-		
+
 		public CurrentMonthPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "currentmonth");
 		}
-		
+
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
@@ -112,7 +112,7 @@ public class CorePfnVariablesDateAndTime
 			return nf().text(String.format("%02d", cal.get(GregorianCalendar.MONTH) + 1));
 		}
 	}
-	
+
 	// =========================================================================
 	// == 
 	// == TODO: {{CURRENTMONTHNAME}}
@@ -120,19 +120,19 @@ public class CorePfnVariablesDateAndTime
 	// == TODO: {{CURRENTMONTHABBREV}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// == 
 	// == TODO: {{CURRENTDAY}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class CurrentDayPfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -140,12 +140,12 @@ public class CorePfnVariablesDateAndTime
 		{
 			super("currentday");
 		}
-		
+
 		public CurrentDayPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "currentday");
 		}
-		
+
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
@@ -153,7 +153,7 @@ public class CorePfnVariablesDateAndTime
 			return nf().text(String.valueOf(cal.get(GregorianCalendar.DAY_OF_MONTH)));
 		}
 	}
-	
+
 	// =========================================================================
 	// == 
 	// == TODO: {{CURRENTDAY2}}

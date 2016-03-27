@@ -29,17 +29,17 @@ public class AttributeMap
 			Wom3NamedNodeMap
 {
 	private BackboneElement element;
-	
+
 	// =========================================================================
-	
+
 	public AttributeMap(BackboneElement element)
 	{
 		super(element);
 		this.element = element;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Node getNamedItem(String name)
 	{
@@ -50,7 +50,7 @@ public class AttributeMap
 		}
 		return null;
 	}
-	
+
 	@Override
 	public Wom3Node getNamedItemNS(String namespaceURI, String localName) throws DOMException
 	{
@@ -58,7 +58,7 @@ public class AttributeMap
 			return getNamedItem(localName);
 		return null;
 	}
-	
+
 	@Override
 	public int getLength()
 	{
@@ -67,7 +67,7 @@ public class AttributeMap
 			++len;
 		return len;
 	}
-	
+
 	@Override
 	public Wom3Node item(int index)
 	{
@@ -77,28 +77,28 @@ public class AttributeMap
 			n = n.getNextSibling();
 		return n;
 	}
-	
+
 	@Override
 	public Wom3Node setNamedItem(Node arg) throws DOMException
 	{
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public Wom3Node setNamedItemNS(Node arg) throws DOMException
 	{
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public Wom3Node removeNamedItem(String name) throws DOMException
 	{
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public Wom3Node removeNamedItemNS(String namespaceURI, String localName) throws DOMException
 	{

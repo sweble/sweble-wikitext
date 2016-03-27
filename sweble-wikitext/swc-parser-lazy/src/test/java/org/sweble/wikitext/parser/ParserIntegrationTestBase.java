@@ -40,34 +40,34 @@ import org.sweble.wikitext.parser.nodes.WtXmlAttributeGarbage;
 import org.sweble.wikitext.parser.utils.TypedPrettyPrinter;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
 
-import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ParserCommon;
 import de.fau.cs.osr.ptk.common.PrinterInterface;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.utils.FileCompare;
 import de.fau.cs.osr.utils.FileContent;
-import de.fau.cs.osr.utils.FileUtils;
+import de.fau.cs.osr.utils.FileTools;
 import de.fau.cs.osr.utils.TestResourcesFixture;
 import de.fau.cs.osr.utils.WrappedException;
+import xtc.parser.ParseException;
 
 public abstract class ParserIntegrationTestBase
 {
 	private final TestResourcesFixture resources;
-	
+
 	private final ParserConfig config;
-	
+
 	private final ParserCommon<WtNode> parser;
-	
+
 	// =========================================================================
-	
+
 	protected static TestResourcesFixture getTestResourcesFixture()
 	{
 		try
 		{
 			File path = TestResourcesFixture.resourceNameToFile(
 					ParserIntegrationTestBase.class, "/");
-			
+
 			return new TestResourcesFixture(path);
 		}
 		catch (FileNotFoundException e)
@@ -75,9 +75,9 @@ public abstract class ParserIntegrationTestBase
 			throw new WrappedException(e);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected ParserIntegrationTestBase(
 			TestResourcesFixture resources,
 			ParserCommon<WtNode> parser)
@@ -86,26 +86,26 @@ public abstract class ParserIntegrationTestBase
 		this.parser = parser;
 		this.config = (ParserConfig) parser.getConfig();
 	}
-	
+
 	// =========================================================================
-	
+
 	protected TestResourcesFixture getResources()
 	{
 		return resources;
 	}
-	
+
 	protected ParserConfig getConfig()
 	{
 		return config;
 	}
-	
+
 	protected ParserCommon<WtNode> getParser()
 	{
 		return parser;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void parsePrintAndCompare(
 			File inputFile,
 			String inputSubDir,
@@ -114,7 +114,7 @@ public abstract class ParserIntegrationTestBase
 	{
 		@SuppressWarnings({ "unchecked" })
 		AstVisitor<WtNode>[] visitors = new AstVisitor[] {};
-		
+
 		parsePrintAndCompare(
 				inputFile,
 				visitors,
@@ -122,7 +122,7 @@ public abstract class ParserIntegrationTestBase
 				expectedSubDir,
 				printer);
 	}
-	
+
 	/**
 	 * Parse an input file, use the specified visitors for post-processing,
 	 * print the resulting AST as text using the given printer instance and
@@ -141,52 +141,52 @@ public abstract class ParserIntegrationTestBase
 			PrinterInterface printer) throws IOException, ParseException
 	{
 		Object ast = parse(inputFile, visitors);
-		
+
 		String actual = printToString(ast, printer);
-		
+
 		File expectedFile = TestResourcesFixture.rebase(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
 				printer.getPrintoutType(),
 				true /* don't throw if file doesn't exist */);
-		
+
 		FileCompare cmp = new FileCompare(resources);
 		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
-	
+
 	protected void prettyPrintAstAndCompare(
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir) throws IOException, ParseException
 	{
 		// -- pretty print
-		
+
 		@SuppressWarnings("unchecked")
 		AstVisitor<WtNode>[] visitors = new AstVisitor[] {};
-		
+
 		Object originalAst = parse(inputFile, visitors);
-		
+
 		String ppOriginalAst = printToString(originalAst, new TypedPrettyPrinter());
-		
+
 		// -- generate cleaned ASTs from original and pretty printed wikitext
-		
+
 		@SuppressWarnings("unchecked")
 		AstVisitor<WtNode>[] cleaningVisitors = new AstVisitor[] { new CleanupAst(config) };
-		
+
 		for (AstVisitor<WtNode> v : cleaningVisitors)
 			parser.addVisitor(v);
-		
+
 		Object cleanedReparsedAst = parser.parseArticle(ppOriginalAst, "pp");
-		
+
 		Object cleanedOriginalAst = parse(inputFile, cleaningVisitors);
-		
+
 		// -- print and compare ASTs
-		
+
 		TypedWtAstPrinter astPrinter = new TypedWtAstPrinter();
-		
+
 		String reparsedAstPrinted = printToString(cleanedReparsedAst, astPrinter);
-		
+
 		try
 		{
 			File expectedFile = TestResourcesFixture.rebase(
@@ -195,7 +195,7 @@ public abstract class ParserIntegrationTestBase
 					expectedSubDir,
 					astPrinter.getPrintoutType(),
 					false /* throw if file doesn't exist */);
-			
+
 			FileCompare cmp = new FileCompare(resources);
 			reparsedAstPrinted = cmp.fixActualText(reparsedAstPrinted);
 			cmp.assertEquals(expectedFile, reparsedAstPrinted);
@@ -203,11 +203,11 @@ public abstract class ParserIntegrationTestBase
 		catch (IllegalArgumentException e)
 		{
 			String originalAstPrinted = printToString(cleanedOriginalAst, astPrinter);
-			
+
 			Assert.assertEquals(originalAstPrinted, reparsedAstPrinted);
 		}
 	}
-	
+
 	protected void prettyPrintWikitextAndCompare(
 			AstVisitor<WtNode>[] visitors,
 			File inputFile,
@@ -215,14 +215,14 @@ public abstract class ParserIntegrationTestBase
 			String expectedSubDir) throws IOException, ParseException
 	{
 		// -- pretty print
-		
+
 		Object ast = parse(inputFile, visitors);
-		
+
 		TypedPrettyPrinter printer = new TypedPrettyPrinter();
 		String actual = printToString(ast, printer);
-		
+
 		// -- print and compare ASTs
-		
+
 		FileCompare cmp = new FileCompare(resources);
 		actual = cmp.fixActualText(actual);
 		try
@@ -233,7 +233,7 @@ public abstract class ParserIntegrationTestBase
 					expectedSubDir,
 					printer.getPrintoutType(),
 					false /* throw if file doesn't exist */);
-			
+
 			cmp.assertEquals(expectedFile, actual);
 		}
 		catch (IllegalArgumentException e)
@@ -241,76 +241,76 @@ public abstract class ParserIntegrationTestBase
 			cmp.assertEquals(inputFile, actual);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected Object parse(File inputFile) throws IOException, ParseException
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
-		
+
 		return parser.parseArticle(
 				inputFileContent.getContent(),
 				inputFile.getAbsolutePath());
 	}
-	
+
 	protected Object parse(File inputFile, AstVisitor<WtNode>[] visitors) throws IOException, ParseException
 	{
 		for (AstVisitor<WtNode> visitor : visitors)
 			parser.addVisitor(visitor);
-		
+
 		FileContent inputFileContent = new FileContent(inputFile);
-		
+
 		return parser.parseArticle(
 				inputFileContent.getContent(),
 				inputFile.getAbsolutePath());
 	}
-	
+
 	protected String printToString(Object ast, PrinterInterface printer) throws IOException
 	{
 		StringWriter writer = new StringWriter();
-		
+
 		printer.print(ast, writer);
-		
+
 		String result = writer.toString();
-		
+
 		// We always operate with UNIX line end '\n':
-		result = FileUtils.lineEndToUnix(result);
-		
+		result = FileTools.lineEndToUnix(result);
+
 		return resources.stripBaseDirectoryAndFixPath(result);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final class CleanupAst
 			extends
 				AstVisitor<WtNode>
 	{
 		private final ParserConfig config;
-		
+
 		public CleanupAst(ParserConfig config)
 		{
 			this.config = config;
 		}
-		
+
 		public WtPage visit(WtPage n)
 		{
 			n.setEntityMap(WtEntityMap.EMPTY_ENTITY_MAP);
 			n.setWarnings(Collections.<Warning> emptyList());
 			clearNode(n);
-			
+
 			mapInPlace(n);
 			int last = n.size() - 1;
 			if (last >= 0 && n.get(last).isNodeType(WtNode.NT_NEWLINE))
 				n.remove(last);
-			
+
 			return n;
 		}
-		
+
 		public Object visit(WtNewline n)
 		{
 			return REMOVE;
 		}
-		
+
 		public WtNode visit(WtTableCaption n)
 		{
 			clearNode(n);
@@ -318,7 +318,7 @@ public abstract class ParserIntegrationTestBase
 			removeParagraph(n.getBody());
 			return n;
 		}
-		
+
 		public WtNode visit(WtTableHeader n)
 		{
 			clearNode(n);
@@ -326,7 +326,7 @@ public abstract class ParserIntegrationTestBase
 			removeParagraph(n.getBody());
 			return n;
 		}
-		
+
 		public WtNode visit(WtTableCell n)
 		{
 			clearNode(n);
@@ -334,12 +334,12 @@ public abstract class ParserIntegrationTestBase
 			removeParagraph(n.getBody());
 			return n;
 		}
-		
+
 		private void removeParagraph(WtBody n)
 		{
 			if (n.isEmpty())
 				return;
-			
+
 			WtNode first = n.get(0);
 			if (first.isNodeType(WtNode.NT_PARAGRAPH))
 			{
@@ -347,7 +347,7 @@ public abstract class ParserIntegrationTestBase
 				n.addAll(0, first);
 			}
 		}
-		
+
 		public Object visit(WtParagraph n)
 		{
 			WtNodeList l = config.getNodeFactory().list();
@@ -355,7 +355,7 @@ public abstract class ParserIntegrationTestBase
 			mapInPlace(l);
 			return l;
 		}
-		
+
 		public Object visit(WtText n)
 		{
 			clearNode(n);
@@ -364,26 +364,26 @@ public abstract class ParserIntegrationTestBase
 				return REMOVE;
 			return n;
 		}
-		
+
 		public Object visit(WtLinkOptionGarbage n)
 		{
 			return REMOVE;
 		}
-		
+
 		public Object visit(WtXmlAttributeGarbage n)
 		{
 			return REMOVE;
 		}
-		
+
 		public WtNode visit(WtNode n)
 		{
 			if (!(n instanceof WtEmptyImmutableNode))
 				clearNode(n);
-			
+
 			mapInPlace(n);
 			return n;
 		}
-		
+
 		private void clearNode(WtNode n)
 		{
 			n.clearRtd();

@@ -23,29 +23,29 @@ public class MediaInfo
 			Serializable
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String title;
-	
+
 	private String descUrl;
-	
+
 	private String imgUrl;
-	
+
 	private int imgWidth = -1;
-	
+
 	private int imgHeight = -1;
-	
+
 	private String thumbUrl;
-	
+
 	private int thumbWidth = -1;
-	
+
 	private int thumbHeight = -1;
-	
+
 	// =========================================================================
-	
+
 	public MediaInfo()
 	{
 	}
-	
+
 	public MediaInfo(
 			String title,
 			String descUrl,
@@ -65,44 +65,44 @@ public class MediaInfo
 		this.thumbWidth = thumbWidth;
 		this.thumbHeight = thumbHeight;
 	}
-	
+
 	// =========================================================================
-	
+
 	public String getTitle()
 	{
 		return title;
 	}
-	
+
 	public String getDescUrl()
 	{
 		return descUrl;
 	}
-	
+
 	public String getImgUrl()
 	{
 		return imgUrl;
 	}
-	
+
 	public int getImgWidth()
 	{
 		return imgWidth;
 	}
-	
+
 	public int getImgHeight()
 	{
 		return imgHeight;
 	}
-	
+
 	public String getThumbUrl()
 	{
 		return thumbUrl;
 	}
-	
+
 	public int getThumbWidth()
 	{
 		return thumbWidth;
 	}
-	
+
 	public int getThumbHeight()
 	{
 		return thumbHeight;

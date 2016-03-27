@@ -37,7 +37,7 @@ public interface Wom3OrderedList
 	 *         attribute is not specified.
 	 */
 	public Integer getStart();
-	
+
 	/**
 	 * Set the number of the first list item.
 	 * 
@@ -49,7 +49,7 @@ public interface Wom3OrderedList
 	 * @return The old number of the first list item.
 	 */
 	public Integer setStart(Integer start);
-	
+
 	/**
 	 * Get the type of bullet point the list items use.
 	 * 
@@ -59,7 +59,7 @@ public interface Wom3OrderedList
 	 *         not specified.
 	 */
 	public String getItemType();
-	
+
 	/**
 	 * Set the type of bullet point the list items should use.
 	 * 

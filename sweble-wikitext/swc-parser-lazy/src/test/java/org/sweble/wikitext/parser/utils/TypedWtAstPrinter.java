@@ -33,7 +33,7 @@ public final class TypedWtAstPrinter
 	{
 		return "ast";
 	}
-	
+
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{

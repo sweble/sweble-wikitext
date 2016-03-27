@@ -24,23 +24,23 @@ import org.sweble.wikitext.parser.postprocessor.TreeBuilder;
 public class WikitextPostprocessor
 {
 	private final ParserConfig config;
-	
+
 	// =========================================================================
-	
+
 	public WikitextPostprocessor(ParserConfig config)
 	{
 		this.config = config;
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtNode postprocess(WtNode ast, String title)
 	{
 		WtNode result = ast;
-		
+
 		result = TicksAnalyzer.process(config, result);
 		result = TreeBuilder.process(config, result);
-		
+
 		return result;
 	}
 }

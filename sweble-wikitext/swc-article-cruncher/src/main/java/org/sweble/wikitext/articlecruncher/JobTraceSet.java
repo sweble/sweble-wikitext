@@ -24,26 +24,26 @@ import java.util.Set;
 public class JobTraceSet
 {
 	private Set<JobTrace> traces = new HashSet<JobTrace>();
-	
+
 	// =========================================================================
-	
+
 	public synchronized void add(JobTrace trace)
 	{
 		traces.add(trace);
 	}
-	
+
 	public synchronized boolean remove(JobTrace trace)
 	{
 		boolean removed = traces.remove(trace);
 		notifyAll();
 		return removed;
 	}
-	
+
 	public synchronized Set<JobTrace> getTraces()
 	{
 		return Collections.unmodifiableSet(traces);
 	}
-	
+
 	public synchronized void waitForCompletion(int timeoutInSeconds) throws InterruptedException
 	{
 		while (!traces.isEmpty())

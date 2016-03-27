@@ -27,28 +27,28 @@ public class TextImpl
 			Wom3Text
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public TextImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "text";
 	}
-	
+
 	@Override
 	protected boolean ignoresContentWhitespace()
 	{
 		return false;
 	}
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
@@ -58,12 +58,12 @@ public class TextImpl
 				doesNotAllowInsertion(prev, child);
 		}
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
@@ -73,7 +73,7 @@ public class TextImpl
 				doesNotAllowReplacement(oldChild, newChild);
 		}
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

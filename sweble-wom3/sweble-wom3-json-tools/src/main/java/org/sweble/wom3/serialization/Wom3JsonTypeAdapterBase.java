@@ -41,19 +41,19 @@ public abstract class Wom3JsonTypeAdapterBase
 			Wom3JsonTypeAdapterInterface
 {
 	protected static final String XMLNS_URI = "http://www.w3.org/2000/xmlns/";
-	
+
 	protected static final String XMLNS_PREFIX = "xmlns";
-	
+
 	protected static final String XMLNS_COLON_PREFIX = XMLNS_PREFIX + ":";
-	
+
 	protected static final String ATTRIBUTE_PREFIX = "@";
-	
+
 	protected static final String SPECIAL_TYPE_PREFIX = "#";
-	
+
 	// =========================================================================
-	
+
 	protected Wom3Document doc;
-	
+
 	@Override
 	public Wom3Document getDoc()
 	{
@@ -61,32 +61,32 @@ public abstract class Wom3JsonTypeAdapterBase
 			// Create a generic document
 			doc = DomImplementationImpl.get().createDocument(
 					Wom3Node.WOM_NS_URI, "article", null);
-		
+
 		return doc;
 	}
-	
+
 	@Override
 	public void setDoc(Wom3Document doc)
 	{
 		this.doc = doc;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public abstract JsonElement serialize(
 			Node src,
 			Type typeOfSrc,
 			JsonSerializationContext context);
-	
+
 	@Override
 	public abstract Node deserialize(
 			JsonElement json,
 			Type typeOfT,
 			JsonDeserializationContext context) throws JsonParseException;
-	
+
 	// =========================================================================
-	
+
 	protected static Scope registerNsDecls(
 			ScopeStack scopeStack,
 			Scope scope,
@@ -106,7 +106,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		}
 		return scope;
 	}
-	
+
 	protected static Scope addPrefixDecls(
 			ScopeStack scopeStack,
 			Scope scope,
@@ -120,15 +120,15 @@ public abstract class Wom3JsonTypeAdapterBase
 			if (XMLNS_PREFIX.equals(prefix))
 				// No need to declare xmlns: prefix itself
 				return scope;
-			
+
 			String nsUri = node.getNamespaceURI();
 			if (nsUri == null)
 				nsUri = "";
-			
+
 			if (XMLNS_PREFIX.equals(localName) && XMLNS_URI.equals(nsUri))
 				// No need to declare xmlns' namespace as default namespace
 				return scope;
-			
+
 			if (prefix == null || prefix.isEmpty())
 			{
 				String xmlns = scopeStack.getXmlns();
@@ -156,9 +156,9 @@ public abstract class Wom3JsonTypeAdapterBase
 		}
 		return scope;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static Scope registerNsDecls(
 			Set<Entry<String, JsonElement>> entries,
 			ScopeStack scopeStack,
@@ -173,7 +173,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		}
 		return scope;
 	}
-	
+
 	protected static Scope registerNsDecl(
 			ScopeStack scopeStack,
 			Scope scope,
@@ -182,7 +182,7 @@ public abstract class Wom3JsonTypeAdapterBase
 	{
 		if (!entryValue.isJsonPrimitive())
 			throw new JsonParseException("Expected attribute '" + entryName + "' to be a string");
-		
+
 		entryName = entryName.substring(1);
 		String valueString = entryValue.getAsString();
 		if (entryName.equals(XMLNS_PREFIX))
@@ -200,7 +200,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		}
 		return scope;
 	}
-	
+
 	protected static void parseAttribute(
 			ScopeStack scopeStack,
 			Element elem,
@@ -239,7 +239,7 @@ public abstract class Wom3JsonTypeAdapterBase
 			}
 		}
 	}
-	
+
 	protected static Element createElement(
 			Wom3Document doc,
 			ScopeStack scopeStack,
@@ -269,9 +269,9 @@ public abstract class Wom3JsonTypeAdapterBase
 		}
 		return elem;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static enum ValueTypes
 	{
 		XML_TEXT
@@ -326,7 +326,7 @@ public abstract class Wom3JsonTypeAdapterBase
 				return elem;
 			}
 		};
-		
+
 		public abstract Node create(Wom3Document doc, String value);
 	}
 }

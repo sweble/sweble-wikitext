@@ -25,9 +25,9 @@ public class ParserFunctionsPfnExt
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected ParserFunctionsPfnExt(WikiConfig wikiConfig)
 	{
 		super("Extension - Parser Functions");
@@ -41,7 +41,7 @@ public class ParserFunctionsPfnExt
 		addParserFunction(new ParserFunctionTime(wikiConfig));
 		addParserFunction(new ParserFunctionTitleparts(wikiConfig));
 	}
-	
+
 	public static ParserFunctionsPfnExt group(WikiConfig wikiConfig)
 	{
 		return new ParserFunctionsPfnExt(wikiConfig);

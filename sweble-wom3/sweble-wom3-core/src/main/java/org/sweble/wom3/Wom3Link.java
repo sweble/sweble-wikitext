@@ -31,7 +31,7 @@ public interface Wom3Link
 	 *         a title or does not specify a title.
 	 */
 	public Wom3Title getLinkTitle();
-	
+
 	/**
 	 * Retrieve the target of this link.
 	 * 

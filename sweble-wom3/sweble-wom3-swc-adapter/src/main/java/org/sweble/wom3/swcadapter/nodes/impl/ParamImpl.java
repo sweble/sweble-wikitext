@@ -33,51 +33,51 @@ public class ParamImpl
 			SwcParam
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc(MWW_NS_URI, "name", ChildDescriptor.REQUIRED),
 			childDesc(MWW_NS_URI, "default"),
 			childDesc(MWW_NS_URI, "garbage", ChildDescriptor.MULTIPLE) };
-	
+
 	private SwcName name;
-	
+
 	private SwcValue default_;
-	
+
 	// =========================================================================
-	
+
 	public ParamImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getSwcName()
 	{
 		return "param";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -86,7 +86,7 @@ public class ParamImpl
 		if (added instanceof SwcValue)
 			this.default_ = (SwcValue) added;
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -95,27 +95,27 @@ public class ParamImpl
 		if (removed == this.default_)
 			this.default_ = null;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public SwcName setName(SwcName name)
 	{
 		return (SwcName) replaceOrInsertBeforeOrAppend(this.name, this.default_, name, false);
 	}
-	
+
 	@Override
 	public SwcName getName()
 	{
 		return this.name;
 	}
-	
+
 	@Override
 	public boolean hasDefault()
 	{
 		return this.default_ != null;
 	}
-	
+
 	@Override
 	public SwcValue setDefault(SwcValue value)
 	{
@@ -124,15 +124,15 @@ public class ParamImpl
 		return (SwcValue) replaceOrInsertBeforeOrAppend(
 				this.default_, nodeAfterName, value, true);
 	}
-	
+
 	@Override
 	public SwcValue getDefault()
 	{
 		return this.default_;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

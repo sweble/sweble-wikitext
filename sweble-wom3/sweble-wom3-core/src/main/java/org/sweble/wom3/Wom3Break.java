@@ -37,7 +37,7 @@ public interface Wom3Break
 	 * @return The sides on which floating elements are not allowed.
 	 */
 	public Wom3Clear getClear();
-	
+
 	/**
 	 * Set the sides on which floating elements are not allowed.
 	 * 

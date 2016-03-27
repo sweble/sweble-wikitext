@@ -25,42 +25,42 @@ public class TableColumnImpl
 			Wom3TableColumn
 {
 	private final TablePartitionImpl partition;
-	
+
 	private final int col;
-	
+
 	// =========================================================================
-	
+
 	protected TableColumnImpl(TablePartitionImpl partition, int col)
 	{
 		this.partition = partition;
 		this.col = col;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getColIndex()
 	{
 		isValidColumn();
 		return col;
 	}
-	
+
 	@Override
 	public int getNumRows()
 	{
 		isValidColumn();
 		return partition.getNumRows();
 	}
-	
+
 	@Override
 	public Wom3TableCellBase getCell(int row) throws IndexOutOfBoundsException
 	{
 		isValidColumn();
 		return partition.getCell(row, col);
 	}
-	
+
 	// =========================================================================
-	
+
 	private void isValidColumn()
 	{
 		if (partition.getNumCols() <= col)

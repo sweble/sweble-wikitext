@@ -24,5 +24,5 @@ public interface Wom3CdataSection
 			CDATASection,
 			Wom3XmlText
 {
-	
+
 }

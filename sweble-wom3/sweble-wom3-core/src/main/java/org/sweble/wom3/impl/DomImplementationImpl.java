@@ -37,15 +37,15 @@ public class DomImplementationImpl
 			Serializable
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final Map<ElemTypeId, Class<? extends Wom3ElementNode>> nodeImplMap =
 			new HashMap<ElemTypeId, Class<? extends Wom3ElementNode>>();
-	
+
 	private static final DomImplementationImpl singleton =
 			new DomImplementationImpl();
-	
+
 	// =========================================================================
-	
+
 	static
 	{
 		addNodeImplInternal(Wom3Node.WOM_NS_URI, "abbr", AbbrImpl.class);
@@ -113,14 +113,14 @@ public class DomImplementationImpl
 		addNodeImplInternal(Wom3Node.WOM_NS_URI, "ul", UnorderedListImpl.class);
 		addNodeImplInternal(Wom3Node.WOM_NS_URI, "var", VarImpl.class);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static DomImplementationImpl get()
 	{
 		return singleton;
 	}
-	
+
 	protected static Class<? extends Wom3ElementNode> addNodeImplInternal(
 			String namespaceUri,
 			String localPart,
@@ -128,33 +128,33 @@ public class DomImplementationImpl
 	{
 		return nodeImplMap.put(new ElemTypeId(namespaceUri, localPart), clazz);
 	}
-	
+
 	protected static Class<? extends Wom3ElementNode> getNodeImplInternal(
 			String namespaceUri,
 			String localPart)
 	{
 		return nodeImplMap.get(new ElemTypeId(namespaceUri, localPart));
 	}
-	
+
 	protected static Map<ElemTypeId, Class<? extends Wom3ElementNode>> getNodeImpls()
 	{
 		return Collections.unmodifiableMap(nodeImplMap);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected DomImplementationImpl()
 	{
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean hasFeature(String feature, String version)
 	{
 		return false;
 	}
-	
+
 	/**
 	 * @since DOM Level 3
 	 */
@@ -163,7 +163,7 @@ public class DomImplementationImpl
 	{
 		return null;
 	}
-	
+
 	/**
 	 * @since DOM Level 2
 	 */
@@ -175,7 +175,7 @@ public class DomImplementationImpl
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	/**
 	 * @since DOM Level 2
 	 */
@@ -186,10 +186,10 @@ public class DomImplementationImpl
 			DocumentType doctype) throws DOMException
 	{
 		DocumentImpl doc = new DocumentImpl(this);
-		
+
 		if (doctype != null)
 			doc.appendChild(doctype);
-		
+
 		if (qualifiedName != null || namespaceURI != null)
 		{
 			// We create the document element if we have either a qualified 
@@ -197,12 +197,12 @@ public class DomImplementationImpl
 			Element root = doc.createElementNS(namespaceURI, qualifiedName);
 			doc.appendChild(root);
 		}
-		
+
 		return doc;
 	}
-	
+
 	// =========================================================================
-	
+
 	public Class<? extends Wom3ElementNode> addNodeImplementation(
 			String namespaceUri,
 			String localPart,
@@ -210,25 +210,25 @@ public class DomImplementationImpl
 	{
 		return addNodeImplInternal(namespaceUri, localPart, clazz);
 	}
-	
+
 	public Class<? extends Wom3ElementNode> getNodeImpl(
 			String namespaceUri,
 			String localPart)
 	{
 		return getNodeImplInternal(namespaceUri, localPart);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected Wom3ElementNode createElement(DocumentImpl doc, String tagName)
 	{
 		Class<? extends Wom3ElementNode> impl = getNodeImpl(null, tagName);
 		if (impl == null)
 			return new ElementImpl(doc, tagName);
-		
+
 		return createElement(doc, impl, null);
 	}
-	
+
 	protected Wom3ElementNode createElement(
 			DocumentImpl doc,
 			String namespaceURI,
@@ -247,14 +247,14 @@ public class DomImplementationImpl
 			prefix = qualifiedName.substring(0, colon);
 			localName = qualifiedName.substring(colon + 1);
 		}
-		
+
 		Class<? extends Wom3ElementNode> impl = getNodeImpl(namespaceURI, localName);
 		if (impl == null)
 			return new ElementNsImpl(doc, namespaceURI, qualifiedName);
-		
+
 		return createElement(doc, impl, prefix);
 	}
-	
+
 	protected Wom3ElementNode createElement(
 			DocumentImpl doc,
 			Class<? extends Wom3ElementNode> impl,
@@ -282,11 +282,11 @@ public class DomImplementationImpl
 			throw new RuntimeException("The constructor of the implementation " +
 					"class for node `" + impl.getName() + "' is not accessible", e);
 		}
-		
+
 		if (ctor == null)
 			throw new RuntimeException("The implementation class for node `" +
 					impl.getName() + "' does not provide the right kind of constructor");
-		
+
 		Exception e = null;
 		try
 		{
@@ -311,26 +311,26 @@ public class DomImplementationImpl
 		{
 			e = e_;
 		}
-		
+
 		throw new RuntimeException("Failed to call the constructor of the " +
 				"implementation class for node `" + impl.getName() + "'", e);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class ElemTypeId
 	{
 		public final String namespaceUri;
-		
+
 		public final String localPart;
-		
+
 		public ElemTypeId(String namespaceUri, String localPart)
 		{
 			assert localPart != null;
 			this.namespaceUri = namespaceUri;
 			this.localPart = localPart;
 		}
-		
+
 		@Override
 		public int hashCode()
 		{
@@ -340,7 +340,7 @@ public class DomImplementationImpl
 			result = prime * result + ((namespaceUri == null) ? 0 : namespaceUri.hashCode());
 			return result;
 		}
-		
+
 		@Override
 		public boolean equals(Object obj)
 		{

@@ -26,55 +26,55 @@ public class WtPageSwitch
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtPageSwitch()
 	{
 	}
-	
+
 	protected WtPageSwitch(String name)
 	{
 		setName(name);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_PAGE_SWITCH;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String name;
-	
+
 	public final String getName()
 	{
 		return this.name;
 	}
-	
+
 	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
 		this.name = name;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return getSuperPropertyCount() + 1;
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -85,7 +85,7 @@ public class WtPageSwitch
 			{
 				return WtPageSwitch.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -93,12 +93,12 @@ public class WtPageSwitch
 				{
 					case 0:
 						return "name";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -106,12 +106,12 @@ public class WtPageSwitch
 				{
 					case 0:
 						return WtPageSwitch.this.getName();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -123,7 +123,7 @@ public class WtPageSwitch
 						WtPageSwitch.this.setName((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

@@ -17,214 +17,103 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <!-- Parent POM: Sweble Wikitext Components -->
+	<parent>
+		<groupId>org.sweble.wikitext</groupId>
+		<artifactId>sweble-wikitext</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
 
-  <parent>
-    <groupId>org.sweble.wikitext</groupId>
-    <artifactId>sweble-wikitext</artifactId>
-    <version>2.1.1-SNAPSHOT</version>
-  </parent>
+	<artifactId>swc-example-xpath</artifactId>
+	<packaging>jar</packaging>
+	<name>SWC - XPath Example</name>
+	<inceptionYear>2011</inceptionYear>
+	<description>
+		An example project that contains a simple application that is able to parse
+		a page written in Wikitext and perform an XPath query on that document.
+	</description>
 
-  <!-- This POM: Sweble Wikitext Components - XPath Example-->
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
 
-  <!-- Same groupId as parent -->
-  <artifactId>swc-example-xpath</artifactId>
-  <!-- Same version as parent -->
-  <packaging>jar</packaging>
+	<properties>
+		<F00.path>../../</F00.path>
+	</properties>
 
-  <name>SWC - XPath Example</name>
-  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-example-xpath</url>
-  <inceptionYear>2011</inceptionYear>
-  <description>
-    An example project that contains a simple application that is able to parse
-    a page written in Wikitext and perform an XPath query on that document.
-  </description>
+	<!-- =================================================================== -->
+	<!-- Dependencies - Dependencies - Dependencies - Dependencies - Depende -->
+	<!-- =================================================================== -->
 
-  <!-- ==[ Properties ]===================================================== -->
+	<dependencies>
 
-  <properties>
-    <sweble-wikitext.basedir>${project.parent.basedir}</sweble-wikitext.basedir>
-  </properties>
+		<!-- Apache Commons -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-jxpath</groupId>
+			<artifactId>commons-jxpath</artifactId>
+		</dependency>
 
-  <!-- ==[ Dependencies ]=================================================== -->
+		<!-- Utils -->
+		<dependency>
+			<groupId>de.fau.cs.osr.utils</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
 
-  <dependencies>
+		<!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
+		<dependency>
+			<groupId>org.sweble.wikitext</groupId>
+			<artifactId>swc-parser-lazy</artifactId>
+		</dependency>
 
-    <!-- Apache Commons IO -->
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-    </dependency>
+		<!-- Sweble Wikitext Components - Engine -->
+		<dependency>
+			<groupId>org.sweble.wikitext</groupId>
+			<artifactId>swc-engine</artifactId>
+		</dependency>
 
-    <!-- Sweble Wikitext Components -->
-    <dependency>
-      <groupId>org.sweble.wikitext</groupId>
-      <artifactId>swc-engine</artifactId>
-    </dependency>
+		<!-- Parser Toolkit - XPath -->
+		<dependency>
+			<groupId>de.fau.cs.osr.ptk</groupId>
+			<artifactId>ptk-xpath</artifactId>
+		</dependency>
 
-    <!-- JUnit -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
+		<!-- =============================================================== -->
+		<!-- Testing - Testing - Testing - Testing - Testing - Testing - Tes -->
+		<!-- =============================================================== -->
 
-  </dependencies>
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-  <!-- ==[ Dependency Management ]========================================== -->
+	</dependencies>
 
-  <dependencyManagement>
-  </dependencyManagement>
+	<build>
 
-  <build>
+		<plugins>
 
-    <!-- ==[ Resource Configuration ]======================================= -->
+			<!-- Check and format license headers -->
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<configuration>
+					<excludes combine.children="append">
+						<exclude>src/main/resources/render-template.html</exclude>
+						<exclude>src/test/resources/**</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
 
-    <!--
-      see parent: <resources>
-    -->
-
-    <!-- ==[ Plugin Configuration ]========================================= -->
-
-    <plugins>
-
-      <!-- Create a JAR package -->
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifest>
-              <mainClass>org.sweble.wikitext.example.App</mainClass>
-              <classpathPrefix>lib/</classpathPrefix>
-              <addClasspath>true</addClasspath>
-            </manifest>
-          </archive>
-        </configuration>
-      </plugin>
-
-      <!-- Check and format license headers -->
-      <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <configuration>
-          <!-- I assume the configuration is inherited from the parent -->
-          <excludes>
-            <!-- These excludes should be the same as in the parent project -->
-            <exclude>**/*.log</exclude>
-            <exclude>**/.gitignore</exclude>
-            <exclude>LICENSE</exclude>
-            <exclude>NOTICE</exclude>
-
-            <!-- Extra excludes for this project -->
-            <exclude>README</exclude>
-            <exclude>src/test/resources/**</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-
-    </plugins>
-
-    <!-- ==[ Plugin Management ]============================================ -->
-
-    <pluginManagement>
-    </pluginManagement>
-
-    <!-- ==[ Build Element Set ]============================================ -->
-
-    <!--
-      see parent: <sourceDirectory>
-                  <scriptSourceDirectory>
-                  <testSourceDirectory>
-                  <outputDirectory>
-                  <testOutputDirectory>
-                  <extensions>
-    -->
-
-  </build>
-
-  <!-- ==[ Reporting ]====================================================== -->
-
-  <!--
-    see parent: <reporting>
-  -->
-
-  <!-- ==[ More Project Information ]======================================= -->
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <!--
-    see parent: <organization>
-                <developers>
-                <contributors>
-  -->
-
-  <!-- ==[ Environment Settings ]=========================================== -->
-
-  <!--
-    see parent: <issueManagement>
-                <ciManagement>
-                <mailingLists>
-  -->
-
-  <scm>
-    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
-    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
-    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <!--
-    see parent: <distributionManagement>
-                <repositories>
-                <pluginRepositories>
-  -->
-
-  <!-- ==[ Profiles ]======================================================= -->
-
-  <profiles>
-
-    <profile>
-      <id>build-aggregates</id>
-      <build>
-        <plugins>
-
-          <!-- Generate Jar with dependencies -->
-          <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <inherited>false</inherited>
-            <configuration>
-              <descriptorRefs>
-                <descriptorRef>jar-with-dependencies</descriptorRef>
-              </descriptorRefs>
-              <archive>
-                <manifest>
-                  <mainClass>org.sweble.wikitext.example.App</mainClass>
-                </manifest>
-              </archive>
-            </configuration>
-            <executions>
-              <execution>
-                <id>make-assembly</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>single</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
-  </profiles>
-
+		</plugins>
+	</build>
 </project>

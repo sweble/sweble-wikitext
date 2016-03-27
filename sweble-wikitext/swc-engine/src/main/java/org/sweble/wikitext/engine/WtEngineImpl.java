@@ -26,7 +26,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.engine.config.EngineConfig;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngLogContainer;
@@ -59,26 +60,26 @@ public class WtEngineImpl
 		implements
 			WtEngine
 {
-	private static final Logger logger = Logger.getLogger(WtEngineImpl.class);
-	
+	private static final Logger logger = LoggerFactory.getLogger(WtEngineImpl.class);
+
 	// =========================================================================
-	
+
 	private WikiConfig wikiConfig;
-	
+
 	private ParserConfig parserConfig;
-	
+
 	private EngineConfig engineConfig;
-	
+
 	private ExpansionDebugHooks hooks;
-	
+
 	private boolean noRedirect = false;
-	
+
 	private boolean timingEnabled = false;
-	
+
 	private boolean catchAll = true;
-	
+
 	// =========================================================================
-	
+
 	public WtEngineImpl(WikiConfig wikiConfig)
 	{
 		super();
@@ -86,61 +87,61 @@ public class WtEngineImpl
 		this.parserConfig = wikiConfig.getParserConfig();
 		this.engineConfig = wikiConfig.getEngineConfig();
 	}
-	
+
 	// =========================================================================
-	
+
 	public void setDebugHooks(ExpansionDebugHooks hooks)
 	{
 		this.hooks = hooks;
 	}
-	
+
 	public void setNoRedirect(boolean noRedirect)
 	{
 		this.noRedirect = noRedirect;
 	}
-	
+
 	public void setTimingEnabled(boolean timingEnabled)
 	{
 		this.timingEnabled = timingEnabled;
 	}
-	
+
 	public void setCatchAll(boolean catchAll)
 	{
 		this.catchAll = catchAll;
 	}
-	
+
 	public WikiConfig getWikiConfig()
 	{
 		return wikiConfig;
 	}
-	
+
 	public ExpansionDebugHooks getDebugHooks()
 	{
 		return hooks;
 	}
-	
+
 	public boolean isNoRedirect()
 	{
 		return noRedirect;
 	}
-	
+
 	public boolean isTimingEnabled()
 	{
 		return timingEnabled;
 	}
-	
+
 	public boolean isCatchAll()
 	{
 		return catchAll;
 	}
-	
+
 	public EngineNodeFactory nf()
 	{
 		return wikiConfig.getNodeFactory();
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Takes wikitext and preprocesses the wikitext (without performing
 	 * expansion). The following steps are performed:
@@ -160,22 +161,22 @@ public class WtEngineImpl
 	{
 		if (pageId == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtPreproWikitextPage pprAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
-			
+
 			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
-			
+
 			pprAst = ppAst;
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
@@ -189,13 +190,13 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pprAst),
 				log,
 				pprAst.getWarnings());
 	}
-	
+
 	/**
 	 * Takes wikitext and expands the wikitext. The following steps are
 	 * performed:
@@ -214,7 +215,7 @@ public class WtEngineImpl
 	{
 		return expand(pageId, wikitext, false, callback);
 	}
-	
+
 	/**
 	 * Takes wikitext and expands the wikitext. The following steps are
 	 * performed:
@@ -234,25 +235,25 @@ public class WtEngineImpl
 	{
 		if (pageId == null || callback == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtPreproWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
-			
+
 			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
-			
+
 			WtPreproWikitextPage pprAst = ppAst;
 			pprAst = expand(callback, title, ppAst, null, forInclusion, log);
-			
+
 			pAst = pprAst;
 		}
 		catch (EngineException e)
@@ -264,14 +265,14 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pAst),
 				log,
 				pAst.getWarnings(),
 				pAst.getEntityMap());
 	}
-	
+
 	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
 	 * are performed:
@@ -292,26 +293,26 @@ public class WtEngineImpl
 	{
 		if (pageId == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtParsedWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
-			
+
 			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, false, log);
-			
+
 			WtPreproWikitextPage pprAst = ppAst;
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
-			
+
 			pAst = parse(title, pprAst, log);
 		}
 		catch (EngineException e)
@@ -323,13 +324,13 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pAst),
 				log,
 				pAst.getWarnings());
 	}
-	
+
 	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
 	 * are performed:
@@ -346,18 +347,18 @@ public class WtEngineImpl
 	{
 		if (pageId == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtParsedWikitextPage pAst;
 		try
 		{
 			pAst = parse(title, wikitext, log);
-			
+
 			pAst = postprocess(title, pAst, log);
 		}
 		catch (EngineException e)
@@ -369,13 +370,13 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pAst),
 				log,
 				pAst.getWarnings());
 	}
-	
+
 	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
 	 * are performed:
@@ -397,28 +398,28 @@ public class WtEngineImpl
 	{
 		if (pageId == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtParsedWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
-			
+
 			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, false, log);
-			
+
 			WtPreproWikitextPage pprAst = ppAst;
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
-			
+
 			pAst = parse(title, pprAst, log);
-			
+
 			pAst = postprocess(title, pAst, log);
 		}
 		catch (EngineException e)
@@ -430,13 +431,13 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pAst),
 				log,
 				pAst.getWarnings());
 	}
-	
+
 	/**
 	 * Takes an AST after preprocessing or after expansion and performs the
 	 * following steps:
@@ -453,18 +454,18 @@ public class WtEngineImpl
 	{
 		if (pageId == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtParsedWikitextPage pAst;
 		try
 		{
 			pAst = parse(title, pprAst, log);
-			
+
 			pAst = postprocess(title, pAst, log);
 		}
 		catch (EngineException e)
@@ -476,15 +477,15 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pAst),
 				log,
 				pAst.getWarnings());
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * This function is only called by preprocessor frames to pull in pages for
 	 * transclusion or redirection. It takes wikitext and parses the wikitext
@@ -509,25 +510,25 @@ public class WtEngineImpl
 	{
 		if (pageId == null)
 			throw new NullPointerException();
-		
+
 		if (wikitext == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtPreproWikitextPage pprAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, entityMap);
-			
+
 			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
-			
+
 			pprAst = expand(
 					callback,
 					title,
@@ -547,13 +548,13 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pprAst),
 				log,
 				pprAst.getWarnings());
 	}
-	
+
 	protected EngProcessedPage expand(
 			ExpansionCallback callback,
 			PageId pageId,
@@ -567,16 +568,16 @@ public class WtEngineImpl
 	{
 		if (pageId == null)
 			throw new NullPointerException();
-		
+
 		if (ppAst == null)
 			throw new NullPointerException();
-		
+
 		PageTitle title = pageId.getTitle();
-		
+
 		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
-		
+
 		WtPreproWikitextPage pprAst;
 		try
 		{
@@ -599,15 +600,15 @@ public class WtEngineImpl
 		{
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
-		
+
 		return nf().processedPage(
 				nf().page(pprAst),
 				log,
 				pprAst.getWarnings());
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Validates wikitext.
 	 */
@@ -620,33 +621,33 @@ public class WtEngineImpl
 	{
 		EngLogValidatorPass log = nf().logValidatorPass();
 		parentLog.add(log);
-		
+
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		
+
 		try
 		{
 			WikitextEncodingValidator validator = new WikitextEncodingValidator();
-			
+
 			if (entityMap == null)
 				entityMap = new WtEntityMapImpl();
-			
+
 			ValidatedWikitext validatedWikitext = validator.validate(
 					parserConfig,
 					entityMap,
 					title.getDenormalizedFullTitle(),
 					wikitext);
-			
+
 			return validatedWikitext;
 		}
 		catch (Exception e)
 		{
 			logger.error("Validation failed!", e);
-			
+
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.add(nf().logUnhandledError(e, w.toString()));
-			
+
 			throw new EngineException(title, "Validation failed!", e);
 		}
 		finally
@@ -655,7 +656,7 @@ public class WtEngineImpl
 			log.setTimeNeeded(stopWatch.getElapsedTime());
 		}
 	}
-	
+
 	/**
 	 * Preprocesses validated wikitext and substitutes entities.
 	 */
@@ -668,16 +669,16 @@ public class WtEngineImpl
 	{
 		EngLogPreprocessorPass log = nf().logPreprocessorPass();
 		parentLog.add(log);
-		
+
 		log.setForInclusion(forInclusion);
-		
+
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		
+
 		try
 		{
 			WikitextPreprocessor preprocessor = new WikitextPreprocessor(parserConfig);
-			
+
 			/**
 			 * Entities generated and inserted into the source by the encoding
 			 * validator are recognized by the preprocessor parser and replaced
@@ -694,23 +695,23 @@ public class WtEngineImpl
 							validatedWikitext,
 							title.getDenormalizedFullTitle(),
 							forInclusion);
-			
+
 			return preprocessedAst;
 		}
 		catch (xtc.parser.ParseException e)
 		{
 			log.add(nf().logParserError(e.getMessage()));
-			
+
 			throw new EngineException(title, "Preprocessing failed!", e);
 		}
 		catch (Exception e)
 		{
 			logger.error("Preprocessing failed!", e);
-			
+
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.add(nf().logUnhandledError(e, w.toString()));
-			
+
 			throw new EngineException(title, "Preprocessing failed!", e);
 		}
 		finally
@@ -719,7 +720,7 @@ public class WtEngineImpl
 			log.setTimeNeeded(stopWatch.getElapsedTime());
 		}
 	}
-	
+
 	/**
 	 * Starts the expansion process of a preprocessed page with the preprocessed
 	 * page as root of the expansion process.
@@ -743,7 +744,7 @@ public class WtEngineImpl
 				null,
 				parentLog);
 	}
-	
+
 	/**
 	 * Starts the expansion process of a preprocessed page.
 	 */
@@ -760,19 +761,19 @@ public class WtEngineImpl
 	{
 		EngLogExpansionPass log = nf().logExpansionPass();
 		parentLog.add(log);
-		
+
 		if (arguments == null)
 			arguments = new HashMap<String, WtNodeList>();
-		
+
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		
+
 		try
 		{
 			// Copy in case ppAst stores an immutable (empty) warning list.
 			List<Warning> warnings =
 					new LinkedList<Warning>(ppAst.getWarnings());
-			
+
 			ExpansionFrame frame;
 			if (rootFrame != null)
 			{
@@ -806,23 +807,23 @@ public class WtEngineImpl
 						timingEnabled,
 						catchAll);
 			}
-			
+
 			WtPreproWikitextPage expanded =
 					(WtPreproWikitextPage) frame.expand(ppAst);
-			
+
 			if (!warnings.isEmpty())
 				ppAst.setWarnings(warnings);
-			
+
 			return expanded;
 		}
 		catch (Exception e)
 		{
 			logger.error("Resolution failed!", e);
-			
+
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.add(nf().logUnhandledError(e, w.toString()));
-			
+
 			throw new EngineException(title, "Resolution failed!", e);
 		}
 		finally
@@ -831,7 +832,7 @@ public class WtEngineImpl
 			log.setTimeNeeded(stopWatch.getElapsedTime());
 		}
 	}
-	
+
 	/**
 	 * Parses a preprocessed page.
 	 */
@@ -843,35 +844,35 @@ public class WtEngineImpl
 	{
 		EngLogParserPass log = nf().logParserPass();
 		parentLog.add(log);
-		
+
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		
+
 		try
 		{
 			WikitextParser parser = new WikitextParser(parserConfig);
-			
+
 			WtParsedWikitextPage parsedAst =
 					(WtParsedWikitextPage) parser.parseArticle(
 							wikitext,
 							title.getTitle());
-			
+
 			return parsedAst;
 		}
 		catch (xtc.parser.ParseException e)
 		{
 			log.add(nf().logParserError(e.getMessage()));
-			
+
 			throw new EngineException(title, "Parsing failed!", e);
 		}
 		catch (Exception e)
 		{
 			logger.error("Parsing failed!", e);
-			
+
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.add(nf().logUnhandledError(e, w.toString()));
-			
+
 			throw new EngineException(title, "Parsing failed!", e);
 		}
 		finally
@@ -880,7 +881,7 @@ public class WtEngineImpl
 			log.setTimeNeeded(stopWatch.getElapsedTime());
 		}
 	}
-	
+
 	/**
 	 * Parses a preprocessed page (wikitext+entities) and substitutes entities
 	 * afterwards.
@@ -893,24 +894,24 @@ public class WtEngineImpl
 	{
 		EngLogParserPass log = nf().logParserPass();
 		parentLog.add(log);
-		
+
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		
+
 		try
 		{
 			PreprocessedWikitext preprocessedWikitext =
 					PreprocessorToParserTransformer.transform(
 							ppAst,
 							engineConfig.isTrimTransparentBeforeParsing());
-			
+
 			WikitextParser parser = new WikitextParser(parserConfig);
-			
+
 			WtParsedWikitextPage parsedAst =
 					(WtParsedWikitextPage) parser.parseArticle(
 							preprocessedWikitext,
 							title.getTitle());
-			
+
 			// if there were no warnings we would try to add to the EMPTY_LIST
 			if (parsedAst.getWarnings() == Collections.EMPTY_LIST)
 			{
@@ -920,23 +921,23 @@ public class WtEngineImpl
 			{
 				parsedAst.getWarnings().addAll(ppAst.getWarnings());
 			}
-			
+
 			return parsedAst;
 		}
 		catch (xtc.parser.ParseException e)
 		{
 			log.add(nf().logParserError(e.getMessage()));
-			
+
 			throw new EngineException(title, "Parsing failed!", e);
 		}
 		catch (Exception e)
 		{
 			logger.error("Parsing failed!", e);
-			
+
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.add(nf().logUnhandledError(e, w.toString()));
-			
+
 			throw new EngineException(title, "Parsing failed!", e);
 		}
 		finally
@@ -945,7 +946,7 @@ public class WtEngineImpl
 			log.setTimeNeeded(stopWatch.getElapsedTime());
 		}
 	}
-	
+
 	private WtParsedWikitextPage postprocess(
 			PageTitle title,
 			WtParsedWikitextPage pAst,
@@ -954,26 +955,26 @@ public class WtEngineImpl
 	{
 		EngLogPostprocessorPass log = nf().logPostprocessorPass();
 		parentLog.add(log);
-		
+
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		
+
 		try
 		{
 			WikitextPostprocessor lpp = new WikitextPostprocessor(parserConfig);
-			
+
 			pAst = (WtParsedWikitextPage) lpp.postprocess(pAst, title.getTitle());
-			
+
 			return pAst;
 		}
 		catch (Exception e)
 		{
 			logger.error("Postprocessing failed!", e);
-			
+
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.add(nf().logUnhandledError(e, w.toString()));
-			
+
 			throw new EngineException(title, "Postprocessing failed!", e);
 		}
 		finally

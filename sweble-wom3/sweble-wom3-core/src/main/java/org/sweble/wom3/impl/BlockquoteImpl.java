@@ -30,46 +30,46 @@ public class BlockquoteImpl
 			Wom3Blockquote
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public BlockquoteImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "blockquote";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public URL getCite()
 	{
 		return getUrlAttr("cite");
 	}
-	
+
 	@Override
 	public URL setCite(URL source)
 	{
 		return setUrlAttr(CommonAttributeDescriptors.ATTR_DESC_CITE, "cite", source);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("cite", CommonAttributeDescriptors.ATTR_DESC_CITE);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

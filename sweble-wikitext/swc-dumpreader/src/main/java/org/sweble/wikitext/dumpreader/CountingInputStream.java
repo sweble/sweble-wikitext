@@ -25,26 +25,26 @@ public final class CountingInputStream
 			InputStream
 {
 	private InputStream in;
-	
+
 	private long count;
-	
+
 	// =========================================================================
-	
+
 	public CountingInputStream(InputStream inputStream)
 	{
 		this.in = inputStream;
 		this.count = 0;
 	}
-	
+
 	// =========================================================================
-	
+
 	public long getCount()
 	{
 		return count;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int read() throws IOException
 	{
@@ -53,7 +53,7 @@ public final class CountingInputStream
 			++count;
 		return read;
 	}
-	
+
 	@Override
 	public int read(byte[] b) throws IOException
 	{
@@ -62,7 +62,7 @@ public final class CountingInputStream
 			count += read;
 		return read;
 	}
-	
+
 	@Override
 	public int read(byte[] b, int off, int len) throws IOException
 	{
@@ -71,7 +71,7 @@ public final class CountingInputStream
 			count += read;
 		return read;
 	}
-	
+
 	@Override
 	public long skip(long n) throws IOException
 	{
@@ -80,31 +80,31 @@ public final class CountingInputStream
 			++count;
 		return skipped;
 	}
-	
+
 	@Override
 	public int available() throws IOException
 	{
 		return in.available();
 	}
-	
+
 	@Override
 	public void close() throws IOException
 	{
 		in.close();
 	}
-	
+
 	@Override
 	public void mark(int readlimit)
 	{
 		in.mark(readlimit);
 	}
-	
+
 	@Override
 	public void reset() throws IOException
 	{
 		in.reset();
 	}
-	
+
 	@Override
 	public boolean markSupported()
 	{

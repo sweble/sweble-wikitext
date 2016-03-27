@@ -37,22 +37,22 @@ public class I18nAliasImpl
 			Comparable<I18nAlias>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String id;
-	
+
 	private Boolean caseSensitive;
-	
+
 	private Set<String> aliases;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for de-serialization, not part of public API
 	 */
 	protected I18nAliasImpl()
 	{
 	}
-	
+
 	public I18nAliasImpl(
 			String id,
 			boolean caseSensitive,
@@ -62,16 +62,16 @@ public class I18nAliasImpl
 		setCaseSensitive(caseSensitive);
 		setAliases(aliases);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	@XmlAttribute
 	public String getId()
 	{
 		return id;
 	}
-	
+
 	/**
 	 * Only for de-serialization, not part of public API
 	 */
@@ -83,14 +83,14 @@ public class I18nAliasImpl
 			throw new UnsupportedOperationException();
 		this.id = id;
 	}
-	
+
 	@Override
 	@XmlAttribute
 	public boolean isCaseSensitive()
 	{
 		return caseSensitive;
 	}
-	
+
 	/**
 	 * Only for de-serialization, not part of public API
 	 */
@@ -100,7 +100,7 @@ public class I18nAliasImpl
 			throw new UnsupportedOperationException();
 		this.caseSensitive = caseSensitive;
 	}
-	
+
 	@Override
 	@XmlElement(name = "alias")
 	public Set<String> getAliases()
@@ -111,7 +111,7 @@ public class I18nAliasImpl
 		// method's return value to add aliases to the set.
 		return aliases;
 	}
-	
+
 	/**
 	 * Only for de-serialization, not part of public API
 	 */
@@ -132,15 +132,15 @@ public class I18nAliasImpl
 				});
 		this.aliases.addAll(aliases);
 	}
-	
+
 	@Override
 	public boolean hasAlias(String alias)
 	{
 		return aliases.contains(alias);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -151,7 +151,7 @@ public class I18nAliasImpl
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -185,17 +185,17 @@ public class I18nAliasImpl
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return "I18nAliasImpl [name=" + id + ", caseSensitive=" + caseSensitive + ", aliases=" + aliases + "]";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int compareTo(I18nAlias o)
 	{

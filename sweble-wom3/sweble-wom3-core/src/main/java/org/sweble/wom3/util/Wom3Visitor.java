@@ -30,20 +30,20 @@ public class Wom3Visitor
 			VisitorBase<Wom3Node>
 {
 	public static final Object REMOVE = new Object();
-	
+
 	// =========================================================================
-	
+
 	public Wom3Visitor()
 	{
 	}
-	
+
 	public Wom3Visitor(VisitorLogic<Wom3Node> logic)
 	{
 		super(logic);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Dispatches to the appropriate visit() method and returns the result of
 	 * the visitation. If the given node is <code>null</code> this method
@@ -55,9 +55,9 @@ public class Wom3Visitor
 			throw new NullPointerException();
 		return resolveAndVisit(node);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void iterate(Wom3Node node)
 	{
 		if (node == null)
@@ -69,7 +69,7 @@ public class Wom3Visitor
 			n = n.getNextSibling();
 		}
 	}
-	
+
 	/**
 	 * Continues iteration after the current node was deleted. The caller has to
 	 * remember the next node before deletion and pass it to this method.
@@ -82,12 +82,12 @@ public class Wom3Visitor
 			next = next.getNextSibling();
 		}
 	}
-	
+
 	protected List<Object> map(Wom3Node node)
 	{
 		if (node == null)
 			throw new NullPointerException();
-		
+
 		List<Object> result = new ArrayList<Object>();
 		Wom3Node n = node.getFirstChild();
 		while (n != null)
@@ -97,7 +97,7 @@ public class Wom3Visitor
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Iterates over the children of an WOM node and replaces each child node
 	 * with the result of the visitation of the respective child.
@@ -106,7 +106,7 @@ public class Wom3Visitor
 	{
 		if (node == null)
 			throw new NullPointerException();
-		
+
 		Wom3Node n = node.getFirstChild();
 		while (n != null)
 		{

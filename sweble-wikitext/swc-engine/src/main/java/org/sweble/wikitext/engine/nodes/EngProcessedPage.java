@@ -32,9 +32,9 @@ public class EngProcessedPage
 			EngNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -42,7 +42,7 @@ public class EngProcessedPage
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected EngProcessedPage(
 			EngPage page,
 			EngLogProcessingPass log,
@@ -51,7 +51,7 @@ public class EngProcessedPage
 		super(page, log);
 		setWarnings(warnings);
 	}
-	
+
 	protected EngProcessedPage(
 			EngPage page,
 			EngLogProcessingPass log,
@@ -62,64 +62,64 @@ public class EngProcessedPage
 		setWarnings(warnings);
 		setEntityMap(entityMap);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_PROCESSED_PAGE;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private EngLogProcessingPass log;
-	
+
 	public final EngLogProcessingPass getLog()
 	{
 		return this.log;
 	}
-	
+
 	public final EngLogProcessingPass setLog(EngLogProcessingPass log)
 	{
 		EngLogProcessingPass old = this.log;
 		this.log = log;
 		return old;
 	}
-	
+
 	private List<Warning> warnings;
-	
+
 	public final List<Warning> getWarnings()
 	{
 		return this.warnings;
 	}
-	
+
 	public final List<Warning> setWarnings(List<Warning> warnings)
 	{
 		List<Warning> old = this.warnings;
 		this.warnings = warnings;
 		return old;
 	}
-	
+
 	private WtEntityMap entityMap;
-	
+
 	public final WtEntityMap getEntityMap()
 	{
 		return this.entityMap;
 	}
-	
+
 	public final WtEntityMap setEntityMap(WtEntityMap entityMap)
 	{
 		WtEntityMap old = this.entityMap;
 		this.entityMap = entityMap;
 		return old;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 3;
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -130,7 +130,7 @@ public class EngProcessedPage
 			{
 				return 3;
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -142,12 +142,12 @@ public class EngProcessedPage
 						return "warnings";
 					case 2:
 						return "entityMap";
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -159,12 +159,12 @@ public class EngProcessedPage
 						return EngProcessedPage.this.getWarnings();
 					case 2:
 						return EngProcessedPage.this.getEntityMap();
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -180,29 +180,29 @@ public class EngProcessedPage
 					}
 					case 2:
 						return EngProcessedPage.this.setEntityMap((WtEntityMap) value);
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setPage(EngPage page)
 	{
 		set(0, page);
 	}
-	
+
 	public final EngPage getPage()
 	{
 		return (EngPage) get(0);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "page" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

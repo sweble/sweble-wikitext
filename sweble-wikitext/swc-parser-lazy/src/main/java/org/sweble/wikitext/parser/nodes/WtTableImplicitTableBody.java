@@ -24,9 +24,9 @@ public class WtTableImplicitTableBody
 			WtInnerNode1
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -34,33 +34,33 @@ public class WtTableImplicitTableBody
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtTableImplicitTableBody(WtBody body)
 	{
 		super(body);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_TABLE_IMPLICIT_TBODY;
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setBody(WtBody body)
 	{
 		set(0, body);
 	}
-	
+
 	public final WtBody getBody()
 	{
 		return (WtBody) get(0);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "body" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

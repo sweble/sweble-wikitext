@@ -36,32 +36,32 @@ public interface WtContentNode
 				WtContentNode
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
-		
+
 		protected WtAbsentContentNode()
 		{
 		}
-		
+
 		@Override
 		public abstract int getNodeType();
-		
+
 		@Override
 		public abstract String getNodeName();
-		
+
 		@Override
 		public void exchange(AstNodeList<WtNode> other)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
-		
+
 		@Override
 		public boolean indicatesAbsence()
 		{
 			return true;
 		}
 	}
-	
+
 	// =====================================================================
-	
+
 	public abstract class WtEmptyContentNode
 			extends
 				WtEmptyImmutableNode
@@ -69,32 +69,32 @@ public interface WtContentNode
 				WtContentNode
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
-		
+
 		protected WtEmptyContentNode()
 		{
 		}
-		
+
 		@Override
 		public abstract int getNodeType();
-		
+
 		@Override
 		public abstract String getNodeName();
-		
+
 		@Override
 		public void exchange(AstNodeList<WtNode> other)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
-		
+
 		@Override
 		public boolean indicatesAbsence()
 		{
 			return false;
 		}
 	}
-	
+
 	// =====================================================================
-	
+
 	public abstract class WtContentNodeImpl
 			extends
 				WtNodeListImpl
@@ -102,22 +102,22 @@ public interface WtContentNode
 				WtContentNode
 	{
 		private static final long serialVersionUID = 3407356901471138122L;
-		
+
 		private WtRtData rtd = null;
-		
+
 		// =====================================================================
-		
+
 		protected WtContentNodeImpl()
 		{
 		}
-		
+
 		protected WtContentNodeImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		// =====================================================================
-		
+
 		@Override
 		public void setRtd(WtRtData rtd)
 		{
@@ -125,51 +125,51 @@ public interface WtContentNode
 				throw new IllegalArgumentException();
 			this.rtd = rtd;
 		}
-		
+
 		@Override
 		public void setRtd(Object... glue)
 		{
 			rtd = new WtRtData(2, glue);
 		}
-		
+
 		@Override
 		public void setRtd(String... glue)
 		{
 			rtd = new WtRtData(2, glue);
 		}
-		
+
 		@Override
 		public WtRtData getRtd()
 		{
 			return rtd;
 		}
-		
+
 		@Override
 		public void clearRtd()
 		{
 			rtd = null;
 		}
-		
+
 		@Override
 		public void suppressRtd()
 		{
 			rtd = WtRtData.SUPPRESS;
 		}
-		
+
 		// =====================================================================
-		
+
 		@Override
 		public int getPropertyCount()
 		{
 			return 1;
 		}
-		
+
 		@Override
 		public AstNodePropertyIterator propertyIterator()
 		{
 			return new WtContentNodePropertyIterator();
 		}
-		
+
 		public class WtContentNodePropertyIterator
 				extends
 					AstNodePropertyIterator
@@ -179,7 +179,7 @@ public interface WtContentNode
 			{
 				return WtContentNodeImpl.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -187,12 +187,12 @@ public interface WtContentNode
 				{
 					case 0:
 						return "rtd";
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -200,12 +200,12 @@ public interface WtContentNode
 				{
 					case 0:
 						return WtContentNodeImpl.this.getRtd();
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -217,28 +217,28 @@ public interface WtContentNode
 						WtContentNodeImpl.this.setRtd((WtRtData) value);
 						return old;
 					}
-					
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
 		}
-		
+
 		// =====================================================================
-		
+
 		@Override
 		public void toString(Appendable out) throws IOException
 		{
 			out.append(getNodeName());
 			out.append('[');
-			
+
 			for (Iterator<WtNode> i = this.iterator(); i.hasNext();)
 			{
 				i.next().toString(out);
 				if (i.hasNext())
 					out.append(", ");
 			}
-			
+
 			out.append(']');
 		}
 	}

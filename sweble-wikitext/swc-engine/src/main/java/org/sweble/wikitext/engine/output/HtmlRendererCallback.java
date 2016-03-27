@@ -21,13 +21,13 @@ import org.sweble.wikitext.parser.nodes.WtUrl;
 
 public interface HtmlRendererCallback
 {
-	public MediaInfo getMediaInfo(String title, int width, int height) throws Exception;
-	
+	public MediaInfo getMediaInfo(String title, int width, int height);
+
 	public boolean resourceExists(PageTitle target);
-	
+
 	public String makeUrl(PageTitle linkTarget);
-	
+
 	public String makeUrl(WtUrl target);
-	
+
 	public String makeUrlMissingTarget(String path);
 }

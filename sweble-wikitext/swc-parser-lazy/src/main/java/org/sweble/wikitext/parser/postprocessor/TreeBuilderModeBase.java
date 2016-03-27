@@ -31,9 +31,9 @@ public class TreeBuilderModeBase
 			AstVisitor<WtNode>
 {
 	protected final TreeBuilder tb;
-	
+
 	// =====================================================================
-	
+
 	public TreeBuilderModeBase(
 			VisitorLogic<WtNode> logic,
 			TreeBuilder treeBuilder)
@@ -41,9 +41,9 @@ public class TreeBuilderModeBase
 		super(logic);
 		this.tb = treeBuilder;
 	}
-	
+
 	// =====================================================================
-	
+
 	@Override
 	public Object dispatch(WtNode node)
 	{
@@ -55,65 +55,65 @@ public class TreeBuilderModeBase
 						"%s <%s>",
 						nodeName,
 						((WtNamedXmlElement) node).getName());
-			
+
 			tb.dbgIn("~~> %s (%08X)", nodeName, System.identityHashCode(node));
 		}
-		
+
 		Object result = super.dispatch(node);
-		
+
 		if (TreeBuilder.DEBUG)
 			tb.dbgOut("<~~ %s", node.getNodeName());
-		
+
 		return result;
 	}
-	
+
 	// =====================================================================
-	
+
 	protected ElementFactory getFactory()
 	{
 		return tb.getFactory();
 	}
-	
+
 	protected NonStandardElementBehavior getNonStandardElementBehavior(
 			String elementName)
 	{
 		return tb.getConfig().getNonStandardElementBehavior(elementName);
 	}
-	
+
 	protected static boolean isNodeOneOf(WtNode node, ElementType... types)
 	{
 		return TreeBuilder.isNodeTypeOneOf(node, types);
 	}
-	
+
 	protected static ElementType getNodeType(WtNode node)
 	{
 		return TreeBuilder.getNodeType(node);
 	}
-	
+
 	protected static boolean isTypeOneOf(
 			ElementType nodeType,
 			ElementType... types)
 	{
 		return TreeBuilder.isTypeOneOf(nodeType, types);
 	}
-	
+
 	protected static void addRtDataOfEndTag(WtNode finish, WtNode endTag)
 	{
 		WtRtData etRtd = endTag.getRtd();
 		if (etRtd == null)
 			return;
-		
+
 		if (WtNodeFlags.isRepairNode(endTag))
 			// Synthetic tags should not show up in RTD information.
 			return;
-		
+
 		if (endTag.getNodeType() == WtNode.NT_IM_END_TAG)
 		{
 			// Special treatment for intermediate tags
 			addRtDataOfImEndTag(finish, etRtd);
 			return;
 		}
-		
+
 		WtRtData feRtd = finish.getRtd();
 		if (feRtd == null)
 		{
@@ -121,12 +121,12 @@ public class TreeBuilderModeBase
 			finish.setRtd((Object) null);
 			feRtd = finish.getRtd();
 		}
-		
+
 		int size = feRtd.size();
 		if (size >= 2)
 			feRtd.setField(size - 1, etRtd.getField(0));
 	}
-	
+
 	protected static void addRtDataOfImEndTag(WtNode finish, WtRtData etRtd)
 	{
 		switch (finish.getNodeType())
@@ -145,7 +145,7 @@ public class TreeBuilderModeBase
 				}
 				break;
 			}
-			
+
 			default:
 				// Finish is assumed to be WtBold or WtItalics
 				throw new InternalError();

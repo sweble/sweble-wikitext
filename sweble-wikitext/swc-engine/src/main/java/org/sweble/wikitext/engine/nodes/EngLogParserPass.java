@@ -22,9 +22,9 @@ public class EngLogParserPass
 			EngLogPass
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogParserPass()
 	{
 	}

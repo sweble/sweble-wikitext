@@ -26,23 +26,23 @@ public class ChildrenSubset<T extends Wom3Node>
 			ArrayList<T>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	public ChildrenSubset()
 	{
 	}
-	
+
 	public ChildrenSubset(int initialCapacity)
 	{
 		super(initialCapacity);
 	}
-	
+
 	public Wom3Node getFirstOrNull()
 	{
 		if (isEmpty())
 			return null;
 		return get(0);
 	}
-	
+
 	public void insertAfter(
 			Backbone prev,
 			Class<T> type,
@@ -58,7 +58,7 @@ public class ChildrenSubset<T extends Wom3Node>
 			Backbone p = prev;
 			while ((p != null) && !type.isInstance(p))
 				p = p.getPreviousSibling();
-			
+
 			if (p == null)
 			{
 				add(0, newChild);

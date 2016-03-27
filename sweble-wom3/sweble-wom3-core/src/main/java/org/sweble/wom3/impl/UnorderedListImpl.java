@@ -30,49 +30,49 @@ public class UnorderedListImpl
 			Wom3UnorderedList
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public UnorderedListImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "ul";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3BulletStyle getItemType()
 	{
 		return (Wom3BulletStyle) getAttributeNativeData("type");
 	}
-	
+
 	@Override
 	public Wom3BulletStyle setItemType(Wom3BulletStyle type)
 	{
 		return setAttributeDirect(ATTR_DESC_TYPE, "type", type);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_TYPE = new AttrDescType();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("compact", CommonAttributeDescriptors.ATTR_DESC_COMPACT);
 		NAME_MAP.put("type", ATTR_DESC_TYPE);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -81,7 +81,7 @@ public class UnorderedListImpl
 	{
 		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescType
 			extends
 				AttributeDescriptor
@@ -95,7 +95,7 @@ public class UnorderedListImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

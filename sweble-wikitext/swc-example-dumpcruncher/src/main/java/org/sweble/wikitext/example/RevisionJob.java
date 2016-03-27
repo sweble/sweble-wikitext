@@ -36,39 +36,39 @@ public class RevisionJob
 			Job
 {
 	// -- page info --
-	
+
 	private final BigInteger pageId;
-	
+
 	private final BigInteger pageNamespace;
-	
+
 	private final String pageTitle;
-	
+
 	private final String pageRedirect;
-	
+
 	// -- revision info --
-	
+
 	private final BigInteger id;
-	
+
 	private final boolean minor;
-	
+
 	private final Calendar timestamp;
-	
+
 	// -- text info --
-	
+
 	private final String textText;
-	
+
 	private final boolean isTextDeleted;
-	
+
 	// =========================================================================
-	
+
 	public RevisionJob(PageType page, RevisionType rev)
 	{
 		page.getDiscussionthreadinginfo();
-		
+
 		this.pageId = page.getId();
-		
+
 		this.pageNamespace = page.getNs();
-		
+
 		if (page.getRedirect() != null)
 		{
 			this.pageRedirect = page.getRedirect().getTitle();
@@ -77,19 +77,19 @@ public class RevisionJob
 		{
 			this.pageRedirect = null;
 		}
-		
+
 		page.getRestrictions();
 		rev.getSha1();
-		
+
 		this.pageTitle = page.getTitle();
-		
+
 		if (rev.getComment() != null)
 		{
 			CommentType comment = rev.getComment();
 			comment.getDeleted();
 			comment.getValue();
 		}
-		
+
 		if (rev.getContributor() != null)
 		{
 			ContributorType contributor = rev.getContributor();
@@ -98,13 +98,13 @@ public class RevisionJob
 			contributor.getIp();
 			contributor.getUsername();
 		}
-		
+
 		this.id = rev.getId();
-		
+
 		this.minor = (rev.getMinor() != null);
-		
+
 		rev.getSha1();
-		
+
 		if (rev.getText() != null)
 		{
 			TextType text = rev.getText();
@@ -118,11 +118,11 @@ public class RevisionJob
 			this.isTextDeleted = false;
 			this.textText = null;
 		}
-		
+
 		if (rev.getTimestamp() != null)
 		{
 			XMLGregorianCalendar ts = rev.getTimestamp();
-			
+
 			this.timestamp = new GregorianCalendar();
 			this.timestamp.setTimeZone(ts.getTimeZone(0));
 			this.timestamp.set(
@@ -140,56 +140,56 @@ public class RevisionJob
 			this.timestamp.setTimeInMillis(0);
 		}
 	}
-	
+
 	// =========================================================================
 	// page
-	
+
 	public BigInteger getPageId()
 	{
 		return pageId;
 	}
-	
+
 	public BigInteger getPageNamespace()
 	{
 		return pageNamespace;
 	}
-	
+
 	public String getPageTitle()
 	{
 		return pageTitle;
 	}
-	
+
 	public String getPageRedirect()
 	{
 		return pageRedirect;
 	}
-	
+
 	// =========================================================================
 	// revision
-	
+
 	public BigInteger getId()
 	{
 		return id;
 	}
-	
+
 	public boolean isMinor()
 	{
 		return minor;
 	}
-	
+
 	public Calendar getTimestamp()
 	{
 		return timestamp;
 	}
-	
+
 	// =========================================================================
 	// text
-	
+
 	public String getTextText()
 	{
 		return textText;
 	}
-	
+
 	public boolean isTextDeleted()
 	{
 		return isTextDeleted;

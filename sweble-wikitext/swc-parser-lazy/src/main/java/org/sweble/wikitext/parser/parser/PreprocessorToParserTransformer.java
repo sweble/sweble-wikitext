@@ -36,7 +36,7 @@ public class PreprocessorToParserTransformer
 	{
 		return transform(preprocessedArticle, false);
 	}
-	
+
 	public static PreprocessedWikitext transform(
 			WtPreproWikitextPage preprocessedArticle,
 			boolean trim)
@@ -44,85 +44,85 @@ public class PreprocessorToParserTransformer
 		TransformVisitor tv = new TransformVisitor(trim);
 		return (PreprocessedWikitext) tv.go(preprocessedArticle);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final class TransformVisitor
 			extends
 				AstVisitor<WtNode>
 	{
 		private StringBuilder builder;
-		
+
 		private WtEntityMap entityMap;
-		
+
 		private final boolean trim;
-		
+
 		// =====================================================================
-		
+
 		public TransformVisitor(boolean trim)
 		{
 			this.trim = trim;
 		}
-		
+
 		// =====================================================================
-		
+
 		@Override
 		protected WtNode before(WtNode node)
 		{
 			builder = new StringBuilder();
 			return super.before(node);
 		}
-		
+
 		@Override
 		protected PreprocessedWikitext after(WtNode node, Object result)
 		{
 			return new PreprocessedWikitext(builder.toString(), entityMap);
 		}
-		
+
 		// =====================================================================
-		
+
 		public void visit(WtPreproWikitextPage n)
 		{
 			entityMap = n.getEntityMap();
 			iterate(n);
 		}
-		
+
 		public void visit(WtNodeList n)
 		{
 			iterate(n);
 		}
-		
+
 		public void visit(WtOnlyInclude n)
 		{
 			iterate(n);
 		}
-		
+
 		public void visit(WtText n)
 		{
 			builder.append(n.getContent());
 		}
-		
+
 		// =====================================================================
-		
+
 		public void visit(WtNode n)
 		{
 			makeParserEntity(n);
 		}
-		
+
 		public void visit(WtIgnored n)
 		{
 			if (!trim)
 				makeParserEntity(n);
 		}
-		
+
 		public void visit(WtXmlComment n)
 		{
 			if (!trim)
 				makeParserEntity(n);
 		}
-		
+
 		// =====================================================================
-		
+
 		private void makeParserEntity(WtNode n)
 		{
 			int id = entityMap.registerEntity(n);

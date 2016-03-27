@@ -24,12 +24,12 @@ public class InvalidNameWarning
 			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final String message =
 			"The wikitext cannot be converted into a plain name";
-	
+
 	// =========================================================================
-	
+
 	public InvalidNameWarning(
 			WarningSeverity severity,
 			String origin,
@@ -37,7 +37,7 @@ public class InvalidNameWarning
 	{
 		super(name, severity, origin, message);
 	}
-	
+
 	public InvalidNameWarning(
 			WarningSeverity severity,
 			Class<?> origin,

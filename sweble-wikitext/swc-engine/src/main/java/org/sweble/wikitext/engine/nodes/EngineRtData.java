@@ -37,7 +37,7 @@ public final class EngineRtData
 		}
 		return n;
 	}
-	
+
 	public static EngSoftErrorNode set(EngSoftErrorNode n)
 	{
 		genAttrRtd(n.getXmlAttributes());
@@ -51,17 +51,17 @@ public final class EngineRtData
 		}
 		return n;
 	}
-	
+
 	public static EngProcessedPage set(EngProcessedPage n)
 	{
 		return n;
 	}
-	
+
 	public static EngPage set(EngPage n)
 	{
 		return n;
 	}
-	
+
 	public static WtTagExtension set(WtTagExtension n)
 	{
 		genAttrRtd(n.getXmlAttributes());
@@ -80,9 +80,9 @@ public final class EngineRtData
 		}
 		return n;
 	}
-	
+
 	// =========================================================================
-	
+
 	private static void genAttrRtd(WtXmlAttributes attrs)
 	{
 		for (WtNode attr : attrs)

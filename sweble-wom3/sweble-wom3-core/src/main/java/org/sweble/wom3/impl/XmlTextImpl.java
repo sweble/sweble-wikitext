@@ -22,25 +22,25 @@ public class XmlTextImpl
 			XmlTextBase
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String data;
-	
+
 	// =========================================================================
-	
+
 	public XmlTextImpl(DocumentImpl owner, String data)
 	{
 		super(owner);
 		setData(data);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getData()
 	{
 		return data;
 	}
-	
+
 	@Override
 	public void setData(String data)
 	{

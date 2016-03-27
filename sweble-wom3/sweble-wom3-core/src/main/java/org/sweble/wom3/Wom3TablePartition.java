@@ -43,14 +43,14 @@ public interface Wom3TablePartition
 	 * @return The number of columns.
 	 */
 	public int getNumCols();
-	
+
 	/**
 	 * Get the number of rows.
 	 * 
 	 * @return The number of rows.
 	 */
 	public int getNumRows();
-	
+
 	/**
 	 * Get the i'th row.
 	 * 
@@ -62,7 +62,7 @@ public interface Wom3TablePartition
 	 *             <code>row >= getNumRows()</code>.
 	 */
 	public Wom3TableRow getRow(int row) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Get the i'th column.
 	 * 
@@ -74,7 +74,7 @@ public interface Wom3TablePartition
 	 *             <code>col >= getNumCols()</code>.
 	 */
 	public Wom3TableColumn getCol(int col) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Retrieve the specified cell.
 	 * 
@@ -90,9 +90,9 @@ public interface Wom3TablePartition
 	 *             If the specified cell does not exist.
 	 */
 	public Wom3TableCellBase getCell(int row, int col) throws IndexOutOfBoundsException;
-	
+
 	// ==[ The XHTML Attributes ]===============================================
-	
+
 	/**
 	 * Get the horizontal alignment of the row's content.
 	 * 
@@ -102,7 +102,7 @@ public interface Wom3TablePartition
 	 *         not specified.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the horizontal alignment of the row's content.
 	 * 
@@ -114,7 +114,7 @@ public interface Wom3TablePartition
 	 * @return The old horizontal alignment.
 	 */
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align);
-	
+
 	/**
 	 * Get the vertical alignment of the row's content.
 	 * 
@@ -124,7 +124,7 @@ public interface Wom3TablePartition
 	 *         not specified.
 	 */
 	public Wom3TableVAlign getVAlign();
-	
+
 	/**
 	 * Set the vertical alignment of the row's content.
 	 * 

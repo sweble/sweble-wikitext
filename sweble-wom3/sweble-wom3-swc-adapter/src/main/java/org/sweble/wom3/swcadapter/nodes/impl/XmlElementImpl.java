@@ -42,52 +42,52 @@ public class XmlElementImpl
 			SwcXmlElement
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc(MWW_NS_URI, "attr", ChildDescriptor.MULTIPLE),
 			childDesc(MWW_NS_URI, "body") };
-	
+
 	private Map<String, AttrImpl> argByName;
-	
+
 	private ArrayList<AttrImpl> argByIndex;
-	
+
 	private BodyImpl body;
-	
+
 	// =========================================================================
-	
+
 	public XmlElementImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getSwcName()
 	{
 		return "xmlelement";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -102,7 +102,7 @@ public class XmlElementImpl
 			this.argByName = null;
 		}
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -115,41 +115,41 @@ public class XmlElementImpl
 			this.argByName = null;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getTag()
 	{
 		return getStringAttr("tag");
 	}
-	
+
 	@Override
 	public String setTag(String tag)
 	{
 		return setStringAttr(ATTR_DESC_NAME, "tag", tag);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean hasBody()
 	{
 		return this.body != null;
 	}
-	
+
 	@Override
 	public BodyImpl getBody()
 	{
 		return this.body;
 	}
-	
+
 	@Override
 	public BodyImpl setBody(SwcBody body)
 	{
 		return (BodyImpl) replaceOrAppend(this.body, body, false);
 	}
-	
+
 	@Override
 	public SwcAttr getXmlAttribute(int index)
 	{
@@ -161,7 +161,7 @@ public class XmlElementImpl
 		}
 		return argByIndex.get(index);
 	}
-	
+
 	@Override
 	public SwcAttr getXmlAttribute(String name)
 	{
@@ -183,26 +183,26 @@ public class XmlElementImpl
 		}
 		return argByName.get(name);
 	}
-	
+
 	@Override
 	public Collection<SwcAttr> getXmlAttributes()
 	{
 		// TODO: Use view instead of static excerpt!
-		
+
 		ArrayList<SwcAttr> args = new ArrayList<SwcAttr>();
 		for (Backbone i = getFirstChild(); i != null; i = i.getNextSibling())
 		{
 			if (i instanceof SwcAttr)
 				args.add((SwcAttr) i);
 		}
-		
+
 		return Collections.unmodifiableCollection(args);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_NAME = new AttrDescName();
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceURL,
@@ -212,7 +212,7 @@ public class XmlElementImpl
 		return getAttrDescStrict(namespaceURL, localName, qualifiedName,
 				"tag", ATTR_DESC_NAME);
 	}
-	
+
 	public static final class AttrDescName
 			extends
 				AttributeDescriptor
@@ -226,7 +226,7 @@ public class XmlElementImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

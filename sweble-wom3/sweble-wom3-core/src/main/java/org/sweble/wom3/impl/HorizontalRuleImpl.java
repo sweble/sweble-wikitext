@@ -17,7 +17,10 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_ALIGN_LCR;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_NOSHADE;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_SIZE;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_WIDTH_LENGTH;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,76 +36,76 @@ public class HorizontalRuleImpl
 			Wom3HorizontalRule
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public HorizontalRuleImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "hr";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3HorizAlign getAlign()
 	{
 		return getAlignAttr("align");
 	}
-	
+
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
 		return setAlignAttr(ATTR_DESC_ALIGN_LCR, "align", align);
 	}
-	
+
 	@Override
 	public boolean isNoshade()
 	{
 		return getBoolAttr("noshade");
 	}
-	
+
 	@Override
 	public boolean setNoshade(boolean noshade)
 	{
 		return setBoolAttr(ATTR_DESC_NOSHADE, "noshade", noshade);
 	}
-	
+
 	@Override
 	public Integer getSize()
 	{
 		return getIntAttr("size");
 	}
-	
+
 	@Override
 	public Integer setSize(Integer size)
 	{
 		return setIntAttr(ATTR_DESC_SIZE, "size", size);
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit getWidth()
 	{
 		return getValueWithUnitAttr("width");
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit setWidth(Wom3ValueWithUnit width)
 	{
 		return setValueWithUnitAttr(ATTR_DESC_WIDTH_LENGTH, "width", width);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("align", ATTR_DESC_ALIGN_LCR);
@@ -110,7 +113,7 @@ public class HorizontalRuleImpl
 		NAME_MAP.put("size", ATTR_DESC_SIZE);
 		NAME_MAP.put("width", ATTR_DESC_WIDTH_LENGTH);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

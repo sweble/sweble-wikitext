@@ -37,30 +37,30 @@ public class RegressionTest
 			ParserIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
-	
+
 	private static final String INPUT_SUB_DIR = "nopkg-regression/input.wikitext";
-	
+
 	private static final String EXPECTED_SUB_DIR = "nopkg-regression/after-postprocessing.ast";
-	
+
 	private static final String EXPECTED_PP_SUB_DIR = "nopkg-regression/pretty-printed.wikitext";
-	
+
 	private static final String EXPECTED_PPAST_SUB_DIR = "nopkg-regression/pretty-printed.ast";
-	
+
 	// =========================================================================
-	
+
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		TestResourcesFixture resources = getTestResourcesFixture();
 		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final File inputFile;
-	
+
 	// =========================================================================
-	
+
 	public RegressionTest(
 			String title,
 			TestResourcesFixture resources,
@@ -69,9 +69,9 @@ public class RegressionTest
 		super(resources, new NonExpandingParser());
 		this.inputFile = inputFile;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_SUB_DIR)
 	public void testAstAfterPostprocessingMatchesReferenceAst() throws Exception
@@ -82,7 +82,7 @@ public class RegressionTest
 				EXPECTED_SUB_DIR,
 				new TypedWtAstPrinter());
 	}
-	
+
 	@Test
 	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PP_SUB_DIR)
 	public void testPrettyPrintedWikitextMatchesReference() throws Exception
@@ -93,7 +93,7 @@ public class RegressionTest
 				EXPECTED_PP_SUB_DIR,
 				new TypedPrettyPrinter());
 	}
-	
+
 	@Test
 	@TestNameAnnotation(annotation = "Expected in dir: " + EXPECTED_PPAST_SUB_DIR)
 	public void testParsedPrettyPrintedWikitextMatchesOriginal() throws Exception

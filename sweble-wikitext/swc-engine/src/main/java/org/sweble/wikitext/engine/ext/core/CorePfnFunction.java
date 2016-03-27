@@ -31,9 +31,9 @@ public abstract class CorePfnFunction
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -41,7 +41,7 @@ public abstract class CorePfnFunction
 	{
 		super(argMode, name);
 	}
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -49,7 +49,7 @@ public abstract class CorePfnFunction
 	{
 		super(name);
 	}
-	
+
 	public CorePfnFunction(
 			WikiConfig wikiConfig,
 			PfnArgumentMode argMode,
@@ -57,14 +57,14 @@ public abstract class CorePfnFunction
 	{
 		super(wikiConfig, argMode, name);
 	}
-	
+
 	public CorePfnFunction(WikiConfig wikiConfig, String name)
 	{
 		super(wikiConfig, name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public final WtNode invoke(
 			WtNode pfn,
@@ -73,7 +73,7 @@ public abstract class CorePfnFunction
 	{
 		return invoke((WtTemplate) pfn, frame, argsValues);
 	}
-	
+
 	public abstract WtNode invoke(
 			WtTemplate pfn,
 			ExpansionFrame frame,

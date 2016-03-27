@@ -24,9 +24,9 @@ public interface WtLinkTitle
 			WtContentNode
 {
 	public static final WtNoLinkTitle NO_TITLE = new WtNoLinkTitle();
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoLinkTitle
 			extends
 				WtAbsentContentNode
@@ -34,31 +34,31 @@ public interface WtLinkTitle
 				WtLinkTitle
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
-		
+
 		private WtNoLinkTitle()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LINK_TITLE;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtLinkTitle.class.getSimpleName();
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtLinkTitle.NO_TITLE;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtLinkTitleImpl
 			extends
 				WtContentNodeImpl
@@ -66,24 +66,24 @@ public interface WtLinkTitle
 				WtLinkTitle
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		protected WtLinkTitleImpl()
 		{
 		}
-		
+
 		protected WtLinkTitleImpl(WtNodeList content)
 		{
 			super(content);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LINK_TITLE;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{

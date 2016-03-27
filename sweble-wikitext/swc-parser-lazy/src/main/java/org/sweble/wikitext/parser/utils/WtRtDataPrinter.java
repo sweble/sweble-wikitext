@@ -36,7 +36,7 @@ public class WtRtDataPrinter
 		for (WtNode c : node)
 			dispatch(c);
 	}
-	
+
 	protected void dispatch(WtNode node)
 	{
 		switch (node.getNodeType())
@@ -44,11 +44,11 @@ public class WtRtDataPrinter
 			case WtNode.NT_TEXT:
 				printText((WtText) node);
 				break;
-			
+
 			case WtNode.NT_NODE_LIST:
 				printNodeList((WtNodeList) node);
 				break;
-			
+
 			default:
 				WtRtData rtd = node.getRtd();
 				if (node instanceof WtStringNode)
@@ -66,19 +66,19 @@ public class WtRtDataPrinter
 				break;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void printText(WtText text)
 	{
 		p.verbatim(text.getContent());
 	}
-	
+
 	protected void printNodeList(WtNodeList node)
 	{
 		iterate(node);
 	}
-	
+
 	protected void printContentNode(WtRtData rtd, WtContentNode contentNode)
 	{
 		if (rtd != null)
@@ -95,7 +95,7 @@ public class WtRtDataPrinter
 			iterate(contentNode);
 		}
 	}
-	
+
 	protected void printStringNode(WtRtData rtd, WtStringNode contentNode)
 	{
 		if (rtd != null)
@@ -108,7 +108,7 @@ public class WtRtDataPrinter
 			p.verbatim(contentNode.getContent());
 		}
 	}
-	
+
 	protected void printAnyOtherNode(WtRtData rtd, WtNode node)
 	{
 		if (rtd != null)
@@ -129,7 +129,7 @@ public class WtRtDataPrinter
 			iterate(node);
 		}
 	}
-	
+
 	protected void printRtd(Object[] fields)
 	{
 		for (Object o : fields)
@@ -144,30 +144,30 @@ public class WtRtDataPrinter
 			}
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static String print(WtNode node)
 	{
 		return WtRtDataPrinter.print(new StringWriter(), node).toString();
 	}
-	
+
 	public static Writer print(Writer writer, WtNode node)
 	{
 		new WtRtDataPrinter(writer).go(node);
 		return writer;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected final PrinterBase p;
-	
+
 	protected WtRtDataPrinter(Writer writer)
 	{
 		this.p = new PrinterBase(writer);
 		this.p.setMemoize(false);
 	}
-	
+
 	protected void go(WtNode node)
 	{
 		dispatch(node);

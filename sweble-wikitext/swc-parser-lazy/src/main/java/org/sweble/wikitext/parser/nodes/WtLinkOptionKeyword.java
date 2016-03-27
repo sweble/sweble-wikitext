@@ -24,55 +24,55 @@ public class WtLinkOptionKeyword
 			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtLinkOptionKeyword()
 	{
 	}
-	
+
 	protected WtLinkOptionKeyword(String keyword)
 	{
 		setKeyword(keyword);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_LINK_OPTION_KEYWORD;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String keyword;
-	
+
 	public final String getKeyword()
 	{
 		return this.keyword;
 	}
-	
+
 	public final void setKeyword(String keyword)
 	{
 		if (keyword == null)
 			throw new NullPointerException();
 		this.keyword = keyword;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -83,7 +83,7 @@ public class WtLinkOptionKeyword
 			{
 				return WtLinkOptionKeyword.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -91,12 +91,12 @@ public class WtLinkOptionKeyword
 				{
 					case 0:
 						return "keyword";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -104,12 +104,12 @@ public class WtLinkOptionKeyword
 				{
 					case 0:
 						return WtLinkOptionKeyword.this.getKeyword();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -121,7 +121,7 @@ public class WtLinkOptionKeyword
 						WtLinkOptionKeyword.this.setKeyword((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

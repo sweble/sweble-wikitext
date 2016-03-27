@@ -24,9 +24,9 @@ import org.sweble.wom3.Wom3ElementNode;
 public class BreakTest
 {
 	private final Wom3ElementNode n = TestHelperDoc.genElem("br");
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testClearAttribute() throws Exception
 	{
@@ -35,27 +35,27 @@ public class BreakTest
 		TestHelperAttribute.testAttribute(this.n, "clear", "getClear", "setClear", Wom3Clear.NONE, "none");
 		TestHelperAttribute.testAttribute(this.n, "clear", "getClear", "setClear", Wom3Clear.RIGHT, "right");
 	}
-	
+
 	// ==[ Core Attributes ]====================================================
-	
+
 	@Test
 	public void testClassAttribute() throws Exception
 	{
 		TestHelperAttribute.testClassAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testIdAttribute() throws Exception
 	{
 		TestHelperAttribute.testIdAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testStyleAttribute() throws Exception
 	{
 		TestHelperAttribute.testStyleAttribute(this.n);
 	}
-	
+
 	@Test
 	public void testTitleAttribute() throws Exception
 	{

@@ -45,7 +45,7 @@ public interface Wom3Paragraph
 	 *         specified.
 	 */
 	public int getTopGap();
-	
+
 	/**
 	 * Set the number of empty lines in front of the paragraph.
 	 * 
@@ -58,7 +58,7 @@ public interface Wom3Paragraph
 	 *         specified.
 	 */
 	public int setTopGap(int lines);
-	
+
 	/**
 	 * Get the number of empty lines following the paragraph.
 	 * 
@@ -69,7 +69,7 @@ public interface Wom3Paragraph
 	 *         specified.
 	 */
 	public int getBottomGap();
-	
+
 	/**
 	 * Set the number of empty lines following the paragraph.
 	 * 
@@ -82,7 +82,7 @@ public interface Wom3Paragraph
 	 *         specified.
 	 */
 	public int setBottomGap(int lines);
-	
+
 	/**
 	 * Get the alignment of the content inside the tag.
 	 * 
@@ -91,7 +91,7 @@ public interface Wom3Paragraph
 	 * @return The alignment.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the alignment of the content inside the tag.
 	 * 

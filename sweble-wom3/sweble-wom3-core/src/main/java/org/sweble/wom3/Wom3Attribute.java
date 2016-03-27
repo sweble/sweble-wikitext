@@ -40,7 +40,7 @@ public interface Wom3Attribute
 	 * @return The name of the attribute.
 	 */
 	public String getName();
-	
+
 	/**
 	 * Set the name of the attribute. Attribute names are case-insensitive.
 	 * 
@@ -56,7 +56,7 @@ public interface Wom3Attribute
 	public String setName(String name)
 			throws IllegalArgumentException,
 			NullPointerException;
-	
+
 	/**
 	 * Return the value of the attribute.
 	 * 
@@ -64,7 +64,7 @@ public interface Wom3Attribute
 	 */
 	@Override
 	public String getValue();
-	
+
 	/**
 	 * Set the value of the attribute.
 	 * 

@@ -24,13 +24,13 @@ public interface WtLinkTarget
 			WtNode
 {
 	public static final WtLinkTarget NO_LINK = new WtNoLink();
-	
+
 	// =========================================================================
-	
+
 	public LinkTargetType getTargetType();
-	
+
 	// =========================================================================
-	
+
 	public static enum LinkTargetType
 	{
 		/** The "link=X" argument was not present */
@@ -40,9 +40,9 @@ public interface WtLinkTarget
 		/** The "link=" argument was empty */
 		NO_LINK
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoLink
 			extends
 				WtEmptyImmutableNode
@@ -50,35 +50,35 @@ public interface WtLinkTarget
 				WtLinkTarget
 	{
 		private static final long serialVersionUID = 4433767404703646519L;
-		
+
 		private WtNoLink()
 		{
 		}
-		
+
 		@Override
 		public LinkTargetType getTargetType()
 		{
 			return LinkTargetType.NO_LINK;
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_UNTYPED;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtLinkTarget.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean indicatesAbsence()
 		{
 			return true;
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtLinkTarget.NO_LINK;

@@ -28,22 +28,22 @@ public class CommentImpl
 			Wom3Comment
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public CommentImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "comment";
 	}
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
@@ -53,12 +53,12 @@ public class CommentImpl
 				doesNotAllowInsertion(prev, child);
 		}
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
@@ -68,7 +68,7 @@ public class CommentImpl
 				doesNotAllowReplacement(oldChild, newChild);
 		}
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

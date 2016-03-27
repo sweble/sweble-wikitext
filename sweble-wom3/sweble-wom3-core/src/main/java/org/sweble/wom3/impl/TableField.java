@@ -27,19 +27,19 @@ public class TableField
 {
 	private final ArrayList<ArrayList<TableCellBaseImpl>> cells =
 			new ArrayList<ArrayList<TableCellBaseImpl>>();
-	
+
 	private ArrayList<TableRowImpl> rows = new ArrayList<TableRowImpl>();
-	
+
 	private int colNum;
-	
+
 	// =========================================================================
-	
+
 	public TableField(TablePartitionImpl part)
 	{
 		ArrayList<Integer> ars = new ArrayList<Integer>();
-		
+
 		ArrayList<TableCellBaseImpl> lastRow = null;
-		
+
 		int rowIndex = 0;
 		Wom3Node womRowNode = part.getFirstChild();
 		while (womRowNode != null)
@@ -50,15 +50,15 @@ public class TableField
 				continue;
 			}
 			TableRowImpl rowNode = (TableRowImpl) womRowNode;
-			
+
 			// Add row
-			
+
 			ArrayList<TableCellBaseImpl> row = new ArrayList<TableCellBaseImpl>();
 			cells.add(row);
 			rows.add(rowNode);
-			
+
 			// Add cells
-			
+
 			int colIndex = 0;
 			Wom3Node womCellNode = rowNode.getFirstChild();
 			while (womCellNode != null)
@@ -69,7 +69,7 @@ public class TableField
 					continue;
 				}
 				TableCellBaseImpl cellNode = (TableCellBaseImpl) womCellNode;
-				
+
 				// First deal with row span from the rows above
 				boolean hadRowSpan = false;
 				if (colIndex < ars.size())
@@ -84,18 +84,18 @@ public class TableField
 						hadRowSpan = true;
 					}
 				}
-				
+
 				if (!hadRowSpan)
 				{
 					cellNode.setCoords(rowIndex, colIndex);
-					
+
 					Integer rowSpan = cellNode.getRowspan();
 					if (rowSpan == null)
 						rowSpan = 1;
 					Integer colSpan = cellNode.getColspan();
 					if (colSpan == null)
 						colSpan = 1;
-					
+
 					for (int cs = 0; cs < colSpan; ++cs)
 					{
 						row.add(cellNode);
@@ -105,10 +105,10 @@ public class TableField
 								ars.add(null);
 							ars.set(colIndex, rowSpan - 1);
 						}
-						
+
 						++colIndex;
 					}
-					
+
 					womCellNode = cellNode.getNextSibling();
 				}
 				else
@@ -119,36 +119,36 @@ public class TableField
 					++colIndex;
 				}
 			}
-			
+
 			this.colNum = Math.max(this.colNum, colIndex);
-			
+
 			rowNode.setCoords(rowIndex);
 			lastRow = row;
-			
+
 			++rowIndex;
 			womRowNode = rowNode.getNextSibling();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public int getNumCols()
 	{
 		return colNum;
 	}
-	
+
 	public int getNumRows()
 	{
 		return rows.size();
 	}
-	
+
 	public Wom3TableRow getRow(int row)
 	{
 		if (row >= getNumRows())
 			throw new IndexOutOfBoundsException("Row: " + String.valueOf(row));
 		return rows.get(row);
 	}
-	
+
 	public Wom3TableCellBase getCell(int row, int col)
 	{
 		if (row >= getNumRows())

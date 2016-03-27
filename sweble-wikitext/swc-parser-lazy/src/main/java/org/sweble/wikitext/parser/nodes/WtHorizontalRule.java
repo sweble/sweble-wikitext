@@ -22,13 +22,13 @@ public class WtHorizontalRule
 			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtHorizontalRule()
 	{
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

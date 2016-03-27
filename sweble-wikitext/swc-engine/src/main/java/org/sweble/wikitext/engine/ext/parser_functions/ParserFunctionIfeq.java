@@ -30,7 +30,7 @@ public class ParserFunctionIfeq
 			ParserFunctionsExtPfn.IfThenElseStmt
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -38,7 +38,7 @@ public class ParserFunctionIfeq
 	{
 		super("ifeq", 2 /* thenArgIndex */);
 	}
-	
+
 	/**
 	 * <pre>
 	 * {{#ifeq: 
@@ -52,7 +52,7 @@ public class ParserFunctionIfeq
 	{
 		super(wikiConfig, "ifeq", 2 /* thenArgIndex */);
 	}
-	
+
 	@Override
 	protected boolean evaluateCondition(
 			WtTemplate pfn,
@@ -61,7 +61,7 @@ public class ParserFunctionIfeq
 	{
 		WtNode arg0 = frame.expand(args.get(0));
 		WtNode arg1 = frame.expand(args.get(1));
-		
+
 		String a = null;
 		String b = null;
 		try
@@ -73,7 +73,7 @@ public class ParserFunctionIfeq
 		{
 			// FIXME: Do recursive equality check
 		}
-		
+
 		boolean eval = false;
 		if (a != null && b != null)
 		{
@@ -90,7 +90,7 @@ public class ParserFunctionIfeq
 			{
 				numbers = false;
 			}
-			
+
 			if (numbers)
 			{
 				eval = ia == ib;
@@ -100,7 +100,7 @@ public class ParserFunctionIfeq
 				eval = a.equals(b);
 			}
 		}
-		
+
 		return eval;
 	}
 }

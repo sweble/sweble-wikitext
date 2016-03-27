@@ -33,69 +33,69 @@ public class NodeTypeEngVisitor
 			NodeTypeAstVisitor<WtNode>
 {
 	@Override
-	protected Object resolveAndVisit(WtNode node, int type) throws Exception
+	protected Object resolveAndVisit(WtNode node, int type)
 	{
 		switch (type)
 		{
 			case EngNode.NT_TEXT:
 				return visit((WtText) node);
-				
+
 			case EngNode.NT_NODE_LIST:
 				return visit((WtNodeList) node);
-				
+
 			case EngNode.NT_PARSER_ENTITY:
 				return visit((WtParserEntity) node);
-				
+
 			default:
 				return visitUnspecific(node);
 		}
 	}
-	
+
 	// =========================================================================
-	
-	protected Object visitUnspecific(WtNode node) throws Exception
+
+	protected Object visitUnspecific(WtNode node)
 	{
 		return node;
 	}
-	
-	protected Object visit(WtText node) throws Exception
+
+	protected Object visit(WtText node)
 	{
 		return visitUnspecific(node);
 	}
-	
-	protected Object visit(WtNodeList node) throws Exception
+
+	protected Object visit(WtNodeList node)
 	{
 		return visitUnspecific(node);
 	}
-	
-	protected Object visit(WtParserEntity node) throws Exception
+
+	protected Object visit(WtParserEntity node)
 	{
 		return visitUnspecific(node);
 	}
-	
+
 	// =========================================================================
 	// Make the original methods unusable
-	
+
 	@Override
-	protected final Object visitUnspecific(AstNode<WtNode> node) throws Exception
+	protected final Object visitUnspecific(AstNode<WtNode> node)
 	{
 		throw new InternalError();
 	}
-	
+
 	@Override
-	protected final Object visit(AstText<WtNode> node) throws Exception
+	protected final Object visit(AstText<WtNode> node)
 	{
 		throw new InternalError();
 	}
-	
+
 	@Override
-	protected final Object visit(AstNodeList<WtNode> node) throws Exception
+	protected final Object visit(AstNodeList<WtNode> node)
 	{
 		throw new InternalError();
 	}
-	
+
 	@Override
-	protected final Object visit(AstParserEntity<WtNode> node) throws Exception
+	protected final Object visit(AstParserEntity<WtNode> node)
 	{
 		throw new InternalError();
 	}

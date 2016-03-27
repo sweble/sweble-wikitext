@@ -53,82 +53,82 @@ public class DefaultConfig
 		new DefaultConfig().configureWiki(c);
 		return c;
 	}
-	
+
 	protected void configureWiki(WikiConfigImpl c)
 	{
 		configureEngine(c);
-		
+
 		// --[ Properties of the wiki instance ]--
-		
+
 		configureSiteProperties(c);
-		
+
 		// --[ Namespaces, Known Wikis, Internationalization ]--
-		
+
 		addNamespaces(c);
-		
+
 		addInterwikis(c);
-		
+
 		addI18nAlises(c);
-		
+
 		// --[ Parser functions ]--
-		
+
 		addParserFunctions(c);
-		
+
 		// --[ Tag extensions ]--
-		
+
 		addTagExtensions(c);
 	}
-	
+
 	protected EngineConfigImpl configureEngine(WikiConfigImpl c)
 	{
 		configureParser(c);
-		
+
 		EngineConfigImpl cc = c.getEngineConfig();
-		
+
 		cc.setTrimTransparentBeforeParsing(true);
-		
+
 		return cc;
 	}
-	
+
 	protected ParserConfigImpl configureParser(WikiConfigImpl c)
 	{
 		ParserConfigImpl pc = c.getParserConfig();
-		
+
 		// ==[ Parser features ]================================================
-		
+
 		pc.setAutoCorrect(false);
 		pc.setGatherRtData(true);
 		pc.setMinSeverity(WarningSeverity.INFORMATIVE);
 		pc.setWarningsEnabled(true);
-		
+
 		// --[ Link classification and parsing ]--
-		
+
 		pc.addUrlProtocol("http://");
 		pc.addUrlProtocol("https://");
 		pc.addUrlProtocol("mail:");
-		
+
 		pc.setInternalLinkPrefixPattern(null);
 		pc.setInternalLinkPostfixPattern(null);
-		
+
 		// ==[ Parsing XML elements ]===========================================
-		
+
 		addXmlEntities(pc);
-		
+
 		// ==[ Language Conversion Tags ]=======================================
-		
+
 		addLctMappings(pc);
-		
+
 		return pc;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void addXmlEntities(ParserConfigImpl pc)
 	{
 		// From: http://www.w3.org/TR/html4/sgml/entities.html
-		
+
 		// 24 Character entity references in HTML 4
-		
+
 		// 24.2 Character entity references for ISO 8859-1 characters
 		pc.addXmlEntity("nbsp", "\u00a0");
 		pc.addXmlEntity("iexcl", "\u00a1");
@@ -226,7 +226,7 @@ public class DefaultConfig
 		pc.addXmlEntity("yacute", "\u00fd");
 		pc.addXmlEntity("thorn", "\u00fe");
 		pc.addXmlEntity("yuml", "\u00ff");
-		
+
 		// 24.3 Character entity references for symbols, mathematical symbols, and Greek letters
 		pc.addXmlEntity("fnof", "\u0192");
 		pc.addXmlEntity("Alpha", "\u0391");
@@ -352,7 +352,7 @@ public class DefaultConfig
 		pc.addXmlEntity("clubs", "\u2663");
 		pc.addXmlEntity("hearts", "\u2665");
 		pc.addXmlEntity("diams", "\u2666");
-		
+
 		// 24.4 Character entity references for markup-significant and internationalization characters
 		pc.addXmlEntity("quot", "" + '\u0022'); // Eclipse gets really confused!
 		pc.addXmlEntity("amp", "\u0026");
@@ -387,22 +387,22 @@ public class DefaultConfig
 		pc.addXmlEntity("rsaquo", "\u203a");
 		pc.addXmlEntity("euro", "\u20ac");
 	}
-	
+
 	protected void addLctMappings(ParserConfigImpl pc)
 	{
 	}
-	
+
 	protected void configureSiteProperties(WikiConfigImpl c)
 	{
 		c.setSiteName("My Wiki");
-		
+
 		c.setWikiUrl("http://localhost/");
-		
+
 		c.setContentLang("xx");
-		
+
 		c.setIwPrefix("xx");
 	}
-	
+
 	protected void addNamespaces(WikiConfigImpl c)
 	{
 		c.addNamespace(new NamespaceImpl(
@@ -412,7 +412,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				-1,
 				"Special",
@@ -420,7 +420,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				0,
 				"",
@@ -428,7 +428,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				1,
 				"Talk",
@@ -436,7 +436,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				2,
 				"User",
@@ -444,7 +444,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				3,
 				"User talk",
@@ -452,7 +452,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				4,
 				"Project",
@@ -460,7 +460,7 @@ public class DefaultConfig
 				false,
 				false,
 				Arrays.asList("WP")));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				5,
 				"Project talk",
@@ -468,7 +468,7 @@ public class DefaultConfig
 				false,
 				false,
 				Arrays.asList("WT")));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				6,
 				"File",
@@ -476,7 +476,7 @@ public class DefaultConfig
 				false,
 				true,
 				Arrays.asList("Image")));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				7,
 				"File talk",
@@ -484,7 +484,7 @@ public class DefaultConfig
 				false,
 				false,
 				Arrays.asList("Image talk")));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				8,
 				"MediaWiki",
@@ -492,7 +492,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				9,
 				"MediaWiki talk",
@@ -500,7 +500,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				10,
 				"Template",
@@ -508,7 +508,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				11,
 				"Template talk",
@@ -516,7 +516,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				12,
 				"Help",
@@ -524,7 +524,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				13,
 				"Help talk",
@@ -532,7 +532,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				14,
 				"Category",
@@ -540,7 +540,7 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.addNamespace(new NamespaceImpl(
 				15,
 				"Category talk",
@@ -548,46 +548,46 @@ public class DefaultConfig
 				false,
 				false,
 				new ArrayList<String>()));
-		
+
 		c.setDefaultNamespace(c.getNamespace(0));
 		c.setTemplateNamespace(c.getNamespace(10));
 	}
-	
+
 	protected void addInterwikis(WikiConfigImpl c)
 	{
 	}
-	
+
 	protected void addI18nAlises(WikiConfigImpl c)
 	{
 	}
-	
+
 	protected void addParserFunctions(WikiConfigImpl c)
 	{
 		c.addParserFunctionGroup(BuiltInParserFunctions.group(c));
-		
+
 		c.addParserFunctionGroup(CorePfnBehaviorSwitches.group(c));
-		
+
 		c.addParserFunctionGroup(CorePfnFunctionsFormatting.group(c));
 		c.addParserFunctionGroup(CorePfnFunctionsLocalization.group(c));
 		c.addParserFunctionGroup(CorePfnFunctionsMiscellaneous.group(c));
 		c.addParserFunctionGroup(CorePfnFunctionsNamespaces.group(c));
 		c.addParserFunctionGroup(CorePfnFunctionsUrlData.group(c));
-		
+
 		c.addParserFunctionGroup(CorePfnVariablesDateAndTime.group(c));
 		c.addParserFunctionGroup(CorePfnVariablesNamespaces.group(c));
 		c.addParserFunctionGroup(CorePfnVariablesPageNames.group(c));
 		c.addParserFunctionGroup(CorePfnVariablesStatistics.group(c));
 		c.addParserFunctionGroup(CorePfnVariablesTechnicalMetadata.group(c));
-		
+
 		c.addParserFunctionGroup(ParserFunctionsPfnExt.group(c));
 	}
-	
+
 	protected void addTagExtensions(WikiConfigImpl c)
 	{
 		c.addTagExtensionGroup(BuiltInTagExtensions.group(c));
-		
+
 		c.addTagExtensionGroup(MathTagExt.group(c));
-		
+
 		c.addTagExtensionGroup(RefTagExt.group(c));
 	}
 }

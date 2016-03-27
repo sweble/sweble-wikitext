@@ -39,7 +39,7 @@ public interface Wom3Signature
 	 * @return The signature format.
 	 */
 	public Wom3SignatureFormat getSignatureFormat();
-	
+
 	/**
 	 * Set the signature format that describes how the signature should be
 	 * rendered.
@@ -53,7 +53,7 @@ public interface Wom3Signature
 	 *             Thrown if <code>null</code> is given as format.
 	 */
 	public Wom3SignatureFormat setSignatureFormat(Wom3SignatureFormat format) throws NullPointerException;
-	
+
 	/**
 	 * Get the name of the author.
 	 * 
@@ -62,7 +62,7 @@ public interface Wom3Signature
 	 * @return The author name.
 	 */
 	public String getAuthor();
-	
+
 	/**
 	 * Set the author name.
 	 * 
@@ -78,7 +78,7 @@ public interface Wom3Signature
 	 *             Thrown if <code>null</code> is given as format.
 	 */
 	public String setAuthor(String author) throws IllegalArgumentException, NullPointerException;
-	
+
 	/**
 	 * Get the date and time of the signature.
 	 * 
@@ -87,7 +87,7 @@ public interface Wom3Signature
 	 * @return The date and time of the signature.
 	 */
 	public DateTime getTimestamp();
-	
+
 	/**
 	 * Set the date and time of the signature.
 	 * 

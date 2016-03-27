@@ -36,14 +36,14 @@ public interface Wom3Article
 	 * @return The namespace, path and article name concatenated.
 	 */
 	public String getName();
-	
+
 	/**
 	 * Returns the version of the XWML object model.
 	 * 
 	 * @return The version of the XWML object model.
 	 */
 	public String getVersion();
-	
+
 	/**
 	 * Returns the name of the article without namespace and without path.
 	 * 
@@ -52,7 +52,7 @@ public interface Wom3Article
 	 * @return The name of the article without namespace and without path.
 	 */
 	public String getTitle();
-	
+
 	/**
 	 * Set the name of the article without namespace and without path.
 	 * 
@@ -70,7 +70,7 @@ public interface Wom3Article
 	public String setTitle(String title)
 			throws IllegalArgumentException,
 			NullPointerException;
-	
+
 	/**
 	 * Returns the canonical namespace name.
 	 * 
@@ -80,7 +80,7 @@ public interface Wom3Article
 	 *         attribute is not specified.
 	 */
 	public String getNamespace();
-	
+
 	/**
 	 * Set the canonical namespace name.
 	 * 
@@ -92,7 +92,7 @@ public interface Wom3Article
 	 * @return The old namespace name.
 	 */
 	public String setNamespace(String namespace);
-	
+
 	/**
 	 * Returns the path of pages that lead to this subpage.
 	 * 
@@ -105,7 +105,7 @@ public interface Wom3Article
 	 *         denotes an absolute path.
 	 */
 	public String getPath();
-	
+
 	/**
 	 * Set the path of pages that lead to this subpage.
 	 * 
@@ -115,7 +115,7 @@ public interface Wom3Article
 	 * @return The old path.
 	 */
 	public String setPath(String path);
-	
+
 	/**
 	 * Tell whether this article is a redirecting article.
 	 * 
@@ -123,7 +123,7 @@ public interface Wom3Article
 	 *         <code>false</code> otherwise.
 	 */
 	public boolean isRedirect();
-	
+
 	/**
 	 * Get the redirection statement.
 	 * 
@@ -134,7 +134,7 @@ public interface Wom3Article
 	 *         does not redirect.
 	 */
 	public Wom3Redirect getRedirect();
-	
+
 	/**
 	 * Set a redirection.
 	 * 
@@ -148,7 +148,7 @@ public interface Wom3Article
 	 * @return The old redirection.
 	 */
 	public Wom3Redirect setRedirect(Wom3Redirect redirect);
-	
+
 	/**
 	 * Return a collection containing the categories that are assigned to this
 	 * article.
@@ -156,7 +156,7 @@ public interface Wom3Article
 	 * @return A collection of categories.
 	 */
 	public Collection<Wom3Category> getCategories();
-	
+
 	/**
 	 * Test if this article belongs to a certain category.
 	 * 
@@ -168,7 +168,7 @@ public interface Wom3Article
 	 *             Thrown if the specified name is <code>null</code>.
 	 */
 	public boolean hasCategory(String name) throws NullPointerException;
-	
+
 	/**
 	 * Remove a category from this article.
 	 * 
@@ -180,7 +180,7 @@ public interface Wom3Article
 	 *             Thrown if the specified name is <code>null</code>.
 	 */
 	public Wom3Category removeCategory(String name) throws NullPointerException;
-	
+
 	/**
 	 * Add a category to this article.
 	 * 
@@ -192,7 +192,7 @@ public interface Wom3Article
 	 *             Thrown if the specified name is <code>null</code>.
 	 */
 	public Wom3Category addCategory(String name) throws NullPointerException;
-	
+
 	/**
 	 * Get the article body.
 	 * 
@@ -201,7 +201,7 @@ public interface Wom3Article
 	 * @return The body.
 	 */
 	public Wom3Body getBody();
-	
+
 	/**
 	 * Set the article body.
 	 * 

@@ -26,9 +26,9 @@ public class WtIgnored
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -36,12 +36,12 @@ public class WtIgnored
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtIgnored(String content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

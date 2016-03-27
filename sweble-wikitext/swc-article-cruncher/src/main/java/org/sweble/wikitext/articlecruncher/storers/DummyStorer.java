@@ -30,26 +30,26 @@ public class DummyStorer
 			WorkerBase
 {
 	private final JobTraceSet jobTraces;
-	
+
 	private final BlockingQueue<Job> outTray;
-	
+
 	// =========================================================================
-	
+
 	public DummyStorer(
 			AbortHandler abortHandler,
 			JobTraceSet jobTraces,
 			BlockingQueue<Job> outTray)
 	{
 		super(DummyStorer.class.getSimpleName(), abortHandler);
-		
+
 		this.outTray = outTray;
 		this.jobTraces = jobTraces;
 	}
-	
+
 	// =========================================================================
-	
+
 	int count = 0;
-	
+
 	@Override
 	protected void work() throws Throwable
 	{
@@ -57,17 +57,17 @@ public class DummyStorer
 		{
 			Job job = outTray.take();
 			++count;
-			
+
 			// Do nothing
-			
+
 			JobTrace trace = job.getTrace();
 			trace.signOff(getClass(), null);
-			
+
 			if (!jobTraces.remove(trace))
 				throw new InternalError("Missing job trace");
 		}
 	}
-	
+
 	@Override
 	protected void after()
 	{

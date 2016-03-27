@@ -25,19 +25,19 @@ public class Page
 			Serializable
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final BigInteger id;
-	
+
 	private final BigInteger namespace;
-	
+
 	private final String title;
-	
+
 	private final String redirectTitle;
-	
+
 	private final List<Revision> revisions;
-	
+
 	// =========================================================================
-	
+
 	public Page(
 			BigInteger id,
 			BigInteger namespace,
@@ -52,41 +52,41 @@ public class Page
 		this.redirectTitle = redirectTitle;
 		this.revisions = revisions;
 	}
-	
+
 	// =========================================================================
-	
+
 	public BigInteger getId()
 	{
 		return id;
 	}
-	
+
 	public BigInteger getNamespace()
 	{
 		return namespace;
 	}
-	
+
 	public String getTitle()
 	{
 		return title;
 	}
-	
+
 	public boolean isRedirect()
 	{
 		return redirectTitle != null;
 	}
-	
+
 	public String getRedirectTitle()
 	{
 		return redirectTitle;
 	}
-	
+
 	public List<Revision> getRevisions()
 	{
 		return revisions;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{

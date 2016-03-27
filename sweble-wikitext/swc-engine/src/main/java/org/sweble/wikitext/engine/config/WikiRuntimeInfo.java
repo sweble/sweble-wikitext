@@ -22,6 +22,6 @@ import java.util.Locale;
 public interface WikiRuntimeInfo
 {
 	public Calendar getDateAndTime();
-	
+
 	public Calendar getDateAndTime(Locale locale);
 }

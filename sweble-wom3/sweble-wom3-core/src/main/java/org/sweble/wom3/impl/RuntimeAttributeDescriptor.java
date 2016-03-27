@@ -24,13 +24,13 @@ public class RuntimeAttributeDescriptor
 			AttributeDescriptor
 {
 	private final String name;
-	
+
 	private final int flags;
-	
+
 	private final AttributeCustomAction customActionFn;
-	
+
 	private final AttributeVerificationAndConverion verifyAndConvertFn;
-	
+
 	public RuntimeAttributeDescriptor(
 			String name,
 			boolean removable,
@@ -48,18 +48,18 @@ public class RuntimeAttributeDescriptor
 		this.customActionFn = customAction;
 		this.verifyAndConvertFn = verifyAndConvert;
 	}
-	
+
 	public String getName()
 	{
 		return name;
 	}
-	
+
 	@Override
 	public int getFlags()
 	{
 		return flags;
 	}
-	
+
 	@Override
 	public boolean verifyAndConvert(
 			Backbone parent,
@@ -69,7 +69,7 @@ public class RuntimeAttributeDescriptor
 				verifyAndConvertFn.verifyAndConvert(parent, verified) :
 				super.verifyAndConvert(parent, verified);
 	}
-	
+
 	@Override
 	public void customAction(
 			Wom3Node parent,

@@ -35,17 +35,17 @@ public class CustomAstIntegrationTest
 			WtWom3IntegrationTestBase
 {
 	private static final String INPUT_SUB_DIR = "nopkg-custom/wikitext";
-	
+
 	private static final String EXPECTED_WOM_SUB_DIR = "nopkg-custom/wom";
-	
+
 	private final EngineNodeFactory nf;
-	
+
 	private EngPage page;
-	
+
 	private EngProcessedPage procPage;
-	
+
 	// =========================================================================
-	
+
 	public CustomAstIntegrationTest()
 	{
 		super(getTestResourcesFixture());
@@ -56,24 +56,24 @@ public class CustomAstIntegrationTest
 				nf.logProcessingPass(),
 				Collections.<Warning> emptyList());
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testIllegalUrlSyntaxShouldNotThrow() throws Exception
 	{
 		page.add(nf.url("", "//a-url-must-have-a-protocol"));
 		runTest();
 	}
-	
+
 	// =========================================================================
-	
+
 	private void runTest() throws Exception
 	{
 		File fakeInputFile = new File(
 				new File(getResources().getBaseDirectory(), INPUT_SUB_DIR),
 				"illegal-url-syntax");
-		
+
 		convertPrintAndCompare(
 				this.procPage,
 				fakeInputFile,

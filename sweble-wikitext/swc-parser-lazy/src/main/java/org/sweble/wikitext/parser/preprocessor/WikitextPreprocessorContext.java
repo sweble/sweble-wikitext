@@ -24,33 +24,33 @@ public class WikitextPreprocessorContext
 			ParserContext
 {
 	private String tagExtensionName;
-	
+
 	private int templateBraces;
-	
+
 	// =========================================================================
-	
+
 	public String getTagExtensionName()
 	{
 		return tagExtensionName;
 	}
-	
+
 	public void setTagExtensionName(String name)
 	{
 		this.tagExtensionName = name;
 	}
-	
+
 	public int getTemplateBraces()
 	{
 		return templateBraces;
 	}
-	
+
 	public void setTemplateBraces(int templateBraces)
 	{
 		this.templateBraces = templateBraces;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void clear()
 	{

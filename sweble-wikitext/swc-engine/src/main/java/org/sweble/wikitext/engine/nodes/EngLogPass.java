@@ -21,9 +21,9 @@ public abstract class EngLogPass
 			EngLogContainer
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public EngLogPass()
 	{
 		super();

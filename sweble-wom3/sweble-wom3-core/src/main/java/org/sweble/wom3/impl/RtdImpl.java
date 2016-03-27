@@ -27,28 +27,28 @@ public class RtdImpl
 			Wom3Rtd
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public RtdImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "rtd";
 	}
-	
+
 	@Override
 	protected boolean ignoresContentWhitespace()
 	{
 		return false;
 	}
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
@@ -58,12 +58,12 @@ public class RtdImpl
 				doesNotAllowInsertion(prev, child);
 		}
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
@@ -73,7 +73,7 @@ public class RtdImpl
 				doesNotAllowReplacement(oldChild, newChild);
 		}
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

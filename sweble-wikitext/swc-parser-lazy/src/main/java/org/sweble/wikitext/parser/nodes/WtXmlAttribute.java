@@ -24,9 +24,9 @@ public class WtXmlAttribute
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -34,53 +34,53 @@ public class WtXmlAttribute
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtXmlAttribute(WtName name)
 	{
 		super(name, WtValue.NO_VALUE);
 	}
-	
+
 	protected WtXmlAttribute(WtName name, WtValue value)
 	{
 		super(name, value);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_XML_ATTRIBUTE;
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setName(WtName value)
 	{
 		set(0, value);
 	}
-	
+
 	public final WtName getName()
 	{
 		return (WtName) get(0);
 	}
-	
+
 	public final boolean hasValue()
 	{
 		return getValue() != WtValue.NO_VALUE;
 	}
-	
+
 	public final void setValue(WtValue value)
 	{
 		set(1, value);
 	}
-	
+
 	public final WtValue getValue()
 	{
 		return (WtValue) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "name", "value" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

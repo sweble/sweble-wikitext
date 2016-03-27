@@ -27,18 +27,18 @@ public interface SwcTagExtension
 			Wom3ElementNode
 {
 	String getName();
-	
+
 	String setName(String name);
-	
+
 	boolean hasBody();
-	
+
 	SwcTagExtBody getBody();
-	
+
 	SwcTagExtBody setBody(SwcTagExtBody body);
-	
+
 	SwcAttr getXmlAttribute(int index);
-	
+
 	SwcAttr getXmlAttribute(String name);
-	
+
 	Collection<SwcAttr> getXmlAttributes();
 }

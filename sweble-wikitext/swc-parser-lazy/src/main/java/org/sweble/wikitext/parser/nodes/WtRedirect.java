@@ -26,9 +26,9 @@ public class WtRedirect
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -36,33 +36,33 @@ public class WtRedirect
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtRedirect(WtPageName target)
 	{
 		super(target);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_REDIRECT;
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setTarget(WtPageName target)
 	{
 		set(0, target);
 	}
-	
+
 	public final WtPageName getTarget()
 	{
 		return (WtPageName) get(0);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "target" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

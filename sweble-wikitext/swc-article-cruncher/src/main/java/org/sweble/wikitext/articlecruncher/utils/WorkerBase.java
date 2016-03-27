@@ -17,20 +17,21 @@
 
 package org.sweble.wikitext.articlecruncher.utils;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class WorkerBase
 {
 	private final String workerName;
-	
+
 	private final AbortHandler abortHandler;
-	
+
 	private final Logger logger;
-	
+
 	private WorkerLauncher launcher;
-	
+
 	// =========================================================================
-	
+
 	public WorkerBase(String workerName)
 	{
 		this(workerName, new AbortHandler()
@@ -42,106 +43,96 @@ public abstract class WorkerBase
 			}
 		});
 	}
-	
+
 	public WorkerBase(String workerName, AbortHandler abortHandler)
 	{
 		this.workerName = workerName;
 		this.abortHandler = abortHandler;
-		this.logger = Logger.getLogger(workerName);
+		this.logger = LoggerFactory.getLogger(workerName);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected abstract void work() throws Throwable;
-	
+
 	protected void after()
 	{
 	}
-	
+
 	protected void abort(Throwable e)
 	{
 		abortHandler.notify(e);
 	}
-	
+
 	protected void stop()
 	{
 		launcher.stop();
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void setLauncher(WorkerLauncher launcher)
 	{
 		this.launcher = launcher;
 	}
-	
+
 	protected String getWorkerName()
 	{
 		return workerName;
 	}
-	
+
 	protected Logger getLogger()
 	{
 		return logger;
 	}
-	
-	protected void trace(Object message)
+
+	protected void trace(String message)
 	{
 		logger.trace(message);
 	}
-	
-	protected void trace(Object message, Throwable t)
+
+	protected void trace(String message, Throwable t)
 	{
 		logger.trace(message, t);
 	}
-	
-	protected void debug(Object message)
+
+	protected void debug(String message)
 	{
 		logger.debug(message);
 	}
-	
-	protected void debug(Object message, Throwable t)
+
+	protected void debug(String message, Throwable t)
 	{
 		logger.debug(message, t);
 	}
-	
-	protected void info(Object message)
+
+	protected void info(String message)
 	{
 		logger.info(message);
 	}
-	
-	protected void info(Object message, Throwable t)
+
+	protected void info(String message, Throwable t)
 	{
 		logger.info(message, t);
 	}
-	
-	protected void warn(Object message)
+
+	protected void warn(String message)
 	{
 		logger.warn(message);
 	}
-	
-	protected void warn(Object message, Throwable t)
+
+	protected void warn(String message, Throwable t)
 	{
 		logger.warn(message, t);
 	}
-	
-	protected void error(Object message)
+
+	protected void error(String message)
 	{
 		logger.error(message);
 	}
-	
-	protected void error(Object message, Throwable t)
+
+	protected void error(String message, Throwable t)
 	{
 		logger.error(message, t);
-	}
-	
-	protected void fatal(Object message)
-	{
-		logger.fatal(message);
-	}
-	
-	protected void fatal(Object message, Throwable t)
-	{
-		logger.fatal(message, t);
 	}
 }

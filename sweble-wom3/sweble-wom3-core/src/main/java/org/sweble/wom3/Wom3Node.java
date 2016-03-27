@@ -41,17 +41,17 @@ public interface Wom3Node
 	 * The version of the WOM standard represented by these classes.
 	 */
 	public static final String VERSION = "3.0";
-	
+
 	public static final String WOM_NS_URI = "http://sweble.org/schema/wom30";
-	
+
 	public static final String DEFAULT_WOM_NS_PREFIX = "wom";
-	
+
 	// =========================================================================
 	// 
 	// DOM Level 3 Node Interface Attributes
 	// 
 	// =========================================================================
-	
+
 	/**
 	 * The name of this node, depending on its type; see the following table:
 	 * 
@@ -78,7 +78,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public String getNodeName();
-	
+
 	/**
 	 * The value of this node, depending on its type; see the following table.
 	 * When it is defined to be null, setting it has no effect, including if the
@@ -114,7 +114,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public String getNodeValue() throws DOMException;
-	
+
 	/**
 	 * The value of this node, depending on its type; see the following table.
 	 * When it is defined to be null, setting it has no effect, including if the
@@ -150,7 +150,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public void setNodeValue(String nodeValue) throws DOMException;
-	
+
 	/**
 	 * A code representing the type of the underlying object.
 	 * 
@@ -159,7 +159,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public short getNodeType();
-	
+
 	/**
 	 * The Document object associated with this node. This is also the Document
 	 * object used to create new nodes. When this node is a Document or a
@@ -170,7 +170,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Document getOwnerDocument();
-	
+
 	/**
 	 * The parent of this node. All nodes, except Attr, Document,
 	 * DocumentFragment, Entity, and Notation may have a parent. However, if a
@@ -200,7 +200,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node getParentNode();
-	
+
 	/**
 	 * The first child of this node. If there is no such node, this returns
 	 * null.
@@ -210,7 +210,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node getFirstChild();
-	
+
 	/**
 	 * The last child of this node. If there is no such node, this returns null.
 	 * 
@@ -219,7 +219,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node getLastChild();
-	
+
 	/**
 	 * The node immediately following this node. If there is no such node, this
 	 * returns null.
@@ -229,7 +229,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node getPreviousSibling();
-	
+
 	/**
 	 * The node immediately preceding this node. If there is no such node, this
 	 * returns null.
@@ -239,7 +239,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node getNextSibling();
-	
+
 	/**
 	 * A NodeList that contains all children of this node. If there are no
 	 * children, this is a NodeList containing no nodes.
@@ -249,7 +249,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public NodeList getChildNodes();
-	
+
 	/**
 	 * A NamedNodeMap containing the attributes of this node (if it is an
 	 * Element) or null otherwise.
@@ -259,7 +259,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public NamedNodeMap getAttributes();
-	
+
 	/**
 	 * The namespace URI of this node, or null if it is unspecified (see XML
 	 * Namespaces).
@@ -285,7 +285,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public String getNamespaceURI();
-	
+
 	/**
 	 * The namespace prefix of this node, or null if it is unspecified.
 	 * 
@@ -299,7 +299,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public String getPrefix();
-	
+
 	/**
 	 * The namespace prefix of this node. When it is defined to be null, setting
 	 * it has no effect, including if the node is read-only.
@@ -346,7 +346,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public void setPrefix(String prefix) throws DOMException;
-	
+
 	/**
 	 * Returns the local part of the qualified name of this node.
 	 * 
@@ -359,7 +359,7 @@ public interface Wom3Node
 	 * @since WOM Version 3
 	 */
 	public String getLocalName();
-	
+
 	/**
 	 * The absolute base URI of this node or null if the implementation wasn't
 	 * able to obtain an absolute URI. This value is computed as described in
@@ -373,7 +373,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public String getBaseURI();
-	
+
 	/**
 	 * This attribute returns the text content of this node and its descendants.
 	 * 
@@ -422,7 +422,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public String getTextContent() throws DOMException;
-	
+
 	/**
 	 * Sets the text content of this node.
 	 * 
@@ -442,13 +442,13 @@ public interface Wom3Node
 	 */
 	@Override
 	public void setTextContent(String textContent) throws DOMException;
-	
+
 	// =========================================================================
 	// 
 	// DOM Level 3 Node Interface Operations
 	// 
 	// =========================================================================
-	
+
 	/**
 	 * Returns whether this node (if it is an element) has any attributes.
 	 * 
@@ -457,7 +457,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public boolean hasAttributes();
-	
+
 	/**
 	 * Returns whether this node has any children.
 	 * 
@@ -466,7 +466,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public boolean hasChildNodes();
-	
+
 	/**
 	 * Inserts the node newChild before the existing child node refChild. If
 	 * refChild is null, insert newChild at the end of the list of children.
@@ -512,7 +512,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node insertBefore(Node newChild, Node refChild) throws DOMException;
-	
+
 	/**
 	 * Replaces the child node oldChild with newChild in the list of children,
 	 * and returns the oldChild node.
@@ -558,7 +558,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node replaceChild(Node newChild, Node oldChild) throws DOMException;
-	
+
 	/**
 	 * Removes the child node indicated by oldChild from the list of children,
 	 * and returns it.
@@ -584,7 +584,7 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node removeChild(Node child) throws DOMException;
-	
+
 	/**
 	 * Adds the node newChild to the end of the list of children of this node.
 	 * If the newChild is already in the tree, it is first removed.
@@ -620,122 +620,122 @@ public interface Wom3Node
 	 */
 	@Override
 	public Wom3Node appendChild(Node child) throws DOMException;
-	
+
 	/**
 	 * @since DOM Level 1, modified in DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public void normalize();
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public String lookupPrefix(String namespaceURI);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public String lookupNamespaceURI(String prefix);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public boolean isDefaultNamespace(String namespaceURI);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public boolean isSameNode(Node other);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public boolean isEqualNode(Node arg);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public short compareDocumentPosition(Node other) throws DOMException;
-	
+
 	/**
 	 * @since DOM Level 2
 	 * @since WOM Version 3
 	 */
 	@Override
 	public boolean isSupported(String feature, String version);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public Object getFeature(String feature, String version);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public Object setUserData(String key, Object data, UserDataHandler handler);
-	
+
 	/**
 	 * @since DOM Level 3
 	 * @since WOM Version 3
 	 */
 	@Override
 	public Object getUserData(String key);
-	
+
 	/**
 	 * @since DOM Level 1
 	 * @since WOM Version 3
 	 */
 	@Override
 	public Wom3Node cloneNode(boolean deep);
-	
+
 	// =========================================================================
 	// 
 	// WOM Version 3 Extensions
 	// 
 	// =========================================================================
-	
+
 	/**
 	 * Returns an immutable collection containing this node's children.
 	 */
 	public Collection<Wom3Node> getWomChildNodes();
-	
+
 	/**
 	 * Returns an immutable collection of this node's attributes.
 	 */
 	public Collection<Wom3Attribute> getWomAttributes();
-	
+
 	/**
 	 * Returns a read-only iterator for this node's attributes.
 	 */
 	public Iterator<Wom3Attribute> attributeIterator();
-	
+
 	//	/**
 	//	 * Returns whether this node supports attributes.
 	//	 */
 	//	public boolean supportsAttributes();
-	
+
 	//	/**
 	//	 * Returns whether this node supports children.
 	//	 */
 	//	public boolean supportsChildNodes();
-	
+
 	//	// Later overrides org.w3c.dom.Element
 	//	public String getAttribute(String name);
 	//	

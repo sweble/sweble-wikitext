@@ -26,35 +26,35 @@ public class Revision
 			Serializable
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final BigInteger id;
-	
+
 	private final BigInteger parentId;
-	
+
 	private final DateTime timestamp;
-	
+
 	private final boolean minor;
-	
+
 	private final Contributor contributor;
-	
+
 	private final String contributorIp;
-	
+
 	private final String commentText;
-	
+
 	private final boolean commentDeleted;
-	
+
 	private final String text;
-	
+
 	private final String textSha1;
-	
+
 	private final boolean textDeleted;
-	
+
 	private final String format;
-	
+
 	private final String model;
-	
+
 	// =========================================================================
-	
+
 	public Revision(
 			BigInteger id,
 			BigInteger parentId,
@@ -84,76 +84,76 @@ public class Revision
 		this.format = format;
 		this.model = model;
 	}
-	
+
 	// =========================================================================
-	
+
 	public BigInteger getId()
 	{
 		return id;
 	}
-	
+
 	public BigInteger getParentId()
 	{
 		return parentId;
 	}
-	
+
 	public DateTime getTimestamp()
 	{
 		return timestamp;
 	}
-	
+
 	public boolean isMinor()
 	{
 		return minor;
 	}
-	
+
 	public Contributor getContributor()
 	{
 		return contributor;
 	}
-	
+
 	public String getContributorIp()
 	{
 		return contributorIp;
 	}
-	
+
 	public String getCommentText()
 	{
 		return commentText;
 	}
-	
+
 	public boolean isCommentDeleted()
 	{
 		return commentDeleted;
 	}
-	
+
 	public String getText()
 	{
 		return text;
 	}
-	
+
 	public String getTextSha1()
 	{
 		return textSha1;
 	}
-	
+
 	public boolean isTextDeleted()
 	{
 		return textDeleted;
 	}
-	
+
 	public String getFormat()
 	{
 		return format;
 	}
-	
+
 	public String getModel()
 	{
 		return model;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{

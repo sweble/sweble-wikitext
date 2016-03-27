@@ -25,16 +25,16 @@ public class AttributeImpl
 			AttributeBase
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * This value must always be normalized.
 	 */
 	private String strValue;
-	
+
 	private Object value;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For AttributeNsImpl only!
 	 */
@@ -42,59 +42,59 @@ public class AttributeImpl
 	{
 		super(owner);
 	}
-	
+
 	protected AttributeImpl(DocumentImpl owner, String name)
 	{
 		super(owner);
 		setName(name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getValue()
 	{
 		return strValue;
 	}
-	
+
 	protected void setValue(Object value, String strValue, boolean cloning)
 	{
 		if (!cloning)
 			assertWritableOnDocument();
-		
+
 		this.value = (value != null) ? value : strValue;
 		this.strValue = (strValue != null) ? strValue : (String) value;
 	}
-	
+
 	protected Object getNativeValue()
 	{
 		return value;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected Object clone() throws CloneNotSupportedException
 	{
 		AttributeImpl newNode = (AttributeImpl) super.clone();
-		
+
 		// We MUST NOT clone the native value. It might be a mutable object!
 		// Well, to be honest, we cannot even clone it if we wanted...
 		if (value != null)
 		{
 			BackboneElement parent = (BackboneElement) getOwnerElement();
-			
+
 			AttributeDescriptor descriptor = parent.getAttributeDescriptorOrFail(
 					getNamespaceURI(),
 					getLocalName(),
 					getName());
-			
+
 			NativeAndStringValuePair verified = new NativeAndStringValuePair(strValue);
 			descriptor.verifyAndConvert(parent, verified);
-			
+
 			newNode.value = verified.value;
 		}
-		
+
 		return newNode;
 	}
 }

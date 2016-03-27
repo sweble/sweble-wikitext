@@ -40,7 +40,7 @@ public interface Wom3ExtLink
 	 * @return The old link title node.
 	 */
 	public Wom3Title setLinkTitle(Wom3Title title);
-	
+
 	/**
 	 * Retrieve the target of this link.
 	 * 
@@ -49,7 +49,7 @@ public interface Wom3ExtLink
 	 * @return The target of this link.
 	 */
 	public URL getTarget();
-	
+
 	/**
 	 * Set a new target for this external link.
 	 * 
@@ -62,13 +62,13 @@ public interface Wom3ExtLink
 	 *             Thrown if <code>null</code>is passed as URL.
 	 */
 	public URL setTarget(URL target) throws NullPointerException;
-	
+
 	public boolean isPlainUrl();
-	
+
 	public boolean setPlainUrl(boolean plainUrl);
-	
+
 	// ==[ Link interface ]=====================================================
-	
+
 	/**
 	 * Returns the title of the external link. If the external link does not
 	 * specify a title, an empty title is returned.
@@ -77,7 +77,7 @@ public interface Wom3ExtLink
 	 */
 	@Override
 	public Wom3Title getLinkTitle();
-	
+
 	/**
 	 * Retrieve the target of this link.
 	 * 

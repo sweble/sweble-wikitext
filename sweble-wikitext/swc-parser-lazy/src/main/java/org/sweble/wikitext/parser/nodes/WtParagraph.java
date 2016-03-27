@@ -24,18 +24,18 @@ public class WtParagraph
 			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtParagraph()
 	{
 	}
-	
+
 	protected WtParagraph(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

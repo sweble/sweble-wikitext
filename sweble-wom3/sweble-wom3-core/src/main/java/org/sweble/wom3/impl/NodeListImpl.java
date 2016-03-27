@@ -29,30 +29,30 @@ public class NodeListImpl
 			Wom3NodeList
 {
 	private final Backbone parent;
-	
+
 	private int last = -1;
-	
+
 	private int length = -1;
-	
+
 	private Wom3Node lastNode = null;
-	
+
 	private int childrenChanges;
-	
+
 	// =========================================================================
-	
+
 	public NodeListImpl(Backbone parent)
 	{
 		this.parent = parent;
 		this.childrenChanges = getChildrenChanges();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Node item(int index)
 	{
 		testInvalidate();
-		
+
 		int cnt;
 		Wom3Node n;
 		if (last == -1)
@@ -81,7 +81,7 @@ public class NodeListImpl
 		lastNode = n;
 		return n;
 	}
-	
+
 	@Override
 	public int getLength()
 	{
@@ -95,18 +95,18 @@ public class NodeListImpl
 		}
 		return length;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Iterator<Wom3Node> iterator()
 	{
 		return new Iterator<Wom3Node>()
 		{
 			private int index = 0;
-			
+
 			private int childrenChanges = getChildrenChanges();
-			
+
 			@Override
 			public boolean hasNext()
 			{
@@ -114,7 +114,7 @@ public class NodeListImpl
 					throw new ConcurrentModificationException();
 				return item(index) != null;
 			}
-			
+
 			@Override
 			public Wom3Node next()
 			{
@@ -126,7 +126,7 @@ public class NodeListImpl
 				++index;
 				return item;
 			}
-			
+
 			@Override
 			public void remove()
 			{
@@ -134,16 +134,16 @@ public class NodeListImpl
 					throw new ConcurrentModificationException();
 				throw new UnsupportedOperationException();
 			}
-			
+
 			private boolean hasModification()
 			{
 				return childrenChanges != getChildrenChanges();
 			}
 		};
 	}
-	
+
 	// =========================================================================
-	
+
 	private void testInvalidate()
 	{
 		if (hasModification())
@@ -153,12 +153,12 @@ public class NodeListImpl
 			last = -1;
 		}
 	}
-	
+
 	private boolean hasModification()
 	{
 		return childrenChanges != getChildrenChanges();
 	}
-	
+
 	private int getChildrenChanges()
 	{
 		return parent.childrenChanges;

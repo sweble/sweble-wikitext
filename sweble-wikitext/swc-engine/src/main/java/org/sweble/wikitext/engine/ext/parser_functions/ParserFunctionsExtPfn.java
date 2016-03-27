@@ -31,9 +31,9 @@ public abstract class ParserFunctionsExtPfn
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -41,7 +41,7 @@ public abstract class ParserFunctionsExtPfn
 	{
 		super(name);
 	}
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -49,12 +49,12 @@ public abstract class ParserFunctionsExtPfn
 	{
 		super(argMode, name);
 	}
-	
+
 	public ParserFunctionsExtPfn(WikiConfig wikiConfig, String name)
 	{
 		super(wikiConfig, name);
 	}
-	
+
 	public ParserFunctionsExtPfn(
 			WikiConfig wikiConfig,
 			PfnArgumentMode argMode,
@@ -62,9 +62,9 @@ public abstract class ParserFunctionsExtPfn
 	{
 		super(wikiConfig, argMode, name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public final WtNode invoke(
 			WtNode template,
@@ -73,20 +73,20 @@ public abstract class ParserFunctionsExtPfn
 	{
 		return invoke((WtTemplate) template, frame, argsValues);
 	}
-	
+
 	public abstract WtNode invoke(
 			WtTemplate wtTemplate,
 			ExpansionFrame frame,
 			List<? extends WtNode> argsValues);
-	
+
 	// =========================================================================
-	
+
 	public static abstract class CtrlStmt
 			extends
 				ParserFunctionsExtPfn
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -94,12 +94,12 @@ public abstract class ParserFunctionsExtPfn
 		{
 			super(PfnArgumentMode.UNEXPANDED_VALUES, name);
 		}
-		
+
 		protected CtrlStmt(WikiConfig wikiConfig, String name)
 		{
 			super(wikiConfig, PfnArgumentMode.UNEXPANDED_VALUES, name);
 		}
-		
+
 		@Override
 		public final WtNode invoke(
 				WtTemplate pfn,
@@ -107,9 +107,9 @@ public abstract class ParserFunctionsExtPfn
 				List<? extends WtNode> args)
 		{
 			WtNode result = evaluate((WtTemplate) pfn, frame, args);
-			
+
 			// All control flow statements expand and trim their results.
-			
+
 			if (result != null)
 			{
 				return tu().trim(frame.expand(result));
@@ -119,27 +119,27 @@ public abstract class ParserFunctionsExtPfn
 				return nf().text("");
 			}
 		}
-		
+
 		protected abstract WtNode evaluate(
 				WtTemplate pfn,
 				ExpansionFrame frame,
 				List<? extends WtNode> args);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static abstract class IfThenElseStmt
 			extends
 				CtrlStmt
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		private final boolean hasDefault;
-		
+
 		private WtNode defaultValue;
-		
+
 		private final int thenArgIndex;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -151,7 +151,7 @@ public abstract class ParserFunctionsExtPfn
 			this.hasDefault = false;
 			this.thenArgIndex = thenArgIndex;
 		}
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -164,7 +164,7 @@ public abstract class ParserFunctionsExtPfn
 			this.hasDefault = hasDefault;
 			this.thenArgIndex = thenArgIndex;
 		}
-		
+
 		protected IfThenElseStmt(
 				WikiConfig wikiConfig,
 				String name,
@@ -174,7 +174,7 @@ public abstract class ParserFunctionsExtPfn
 			this.hasDefault = false;
 			this.thenArgIndex = thenArgIndex;
 		}
-		
+
 		protected IfThenElseStmt(
 				WikiConfig wikiConfig,
 				String name,
@@ -185,7 +185,7 @@ public abstract class ParserFunctionsExtPfn
 			this.hasDefault = hasDefault;
 			this.thenArgIndex = thenArgIndex;
 		}
-		
+
 		@Override
 		protected WtNode evaluate(
 				WtTemplate pfn,
@@ -194,9 +194,9 @@ public abstract class ParserFunctionsExtPfn
 		{
 			if (args.size() <= (hasDefault ? thenArgIndex - 1 : thenArgIndex))
 				return nf().text("");
-			
+
 			boolean cond = evaluateCondition(pfn, frame, args);
-			
+
 			WtNode result = defaultValue;
 			if (cond)
 			{
@@ -206,19 +206,19 @@ public abstract class ParserFunctionsExtPfn
 			else
 			{
 				int elseArgIndex = thenArgIndex + 1;
-				
+
 				if (args.size() > elseArgIndex)
 					result = args.get(elseArgIndex);
 			}
-			
+
 			return result;
 		}
-		
+
 		protected void setDefault(WtNode defaultValue)
 		{
 			this.defaultValue = defaultValue;
 		}
-		
+
 		protected abstract boolean evaluateCondition(
 				WtTemplate pfn,
 				ExpansionFrame frame,

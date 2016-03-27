@@ -24,18 +24,18 @@ public class WtParsedWikitextPage
 			WtPage
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtParsedWikitextPage()
 	{
 	}
-	
+
 	protected WtParsedWikitextPage(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	protected WtParsedWikitextPage(
 			WtNodeList content,
 			WtEntityMap entityMap)

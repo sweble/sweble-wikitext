@@ -20,87 +20,87 @@ package org.sweble.wom3.swcadapter.utils;
 public class AnalyzingStringBuffer
 {
 	private final StringBuffer sb;
-	
+
 	private boolean onlyWhitespaceSoFar = true;
-	
+
 	private int newlinesSinceLastNonWhitespace = 0;
-	
+
 	// =========================================================================
-	
+
 	public AnalyzingStringBuffer()
 	{
 		this.sb = new StringBuffer();
 	}
-	
+
 	public AnalyzingStringBuffer(int capacity)
 	{
 		this.sb = new StringBuffer(capacity);
 	}
-	
+
 	public AnalyzingStringBuffer(String str)
 	{
 		this.sb = new StringBuffer(str);
 	}
-	
+
 	public AnalyzingStringBuffer(CharSequence seq)
 	{
 		this.sb = new StringBuffer(seq);
 	}
-	
+
 	// =========================================================================
-	
+
 	public int length()
 	{
 		return sb.length();
 	}
-	
+
 	public char charAt(int index)
 	{
 		return sb.charAt(index);
 	}
-	
+
 	public StringBuffer append(String str)
 	{
 		checkString(str);
 		return sb.append(str);
 	}
-	
+
 	public void discard(int wmPosBeforeChildren)
 	{
 		sb.delete(wmPosBeforeChildren, sb.length());
 		recountNewlinesSinceLastNonWhitespace();
 	}
-	
+
 	public void rollback(int count)
 	{
 		int length = sb.length();
 		sb.delete(length - count, length);
 		recountNewlinesSinceLastNonWhitespace();
 	}
-	
+
 	@Override
 	public String toString()
 	{
 		return sb.toString();
 	}
-	
+
 	// =========================================================================
-	
+
 	public int newlineCount()
 	{
 		return newlinesSinceLastNonWhitespace;
 	}
-	
+
 	public boolean hadNewline()
 	{
 		return newlineCount() > 0;
 	}
-	
+
 	public boolean noContentYet()
 	{
 		return onlyWhitespaceSoFar;
 	}
-	
+
 	public boolean hadSpaceAfterLastNewline()
 	{
 		int l = sb.length() - 1;
@@ -117,7 +117,7 @@ public class AnalyzingStringBuffer
 				throw new RuntimeException("Should not happen!");
 		}
 	}
-	
+
 	public int countNewlinesSince(int wmPosBeforeListItem)
 	{
 		int count = 0;
@@ -129,7 +129,7 @@ public class AnalyzingStringBuffer
 		}
 		return count;
 	}
-	
+
 	private void recountNewlinesSinceLastNonWhitespace()
 	{
 		newlinesSinceLastNonWhitespace = 0;
@@ -141,20 +141,20 @@ public class AnalyzingStringBuffer
 				case '\n':
 					++newlinesSinceLastNonWhitespace;
 					break;
-				
+
 				case ' ':
 				case '\t':
 					break;
-				
+
 				default:
 					return;
 			}
 		}
 		onlyWhitespaceSoFar = true;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void checkString(String str)
 	{
 		int len = str.length();
@@ -166,11 +166,11 @@ public class AnalyzingStringBuffer
 				case '\n':
 					++newlinesSinceLastNonWhitespace;
 					break;
-				
+
 				case ' ':
 				case '\t':
 					break;
-				
+
 				default:
 					onlyWhitespaceSoFar = false;
 					newlinesSinceLastNonWhitespace = 0;

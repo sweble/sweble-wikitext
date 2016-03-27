@@ -27,9 +27,9 @@ public class WtTagExtension
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -37,7 +37,7 @@ public class WtTagExtension
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtTagExtension(
 			String name,
 			WtXmlAttributes xmlAttributes)
@@ -45,7 +45,7 @@ public class WtTagExtension
 		super(xmlAttributes, WtTagExtensionBody.NO_BODY);
 		setName(name);
 	}
-	
+
 	protected WtTagExtension(
 			String name,
 			WtXmlAttributes xmlAttributes,
@@ -54,41 +54,41 @@ public class WtTagExtension
 		super(xmlAttributes, body);
 		setName(name);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_TAG_EXTENSION;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String name;
-	
+
 	public final String getName()
 	{
 		return this.name;
 	}
-	
+
 	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
 		this.name = name;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -99,7 +99,7 @@ public class WtTagExtension
 			{
 				return WtTagExtension.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -107,12 +107,12 @@ public class WtTagExtension
 				{
 					case 0:
 						return "name";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -120,12 +120,12 @@ public class WtTagExtension
 				{
 					case 0:
 						return WtTagExtension.this.getName();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -137,44 +137,44 @@ public class WtTagExtension
 						WtTagExtension.this.setName((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
-	
+
 	public final WtXmlAttributes getXmlAttributes()
 	{
 		return (WtXmlAttributes) get(0);
 	}
-	
+
 	public final boolean hasBody()
 	{
 		return getBody() != WtTagExtensionBody.NO_BODY;
 	}
-	
+
 	public final void setBody(WtTagExtensionBody body)
 	{
 		set(1, body);
 	}
-	
+
 	public final WtTagExtensionBody getBody()
 	{
 		return (WtTagExtensionBody) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

@@ -27,7 +27,7 @@ public enum ParserScopes
 			return true;
 		}
 	},
-	
+
 	INTERNAL_LINK_ALT
 	{
 		@Override
@@ -46,14 +46,14 @@ public enum ParserScopes
 					return true;
 			}
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	IMAGE_LINK_ALT
 	{
 		@Override
@@ -72,14 +72,14 @@ public enum ParserScopes
 					return true;
 			}
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	INTERNAL_LINK_TITLE
 	{
 		@Override
@@ -98,14 +98,14 @@ public enum ParserScopes
 					return true;
 			}
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	IMAGE_LINK_TITLE
 	{
 		@Override
@@ -124,14 +124,14 @@ public enum ParserScopes
 					return true;
 			}
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	EXTERNAL_LINK_TITLE
 	{
 		@Override
@@ -146,7 +146,7 @@ public enum ParserScopes
 			}
 		}
 	},
-	
+
 	LIST_ITEM
 	{
 		@Override
@@ -163,7 +163,7 @@ public enum ParserScopes
 			}
 		}
 	},
-	
+
 	SEMI_PRE
 	{
 		@Override
@@ -180,7 +180,7 @@ public enum ParserScopes
 			}
 		}
 	},
-	
+
 	SECTION_HEADING
 	{
 		@Override
@@ -196,20 +196,20 @@ public enum ParserScopes
 					return false;
 			}
 		}
-		
+
 		@Override
 		public boolean isNoEolScope()
 		{
 			return true;
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	SECTION_BODY
 	{
 		@Override
@@ -224,7 +224,7 @@ public enum ParserScopes
 			}
 		}
 	},
-	
+
 	TABLE_ELEMENTS
 	{
 		@Override
@@ -232,14 +232,14 @@ public enum ParserScopes
 		{
 			return true;
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	TABLE_CELL
 	{
 		@Override
@@ -248,7 +248,7 @@ public enum ParserScopes
 			return true;
 		}
 	},
-	
+
 	TABLE_INLINE_CELL
 	{
 		@Override
@@ -264,20 +264,20 @@ public enum ParserScopes
 					return false;
 			}
 		}
-		
+
 		@Override
 		public boolean isNoEolScope()
 		{
 			return true;
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	TABLE_INLINE_HEADER
 	{
 		@Override
@@ -293,20 +293,20 @@ public enum ParserScopes
 					return false;
 			}
 		}
-		
+
 		@Override
 		public boolean isNoEolScope()
 		{
 			return true;
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return true;
 		}
 	},
-	
+
 	LCT_PROTECTED_CONTENT
 	{
 		@Override
@@ -314,20 +314,20 @@ public enum ParserScopes
 		{
 			return true;
 		}
-		
+
 		@Override
 		public boolean isNoEolScope()
 		{
 			return false;
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return false;
 		}
 	},
-	
+
 	LCT_RULE_TEXT
 	{
 		@Override
@@ -335,27 +335,27 @@ public enum ParserScopes
 		{
 			return true;
 		}
-		
+
 		@Override
 		public boolean isNoEolScope()
 		{
 			return false;
 		}
-		
+
 		@Override
 		public boolean isSticky()
 		{
 			return false;
 		}
 	};
-	
+
 	public abstract boolean accepts(ParserAtoms atom);
-	
+
 	public boolean isSticky()
 	{
 		return false;
 	}
-	
+
 	public boolean isNoEolScope()
 	{
 		return false;

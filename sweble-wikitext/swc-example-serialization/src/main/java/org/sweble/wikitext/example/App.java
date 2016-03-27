@@ -18,80 +18,84 @@ package org.sweble.wikitext.example;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.List;
 
-import joptsimple.OptionException;
+import de.fau.cs.osr.utils.ComparisonException;
 import de.fau.cs.osr.utils.getopt.Options;
+import joptsimple.OptionException;
+import xtc.parser.ParseException;
 
 public class App
 {
-	public static void main(String[] args) throws Exception
+	public static void main(String[] args) throws ClassNotFoundException, CloneNotSupportedException, IOException, ParseException, ComparisonException
 	{
 		setUp(args);
 	}
-	
-	private static void setUp(String[] args) throws Exception
+
+	private static void setUp(String[] args) throws CloneNotSupportedException, IOException, ClassNotFoundException, ParseException, ComparisonException
 	{
 		Options opt = new Options();
-		
+
 		// Serilization format
-		
+
 		opt.createOption('f', "format")
 				.withDescription("Serialization format, one of 'json', 'xml' or 'java'")
 				.withArgName("FORMAT")
 				.withRequiredArg()
 				.create();
-		
+
 		// Timings
-		
+
 		opt.createOption("timings")
 				.withDescription("Time parsing, serialization, compression and deserialization (can take a long time!)")
 				.create();
-		
+
 		// Parsing
-		
+
 		opt.createOption("auto-correct")
 				.withDescription("Auto correct erroneous wikitext")
 				.create();
-		
+
 		opt.createOption("warnings")
 				.withDescription("Generate parser warnings")
 				.create();
-		
+
 		// Postprocessing
-		
+
 		opt.createOption("strip-attrs")
 				.withDescription("Srtip all attributes from AST nodes before serialization")
 				.create();
-		
+
 		opt.createOption("strip-location")
 				.withDescription("Strip location information from AST nodes before serialization")
 				.create();
-		
+
 		opt.createOption("strip-rtd")
 				.withDescription("Strip only RTD attributes from AST nodes before serialization")
 				.create();
-		
+
 		opt.createOption("simplify")
 				.withDescription("Collapse adjacent text nodes into one text node")
 				.create();
-		
+
 		// Go Command Line!
-		
+
 		List<String> free;
 		try
 		{
 			opt.parse(args);
-			
+
 			free = opt.getFreeArguments();
 			if (free == null || free.isEmpty())
 			{
 				printHelp(opt);
 				return;
 			}
-			
+
 			opt.expected("format");
-			
+
 			opt.optional("timings");
 			opt.optional("auto-correct");
 			opt.optional("warnings");
@@ -107,9 +111,9 @@ public class App
 			System.err.println(e.getMessage());
 			return;
 		}
-		
+
 		String methodName = opt.value("format");
-		
+
 		SerializationMethod method;
 		if (methodName.toLowerCase().equals("java"))
 		{
@@ -128,11 +132,11 @@ public class App
 			printHelp(opt);
 			return;
 		}
-		
+
 		String fileTitle = free.get(0);
-		
+
 		// Go Go Go!
-		
+
 		run(
 				opt,
 				new File(fileTitle + ".wikitext"),
@@ -140,7 +144,7 @@ public class App
 				method,
 				fileTitle);
 	}
-	
+
 	private static void printHelp(Options opt)
 	{
 		System.err.println("Usage: java -jar swc-example-serialization-VERSION.jar -f FORMAT [OPTIONS] TITLE");
@@ -151,35 +155,36 @@ public class App
 		System.err.println();
 		opt.cmdLineHelp(System.err);
 	}
-	
+
 	private static void run(
 			Options opt,
 			File source,
 			File target,
 			SerializationMethod method,
-			String fileTitle) throws Exception
+			String fileTitle) throws CloneNotSupportedException, IOException, ClassNotFoundException, ParseException, ComparisonException
 	{
 		Serializer serializer = new Serializer(
 				new FileInputStream(source),
-				source.getName());
-		
+				source.getName(),
+				Charset.defaultCharset().name());
+
 		// Parsing
 		serializer.setParserAutoCorrectEnabled(opt.has("auto-correct"));
 		serializer.setParserWarningsEnabled(opt.has("warnings"));
 		serializer.setParserRtdEnabled(!opt.has("strip-rtd"));
-		
+
 		// Postprocessing
 		serializer.setPpStripLocations(opt.has("strip-location"));
 		serializer.setPpStripAllAttributes(opt.has("strip-attrs"));
 		serializer.setPpStripRtdAttributes(opt.has("strip-rtd"));
 		serializer.setPpSimplifyAst(opt.has("simplify"));
-		
+
 		// Timings
 		serializer.setQuiet(!opt.has("timings"));
-		
+
 		if (opt.has("timings"))
 			serializer.roundTrip(method);
-		
+
 		serializer.serializeTo(method, target);
 	}
 }

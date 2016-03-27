@@ -55,7 +55,7 @@ public class Toolbox
 					"Expected object of type " + type.getName() + "!");
 		return (T) obj;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static <T> T expectType(Class<T> type, Object obj, String argName)
 	{
@@ -64,35 +64,35 @@ public class Toolbox
 					"Expected argument `" + argName + "' to be of type " + type.getName() + "!");
 		return (T) obj;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static void checkValidXmlName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException("Name cannot be null");
-		
+
 		if (!XmlGrammar.xmlName().matcher(name).matches())
 			throw new IllegalArgumentException("Not a valid XML Name");
 	}
-	
+
 	// =========================================================================
-	
+
 	public static void checkValidCommentText(String text)
 	{
 		if (text == null)
 			throw new NullPointerException("Text cannot be null");
-		
+
 		if (!XmlGrammar.xmlCommentText().matcher(text).matches())
 			throw new IllegalArgumentException("Not a valid XML Comment text");
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final String INVALID_NOWIKI_RX_STR = "</nowiki\\s*>";
-	
+
 	private static final AtomicReference<Pattern> INVALID_NOWIKI_RX = new AtomicReference<Pattern>();
-	
+
 	public static Pattern getInvalidNowikiRx()
 	{
 		Pattern value = INVALID_NOWIKI_RX.get();
@@ -111,23 +111,23 @@ public class Toolbox
 		}
 		return value;
 	}
-	
+
 	public static void checkValidNowikiText(String text)
 	{
 		if (text == null)
 			throw new NullPointerException("Text cannot be null");
-		
+
 		if (Toolbox.getInvalidNowikiRx().matcher(text).find())
 			throw new IllegalArgumentException("Not a valid nowiki text");
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final String VALID_TARGET_RX_STR =
 			"(?:[^\\u0000-\\u001F\\u007F\\uFFFD<>{}|\\[\\]]+)";
-	
+
 	private static final AtomicReference<Pattern> VALID_TARGET_RX = new AtomicReference<Pattern>();
-	
+
 	public static Pattern getValidTargetRx()
 	{
 		Pattern value = VALID_TARGET_RX.get();
@@ -146,23 +146,23 @@ public class Toolbox
 		}
 		return value;
 	}
-	
+
 	public static void checkValidTarget(String target)
 	{
 		if (target == null)
 			throw new UnsupportedOperationException("Cannot remove target attribute");
-		
+
 		if (!getValidTargetRx().matcher(target).matches())
 			throw new IllegalArgumentException("Invalid target");
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final String VALID_TITLE_RX_STR =
 			"(?:[^\\u0000-\\u001F\\u007F\\uFFFD<>{}|\\[\\]/]+)";
-	
+
 	private static final AtomicReference<Pattern> VALID_TITLE_RX = new AtomicReference<Pattern>();
-	
+
 	public static Pattern getValidTitleRx()
 	{
 		Pattern value = VALID_TITLE_RX.get();
@@ -181,39 +181,39 @@ public class Toolbox
 		}
 		return value;
 	}
-	
+
 	public static void checkValidTitle(String title)
 			throws UnsupportedOperationException,
 			IllegalArgumentException
 	{
 		if (title == null)
 			throw new UnsupportedOperationException("Cannot remove attribute `title'");
-		
+
 		if (!getValidTitleRx().matcher(title).matches())
 			throw new IllegalArgumentException("Invalid title: `" + title + "'");
 	}
-	
+
 	// =========================================================================
-	
+
 	public static String checkValidNamespace(String namespace)
 			throws IllegalArgumentException
 	{
 		if (namespace == null || namespace.isEmpty())
 			return null;
-		
+
 		if (!getValidTitleRx().matcher(namespace).matches())
 			throw new IllegalArgumentException("Invalid namespace");
-		
+
 		return namespace;
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final String VALID_PATH_RX_STR =
 			"(?:(?:" + VALID_TITLE_RX_STR + "/)*" + VALID_TITLE_RX_STR + "?)";
-	
+
 	private static final AtomicReference<Pattern> VALID_PATH_RX = new AtomicReference<Pattern>();
-	
+
 	public static Pattern getValidPathRx()
 	{
 		Pattern value = VALID_PATH_RX.get();
@@ -232,7 +232,7 @@ public class Toolbox
 		}
 		return value;
 	}
-	
+
 	/**
 	 * Checks for a valid path expression and removes a trailing slash if
 	 * present.
@@ -247,42 +247,42 @@ public class Toolbox
 	{
 		if (path == null || path.isEmpty())
 			return null;
-		
+
 		if (path == null || !getValidPathRx().matcher(path).matches())
 			throw new IllegalArgumentException("Invalid path: `" + path + "'");
-		
+
 		int l = path.length() - 1;
 		return (path.charAt(l) == '/') ? path.substring(0, l) : path;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static void checkValidCategory(String category)
 			throws UnsupportedOperationException, IllegalArgumentException
 	{
 		if (category == null)
 			throw new UnsupportedOperationException("Cannot remove attribute `category'");
-		
+
 		if (!getValidTitleRx().matcher(category).matches())
 			throw new IllegalArgumentException("Invalid category");
 	}
-	
+
 	// =========================================================================
-	
+
 	public static DateTime stringToDateTime(String datetime)
 	{
 		DateTimeFormatter parser = ISODateTimeFormat.dateTimeParser();
 		return parser.parseDateTime(datetime);
 	}
-	
+
 	public static String dateTimeToString(DateTime datetime)
 	{
 		DateTimeFormatter formatter = ISODateTimeFormat.dateTime();
 		return datetime.toString(formatter);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static String signatureFormatToString(Wom3SignatureFormat format)
 	{
 		switch (format)
@@ -297,7 +297,7 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	public static Wom3SignatureFormat stringToSignatureFormat(String value)
 	{
 		if (value.equals("timestamp"))
@@ -317,9 +317,9 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3ImageFormat stringToImageFormat(String value)
 	{
 		if (value.equals("unrestrained"))
@@ -343,7 +343,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String imageFormatToString(Wom3ImageFormat format)
 	{
 		if (format == null)
@@ -362,9 +362,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3ImageHAlign stringToImageHAlign(String value)
 	{
 		if (value.equals("center"))
@@ -392,7 +392,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String imageHAlignToString(Wom3ImageHAlign halign)
 	{
 		if (halign == null)
@@ -413,9 +413,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3ImageVAlign stringToImageVAlign(String value)
 	{
 		if (value.equals("baseline"))
@@ -455,7 +455,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String imageVAlignToString(Wom3ImageVAlign valign)
 	{
 		if (valign == null)
@@ -482,9 +482,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3I18nDir stringToDir(String value)
 	{
 		if (value.equalsIgnoreCase("ltr"))
@@ -500,7 +500,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String dirToString(Wom3I18nDir dir)
 	{
 		if (dir == null)
@@ -515,9 +515,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3Clear stringToClear(String value)
 	{
 		if (value.equalsIgnoreCase("all"))
@@ -541,7 +541,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String clearToString(Wom3Clear clear)
 	{
 		if (clear == null)
@@ -560,14 +560,14 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static String urlToString(Object value)
 	{
 		return value.toString();
 	}
-	
+
 	public static URL stringToUrl(String value)
 	{
 		try
@@ -579,9 +579,9 @@ public class Toolbox
 			throw new WrappedException(e);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3HorizAlign stringToHorizAlign(String value)
 	{
 		if (value.equals("center"))
@@ -609,7 +609,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String horizAlignToString(Wom3HorizAlign halign)
 	{
 		if (halign == null)
@@ -630,14 +630,14 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final String VALID_LENGTH_RX_STR =
 			"([-+]?\\d+)|(?:([-+]?\\d+(?:\\.\\d+)?)%)";
-	
+
 	private static final AtomicReference<Pattern> VALID_LENGTH_RX = new AtomicReference<Pattern>();
-	
+
 	public static Pattern getValidLengthRx()
 	{
 		Pattern value = VALID_LENGTH_RX.get();
@@ -656,7 +656,7 @@ public class Toolbox
 		}
 		return value;
 	}
-	
+
 	public static Wom3ValueWithUnit stringToLength(String value)
 	{
 		Matcher m = getValidLengthRx().matcher(value);
@@ -676,14 +676,14 @@ public class Toolbox
 			throw new IllegalArgumentException("Not a length value: `" + value + "'");
 		}
 	}
-	
+
 	public static String lengthToString(Wom3ValueWithUnit value)
 	{
 		return value.toString();
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3BulletStyle stringToBulletStyle(String value)
 	{
 		if (value.equals("circle"))
@@ -703,7 +703,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String bulletStyleToString(Wom3BulletStyle value)
 	{
 		if (value == null)
@@ -720,9 +720,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3TableVAlign stringToTableVAlign(String value)
 	{
 		if (value.equals("baseline"))
@@ -746,7 +746,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String tableVAlignToString(Wom3TableVAlign value)
 	{
 		if (value == null)
@@ -765,9 +765,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3TableCaptionAlign stringToCaptionAlign(String value)
 	{
 		if (value.equals("bottom"))
@@ -791,7 +791,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String captionAlignToString(Wom3TableCaptionAlign value)
 	{
 		if (value == null)
@@ -810,9 +810,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3TableCellScope stringToTableScope(String value)
 	{
 		if (value.equals("col"))
@@ -836,7 +836,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String tableScopeToString(Wom3TableCellScope value)
 	{
 		if (value == null)
@@ -855,9 +855,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3TableFrame stringToTableFrame(String value)
 	{
 		if (value.equals("above"))
@@ -901,7 +901,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String tableFrameToString(Wom3TableFrame value)
 	{
 		if (value == null)
@@ -930,9 +930,9 @@ public class Toolbox
 				throw new InternalError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static Wom3TableRules stringToTableRules(String value)
 	{
 		if (value.equals("all"))
@@ -960,7 +960,7 @@ public class Toolbox
 			throw new IllegalArgumentException(value);
 		}
 	}
-	
+
 	public static String tableRulesToString(Wom3TableRules value)
 	{
 		if (value == null)

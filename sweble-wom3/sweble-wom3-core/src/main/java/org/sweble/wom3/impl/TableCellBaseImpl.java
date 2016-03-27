@@ -17,7 +17,11 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_ALIGN_LCRJC;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_ALIGN_TMBB;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_BGCOLOR;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_HEIGHT_LENGTH;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_WIDTH_LENGTH;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,186 +41,186 @@ public abstract class TableCellBaseImpl
 			Wom3TableCellBase
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private int rowIndex;
-	
+
 	private int colIndex;
-	
+
 	// =========================================================================
-	
+
 	public TableCellBaseImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getAbbr()
 	{
 		return getStringAttr("abbr");
 	}
-	
+
 	@Override
 	public String setAbbr(String abbr)
 	{
 		return setStringAttr(ATTR_DESC_ABBR, "abbr", abbr);
 	}
-	
+
 	@Override
 	public String getAxis()
 	{
 		return getStringAttr("axis");
 	}
-	
+
 	@Override
 	public String setAxis(String axis)
 	{
 		return setStringAttr(ATTR_DESC_AXIS, "axis", axis);
 	}
-	
+
 	@Override
 	public Wom3TableCellScope getScope()
 	{
 		return (Wom3TableCellScope) getAttributeNativeData("scope");
 	}
-	
+
 	@Override
 	public Wom3TableCellScope setScope(Wom3TableCellScope scope)
 	{
 		return setAttributeDirect(ATTR_DESC_SCOPE, "scope", scope);
 	}
-	
+
 	@Override
 	public Wom3HorizAlign getAlign()
 	{
 		return getAlignAttr("align");
 	}
-	
+
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
 		return setAlignAttr(ATTR_DESC_ALIGN_LCRJC, "align", align);
 	}
-	
+
 	@Override
 	public Wom3TableVAlign getVAlign()
 	{
 		return getTableVAlignAttr("valign");
 	}
-	
+
 	@Override
 	public Wom3TableVAlign setVAlign(Wom3TableVAlign valign)
 	{
 		return setTableVAlignAttr(ATTR_DESC_ALIGN_TMBB, "valign", valign);
 	}
-	
+
 	@Override
 	public Wom3Color getBgColor()
 	{
 		return getColorAttr("bgcolor");
 	}
-	
+
 	@Override
 	public Wom3Color setBgColor(Wom3Color color)
 	{
 		return setColorAttr(ATTR_DESC_BGCOLOR, "bgcolor", color);
 	}
-	
+
 	@Override
 	public Integer getColspan()
 	{
 		return getIntAttr("colspan");
 	}
-	
+
 	@Override
 	public Integer setColspan(Integer span) throws IllegalArgumentException
 	{
 		return setIntAttr(ATTR_DESC_COLSPAN, "colspan", span);
 	}
-	
+
 	@Override
 	public Integer getRowspan()
 	{
 		return getIntAttr("rowspan");
 	}
-	
+
 	@Override
 	public Integer setRowspan(Integer span) throws IllegalArgumentException
 	{
 		return setIntAttr(ATTR_DESC_ROWSPAN, "rowspan", span);
 	}
-	
+
 	@Override
 	public boolean isNowrap()
 	{
 		return getBoolAttr("nowrap");
 	}
-	
+
 	@Override
 	public boolean setNowrap(boolean nowrap)
 	{
 		return setBoolAttr(ATTR_DESC_NOWRAP, "nowrap", nowrap);
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit getWidth()
 	{
 		return getValueWithUnitAttr("width");
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit setWidth(Wom3ValueWithUnit width)
 	{
 		return setValueWithUnitAttr(ATTR_DESC_WIDTH_LENGTH, "width", width);
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit getHeight()
 	{
 		return getValueWithUnitAttr("height");
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit setHeight(Wom3ValueWithUnit height)
 	{
 		return setValueWithUnitAttr(ATTR_DESC_HEIGHT_LENGTH, "height", height);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getRowIndex()
 	{
 		checkAttachedToTable();
 		return rowIndex;
 	}
-	
+
 	@Override
 	public int getColIndex()
 	{
 		checkAttachedToTable();
 		return colIndex;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void checkAttachedToTable()
 	{
 		if (!isAttachedToTable())
 			throw new IllegalStateException("Cell not part of a table");
 	}
-	
+
 	protected boolean isAttachedToTable()
 	{
 		return getParentNode() instanceof TableRowImpl && getRow().isAttachedToTable();
 	}
-	
+
 	protected TableRowImpl getRow()
 	{
 		return (TableRowImpl) getParentNode();
 	}
-	
+
 	protected TablePartitionImpl getTablePartition()
 	{
 		TableRowImpl row = getRow();
@@ -224,36 +228,36 @@ public abstract class TableCellBaseImpl
 			return null;
 		return row.getTablePartition();
 	}
-	
+
 	protected void invalidate()
 	{
 		TablePartitionImpl p = getTablePartition();
 		if (p != null)
 			p.invalidate();
 	}
-	
+
 	protected void setCoords(int rowIndex, int colIndex)
 	{
 		this.rowIndex = rowIndex;
 		this.colIndex = colIndex;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_ABBR = new AttrDescAbbr();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_AXIS = new AttrDescAxis();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_SCOPE = new AttrDescScope();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_COLSPAN = new AttrDescColSpan();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_ROWSPAN = new AttrDescRowSpan();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_NOWRAP = new AttrDescNoWrap();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
@@ -269,7 +273,7 @@ public abstract class TableCellBaseImpl
 		NAME_MAP.put("width", ATTR_DESC_WIDTH_LENGTH);
 		NAME_MAP.put("height", ATTR_DESC_HEIGHT_LENGTH);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -278,7 +282,7 @@ public abstract class TableCellBaseImpl
 	{
 		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescAbbr
 			extends
 				AttributeDescriptor
@@ -292,7 +296,7 @@ public abstract class TableCellBaseImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -301,7 +305,7 @@ public abstract class TableCellBaseImpl
 			return super.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescAxis
 			extends
 				AttributeDescriptor
@@ -315,7 +319,7 @@ public abstract class TableCellBaseImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -324,7 +328,7 @@ public abstract class TableCellBaseImpl
 			return super.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescScope
 			extends
 				AttributeDescriptor
@@ -338,7 +342,7 @@ public abstract class TableCellBaseImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -347,7 +351,7 @@ public abstract class TableCellBaseImpl
 			return AttributeVerifiers.SCOPE.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescColSpan
 			extends
 				AttributeDescriptor
@@ -361,7 +365,7 @@ public abstract class TableCellBaseImpl
 					true /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -372,7 +376,7 @@ public abstract class TableCellBaseImpl
 				throw new IllegalArgumentException("Illegal colspan: " + verified.strValue);
 			return true;
 		}
-		
+
 		@Override
 		public void customAction(
 				Wom3Node parent,
@@ -382,7 +386,7 @@ public abstract class TableCellBaseImpl
 			((TableCellBaseImpl) parent).invalidate();
 		}
 	}
-	
+
 	public static final class AttrDescRowSpan
 			extends
 				AttributeDescriptor
@@ -396,7 +400,7 @@ public abstract class TableCellBaseImpl
 					true /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -407,7 +411,7 @@ public abstract class TableCellBaseImpl
 				throw new IllegalArgumentException("Illegal rowspan: " + verified.strValue);
 			return true;
 		}
-		
+
 		@Override
 		public void customAction(
 				Wom3Node parent,
@@ -417,7 +421,7 @@ public abstract class TableCellBaseImpl
 			((TableCellBaseImpl) parent).invalidate();
 		}
 	}
-	
+
 	public static final class AttrDescNoWrap
 			extends
 				AttributeDescriptor
@@ -431,7 +435,7 @@ public abstract class TableCellBaseImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

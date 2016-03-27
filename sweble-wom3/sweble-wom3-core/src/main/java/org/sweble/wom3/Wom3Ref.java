@@ -22,6 +22,6 @@ public interface Wom3Ref
 			Wom3ElementNode
 {
 	public String getType();
-	
+
 	public String setType(String type);
 }

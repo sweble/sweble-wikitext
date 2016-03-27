@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.parser.LinkTargetException.Reason;
 
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 import de.fau.cs.osr.utils.XmlGrammar;
 
 /**
@@ -76,100 +76,100 @@ import de.fau.cs.osr.utils.XmlGrammar;
 public class LinkTargetParser
 {
 	private String title;
-	
+
 	private String fragment;
-	
+
 	private String namespace;
-	
+
 	private String interwiki;
-	
+
 	private boolean initialColon;
-	
+
 	// =========================================================================
-	
+
 	private final static Pattern bidiCharPattern = Pattern.compile(
 			"[\u200E\u200F\u202A-\u202E]");
-	
+
 	private final static Pattern spacePlusPattern = Pattern.compile(
 			"[ _\u00A0\u1680\u180E\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]+");
-	
+
 	private final static Pattern namespaceSeparatorPattern = Pattern.compile(
 			"^(.+?)_*:_*(.*)$");
-	
+
 	private final static Pattern invalidTitle = Pattern.compile(
 			// Percent encoding for URIs
 			"(%[0-9A-Fa-f]{2})" +
-					
+
 					// XML entity reference
 					"|(&" + XmlGrammar.RE_XML_NAME + ";)" +
-					
+
 					// XML char reference
 					"|((&#[0-9]+;)|(&#x[0-9A-Fa-f]+;))" +
-					
+
 					// Relative path components
 					"|(^\\.\\.?($|/))" +
 					"|(/\\.\\.?/)" +
 					"|(/\\.\\.?$)" +
-					
+
 					// No magic tilde sequences
 					"|(~~~)" +
-					
+
 					// No invalid characters
 					"|[\\u0000-\\u001F\\u007F\\uFFFD<>{}\\|\\[\\]]");
-	
+
 	// =========================================================================
-	
+
 	public void parse(ParserConfig config, final String target) throws LinkTargetException
 	{
 		String result = target;
-		
+
 		// Decode URL encoded characters
 		{
 			result = urlDecode(result);
 		}
-		
+
 		// Decode XML entities
 		{
 			result = xmlDecode(config, result);
 		}
-		
+
 		// Strip bidi override characters
 		{
 			Matcher matcher = bidiCharPattern.matcher(result);
 			result = matcher.replaceAll("");
 		}
-		
+
 		// Trim whitespace
 		{
-			result = StringUtils.trim(result);
+			result = StringTools.trim(result);
 		}
-		
+
 		// Strip whitespace characters
 		{
 			Matcher matcher = spacePlusPattern.matcher(result);
 			result = matcher.replaceAll("_");
 		}
-		
+
 		// Remove trailing whitespace characters
-		result = StringUtils.trimUnderscores(result);
-		
+		result = StringTools.trimUnderscores(result);
+
 		if (result.isEmpty())
 			throw new LinkTargetException(Reason.EMPTY_TARGET, target);
-		
+
 		// Has the link an initial colon? Can be reset by identifyNamespaces!
 		if (result.charAt(0) == ':')
 		{
 			this.initialColon = true;
 			result = result.substring(1);
-			result = StringUtils.trimUnderscores(result);
+			result = StringTools.trimUnderscores(result);
 		}
-		
+
 		// Identify namespaces and interwiki names
 		result = identifyNamespaces(config, target, result);
-		
+
 		// Get the part after the '#'
 		result = extractFragment(result);
-		
+
 		// Perform sanity checks on remaining title
 		{
 			Matcher matcher = invalidTitle.matcher(result);
@@ -179,7 +179,7 @@ public class LinkTargetParser
 						target,
 						matcher.group());
 		}
-		
+
 		// Empty links to a namespace alone are not allowed
 		if (result.isEmpty() &&
 				this.interwiki == null &&
@@ -187,10 +187,10 @@ public class LinkTargetParser
 		{
 			throw new LinkTargetException(Reason.ONLY_NAMESPACE, target);
 		}
-		
+
 		this.title = result;
 	}
-	
+
 	private String identifyNamespaces(
 			ParserConfig config,
 			final String target,
@@ -201,20 +201,20 @@ public class LinkTargetParser
 		{
 			// We have at least ONE namespace
 			String nsName = matcher.group(1);
-			
+
 			if (config.isNamespace(nsName))
 			{
 				// It is a KNOWN namespace
 				result = matcher.group(2);
 				this.namespace = nsName;
-				
+
 				checkNoNsAfterTalkNs(config, target, result, nsName);
 			}
 			else if (config.isInterwikiName(nsName))
 			{
 				// It is a KNOWN interwiki name
 				result = matcher.group(2);
-				
+
 				if (config.isIwPrefixOfThisWiki(nsName))
 				{
 					// It points to THIS wiki
@@ -229,12 +229,12 @@ public class LinkTargetParser
 						{
 							// There are more namespace parts
 							nsName = matcher.group(1);
-							
+
 							if (config.isNamespace(nsName))
 							{
 								result = matcher.group(2);
 								this.namespace = nsName;
-								
+
 								checkNoNsAfterTalkNs(config, target, result, nsName);
 							}
 							else if (config.isInterwikiName(nsName))
@@ -247,19 +247,19 @@ public class LinkTargetParser
 				else
 				{
 					this.interwiki = nsName;
-					
+
 					if (!result.isEmpty() && result.charAt(0) == ':')
 					{
 						this.initialColon = true;
 						result = result.substring(1);
-						result = StringUtils.trimUnderscores(result);
+						result = StringTools.trimUnderscores(result);
 					}
 				}
 			}
 		}
 		return result;
 	}
-	
+
 	private void checkNoNsAfterTalkNs(
 			ParserConfig config,
 			final String target,
@@ -278,60 +278,60 @@ public class LinkTargetParser
 			}
 		}
 	}
-	
+
 	private String extractFragment(String result)
 	{
 		int i = result.indexOf('#');
 		if (i != -1)
 		{
 			String fragment = result.substring(i + 1);
-			this.fragment = StringUtils.trimUnderscores(fragment);
-			
+			this.fragment = StringTools.trimUnderscores(fragment);
+
 			result = result.substring(0, i);
-			result = StringUtils.trimUnderscores(result);
+			result = StringTools.trimUnderscores(result);
 		}
 		return result;
 	}
-	
+
 	private static String urlDecode(String text)
 	{
 		// It's intentional that only '%' characters trigger the decoding.
 		// MediaWiki does not decode '+' characters if there's not at least
 		// one '%' character :D
 		if (text.indexOf('%') >= 0)
-			return StringUtils.urlDecode(text);
+			return StringTools.urlDecode(text);
 		return text;
 	}
-	
+
 	private static String xmlDecode(ParserConfig config, String text)
 	{
 		if (text.indexOf('&') >= 0)
-			return StringUtils.xmlDecode(text, config);
+			return StringTools.xmlDecode(text, config);
 		return text;
 	}
-	
+
 	// =========================================================================
-	
+
 	public String getTitle()
 	{
 		return title;
 	}
-	
+
 	public String getFragment()
 	{
 		return fragment;
 	}
-	
+
 	public String getNamespace()
 	{
 		return namespace;
 	}
-	
+
 	public String getInterwiki()
 	{
 		return interwiki;
 	}
-	
+
 	public boolean isInitialColon()
 	{
 		return initialColon;

@@ -24,9 +24,9 @@ public class WtLctRuleGarbage
 			WtStringNodeImpl
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -34,12 +34,12 @@ public class WtLctRuleGarbage
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtLctRuleGarbage(String content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

@@ -42,6 +42,6 @@ public enum SerializationMethod
 			return "xml";
 		}
 	};
-	
+
 	public abstract String getExt();
 }

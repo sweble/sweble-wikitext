@@ -23,10 +23,10 @@ import java.util.Collection;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WtContentNode.WtEmptyContentNode;
 
-import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.AstNodeImpl;
 import de.fau.cs.osr.ptk.common.ast.AstNodeList;
 import de.fau.cs.osr.ptk.common.ast.AstNodeListImpl;
+import xtc.util.Pair;
 
 public interface WtNodeList
 		extends
@@ -34,9 +34,9 @@ public interface WtNodeList
 			AstNodeList<WtNode>
 {
 	public static final WtEmptyNodeList EMPTY = new WtEmptyNodeList();
-	
+
 	// =========================================================================
-	
+
 	public class WtEmptyNodeList
 			extends
 				WtEmptyContentNode
@@ -44,23 +44,23 @@ public interface WtNodeList
 				WtNodeList
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
-		
+
 		private WtEmptyNodeList()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_NODE_LIST;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtNodeList.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean equals(Object other)
 		{
@@ -70,15 +70,15 @@ public interface WtNodeList
 				return AstNodeImpl.equalsNoTypeCheck(this, (WtNodeListImpl) other);
 			return super.equals(other);
 		}
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtNodeList.EMPTY;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public class WtNodeListImpl
 			extends
 				AstNodeListImpl<WtNode>
@@ -86,28 +86,28 @@ public interface WtNodeList
 				WtNodeList
 	{
 		private static final long serialVersionUID = 6285729315278264384L;
-		
+
 		// =====================================================================
-		
+
 		protected WtNodeListImpl()
 		{
 		}
-		
+
 		protected WtNodeListImpl(Collection<? extends WtNode> list)
 		{
 			super(list);
 		}
-		
+
 		protected WtNodeListImpl(Pair<? extends WtNode> list)
 		{
 			super(list);
 		}
-		
+
 		protected WtNodeListImpl(WtNode child)
 		{
 			super(child);
 		}
-		
+
 		protected WtNodeListImpl(Object... content)
 		{
 			for (Object o : content)
@@ -138,9 +138,9 @@ public interface WtNodeList
 				}
 			}
 		}
-		
+
 		// =====================================================================
-		
+
 		@Override
 		public String getNodeName()
 		{
@@ -148,46 +148,46 @@ public interface WtNodeList
 					WtNodeList.class.getSimpleName() :
 					super.getNodeName();
 		}
-		
+
 		// =====================================================================
-		
+
 		@Override
 		public void setRtd(WtRtData rtd)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setRtd(Object... glue)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public void setRtd(String... glue)
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		@Override
 		public WtRtData getRtd()
 		{
 			return null;
 		}
-		
+
 		@Override
 		public void clearRtd()
 		{
 		}
-		
+
 		@Override
 		public void suppressRtd()
 		{
 			throw new UnsupportedOperationException();
 		}
-		
+
 		// =====================================================================
-		
+
 		@Override
 		public boolean equals(Object other)
 		{

@@ -25,9 +25,9 @@ public class WtTableRow
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -35,44 +35,44 @@ public class WtTableRow
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtTableRow(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_TABLE_ROW;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private boolean implicit;
-	
+
 	public final boolean isImplicit()
 	{
 		return this.implicit;
 	}
-	
+
 	public final void setImplicit(boolean implicit)
 	{
 		this.implicit = implicit;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -83,7 +83,7 @@ public class WtTableRow
 			{
 				return WtTableRow.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -91,12 +91,12 @@ public class WtTableRow
 				{
 					case 0:
 						return "implicit";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -104,12 +104,12 @@ public class WtTableRow
 				{
 					case 0:
 						return WtTableRow.this.isImplicit();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -121,39 +121,39 @@ public class WtTableRow
 						WtTableRow.this.setImplicit((Boolean) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
-	
+
 	public final WtXmlAttributes getXmlAttributes()
 	{
 		return (WtXmlAttributes) get(0);
 	}
-	
+
 	public final void setBody(WtBody body)
 	{
 		set(1, body);
 	}
-	
+
 	public final WtBody getBody()
 	{
 		return (WtBody) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

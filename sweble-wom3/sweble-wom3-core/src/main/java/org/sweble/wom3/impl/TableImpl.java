@@ -17,7 +17,9 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.sweble.wom3.impl.CommonAttributeDescriptors.*;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_ALIGN_LCR;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_BGCOLOR;
+import static org.sweble.wom3.impl.CommonAttributeDescriptors.ATTR_DESC_WIDTH_LENGTH;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -41,40 +43,40 @@ public class TableImpl
 			Wom3Table
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/* Doesn't work for tables. They are too complex (the caption can occur anywhere...)
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc("caption"),
 			descChild("tbody", ChildDescriptor.MULTIPLE) };
 	*/
-	
+
 	private Wom3TableCaption caption;
-	
+
 	/*
 	// TODO: A MediaWiki table may only have one body, but others might have the full set!
 	private Wom3TableBody body;
 	*/
-	
+
 	private ChildrenSubset<Wom3TablePartition> partitions =
 			new ChildrenSubset<Wom3TablePartition>(1);
-	
+
 	// =========================================================================
-	
+
 	public TableImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "table";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
@@ -89,12 +91,12 @@ public class TableImpl
 			doesNotAllowInsertion(prev, child);
 		}
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
@@ -109,7 +111,7 @@ public class TableImpl
 				return;
 			if (BackboneChildOperationChecker.isIgnoredDefault(newChild))
 				return;
-			
+
 			/**
 			 * Only one caption may be child of this node. So if we replace with
 			 * a caption we must make sure that either the existing caption is
@@ -118,11 +120,11 @@ public class TableImpl
 			if ((newChild instanceof Wom3TableCaption) &&
 					((oldChild == getCaption()) || (getCaption() == null)))
 				return;
-			
+
 			doesNotAllowReplacement(oldChild, newChild);
 		}
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -135,7 +137,7 @@ public class TableImpl
 			this.partitions.insertAfter(prev, Wom3TablePartition.class, (Wom3TableBody) added);
 		}
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -148,154 +150,154 @@ public class TableImpl
 			this.partitions.remove(removed);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3HorizAlign getAlign()
 	{
 		return getAlignAttr("align");
 	}
-	
+
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
 		return setAlignAttr(ATTR_DESC_ALIGN_LCR, "align", align);
 	}
-	
+
 	@Override
 	public Integer getBorder()
 	{
 		return getIntAttr("border");
 	}
-	
+
 	@Override
 	public Integer setBorder(Integer thickness)
 	{
 		return setIntAttr(ATTR_DESC_BORDER, "border", thickness);
 	}
-	
+
 	@Override
 	public Wom3Color getBgColor()
 	{
 		return getColorAttr("bgcolor");
 	}
-	
+
 	@Override
 	public Wom3Color setBgColor(Wom3Color color)
 	{
 		return setColorAttr(ATTR_DESC_BGCOLOR, "bgcolor", color);
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit getCellPadding()
 	{
 		return getValueWithUnitAttr("cellpadding");
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit setCellPadding(Wom3ValueWithUnit padding)
 	{
 		return setValueWithUnitAttr(ATTR_DESC_CELLPADDING, "cellpadding", padding);
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit getCellSpacing()
 	{
 		return getValueWithUnitAttr("cellspacing");
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit setCellSpacing(Wom3ValueWithUnit spacing)
 	{
 		return setValueWithUnitAttr(ATTR_DESC_CELLSPACING, "cellspacing", spacing);
 	}
-	
+
 	@Override
 	public Wom3TableFrame getFrame()
 	{
 		return (Wom3TableFrame) getAttributeNativeData("frame");
 	}
-	
+
 	@Override
 	public Wom3TableFrame setFrame(Wom3TableFrame frame)
 	{
 		return setAttributeDirect(ATTR_DESC_FRAME, "frame", frame);
 	}
-	
+
 	@Override
 	public Wom3TableRules getRules()
 	{
 		return (Wom3TableRules) getAttributeNativeData("rules");
 	}
-	
+
 	@Override
 	public Wom3TableRules setRules(Wom3TableRules rules)
 	{
 		return setAttributeDirect(ATTR_DESC_RULES, "rules", rules);
 	}
-	
+
 	@Override
 	public String getSummary()
 	{
 		return getStringAttr("summary");
 	}
-	
+
 	@Override
 	public String setSummary(String summary)
 	{
 		return setStringAttr(ATTR_DESC_SUMMARY, "summary", summary);
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit getWidth()
 	{
 		return getValueWithUnitAttr("width");
 	}
-	
+
 	@Override
 	public Wom3ValueWithUnit setWidth(Wom3ValueWithUnit width)
 	{
 		return setValueWithUnitAttr(ATTR_DESC_WIDTH_LENGTH, "width", width);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3TableCaption getCaption()
 	{
 		return caption;
 	}
-	
+
 	@Override
 	public Wom3TableCaption setCaption(Wom3TableCaption caption)
 	{
 		return (Wom3TableCaption) replaceOrInsertBeforeOrAppend(
 				this.caption, this.partitions.getFirstOrNull(), caption, false);
 	}
-	
+
 	@Override
 	public Collection<Wom3TablePartition> getPartitions()
 	{
 		return Collections.unmodifiableCollection(this.partitions);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_BORDER = new AttrDescBorder();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_CELLPADDING = new AttrDescCellPadding();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_CELLSPACING = new AttrDescCellSpacing();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_FRAME = new AttrDescFrame();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_RULES = new AttrDescRules();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_SUMMARY = new AttrDescSummary();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
@@ -310,7 +312,7 @@ public class TableImpl
 		NAME_MAP.put("summary", ATTR_DESC_SUMMARY);
 		NAME_MAP.put("width", ATTR_DESC_WIDTH_LENGTH);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -319,7 +321,7 @@ public class TableImpl
 	{
 		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescBorder
 			extends
 				AttributeDescriptor
@@ -333,7 +335,7 @@ public class TableImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -342,7 +344,7 @@ public class TableImpl
 			return AttributeVerifiers.PIXELS.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescCellPadding
 			extends
 				AttributeDescriptor
@@ -356,7 +358,7 @@ public class TableImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -365,7 +367,7 @@ public class TableImpl
 			return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescCellSpacing
 			extends
 				AttributeDescriptor
@@ -379,7 +381,7 @@ public class TableImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -388,7 +390,7 @@ public class TableImpl
 			return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescFrame
 			extends
 				AttributeDescriptor
@@ -402,7 +404,7 @@ public class TableImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -411,7 +413,7 @@ public class TableImpl
 			return AttributeVerifiers.FRAME.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescRules
 			extends
 				AttributeDescriptor
@@ -425,7 +427,7 @@ public class TableImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -434,7 +436,7 @@ public class TableImpl
 			return AttributeVerifiers.RULES.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescSummary
 			extends
 				AttributeDescriptor
@@ -448,7 +450,7 @@ public class TableImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

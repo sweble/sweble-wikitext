@@ -59,14 +59,14 @@ public interface Wom3DefinitionListTerm
 	 * @return The number of definitions of this term.
 	 */
 	public int getDefNum();
-	
+
 	/**
 	 * Get a collection containing all definitions of this term.
 	 * 
 	 * @return A collection containing all definitions of this term.
 	 */
 	public Collection<Wom3DefinitionListDef> getDefs();
-	
+
 	/**
 	 * Get a certain definition of this term.
 	 * 
@@ -77,7 +77,7 @@ public interface Wom3DefinitionListTerm
 	 *             If the given index is out of range.
 	 */
 	public Wom3DefinitionListDef getDef(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Replace a definition of this term.
 	 * 
@@ -90,7 +90,7 @@ public interface Wom3DefinitionListTerm
 	 *             If the given index is out of range.
 	 */
 	public Wom3DefinitionListDef replaceDef(int index, Wom3DefinitionListDef def) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Remove a definition if this term.
 	 * 
@@ -101,7 +101,7 @@ public interface Wom3DefinitionListTerm
 	 *             If the given index is out of range.
 	 */
 	public Wom3DefinitionListDef removeDef(int index) throws IndexOutOfBoundsException;
-	
+
 	/**
 	 * Append a definition to the term.
 	 * 
@@ -109,7 +109,7 @@ public interface Wom3DefinitionListTerm
 	 *            The item to append.
 	 */
 	public void appendDef(Wom3DefinitionListDef def);
-	
+
 	/**
 	 * Insert a definition at the given index into the list of definitions of
 	 * this term.

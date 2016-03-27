@@ -22,21 +22,21 @@ public class CompressionException
 			Exception
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	public CompressionException()
 	{
 	}
-	
+
 	public CompressionException(String message, Throwable cause)
 	{
 		super(message, cause);
 	}
-	
+
 	public CompressionException(String message)
 	{
 		super(message);
 	}
-	
+
 	public CompressionException(Throwable cause)
 	{
 		super(cause);

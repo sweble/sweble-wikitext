@@ -28,11 +28,11 @@ public abstract class OffendingNodeWarning
 			WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final WtNode node;
-	
+
 	// =========================================================================
-	
+
 	public OffendingNodeWarning(
 			WtNode node,
 			WarningSeverity severity,
@@ -42,7 +42,7 @@ public abstract class OffendingNodeWarning
 		super(makeSpan(node), severity, origin, message);
 		this.node = node;
 	}
-	
+
 	public OffendingNodeWarning(
 			WtNode node,
 			WarningSeverity severity,
@@ -52,23 +52,23 @@ public abstract class OffendingNodeWarning
 		super(makeSpan(node), severity, origin, message);
 		this.node = node;
 	}
-	
+
 	private static Span makeSpan(WtNode node)
 	{
 		return new Span(
 				node.getNativeLocation(),
 				WtRtDataPrinter.print(node));
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtNode getNode()
 	{
 		return node;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -77,7 +77,7 @@ public abstract class OffendingNodeWarning
 		result = prime * result + ((node == null) ? 0 : node.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{

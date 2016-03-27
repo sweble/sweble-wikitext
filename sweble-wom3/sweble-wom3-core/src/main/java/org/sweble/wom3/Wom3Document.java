@@ -28,25 +28,25 @@ public interface Wom3Document
 {
 	@Override
 	public Wom3ElementNode getDocumentElement();
-	
+
 	@Override
 	public Wom3DocumentFragment createDocumentFragment();
-	
+
 	@Override
 	public Wom3ElementNode createElement(String tagName) throws DOMException;
-	
+
 	@Override
 	public Wom3ElementNode createElementNS(
 			String namespaceURI,
 			String qualifiedName) throws DOMException;
-	
+
 	@Override
 	public Wom3Node adoptNode(Node source) throws DOMException;
-	
+
 	@Override
 	public Wom3DomImplementation getImplementation();
-	
+
 	boolean getReadOnly();
-	
+
 	void setReadOnly(boolean readOnly);
 }

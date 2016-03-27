@@ -17,7 +17,7 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.sweble.wom3.Wom3XmlText;
@@ -26,38 +26,38 @@ import org.w3c.dom.Node;
 public class XmlTextTest
 {
 	private Wom3XmlText n = (Wom3XmlText) TestHelperDoc.genXmlText("content");
-	
+
 	@Test
 	public void testHasCorrectName() throws Exception
 	{
 		assertEquals("#text", n.getNodeName());
 	}
-	
+
 	@Test
 	public void testHasCorrectNodeType() throws Exception
 	{
 		assertEquals(Node.TEXT_NODE, n.getNodeType());
 	}
-	
+
 	@Test
 	public void testBothGetTextAndGetValueReturnText() throws Exception
 	{
 		assertEquals("content", n.getNodeValue());
 	}
-	
+
 	@Test(expected = UnsupportedOperationException.class)
 	public void testCannotAppendNode() throws Exception
 	{
 		n.appendChild(TestHelperDoc.genElem("b"));
 	}
-	
+
 	@Test
 	public void testAppendTextWorks() throws Exception
 	{
 		n.appendData(" is not everything");
 		assertEquals("content is not everything", n.getNodeValue());
 	}
-	
+
 	@Test
 	public void testDeleteTextWorks() throws Exception
 	{
@@ -67,7 +67,7 @@ public class XmlTextTest
 		n.deleteData(7, 2);
 		assertEquals("Test 1 3", n.getNodeValue());
 	}
-	
+
 	@Test
 	public void testInsertWorks() throws Exception
 	{
@@ -77,7 +77,7 @@ public class XmlTextTest
 		n.insertData(7, "2 ");
 		assertEquals("Test 1 2 3", n.getNodeValue());
 	}
-	
+
 	@Test
 	public void testInsertAtBothEndsWorks() throws Exception
 	{
@@ -85,7 +85,7 @@ public class XmlTextTest
 		n.insertData(n.getNodeValue().length(), " is good content");
 		assertEquals("no content is good content", n.getNodeValue());
 	}
-	
+
 	@Test
 	public void testReplaceTextByPosition() throws Exception
 	{

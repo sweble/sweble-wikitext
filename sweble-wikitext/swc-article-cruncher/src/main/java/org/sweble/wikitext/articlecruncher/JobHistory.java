@@ -20,15 +20,15 @@ package org.sweble.wikitext.articlecruncher;
 public class JobHistory
 {
 	private final JobHistory previous;
-	
+
 	private final JobProcessingState state;
-	
+
 	private final Object result;
-	
+
 	private final Exception exception;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Construct a history element for a successful processing run.
 	 */
@@ -39,7 +39,7 @@ public class JobHistory
 		this.result = result;
 		this.exception = null;
 	}
-	
+
 	/**
 	 * Construct a history element for a failed processing run.
 	 */
@@ -50,9 +50,9 @@ public class JobHistory
 		this.result = null;
 		this.exception = exception;
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Return the history of the processing run preceding this processing run.
 	 * 
@@ -63,7 +63,7 @@ public class JobHistory
 	{
 		return previous;
 	}
-	
+
 	/**
 	 * Get the processing state of the processing run represented by this
 	 * history element.
@@ -72,7 +72,7 @@ public class JobHistory
 	{
 		return state;
 	}
-	
+
 	/**
 	 * Get the result of the processing run represented by this history element.
 	 * 
@@ -83,7 +83,7 @@ public class JobHistory
 	{
 		return result;
 	}
-	
+
 	/**
 	 * Get the exception of the processing run represented by this history
 	 * element.

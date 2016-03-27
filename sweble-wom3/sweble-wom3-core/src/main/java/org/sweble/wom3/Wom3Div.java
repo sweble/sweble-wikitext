@@ -38,7 +38,7 @@ public interface Wom3Div
 	 *         specified.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the alignment of the content inside the tag.
 	 * 

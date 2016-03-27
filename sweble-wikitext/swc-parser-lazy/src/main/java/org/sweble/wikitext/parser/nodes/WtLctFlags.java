@@ -29,23 +29,23 @@ public interface WtLctFlags
 			WtNode
 {
 	public static final WtNoLctFlags NO_FLAGS = new WtNoLctFlags();
-	
+
 	// =========================================================================
-	
+
 	public Set<String> getFlags();
-	
+
 	public void setFlags(Set<String> flags);
-	
+
 	public Set<String> getVariants();
-	
+
 	public void setVariants(Set<String> variants);
-	
+
 	public List<String> getGarbage();
-	
+
 	public void setGarbage(List<String> garbage);
-	
+
 	// =========================================================================
-	
+
 	public static final class WtNoLctFlags
 			extends
 				WtEmptyImmutableNode
@@ -53,75 +53,75 @@ public interface WtLctFlags
 				WtLctFlags
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
-		
+
 		private WtNoLctFlags()
 		{
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LCT_FLAGS;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtLctFlags.class.getSimpleName();
 		}
-		
+
 		@Override
 		public boolean indicatesAbsence()
 		{
 			return true;
 		}
-		
+
 		@Override
 		public Set<String> getFlags()
 		{
 			return Collections.emptySet();
 		}
-		
+
 		@Override
 		public void setFlags(Set<String> flags)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
-		
+
 		@Override
 		public Set<String> getVariants()
 		{
 			return Collections.emptySet();
 		}
-		
+
 		@Override
 		public void setVariants(Set<String> variants)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
-		
+
 		@Override
 		public List<String> getGarbage()
 		{
 			return Collections.emptyList();
 		}
-		
+
 		@Override
 		public void setGarbage(List<String> garbage)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
-		
+
 		// =====================================================================
-		
+
 		protected Object readResolve() throws ObjectStreamException
 		{
 			return WtLctFlags.NO_FLAGS;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class WtLctFlagsImpl
 			extends
 				WtLeafNode
@@ -129,16 +129,16 @@ public interface WtLctFlags
 				WtLctFlags
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		// =====================================================================
-		
+
 		/**
 		 * Only for use by de-serialization code.
 		 */
 		protected WtLctFlagsImpl()
 		{
 		}
-		
+
 		protected WtLctFlagsImpl(
 				Set<String> flags,
 				Set<String> variants,
@@ -148,69 +148,69 @@ public interface WtLctFlags
 			setVariants(variants);
 			setGarbage(garbage);
 		}
-		
+
 		@Override
 		public int getNodeType()
 		{
 			return NT_LCT_FLAGS;
 		}
-		
+
 		@Override
 		public String getNodeName()
 		{
 			return WtLctFlags.class.getSimpleName();
 		}
-		
+
 		// =====================================================================
 		// Properties
-		
+
 		private Set<String> flags;
-		
+
 		public final Set<String> getFlags()
 		{
 			return this.flags;
 		}
-		
+
 		public final void setFlags(Set<String> flags)
 		{
 			this.flags = flags;
 		}
-		
+
 		private Set<String> variants;
-		
+
 		public final Set<String> getVariants()
 		{
 			return this.variants;
 		}
-		
+
 		public final void setVariants(Set<String> variants)
 		{
 			this.variants = variants;
 		}
-		
+
 		private List<String> garbage;
-		
+
 		public final List<String> getGarbage()
 		{
 			return this.garbage;
 		}
-		
+
 		public final void setGarbage(List<String> garbage)
 		{
 			this.garbage = garbage;
 		}
-		
+
 		@Override
 		public final int getPropertyCount()
 		{
 			return 3 + getSuperPropertyCount();
 		}
-		
+
 		private final int getSuperPropertyCount()
 		{
 			return super.getPropertyCount();
 		}
-		
+
 		@Override
 		public final AstNodePropertyIterator propertyIterator()
 		{
@@ -221,7 +221,7 @@ public interface WtLctFlags
 				{
 					return WtLctFlagsImpl.this.getPropertyCount();
 				}
-				
+
 				@Override
 				protected String getName(int index)
 				{
@@ -233,12 +233,12 @@ public interface WtLctFlags
 							return "variants";
 						case 2:
 							return "garbage";
-							
+
 						default:
 							return super.getName(index);
 					}
 				}
-				
+
 				@Override
 				protected Object getValue(int index)
 				{
@@ -250,12 +250,12 @@ public interface WtLctFlags
 							return WtLctFlagsImpl.this.getVariants();
 						case 2:
 							return WtLctFlagsImpl.this.getGarbage();
-							
+
 						default:
 							return super.getValue(index);
 					}
 				}
-				
+
 				@Override
 				protected Object setValue(int index, Object value)
 				{
@@ -285,7 +285,7 @@ public interface WtLctFlags
 							WtLctFlagsImpl.this.setGarbage(garbage);
 							return old;
 						}
-						
+
 						default:
 							return super.setValue(index, value);
 					}

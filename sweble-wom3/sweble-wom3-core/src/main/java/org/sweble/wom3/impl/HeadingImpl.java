@@ -30,46 +30,46 @@ public class HeadingImpl
 			Wom3Heading
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public HeadingImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "heading";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3HorizAlign getAlign()
 	{
 		return getAlignAttr("align");
 	}
-	
+
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align) throws IllegalArgumentException
 	{
 		return setAlignAttr(CommonAttributeDescriptors.ATTR_DESC_ALIGN_LCRJ, "align", align);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("align", CommonAttributeDescriptors.ATTR_DESC_ALIGN_LCRJ);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

@@ -25,64 +25,64 @@ public class WtSection
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtSection()
 	{
 		super(Uninitialized.X);
-		
+
 	}
-	
+
 	protected WtSection(int level, WtHeading heading)
 	{
 		super(heading, WtBody.NO_BODY);
 		setLevel(level);
-		
+
 	}
-	
+
 	protected WtSection(int level, WtHeading heading, WtBody body)
 	{
 		super(heading, body);
 		setLevel(level);
-		
+
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_SECTION;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private int level;
-	
+
 	public final int getLevel()
 	{
 		return this.level;
 	}
-	
+
 	public final void setLevel(int level)
 	{
 		this.level = level;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -93,7 +93,7 @@ public class WtSection
 			{
 				return WtSection.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -101,12 +101,12 @@ public class WtSection
 				{
 					case 0:
 						return "level";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -114,12 +114,12 @@ public class WtSection
 				{
 					case 0:
 						return WtSection.this.getLevel();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -131,44 +131,44 @@ public class WtSection
 						WtSection.this.setLevel((Integer) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setHeading(WtHeading title)
 	{
 		set(0, title);
 	}
-	
+
 	public final WtHeading getHeading()
 	{
 		return (WtHeading) get(0);
 	}
-	
+
 	public final boolean hasBody()
 	{
 		return getBody() != WtBody.NO_BODY;
 	}
-	
+
 	public final void setBody(WtBody body)
 	{
 		set(1, body);
 	}
-	
+
 	public final WtBody getBody()
 	{
 		return (WtBody) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "heading", "body" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

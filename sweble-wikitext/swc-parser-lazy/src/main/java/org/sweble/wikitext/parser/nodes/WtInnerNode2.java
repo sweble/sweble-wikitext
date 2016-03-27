@@ -19,10 +19,10 @@ package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.WtRtData;
 
-import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstAbstractInnerNode.AstInnerNode2;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.Uninitialized;
+import xtc.tree.Location;
 
 public abstract class WtInnerNode2
 		extends
@@ -31,33 +31,33 @@ public abstract class WtInnerNode2
 			WtNode
 {
 	private static final long serialVersionUID = -3133816643760188432L;
-	
+
 	private WtRtData rtd = null;
-	
+
 	// =========================================================================
-	
+
 	protected WtInnerNode2(Uninitialized u)
 	{
 		super(u);
 	}
-	
+
 	protected WtInnerNode2(WtNode n0, WtNode n1)
 	{
 		super(n0, n1);
 	}
-	
+
 	protected WtInnerNode2(Location arg0, WtNode n0, WtNode n1)
 	{
 		super(arg0, n0, n1);
 	}
-	
+
 	protected WtInnerNode2(Location arg0)
 	{
 		super(arg0);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void setRtd(WtRtData rtd)
 	{
@@ -65,51 +65,51 @@ public abstract class WtInnerNode2
 			throw new IllegalArgumentException();
 		this.rtd = rtd;
 	}
-	
+
 	@Override
 	public void setRtd(Object... glue)
 	{
 		rtd = new WtRtData(this, glue);
 	}
-	
+
 	@Override
 	public void setRtd(String... glue)
 	{
 		rtd = new WtRtData(this, glue);
 	}
-	
+
 	@Override
 	public WtRtData getRtd()
 	{
 		return rtd;
 	}
-	
+
 	@Override
 	public void clearRtd()
 	{
 		rtd = null;
 	}
-	
+
 	@Override
 	public void suppressRtd()
 	{
 		rtd = WtRtData.SUPPRESS;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1;
 	}
-	
+
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
 		return new WtInnerNode2PropertyIterator();
 	}
-	
+
 	protected class WtInnerNode2PropertyIterator
 			extends
 				AstNodePropertyIterator
@@ -119,7 +119,7 @@ public abstract class WtInnerNode2
 		{
 			return WtInnerNode2.this.getPropertyCount();
 		}
-		
+
 		@Override
 		protected String getName(int index)
 		{
@@ -127,12 +127,12 @@ public abstract class WtInnerNode2
 			{
 				case 0:
 					return "rtd";
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object getValue(int index)
 		{
@@ -140,12 +140,12 @@ public abstract class WtInnerNode2
 			{
 				case 0:
 					return WtInnerNode2.this.getRtd();
-					
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}
 		}
-		
+
 		@Override
 		protected Object setValue(int index, Object value)
 		{
@@ -157,7 +157,7 @@ public abstract class WtInnerNode2
 					WtInnerNode2.this.setRtd((WtRtData) value);
 					return old;
 				}
-				
+
 				default:
 					throw new IndexOutOfBoundsException();
 			}

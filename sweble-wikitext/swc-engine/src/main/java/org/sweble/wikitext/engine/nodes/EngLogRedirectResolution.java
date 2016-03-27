@@ -21,13 +21,13 @@ public class EngLogRedirectResolution
 			EngLogTargetResolution
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogRedirectResolution()
 	{
 	}
-	
+
 	protected EngLogRedirectResolution(String target, boolean success)
 	{
 		super(target, success);

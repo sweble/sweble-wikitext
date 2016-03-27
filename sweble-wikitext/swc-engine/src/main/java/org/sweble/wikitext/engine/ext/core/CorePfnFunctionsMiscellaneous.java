@@ -30,8 +30,8 @@ import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
-import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
 import de.fau.cs.osr.utils.XmlGrammar;
 
@@ -40,20 +40,20 @@ public class CorePfnFunctionsMiscellaneous
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnFunctionsMiscellaneous(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - Miscellaneous");
 		addParserFunction(new TagPfn(wikiConfig));
 	}
-	
+
 	public static CorePfnFunctionsMiscellaneous group(WikiConfig wikiConfig)
 	{
 		return new CorePfnFunctionsMiscellaneous(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{#language:language code}}
@@ -66,7 +66,7 @@ public class CorePfnFunctionsMiscellaneous
 	// ==       {{#speciale:userlogin}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{#tag:tagname
@@ -76,13 +76,13 @@ public class CorePfnFunctionsMiscellaneous
 	// ==       }}
 	// ==
 	// =========================================================================
-	
+
 	public static final class TagPfn
 			extends
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -90,12 +90,12 @@ public class CorePfnFunctionsMiscellaneous
 		{
 			super(PfnArgumentMode.TEMPLATE_ARGUMENTS, "tag");
 		}
-		
+
 		public TagPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, "tag");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate pfn,
@@ -104,9 +104,9 @@ public class CorePfnFunctionsMiscellaneous
 		{
 			if (argsValues.size() < 2)
 				return pfn;
-			
+
 			WtTemplateArgument nameNode = (WtTemplateArgument) argsValues.get(0);
-			
+
 			String nameStr;
 			try
 			{
@@ -117,14 +117,14 @@ public class CorePfnFunctionsMiscellaneous
 			{
 				return pfn;
 			}
-			
+
 			// FIXME: Meld 'name=' part into value
 			// FIXME: Do something about the "remove comments" hack
 			WtTemplateArgument bodyNode = (WtTemplateArgument) argsValues.get(1);
 			WtNode expValueNode = frame.expand(bodyNode.getValue());
 			expValueNode = stripComments(expValueNode);
 			String bodyStr = WtRtDataPrinter.print(expValueNode);
-			
+
 			WtNodeList attrs = nf().list();
 			for (int i = 2; i < argsValues.size(); ++i)
 			{
@@ -133,7 +133,7 @@ public class CorePfnFunctionsMiscellaneous
 				WtNode argValueNode = frame.expand(arg.getValue());
 				if (argNameNode == null || argValueNode == null)
 					continue;
-				
+
 				String argName;
 				String argValue;
 				try
@@ -145,25 +145,25 @@ public class CorePfnFunctionsMiscellaneous
 				{
 					continue;
 				}
-				
+
 				if (!XmlGrammar.xmlName().matcher(argName).matches())
 					continue;
-				
+
 				WtNodeList argValueList = nf().list(nf().text(argValue));
-				
+
 				attrs.add(nf().attr(
 						nf().name(nf().list(nf().text(argName))),
 						nf().value(argValueList)));
 			}
-			
+
 			WtTagExtension tagExt = EngineRtData.set(nf().tagExt(
 					nameStr,
 					nf().attrs(attrs),
 					nf().tagExtBody(bodyStr)));
-			
+
 			return frame.expand(tagExt);
 		}
-		
+
 		private WtNode stripComments(WtNode n)
 		{
 			ListIterator<WtNode> i = n.listIterator();

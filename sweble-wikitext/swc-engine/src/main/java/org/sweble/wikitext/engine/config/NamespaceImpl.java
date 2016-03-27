@@ -35,23 +35,23 @@ public class NamespaceImpl
 			Comparable<Namespace>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private int id;
-	
+
 	private String name;
-	
+
 	private String canonical;
-	
+
 	private boolean canHaveSubpages;
-	
+
 	private boolean fileNs;
-	
+
 	private TreeSet<String> aliases = new TreeSet<String>();
-	
+
 	// =========================================================================
-	
+
 	private static final int NS_MEDIA = -2;
-	
+
 	/*
 	private static final int NS_SPECIAL = -1;
 	
@@ -87,13 +87,13 @@ public class NamespaceImpl
 	
 	private static final int NS_CATEGORY_TALK = 15;
 	*/
-	
+
 	// =========================================================================
-	
+
 	protected NamespaceImpl()
 	{
 	}
-	
+
 	public NamespaceImpl(
 			int id,
 			String name,
@@ -109,99 +109,99 @@ public class NamespaceImpl
 		this.fileNs = isFileNs;
 		this.aliases.addAll(aliases);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	@XmlAttribute
 	public String getName()
 	{
 		return name;
 	}
-	
+
 	public void setName(String name)
 	{
 		this.name = name;
 	}
-	
+
 	@Override
 	@XmlAttribute
 	public int getId()
 	{
 		return id;
 	}
-	
+
 	public void setId(int id)
 	{
 		this.id = id;
 	}
-	
+
 	@Override
 	@XmlAttribute
 	public boolean isCanHaveSubpages()
 	{
 		return canHaveSubpages;
 	}
-	
+
 	public void setCanHaveSubpages(boolean canHaveSubpages)
 	{
 		this.canHaveSubpages = canHaveSubpages;
 	}
-	
+
 	@Override
 	@XmlAttribute
 	public String getCanonical()
 	{
 		return canonical;
 	}
-	
+
 	public void setCanonical(String canonical)
 	{
 		this.canonical = canonical;
 	}
-	
+
 	@Override
 	@XmlAttribute
 	public boolean isFileNs()
 	{
 		return fileNs;
 	}
-	
+
 	public void setFileNs(boolean fileNs)
 	{
 		this.fileNs = fileNs;
 	}
-	
+
 	@Override
 	public boolean isMediaNs()
 	{
 		return this.id == NS_MEDIA;
 	}
-	
+
 	@Override
 	@XmlElement(name = "alias")
 	public TreeSet<String> getAliases()
 	{
 		return aliases;
 	}
-	
+
 	public void setAliases(TreeSet<String> aliases)
 	{
 		this.aliases = aliases;
 	}
-	
+
 	@Override
 	public boolean isTalkNamespace()
 	{
 		return (id > 0) && (id % 2 == 1);
 	}
-	
+
 	@Override
 	public boolean isSubjectNamespace()
 	{
 		return (id >= 0) && (id % 2 == 0);
 	}
-	
+
 	@Override
 	public int getTalkspaceId()
 	{
@@ -209,7 +209,7 @@ public class NamespaceImpl
 			return id;
 		return id + 1;
 	}
-	
+
 	@Override
 	public int getSubjectspaceId()
 	{
@@ -217,9 +217,9 @@ public class NamespaceImpl
 			return id;
 		return id - 1;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -228,7 +228,7 @@ public class NamespaceImpl
 		result = prime * result + id;
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -243,17 +243,17 @@ public class NamespaceImpl
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return "NamespaceImpl [id=" + id + ", name=" + name + ", canonical=" + canonical + ", canHaveSubpages=" + canHaveSubpages + ", fileNs=" + fileNs + ", aliases=" + aliases + "]";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int compareTo(Namespace o)
 	{

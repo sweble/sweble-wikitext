@@ -24,11 +24,11 @@ public class InvalidPagenameWarning
 			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final String titleString;
-	
+
 	// =========================================================================
-	
+
 	public InvalidPagenameWarning(
 			WarningSeverity severity,
 			String origin,
@@ -38,7 +38,7 @@ public class InvalidPagenameWarning
 		super(titleNode, severity, origin, makeMessage(titleString));
 		this.titleString = titleString;
 	}
-	
+
 	public InvalidPagenameWarning(
 			WarningSeverity severity,
 			Class<?> origin,
@@ -48,20 +48,20 @@ public class InvalidPagenameWarning
 		super(titleNode, severity, origin, makeMessage(titleString));
 		this.titleString = titleString;
 	}
-	
+
 	private static String makeMessage(String titleString)
 	{
 		return "The given text `" + titleString + "' " +
 				"does not constitute a valid page name";
 	}
-	
+
 	public String getTitleString()
 	{
 		return titleString;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -70,7 +70,7 @@ public class InvalidPagenameWarning
 		result = prime * result + ((titleString == null) ? 0 : titleString.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{

@@ -25,53 +25,53 @@ public class DaemonThreadFactory
 			ThreadFactory
 {
 	private final AtomicInteger threadNumber = new AtomicInteger(1);
-	
+
 	private final ThreadGroup group;
-	
+
 	private String threadNameTemplate;
-	
+
 	// =========================================================================
-	
+
 	public DaemonThreadFactory(String poolName)
 	{
 		this(poolName, Thread.currentThread().getThreadGroup());
 	}
-	
+
 	public DaemonThreadFactory(String poolName, ThreadGroup group)
 	{
 		if (group == null)
 			group = new ThreadGroup(poolName);
-		
+
 		this.group = group;
-		
+
 		this.threadNameTemplate = String.format("%s-%%02d", poolName);
 	}
-	
+
 	// =========================================================================
-	
+
 	public void setThreadNameTemplate(String threadNameTemplate)
 	{
 		this.threadNameTemplate = threadNameTemplate;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Thread newThread(Runnable runnable)
 	{
 		String name = String.format(threadNameTemplate, threadNumber.getAndIncrement());
-		
+
 		Thread thread = new Thread(group, runnable, name);
-		
+
 		if (!thread.isDaemon())
 			thread.setDaemon(true);
-		
+
 		if (thread.getPriority() != Thread.NORM_PRIORITY)
 			thread.setPriority(Thread.NORM_PRIORITY);
-		
+
 		return thread;
 	}
-	
+
 	public ThreadGroup getThreadGroup()
 	{
 		return group;

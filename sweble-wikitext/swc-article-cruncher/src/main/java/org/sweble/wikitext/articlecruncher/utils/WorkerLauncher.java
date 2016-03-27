@@ -23,7 +23,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.articlecruncher.WorkerInstantiator;
 
 import de.fau.cs.osr.utils.WrappedException;
@@ -37,43 +38,43 @@ public class WorkerLauncher
 		POISONED,
 		STOPPED,
 	}
-	
-	private static final Logger logger = Logger.getLogger(WorkerLauncher.class.getName());
-	
+
+	private static final Logger logger = LoggerFactory.getLogger(WorkerLauncher.class.getName());
+
 	private final Object kickOffLock = new Object();
-	
+
 	private final WorkerInstantiator workerInstantiator;
-	
+
 	private final AbortHandler abortHandler;
-	
+
 	private String workerName;
-	
+
 	private Future<?> future;
-	
+
 	private WorkerState state;
-	
+
 	private WorkerSynchronizer synchronizer;
-	
+
 	// =========================================================================
-	
+
 	public WorkerLauncher(
 			WorkerInstantiator workerInstantiator,
 			AbortHandler abortHandler)
 	{
 		this.workerInstantiator = workerInstantiator;
 		this.abortHandler = abortHandler;
-		
+
 		//this.logger = Logger.getLogger(workerName);
 		this.state = WorkerState.INITIALIZED;
 	}
-	
+
 	// =========================================================================
-	
+
 	public final synchronized void start(ExecutorService executor)
 	{
 		start(executor, null);
 	}
-	
+
 	public final synchronized void start(
 			ExecutorService executor,
 			WorkerSynchronizer synchronizer)
@@ -91,13 +92,13 @@ public class WorkerLauncher
 				{
 					this.state = WorkerState.RUNNING;
 					this.synchronizer = synchronizer;
-					
+
 					this.future = executor.submit(new WorkerRunnable());
 				}
 			}
 		}
 	}
-	
+
 	public final synchronized void stop()
 	{
 		synchronized (state)
@@ -123,16 +124,16 @@ public class WorkerLauncher
 				*/
 				default:
 					break;
-			
+
 			}
 		}
 	}
-	
+
 	public final synchronized void await() throws InterruptedException, ExecutionException
 	{
 		await(Long.MAX_VALUE, null);
 	}
-	
+
 	public final synchronized boolean await(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException
 	{
 		Future<?> f;
@@ -140,10 +141,10 @@ public class WorkerLauncher
 		{
 			if (state == WorkerState.INITIALIZED)
 				throw new IllegalStateException("await() can only be called after start()");
-			
+
 			f = future;
 		}
-		
+
 		if (f != null)
 		{
 			try
@@ -167,13 +168,13 @@ public class WorkerLauncher
 		{
 			logger.warn("Worker " + workerName + " already terminated");
 		}
-		
+
 		// joined with future
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	private final class WorkerRunnable
 			implements
 				Runnable
@@ -184,18 +185,18 @@ public class WorkerLauncher
 			synchronized (kickOffLock)
 			{
 			}
-			
+
 			WorkerBase worker = workerInstantiator.instantiate();
 			workerName = worker.getWorkerName();
 			worker.setLauncher(WorkerLauncher.this);
-			
+
 			try
 			{
 				if (synchronizer != null)
 					synchronizer.oneStarted();
-				
+
 				logger.info(workerName + " starting");
-				
+
 				try
 				{
 					worker.work();
@@ -214,7 +215,7 @@ public class WorkerLauncher
 					if (state != WorkerState.POISONED)
 						unexpected = true;
 				}
-				
+
 				if (unexpected)
 				{
 					logger.error(workerName + " interrupted unexpectedly", e);
@@ -236,14 +237,14 @@ public class WorkerLauncher
 				{
 					logger.error(workerName + ".after() threw exception", t);
 				}
-				
+
 				synchronized (state)
 				{
 					state = WorkerState.STOPPED;
 				}
-				
+
 				logger.info(workerName + " stopped");
-				
+
 				if (synchronizer != null)
 					synchronizer.oneStopped();
 			}

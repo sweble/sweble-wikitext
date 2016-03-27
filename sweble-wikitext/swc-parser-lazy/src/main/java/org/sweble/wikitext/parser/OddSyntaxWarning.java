@@ -24,9 +24,9 @@ public class OddSyntaxWarning
 			WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public OddSyntaxWarning(
 			Span span,
 			WarningSeverity severity,
@@ -35,7 +35,7 @@ public class OddSyntaxWarning
 	{
 		super(span, severity, origin, message);
 	}
-	
+
 	public OddSyntaxWarning(
 			Span span,
 			WarningSeverity severity,

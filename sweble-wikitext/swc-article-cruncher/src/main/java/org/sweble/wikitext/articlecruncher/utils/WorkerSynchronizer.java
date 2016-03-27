@@ -20,27 +20,27 @@ package org.sweble.wikitext.articlecruncher.utils;
 public class WorkerSynchronizer
 {
 	private final Object lock = new Object();
-	
+
 	private final Object goLock = new Object();
-	
+
 	private int running = 0;
-	
+
 	private boolean oneStopped = false;
-	
+
 	private boolean abort = false;
-	
+
 	private boolean isSync = false;
-	
+
 	private boolean go = false;
-	
+
 	// =========================================================================
-	
+
 	public WorkerSynchronizer()
 	{
 	}
-	
+
 	// =========================================================================
-	
+
 	public void oneStarted() throws InterruptedException
 	{
 		synchronized (lock)
@@ -48,14 +48,14 @@ public class WorkerSynchronizer
 			++running;
 			lock.notify();
 		}
-		
+
 		synchronized (goLock)
 		{
 			while (!go)
 				goLock.wait();
 		}
 	}
-	
+
 	public void oneStopped()
 	{
 		synchronized (lock)
@@ -65,7 +65,7 @@ public class WorkerSynchronizer
 			lock.notify();
 		}
 	}
-	
+
 	public void abort()
 	{
 		synchronized (lock)
@@ -74,7 +74,7 @@ public class WorkerSynchronizer
 			lock.notify();
 		}
 	}
-	
+
 	public void waitForAll(int numWaitingFor) throws InterruptedException
 	{
 		synchronized (lock)
@@ -82,22 +82,22 @@ public class WorkerSynchronizer
 			while (running < numWaitingFor)
 				lock.wait();
 		}
-		
+
 		synchronized (goLock)
 		{
 			go = true;
 			goLock.notifyAll();
 		}
-		
+
 		synchronized (lock)
 		{
 			while (running > 0 && !abort)
 				lock.wait();
-			
+
 			isSync = true;
 		}
 	}
-	
+
 	public void waitForAny() throws InterruptedException
 	{
 		synchronized (goLock)
@@ -105,26 +105,26 @@ public class WorkerSynchronizer
 			go = true;
 			goLock.notifyAll();
 		}
-		
+
 		synchronized (lock)
 		{
 			while (!oneStopped && !abort)
 				lock.wait();
-			
+
 			isSync = true;
 		}
 	}
-	
+
 	public boolean isSynchronized()
 	{
 		return isSync;
 	}
-	
+
 	public boolean isAborted()
 	{
 		return abort;
 	}
-	
+
 	public Object getMonitor()
 	{
 		return lock;

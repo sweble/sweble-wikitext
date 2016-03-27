@@ -33,14 +33,14 @@ public interface Wom3ValueWithUnit
 	 * @return The unit.
 	 */
 	public Wom3Unit getUnit();
-	
+
 	/**
 	 * Get the actual value.
 	 * 
 	 * @return The value.
 	 */
 	public float getValue();
-	
+
 	/**
 	 * Get the actual value rounded to an integer.
 	 * 

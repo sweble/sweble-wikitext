@@ -37,7 +37,7 @@ import de.fau.cs.osr.utils.DeepComparerDelegate;
 public class WtComparer
 {
 	private static DeepComparerDelegate delegate;
-	
+
 	/**
 	 * Compare two AST subtrees for equality.
 	 * 
@@ -59,7 +59,7 @@ public class WtComparer
 	{
 		makeComparer(compareAttributes, compareLocation).compare(rootA, rootB);
 	}
-	
+
 	public static boolean compareNoThrow(
 			AstNode<?> rootA,
 			AstNode<?> rootB,
@@ -76,28 +76,28 @@ public class WtComparer
 			return false;
 		}
 	}
-	
+
 	public synchronized static DeepComparer makeComparer(
 			boolean compareAttributes,
 			boolean compareLocation)
 	{
 		if (delegate == null)
 			delegate = new EmptyContentNodeComparer();
-		
+
 		DeepComparer comparer = AstComparer.makeComparer(
 				compareAttributes,
 				compareLocation);
-		
+
 		comparer.addComparer(delegate);
 		return comparer;
 	}
-	
+
 	public static class EmptyContentNodeComparer
 			implements
 				DeepComparerDelegate
 	{
 		private final Set<WtNode> emptyImmutables = new HashSet<WtNode>();
-		
+
 		public EmptyContentNodeComparer()
 		{
 			emptyImmutables.add(WtBody.EMPTY);
@@ -106,7 +106,7 @@ public class WtComparer
 			emptyImmutables.add(WtTemplateArguments.EMPTY);
 			emptyImmutables.add(WtXmlAttributes.EMPTY);
 		}
-		
+
 		@Override
 		public boolean compare(Object a, Object b, DeepComparer comparer) throws ComparisonException
 		{

@@ -40,18 +40,18 @@ public class DelAndInsTest
 		inputs.add(new Object[] { "ins" });
 		return inputs;
 	}
-	
+
 	// =========================================================================
-	
+
 	private final Wom3ElementNode n;
-	
+
 	public DelAndInsTest(String name) throws InstantiationException, IllegalAccessException
 	{
 		this.n = TestHelperDoc.genElem(name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testCiteAttribute() throws Exception
 	{
@@ -59,7 +59,7 @@ public class DelAndInsTest
 		URL realValue = new URL(strValue);
 		TestHelperAttribute.testAttribute(this.n, "cite", "getCite", "setCite", realValue, strValue);
 	}
-	
+
 	@Test
 	public void testDateTimeAttribute() throws Exception
 	{

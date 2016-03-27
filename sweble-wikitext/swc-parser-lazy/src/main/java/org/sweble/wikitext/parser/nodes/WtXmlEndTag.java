@@ -29,63 +29,63 @@ public class WtXmlEndTag
 			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtXmlEndTag()
 	{
 	}
-	
+
 	protected WtXmlEndTag(String name)
 	{
 		setName(name);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_XML_END_TAG;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String name;
-	
+
 	public final String getName()
 	{
 		return this.name;
 	}
-	
+
 	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
 		this.name = name;
 	}
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
 		return new WtXmlEndTagPropertyIterator();
 	}
-	
+
 	// =========================================================================
-	
+
 	protected class WtXmlEndTagPropertyIterator
 			extends
 				WtLeafNodePropertyIterator
@@ -95,7 +95,7 @@ public class WtXmlEndTag
 		{
 			return WtXmlEndTag.this.getPropertyCount();
 		}
-		
+
 		@Override
 		protected String getName(int index)
 		{
@@ -103,12 +103,12 @@ public class WtXmlEndTag
 			{
 				case 0:
 					return "name";
-					
+
 				default:
 					return super.getName(index);
 			}
 		}
-		
+
 		@Override
 		protected Object getValue(int index)
 		{
@@ -116,12 +116,12 @@ public class WtXmlEndTag
 			{
 				case 0:
 					return WtXmlEndTag.this.getName();
-					
+
 				default:
 					return super.getValue(index);
 			}
 		}
-		
+
 		@Override
 		protected Object setValue(int index, Object value)
 		{
@@ -133,15 +133,15 @@ public class WtXmlEndTag
 					WtXmlEndTag.this.setName((String) value);
 					return old;
 				}
-				
+
 				default:
 					return super.setValue(index, value);
 			}
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void toString(Appendable out) throws IOException
 	{
@@ -150,7 +150,7 @@ public class WtXmlEndTag
 		out.append(name);
 		out.append(']');
 		out.append('(');
-		
+
 		boolean first = true;
 		for (WtNode node : this)
 		{
@@ -162,11 +162,11 @@ public class WtXmlEndTag
 			{
 				out.append(", ");
 			}
-			
+
 			node.toString(out);
-			
+
 		}
-		
+
 		out.append(')');
 	}
 }

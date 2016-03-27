@@ -36,39 +36,39 @@ public class TagExtensionGroup
 			Comparable<TagExtensionGroup>
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	@XmlAttribute
 	private String name;
-	
+
 	/** Just used to check for duplicates. */
 	private transient final HashSet<String> tagExtIds = new HashSet<String>();
-	
+
 	private final HashSet<TagExtensionBase> tagExtensions =
 			new HashSet<TagExtensionBase>();
-	
+
 	// =========================================================================
-	
+
 	public TagExtensionGroup()
 	{
 	}
-	
+
 	public TagExtensionGroup(String name)
 	{
 		this.name = name;
 	}
-	
+
 	// =========================================================================
-	
+
 	public String getName()
 	{
 		return name;
 	}
-	
+
 	public Collection<TagExtensionBase> getTagExtensions()
 	{
 		return Collections.unmodifiableCollection(tagExtensions);
 	}
-	
+
 	public void addTagExtension(TagExtensionBase tagExt)
 	{
 		if (tagExtIds.contains(tagExt.getId()))
@@ -76,9 +76,9 @@ public class TagExtensionGroup
 		this.tagExtIds.add(tagExt.getId());
 		this.tagExtensions.add(tagExt);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -88,7 +88,7 @@ public class TagExtensionGroup
 		result = prime * result + ((tagExtensions == null) ? 0 : tagExtensions.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -115,25 +115,25 @@ public class TagExtensionGroup
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		return "TagExtensionGroup [name=" + name + ", tagExtensions=" + tagExtensions + "]";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int compareTo(TagExtensionGroup o)
 	{
 		return this.name.compareTo(o.getName());
 	}
-	
+
 	// =========================================================================
-	
+
 	@XmlElement(name = "tagExt")
 	private ArrayList<TagExtensionBase> getJaxbTagExtensions()
 	{
@@ -141,7 +141,7 @@ public class TagExtensionGroup
 		Collections.sort(sorted);
 		return sorted;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbTagExtensions(ArrayList<TagExtensionBase> tagExts)
 	{

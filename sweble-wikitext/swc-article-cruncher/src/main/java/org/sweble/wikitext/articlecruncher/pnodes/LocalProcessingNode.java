@@ -37,23 +37,23 @@ public class LocalProcessingNode
 			ProcessingNode
 {
 	private final BlockingQueue<Job> inTray;
-	
+
 	private final BlockingQueue<Job> processedJobs;
-	
+
 	private final int numWorkers;
-	
+
 	private final LpnJobProcessorFactory jobProcessorFactory;
-	
+
 	private MyExecutorService executor;
-	
+
 	private Semaphore backPressure;
-	
+
 	private WorkerLauncher distributor;
-	
+
 	private WorkerLauncher gatherer;
-	
+
 	// =========================================================================
-	
+
 	public LocalProcessingNode(
 			AbortHandler abortHandler,
 			BlockingQueue<Job> inTray,
@@ -62,22 +62,22 @@ public class LocalProcessingNode
 			int numWorkers)
 	{
 		super(getClassName(), abortHandler);
-		
+
 		Thread.currentThread().setName(getClassName());
-		
+
 		this.inTray = inTray;
 		this.processedJobs = processedJobs;
 		this.jobProcessorFactory = jobProcessorFactory;
 		this.numWorkers = numWorkers;
 	}
-	
+
 	private static String getClassName()
 	{
 		return LocalProcessingNode.class.getSimpleName();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void work() throws Throwable
 	{
@@ -86,7 +86,7 @@ public class LocalProcessingNode
 			executor = new MyExecutorService(
 					ExecutorType.CACHED_THREAD_POOL,
 					getLogger());
-			
+
 			final AbortHandler abortHandler = new AbortHandler()
 			{
 				@Override
@@ -95,14 +95,14 @@ public class LocalProcessingNode
 					stop();
 				}
 			};
-			
+
 			WorkerSynchronizer synchronizer = new WorkerSynchronizer();
-			
+
 			backPressure = new Semaphore(numWorkers);
-			
+
 			final BlockingQueue<CompletionService<Job>> ecsQueue =
 					new LinkedBlockingQueue<CompletionService<Job>>();
-			
+
 			distributor = new WorkerLauncher(new WorkerInstantiator()
 			{
 				@Override
@@ -119,11 +119,11 @@ public class LocalProcessingNode
 					return d;
 				}
 			}, abortHandler);
-			
+
 			distributor.start(executor, synchronizer);
-			
+
 			final CompletionService<Job> ecs = ecsQueue.take();
-			
+
 			gatherer = new WorkerLauncher(new WorkerInstantiator()
 			{
 				@Override
@@ -136,21 +136,21 @@ public class LocalProcessingNode
 							backPressure);
 				}
 			}, abortHandler);
-			
+
 			gatherer.start(executor, synchronizer);
-			
+
 			synchronizer.waitForAny();
 		}
 		finally
 		{
 			info("Sending kill signal to workers");
-			
+
 			if (distributor != null)
 				distributor.stop();
-			
+
 			if (gatherer != null)
 				gatherer.stop();
-			
+
 			if (executor != null)
 				executor.shutdownAndAwaitTermination();
 		}

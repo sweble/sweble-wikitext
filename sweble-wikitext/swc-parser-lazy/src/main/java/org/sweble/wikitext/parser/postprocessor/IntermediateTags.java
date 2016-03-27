@@ -31,7 +31,7 @@ public enum IntermediateTags
 		{
 			return "@i";
 		}
-		
+
 		public WtNode createOpen(WikitextNodeFactory nf, boolean repair)
 		{
 			WtNode tag = super.createOpen(nf, repair);
@@ -39,7 +39,7 @@ public enum IntermediateTags
 				tag.setRtd("''");
 			return tag;
 		}
-		
+
 		public WtNode createClose(WikitextNodeFactory nf, boolean repair)
 		{
 			WtNode tag = super.createClose(nf, repair);
@@ -48,9 +48,9 @@ public enum IntermediateTags
 			return tag;
 		}
 	},
-	
+
 	// =========================================================================
-	
+
 	BOLD
 	{
 		@Override
@@ -58,7 +58,7 @@ public enum IntermediateTags
 		{
 			return "@b";
 		}
-		
+
 		public WtNode createOpen(WikitextNodeFactory nf, boolean repair)
 		{
 			WtNode tag = super.createOpen(nf, repair);
@@ -66,7 +66,7 @@ public enum IntermediateTags
 				tag.setRtd("'''");
 			return tag;
 		}
-		
+
 		public WtNode createClose(WikitextNodeFactory nf, boolean repair)
 		{
 			WtNode tag = super.createClose(nf, repair);
@@ -75,9 +75,9 @@ public enum IntermediateTags
 			return tag;
 		}
 	},
-	
+
 	// =========================================================================
-	
+
 	PARAGRAPH
 	{
 		@Override
@@ -86,11 +86,11 @@ public enum IntermediateTags
 			return "@p";
 		}
 	};
-	
+
 	// =========================================================================
-	
+
 	public abstract String getElementName();
-	
+
 	public WtNode createOpen(WikitextNodeFactory nf, boolean repair)
 	{
 		WtImStartTag tag = nf.imStartTag(this);
@@ -100,7 +100,7 @@ public enum IntermediateTags
 		*/
 		return tag;
 	}
-	
+
 	public WtNode createClose(WikitextNodeFactory nf, boolean repair)
 	{
 		WtImEndTag tag = nf.imEndTag(this);

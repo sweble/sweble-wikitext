@@ -24,19 +24,19 @@ public class WtImStartTag
 			WtXmlStartTag
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/* No default ctor. This node should not get de-/serialized
 	 */
-	
+
 	protected WtImStartTag(IntermediateTags type)
 	{
 		super(type.getElementName(), WtXmlAttributes.EMPTY);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getNodeType()
 	{

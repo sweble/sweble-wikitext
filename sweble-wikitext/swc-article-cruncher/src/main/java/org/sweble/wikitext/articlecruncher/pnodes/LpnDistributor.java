@@ -38,17 +38,17 @@ public class LpnDistributor
 			WorkerBase
 {
 	private final BlockingQueue<Job> inTray;
-	
+
 	private final MyExecutorCompletionService<Job> execComplServ;
-	
+
 	private final Semaphore backPressure;
-	
+
 	private final LpnJobProcessorFactory jobProcessorFactory;
-	
+
 	private int count = 0;
-	
+
 	// =========================================================================
-	
+
 	public LpnDistributor(
 			AbortHandler abortHandler,
 			BlockingQueue<Job> inTray,
@@ -58,18 +58,18 @@ public class LpnDistributor
 			Semaphore backPressure)
 	{
 		super(getClassName(), abortHandler);
-		
+
 		Thread.currentThread().setName(getClassName());
-		
+
 		this.inTray = inTray;
 		this.backPressure = backPressure;
 		this.jobProcessorFactory = jobProcessorFactory;
-		
+
 		int corePoolSize = numWorkers;
 		int maximumPoolSize = numWorkers;
-		
+
 		info(getClass().getSimpleName() + " starts with a pool of " + numWorkers + " workers");
-		
+
 		execComplServ = new MyExecutorCompletionService<Job>(
 				getLogger(),
 				corePoolSize,
@@ -78,17 +78,17 @@ public class LpnDistributor
 				TimeUnit.SECONDS,
 				new SynchronousQueue<Runnable>(),
 				new RejectedExecutionHandlerImpl());
-		
+
 		execComplServ.setThreadNameTemplate(jobProcessorFactory.getProcessorNameTemplate());
 	}
-	
+
 	protected static String getClassName()
 	{
 		return LpnDistributor.class.getSimpleName();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void work() throws Throwable
 	{
@@ -96,36 +96,36 @@ public class LpnDistributor
 		{
 			// Prevent a accumulation of processed jobs in the gatherer.
 			backPressure.acquire();
-			
+
 			final Job job = inTray.take();
 			++count;
-			
+
 			job.signOff(getClass(), null);
-			
+
 			Callable<Job> worker = new LpnWorker(jobProcessorFactory, job);
-			
+
 			execComplServ.submit(worker);
 		}
 	}
-	
+
 	@Override
 	protected void after()
 	{
 		if (execComplServ != null)
 			execComplServ.shutdownAndAwaitTermination();
-		
+
 		info(getClass().getSimpleName() + " counts " + count + " items");
 	}
-	
+
 	// =========================================================================
-	
+
 	public CompletionService<Job> getEcs()
 	{
 		return execComplServ;
 	}
-	
+
 	// =========================================================================
-	
+
 	private final class RejectedExecutionHandlerImpl
 			implements
 				RejectedExecutionHandler
@@ -137,7 +137,7 @@ public class LpnDistributor
 		{
 			if (executor.isShutdown())
 				return;
-			
+
 			try
 			{
 				executor.getQueue().put(r);

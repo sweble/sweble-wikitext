@@ -31,62 +31,62 @@ public interface ParserConfig
 			XmlEntityResolver
 {
 	// ==[ Parser features ]====================================================
-	
+
 	boolean isWarningsEnabled();
-	
+
 	boolean isWarningLevelEnabled(WarningSeverity severity);
-	
+
 	boolean isAutoCorrect();
-	
+
 	boolean isGatherRtData();
-	
+
 	// ==[ AST creation/processing ]============================================
-	
+
 	WikitextNodeFactory getNodeFactory();
-	
+
 	AstTextUtils getAstTextUtils();
-	
+
 	// ==[ Link classification and parsing ]====================================
-	
+
 	boolean isUrlProtocol(String proto);
-	
+
 	String getInternalLinkPrefixPattern();
-	
+
 	String getInternalLinkPostfixPattern();
-	
+
 	LinkType classifyTarget(String target);
-	
+
 	boolean isNamespace(String nsName);
-	
+
 	boolean isTalkNamespace(String nsName);
-	
+
 	boolean isInterwikiName(String iwPrefix);
-	
+
 	boolean isIwPrefixOfThisWiki(String iwPrefix);
-	
+
 	// ==[ Names ]==============================================================
-	
+
 	boolean isValidPageSwitchName(String name);
-	
+
 	boolean isValidExtensionTagName(String name);
-	
+
 	boolean isRedirectKeyword(String keyword);
-	
+
 	// ==[ Parsing XML elements ]===============================================
-	
+
 	boolean isValidXmlEntityRef(String name);
-	
+
 	Map<String, String> getXmlEntities();
-	
+
 	NonStandardElementBehavior getNonStandardElementBehavior(String elementName);
-	
+
 	// ==[ Language Conversion Tags ]===========================================
-	
+
 	boolean isLctFlag(String flag);
-	
+
 	String normalizeLctFlag(String flag);
-	
+
 	boolean isLctVariant(String variant);
-	
+
 	String normalizeLctVariant(String variant);
 }

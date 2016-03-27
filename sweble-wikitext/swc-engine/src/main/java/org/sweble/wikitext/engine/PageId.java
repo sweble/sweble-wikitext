@@ -20,25 +20,25 @@ package org.sweble.wikitext.engine;
 public class PageId
 {
 	private final PageTitle title;
-	
+
 	private final long revision;
-	
+
 	// =========================================================================
-	
+
 	public PageId(PageTitle title, long revision)
 	{
 		super();
 		this.title = title;
 		this.revision = revision;
 	}
-	
+
 	// =========================================================================
-	
+
 	public PageTitle getTitle()
 	{
 		return title;
 	}
-	
+
 	public long getRevision()
 	{
 		return revision;

@@ -24,7 +24,7 @@ import org.sweble.wom3.Wom3TableVAlign;
 public class TableRowTest
 {
 	private TableRowImpl n = (TableRowImpl) TestHelperDoc.genElem("tr");
-	
+
 	@Test
 	public void testAlignAttribute() throws Exception
 	{
@@ -33,13 +33,13 @@ public class TableRowTest
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.LEFT, "left");
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.RIGHT, "right");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testAlignAttributeDoesNotAllowChar() throws Exception
 	{
 		n.setAttribute("align", "char");
 	}
-	
+
 	@Test
 	public void testVAlignAttribute() throws Exception
 	{
@@ -48,13 +48,13 @@ public class TableRowTest
 		TestHelperAttribute.testAttribute(this.n, "valign", "getVAlign", "setVAlign", Wom3TableVAlign.MIDDLE, "middle");
 		TestHelperAttribute.testAttribute(this.n, "valign", "getVAlign", "setVAlign", Wom3TableVAlign.TOP, "top");
 	}
-	
+
 	@Test
 	public void testColorAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(n, "bgcolor", "getBgColor", "setBgColor", ColorImpl.valueOf("#abcdef"), "#ABCDEF");
 	}
-	
+
 	@Test
 	public void testColorCanCopeWithSpaces() throws Exception
 	{

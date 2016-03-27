@@ -31,7 +31,7 @@ public class ParserFunctionIfExpr
 			ParserFunctionsExtPfn.IfThenElseStmt
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -39,7 +39,7 @@ public class ParserFunctionIfExpr
 	{
 		super("ifexpr", 1 /* thenArgIndex */);
 	}
-	
+
 	/**
 	 * <pre>
 	 * {{#ifexpr: 
@@ -53,7 +53,7 @@ public class ParserFunctionIfExpr
 	{
 		super(wikiConfig, "ifexpr", 1 /* thenArgIndex */);
 	}
-	
+
 	@Override
 	protected boolean evaluateCondition(
 			WtTemplate pfn,
@@ -61,7 +61,7 @@ public class ParserFunctionIfExpr
 			List<? extends WtNode> args)
 	{
 		WtNode test = frame.expand(args.get(0));
-		
+
 		String expr = null;
 		try
 		{
@@ -72,10 +72,10 @@ public class ParserFunctionIfExpr
 			// Invalid expressions evaluate to false
 			return false;
 		}
-		
+
 		if (expr.isEmpty())
 			return false;
-		
+
 		ExprParser p = new ExprParser();
 		String result;
 		try
@@ -87,10 +87,10 @@ public class ParserFunctionIfExpr
 			// Invalid expressions evaluate to false
 			return false;
 		}
-		
+
 		if (result == null || result.isEmpty())
 			return false;
-		
+
 		return Double.parseDouble(result) != 0.;
 	}
 }

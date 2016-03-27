@@ -20,47 +20,47 @@ package org.sweble.wom3.impl;
 public class CommonAttributeDescriptors
 {
 	public static final AttributeDescriptor ATTR_DESC_ALIGN_LCR = new AttrDescAlignLcr();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_ALIGN_LCRJ = new AttrDescAlignLcrj();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_ALIGN_LCRJC = new AttrDescAlignLcrjc();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_ALIGN_TBLR = new AttrDescAlignTblr();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_ALIGN_TMBB = new AttrDescAlignTmbb();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_BGCOLOR = new AttrDescAlignBgColor();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_CITE = new AttrDescUrl();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_URL = new AttrDescUrl();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_CLEAR = new AttrDescClear();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_COLOR = new AttrDescColor();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_COMPACT = new AttrDescCompact();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_DATETIME = new AttrDescDatetime();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_DID = new AttrDescDId();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_FACE = new AttrDescFace();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_FONT_SIZE = new AttrDescFontSize();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_GENERIC = new AttrDescGeneric();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_HEIGHT_LENGTH = new AttrDescHeightLength();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_NOSHADE = new AttrDescNoShade();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_SIZE = new AttrDescSize();
-	
+
 	public static final AttributeDescriptor ATTR_DESC_WIDTH_LENGTH = new AttrDescWidthLength();
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescAlignLcr
 			extends
 				AttributeDescriptor
@@ -74,7 +74,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -83,9 +83,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.LCR_ALIGN.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescAlignLcrj
 			extends
 				AttributeDescriptor
@@ -99,7 +99,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -108,9 +108,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.LCRJ_ALIGN.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescAlignLcrjc
 			extends
 				AttributeDescriptor
@@ -124,7 +124,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -133,9 +133,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.LCRJC_ALIGN.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescAlignTblr
 			extends
 				AttributeDescriptor
@@ -149,7 +149,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -158,9 +158,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.TBLR_ALIGN.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescAlignTmbb
 			extends
 				AttributeDescriptor
@@ -174,7 +174,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -183,9 +183,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.TMBB_VALIGN.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescAlignBgColor
 			extends
 				AttributeDescriptor
@@ -199,7 +199,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -208,9 +208,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.COLOR.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescUrl
 			extends
 				AttributeDescriptor
@@ -224,7 +224,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -233,9 +233,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.URL.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescClear
 			extends
 				AttributeDescriptor
@@ -249,7 +249,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -258,9 +258,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.CLEAR.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescColor
 			extends
 				AttributeDescriptor
@@ -274,7 +274,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -283,9 +283,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.COLOR.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescCompact
 			extends
 				AttributeDescriptor
@@ -299,7 +299,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -308,9 +308,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.verifyAndConvertBool(parent, verified, "compact");
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescDatetime
 			extends
 				AttributeDescriptor
@@ -324,7 +324,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -333,9 +333,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.DATETIME.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescDId
 			extends
 				AttributeDescriptor
@@ -349,7 +349,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -358,9 +358,9 @@ public class CommonAttributeDescriptors
 			return super.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescFace
 			extends
 				AttributeDescriptor
@@ -374,7 +374,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -383,9 +383,9 @@ public class CommonAttributeDescriptors
 			return super.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescGeneric
 			extends
 				AttributeDescriptor
@@ -399,7 +399,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -408,9 +408,9 @@ public class CommonAttributeDescriptors
 			return super.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescHeightLength
 			extends
 				AttributeDescriptor
@@ -424,7 +424,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -433,9 +433,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.LENGTH.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescNoShade
 			extends
 				AttributeDescriptor
@@ -449,7 +449,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -458,9 +458,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.verifyAndConvertBool(parent, verified, "noshade");
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescFontSize
 			extends
 				AttributeDescriptor
@@ -474,7 +474,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -483,9 +483,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.FONTSIZE.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescSize
 			extends
 				AttributeDescriptor
@@ -499,7 +499,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -508,9 +508,9 @@ public class CommonAttributeDescriptors
 			return AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescWidthLength
 			extends
 				AttributeDescriptor
@@ -524,7 +524,7 @@ public class CommonAttributeDescriptors
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

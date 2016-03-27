@@ -32,50 +32,50 @@ public class ArgImpl
 			SwcArg
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc(MWW_NS_URI, "name"),
 			childDesc(MWW_NS_URI, "value", ChildDescriptor.REQUIRED) };
-	
+
 	private SwcName name;
-	
+
 	private SwcValue value;
-	
+
 	// =========================================================================
-	
+
 	public ArgImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getSwcName()
 	{
 		return "arg";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -84,7 +84,7 @@ public class ArgImpl
 		if (added instanceof SwcValue)
 			this.value = (SwcValue) added;
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -93,41 +93,41 @@ public class ArgImpl
 		if (removed == this.value)
 			this.value = null;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean hasName()
 	{
 		return this.name != null;
 	}
-	
+
 	@Override
 	public SwcName setName(SwcName name)
 	{
 		return (SwcName) replaceOrInsertBeforeOrAppend(this.name, this.value, name, false);
 	}
-	
+
 	@Override
 	public SwcName getName()
 	{
 		return this.name;
 	}
-	
+
 	@Override
 	public SwcValue setValue(SwcValue value)
 	{
 		return (SwcValue) replaceOrAppend(this.value, value, true);
 	}
-	
+
 	@Override
 	public SwcValue getValue()
 	{
 		return this.value;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

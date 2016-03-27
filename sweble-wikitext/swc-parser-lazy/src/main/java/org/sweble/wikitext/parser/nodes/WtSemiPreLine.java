@@ -26,18 +26,18 @@ public class WtSemiPreLine
 			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtSemiPreLine()
 	{
 	}
-	
+
 	protected WtSemiPreLine(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

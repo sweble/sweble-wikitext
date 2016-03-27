@@ -30,46 +30,46 @@ public class TableCaptionImpl
 			Wom3TableCaption
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public TableCaptionImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "caption";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3TableCaptionAlign getAlign()
 	{
 		return (Wom3TableCaptionAlign) getAttributeNativeData("align");
 	}
-	
+
 	@Override
 	public Wom3TableCaptionAlign setAlign(Wom3TableCaptionAlign align)
 	{
 		return setAttributeDirect(CommonAttributeDescriptors.ATTR_DESC_ALIGN_TBLR, "align", align);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("align", CommonAttributeDescriptors.ATTR_DESC_ALIGN_TBLR);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

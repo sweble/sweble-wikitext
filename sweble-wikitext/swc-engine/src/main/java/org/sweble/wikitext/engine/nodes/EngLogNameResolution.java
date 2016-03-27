@@ -23,45 +23,45 @@ public abstract class EngLogNameResolution
 			EngLogResolution
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogNameResolution()
 	{
 	}
-	
+
 	protected EngLogNameResolution(String name, boolean success)
 	{
 		super(success);
 		setName(name);
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String name;
-	
+
 	public final String getName()
 	{
 		return this.name;
 	}
-	
+
 	public final void setName(String name)
 	{
 		this.name = name;
 	}
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -72,7 +72,7 @@ public abstract class EngLogNameResolution
 			{
 				return EngLogNameResolution.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -80,12 +80,12 @@ public abstract class EngLogNameResolution
 				{
 					case 0:
 						return "name";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -93,12 +93,12 @@ public abstract class EngLogNameResolution
 				{
 					case 0:
 						return EngLogNameResolution.this.getName();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -110,7 +110,7 @@ public abstract class EngLogNameResolution
 						EngLogNameResolution.this.setName((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

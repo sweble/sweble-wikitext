@@ -75,73 +75,73 @@ public class WikiConfigImpl
 		implements
 			WikiConfig
 {
-	
+
 	@XmlElement()
 	private final ParserConfigImpl parserConfig;
-	
+
 	@XmlElement()
 	private final EngineConfigImpl engineConfig;
-	
+
 	// -- AST generation/processing --
-	
+
 	private EngineNodeFactoryImpl nodeFactory;
-	
+
 	private EngineAstTextUtilsImpl textUtils;
-	
+
 	// -- General Information --
-	
+
 	@XmlElement()
 	private String siteName;
-	
+
 	@XmlElement()
 	private String wikiUrl;
-	
+
 	@XmlElement()
 	private String contentLang;
-	
+
 	@XmlElement()
 	private String iwPrefix;
-	
+
 	// -- Aliases --
-	
+
 	private final Map<String, I18nAliasImpl> aliases = new HashMap<String, I18nAliasImpl>();
-	
+
 	private transient final Map<String, I18nAliasImpl> nameToAliasMap = new HashMap<String, I18nAliasImpl>();
-	
+
 	// -- Parser Functions --
-	
+
 	private final Map<String, ParserFunctionGroup> pfnGroups = new HashMap<String, ParserFunctionGroup>();
-	
+
 	private transient final Map<String, ParserFunctionBase> parserFunctions = new HashMap<String, ParserFunctionBase>();
-	
+
 	private transient final Map<I18nAliasImpl, ParserFunctionBase> aliasToPfnMap = new HashMap<I18nAliasImpl, ParserFunctionBase>();
-	
+
 	// -- Tag Extensions --
-	
+
 	private final Map<String, TagExtensionGroup> tagExtGroups = new HashMap<String, TagExtensionGroup>();
-	
+
 	private transient final Map<String, TagExtensionBase> tagExtensions = new HashMap<String, TagExtensionBase>();
-	
+
 	// -- Interwikis --
-	
+
 	private final Map<String, InterwikiImpl> prefixToInterwikiMap = new HashMap<String, InterwikiImpl>();
-	
+
 	// -- Namespaces --
-	
+
 	private final Map<Integer, NamespaceImpl> namespaceById = new HashMap<Integer, NamespaceImpl>();
-	
+
 	private transient final Map<String, NamespaceImpl> namespaceByName = new HashMap<String, NamespaceImpl>();
-	
+
 	private NamespaceImpl templateNamespace;
-	
+
 	private NamespaceImpl defaultNamespace;
-	
+
 	// -- Runtime information --
-	
+
 	private WikiRuntimeInfo runtimeInfo;
-	
+
 	// =========================================================================
-	
+
 	public WikiConfigImpl()
 	{
 		this.parserConfig = new ParserConfigImpl(this);
@@ -150,121 +150,121 @@ public class WikiConfigImpl
 		this.runtimeInfo = new WikiRuntimeInfoImpl(this);
 		this.engineConfig = new EngineConfigImpl();
 	}
-	
+
 	// ==[ Parser Configuration ]===============================================
-	
+
 	@Override
 	public ParserConfigImpl getParserConfig()
 	{
 		return parserConfig;
 	}
-	
+
 	// ==[ Engine Configuration ]===============================================
-	
+
 	public EngineConfigImpl getEngineConfig()
 	{
 		return engineConfig;
 	}
-	
+
 	// ==[ AST creation/processing ]============================================
-	
+
 	public EngineNodeFactoryImpl getNodeFactory()
 	{
 		return nodeFactory;
 	}
-	
+
 	@Override
 	public EngineAstTextUtils getAstTextUtils()
 	{
 		return textUtils;
 	}
-	
+
 	// ==[ Namespaces ]=========================================================
-	
+
 	public void addNamespace(NamespaceImpl ns)
 	{
 		NamespaceImpl old = namespaceById.get(ns.getId());
-		
+
 		if (old == ns)
 			throw new IllegalArgumentException("The namespace with id `" + ns.getId() + "' is already registered.");
-		
+
 		if (old != null)
 			throw new IllegalArgumentException("A namespace with the same id `" + ns.getId() + "' is already registered.");
-		
+
 		ArrayList<String> names = new ArrayList<String>(ns.getAliases().size() + 2);
 		for (String name : ns.getAliases())
 			names.add(name.toLowerCase());
 		names.add(ns.getName().toLowerCase());
 		names.add(ns.getCanonical().toLowerCase());
-		
+
 		for (String name : names)
 		{
 			old = namespaceByName.get(name);
-			
+
 			// old == ns would have been caught by the id search above
-			
+
 			if (old != null)
 				throw new IllegalArgumentException("Another namespace already registered the name `" + name + "'.");
 		}
-		
+
 		namespaceById.put(ns.getId(), ns);
 		for (String name : names)
 			namespaceByName.put(name, ns);
 	}
-	
+
 	public void setDefaultNamespace(NamespaceImpl defaultNamespace)
 	{
 		if (this.namespaceById.get(defaultNamespace.getId()) != defaultNamespace)
 			throw new IllegalArgumentException("Given namespace unknown in this configuration");
-		
+
 		this.defaultNamespace = defaultNamespace;
 	}
-	
+
 	public void setTemplateNamespace(NamespaceImpl templateNamespace)
 	{
 		if (this.namespaceById.get(templateNamespace.getId()) != templateNamespace)
 			throw new IllegalArgumentException("Given namespace unknown in this configuration");
-		
+
 		this.templateNamespace = templateNamespace;
 	}
-	
+
 	@Override
 	public NamespaceImpl getNamespace(String name)
 	{
 		return namespaceByName.get(name.toLowerCase());
 	}
-	
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public Collection<Namespace> getNamespaces()
 	{
 		return (Collection) Collections.unmodifiableCollection(namespaceById.values());
 	}
-	
+
 	@Override
 	public NamespaceImpl getNamespace(int id)
 	{
 		return namespaceById.get(id);
 	}
-	
+
 	@Override
 	public NamespaceImpl getDefaultNamespace()
 	{
 		return defaultNamespace;
 	}
-	
+
 	@Override
 	public NamespaceImpl getTemplateNamespace()
 	{
 		return templateNamespace;
 	}
-	
+
 	@Override
 	public Namespace getFileNamespace()
 	{
 		return getNamespace("File");
 	}
-	
+
 	@Override
 	public Namespace getSubjectNamespaceFor(Namespace namespace)
 	{
@@ -272,7 +272,7 @@ public class WikiConfigImpl
 			return namespace;
 		return getNamespace(namespace.getSubjectspaceId());
 	}
-	
+
 	@Override
 	public Namespace getTalkNamespaceFor(Namespace namespace)
 	{
@@ -280,37 +280,37 @@ public class WikiConfigImpl
 			return namespace;
 		return getNamespace(namespace.getTalkspaceId());
 	}
-	
+
 	// ==[ Known Wikis ]========================================================
-	
+
 	public void addInterwiki(InterwikiImpl iw)
 	{
 		InterwikiImpl old = prefixToInterwikiMap.get(iw.getPrefix());
-		
+
 		if (old == iw)
 			throw new IllegalArgumentException("The wiki with interwiki prefix `" + iw.getPrefix() + "' is already registered.");
-		
+
 		if (old != null)
 			throw new IllegalArgumentException("A wiki with the same interwiki prefix `" + iw.getPrefix() + "' is already registered.");
-		
+
 		prefixToInterwikiMap.put(iw.getPrefix(), iw);
 	}
-	
+
 	@Override
 	public InterwikiImpl getInterwiki(String prefix)
 	{
 		return prefixToInterwikiMap.get(prefix);
 	}
-	
+
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Collection<Interwiki> getInterwikis()
 	{
 		return (Collection) Collections.unmodifiableCollection(prefixToInterwikiMap.values());
 	}
-	
+
 	// ==[ Internationalization ]===============================================
-	
+
 	/**
 	 * Aliases apply to the following things:
 	 * <ul>
@@ -334,30 +334,30 @@ public class WikiConfigImpl
 	public void addI18nAlias(I18nAliasImpl alias)
 	{
 		I18nAliasImpl old = aliases.get(alias.getId());
-		
+
 		if (old == alias || (old != null && old.equals(alias)))
 			throw new IllegalArgumentException("This alias is already registered: " + alias.getId());
-		
+
 		if (old != null)
 			throw new IllegalArgumentException("An alias with the same id `" + alias.getId() + "' is already registered.");
-		
+
 		for (String a : alias.getAliases())
 		{
 			String lcAlias = a.toLowerCase();
 			I18nAliasImpl old2 = nameToAliasMap.get(lcAlias);
-			
+
 			if (old2 == alias)
 				throw new IllegalArgumentException("This alias (`" + alias.getId() + "') registeres the name `" + a + "' twice.");
-			
+
 			if (old2 != null)
 				throw new IllegalArgumentException("The name `" + a + "' was already registered by the alias `" + old2.getId() + "' when trying to register it for alias `" + alias.getId() + "'.");
-			
+
 			nameToAliasMap.put(lcAlias, alias);
 		}
-		
+
 		aliases.put(alias.getId(), alias);
 	}
-	
+
 	@Override
 	public I18nAliasImpl getI18nAlias(String name)
 	{
@@ -368,63 +368,63 @@ public class WikiConfigImpl
 			alias = null;
 		return alias;
 	}
-	
+
 	public I18nAliasImpl getI18nAliasById(String id)
 	{
 		return aliases.get(id);
 	}
-	
+
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Collection<I18nAlias> getI18nAliases()
 	{
 		return (Collection) Collections.unmodifiableCollection(aliases.values());
 	}
-	
+
 	// ==[ Tag extensions, parser functions and page switches ]=================
-	
+
 	public void addParserFunctionGroup(ParserFunctionGroup pfnGroup)
 	{
 		ParserFunctionGroup old = pfnGroups.get(pfnGroup.getName());
-		
+
 		if (old == pfnGroup)
 			throw new IllegalArgumentException("The parser function group `" + pfnGroup.getName() + "' is already registered.");
-		
+
 		if (old != null)
 			throw new IllegalArgumentException("A parser function group with the same name `" + pfnGroup.getName() + "' is already registered.");
-		
+
 		for (ParserFunctionBase pfn : pfnGroup.getParserFunctions())
 			addParserFunction(pfn);
-		
+
 		this.pfnGroups.put(pfnGroup.getName(), pfnGroup);
 	}
-	
+
 	protected void addParserFunction(ParserFunctionBase pfn)
 	{
 		ParserFunctionBase old = parserFunctions.get(pfn.getId());
-		
+
 		if (old == pfn)
 			throw new IllegalArgumentException("The parser function `" + pfn.getId() + "' is already registered.");
-		
+
 		if (old != null)
 			throw new IllegalArgumentException("A parser function with the same id `" + pfn.getId() + "' is already registered.");
-		
+
 		parserFunctions.put(pfn.getId(), pfn);
-		
+
 		I18nAliasImpl alias = aliases.get(pfn.getId());
 		if (alias == null)
 			throw new IllegalArgumentException("No alias registered for parser function `" + pfn.getId() + "'.");
-		
+
 		if (aliasToPfnMap.put(alias, pfn) != null)
 			throw new InternalError("Alias collision should not be possible...");
 	}
-	
+
 	@Override
 	public Collection<ParserFunctionBase> getParserFunctions()
 	{
 		return Collections.unmodifiableCollection(parserFunctions.values());
 	}
-	
+
 	@Override
 	public ParserFunctionBase getParserFunction(String name)
 	{
@@ -436,7 +436,7 @@ public class WikiConfigImpl
 			return null;
 		return pfn;
 	}
-	
+
 	@Override
 	public ParserFunctionBase getPageSwitch(String name)
 	{
@@ -448,124 +448,124 @@ public class WikiConfigImpl
 			return null;
 		return pfn;
 	}
-	
+
 	// --------
-	
+
 	public void addTagExtensionGroup(TagExtensionGroup tagExtGroup)
 	{
 		TagExtensionGroup old = tagExtGroups.get(tagExtGroup.getName());
-		
+
 		if (old == tagExtGroup)
 			throw new IllegalArgumentException("The tag extension group `" + tagExtGroup.getName() + "' is already registered.");
-		
+
 		if (old != null)
 			throw new IllegalArgumentException("A tag extension group with the same name `" + tagExtGroup.getName() + "' is already registered.");
-		
+
 		for (TagExtensionBase tagExt : tagExtGroup.getTagExtensions())
 			addTagExtension(tagExt);
-		
+
 		this.tagExtGroups.put(tagExtGroup.getName(), tagExtGroup);
 	}
-	
+
 	protected void addTagExtension(TagExtensionBase tagExt)
 	{
 		TagExtensionBase old = tagExtensions.get(tagExt.getId());
-		
+
 		if (old == tagExt)
 			throw new IllegalArgumentException("The tag extension `" + tagExt.getId() + "' is already registered.");
-		
+
 		if (old != null)
 			throw new IllegalArgumentException("A tag extension with the same id `" + tagExt.getId() + "' is already registered.");
-		
+
 		tagExtensions.put(tagExt.getId(), tagExt);
 	}
-	
+
 	@Override
 	public Collection<TagExtensionBase> getTagExtensions()
 	{
 		return Collections.unmodifiableCollection(tagExtensions.values());
 	}
-	
+
 	@Override
 	public TagExtensionBase getTagExtension(String name)
 	{
 		return tagExtensions.get(name);
 	}
-	
+
 	// ==[ Properties of the wiki instance ]====================================
-	
+
 	public void setSiteName(String siteName)
 	{
 		this.siteName = siteName;
 	}
-	
+
 	@Override
 	public String getSiteName()
 	{
 		return this.siteName;
 	}
-	
+
 	public void setWikiUrl(String wikiUrl)
 	{
 		this.wikiUrl = wikiUrl;
 	}
-	
+
 	@Override
 	public String getWikiUrl()
 	{
 		return this.wikiUrl;
 	}
-	
+
 	@Override
 	public String getArticlePath()
 	{
 		return getWikiUrl() + "?title=$1";
 	}
-	
+
 	public void setContentLang(String contentLang)
 	{
 		this.contentLang = contentLang;
 	}
-	
+
 	@Override
 	public String getContentLanguage()
 	{
 		return contentLang;
 	}
-	
+
 	public void setIwPrefix(String iwPrefix)
 	{
 		this.iwPrefix = iwPrefix;
 	}
-	
+
 	@Override
 	public String getInterwikiPrefix()
 	{
 		return iwPrefix;
 	}
-	
+
 	@Override
 	public TimeZone getTimezone()
 	{
 		// TODO: Make variable and save to / read from XML
 		return TimeZone.getDefault();
 	}
-	
+
 	// ==[ Runtime information ]================================================
-	
+
 	@Override
 	public WikiRuntimeInfo getRuntimeInfo()
 	{
 		return runtimeInfo;
 	}
-	
+
 	public void setRuntimeInfo(WikiRuntimeInfo runtimeInfo)
 	{
 		this.runtimeInfo = runtimeInfo;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -585,7 +585,7 @@ public class WikiConfigImpl
 		result = prime * result + ((wikiUrl == null) ? 0 : wikiUrl.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -682,35 +682,35 @@ public class WikiConfigImpl
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void save(File file) throws JAXBException
 	{
 		createMarshaller().marshal(this, file);
 	}
-	
+
 	public void save(Writer writer) throws JAXBException
 	{
 		createMarshaller().marshal(this, writer);
 	}
-	
+
 	public void save(OutputStream out) throws JAXBException
 	{
 		createMarshaller().marshal(this, out);
 	}
-	
+
 	public JAXBSource getAsJAXBSource() throws JAXBException
 	{
 		return new JAXBSource(createMarshaller(), this);
 	}
-	
+
 	private Marshaller createMarshaller() throws JAXBException
 	{
 		JAXBContext context = JAXBContext.newInstance(WikiConfigImpl.class);
-		
+
 		Marshaller m = context.createMarshaller();
-		
+
 		m.setEventHandler(new ValidationEventHandler()
 		{
 			@Override
@@ -720,13 +720,13 @@ public class WikiConfigImpl
 				return true;
 			}
 		});
-		
+
 		try
 		{
 			m.setProperty(
 					"com.sun.xml.bind.namespacePrefixMapper",
 					new NamespaceMapper());
-			
+
 			m.setProperty(
 					Marshaller.JAXB_FORMATTED_OUTPUT,
 					Boolean.TRUE);
@@ -734,51 +734,51 @@ public class WikiConfigImpl
 		catch (PropertyException e)
 		{
 		}
-		
+
 		return m;
 	}
-	
+
 	public static WikiConfigImpl load(File file) throws JAXBException
 	{
 		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(file));
 	}
-	
+
 	public static WikiConfigImpl load(Reader reader) throws JAXBException
 	{
 		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(reader));
 	}
-	
+
 	public static WikiConfigImpl load(InputStream in) throws JAXBException
 	{
 		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(in));
 	}
-	
+
 	public static WikiConfigImpl load(Source in) throws JAXBException
 	{
 		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(in));
 	}
-	
+
 	private static WikiConfigImpl finishImport(WikiConfigImpl config)
 	{
 		for (ParserFunctionBase pf : config.getParserFunctions())
 			pf.setWikiConfig(config);
-		
+
 		for (TagExtensionBase te : config.getTagExtensions())
 			te.setWikiConfig(config);
-		
+
 		config.parserConfig.setWikiConfig(config);
-		
+
 		config.nodeFactory = new EngineNodeFactoryImpl(config.parserConfig);
-		
+
 		return config;
 	}
-	
+
 	private static Unmarshaller createUnmarshaller() throws JAXBException
 	{
 		JAXBContext context = JAXBContext.newInstance(WikiConfigImpl.class);
-		
+
 		Unmarshaller m = context.createUnmarshaller();
-		
+
 		m.setEventHandler(new ValidationEventHandler()
 		{
 			@Override
@@ -788,20 +788,20 @@ public class WikiConfigImpl
 				return false;
 			}
 		});
-		
+
 		return m;
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class NamespaceMapper
 			extends
 				NamespacePrefixMapper
 	{
 		private static final String SWC_ENGINE_PREFIX = "swc-engine";
-		
+
 		private static final String SWC_ENGINE_URI = "org.sweble.wikitext.engine";
-		
+
 		@Override
 		public String getPreferredPrefix(
 				String namespaceUri,
@@ -813,16 +813,16 @@ public class WikiConfigImpl
 			else
 				return suggestion;
 		}
-		
+
 		@Override
 		public String[] getPreDeclaredNamespaceUris()
 		{
 			return new String[] { SWC_ENGINE_URI, };
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@XmlElement(name = "i18nAlias")
 	@XmlElementWrapper(name = "i18nAliases")
 	private I18nAliasImpl[] getJaxbAliases()
@@ -832,16 +832,16 @@ public class WikiConfigImpl
 		Arrays.sort(jaxbAliases);
 		return jaxbAliases;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbAliases(I18nAliasImpl[] aliases)
 	{
 		for (I18nAliasImpl alias : aliases)
 			addI18nAlias(alias);
 	}
-	
+
 	// =========================================================================
-	
+
 	@XmlElement(name = "pfnGroup")
 	@XmlElementWrapper(name = "pfnGroups")
 	private ParserFunctionGroup[] getJaxbPfnGroups()
@@ -851,16 +851,16 @@ public class WikiConfigImpl
 		Arrays.sort(jaxbPfnGroups);
 		return jaxbPfnGroups;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbPfnGroups(ParserFunctionGroup[] pfnGroups)
 	{
 		for (ParserFunctionGroup pfnGroup : pfnGroups)
 			addParserFunctionGroup(pfnGroup);
 	}
-	
+
 	// =========================================================================
-	
+
 	@XmlElement(name = "tagExtGroup")
 	@XmlElementWrapper(name = "tagExtGroups")
 	private TagExtensionGroup[] getJaxbTagExtGroups()
@@ -870,16 +870,16 @@ public class WikiConfigImpl
 		Arrays.sort(jaxbTagExtGroups);
 		return jaxbTagExtGroups;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbTagExtGroups(TagExtensionGroup[] tagExtGroups)
 	{
 		for (TagExtensionGroup tagExtGroup : tagExtGroups)
 			addTagExtensionGroup(tagExtGroup);
 	}
-	
+
 	// =========================================================================
-	
+
 	@XmlElement(name = "interwiki")
 	@XmlElementWrapper(name = "interwikis")
 	private InterwikiImpl[] getJaxbInterwikis()
@@ -889,32 +889,32 @@ public class WikiConfigImpl
 		Arrays.sort(jaxbInterwikis);
 		return jaxbInterwikis;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbInterwikis(InterwikiImpl[] interwikis)
 	{
 		for (InterwikiImpl iw : interwikis)
 			addInterwiki(iw);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class Namespaces
 	{
 		@XmlElement(name = "namespace")
 		private NamespaceImpl[] namespaces;
-		
+
 		@XmlAttribute
 		private int defaultNsId;
-		
+
 		@XmlAttribute
 		private int templateNsId;
-		
+
 		@SuppressWarnings("unused")
 		public Namespaces()
 		{
 		}
-		
+
 		public Namespaces(NamespaceImpl[] namespaces, int defId, int tmplId)
 		{
 			Arrays.sort(namespaces);
@@ -923,7 +923,7 @@ public class WikiConfigImpl
 			this.templateNsId = tmplId;
 		}
 	}
-	
+
 	@XmlElement(name = "namespaces")
 	private Namespaces getJaxbNamespaces()
 	{
@@ -933,7 +933,7 @@ public class WikiConfigImpl
 				defaultNamespace.getId(),
 				templateNamespace.getId());
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbNamespaces(Namespaces namespaces)
 	{

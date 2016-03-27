@@ -25,16 +25,16 @@ public class WikiRuntimeInfoImpl
 			WikiRuntimeInfo
 {
 	private final WikiConfigImpl wikiConfigImpl;
-	
+
 	// =========================================================================
-	
+
 	public WikiRuntimeInfoImpl(WikiConfigImpl wikiConfigImpl)
 	{
 		this.wikiConfigImpl = wikiConfigImpl;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Calendar getDateAndTime()
 	{
@@ -42,7 +42,7 @@ public class WikiRuntimeInfoImpl
 		timestamp.setLenient(true);
 		return timestamp;
 	}
-	
+
 	@Override
 	public Calendar getDateAndTime(Locale locale)
 	{

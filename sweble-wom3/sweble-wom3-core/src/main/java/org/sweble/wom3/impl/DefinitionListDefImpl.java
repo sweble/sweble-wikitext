@@ -26,16 +26,16 @@ public class DefinitionListDefImpl
 			Wom3DefinitionListDef
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public DefinitionListDefImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{

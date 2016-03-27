@@ -24,9 +24,9 @@ public class IllegalArgumentsWarning
 			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public IllegalArgumentsWarning(
 			WarningSeverity severity,
 			String origin,
@@ -35,7 +35,7 @@ public class IllegalArgumentsWarning
 	{
 		super(template, severity, origin, message);
 	}
-	
+
 	public IllegalArgumentsWarning(
 			WarningSeverity severity,
 			Class<?> origin,

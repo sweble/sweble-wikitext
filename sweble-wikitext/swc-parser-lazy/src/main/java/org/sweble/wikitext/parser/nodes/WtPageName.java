@@ -26,33 +26,33 @@ public class WtPageName
 			WtLinkTarget
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtPageName()
 	{
 	}
-	
+
 	protected WtPageName(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_PAGE_NAME;
 	}
-	
+
 	@Override
 	public String getNodeName()
 	{
 		return WtPageName.class.getSimpleName();
 	}
-	
+
 	@Override
 	public LinkTargetType getTargetType()
 	{

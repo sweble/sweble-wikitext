@@ -30,69 +30,69 @@ import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
-import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.ParserCommon;
+import xtc.parser.ParseException;
 
 public final class NonPostproParser
 		extends
 			ParserCommon<WtNode>
 {
 	private ParserConfig parserConfig;
-	
+
 	// =========================================================================
-	
+
 	public NonPostproParser()
 	{
 		parserConfig = new SimpleParserConfig();
 	}
-	
+
 	public NonPostproParser(
 			boolean warningsEnabled,
 			boolean gatherRtd,
 			boolean autoCorrect)
-	
+
 	{
 		parserConfig = new SimpleParserConfig(
 				warningsEnabled,
 				gatherRtd,
 				autoCorrect);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public WtNode parseArticle(String source, String title) throws IOException, ParseException
 	{
 		// Encoding validation
-		
+
 		WikitextEncodingValidator v = new WikitextEncodingValidator();
-		
+
 		ValidatedWikitext validated = v.validate(parserConfig, source, title);
-		
+
 		// Pre-processing
-		
+
 		WikitextPreprocessor prep = new WikitextPreprocessor(parserConfig);
-		
+
 		WtPreproWikitextPage prepArticle =
 				(WtPreproWikitextPage) prep.parseArticle(validated, title, false);
-		
+
 		// Parsing
-		
+
 		PreprocessedWikitext ppw = PreprocessorToParserTransformer
 				.transform(prepArticle, false);
-		
+
 		WikitextParser p = new WikitextParser(parserConfig);
-		
+
 		WtParsedWikitextPage parsedArticle =
 				(WtParsedWikitextPage) p.parseArticle(ppw, title);
-		
+
 		// User-defined processing
-		
+
 		WtParsedWikitextPage userProcessed = (WtParsedWikitextPage) process(parsedArticle);
-		
+
 		return userProcessed;
 	}
-	
+
 	@Override
 	public Object getConfig()
 	{

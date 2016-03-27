@@ -24,9 +24,9 @@ public class WtLctVarConv
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -34,48 +34,48 @@ public class WtLctVarConv
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtLctVarConv(WtLctFlags flags, WtBody body)
 	{
 		super(flags, body);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_LCT_VAR_CONV;
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public boolean hasFlags()
 	{
 		return getFlags() != WtLctFlags.NO_FLAGS;
 	}
-	
+
 	public final void setFlags(WtLctFlags flags)
 	{
 		set(0, flags);
 	}
-	
+
 	public final WtLctFlags getFlags()
 	{
 		return (WtLctFlags) get(0);
 	}
-	
+
 	public final void setText(WtBody text)
 	{
 		set(0, text);
 	}
-	
+
 	public final WtBody getText()
 	{
 		return (WtBody) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "flags", "body" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

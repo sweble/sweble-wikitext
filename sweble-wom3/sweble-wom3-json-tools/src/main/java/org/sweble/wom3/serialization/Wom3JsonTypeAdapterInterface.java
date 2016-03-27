@@ -39,14 +39,14 @@ public interface Wom3JsonTypeAdapterInterface
 			Node src,
 			Type typeOfSrc,
 			JsonSerializationContext context);
-	
+
 	@Override
 	public Node deserialize(
 			JsonElement json,
 			Type typeOfT,
 			JsonDeserializationContext context) throws JsonParseException;
-	
+
 	Wom3Document getDoc();
-	
+
 	void setDoc(Wom3Document doc);
 }

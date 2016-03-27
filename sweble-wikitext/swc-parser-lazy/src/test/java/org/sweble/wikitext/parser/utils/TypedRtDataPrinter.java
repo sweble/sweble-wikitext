@@ -33,7 +33,7 @@ public final class TypedRtDataPrinter
 	{
 		return "wikitext";
 	}
-	
+
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{

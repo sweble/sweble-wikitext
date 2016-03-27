@@ -31,7 +31,7 @@ public interface Wom3I18nAttributes
 	 *         if the attribute is not specified.
 	 */
 	public Wom3I18nDir getDir();
-	
+
 	/**
 	 * Get the text direction of the element.
 	 * 
@@ -43,7 +43,7 @@ public interface Wom3I18nAttributes
 	 * @return The old text direction.
 	 */
 	public Wom3I18nDir setDir(Wom3I18nDir dir);
-	
+
 	/**
 	 * Get the language code for content inside this element.
 	 * 
@@ -53,7 +53,7 @@ public interface Wom3I18nAttributes
 	 *         if the attribute is not specified.
 	 */
 	public String getLang();
-	
+
 	/**
 	 * Get the language code for content inside this element.
 	 * 
@@ -65,7 +65,7 @@ public interface Wom3I18nAttributes
 	 * @return The old language code.
 	 */
 	public String setLang(String lang);
-	
+
 	/**
 	 * Get the language code for content inside this element.
 	 * 
@@ -75,7 +75,7 @@ public interface Wom3I18nAttributes
 	 *         if the attribute is not specified.
 	 */
 	public String getXmlLang();
-	
+
 	/**
 	 * Get the language code for content inside this element.
 	 * 

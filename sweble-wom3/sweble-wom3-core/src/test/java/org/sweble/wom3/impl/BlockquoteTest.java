@@ -25,9 +25,9 @@ import org.sweble.wom3.Wom3ElementNode;
 public class BlockquoteTest
 {
 	private final Wom3ElementNode n = TestHelperDoc.genElem("blockquote");
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testCiteAttribute() throws Exception
 	{

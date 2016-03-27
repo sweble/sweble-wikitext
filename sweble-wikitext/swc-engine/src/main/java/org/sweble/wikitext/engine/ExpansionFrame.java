@@ -34,35 +34,35 @@ import de.fau.cs.osr.ptk.common.Warning;
 public class ExpansionFrame
 {
 	private final WtEngineImpl engine;
-	
+
 	private final ExpansionFrame rootFrame;
-	
+
 	private final ExpansionFrame parentFrame;
-	
+
 	private final PageTitle title;
-	
+
 	private final Map<String, WtNodeList> arguments;
-	
+
 	private final boolean forInclusion;
-	
+
 	private final EngLogContainer frameLog;
-	
+
 	private final ExpansionCallback callback;
-	
+
 	private final List<Warning> warnings;
-	
+
 	private final WtEntityMap entityMap;
-	
+
 	private final boolean noRedirect;
-	
+
 	private ExpansionVisitor expansionVisitor;
-	
+
 	// FIXME: That should have been initialized from a request!
 	//        And only once for the whole expansion process!
 	private UrlService urlService = new UrlService();
-	
+
 	// =========================================================================
-	
+
 	public ExpansionFrame(
 			WtEngineImpl engine,
 			ExpansionCallback callback,
@@ -86,7 +86,7 @@ public class ExpansionFrame
 		this.frameLog = frameLog;
 		this.rootFrame = this;
 		this.parentFrame = null;
-		
+
 		expansionVisitor = new ExpansionVisitor(
 				this,
 				frameLog,
@@ -94,7 +94,7 @@ public class ExpansionFrame
 				timingEnabled,
 				catchAll);
 	}
-	
+
 	public ExpansionFrame(
 			WtEngineImpl engine,
 			ExpansionCallback callback,
@@ -122,7 +122,7 @@ public class ExpansionFrame
 		this.frameLog = frameLog;
 		this.rootFrame = rootFrame;
 		this.parentFrame = parentFrame;
-		
+
 		expansionVisitor = new ExpansionVisitor(
 				this,
 				frameLog,
@@ -130,86 +130,86 @@ public class ExpansionFrame
 				timingEnabled,
 				catchAll);
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtEngineImpl getEngine()
 	{
 		return engine;
 	}
-	
+
 	public ExpansionFrame getRootFrame()
 	{
 		return rootFrame;
 	}
-	
+
 	public ExpansionFrame getParentFrame()
 	{
 		return parentFrame;
 	}
-	
+
 	public PageTitle getTitle()
 	{
 		return title;
 	}
-	
+
 	public Map<String, WtNodeList> getArguments()
 	{
 		return arguments;
 	}
-	
+
 	public boolean isForInclusion()
 	{
 		return forInclusion;
 	}
-	
+
 	public EngLogContainer getFrameLog()
 	{
 		return frameLog;
 	}
-	
+
 	public WikiConfig getWikiConfig()
 	{
 		return engine.getWikiConfig();
 	}
-	
+
 	public void fileWarning(Warning warning)
 	{
 		warnings.add(warning);
 	}
-	
+
 	public void addWarnings(Collection<Warning> warnings)
 	{
 		this.warnings.addAll(warnings);
 	}
-	
+
 	public List<Warning> getWarnings()
 	{
 		return warnings;
 	}
-	
+
 	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}
-	
+
 	public ExpansionCallback getCallback()
 	{
 		return callback;
 	}
-	
+
 	public boolean isNoRedirect()
 	{
 		return noRedirect;
 	}
-	
+
 	public UrlService getUrlService()
 	{
 		return urlService;
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtNode expand(WtNode ppAst) throws ExpansionException
 	{
 		try
@@ -221,10 +221,10 @@ public class ExpansionFrame
 			throw new ExpansionException(e);
 		}
 	}
-	
+
 	// =========================================================================
-	
-	public boolean existsPage(PageTitle pageTitle) throws Exception
+
+	public boolean existsPage(PageTitle pageTitle)
 	{
 		return (callback.retrieveWikitext(this, pageTitle) != null) ||
 				(callback.fileUrl(pageTitle, -1, -1) != null);

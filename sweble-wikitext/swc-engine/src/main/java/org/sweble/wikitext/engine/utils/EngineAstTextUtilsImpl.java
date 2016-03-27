@@ -27,7 +27,7 @@ import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.AstTextUtilsImpl;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class EngineAstTextUtilsImpl
 		extends
@@ -39,15 +39,15 @@ public class EngineAstTextUtilsImpl
 	{
 		super(parserConfig);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public WtNode trim(WtNode n)
 	{
 		return trimRight(trimLeft(n));
 	}
-	
+
 	@Override
 	public WtNode trimLeft(WtNode n)
 	{
@@ -68,11 +68,11 @@ public class EngineAstTextUtilsImpl
 							i.remove();
 							continue;
 						}
-						
-						String trimmed = StringUtils.trimLeft(text);
+
+						String trimmed = StringTools.trimLeft(text);
 						if (trimmed.equals(text))
 							break outer;
-						
+
 						if (trimmed.isEmpty())
 						{
 							i.remove();
@@ -83,11 +83,11 @@ public class EngineAstTextUtilsImpl
 							t.setContent(trimmed);
 							break outer;
 						}
-						
+
 					case WtNode.NT_IGNORED:
 					case WtNode.NT_XML_COMMENT:
 						continue;
-						
+
 					default:
 						break outer;
 				}
@@ -97,7 +97,7 @@ public class EngineAstTextUtilsImpl
 		else if (n.getNodeType() == WtNode.NT_TEXT)
 		{
 			WtText t = (WtText) n;
-			t.setContent(StringUtils.trimLeft(t.getContent()));
+			t.setContent(StringTools.trimLeft(t.getContent()));
 			return n;
 		}
 		else
@@ -105,7 +105,7 @@ public class EngineAstTextUtilsImpl
 			return n;
 		}
 	}
-	
+
 	@Override
 	public WtNode trimRight(WtNode n)
 	{
@@ -126,11 +126,11 @@ public class EngineAstTextUtilsImpl
 							i.remove();
 							continue;
 						}
-						
-						String trimmed = StringUtils.trimRight(text);
+
+						String trimmed = StringTools.trimRight(text);
 						if (trimmed.equals(text))
 							break outer;
-						
+
 						if (trimmed.isEmpty())
 						{
 							i.remove();
@@ -141,11 +141,11 @@ public class EngineAstTextUtilsImpl
 							t.setContent(trimmed);
 							break outer;
 						}
-						
+
 					case WtNode.NT_IGNORED:
 					case WtNode.NT_XML_COMMENT:
 						continue;
-						
+
 					default:
 						break outer;
 				}
@@ -155,7 +155,7 @@ public class EngineAstTextUtilsImpl
 		else if (n.getNodeType() == WtNode.NT_TEXT)
 		{
 			WtText t = (WtText) n;
-			t.setContent(StringUtils.trimRight(t.getContent()));
+			t.setContent(StringTools.trimRight(t.getContent()));
 			return n;
 		}
 		else
@@ -163,53 +163,53 @@ public class EngineAstTextUtilsImpl
 			return n;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String astToText(WtNode node) throws StringConversionException
 	{
 		return super.astToText(node, new SimpleEngineStringConverter());
 	}
-	
+
 	@Override
 	public String astToText(WtNode node, int... options) throws StringConversionException
 	{
 		return super.astToText(node, new SimpleEngineStringConverter(options));
 	}
-	
+
 	@Override
 	public PartialConversion astToTextPartial(WtNode node)
 	{
 		return super.astToTextPartial(node, new PartialEngineStringConverter());
 	}
-	
+
 	@Override
 	public PartialConversion astToTextPartial(WtNode node, int... options)
 	{
 		return super.astToTextPartial(node, new PartialEngineStringConverter(options));
 	}
-	
+
 	// =========================================================================
-	
+
 	private static class SimpleEngineStringConverter
 			extends
 				SimpleStringConverter
 	{
 		private boolean doNotConvertNowiki;
-		
+
 		public SimpleEngineStringConverter()
 		{
 			doNotConvertNowiki = false;
 		}
-		
+
 		public SimpleEngineStringConverter(int[] options)
 		{
 			this();
 			for (int option : options)
 				setOption(option);
 		}
-		
+
 		protected void setOption(int option)
 		{
 			switch (option)
@@ -222,7 +222,7 @@ public class EngineAstTextUtilsImpl
 					break;
 			}
 		}
-		
+
 		@Override
 		public void dispatch(WtNode node, int nodeType) throws StringConversionException
 		{
@@ -235,33 +235,33 @@ public class EngineAstTextUtilsImpl
 				super.dispatch(node, nodeType);
 			}
 		}
-		
+
 		protected void visit(EngNowiki node)
 		{
 			b.append(node.getContent());
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private class PartialEngineStringConverter
 			extends
 				PartialStringConverter
 	{
 		private boolean doNotConvertNowiki;
-		
+
 		public PartialEngineStringConverter()
 		{
 			doNotConvertNowiki = false;
 		}
-		
+
 		public PartialEngineStringConverter(int[] options)
 		{
 			this();
 			for (int option : options)
 				setOption(option);
 		}
-		
+
 		protected void setOption(int option)
 		{
 			switch (option)
@@ -274,7 +274,7 @@ public class EngineAstTextUtilsImpl
 					break;
 			}
 		}
-		
+
 		@Override
 		public void dispatch(WtNode node, int nodeType) throws StringConversionException
 		{
@@ -287,7 +287,7 @@ public class EngineAstTextUtilsImpl
 				super.dispatch(node, nodeType);
 			}
 		}
-		
+
 		protected void visit(EngNowiki node)
 		{
 			b.append(node.getContent());

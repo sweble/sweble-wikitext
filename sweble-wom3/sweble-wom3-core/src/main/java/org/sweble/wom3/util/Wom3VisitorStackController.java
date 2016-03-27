@@ -31,29 +31,29 @@ public abstract class Wom3VisitorStackController
 			VisitorStackController<Wom3Node>
 {
 	public static final Object REMOVE = new Object();
-	
+
 	// =========================================================================
-	
+
 	public Wom3VisitorStackController(
 			String cacheName,
 			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack) throws IncompatibleVisitorStackDefinition
 	{
 		super(cacheName, visitorStack);
 	}
-	
+
 	public Wom3VisitorStackController(
 			VisitorStackController.Cache cache,
 			List<? extends StackedVisitorInterface<Wom3Node>> visitorStack) throws IncompatibleVisitorStackDefinition
 	{
 		super(cache, visitorStack);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected abstract Object visitNotFound(Wom3Node node);
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Dispatches to the appropriate visit() method and returns the result of
 	 * the visitation. The given node must not be {@code null}.
@@ -64,9 +64,9 @@ public abstract class Wom3VisitorStackController
 			throw new NullPointerException();
 		return resolveAndVisit(node);
 	}
-	
+
 	// =========================================================================
-	
+
 	public void iterate(Wom3Node node)
 	{
 		if (node == null)
@@ -78,7 +78,7 @@ public abstract class Wom3VisitorStackController
 			n = n.getNextSibling();
 		}
 	}
-	
+
 	/**
 	 * Continues iteration after the current node was deleted. The caller has to
 	 * remember the next node before deletion and pass it to this method.
@@ -91,12 +91,12 @@ public abstract class Wom3VisitorStackController
 			next = next.getNextSibling();
 		}
 	}
-	
+
 	public List<Object> map(Wom3Node node)
 	{
 		if (node == null)
 			throw new NullPointerException();
-		
+
 		List<Object> result = new ArrayList<Object>();
 		Wom3Node n = node.getFirstChild();
 		while (n != null)
@@ -106,7 +106,7 @@ public abstract class Wom3VisitorStackController
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Iterates over the children of an WOM node and replaces each child node
 	 * with the result of the visitation of the respective child.
@@ -115,7 +115,7 @@ public abstract class Wom3VisitorStackController
 	{
 		if (node == null)
 			throw new NullPointerException();
-		
+
 		Wom3Node n = node.getFirstChild();
 		while (n != null)
 		{

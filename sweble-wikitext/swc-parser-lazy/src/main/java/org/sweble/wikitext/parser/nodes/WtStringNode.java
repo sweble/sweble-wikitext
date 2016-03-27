@@ -31,29 +31,29 @@ public interface WtStringNode
 				WtStringNode
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
-		
+
 		protected WtNoStringNode()
 		{
 		}
-		
+
 		@Override
 		public String getContent()
 		{
 			return "";
 		}
-		
+
 		@Override
 		public void setContent(String content)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
-		
+
 		@Override
 		public abstract int getNodeType();
-		
+
 		@Override
 		public abstract String getNodeName();
-		
+
 		@Override
 		public boolean indicatesAbsence()
 		{

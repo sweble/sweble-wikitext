@@ -32,51 +32,51 @@ public abstract class ListBaseImpl
 			Wom3List
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final ArrayList<Wom3ListItem> items =
 			new ArrayList<Wom3ListItem>();
-	
+
 	// =========================================================================
-	
+
 	public ListBaseImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean isCompact()
 	{
 		return getBoolAttr("compact");
 	}
-	
+
 	@Override
 	public boolean setCompact(boolean compact)
 	{
 		return setBoolAttr(CommonAttributeDescriptors.ATTR_DESC_COMPACT, "compact", compact);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getItemNum()
 	{
 		return items.size();
 	}
-	
+
 	@Override
 	public Collection<Wom3ListItem> getItems()
 	{
 		return Collections.unmodifiableCollection(items);
 	}
-	
+
 	@Override
 	public Wom3ListItem getItem(int index) throws IndexOutOfBoundsException
 	{
 		return items.get(index);
 	}
-	
+
 	@Override
 	public Wom3ListItem replaceItem(int index, Wom3ListItem item) throws IndexOutOfBoundsException
 	{
@@ -84,7 +84,7 @@ public abstract class ListBaseImpl
 		replaceChild(item, old);
 		return old;
 	}
-	
+
 	@Override
 	public Wom3ListItem removeItem(int index) throws IndexOutOfBoundsException
 	{
@@ -92,13 +92,13 @@ public abstract class ListBaseImpl
 		removeChild(old);
 		return old;
 	}
-	
+
 	@Override
 	public void appendItem(Wom3ListItem item)
 	{
 		appendChild(item);
 	}
-	
+
 	@Override
 	public void insertItem(int beforeIndex, Wom3ListItem item) throws IndexOutOfBoundsException
 	{
@@ -116,9 +116,9 @@ public abstract class ListBaseImpl
 			throw new IndexOutOfBoundsException();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -128,7 +128,7 @@ public abstract class ListBaseImpl
 			items.add(i, (Wom3ListItem) added);
 		}
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -138,7 +138,7 @@ public abstract class ListBaseImpl
 			items.remove(i);
 		}
 	}
-	
+
 	private int indexOf(Wom3Node node)
 	{
 		int i = -1;

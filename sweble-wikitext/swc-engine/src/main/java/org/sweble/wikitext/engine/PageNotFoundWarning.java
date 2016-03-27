@@ -24,11 +24,11 @@ public class PageNotFoundWarning
 			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final PageTitle title;
-	
+
 	// =========================================================================
-	
+
 	public PageNotFoundWarning(
 			WarningSeverity severity,
 			String origin,
@@ -38,7 +38,7 @@ public class PageNotFoundWarning
 		super(titleNode, severity, origin, makeMessage(title));
 		this.title = title;
 	}
-	
+
 	public PageNotFoundWarning(
 			WarningSeverity severity,
 			Class<?> origin,
@@ -48,20 +48,20 @@ public class PageNotFoundWarning
 		super(titleNode, severity, origin, makeMessage(title));
 		this.title = title;
 	}
-	
+
 	private static String makeMessage(PageTitle title)
 	{
 		return "The given text `" + title.getDenormalizedFullTitle() + "' " +
 				"does not constitute a valid page name";
 	}
-	
+
 	public PageTitle getTitle()
 	{
 		return title;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -70,7 +70,7 @@ public class PageNotFoundWarning
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{

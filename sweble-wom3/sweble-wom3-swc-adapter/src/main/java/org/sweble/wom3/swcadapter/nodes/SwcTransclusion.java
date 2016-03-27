@@ -27,12 +27,12 @@ public interface SwcTransclusion
 			Wom3ElementNode
 {
 	SwcName getName();
-	
+
 	SwcName setName(SwcName name);
-	
+
 	SwcArg getArgument(int index);
-	
+
 	SwcArg getArgument(String name);
-	
+
 	Collection<SwcArg> getArguments();
 }

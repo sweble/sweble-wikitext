@@ -25,12 +25,12 @@ public enum Wom3HorizAlign
 	LEFT,
 	RIGHT,
 	CENTER,
-	
+
 	/**
 	 * Not applicable to HR and TABLE.
 	 */
 	JUSTIFY,
-	
+
 	/**
 	 * Only applicable to TD, TH and TR.
 	 */

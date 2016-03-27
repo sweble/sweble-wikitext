@@ -25,11 +25,11 @@ public abstract class WikitextWarning
 			Warning
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	protected final WarningSeverity severity;
-	
+
 	// =========================================================================
-	
+
 	public WikitextWarning(
 			Span span,
 			WarningSeverity severity,
@@ -39,7 +39,7 @@ public abstract class WikitextWarning
 		super(span, origin, message);
 		this.severity = severity;
 	}
-	
+
 	public WikitextWarning(
 			Span span,
 			WarningSeverity severity,
@@ -49,16 +49,16 @@ public abstract class WikitextWarning
 		super(span, origin, message);
 		this.severity = severity;
 	}
-	
+
 	// =========================================================================
-	
+
 	public WarningSeverity getSeverity()
 	{
 		return severity;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
@@ -67,7 +67,7 @@ public abstract class WikitextWarning
 		String severity = severityToString();
 		return "Warning (" + severity + "): " + span + " : " + message;
 	}
-	
+
 	protected String severityToString()
 	{
 		String severity = "-";
@@ -75,9 +75,9 @@ public abstract class WikitextWarning
 			severity = getSeverity().toString().toLowerCase();
 		return severity;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -86,7 +86,7 @@ public abstract class WikitextWarning
 		result = prime * result + ((severity == null) ? 0 : severity.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -101,9 +101,9 @@ public abstract class WikitextWarning
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static enum WarningSeverity
 	{
 		/** Really not a problem. */
@@ -115,7 +115,7 @@ public abstract class WikitextWarning
 				return 0;
 			}
 		},
-		
+
 		/** Might be worth looking into. */
 		INFORMATIVE
 		{
@@ -125,7 +125,7 @@ public abstract class WikitextWarning
 				return 5;
 			}
 		},
-		
+
 		/** Should be taken care of. */
 		NORMAL
 		{
@@ -135,7 +135,7 @@ public abstract class WikitextWarning
 				return 10;
 			}
 		},
-		
+
 		/** That's really bad. */
 		FATAL
 		{
@@ -145,7 +145,7 @@ public abstract class WikitextWarning
 				return 100;
 			}
 		};
-		
+
 		public abstract int getLevel();
 	}
 }

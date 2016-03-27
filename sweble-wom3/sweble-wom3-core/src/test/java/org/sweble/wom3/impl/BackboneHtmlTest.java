@@ -17,7 +17,9 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +40,7 @@ public class BackboneHtmlTest
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		List<Object[]> inputs = new ArrayList<Object[]>();
-		
+
 		inputs.add(new Object[] { "hr" });
 		inputs.add(new Object[] { "ol" });
 		inputs.add(new Object[] { "ul" });
@@ -79,31 +81,31 @@ public class BackboneHtmlTest
 		inputs.add(new Object[] { "td" });
 		inputs.add(new Object[] { "th" });
 		inputs.add(new Object[] { "tr" });
-		
+
 		return inputs;
 	}
-	
+
 	// =========================================================================
-	
+
 	private final Wom3ElementNode n;
-	
+
 	private final DocumentImpl doc;
-	
+
 	public BackboneHtmlTest(String name) throws InstantiationException, IllegalAccessException
 	{
 		DomImplementationImpl domImpl = DomImplementationImpl.get();
 		doc = domImpl.createDocument(Wom3Node.WOM_NS_URI, "article", null);
 		this.n = (Wom3ElementNode) doc.createElementNS(Wom3Node.WOM_NS_URI, name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testIsInitiallyEmpty() throws Exception
 	{
 		assertFalse(n.hasChildNodes());
 	}
-	
+
 	@Test
 	public void testCanAddChildren() throws Exception
 	{
@@ -113,21 +115,21 @@ public class BackboneHtmlTest
 		assertTrue(child == n.getFirstChild());
 		assertTrue(child == n.getLastChild());
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testAcceptsUnknownAttributes() throws Exception
 	{
 		assertEquals("", n.getAttribute("some-attribute"));
-		
+
 		n.setAttribute("some-attribute", "some-value");
 		assertEquals("some-value", n.getAttribute("some-attribute"));
-		
+
 		n.setAttribute("some-attribute", null);
 		assertEquals("", n.getAttribute("some-attribute"));
 	}
-	
+
 	@Test
 	public void removingAbsentAttributeDoesNotThrow() throws Exception
 	{

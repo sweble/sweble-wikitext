@@ -28,6 +28,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.engine.PageId;
+import org.sweble.wom3.util.SaxonWomTransformations;
+import org.sweble.wom3.util.SaxonWomXPath;
 import org.sweble.wom3.util.Wom3Toolbox;
 
 import de.fau.cs.osr.utils.FileContent;
@@ -40,11 +42,11 @@ public class ManualTesting
 			WtWom3IntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
-	
+
 	private static final String INPUT_SUB_DIR = "nopkg-manual";
-	
+
 	// =========================================================================
-	
+
 	public static void main(String[] args) throws Exception
 	{
 		for (Object[] input : enumerateInputs())
@@ -56,25 +58,25 @@ public class ManualTesting
 			test.runTests();
 		}
 	}
-	
+
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
 		TestResourcesFixture resources = getTestResourcesFixture();
-		
+
 		File dir = new File(resources.getBaseDirectory(), INPUT_SUB_DIR);
 		if (!dir.exists() || !dir.isDirectory())
 			return Collections.emptyList();
-		
+
 		return resources.gatherAsParameters(INPUT_SUB_DIR, FILTER_RX, false);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final File inputFile;
-	
+
 	// =========================================================================
-	
+
 	public ManualTesting(
 			String title,
 			TestResourcesFixture resources,
@@ -82,58 +84,58 @@ public class ManualTesting
 	{
 		super(resources);
 		this.inputFile = inputFile;
-		
+
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void runTests() throws Exception
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
-		
+
 		Artifacts afs = parseArticle(
 				inputFileContent.getContent(),
 				inputFile.getAbsolutePath());
-		
+
 		{
 			String restoredWmFast = Wom3Toolbox.womToWmFast(afs.womDoc);
 			File output = new File(inputFile.getName() + "-wm-from-wom-fast.wikitext");
-			FileUtils.writeStringToFile(output, restoredWmFast);
+			FileUtils.writeStringToFile(output, restoredWmFast, "UTF8");
 			Assert.assertEquals(inputFileContent.getContent(), restoredWmFast);
 		}
-		
+
 		{
-			String restoredWmXPath = Wom3Toolbox.womToWmXPath(afs.womDoc);
+			String restoredWmXPath = SaxonWomXPath.womToWmXPath(afs.womDoc);
 			File output = new File(inputFile.getName() + "-wm-from-wom-xpath.wikitext");
-			FileUtils.writeStringToFile(output, restoredWmXPath);
+			FileUtils.writeStringToFile(output, restoredWmXPath, "UTF8");
 			Assert.assertEquals(inputFileContent.getContent(), restoredWmXPath);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public Artifacts parseArticle(String source, String title) throws Exception
 	{
-		
+
 		String fileTitle = FilenameUtils.getBaseName(inputFile.getName());
-		
+
 		PageId pageId = makePageId(fileTitle);
-		
+
 		Artifacts afs = wmToWom(inputFile, pageId, null);
-		
+
 		{
 			String ast = printAst(afs.ast);
 			File output = new File(inputFile.getName() + "-ast.wikitext");
-			FileUtils.writeStringToFile(output, ast);
+			FileUtils.writeStringToFile(output, ast, "UTF8");
 		}
-		
-		String wom = Wom3Toolbox.printWom(afs.womDoc);
+
+		String wom = SaxonWomTransformations.printWom(afs.womDoc);
 		{
 			File output = new File(inputFile.getName() + "-wom.wikitext");
-			FileUtils.writeStringToFile(output, wom);
+			FileUtils.writeStringToFile(output, wom, "UTF8");
 		}
-		
+
 		return afs;
 	}
 }

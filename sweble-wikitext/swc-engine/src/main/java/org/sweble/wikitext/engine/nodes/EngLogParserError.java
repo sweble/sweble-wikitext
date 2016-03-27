@@ -23,39 +23,39 @@ public class EngLogParserError
 			EngLogLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogParserError()
 	{
 	}
-	
+
 	protected EngLogParserError(String message)
 	{
 		setMessage(message);
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String message;
-	
+
 	public final String getMessage()
 	{
 		return this.message;
 	}
-	
+
 	public final void setMessage(String message)
 	{
 		this.message = message;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1;
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -66,7 +66,7 @@ public class EngLogParserError
 			{
 				return 1;
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -74,12 +74,12 @@ public class EngLogParserError
 				{
 					case 0:
 						return "message";
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -87,12 +87,12 @@ public class EngLogParserError
 				{
 					case 0:
 						return EngLogParserError.this.getMessage();
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -104,7 +104,7 @@ public class EngLogParserError
 						EngLogParserError.this.setMessage((String) value);
 						return old;
 					}
-					
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}

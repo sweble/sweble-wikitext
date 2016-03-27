@@ -26,26 +26,26 @@ public class JobTrace
 	public static final class Signer
 	{
 		private Class<?> signer;
-		
+
 		private String message;
-		
+
 		public Signer(Class<?> signer, String message)
 		{
 			super();
 			this.signer = signer;
 			this.message = message;
 		}
-		
+
 		public Class<?> getSigner()
 		{
 			return signer;
 		}
-		
+
 		public String getMessage()
 		{
 			return message;
 		}
-		
+
 		@Override
 		public String toString()
 		{
@@ -55,36 +55,36 @@ public class JobTrace
 			return str;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static AtomicLong jobIdCounter = new AtomicLong(0);
-	
+
 	private final long jobId = jobIdCounter.incrementAndGet();
-	
+
 	private List<Signer> signers;
-	
+
 	// =========================================================================
-	
+
 	public void signOff(Class<?> signer, String signature)
 	{
 		if (signers == null)
 			signers = new ArrayList<Signer>();
 		signers.add(new Signer(signer, signature));
 	}
-	
+
 	public long getJobId()
 	{
 		return jobId;
 	}
-	
+
 	public List<Signer> getSigners()
 	{
 		return signers;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -93,7 +93,7 @@ public class JobTrace
 		result = prime * result + (int) (jobId ^ (jobId >>> 32));
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -108,16 +108,16 @@ public class JobTrace
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String toString()
 	{
 		StringBuilder b = new StringBuilder();
-		
+
 		b.append(String.format("[ Job Trace: Job Id = %9d", jobId));
-		
+
 		boolean first = true;
 		b.append("; Signed by = ");
 		for (Signer signer : signers)
@@ -127,7 +127,7 @@ public class JobTrace
 			b.append(signer.toString());
 			first = false;
 		}
-		
+
 		b.append(" ]");
 		return b.toString();
 	}

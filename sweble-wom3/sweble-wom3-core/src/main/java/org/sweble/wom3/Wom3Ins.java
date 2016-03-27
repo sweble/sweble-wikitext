@@ -41,7 +41,7 @@ public interface Wom3Ins
 	 * @return The url or <code>null</code> if the attribute is not specified.
 	 */
 	public URL getCite();
-	
+
 	/**
 	 * Set the url of a document that specifies the reasons for the change.
 	 * 
@@ -52,7 +52,7 @@ public interface Wom3Ins
 	 * @return The The old url.
 	 */
 	public URL setCite(URL url);
-	
+
 	/**
 	 * Get the timestamp when the text or block was deleted.
 	 * 
@@ -62,7 +62,7 @@ public interface Wom3Ins
 	 *         attribute is not specified.
 	 */
 	public DateTime getDatetime();
-	
+
 	/**
 	 * Set the timestamp when the text or block was deleted.
 	 * 

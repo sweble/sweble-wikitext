@@ -29,47 +29,47 @@ public class EngLogLeafNode
 			EngLogNode
 {
 	private static final long serialVersionUID = -1024830219477280567L;
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
-	
+
 	@Override
 	public void setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
-	
+
 	@Override
 	public void setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
-	
+
 	@Override
 	public WtRtData getRtd()
 	{
 		return null;
 	}
-	
+
 	@Override
 	public void clearRtd()
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
-	
+
 	@Override
 	public void suppressRtd()
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
-	
+
 	// =========================================================================
-	
+
 	protected String genMsg()
 	{
 		return "Operation not supported by EngLog* nodes!";

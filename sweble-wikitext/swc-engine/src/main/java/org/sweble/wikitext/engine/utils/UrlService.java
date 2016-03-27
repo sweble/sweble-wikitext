@@ -26,12 +26,12 @@ import org.sweble.wikitext.engine.PageTitle;
 
 public class UrlService
 {
-	
+
 	public URL convertUrl(UrlType full, URL titleUrl)
 	{
 		return titleUrl;
 	}
-	
+
 	/**
 	 * Takes a parameterized URL like
 	 * "http://localhost/wiki/index.php?title=$1", replace the parameter "$1"
@@ -42,7 +42,7 @@ public class UrlService
 		String encodedTitle = UrlEncoding.WIKI.encode(title.getNormalizedFullTitle());
 		return new URL(parametrizedUrl.replace("$1", encodedTitle));
 	}
-	
+
 	/**
 	 * Appends (possibly additional) query parameter to a URL.
 	 * 
@@ -56,7 +56,7 @@ public class UrlService
 				new URL(ef + "&" + urlEncodedQuery) :
 				new URL(ef + "?" + urlEncodedQuery);
 	}
-	
+
 	/**
 	 * Appends (possibly additional) query parameter to a URL.
 	 */
@@ -64,7 +64,7 @@ public class UrlService
 	{
 		return appendQuery(url, queryMapToString(query));
 	}
-	
+
 	/**
 	 * Converts a map of key=value pairs to the URL-encoded query part of an
 	 * URL.
@@ -73,7 +73,7 @@ public class UrlService
 	{
 		StringBuilder b = new StringBuilder();
 		UrlEncoding encoder = UrlEncoding.QUERY;
-		
+
 		boolean first = true;
 		for (Entry<String, String> e : query.entrySet())
 		{
@@ -84,7 +84,7 @@ public class UrlService
 			b.append(encoder.encode(e.getValue()));
 			first = false;
 		}
-		
+
 		return b.toString();
 	}
 }

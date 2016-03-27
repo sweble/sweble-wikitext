@@ -15,7 +15,8 @@
  * limitations under the License.
  */
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
@@ -37,55 +38,55 @@ public class CruncherTest
 			CruncherTestBase
 {
 	private Nexus nexus;
-	
+
 	private AtomicLong processed = new AtomicLong(0);
-	
+
 	private long failAfter = -1;
-	
+
 	// =========================================================================
-	
+
 	@Before
 	public void before() throws Throwable
 	{
 		nexus = new Nexus();
-		
+
 		nexus.setUp(
 				16, /* in tray capacity */
 				16, /* processed jobs capacity */
 				16 /* out tray capacity */);
-		
+
 		JobGeneratorFactory jobFactory = createJobFactory();
 		nexus.addJobGenerator(jobFactory);
-		
+
 		ProcessingNodeFactory pnFactory = createPnFactory();
 		nexus.addProcessingNode(pnFactory);
-		
+
 		StorerFactory storerFactory = createStorerFactory();
 		nexus.addStorer(storerFactory);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testWithoutFailing() throws Throwable
 	{
 		nexus.start();
-		
+
 		assertEquals(NUM_JOBS_TO_GENERATE, generated.get());
-		
+
 		assertEquals(NUM_JOBS_TO_GENERATE, processed.get());
-		
+
 		assertEquals(NUM_JOBS_TO_GENERATE, stored.get());
-		
+
 		Set<JobTrace> jobTraces = nexus.getJobTraces();
 		assertTrue(jobTraces.isEmpty());
 	}
-	
+
 	@Test
 	public void testWithFailing() throws Throwable
 	{
 		failAfter = (NUM_JOBS_TO_GENERATE * 3) / 4;
-		
+
 		try
 		{
 			nexus.start();
@@ -94,12 +95,12 @@ public class CruncherTest
 		{
 			assertEquals("Die!", e.getMessage());
 		}
-		
+
 		Set<JobTrace> jobTraces = nexus.getJobTraces();
-		
+
 		assertEquals(generated.get(), processed.get() + jobTraces.size());
 		assertEquals(generated.get(), stored.get() + jobTraces.size());
-		
+
 		/*
 		System.out.println("numJobsToGenerate: " + NUM_JOBS_TO_GENERATE);
 		System.out.println("generated: " + generated.get());
@@ -108,9 +109,9 @@ public class CruncherTest
 		System.out.println("job traces left: " + jobTraces.size());
 		*/
 	}
-	
+
 	// =========================================================================
-	
+
 	private ProcessingNodeFactory createPnFactory()
 	{
 		return new ProcessingNodeFactory()
@@ -129,17 +130,17 @@ public class CruncherTest
 						while (true)
 						{
 							Job job = inTray.take();
-							
+
 							job.signOff(getClass(), null);
-							
+
 							// do process.
 							if (failAfter >= 0 && generated.get() > failAfter)
 								throw new RuntimeException("Die!");
-							
+
 							processed.incrementAndGet();
-							
+
 							job.processed((Object) null);
-							
+
 							processedJobs.put(job);
 						}
 					}

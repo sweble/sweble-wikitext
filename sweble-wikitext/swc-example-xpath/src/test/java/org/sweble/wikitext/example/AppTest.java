@@ -21,14 +21,12 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 
-import junit.framework.Assert;
-
 import org.apache.commons.io.IOUtils;
+import org.junit.Assert;
 import org.junit.Test;
-import org.sweble.wikitext.example.App;
 
-import de.fau.cs.osr.utils.FileUtils;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.FileTools;
+import de.fau.cs.osr.utils.StringTools;
 
 public class AppTest
 {
@@ -36,21 +34,21 @@ public class AppTest
 	public void test() throws Exception
 	{
 		String title = "Simple_Page";
-		
+
 		URL url = AppTest.class.getResource("/" + title + ".wikitext");
-		String path = StringUtils.decodeUsingDefaultCharset(url.getFile());
-		
+		String path = StringTools.decodeUsingDefaultCharset(url.getFile());
+
 		StringBuilder b = new StringBuilder();
-		
+
 		b.append(App.run(new File(path), title, "//WtInternalLink"));
-		
+
 		b.append(App.run(new File(path), title, "//WtTableCell"));
-		
+
 		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".result");
-		String expected = FileUtils.lineEndToUnix(IOUtils.toString(expectedIs));
-		
-		String actual = FileUtils.lineEndToUnix(b.toString());
-		
+		String expected = FileTools.lineEndToUnix(IOUtils.toString(expectedIs, "UTF8"));
+
+		String actual = FileTools.lineEndToUnix(b.toString());
+
 		Assert.assertEquals(expected, actual);
 	}
 }

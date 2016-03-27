@@ -32,7 +32,7 @@ public class ParserFunctionExpr
 			ParserFunctionsExtPfn
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -40,12 +40,12 @@ public class ParserFunctionExpr
 	{
 		super("expr");
 	}
-	
+
 	public ParserFunctionExpr(WikiConfig wikiConfig)
 	{
 		super(wikiConfig, "expr");
 	}
-	
+
 	@Override
 	public WtNode invoke(
 			WtTemplate pfn,
@@ -54,9 +54,9 @@ public class ParserFunctionExpr
 	{
 		if (args.size() < 1)
 			return nf().text("");
-		
+
 		WtNode arg0 = frame.expand(args.get(0));
-		
+
 		String expr = null;
 		try
 		{
@@ -66,7 +66,7 @@ public class ParserFunctionExpr
 		{
 			return EngineRtData.set(nf().softError(pfn));
 		}
-		
+
 		ExprParser p = new ExprParser();
 		try
 		{

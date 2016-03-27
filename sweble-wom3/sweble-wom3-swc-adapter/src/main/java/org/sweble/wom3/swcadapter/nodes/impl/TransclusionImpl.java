@@ -40,52 +40,52 @@ public class TransclusionImpl
 			SwcTransclusion
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc(MWW_NS_URI, "name", ChildDescriptor.REQUIRED),
 			childDesc(MWW_NS_URI, "arg", ChildDescriptor.MULTIPLE) };
-	
+
 	private NameImpl name;
-	
+
 	private Map<String, ArgImpl> argByName;
-	
+
 	private ArrayList<ArgImpl> argByIndex;
-	
+
 	// =========================================================================
-	
+
 	public TransclusionImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getSwcName()
 	{
 		return "transclusion";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -100,7 +100,7 @@ public class TransclusionImpl
 			this.argByName = null;
 		}
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -115,22 +115,22 @@ public class TransclusionImpl
 			this.argByName = null;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public SwcName getName()
 	{
 		return this.name;
 	}
-	
+
 	@Override
 	public SwcName setName(SwcName name)
 	{
 		return (SwcName) replaceOrInsertBeforeOrAppend(
 				this.name, getFirstChild(), name, true);
 	}
-	
+
 	@Override
 	public SwcArg getArgument(int index)
 	{
@@ -142,7 +142,7 @@ public class TransclusionImpl
 		}
 		return argByIndex.get(index);
 	}
-	
+
 	@Override
 	public SwcArg getArgument(String name)
 	{
@@ -167,24 +167,24 @@ public class TransclusionImpl
 		}
 		return argByName.get(name);
 	}
-	
+
 	@Override
 	public Collection<SwcArg> getArguments()
 	{
 		// TODO: Use view instead of static excerpt!
-		
+
 		ArrayList<SwcArg> args = new ArrayList<SwcArg>();
 		for (Backbone i = getFirstChild(); i != null; i = i.getNextSibling())
 		{
 			if (i instanceof SwcArg)
 				args.add((SwcArg) i);
 		}
-		
+
 		return Collections.unmodifiableCollection(args);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,

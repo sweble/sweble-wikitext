@@ -27,6 +27,6 @@ public interface SwcNode
 			Wom3Node
 {
 	public static final String MWW_NS_URI = "http://sweble.org/schema/mww30";
-	
+
 	public static final String DEFAULT_MWW_NS_PREFIX = "mww";
 }

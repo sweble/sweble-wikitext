@@ -25,19 +25,19 @@ public class CorePfnVariablesStatistics
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnVariablesStatistics(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Statistics");
 	}
-	
+
 	public static CorePfnVariablesStatistics group(WikiConfig wikiConfig)
 	{
 		return new CorePfnVariablesStatistics(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == Entire wiki

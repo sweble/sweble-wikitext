@@ -25,19 +25,19 @@ public class CorePfnBehaviorSwitches
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnBehaviorSwitches(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Behavior Switches");
 	}
-	
+
 	public static CorePfnBehaviorSwitches group(WikiConfig wikiConfig)
 	{
 		return new CorePfnBehaviorSwitches(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == WtTable of contents

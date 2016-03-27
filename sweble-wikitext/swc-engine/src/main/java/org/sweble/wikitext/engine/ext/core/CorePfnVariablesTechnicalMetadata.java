@@ -31,9 +31,9 @@ public class CorePfnVariablesTechnicalMetadata
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnVariablesTechnicalMetadata(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Technical Metadata");
@@ -42,12 +42,12 @@ public class CorePfnVariablesTechnicalMetadata
 		addParserFunction(new ProtectionLevelPfn(wikiConfig));
 		addParserFunction(new DefaultsortPfn(wikiConfig));
 	}
-	
+
 	public static CorePfnVariablesTechnicalMetadata group(WikiConfig wikiConfig)
 	{
 		return new CorePfnVariablesTechnicalMetadata(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == Site
@@ -55,13 +55,13 @@ public class CorePfnVariablesTechnicalMetadata
 	// == TODO: {{SITENAME}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class SitenamePfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -69,12 +69,12 @@ public class CorePfnVariablesTechnicalMetadata
 		{
 			super("sitename");
 		}
-		
+
 		public SitenamePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "sitename");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate var,
@@ -84,7 +84,7 @@ public class CorePfnVariablesTechnicalMetadata
 			return nf().text(frame.getWikiConfig().getSiteName());
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{SERVER}}
@@ -95,19 +95,19 @@ public class CorePfnVariablesTechnicalMetadata
 	// == TODO: {{CURRENTVERSION}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == {{CONTENTLANGUAGE}}, {{CONTENTLANG}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class ContentLanguagePfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -115,12 +115,12 @@ public class CorePfnVariablesTechnicalMetadata
 		{
 			super("contentlanguage");
 		}
-		
+
 		public ContentLanguagePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "contentlanguage");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate var,
@@ -130,7 +130,7 @@ public class CorePfnVariablesTechnicalMetadata
 			return nf().text(frame.getWikiConfig().getContentLanguage());
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == Latest revision to current page
@@ -146,19 +146,19 @@ public class CorePfnVariablesTechnicalMetadata
 	// == TODO: {{PAGESIZE:page name}}, {{PAGESIZE:page name|R}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == {{PROTECTIONLEVEL:action}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class ProtectionLevelPfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -166,12 +166,12 @@ public class CorePfnVariablesTechnicalMetadata
 		{
 			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "protectionlevel");
 		}
-		
+
 		public ProtectionLevelPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "protectionlevel");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate var,
@@ -182,7 +182,7 @@ public class CorePfnVariablesTechnicalMetadata
 			return nf().list();
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == Affects page content
@@ -190,7 +190,7 @@ public class CorePfnVariablesTechnicalMetadata
 	// == TODO: {{DISPLAYTITLE:title}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{DEFAULTSORT:sortkey}}, {{DEFAULTSORTKEY:sortkey}}, 
@@ -198,13 +198,13 @@ public class CorePfnVariablesTechnicalMetadata
 	// ==       {{DEFAULTSORT:sortkey|noreplace}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class DefaultsortPfn
 			extends
 				CorePfnVariable
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -212,12 +212,12 @@ public class CorePfnVariablesTechnicalMetadata
 		{
 			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "defaultsort");
 		}
-		
+
 		public DefaultsortPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "defaultsort");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate var,

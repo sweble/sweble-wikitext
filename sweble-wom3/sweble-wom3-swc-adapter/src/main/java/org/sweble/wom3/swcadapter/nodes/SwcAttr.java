@@ -25,12 +25,12 @@ public interface SwcAttr
 			Wom3ElementNode
 {
 	SwcName getName();
-	
+
 	SwcName setName(SwcName name);
-	
+
 	boolean hasValue();
-	
+
 	SwcValue getValue();
-	
+
 	SwcValue setValue(SwcValue value);
 }

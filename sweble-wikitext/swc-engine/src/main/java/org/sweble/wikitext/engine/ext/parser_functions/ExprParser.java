@@ -25,9 +25,9 @@ import java.util.Stack;
 public class ExprParser
 {
 	private static final int maxStackSize = 100;
-	
+
 	private static final Map<String, Token> TOKENS = new HashMap<String, Token>();
-	
+
 	static
 	{
 		TOKENS.put("(", Token.LPAREN);
@@ -68,17 +68,17 @@ public class ExprParser
 		TOKENS.put("tan", Token.TANGENS);
 		TOKENS.put("trunc", Token.TRUNC);
 	}
-	
+
 	// =====================================================================
-	
+
 	private final Stack<Double> operands = new Stack<Double>();
-	
+
 	private final Stack<Token> operators = new Stack<Token>();
-	
+
 	private Production expecting;
-	
+
 	// =====================================================================
-	
+
 	/**
 	 * http://montcs.bloomu.edu/~bobmon/Information/RPN/infix2rpn.shtml
 	 * 
@@ -90,17 +90,17 @@ public class ExprParser
 		operators.clear();
 		expecting = Production.EXPR;
 		int i = 0;
-		
+
 		expr = unescape(expr);
-		
+
 		while (i < expr.length())
 		{
 			if (operands.size() > maxStackSize
 					|| operators.size() > maxStackSize)
 				throw new ExprError("operands_exhausted");
-			
+
 			char ch = expr.charAt(i);
-			
+
 			if (isWs(ch))
 			{
 				i = skipWs(expr, i);
@@ -130,7 +130,7 @@ public class ExprParser
 						word = expr.substring(i, i + 2);
 						token = TOKENS.get(word);
 					}
-					
+
 					if (token == null)
 					{
 						// Try one-character operators
@@ -138,17 +138,17 @@ public class ExprParser
 						token = TOKENS.get(word);
 					}
 				}
-				
+
 				if (token == null)
 					throw new ExprError("Unrecognised word \"%s\".", word);
-				
+
 				i += word.length();
-				
+
 				switch (token)
 				{
-				
+
 				// -- Constants ----------------------------------------
-				
+
 					case E:
 					{
 						if (expecting == Production.OPERATOR)
@@ -167,9 +167,9 @@ public class ExprParser
 						}
 						continue;
 					}
-					
+
 					// -- Unary operators ----------------------------------
-					
+
 					case NOT:
 					case SINE:
 					case COSINE:
@@ -188,9 +188,9 @@ public class ExprParser
 						operators.push(token);
 						continue;
 					}
-					
+
 					// -- Binary or Unary ----------------------------------
-					
+
 					case PLUS:
 					case MINUS:
 					{
@@ -206,9 +206,9 @@ public class ExprParser
 						}
 						continue;
 					}
-					
+
 					// -- Binary operators ---------------------------------
-					
+
 					case EQ:
 					case NEQ:
 					case LE:
@@ -226,16 +226,16 @@ public class ExprParser
 						processBinaryOp(token, word);
 						continue;
 					}
-					
+
 					// -- Parentheses --------------------------------------
-					
+
 					case LPAREN:
 					{
 						expect(Production.EXPR, "unexpected_operator", word);
 						operators.push(token);
 						continue;
 					}
-					
+
 					case RPAREN:
 					{
 						Token lastOp = null;
@@ -244,39 +244,39 @@ public class ExprParser
 							lastOp = operators.peek();
 							if (lastOp == Token.LPAREN)
 								break;
-							
+
 							lastOp.apply(operands);
 							operators.pop();
 						}
-						
+
 						if (lastOp != Token.LPAREN)
 							throw new ExprError("unexpected_closing_bracket");
-						
+
 						operators.pop();
 						expecting = Production.OPERATOR;
 						continue;
 					}
-					
+
 					default:
 						throw new InternalError();
 				}
 			}
 		}
-		
+
 		while (!operators.isEmpty())
 		{
 			Token op = operators.pop();
 			if (op == Token.LPAREN)
 				throw new ExprError("unclosed_bracket");
-			
+
 			op.apply(operands);
 		}
-		
+
 		return implode("<br />\n", operands);
 	}
-	
+
 	// =====================================================================
-	
+
 	private String unescape(String expr)
 	{
 		expr = expr.replace("&lt;", "<");
@@ -285,14 +285,14 @@ public class ExprParser
 		expr = expr.replace("\u2212", "-");
 		return expr;
 	}
-	
+
 	// =====================================================================
-	
+
 	private boolean isWs(char ch)
 	{
 		return Character.isWhitespace(ch);
 	}
-	
+
 	private int skipWs(String expr, int i)
 	{
 		int j = i + 1;
@@ -300,14 +300,14 @@ public class ExprParser
 			++j;
 		return j;
 	}
-	
+
 	// =====================================================================
-	
+
 	private boolean isNumberChar(char ch)
 	{
 		return ch == '.' || Character.isDigit(ch);
 	}
-	
+
 	private int pushOperand(String expr, int i)
 	{
 		int j = i + 1;
@@ -318,7 +318,7 @@ public class ExprParser
 				break;
 			++j;
 		}
-		
+
 		try
 		{
 			operands.push(Double.parseDouble(expr.substring(i, j)));
@@ -327,17 +327,17 @@ public class ExprParser
 		{
 			operands.push(0.);
 		}
-		
+
 		return j;
 	}
-	
+
 	// =====================================================================
-	
+
 	private boolean isAlphaChar(char ch)
 	{
 		return Character.isLetter(ch);
 	}
-	
+
 	private String parseWordToken(String expr, int i)
 	{
 		int j = i + 1;
@@ -348,46 +348,46 @@ public class ExprParser
 				break;
 			++j;
 		}
-		
+
 		return expr.substring(i, j);
 	}
-	
+
 	// =====================================================================
-	
+
 	private void expect(Production p, String msg) throws ExprError
 	{
 		if (expecting != p)
 			throw new ExprError(msg);
 	}
-	
+
 	private void expect(Production p, String msg, String word) throws ExprError
 	{
 		if (expecting != p)
 			throw new ExprError(msg, word);
 	}
-	
+
 	// =====================================================================
-	
+
 	private void processBinaryOp(Token op, String word) throws ExprError
 	{
 		expect(Production.OPERATOR, "unexpected_operator", word);
-		
+
 		while (!operators.isEmpty())
 		{
 			Token lastOp = operators.peek();
 			if (op.getPrecedence() > lastOp.getPrecedence())
 				break;
-			
+
 			lastOp.apply(operands);
 			operators.pop();
 		}
-		
+
 		operators.push(op);
 		expecting = Production.EXPR;
 	}
-	
+
 	// =====================================================================
-	
+
 	private String implode(String serparator, Stack<Double> operands)
 	{
 		StringBuilder b = new StringBuilder();
@@ -403,28 +403,28 @@ public class ExprParser
 		}
 		return b.toString();
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class ExprError
 			extends
 				Exception
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		private final String param;
-		
+
 		public ExprError(String message)
 		{
 			this(message, null);
 		}
-		
+
 		public ExprError(String message, String param)
 		{
 			super(makeMessage(message, param));
 			this.param = param;
 		}
-		
+
 		private static String makeMessage(String message, String param)
 		{
 			String msg = message;
@@ -432,27 +432,27 @@ public class ExprParser
 				msg = String.format(message, param);
 			return "Expression error: " + msg;
 		}
-		
+
 		public String getParam()
 		{
 			return param;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static enum Production
 	{
 		EXPR,
 		OPERATOR;
 	}
-	
+
 	// =========================================================================
-	
+
 	private static enum Token
 	{
 		// -- Constants -- e, pi --
-		
+
 		E(-1, "e")
 		{
 			@Override
@@ -469,9 +469,9 @@ public class ExprParser
 				operands.push(Math.PI);
 			}
 		},
-		
+
 		// -- Binary -- 10e^x --
-		
+
 		SCIENTIFIC(10, "e")
 		{
 			@Override
@@ -483,9 +483,9 @@ public class ExprParser
 				operands.push(left * Math.pow(10, right));
 			}
 		},
-		
+
 		// -- Unary -- +, -, ! --
-		
+
 		POS(10, "+")
 		{
 			@Override
@@ -504,7 +504,7 @@ public class ExprParser
 				operands.push(-arg);
 			}
 		},
-		
+
 		NOT(9, "not")
 		{
 			@Override
@@ -515,9 +515,9 @@ public class ExprParser
 				operands.push((arg == 0) ? 1. : 0.);
 			}
 		},
-		
+
 		// -- Unary -- sin, cos, tan, atan, acos, atan --
-		
+
 		SINE(9, "sin")
 		{
 			@Override
@@ -582,9 +582,9 @@ public class ExprParser
 				operands.push(Math.atan(arg));
 			}
 		},
-		
+
 		// -- Unary -- e^x, ln(x) --
-		
+
 		EXP(9, "exp")
 		{
 			@Override
@@ -607,9 +607,9 @@ public class ExprParser
 				operands.push(Math.log(arg));
 			}
 		},
-		
+
 		// -- Unary -- abs, floor, trunc, ceil --
-		
+
 		ABS(9, "abs")
 		{
 			@Override
@@ -620,7 +620,7 @@ public class ExprParser
 				operands.push(Math.abs(arg));
 			}
 		},
-		
+
 		FLOOR(9, "floor")
 		{
 			@Override
@@ -651,9 +651,9 @@ public class ExprParser
 				operands.push(Math.ceil(arg));
 			}
 		},
-		
+
 		// -- Binary -- --
-		
+
 		POW(8, "^")
 		{
 			@Override
@@ -705,9 +705,9 @@ public class ExprParser
 				operands.push(left % right);
 			}
 		},
-		
+
 		// -- Binary -- --
-		
+
 		PLUS(6, "+")
 		{
 			@Override
@@ -730,9 +730,9 @@ public class ExprParser
 				operands.push(left - right);
 			}
 		},
-		
+
 		// -- Binary -- round --
-		
+
 		ROUND(5, "round")
 		{
 			@Override
@@ -745,9 +745,9 @@ public class ExprParser
 				operands.push(value);
 			}
 		},
-		
+
 		// -- Binary -- --
-		
+
 		EQ(4, "=")
 		{
 			@Override
@@ -814,9 +814,9 @@ public class ExprParser
 				operands.push((left >= right) ? 1. : 0.);
 			}
 		},
-		
+
 		// -- Binary -- --
-		
+
 		AND(3, "and")
 		{
 			@Override
@@ -839,9 +839,9 @@ public class ExprParser
 				operands.push((left != 0 || right != 0) ? 1. : 0.);
 			}
 		},
-		
+
 		// -- Binary -- --
-		
+
 		LPAREN(-1, "(")
 		{
 			@Override
@@ -858,50 +858,50 @@ public class ExprParser
 				throw new InternalError();
 			}
 		};
-		
+
 		// -----------------------------------------------------------------
-		
+
 		private final int precedence;
-		
+
 		private final String name;
-		
+
 		// -----------------------------------------------------------------
-		
+
 		Token(int precedence, String name)
 		{
 			this.name = name;
 			this.precedence = precedence;
 		}
-		
+
 		// -----------------------------------------------------------------
-		
+
 		public abstract void apply(Stack<Double> operands) throws ExprError;
-		
+
 		public int getPrecedence()
 		{
 			return precedence;
 		}
-		
+
 		@Override
 		public String toString()
 		{
 			return name;
 		}
-		
+
 		// -----------------------------------------------------------------
-		
+
 		private static void requireOneOp(Token op, Stack<Double> operands) throws ExprError
 		{
 			if (operands.isEmpty())
 				throw new ExprError("Missing operand for %s.", op.toString());
 		}
-		
+
 		private static void requireTwoOps(Token op, Stack<Double> operands) throws ExprError
 		{
 			if (operands.size() < 2)
 				throw new ExprError("Missing operand for %s.", op.toString());
 		}
-		
+
 		private static double round(double value, int digits)
 		{
 			return new BigDecimal(value)

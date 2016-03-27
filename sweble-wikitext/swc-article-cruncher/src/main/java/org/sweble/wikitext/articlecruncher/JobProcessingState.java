@@ -21,10 +21,10 @@ public enum JobProcessingState
 {
 	/** Processing ended with a result. */
 	HAS_RESULT,
-	
+
 	/** Processing failed. */
 	FAILED,
-	
+
 	/** Not yet processed. */
 	UNPROCESSED,
 }

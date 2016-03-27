@@ -18,170 +18,150 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <!-- Parent POM: Sweble WOM 3.0 -->
+	<parent>
+		<groupId>org.sweble.wom3</groupId>
+		<artifactId>sweble-wom3</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
 
-  <parent>
-    <groupId>org.sweble.wom3</groupId>
-    <artifactId>sweble-wom3</artifactId>
-    <version>2.1.1-SNAPSHOT</version>
-  </parent>
+	<artifactId>sweble-wom3-swc-adapter</artifactId>
+	<packaging>jar</packaging>
+	<name>Sweble WOM 3.0 SWC Adapter</name>
+	<inceptionYear>2013</inceptionYear>
+	<description>
+		Convert a Sweble Wikitext (SWC) AST to and from a WOM data structure.
+	</description>
 
-  <!-- This POM: Sweble WOM 3.0 - SWC Adapter -->
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
 
-  <!-- Same groupId as parent -->
-  <artifactId>sweble-wom3-swc-adapter</artifactId>
-  <!-- Same version as parent -->
-  <packaging>jar</packaging>
+	<properties>
+		<sweble-wom3.path>../</sweble-wom3.path>
+	</properties>
 
-  <name>Sweble WOM 3.0 SWC Adapter</name>
-  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wom3/sweble-wom3-swc-adapter</url>
-  <inceptionYear>2013</inceptionYear>
-  <description>
-    Convert a Sweble Wikitext (SWC) AST to and from a WOM data structure.
-  </description>
+	<!-- =================================================================== -->
+	<!-- Dependencies - Dependencies - Dependencies - Dependencies - Depende -->
+	<!-- =================================================================== -->
 
-  <!-- ==[ Properties ]===================================================== -->
+	<dependencies>
 
-  <properties>
+		<!-- Apache Commons -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
 
-    <sweble-wom3.basedir>${project.parent.basedir}</sweble-wom3.basedir>
+		<!-- Joda-Time - Java date and time API -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
 
-  </properties>
+		<!-- XML APIs -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+		</dependency>
 
-  <!-- ==[ Dependencies ]=================================================== -->
+		<!-- Utils -->
+		<dependency>
+			<groupId>de.fau.cs.osr.utils</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
 
-  <dependencies>
+		<!-- Parser Toolkit - Common -->
+		<dependency>
+			<groupId>de.fau.cs.osr.ptk</groupId>
+			<artifactId>ptk-common</artifactId>
+		</dependency>
 
-    <!-- Sweble Wikitext Components - Engine -->
-    <dependency>
-      <groupId>org.sweble.wikitext</groupId>
-      <artifactId>swc-engine</artifactId>
-    </dependency>
+		<!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
+		<dependency>
+			<groupId>org.sweble.wikitext</groupId>
+			<artifactId>swc-parser-lazy</artifactId>
+		</dependency>
 
-    <!-- Sweble - WOM 3.0 Core -->
-    <dependency>
-      <groupId>org.sweble.wom3</groupId>
-      <artifactId>sweble-wom3-core</artifactId>
-    </dependency>
+		<!-- Sweble Wikitext Components - Engine -->
+		<dependency>
+			<groupId>org.sweble.wikitext</groupId>
+			<artifactId>swc-engine</artifactId>
+		</dependency>
 
-    <!--
-      Testing
-    -->
+		<!-- Sweble - WOM 3.0 Core -->
+		<dependency>
+			<groupId>org.sweble.wom3</groupId>
+			<artifactId>sweble-wom3-core</artifactId>
+		</dependency>
 
-    <!-- JUnit -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
+		<!-- =============================================================== -->
+		<!-- Testing - Testing - Testing - Testing - Testing - Testing - Tes -->
+		<!-- =============================================================== -->
 
-  </dependencies>
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-  <!-- ==[ Dependency Management ]========================================== -->
+		<!-- Utils - Testing -->
+		<dependency>
+			<groupId>de.fau.cs.osr.utils</groupId>
+			<artifactId>utils-testing</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-  <dependencyManagement>
-  </dependencyManagement>
+		<!-- The XSLT and XQuery Processor (Saxon Home Edition) -->
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>Saxon-HE</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-  <build>
+	</dependencies>
 
-    <!-- ==[ Resource Configuration ]======================================= -->
+	<build>
 
-    <!--
-      see parent: <resources>
-    -->
+		<!-- =============================================================== -->
+		<!-- Plugins - Plugins - Plugins - Plugins - Plugins - Plugins - Plu -->
+		<!-- =============================================================== -->
 
-    <!-- ==[ Plugin Configuration ]========================================= -->
+		<plugins>
 
-    <plugins>
+			<!-- Check and format license headers -->
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<configuration>
+					<excludes combine.children="append">
+						<exclude>src/test/resources/**/*.wikitext</exclude>
+						<exclude>src/test/resources/**/*.wom.xml</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
 
-      <!-- Check and format license headers -->
-      <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <configuration>
-          <!-- I assume the configuration is inherited from the parent -->
-          <excludes>
-            <!-- These excludes should be the same as in the parent project -->
-            <exclude>**/*.log</exclude>
-            <exclude>**/.gitignore</exclude>
-            <exclude>LICENSE</exclude>
-            <exclude>NOTICE</exclude>
+			<!-- Maven Dependency Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>analyze-dependency-usage</id>
+						<configuration>
+							<usedDependencies>
+								<usedDependency>net.sf.saxon:Saxon-HE</usedDependency>
+							</usedDependencies>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
-            <!-- Extra excludes for this project -->
-            <exclude>src/test/resources/**/NOTICE</exclude>
-            <exclude>src/test/resources/**/*.wikitext</exclude>
-            <exclude>src/test/resources/**/*.wom.xml</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-
-    </plugins>
-
-    <!-- ==[ Plugin Management ]============================================ -->
-
-    <pluginManagement>
-    </pluginManagement>
-
-    <!-- ==[ Build Element Set ]============================================ -->
-
-    <!--
-      see parent: <sourceDirectory>
-                  <scriptSourceDirectory>
-                  <testSourceDirectory>
-                  <outputDirectory>
-                  <testOutputDirectory>
-                  <extensions>
-    -->
-
-  </build>
-
-  <!-- ==[ Reporting ]====================================================== -->
-
-  <!--
-    see parent: <reporting>
-  -->
-
-  <!-- ==[ More Project Information ]======================================= -->
-
-  <licenses>
-    <license>
-      <name>GNU Affero General Public License</name>
-      <url>http://www.gnu.org/licenses/agpl-3.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <!--
-    see parent: <organization>
-                <developers>
-                <contributors>
-  -->
-
-  <!-- ==[ Environment Settings ]=========================================== -->
-
-  <!--
-    see parent: <issueManagement>
-                <ciManagement>
-                <mailingLists>
-  -->
-
-  <scm>
-    <connection>scm:git://sweble.org/git/sweble-wom3.git</connection>
-    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wom3.git</developerConnection>
-    <url>http://sweble.org/gitweb/?p=sweble-wom3.git;a=summary</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <!--
-    see parent: <distributionManagement>
-                <repositories>
-                <pluginRepositories>
-  -->
-
-  <!-- ==[ Profiles ]======================================================= -->
-
-  <profiles />
-
+		</plugins>
+	</build>
 </project>

@@ -27,70 +27,70 @@ public class RedirectImpl
 			Wom3Redirect
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public RedirectImpl(DocumentImpl owner)
 	{
 		super(owner);
 		setTarget("unknown");
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "redirect";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getDisplacementId()
 	{
 		return getStringAttr("did");
 	}
-	
+
 	@Override
 	public String setDisplacementId(String did)
 	{
 		return setStringAttr(CommonAttributeDescriptors.ATTR_DESC_DID, "did", did);
 	}
-	
+
 	@Override
 	public String getTarget()
 	{
 		return getAttribute("target");
 	}
-	
+
 	@Override
 	public String setTarget(String page)
 	{
 		return setAttributeDirect(ATTR_DESC_TARGET, "target", page);
 	}
-	
+
 	@Override
 	public Wom3Title getLinkTitle()
 	{
 		// TODO: Implement
 		throw new UnsupportedOperationException();
-		
+
 		/*
 		return EmptyTitleImpl.get();
 		*/
 	}
-	
+
 	@Override
 	public String getLinkTarget()
 	{
 		return getTarget();
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_TARGET = new AttrDescTarget();
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -101,7 +101,7 @@ public class RedirectImpl
 				"target", ATTR_DESC_TARGET,
 				"did", CommonAttributeDescriptors.ATTR_DESC_DID);
 	}
-	
+
 	public static final class AttrDescTarget
 			extends
 				AttributeDescriptor
@@ -115,7 +115,7 @@ public class RedirectImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

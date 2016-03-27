@@ -172,54 +172,54 @@ public class AstToWomConverter
 			AstVisitor<WtNode>
 {
 	public static final String MWW_NS_URI = SwcNode.MWW_NS_URI;
-	
+
 	public static final String DEFAULT_MWW_NS_PREFIX = SwcNode.DEFAULT_MWW_NS_PREFIX;
-	
+
 	// =========================================================================
-	
+
 	private final Map<String, HtmlElement> xhtmlElems;
-	
+
 	private AstTextUtils astTextUtils;
-	
+
 	private WikitextNodeFactory nodeFactory;
-	
+
 	// =========================================================================
 	// Configuration
-	
+
 	private boolean preserveRtd = true;
-	
+
 	private boolean suppressRtd = false;
-	
+
 	private boolean addSubst = true;
-	
+
 	// =========================================================================
 	// Document configuratoin
-	
+
 	private String pageNamespace;
-	
+
 	private String pagePath;
-	
+
 	private String pageTitle;
-	
+
 	private String author;
-	
+
 	private DateTime timestamp;
-	
+
 	private Document doc;
-	
+
 	// =========================================================================
 	// Per AST/document state
-	
+
 	private LinkedList<Wom3ElementNode> stack = new LinkedList<Wom3ElementNode>();
-	
+
 	private Wom3Article page;
-	
+
 	private int displacement = 0;
-	
+
 	private boolean inNoTextScope;
-	
+
 	// =========================================================================
-	
+
 	public static Wom3Document convert(
 			ParserConfig parserConfig,
 			String pageNamespace,
@@ -231,34 +231,34 @@ public class AstToWomConverter
 	{
 		Wom3Document doc = DomImplementationImpl.get().createDocument(
 				null, null, null);
-		
+
 		for (SwcNodeImplInfo i : DefaultSwcNodeImplementations.get())
 			DomImplementationImpl.get().addNodeImplementation(
 					i.getNamespaceUri(),
 					i.getLocalPart(),
 					i.getImpl());
-		
+
 		AstToWomConverter converter = new AstToWomConverter(parserConfig);
-		
+
 		converter.convert(doc, pageNamespace, pagePath, pageTitle, author, timestamp, ast);
-		
+
 		return doc;
 	}
-	
+
 	// =========================================================================
-	
+
 	public AstToWomConverter(ParserConfig parserConfig)
 	{
 		this.xhtmlElems = new HashMap<String, HtmlElement>();
 		for (HtmlElement e : HtmlElement.values())
 			xhtmlElems.put(e.name().toLowerCase(), e);
-		
+
 		this.astTextUtils = parserConfig.getAstTextUtils();
 		this.nodeFactory = parserConfig.getNodeFactory();
 	}
-	
+
 	// =========================================================================
-	
+
 	public Document convert(
 			Document doc,
 			String pageNamespace,
@@ -269,72 +269,72 @@ public class AstToWomConverter
 			WtNode ast)
 	{
 		this.doc = doc;
-		
+
 		this.pageNamespace = pageNamespace;
 		this.pagePath = pagePath;
 		this.pageTitle = pageTitle;
-		
+
 		this.author = author;
 		this.timestamp = timestamp;
-		
+
 		go(ast);
-		
+
 		return doc;
 	}
-	
+
 	@Override
 	public Object go(WtNode node)
 	{
 		if (this.doc == null)
 			throw new UnsupportedOperationException("You must not call go() directly!");
-		
+
 		return super.go(node);
 	}
-	
+
 	@Override
 	protected Object after(WtNode node, Object result)
 	{
 		Wom3ElementNode root = (Wom3ElementNode) result;
-		
+
 		root.setAttributeNS(
 				"http://www.w3.org/2000/xmlns/",
 				"xmlns:" + DEFAULT_MWW_NS_PREFIX,
 				MWW_NS_URI);
-		
+
 		Element docElem = doc.getDocumentElement();
 		if (docElem != null)
 			doc.removeChild(docElem);
 		doc.appendChild(root);
-		
+
 		return doc;
 	}
-	
+
 	// =========================================================================
-	
+
 	public boolean setPreserveRtd(boolean preserveRtd)
 	{
 		boolean old = this.preserveRtd;
 		this.preserveRtd = preserveRtd;
 		return old;
 	}
-	
+
 	public boolean isPreserveRtd()
 	{
 		return preserveRtd;
 	}
-	
+
 	public void setAddSubst(boolean addSubst)
 	{
 		this.addSubst = addSubst;
 	}
-	
+
 	public boolean isAddSubst()
 	{
 		return addSubst;
 	}
-	
+
 	// == [ Encoding Validator ] ===============================================
-	
+
 	public Wom3ElementNode visit(WtIllegalCodePoint n)
 	{
 		// The & will be escaped and therefore the whole thing will be rendered 
@@ -343,29 +343,29 @@ public class AstToWomConverter
 		appendInconvertible(n, false);
 		return null;
 	}
-	
+
 	// == [ Tag extension ] ====================================================
-	
+
 	public Wom3ElementNode visit(WtTagExtension n)
 	{
 		SwcTagExtension tag = genPushMww("tagext");
 		{
 			tag.setAttribute("name", n.getName());
-			
+
 			appendRtd(tag, n, 0);
-			
+
 			convertToExplicitMwwAttributes(tag, n.getXmlAttributes());
-			
+
 			appendRtd(tag, n, 1);
-			
+
 			if (n.hasBody())
 				dispatchAppend(tag, n.getBody());
-			
+
 			appendRtd(tag, n, 2);
 		}
 		return pop(tag);
 	}
-	
+
 	public Wom3ElementNode visit(WtTagExtensionBody n)
 	{
 		SwcTagExtBody body = genPushMww("tagext-body");
@@ -374,65 +374,65 @@ public class AstToWomConverter
 		}
 		return pop(body);
 	}
-	
+
 	// == [ Template ] =========================================================
-	
+
 	public Wom3ElementNode visit(WtTemplate n)
 	{
 		SwcTransclusion template = genPushMww("transclusion");
 		{
 			appendRtd(template, n, 0);
-			
+
 			dispatchAppend(template, n.getName());
-			
+
 			appendRtd(template, n, 1);
-			
+
 			dispatchAppend(template, n.getArgs());
-			
+
 			appendRtd(template, n, 2);
 		}
 		return pop(template);
 	}
-	
+
 	public Wom3ElementNode visit(WtTemplateArguments n)
 	{
 		processContainerNode(n);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtTemplateArgument n)
 	{
 		SwcArg arg = genPushMww("arg");
 		{
 			appendRtd(arg, n, 0);
-			
+
 			if (n.hasName())
 				dispatchAppend(arg, n.getName());
-			
+
 			appendRtd(arg, n, 1);
-			
+
 			dispatchAppend(arg, n.getValue());
-			
+
 			appendRtd(arg, n, 2);
 		}
 		return pop(arg);
 	}
-	
+
 	public Wom3ElementNode visit(WtTemplateParameter n)
 	{
 		SwcParam param = genPushMww("param");
 		{
 			appendRtd(param, n, 0);
-			
+
 			dispatchAppend(param, n.getName());
-			
+
 			appendRtd(param, n, 1);
-			
+
 			if (n.hasDefault())
 				dispatchAppend(param, n.getDefault());
-			
+
 			appendRtd(param, n, 2);
-			
+
 			if (!n.getGarbage().isEmpty())
 			{
 				SwcGarbage garbage = genPushMww("garbage");
@@ -441,14 +441,14 @@ public class AstToWomConverter
 				}
 				popAppend(param, garbage);
 			}
-			
+
 			appendRtd(param, n, 3);
 		}
 		return pop(param);
 	}
-	
+
 	// == [ XML references ] ===================================================
-	
+
 	public Wom3ElementNode visit(WtXmlCharRef n)
 	{
 		if (addSubst)
@@ -460,13 +460,13 @@ public class AstToWomConverter
 					convertCharRef(n);
 				}
 				popAppend(subst, repl);
-				
+
 				Wom3For for_ = (Wom3For) genPushWom("for");
 				{
 					Wom3ElementNode charRef = genPushMwwNotYetImplemented("xml-char-ref");
 					{
 						charRef.setAttribute("code", String.valueOf(n.getCodePoint()));
-						
+
 						appendRtd(charRef, n, 0);
 					}
 					popAppend(for_, charRef);
@@ -481,7 +481,7 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	private void convertCharRef(WtXmlCharRef n)
 	{
 		int codePoint = n.getCodePoint();
@@ -497,7 +497,7 @@ public class AstToWomConverter
 			appendText(new String(Character.toChars(codePoint)));
 		}
 	}
-	
+
 	public Wom3ElementNode visit(WtXmlEntityRef n)
 	{
 		if (addSubst)
@@ -509,7 +509,7 @@ public class AstToWomConverter
 					convertEntityRef(n);
 				}
 				popAppend(subst, repl);
-				
+
 				Wom3For for_ = (Wom3For) genPushWom("for");
 				{
 					Wom3ElementNode entityRef = genPushMwwNotYetImplemented("xml-entity-ref");
@@ -529,7 +529,7 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	private void convertEntityRef(WtXmlEntityRef n)
 	{
 		String resolved = n.getResolved();
@@ -545,41 +545,41 @@ public class AstToWomConverter
 			appendText(resolved);
 		}
 	}
-	
+
 	// == [ Incomplete XML tags ] ==============================================
-	
+
 	public Wom3ElementNode visit(WtXmlEmptyTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtXmlStartTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtXmlEndTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtImStartTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtImEndTag n)
 	{
 		appendInconvertible(n, false);
 		return null;
 	}
-	
+
 	// == [ Pure XML Elements ] ================================================
-	
+
 	public Wom3ElementNode visit(WtXmlElement n)
 	{
 		String lowercaseName = n.getName().toLowerCase();
@@ -593,7 +593,7 @@ public class AstToWomConverter
 			return convertGenericXmlElement(n);
 		}
 	}
-	
+
 	private Wom3ElementNode convertXmlElementToNative(
 			WtXmlElement n,
 			HtmlElement elementType)
@@ -601,7 +601,7 @@ public class AstToWomConverter
 		switch (elementType)
 		{
 		// -- Easy stuff --
-		
+
 			case ABBR:
 				return womFromXmlElement(n, "abbr");
 			case B:
@@ -660,9 +660,9 @@ public class AstToWomConverter
 				return womFromXmlElement(n, "u");
 			case VAR:
 				return womFromXmlElement(n, "var");
-				
+
 				// -- Lists --
-				
+
 			case DD:
 				return womFromXmlElement(n, "dd");
 			case DL:
@@ -675,9 +675,9 @@ public class AstToWomConverter
 				return womFromXmlElement(n, "ol");
 			case UL:
 				return womFromXmlElement(n, "ul");
-				
+
 				// -- Tables --
-				
+
 			case TABLE:
 				return tableFromElement(n);
 			case CAPTION:
@@ -690,101 +690,101 @@ public class AstToWomConverter
 				return tableCellFromElement(n);
 			case TH:
 				return tableHeaderFromElement(n);
-				
+
 				// -- Misc --
-				
+
 			case PRE:
 				return preFromElement(n);
 		}
-		
+
 		// Don't push into default: case. 
 		// This way we'll get a warning if we missed a constant.
 		throw new IllegalArgumentException("Unknown element type: " + elementType);
 	}
-	
+
 	private SwcXmlElement convertGenericXmlElement(WtXmlElement n)
 	{
 		SwcXmlElement element = genPushMww("xmlelement");
 		{
 			element.setTag(n.getName());
-			
+
 			appendRtd(element, n, 0);
-			
+
 			convertToExplicitMwwAttributes(element, n.getXmlAttributes());
-			
+
 			appendRtd(element, n, 1);
-			
+
 			if (n.hasBody())
 				processChildrenPushAppend(n.getBody(), genMww("body"));
-			
+
 			appendRtd(element, n, 2);
 		}
 		return pop(element);
 	}
-	
+
 	// == [ XML Element to Native WOM ] ========================================
-	
+
 	private Wom3ElementNode womFromXmlElement(WtXmlElement n, String womName)
 	{
 		Wom3ElementNode womElement = genPushWom(womName);
 		{
 			appendRtd(womElement, n, 0);
-			
+
 			dispatchAppend(womElement, n.getXmlAttributes());
-			
+
 			appendRtd(womElement, n, 1);
-			
+
 			if (n.hasBody())
 				processChildrenNoPush(n.getBody(), womElement);
-			
+
 			appendRtd(womElement, n, 2);
 		}
 		return pop(womElement);
 	}
-	
+
 	private Wom3Pre preFromElement(WtXmlElement n)
 	{
 		Wom3Pre pre = genPushWom("pre");
 		{
 			appendRtd(pre, n, 0);
-			
+
 			dispatchAppend(pre, n.getXmlAttributes());
-			
+
 			appendRtd(pre, n, 1);
-			
+
 			if (n.hasBody())
 				processChildrenPushAppend(n.getBody(), genWom("nowiki"));
-			
+
 			appendRtd(pre, n, 2);
 		}
 		return pop(pre);
 	}
-	
+
 	private Wom3Table tableFromElement(WtXmlElement n)
 	{
 		Wom3Table table = (Wom3Table) genPushWom("table");
 		inNoTextScope = true;
 		{
 			appendRtd(table, n, 0);
-			
+
 			dispatchAppend(table, n.getXmlAttributes());
-			
+
 			appendRtd(table, n, 1);
-			
+
 			if (n.hasBody())
 				processChildrenNoPush(n.getBody(), table);
-			
+
 			appendRtd(table, n, 2);
 		}
 		inNoTextScope = false;
 		return pop(table);
 	}
-	
+
 	private Wom3TableBody tableBodyFromElement(WtXmlElement n)
 	{
 		return (Wom3TableBody) womFromXmlElement(n, "tbody");
 	}
-	
+
 	private Wom3TableCaption tableCaptionFromElement(WtXmlElement n)
 	{
 		Wom3ElementNode scope = getScope();
@@ -798,20 +798,20 @@ public class AstToWomConverter
 				return null;
 			}
 		}
-		
+
 		return (Wom3TableCaption) tableXFromX(n, "caption");
 	}
-	
+
 	private Wom3TableHeaderCell tableHeaderFromElement(WtXmlElement n)
 	{
 		return (Wom3TableHeaderCell) tableXFromX(n, "th");
 	}
-	
+
 	private Wom3TableCell tableCellFromElement(WtXmlElement n)
 	{
 		return (Wom3TableCell) tableXFromX(n, "td");
 	}
-	
+
 	private Wom3ElementNode tableXFromX(WtXmlElement n, String womName)
 	{
 		try
@@ -824,9 +824,9 @@ public class AstToWomConverter
 			inNoTextScope = true;
 		}
 	}
-	
+
 	// == [ XML Attributes ] ===================================================
-	
+
 	public Wom3ElementNode visit(WtXmlAttributes n)
 	{
 		boolean old = setSuppressRtd(n.getRtd());
@@ -836,7 +836,7 @@ public class AstToWomConverter
 		setSuppressRtd(old);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtXmlAttribute n)
 	{
 		boolean failed = true;
@@ -849,15 +849,15 @@ public class AstToWomConverter
 				break tryBlock;
 			if (nameAsString.indexOf(':') != -1)
 				break tryBlock;
-			
+
 			String valueAsString = stringify(n.getValue());
-			
+
 			Wom3ElementNode parent = getScope();
 			parent.setAttributeNode(attr(nameAsString, valueAsString));
-			
+
 			if (!isRtdSuppressed())
 				appendRtd(parent, convertToText(n));
-			
+
 			failed = false;
 		}
 		catch (IllegalArgumentException e)
@@ -872,27 +872,27 @@ public class AstToWomConverter
 		{
 			// Value conversion failed.
 		}
-		
+
 		if (failed)
 			appendInconvertible(n, true);
-		
+
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtXmlAttributeGarbage n)
 	{
 		appendInconvertible(n, true);
 		return null;
 	}
-	
+
 	// == [ Explicit MWW Attributes ] ==========================================
-	
+
 	private void convertToExplicitMwwAttributes(
 			Wom3ElementNode womParent,
 			WtXmlAttributes xmlAttribs)
 	{
 		appendRtd(womParent, xmlAttribs, 0);
-		
+
 		for (WtNode wtAttr : xmlAttribs)
 		{
 			if (wtAttr instanceof WtXmlAttribute)
@@ -904,30 +904,30 @@ public class AstToWomConverter
 				dispatchAppend(womParent, wtAttr);
 			}
 		}
-		
+
 		appendRtd(womParent, xmlAttribs, 1);
 	}
-	
+
 	private SwcAttr convertToExplicitMwwAttribute(WtXmlAttribute wtAttr)
 	{
 		SwcAttr womAttr = (SwcAttr) genPushMww("attr");
-		
+
 		appendRtd(womAttr, wtAttr, 0);
-		
+
 		processChildrenPushAppend(wtAttr.getName(), genMww("name"));
-		
+
 		appendRtd(womAttr, wtAttr, 1);
-		
+
 		if (wtAttr.hasValue())
 			processChildrenPushAppend(wtAttr.getValue(), genMww("value"));
-		
+
 		appendRtd(womAttr, wtAttr, 2);
-		
+
 		return (SwcAttr) pop(womAttr);
 	}
-	
+
 	// == [ Redirect ] =========================================================
-	
+
 	public Wom3ElementNode visit(WtRedirect n)
 	{
 		String targetAsString = getTargetAsString(n.getTarget());
@@ -936,13 +936,13 @@ public class AstToWomConverter
 		{
 			// Don't push onto stack!
 			Wom3Redirect redirect = (Wom3Redirect) genWom("redirect");
-			
+
 			// Insert native part into WOM
 			String did = String.valueOf(displacement++);
 			redirect.setDisplacementId(did);
 			redirect.setTarget(normalizedTarget);
 			page.setRedirect(redirect);
-			
+
 			// Insert into original spot
 			if (addSubst)
 			{
@@ -952,15 +952,15 @@ public class AstToWomConverter
 					Wom3Repl repl = (Wom3Repl) genPushWom("repl");
 					// Keep it empty. It's really attached to the page node.
 					popAppend(subst, repl);
-					
+
 					Wom3For for_ = (Wom3For) genPushWom("for");
 					{
 						Wom3Element mwwRedirect = genPushMwwNotYetImplemented("redirect");
 						{
 							appendRtd(mwwRedirect, n, 0);
-							
+
 							dispatchAppend(mwwRedirect, n.getTarget());
-							
+
 							appendRtd(mwwRedirect, n, 1);
 						}
 						popAppend(for_, mwwRedirect);
@@ -980,7 +980,7 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	public Wom3ElementNode visit(WtPageName n)
 	{
 		try
@@ -995,7 +995,7 @@ public class AstToWomConverter
 			throw new IllegalArgumentException("WtPageName cannot be rendered as text");
 		}
 	}
-	
+
 	private String getTargetAsString(WtPageName target)
 	{
 		try
@@ -1007,7 +1007,7 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Override it if you want to normalize link targets.
 	 */
@@ -1015,9 +1015,9 @@ public class AstToWomConverter
 	{
 		return targetAsString;
 	}
-	
+
 	// == [ External Links ] ===================================================
-	
+
 	public Wom3ElementNode visit(WtUrl n)
 	{
 		URL url = urlNodeToUrl(n);
@@ -1027,7 +1027,7 @@ public class AstToWomConverter
 			{
 				extLink.setTarget(url);
 				extLink.setPlainUrl(true);
-				
+
 				appendRtd(extLink, n, 0);
 			}
 			return pop(extLink);
@@ -1038,7 +1038,7 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	public Wom3ElementNode visit(WtExternalLink n)
 	{
 		URL url = urlNodeToUrl(n.getTarget());
@@ -1047,16 +1047,16 @@ public class AstToWomConverter
 			Wom3ExtLink extLink = (Wom3ExtLink) genPushWom("extlink");
 			{
 				extLink.setTarget(url);
-				
+
 				appendRtd(extLink, n, 0);
-				
+
 				appendRtd(extLink, n.getTarget(), 0);
-				
+
 				appendRtd(extLink, n, 1);
-				
+
 				if (n.hasTitle())
 					dispatchAppend(extLink, n.getTitle());
-				
+
 				appendRtd(extLink, n, 2);
 			}
 			return pop(extLink);
@@ -1067,14 +1067,14 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	private URL urlNodeToUrl(WtUrl urlNode)
 	{
 		try
 		{
 			if (urlNode.getProtocol().isEmpty())
 				return new URL(urlNode.getPath());
-			
+
 			return new URL(urlNode.getProtocol() + ":" + urlNode.getPath());
 		}
 		catch (MalformedURLException e)
@@ -1082,28 +1082,28 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	// == [ Internal Link ]= ===================================================
-	
+
 	public Wom3ElementNode visit(WtInternalLink n)
 	{
 		String originalTarget = getTargetAsString(n.getTarget());
 		String normalizedTarget = getNormalizedTargetAsString(originalTarget);
-		
+
 		if ((originalTarget == null) || (normalizedTarget == null))
 		{
 			appendInconvertible(n, false);
 			return null;
 		}
-		
+
 		boolean subst = addSubst &&
 				(!n.getPostfix().isEmpty() || !n.getPrefix().isEmpty());
-		
+
 		return (subst ?
 				substIntLink(n, originalTarget, normalizedTarget) :
 				nativeIntLink(n, originalTarget, normalizedTarget));
 	}
-	
+
 	private Wom3IntLink nativeIntLink(
 			WtInternalLink n,
 			String originalTarget,
@@ -1112,26 +1112,26 @@ public class AstToWomConverter
 		Wom3IntLink intLink = (Wom3IntLink) genPushWom("intlink");
 		{
 			intLink.setTarget(originalTarget);
-			
+
 			appendRtd(intLink, n, 0);
-			
+
 			boolean old = setSuppressRtd(n.getTarget().getRtd());
 			{
 				appendRtd(intLink, originalTarget);
 			}
 			setSuppressRtd(old);
-			
+
 			appendRtd(intLink, n, 1);
-			
+
 			if (n.hasTitle())
 				dispatchAppend(intLink, n.getTitle());
-			
+
 			appendRtd(intLink, n, 2);
-			
+
 		}
 		return pop(intLink);
 	}
-	
+
 	private Wom3Subst substIntLink(
 			WtInternalLink n,
 			String originalTarget,
@@ -1145,7 +1145,7 @@ public class AstToWomConverter
 				boolean oldPreserveRtd = setPreserveRtd(false);
 				{
 					intLink.setTarget(normalizedTarget);
-					
+
 					if (n.hasTitle())
 					{
 						Wom3Title title = (Wom3Title) dispatchAppend(intLink, n.getTitle());
@@ -1175,7 +1175,7 @@ public class AstToWomConverter
 				popAppend(repl, intLink);
 			}
 			popAppend(subst, repl);
-			
+
 			Wom3For for_ = (Wom3For) genPushWom("for");
 			{
 				Wom3Element intLink = genPushMwwNotYetImplemented("intlink");
@@ -1185,14 +1185,14 @@ public class AstToWomConverter
 						intLink.setAttribute("postfix", n.getPostfix());
 					if (!n.getPrefix().isEmpty())
 						intLink.setAttribute("prefix", n.getPrefix());
-					
+
 					appendRtd(intLink, n, 0);
 					appendRtd(intLink, originalTarget);
 					appendRtd(intLink, n, 1);
-					
+
 					if (n.hasTitle())
 						dispatchAppend(intLink, n.getTitle());
-					
+
 					appendRtd(intLink, n, 2);
 				}
 				popAppend(for_, intLink);
@@ -1201,9 +1201,9 @@ public class AstToWomConverter
 		}
 		return pop(subst);
 	}
-	
+
 	// == [ Image Link ] =======================================================
-	
+
 	public Wom3ElementNode visit(WtImageLink n)
 	{
 		String targetAsString = getTargetAsString(n.getTarget());
@@ -1218,24 +1218,24 @@ public class AstToWomConverter
 				img.setHAlign(mapImgHAlign(n.getHAlign()));
 				img.setVAlign(mapImgVAlign(n.getVAlign()));
 				img.setUpright(n.getUpright());
-				
+
 				if (n.getWidth() >= 0)
 					img.setWidth(n.getWidth());
 				if (n.getHeight() >= 0)
 					img.setHeight(n.getHeight());
 				if (n.hasAlt())
 					img.setAlt(convertContentToText(n.getAlt()));
-				
+
 				setImgLink(img, n.getLink());
-				
+
 				appendRtd(img, n, 0);
-				
+
 				appendRtd(img, targetAsString);
-				
+
 				appendRtd(img, n, 1);
-				
+
 				processChildrenNoPush(n.getOptions(), img);
-				
+
 				appendRtd(img, n, 2);
 			}
 			return pop(img);
@@ -1246,7 +1246,7 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	private void setImgLink(Wom3Image img, WtLinkOptionLinkTarget link)
 	{
 		LinkTargetType linkType = link.getTargetType();
@@ -1255,25 +1255,25 @@ public class AstToWomConverter
 			case DEFAULT:
 				// Nothing to do
 				return;
-				
+
 			case NO_LINK:
 				img.setIntLink("");
 				return;
-				
+
 			case PAGE:
 				img.setIntLink(getTargetAsString((WtPageName) link.getTarget()));
 				return;
-				
+
 			case URL:
 				img.setExtLink(urlNodeToUrl((WtUrl) link.getTarget()));
 				return;
 		}
-		
+
 		// Don't push into default: case. 
 		// This way we'll get a warning if we missed a constant.
 		throw new IllegalArgumentException("Unknown element type: " + linkType);
 	}
-	
+
 	private Wom3ImageVAlign mapImgVAlign(ImageVertAlign vAlign)
 	{
 		switch (vAlign)
@@ -1294,14 +1294,14 @@ public class AstToWomConverter
 				return Wom3ImageVAlign.TEXT_TOP;
 			case TOP:
 				return Wom3ImageVAlign.TOP;
-				
+
 		}
-		
+
 		// Don't push into default: case. 
 		// This way we'll get a warning if we missed a constant.
 		throw new IllegalArgumentException("Unknown image vertical alignment: " + vAlign);
 	}
-	
+
 	private Wom3ImageHAlign mapImgHAlign(ImageHorizAlign hAlign)
 	{
 		switch (hAlign)
@@ -1317,12 +1317,12 @@ public class AstToWomConverter
 			case UNSPECIFIED:
 				return Wom3ImageHAlign.DEFAULT;
 		}
-		
+
 		// Don't push into default: case. 
 		// This way we'll get a warning if we missed a constant.
 		throw new IllegalArgumentException("Unknown image horizontal alignment: " + hAlign);
 	}
-	
+
 	private Wom3ImageFormat mapImgFormat(ImageViewFormat format)
 	{
 		switch (format)
@@ -1336,12 +1336,12 @@ public class AstToWomConverter
 			case UNRESTRAINED:
 				return Wom3ImageFormat.UNRESTRAINED;
 		}
-		
+
 		// Don't push into default: case. 
 		// This way we'll get a warning if we missed a constant.
 		throw new IllegalArgumentException("Unknown image view format: " + format);
 	}
-	
+
 	public Wom3ElementNode visit(WtLinkOptions n)
 	{
 		boolean old = setSuppressRtd(n.getRtd());
@@ -1351,116 +1351,116 @@ public class AstToWomConverter
 		setSuppressRtd(old);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtLinkOptionLinkTarget n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtLinkOptionKeyword n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtLinkOptionResize n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtLinkOptionAltText n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtLinkOptionGarbage n)
 	{
 		appendInconvertible(n, true);
 		return null;
 	}
-	
+
 	// == [ Section ] ==========================================================
-	
+
 	public Wom3ElementNode visit(WtSection n)
 	{
 		Wom3Section section = (Wom3Section) genPushWom("section");
 		{
 			section.setLevel(n.getLevel());
-			
+
 			appendRtd(section, n, 0);
-			
+
 			dispatchAppend(section, n.getHeading());
-			
+
 			appendRtd(section, n, 1);
-			
+
 			dispatchAppend(section, n.getBody());
-			
+
 			appendRtd(section, n, 2);
 		}
 		return pop(section);
 	}
-	
+
 	public Wom3ElementNode visit(WtHeading n)
 	{
 		return processChildrenPush(n, (Wom3Heading) genWom("heading"));
 	}
-	
+
 	// == [ Lists ] ============================================================
-	
+
 	public Wom3ElementNode visit(WtOrderedList n)
 	{
 		return processChildrenPush(n, (Wom3OrderedList) genWom("ol"));
 	}
-	
+
 	public Wom3ElementNode visit(WtUnorderedList n)
 	{
 		return processChildrenPush(n, (Wom3UnorderedList) genWom("ul"));
 	}
-	
+
 	public Wom3ElementNode visit(WtListItem n)
 	{
 		return processChildrenPush(n, (Wom3ListItem) genWom("li"));
 	}
-	
+
 	public Wom3ElementNode visit(WtDefinitionList n)
 	{
 		return processChildrenPush(n, (Wom3DefinitionList) genWom("dl"));
 	}
-	
+
 	public Wom3ElementNode visit(WtDefinitionListDef n)
 	{
 		return processChildrenPush(n, (Wom3DefinitionListDef) genWom("dd"));
 	}
-	
+
 	public Wom3ElementNode visit(WtDefinitionListTerm n)
 	{
 		return processChildrenPush(n, (Wom3DefinitionListTerm) genWom("dt"));
 	}
-	
+
 	// == [ Table ] ============================================================
-	
+
 	public Wom3ElementNode visit(WtTable n)
 	{
 		Wom3Table table = (Wom3Table) genPushWom("table");
 		inNoTextScope = true;
 		{
 			appendRtd(table, n, 0);
-			
+
 			dispatchAppend(table, n.getXmlAttributes());
-			
+
 			appendRtd(table, n, 1);
-			
+
 			processChildrenNoPush(n.getBody(), table);
-			
+
 			appendRtd(table, n, 2);
 		}
 		inNoTextScope = false;
 		return pop(table);
 	}
-	
+
 	public Wom3ElementNode visit(WtTableCaption n)
 	{
 		Wom3ElementNode scope = getScope();
@@ -1474,34 +1474,34 @@ public class AstToWomConverter
 				return null;
 			}
 		}
-		
+
 		Wom3TableCaption caption = (Wom3TableCaption) genPushWom("caption");
 		inNoTextScope = false;
 		{
 			appendRtd(caption, n, 0);
-			
+
 			dispatchAppend(caption, n.getXmlAttributes());
-			
+
 			appendRtd(caption, n, 1);
-			
+
 			processChildrenNoPush(n.getBody(), caption);
-			
+
 			appendRtd(caption, n, 2);
 		}
 		inNoTextScope = true;
 		return pop(caption);
 	}
-	
+
 	public Wom3ElementNode visit(WtTableImplicitTableBody n)
 	{
 		return processChildrenPush(n.getBody(), (Wom3TableBody) genWom("tbody"));
 	}
-	
+
 	public Wom3ElementNode visit(WtTableRow n)
 	{
 		return buildRowOrCell(n, n.getXmlAttributes(), n.getBody(), "tr");
 	}
-	
+
 	public Wom3ElementNode visit(WtTableCell n)
 	{
 		inNoTextScope = false;
@@ -1509,7 +1509,7 @@ public class AstToWomConverter
 		inNoTextScope = true;
 		return cell;
 	}
-	
+
 	public Wom3ElementNode visit(WtTableHeader n)
 	{
 		inNoTextScope = false;
@@ -1517,7 +1517,7 @@ public class AstToWomConverter
 		inNoTextScope = true;
 		return header;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private <T extends Wom3ElementNode> T buildRowOrCell(
 			WtNode n,
@@ -1528,20 +1528,20 @@ public class AstToWomConverter
 		Wom3ElementNode rowOrCell = genPushWom(name);
 		{
 			appendRtd(rowOrCell, n, 0);
-			
+
 			dispatchAppend(rowOrCell, attrs);
-			
+
 			appendRtd(rowOrCell, n, 1);
-			
+
 			processChildrenNoPush(body, rowOrCell);
-			
+
 			appendRtd(rowOrCell, n, 2);
 		}
 		return (T) pop(rowOrCell);
 	}
-	
+
 	// == [ Simple HTML equivalents ] ==========================================
-	
+
 	public Wom3ElementNode visit(WtHorizontalRule n)
 	{
 		Wom3HorizontalRule hr = genPushWom("hr");
@@ -1550,19 +1550,19 @@ public class AstToWomConverter
 		}
 		return pop(hr);
 	}
-	
+
 	public Wom3ElementNode visit(WtItalics n)
 	{
 		return processChildrenPush(n, (Wom3Italics) genWom("i"));
 	}
-	
+
 	public Wom3ElementNode visit(WtBold n)
 	{
 		return processChildrenPush(n, (Wom3Bold) genWom("b"));
 	}
-	
+
 	// == [ Signature ] ========================================================
-	
+
 	public Wom3ElementNode visit(WtSignature n)
 	{
 		Wom3Signature sig = (Wom3Signature) genPushWom("signature");
@@ -1572,12 +1572,12 @@ public class AstToWomConverter
 				sig.setAuthor(author);
 			if (timestamp != null)
 				sig.setTimestamp(timestamp);
-			
+
 			appendRtd(sig, n, 0);
 		}
 		return pop(sig);
 	}
-	
+
 	private Wom3SignatureFormat mapSignatureFormat(WtSignature n)
 	{
 		switch (n.getTildeCount())
@@ -1589,23 +1589,23 @@ public class AstToWomConverter
 			case 5:
 				return Wom3SignatureFormat.TIMESTAMP;
 		}
-		
+
 		// Don't push into default: case. 
 		// This way we'll get a warning if we missed a constant.
 		throw new IllegalArgumentException("Illegal signature tilde count: " + n.getTildeCount());
 	}
-	
+
 	// == [ Paragraph ] ========================================================
-	
+
 	public Wom3ElementNode visit(WtParagraph n)
 	{
 		Wom3Paragraph paragraph = (Wom3Paragraph) genPushWom("p");
 		{
 			paragraph.setTopGap(countNewlines(n.listIterator(), false));
 			paragraph.setBottomGap(countNewlines(n.listIterator(n.size()), true));
-			
+
 			processChildrenNoPush(n, paragraph);
-			
+
 			if (!paragraph.hasChildNodes())
 			{
 				pop(paragraph);
@@ -1614,7 +1614,7 @@ public class AstToWomConverter
 		}
 		return pop(paragraph);
 	}
-	
+
 	private int countNewlines(ListIterator<?> i, boolean reverse)
 	{
 		int count = 0;
@@ -1626,7 +1626,7 @@ public class AstToWomConverter
 				case WtNode.NT_NEWLINE:
 					++count;
 					break;
-				
+
 				case WtNode.NT_TEXT:
 				{
 					String text = ((WtText) n).getContent();
@@ -1651,29 +1651,29 @@ public class AstToWomConverter
 					}
 					break;
 				}
-				
+
 				default:
 					break outer;
 			}
 		}
 		return count;
 	}
-	
+
 	// == [ Semi Pre ] =========================================================
-	
+
 	public Wom3ElementNode visit(WtSemiPre n)
 	{
 		return processChildrenPush(n, (Wom3Pre) genWom("pre"));
 	}
-	
+
 	public Wom3ElementNode visit(WtSemiPreLine n)
 	{
 		processContainerNode(n);
 		return null;
 	}
-	
+
 	// == [ Containers ] =======================================================
-	
+
 	public Wom3ElementNode visit(WtNodeList n)
 	{
 		if (page == null)
@@ -1690,12 +1690,12 @@ public class AstToWomConverter
 			return null;
 		}
 	}
-	
+
 	public Wom3ElementNode visit(WtBody n)
 	{
 		return processChildrenPush(n, (Wom3Body) genWom("body"));
 	}
-	
+
 	public Wom3ElementNode visit(WtLinkTitle n)
 	{
 		Wom3ElementNode parent = getScope();
@@ -1708,58 +1708,58 @@ public class AstToWomConverter
 			return processChildrenPush(n, (Wom3Title) genWom("title"));
 		}
 	}
-	
+
 	public Wom3ElementNode visit(WtName n)
 	{
 		return processChildrenPush(n, (SwcName) genMww("name"));
 	}
-	
+
 	public Wom3ElementNode visit(WtValue n)
 	{
 		return processChildrenPush(n, (SwcValue) genMww("value"));
 	}
-	
+
 	public Wom3ElementNode visit(WtWhitespace n)
 	{
 		processContainerNode(n);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtOnlyInclude n)
 	{
 		processContainerNode(n);
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtIgnored n)
 	{
 		appendRtd(convertToText(n));
 		return null;
 	}
-	
+
 	// == [ Page Switch ] ======================================================
-	
+
 	public Wom3ElementNode visit(WtPageSwitch n)
 	{
 		throw new UnsupportedOperationException("not yet implemented");
-		
+
 		// FIXME: Attach page switches to page element first!
 		// See categories about how it's done.
 		//return new WomPageSwitch(n.getName());
 	}
-	
+
 	// == [ Page roots ] =======================================================
-	
+
 	public Wom3ElementNode visit(WtParsedWikitextPage n)
 	{
 		return createRootNode(n);
 	}
-	
+
 	public Wom3ElementNode visit(WtPreproWikitextPage n)
 	{
 		return createRootNode(n);
 	}
-	
+
 	private Wom3Article createRootNode(WtNodeList wtBody)
 	{
 		this.page = (Wom3Article) genPushWom("article");
@@ -1770,7 +1770,7 @@ public class AstToWomConverter
 				this.page.setPath(pagePath);
 			if (pageTitle != null)
 				this.page.setTitle(pageTitle);
-			
+
 			Wom3Body womBody = genPushWom("body");
 			{
 				processChildrenNoPush(wtBody, womBody);
@@ -1779,18 +1779,18 @@ public class AstToWomConverter
 		}
 		return pop(this.page);
 	}
-	
+
 	// == [ Intermediate Elements ] ============================================
-	
+
 	public Wom3ElementNode visit(WtTicks n)
 	{
 		// These should not be part of a fully processed AST any more...
 		appendInconvertible(n, false);
 		return null;
 	}
-	
+
 	// == [ Comment ] ==========================================================
-	
+
 	public Wom3ElementNode visit(WtXmlComment n)
 	{
 		WtRtData rtd = n.getRtd();
@@ -1806,7 +1806,7 @@ public class AstToWomConverter
 				String content = n.getContent();
 				String before = null;
 				String after = null;
-				
+
 				String rtdStr = rtd.toString(0);
 				int i = rtdStr.indexOf(content);
 				if (i != -1)
@@ -1814,19 +1814,19 @@ public class AstToWomConverter
 					before = rtdStr.substring(0, i);
 					after = rtdStr.substring(i + content.length());
 				}
-				
+
 				appendRtd(comment, before);
-				
+
 				appendText(content);
-				
+
 				appendRtd(comment, after);
 			}
 			return pop(comment);
 		}
 	}
-	
+
 	// == [ Text ] =============================================================
-	
+
 	public Wom3ElementNode visit(WtText n)
 	{
 		if (inNoTextScope)
@@ -1839,26 +1839,26 @@ public class AstToWomConverter
 		}
 		return null;
 	}
-	
+
 	public Wom3ElementNode visit(WtNewline n)
 	{
 		appendText(n.getContent());
 		return null;
 	}
-	
+
 	// =========================================================================
-	
+
 	private Wom3ElementNode getScope()
 	{
 		return stack.peek();
 	}
-	
+
 	private <T extends Wom3ElementNode> T push(T element)
 	{
 		stack.push(element);
 		return element;
 	}
-	
+
 	private <T extends Wom3Node> T pop(T expected)
 	{
 		@SuppressWarnings("unchecked")
@@ -1867,19 +1867,19 @@ public class AstToWomConverter
 			throw new InternalError();
 		return popped;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private <T extends Wom3ElementNode> T genPushWom(final String name)
 	{
 		return (T) push(genWom(name));
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private <T extends SwcNode> T genPushMww(String name)
 	{
 		return (T) push(genMww(name));
 	}
-	
+
 	/**
 	 * @deprecated
 	 */
@@ -1889,7 +1889,7 @@ public class AstToWomConverter
 	{
 		return (T) push(genMww(name));
 	}
-	
+
 	private <T extends Wom3ElementNode> T popAppend(
 			Wom3ElementNode parent,
 			T expected)
@@ -1898,23 +1898,23 @@ public class AstToWomConverter
 		parent.appendChild(child);
 		return child;
 	}
-	
+
 	// =========================================================================
-	
+
 	private <T extends Wom3ElementNode> T processChildrenNoPush(
 			WtNode astNode,
 			T womNode)
 	{
 		appendRtd(womNode, astNode, 0);
-		
+
 		for (WtNode c : astNode)
 			dispatchAppend(womNode, c);
-		
+
 		appendRtd(womNode, astNode, 1);
-		
+
 		return womNode;
 	}
-	
+
 	private <T extends Wom3ElementNode> T processChildrenPush(
 			WtNode astNode,
 			T womNode)
@@ -1926,19 +1926,19 @@ public class AstToWomConverter
 		pop(womNode);
 		return womNode;
 	}
-	
+
 	private void processChildrenPushAppend(
 			WtNode astNode,
 			Wom3ElementNode womNode)
 	{
 		getScope().appendChild(processChildrenPush(astNode, womNode));
 	}
-	
+
 	private void processContainerNode(WtNode n)
 	{
 		processChildrenNoPush(n, getScope());
 	}
-	
+
 	private Wom3ElementNode dispatchAppend(Wom3ElementNode parent, WtNode child)
 	{
 		Wom3ElementNode result = (Wom3ElementNode) dispatch(child);
@@ -1946,9 +1946,9 @@ public class AstToWomConverter
 			parent.appendChild(result);
 		return result;
 	}
-	
+
 	// =========================================================================
-	
+
 	private void appendInconvertible(WtNode n, boolean inNoTextScope)
 	{
 		if (!WtNodeFlags.isRepairNode(n))
@@ -1963,7 +1963,7 @@ public class AstToWomConverter
 			}
 		}
 	}
-	
+
 	/**
 	 * Tries to convert the children of a node to their original markup
 	 * representation.
@@ -1972,7 +1972,7 @@ public class AstToWomConverter
 	{
 		return WtRtDataPrinter.print(n);
 	}
-	
+
 	/**
 	 * Tries to convert the children of a node to their original markup
 	 * representation.
@@ -1981,7 +1981,7 @@ public class AstToWomConverter
 	{
 		return convertToText(nodeFactory.toList(n));
 	}
-	
+
 	/**
 	 * Tries to convert a content node to a pure text representation. This only
 	 * works if the content node only contains text nodes and nodes that
@@ -1991,9 +1991,9 @@ public class AstToWomConverter
 	{
 		return astTextUtils.astToText(value);
 	}
-	
+
 	// =========================================================================
-	
+
 	private void prependText(Wom3ElementNode parent, String text)
 	{
 		if ((text != null) && !text.isEmpty())
@@ -2017,14 +2017,14 @@ public class AstToWomConverter
 			}
 		}
 	}
-	
+
 	private void prependTextNode(
 			Wom3ElementNode parent,
 			String text,
 			Wom3Node first)
 	{
 		Wom3Text tn = createTextNode(text);
-		
+
 		if (first == null)
 		{
 			parent.appendChild(tn);
@@ -2034,12 +2034,12 @@ public class AstToWomConverter
 			parent.insertBefore(tn, first);
 		}
 	}
-	
+
 	private void appendText(String text)
 	{
 		appendText(getScope(), text);
 	}
-	
+
 	private void appendText(Wom3ElementNode parent, String text)
 	{
 		Wom3Node last = parent.getLastChild();
@@ -2067,12 +2067,12 @@ public class AstToWomConverter
 			appendTextNode(parent, text);
 		}
 	}
-	
+
 	private void appendTextNode(Wom3ElementNode n, String text)
 	{
 		n.appendChild(createTextNode(text));
 	}
-	
+
 	private Wom3Text createTextNode(String text)
 	{
 		Wom3Text tn = text(text);
@@ -2080,9 +2080,9 @@ public class AstToWomConverter
 			setHideRtd(tn);
 		return tn;
 	}
-	
+
 	// =========================================================================
-	
+
 	private void appendRtd(Wom3ElementNode parent, WtNode n, int index)
 	{
 		WtRtData rtd = n.getRtd();
@@ -2109,7 +2109,7 @@ public class AstToWomConverter
 			}
 		}
 	}
-	
+
 	private void appendRtd(Wom3ElementNode parent, String rtd)
 	{
 		if (!isRtdVisible() && (rtd != null) && !rtd.isEmpty())
@@ -2133,14 +2133,14 @@ public class AstToWomConverter
 			}
 		}
 	}
-	
+
 	private boolean setSuppressRtd(boolean suppressRtd)
 	{
 		boolean old = this.isRtdSuppressed();
 		this.suppressRtd = suppressRtd;
 		return old;
 	}
-	
+
 	private boolean setSuppressRtd(WtRtData rtd)
 	{
 		if (isRtdSuppressed())
@@ -2148,63 +2148,63 @@ public class AstToWomConverter
 			return isRtdSuppressed();
 		return setSuppressRtd((rtd != null) && rtd.isSuppress());
 	}
-	
+
 	private boolean isRtdSuppressed()
 	{
 		return suppressRtd;
 	}
-	
+
 	private boolean isRtdVisible()
 	{
 		return !preserveRtd || isRtdSuppressed();
 	}
-	
+
 	private void appendRtd(String rtd)
 	{
 		appendRtd(getScope(), rtd);
 	}
-	
+
 	private boolean isHideRtd(Wom3ElementNode node)
 	{
 		return "true".equalsIgnoreCase(node.getAttributeNS(DEFAULT_MWW_NS_PREFIX, "hideRtd"));
 	}
-	
+
 	private <T extends Wom3ElementNode> T setHideRtd(T node)
 	{
 		node.setAttributeNS(DEFAULT_MWW_NS_PREFIX, "hideRtd", "true");
 		return node;
 	}
-	
+
 	// =========================================================================
-	
+
 	private Wom3ElementNode genWom(String tag)
 	{
 		return (Wom3ElementNode) doc.createElementNS(
 				Wom3ElementNode.WOM_NS_URI,
 				tag);
 	}
-	
+
 	private Wom3ElementNode genMww(String type)
 	{
 		return (Wom3ElementNode) doc.createElementNS(
 				MWW_NS_URI,
 				DEFAULT_MWW_NS_PREFIX + ":" + type);
 	}
-	
+
 	private Wom3Attribute attr(String name, String value)
 	{
 		Wom3Attribute attr = (Wom3Attribute) doc.createAttribute(name);
 		attr.setValue(value);
 		return attr;
 	}
-	
+
 	private Wom3Text text(String text)
 	{
 		Wom3ElementNode node = genWom("text");
 		node.setTextContent(text);
 		return (Wom3Text) node;
 	}
-	
+
 	private Wom3Rtd rtd(String text)
 	{
 		Wom3ElementNode node = genWom("rtd");

@@ -26,18 +26,18 @@ public class WtPreproWikitextPage
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected WtPreproWikitextPage()
 	{
 	}
-	
+
 	protected WtPreproWikitextPage(WtNodeList content)
 	{
 		super(content);
 	}
-	
+
 	protected WtPreproWikitextPage(WtNodeList content, WtEntityMap entityMap)
 	{
 		super(content, entityMap);

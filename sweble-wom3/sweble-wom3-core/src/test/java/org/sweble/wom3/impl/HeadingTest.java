@@ -24,9 +24,9 @@ import org.sweble.wom3.Wom3HorizAlign;
 public class HeadingTest
 {
 	private final Wom3ElementNode n = TestHelperDoc.genElem("heading");
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testAlignAttribute() throws Exception
 	{
@@ -35,7 +35,7 @@ public class HeadingTest
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.LEFT, "left");
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.RIGHT, "right");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testAlignAttributeDoesNotAllowChar() throws Exception
 	{

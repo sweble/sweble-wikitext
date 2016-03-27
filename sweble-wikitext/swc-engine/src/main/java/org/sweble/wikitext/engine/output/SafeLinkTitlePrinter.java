@@ -18,13 +18,14 @@ package org.sweble.wikitext.engine.output;
 
 import java.io.Writer;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitorNoReturn;
-import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngNowiki;
 import org.sweble.wikitext.engine.nodes.EngPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtBold;
@@ -117,109 +118,109 @@ public class SafeLinkTitlePrinter
 	{
 		dispatch(n.getPage());
 	}
-	
+
 	@Override
 	public void visit(EngNowiki n)
 	{
 		p.print(esc(n.getContent(), true));
 	}
-	
+
 	@Override
 	public void visit(EngPage n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(EngSoftErrorNode n)
 	{
 		visit((WtXmlElement) n);
 	}
-	
+
 	@Override
 	public void visit(WtBody n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtBold n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtDefinitionList n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtDefinitionListDef n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtDefinitionListTerm n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtExternalLink n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtHeading n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtHorizontalRule n)
 	{
 		// Wouldn't know what to render here...
 	}
-	
+
 	@Override
 	public void visit(WtIgnored n)
 	{
 		// Well, ignore it...
 	}
-	
+
 	@Override
 	public void visit(WtIllegalCodePoint n)
 	{
 		final String cp = n.getCodePoint();
 		for (int i = 0; i < cp.length(); ++i)
 			pf("&amp;#%d;", (int) cp.charAt(i));
-		
+
 	}
-	
+
 	@Override
 	public void visit(WtImageLink n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtImEndTag n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtImStartTag n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	public void visit(WtInternalLink n)
 	{
 		if (n.hasTitle())
@@ -241,344 +242,344 @@ public class SafeLinkTitlePrinter
 			p.print(esc(HtmlRenderer.makeLinkTitle(n, target), true));
 		}
 	}
-	
+
 	public void visit(WtItalics n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionAltText n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionGarbage n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionKeyword n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionLinkTarget n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionResize n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptions n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	public void visit(WtLinkTitle n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtListItem n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtName n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtNewline n)
 	{
 		p.print(" ");
 	}
-	
+
 	@Override
 	public void visit(WtNodeList n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtOnlyInclude n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtOrderedList n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtPageName n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtPageSwitch n)
 	{
 		// Hide those...
 	}
-	
+
 	@Override
 	public void visit(WtParagraph n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtParsedWikitextPage n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtPreproWikitextPage n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtRedirect n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtSection n)
 	{
 		dispatch(n.getHeading());
 		dispatch(n.getBody());
 	}
-	
+
 	@Override
 	public void visit(WtSemiPre n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtSemiPreLine n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtSignature n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtTable n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtTableCaption n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtTableCell n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtTableHeader n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtTableRow n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtTableImplicitTableBody n)
 	{
 		iterate(n.getBody());
 	}
-	
+
 	public void visit(WtTagExtension n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtTagExtensionBody n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtTemplate n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtTemplateArgument n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtTemplateArguments n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtTemplateParameter n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	public void visit(WtText n)
 	{
 		p.print(esc(n.getContent(), true));
 	}
-	
+
 	@Override
 	public void visit(WtTicks n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtUnorderedList n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtUrl n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtValue n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtWhitespace n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtXmlAttribute n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	@Override
 	public void visit(WtXmlAttributeGarbage n)
 	{
 		logger.warn("Attribute garbage: " + WtRtDataPrinter.print(n));
 	}
-	
+
 	@Override
 	public void visit(WtXmlAttributes n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtXmlCharRef n)
 	{
 		pf("&#%d;", n.getCodePoint());
 	}
-	
+
 	@Override
 	public void visit(WtXmlComment n)
 	{
 		// Hide those...
 	}
-	
+
 	public void visit(WtXmlElement n)
 	{
 		iterate(n.getBody());
 	}
-	
+
 	@Override
 	public void visit(WtXmlEmptyTag n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtXmlEndTag n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	public void visit(WtXmlEntityRef n)
 	{
 		pf("&%s;", n.getName());
 	}
-	
+
 	@Override
 	public void visit(WtXmlStartTag n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	// =========================================================================
-	
+
 	private void printAsWikitext(WtNode n)
 	{
 		p.indentAtBol(esc(WtRtDataPrinter.print(n)));
 	}
-	
+
 	// =====================================================================
-	
-	private static final Logger logger = Logger.getLogger(HtmlRenderer.class);
-	
+
+	private static final Logger logger = LoggerFactory.getLogger(HtmlRenderer.class);
+
 	private final WikiConfig wikiConfig;
-	
+
 	// =========================================================================
-	
+
 	public SafeLinkTitlePrinter(Writer writer, WikiConfig wikiConfig)
 	{
 		super(writer);

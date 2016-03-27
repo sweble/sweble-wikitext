@@ -34,32 +34,32 @@ public class BuiltInParserFunctions
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected BuiltInParserFunctions(WikiConfig wikiConfig)
 	{
 		super("Built-in Parser Functions");
 		addParserFunction(new ParserFunctionSafeSubst(wikiConfig));
 	}
-	
+
 	public static BuiltInParserFunctions group(WikiConfig wikiConfig)
 	{
 		return new BuiltInParserFunctions(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == {{safesubst}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class ParserFunctionSafeSubst
 			extends
 				ParserFunctionBase
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -67,12 +67,12 @@ public class BuiltInParserFunctions
 		{
 			super(PfnArgumentMode.TEMPLATE_ARGUMENTS, "safesubst");
 		}
-		
+
 		public ParserFunctionSafeSubst(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, "safesubst");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtNode template,
@@ -81,19 +81,19 @@ public class BuiltInParserFunctions
 		{
 			if (args.size() < 0)
 				return null;
-			
+
 			// Assuming we are  NOT doing a pre save transformation
-			
+
 			WtNodeList name = nf().toList(((WtTemplateArgument) args.get(0)).getValue());
-			
+
 			WtNodeList tmplArgs = nf().list(args.subList(1, args.size()));
-			
+
 			WtTemplate tmpl = nf().tmpl(
 					nf().name(name),
 					nf().tmplArgs(tmplArgs));
-			
+
 			tmpl.setRtd(template.getRtd());
-			
+
 			return preprocessorFrame.expand(tmpl);
 		}
 	}

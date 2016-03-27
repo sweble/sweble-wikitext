@@ -40,14 +40,14 @@ public class XPath
 		JXPathContextReferenceImpl.addNodePointerFactory(
 				new AstNodePointerFactory());
 	}
-	
+
 	static String query(EngProcessedPage cp, String query)
 	{
 		Iterator<?> results = null;
 		try
 		{
 			JXPathContext context = JXPathContext.newContext(cp.getPage());
-			
+
 			results = context.iterate(query);
 		}
 		catch (Throwable t)
@@ -55,7 +55,7 @@ public class XPath
 			System.err.println("An error occurred when executing XPath query.");
 			t.printStackTrace();
 		}
-		
+
 		if (results != null)
 		{
 			if (!results.hasNext())
@@ -67,11 +67,11 @@ public class XPath
 				List<Object> r = new ArrayList<Object>();
 				while (results.hasNext())
 					r.add(results.next());
-				
+
 				System.err.println("Found " + r.size() + " matching nodes.");
-				
+
 				StringBuilder b = new StringBuilder();
-				
+
 				int i = 1;
 				for (Object o : r)
 				{
@@ -85,11 +85,11 @@ public class XPath
 					b.append("\"\"\"\n\n");
 					++i;
 				}
-				
+
 				return b.toString();
 			}
 		}
-		
+
 		return "";
 	}
 }

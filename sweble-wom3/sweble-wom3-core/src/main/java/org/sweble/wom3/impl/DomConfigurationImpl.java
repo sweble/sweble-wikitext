@@ -30,19 +30,19 @@ public class DomConfigurationImpl
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public DOMStringList getParameterNames()
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public Object getParameter(String name) throws DOMException
 	{
 		throw new UnsupportedOperationException();
 	}
-	
+
 	@Override
 	public boolean canSetParameter(String name, Object value)
 	{

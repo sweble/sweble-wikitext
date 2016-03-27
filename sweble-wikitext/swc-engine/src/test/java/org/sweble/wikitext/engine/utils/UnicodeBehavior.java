@@ -26,7 +26,7 @@ public class UnicodeBehavior
 	{
 		// non BMP Unicode Character U+20000 = U+D840 U+DC00 in UTF-16
 		String x = "\uD840\uDC00...";
-		
+
 		Assert.assertEquals(5, x.length());
 		Assert.assertEquals("\uD840", x.substring(0, 1));
 		Assert.assertEquals("\uDC00", x.substring(1, 2));

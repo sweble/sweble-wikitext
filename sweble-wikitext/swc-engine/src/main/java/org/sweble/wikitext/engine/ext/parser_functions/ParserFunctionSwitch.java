@@ -32,7 +32,7 @@ public class ParserFunctionSwitch
 			ParserFunctionsExtPfn.CtrlStmt
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -40,12 +40,12 @@ public class ParserFunctionSwitch
 	{
 		super("switch");
 	}
-	
+
 	public ParserFunctionSwitch(WikiConfig wikiConfig)
 	{
 		super(wikiConfig, "switch");
 	}
-	
+
 	@Override
 	protected WtNode evaluate(
 			WtTemplate pfn,
@@ -54,52 +54,52 @@ public class ParserFunctionSwitch
 	{
 		if (args.size() < 1)
 			return nf().list();
-		
+
 		return new Evaluator(frame, args).evaluate();
 	}
-	
+
 	private final class Evaluator
 	{
 		private ExpansionFrame frame;
-		
+
 		private List<? extends WtNode> args;
-		
+
 		private WtNodeList after;
-		
+
 		private WtNodeList before;
-		
+
 		private WtNode result;
-		
+
 		public Evaluator(ExpansionFrame frame, List<? extends WtNode> args)
 		{
 			this.frame = frame;
 			this.args = args;
 		}
-		
+
 		public WtNode evaluate()
 		{
 			WtNode arg0 = frame.expand(args.get(0));
-			
+
 			String cmp = null;
 			Double icmp = null;
 			try
 			{
 				cmp = tu().astToText(arg0).trim();
-				
+
 				icmp = strToDbl(cmp);
 			}
 			catch (StringConversionException e)
 			{
 				// FIXME: Do recursive equality check
 			}
-			
+
 			boolean found = false;
-			
+
 			result = null;
 			for (int i = 1; i < args.size(); ++i)
 			{
 				// Process each argument of the switch (after the test string)
-				
+
 				after = null;
 				before = nf().list();
 				if (args.get(i).isNodeType(WtNode.NT_NODE_LIST))
@@ -112,38 +112,38 @@ public class ParserFunctionSwitch
 					if (c.isNodeType(WtNode.NT_TEXT))
 						splitTextAtEquals(c);
 				}
-				
+
 				// Now before holds the stuff in front of the "=" and after
 				// contains everything after the "=". If no "=" was found, 
 				// before contains everything and after == null.
-				
+
 				if (!found)
 					found = compare(cmp, icmp);
-				
+
 				if (found && after != null)
 				{
 					result = after;
 					break;
 				}
 			}
-			
+
 			if (before != null && after == null && result == null)
 			{
 				// result == null
 				//     We have not encountered an explicit #default case
-				
+
 				// before != null && after == null
 				//     The last case didn't have an "=" and therefore is an implicit default
-				
+
 				// $found could be true which means that the implicit default 
 				// just happens to match the test string. But that's immaterial.
-				
+
 				result = before;
 			}
-			
+
 			return result;
 		}
-		
+
 		private boolean compare(String cmp, Double icmp)
 		{
 			// See if the case statement matches the test string.
@@ -151,9 +151,9 @@ public class ParserFunctionSwitch
 			// expanded string representations match. Finally there the
 			// $before part could hold "#default", in which case we only
 			// set the result to the $after part.
-			
+
 			before = (WtNodeList) frame.expand(before);
-			
+
 			String cmp2;
 			try
 			{
@@ -164,23 +164,23 @@ public class ParserFunctionSwitch
 				// FIXME: Do recursive equality check
 				return false;
 			}
-			
+
 			if (cmp2.equals("#default"))
 			{
 				result = after;
 				return false;
 			}
-			
+
 			if (icmp != null && cmp2 != null)
 			{
 				Double icmp2 = strToDbl(cmp2);
 				if (icmp.equals(icmp2))
 					return true;
 			}
-			
+
 			return (cmp != null) && cmp.equals(cmp2);
 		}
-		
+
 		private Double strToDbl(String str)
 		{
 			try
@@ -192,7 +192,7 @@ public class ParserFunctionSwitch
 				return null;
 			}
 		}
-		
+
 		private void splitNodeListAtEquals(int i)
 		{
 			for (WtNode c : args.get(i))
@@ -214,11 +214,11 @@ public class ParserFunctionSwitch
 				}
 			}
 		}
-		
+
 		private void splitTextAtEquals(WtNode c)
 		{
 			String text = ((WtText) c).getContent();
-			
+
 			int j = text.indexOf('=');
 			if (j != -1)
 			{

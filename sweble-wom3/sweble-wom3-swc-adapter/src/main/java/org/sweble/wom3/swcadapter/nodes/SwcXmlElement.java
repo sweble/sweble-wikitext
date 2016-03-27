@@ -27,18 +27,18 @@ public interface SwcXmlElement
 			Wom3ElementNode
 {
 	String getTag();
-	
+
 	String setTag(String name);
-	
+
 	boolean hasBody();
-	
+
 	SwcBody getBody();
-	
+
 	SwcBody setBody(SwcBody body);
-	
+
 	SwcAttr getXmlAttribute(int index);
-	
+
 	SwcAttr getXmlAttribute(String name);
-	
+
 	Collection<SwcAttr> getXmlAttributes();
 }

@@ -38,7 +38,7 @@ public interface Wom3IntLink
 	 * @return The old link title.
 	 */
 	public Wom3Title setLinkTitle(Wom3Title title);
-	
+
 	/**
 	 * Get the target of the internal link.
 	 * 
@@ -47,7 +47,7 @@ public interface Wom3IntLink
 	 * @return The target of the internal link.
 	 */
 	public String getTarget();
-	
+
 	/**
 	 * Set the target of this internal link.
 	 * 
@@ -63,9 +63,9 @@ public interface Wom3IntLink
 	 *             Thrown if <code>null</code> is passed as target.
 	 */
 	public String setTarget(String target) throws IllegalArgumentException, NullPointerException;
-	
+
 	// ==[ Link interface ]=====================================================
-	
+
 	/**
 	 * Returns the title of the internal link. If the internal link does not
 	 * specify a title, the target (which specifies a page title) is returned as
@@ -75,7 +75,7 @@ public interface Wom3IntLink
 	 */
 	@Override
 	public Wom3Title getLinkTitle();
-	
+
 	/**
 	 * Retrieve the target of this link.
 	 * 

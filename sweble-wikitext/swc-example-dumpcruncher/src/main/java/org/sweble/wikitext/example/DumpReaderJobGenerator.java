@@ -40,44 +40,56 @@ public class DumpReaderJobGenerator
 			WorkerBase
 {
 	private final BlockingQueue<Job> inTray;
-	
+
 	private final JobTraceSet jobTraces;
-	
+
 	private final DumpCruncher dumpCruncher;
-	
+
 	private final DumpReader dumpReader;
-	
+
 	private InputStream is;
-	
+
 	// =========================================================================
-	
+
 	public DumpReaderJobGenerator(
 			DumpCruncher dumpCruncher,
 			File dumpFile,
+			Charset charset,
 			AbortHandler abortHandler,
 			BlockingQueue<Job> inTray,
-			JobTraceSet jobTraces) throws Exception
+			JobTraceSet jobTraces)
 	{
 		super(DumpReaderJobGenerator.class.getSimpleName(), abortHandler);
-		
+
 		this.dumpCruncher = dumpCruncher;
 		this.inTray = inTray;
 		this.jobTraces = jobTraces;
-		
+
 		try
 		{
 			is = new FileInputStream(dumpFile);
 			this.dumpReader = new DumpReader(
 					is,
-					Charset.forName("UTF8"),
+					charset,
 					dumpFile.getPath(),
 					getLogger(),
 					false)
 			{
 				@Override
-				protected void processPage(Object mediaWiki, Object page) throws Exception
+				protected void processPage(Object mediaWiki, Object page)
 				{
-					DumpReaderJobGenerator.this.processPage(mediaWiki, page);
+					try
+					{
+						DumpReaderJobGenerator.this.processPage(mediaWiki, page);
+					}
+					catch (InterruptedException e)
+					{
+						throw new WrappedException(e);
+					}
+					catch (IOException e)
+					{
+						throw new WrappedException(e);
+					}
 				}
 			};
 		}
@@ -87,7 +99,7 @@ public class DumpReaderJobGenerator
 			throw new WrappedException(e);
 		}
 	}
-	
+
 	@Override
 	public void after()
 	{
@@ -105,54 +117,54 @@ public class DumpReaderJobGenerator
 			}
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public long getFileSize()
 	{
 		return dumpReader.getFileSize();
 	}
-	
+
 	public long getDecompressedBytesRead() throws IOException
 	{
 		return dumpReader.getDecompressedBytesRead();
 	}
-	
+
 	public long getCompressedBytesRead() throws IOException
 	{
 		return dumpReader.getCompressedBytesRead();
 	}
-	
+
 	public long getParsedCount()
 	{
 		return dumpReader.getParsedCount();
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void work() throws Throwable
 	{
 		dumpReader.unmarshal();
 	}
-	
-	protected void processPage(Object mediaWiki, Object page_) throws Exception
+
+	protected void processPage(Object mediaWiki, Object page_) throws InterruptedException, IOException
 	{
 		PageType page = (PageType) page_;
-		
+
 		for (Object o : page.getRevisionOrUpload())
 		{
 			if (o instanceof RevisionType)
 			{
 				RevisionJob job = new RevisionJob(page, (RevisionType) o);
-				
+
 				JobTrace trace = job.getTrace();
 				trace.signOff(getClass(), null);
-				
+
 				jobTraces.add(trace);
-				
+
 				inTray.put(job);
-				
+
 				Gui gui = dumpCruncher.getGui();
 				gui.setPageCount((int) getParsedCount());
 				gui.setBytesRead(getCompressedBytesRead());

@@ -29,9 +29,9 @@ public class SignatureImpl
 			Wom3Signature
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public SignatureImpl(DocumentImpl owner)
 	{
 		super(owner);
@@ -39,55 +39,55 @@ public class SignatureImpl
 		setAuthor("noname");
 		setTimestamp(DateTime.now());
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "signature";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3SignatureFormat getSignatureFormat()
 	{
 		return (Wom3SignatureFormat) getAttributeNativeData("format");
 	}
-	
+
 	@Override
 	public Wom3SignatureFormat setSignatureFormat(Wom3SignatureFormat format) throws NullPointerException
 	{
 		return setAttributeDirect(ATTR_DESC_FORMAT, "format", format);
 	}
-	
+
 	@Override
 	public String getAuthor()
 	{
 		return getAttribute("author");
 	}
-	
+
 	@Override
 	public String setAuthor(String author) throws IllegalArgumentException, NullPointerException
 	{
 		return setAttributeDirect(ATTR_DESC_AUTHOR, "author", author);
 	}
-	
+
 	@Override
 	public DateTime getTimestamp()
 	{
 		return (DateTime) getAttributeNativeData("timestamp");
 	}
-	
+
 	@Override
 	public DateTime setTimestamp(DateTime timestamp) throws NullPointerException
 	{
 		return setAttributeDirect(ATTR_DESC_TIMESTAMP, "timestamp", timestamp);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
@@ -97,12 +97,12 @@ public class SignatureImpl
 				doesNotAllowInsertion(prev, child);
 		}
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
@@ -112,15 +112,15 @@ public class SignatureImpl
 				doesNotAllowReplacement(oldChild, newChild);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_FORMAT = new AttrDescFormat();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_AUTHOR = new AttrDescAuthor();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_TIMESTAMP = new AttrDescTimestamp();
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -132,7 +132,7 @@ public class SignatureImpl
 				"author", ATTR_DESC_AUTHOR,
 				"timestamp", ATTR_DESC_TIMESTAMP);
 	}
-	
+
 	public static final class AttrDescFormat
 			extends
 				AttributeDescriptor
@@ -146,7 +146,7 @@ public class SignatureImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -159,7 +159,7 @@ public class SignatureImpl
 			return true;
 		}
 	}
-	
+
 	public static final class AttrDescAuthor
 			extends
 				AttributeDescriptor
@@ -173,7 +173,7 @@ public class SignatureImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -182,7 +182,7 @@ public class SignatureImpl
 			return super.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescTimestamp
 			extends
 				AttributeDescriptor
@@ -196,7 +196,7 @@ public class SignatureImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

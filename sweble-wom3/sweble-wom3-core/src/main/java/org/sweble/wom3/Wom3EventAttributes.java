@@ -31,7 +31,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnclick();
-	
+
 	/**
 	 * Set the "onclick" event handler call.
 	 * 
@@ -42,7 +42,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnclick(String handler);
-	
+
 	/**
 	 * Return the "ondblclick" event handler call.
 	 * 
@@ -52,7 +52,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOndblclick();
-	
+
 	/**
 	 * Set the "ondblclick" event handler call.
 	 * 
@@ -63,7 +63,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOndblclick(String handler);
-	
+
 	/**
 	 * Return the "onmousedown" event handler call.
 	 * 
@@ -73,7 +73,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnmousedown();
-	
+
 	/**
 	 * Set the "onmousedown" event handler call.
 	 * 
@@ -84,7 +84,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnmousedown(String handler);
-	
+
 	/**
 	 * Return the "onmouseup" event handler call.
 	 * 
@@ -94,7 +94,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnmouseup();
-	
+
 	/**
 	 * Set the "onmouseup" event handler call.
 	 * 
@@ -105,7 +105,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnmouseup(String handler);
-	
+
 	/**
 	 * Return the "onmouseover" event handler call.
 	 * 
@@ -115,7 +115,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnmouseover();
-	
+
 	/**
 	 * Set the "onmouseover" event handler call.
 	 * 
@@ -126,7 +126,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnmouseover(String handler);
-	
+
 	/**
 	 * Return the "onmousemove" event handler call.
 	 * 
@@ -136,7 +136,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnmousemove();
-	
+
 	/**
 	 * Set the "onmousemove" event handler call.
 	 * 
@@ -147,7 +147,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnmousemove(String handler);
-	
+
 	/**
 	 * Return the "onmouseout" event handler call.
 	 * 
@@ -157,7 +157,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnmouseout();
-	
+
 	/**
 	 * Set the "onmouseout" event handler call.
 	 * 
@@ -168,7 +168,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnmouseout(String handler);
-	
+
 	/**
 	 * Return the "onkeypress" event handler call.
 	 * 
@@ -178,7 +178,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnkeypress();
-	
+
 	/**
 	 * Set the "onkeypress" event handler call.
 	 * 
@@ -189,7 +189,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnkeypress(String handler);
-	
+
 	/**
 	 * Return the "onkeydown" event handler call.
 	 * 
@@ -199,7 +199,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnkeydown();
-	
+
 	/**
 	 * Set the "onkeydown" event handler call.
 	 * 
@@ -210,7 +210,7 @@ public interface Wom3EventAttributes
 	 * @return The old handler.
 	 */
 	public String setOnkeydown(String handler);
-	
+
 	/**
 	 * Return the "onkeyup" event handler call.
 	 * 
@@ -220,7 +220,7 @@ public interface Wom3EventAttributes
 	 *         attribute is not specified.
 	 */
 	public String getOnkeyup();
-	
+
 	/**
 	 * Set the "onkeyup" event handler call.
 	 * 

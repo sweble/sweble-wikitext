@@ -28,9 +28,9 @@ public class EngSoftErrorNode
 			EngNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -38,7 +38,7 @@ public class EngSoftErrorNode
 	{
 		super();
 	}
-	
+
 	protected EngSoftErrorNode(
 			String name,
 			WtXmlAttributes xmlAttributes,
@@ -46,12 +46,12 @@ public class EngSoftErrorNode
 	{
 		super(name, xmlAttributes, body);
 	}
-	
+
 	protected EngSoftErrorNode(String name, WtXmlAttributes xmlAttributes)
 	{
 		super(name, xmlAttributes);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{

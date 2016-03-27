@@ -23,52 +23,52 @@ public class EngLogUnhandledError
 			EngLogLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogUnhandledError()
 	{
 	}
-	
+
 	protected EngLogUnhandledError(Throwable exception, String dump)
 	{
 		setException(exception);
 		setDump(dump);
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private Throwable exception;
-	
+
 	public final Throwable getException()
 	{
 		return this.exception;
 	}
-	
+
 	public final void setException(Throwable exception)
 	{
 		this.exception = exception;
 	}
-	
+
 	private String dump;
-	
+
 	public final String getDump()
 	{
 		return this.dump;
 	}
-	
+
 	public final void setDump(String dump)
 	{
 		this.dump = dump;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 2;
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -79,7 +79,7 @@ public class EngLogUnhandledError
 			{
 				return 2;
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -89,12 +89,12 @@ public class EngLogUnhandledError
 						return "exception";
 					case 1:
 						return "dump";
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -104,12 +104,12 @@ public class EngLogUnhandledError
 						return EngLogUnhandledError.this.getException();
 					case 1:
 						return EngLogUnhandledError.this.getDump();
-						
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -127,7 +127,7 @@ public class EngLogUnhandledError
 						EngLogUnhandledError.this.setDump((String) value);
 						return old;
 					}
-					
+
 					default:
 						throw new IndexOutOfBoundsException();
 				}

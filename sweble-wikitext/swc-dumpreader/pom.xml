@@ -17,368 +17,244 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <!-- Parent POM: Sweble Wikitext Components -->
+	<parent>
+		<groupId>org.sweble.wikitext</groupId>
+		<artifactId>sweble-wikitext</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
 
-  <parent>
-    <groupId>org.sweble.wikitext</groupId>
-    <artifactId>sweble-wikitext</artifactId>
-    <version>2.1.1-SNAPSHOT</version>
-  </parent>
+	<artifactId>swc-dumpreader</artifactId>
+	<packaging>jar</packaging>
+	<name>SWC - Sweble Dump Reader</name>
+	<inceptionYear>2012</inceptionYear>
+	<description>
+		A small library for reading in Wikipedia dumps.
+	</description>
 
-  <!-- This POM: Sweble Wikitext Components - Dump Reader -->
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
 
-  <!-- Same groupId as parent -->
-  <artifactId>swc-dumpreader</artifactId>
-  <!-- Same version as parent -->
-  <packaging>jar</packaging>
+	<properties>
+		<F00.path>../../</F00.path>
 
-  <name>SWC - Sweble Dump Reader</name>
-  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-dumpreader</url>
-  <inceptionYear>2012</inceptionYear>
-  <description>
-    A small library for reading in Wikipedia dumps.
-  </description>
+		<schema-sources.directory>src/main/schema</schema-sources.directory>
+		<generated-sources.directory>${project.build.directory}/generated-sources</generated-sources.directory>
+	</properties>
 
-  <!-- ==[ Properties ]===================================================== -->
+	<!-- =================================================================== -->
+	<!-- Dependencies - Dependencies - Dependencies - Dependencies - Depende -->
+	<!-- =================================================================== -->
 
-  <properties>
+	<dependencies>
 
-    <sweble-wikitext.basedir>${project.parent.basedir}</sweble-wikitext.basedir>
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
 
-  </properties>
+		<!-- Apache Commons - Compress -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
 
-  <!-- ==[ Dependencies ]=================================================== -->
+		<!-- Joda-Time - Java date and time API -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
 
-  <dependencies>
+		<!-- SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
 
-    <!-- AspectJ -->
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjrt</artifactId>
-    </dependency>
+		<!-- Utils -->
+		<dependency>
+			<groupId>de.fau.cs.osr.utils</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
 
-    <!-- Apache Commons Compress -->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-compress</artifactId>
-    </dependency>
+		<!-- =============================================================== -->
+		<!-- Testing - Testing - Testing - Testing - Testing - Testing - Tes -->
+		<!-- =============================================================== -->
 
-    <!-- Joda-Time - Java date and time API -->
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-    </dependency>
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-    <!-- Log4j -->
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-    </dependency>
+	</dependencies>
 
-    <!-- Utils -->
-    <dependency>
-      <groupId>de.fau.cs.osr.utils</groupId>
-      <artifactId>utils</artifactId>
-    </dependency>
+	<build>
 
-    <!--
-      Testing
-    -->
+		<!-- =============================================================== -->
+		<!-- Resources - Resources - Resources - Resources - Resources - Res -->
+		<!-- =============================================================== -->
 
-    <!-- JUnit -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
+		<resources>
+			<resource>
+				<!-- Required to get the .xsd schema files included in the jar file -->
+				<directory>${schema-sources.directory}</directory>
+			</resource>
+		</resources>
 
-  </dependencies>
+		<!-- =============================================================== -->
+		<!-- Plugins - Plugins - Plugins - Plugins - Plugins - Plugins - Plu -->
+		<!-- =============================================================== -->
 
-  <!-- ==[ Dependency Management ]========================================== -->
+		<plugins>
 
-  <dependencyManagement>
-  </dependencyManagement>
+			<!-- Check and format license headers -->
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<configuration>
+					<excludes combine.children="append">
+						<exclude>src/main/schema/xml.xsd</exclude>
+						<exclude>src/main/schema/export-*.xsd</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
 
-  <build>
+			<!-- Add various source directories -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${schema-sources.directory}</source>
+								<source>${generated-sources.directory}</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
-    <!-- ==[ Resource Configuration ]======================================= -->
+			<!-- Compile schema files -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<configuration>
+					<schemaDirectory>${schema-sources.directory}</schemaDirectory>
+					<generateDirectory>${generated-sources.directory}</generateDirectory>
+					<catalog>${schema-sources.directory}/catalog.xml</catalog>
+					<strict>true</strict>
+					<forceRegenerate>true</forceRegenerate>
+				</configuration>
+				<executions>
+					<execution>
+						<id>compile-mw-schema-0.5</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.5.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_5</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.6</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.6-fixed.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_6</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.7</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.7.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_7</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.8</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.8.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_8</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.9</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.9.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_9</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compile-mw-schema-0.10</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.10.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_10</generatePackage>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
-    <resources>
-      <resource>
-        <directory>src/main/schema</directory>
-      </resource>
-    </resources>
+			<!-- Maven AspectJ Plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<inherited>false</inherited>
+			</plugin>
 
-    <!-- ==[ Plugin Configuration ]========================================= -->
+			<!-- Add the AspectJ nature to the eclipse project -->
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<ajdtVersion>1.5</ajdtVersion>
+				</configuration>
+			</plugin>
 
-    <plugins>
-
-      <!-- Add various source directories -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>src/main/schema</source>
-                <source>${project.build.directory}/generated-sources/xjc</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Compile schema files -->
-      <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>schema-to-java</id>
-            <phase>none</phase>
-          </execution>
-          <execution>
-            <id>compile-mw-schema-0.5</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
-              <schemaIncludes>
-                <include>export-0.5.xsd</include>
-              </schemaIncludes>
-              <generatePackage>org.sweble.wikitext.dumpreader.export_0_5</generatePackage>
-              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-              <strict>true</strict>
-              <forceRegenerate>true</forceRegenerate>
-            </configuration>
-          </execution>
-          <execution>
-            <id>compile-mw-schema-0.6</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
-              <schemaIncludes>
-                <include>export-0.6-fixed.xsd</include>
-              </schemaIncludes>
-              <generatePackage>org.sweble.wikitext.dumpreader.export_0_6</generatePackage>
-              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-              <strict>true</strict>
-              <forceRegenerate>true</forceRegenerate>
-            </configuration>
-          </execution>
-          <execution>
-            <id>compile-mw-schema-0.7</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
-              <schemaIncludes>
-                <include>export-0.7.xsd</include>
-              </schemaIncludes>
-              <generatePackage>org.sweble.wikitext.dumpreader.export_0_7</generatePackage>
-              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-              <strict>true</strict>
-              <forceRegenerate>true</forceRegenerate>
-            </configuration>
-          </execution>
-          <execution>
-            <id>compile-mw-schema-0.8</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
-              <schemaIncludes>
-                <include>export-0.8.xsd</include>
-              </schemaIncludes>
-              <generatePackage>org.sweble.wikitext.dumpreader.export_0_8</generatePackage>
-              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-              <strict>true</strict>
-              <forceRegenerate>true</forceRegenerate>
-            </configuration>
-          </execution>
-          <execution>
-            <id>compile-mw-schema-0.9</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
-              <schemaIncludes>
-                <include>export-0.9.xsd</include>
-              </schemaIncludes>
-              <generatePackage>org.sweble.wikitext.dumpreader.export_0_9</generatePackage>
-              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-              <strict>true</strict>
-              <forceRegenerate>true</forceRegenerate>
-            </configuration>
-          </execution>
-          <execution>
-            <id>compile-mw-schema-0.10</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
-              <schemaIncludes>
-                <include>export-0.10.xsd</include>
-              </schemaIncludes>
-              <generatePackage>org.sweble.wikitext.dumpreader.export_0_10</generatePackage>
-              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
-              <strict>true</strict>
-              <forceRegenerate>true</forceRegenerate>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Maven AspectJ Plugin -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>aspectj-maven-plugin</artifactId>
-        <inherited>false</inherited>
-      </plugin>
-
-      <!-- Add the AspectJ nature to the eclipse project -->
-      <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <downloadSources>true</downloadSources>
-          <downloadJavadocs>true</downloadJavadocs>
-          <ajdtVersion>1.5</ajdtVersion>
-        </configuration>
-      </plugin>
-
-      <!-- Check and format license headers -->
-      <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <configuration>
-          <!-- I assume the configuration is inherited from the parent -->
-          <excludes>
-            <!-- These excludes should be the same as in the parent project -->
-            <exclude>**/*.log</exclude>
-            <exclude>**/.gitignore</exclude>
-            <exclude>LICENSE</exclude>
-            <exclude>NOTICE</exclude>
-
-            <!-- Extra excludes for this project -->
-            <exclude>**/*.log</exclude>
-            <exclude>src/main/schema/xml.xsd</exclude>
-            <exclude>src/main/schema/export-*.xsd</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-
-    </plugins>
-
-    <!-- ==[ Plugin Management ]============================================ -->
-
-    <pluginManagement>
-    </pluginManagement>
-
-    <!-- ==[ Build Element Set ]============================================ -->
-
-    <!--
-      see parent: <sourceDirectory>
-                  <scriptSourceDirectory>
-                  <testSourceDirectory>
-                  <outputDirectory>
-                  <testOutputDirectory>
-                  <extensions>
-    -->
-
-  </build>
-
-  <!-- ==[ Reporting ]====================================================== -->
-
-  <!--
-    see parent: <reporting>
-  -->
-
-  <!-- ==[ More Project Information ]======================================= -->
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <!--
-    see parent: <organization>
-                <developers>
-                <contributors>
-  -->
-
-  <!-- ==[ Environment Settings ]=========================================== -->
-
-  <!--
-    see parent: <issueManagement>
-                <ciManagement>
-                <mailingLists>
-  -->
-
-  <scm>
-    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
-    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
-    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <!--
-    see parent: <distributionManagement>
-                <repositories>
-                <pluginRepositories>
-  -->
-
-  <!-- ==[ Profiles ]======================================================= -->
-
-  <profiles>
-
-    <profile>
-      <id>build-aggregates</id>
-      <build>
-        <plugins>
-
-          <!-- Generate Jar with dependencies -->
-          <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <inherited>false</inherited>
-            <configuration>
-              <descriptorRefs>
-                <descriptorRef>jar-with-dependencies</descriptorRef>
-              </descriptorRefs>
-            </configuration>
-            <executions>
-              <execution>
-                <id>make-assembly</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>single</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
-  </profiles>
-
+		</plugins>
+	</build>
 </project>

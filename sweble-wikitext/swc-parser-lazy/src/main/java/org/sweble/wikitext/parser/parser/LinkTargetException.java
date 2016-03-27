@@ -22,22 +22,22 @@ public final class LinkTargetException
 			Exception
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final String title;
-	
+
 	private final Reason reason;
-	
+
 	private String offendingSubstring;
-	
+
 	// =========================================================================
-	
+
 	public LinkTargetException(Reason reason, String title)
 	{
 		super(makeMessage(reason, title, null));
 		this.reason = reason;
 		this.title = title;
 	}
-	
+
 	public LinkTargetException(
 			Reason reason,
 			String title,
@@ -48,24 +48,24 @@ public final class LinkTargetException
 		this.title = title;
 		this.offendingSubstring = offendingSubstring;
 	}
-	
+
 	// =========================================================================
-	
+
 	public String getTitle()
 	{
 		return title;
 	}
-	
+
 	public Reason getReason()
 	{
 		return reason;
 	}
-	
+
 	public String getOffendingSubstring()
 	{
 		return offendingSubstring;
 	}
-	
+
 	private static String makeMessage(
 			Reason reason,
 			String title,
@@ -73,9 +73,9 @@ public final class LinkTargetException
 	{
 		return String.format(reason.getDescription(), title, offendingSubstring);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static enum Reason
 	{
 		EMPTY_TARGET("Target string must not be empty (or contain only characters that are reduced to whitespace)"),
@@ -84,14 +84,14 @@ public final class LinkTargetException
 		NO_ARTICLE_TITLE("Title part of target string is empty: %1$s"),
 		IW_IW_LINK("An interwiki name cannot be followed by another interwiki name `%2$s' in target `%1$s'"),
 		TALK_NS_IW_LINK("The Talk namespace in a link target may not be followed by another namespace or interwiki name `%2$s' in target `%1$s'");
-		
+
 		private String description;
-		
+
 		private Reason(String description)
 		{
 			this.description = description;
 		}
-		
+
 		public String getDescription()
 		{
 			return description;

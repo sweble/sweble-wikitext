@@ -17,7 +17,8 @@
  */
 package org.sweble.wom3.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.sweble.wom3.Wom3HorizAlign;
@@ -28,7 +29,7 @@ import org.sweble.wom3.Wom3Unit;
 public class TableTest
 {
 	private TableImpl n = (TableImpl) TestHelperDoc.genElem("table");
-	
+
 	@Test
 	public void testAlignAttribute() throws Exception
 	{
@@ -36,51 +37,51 @@ public class TableTest
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.LEFT, "left");
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.RIGHT, "right");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testAlignAttributeDoesNotAllowJustify() throws Exception
 	{
 		n.setAttribute("align", "jusitfy");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testAlignAttributeDoesNotAllowChar() throws Exception
 	{
 		n.setAttribute("align", "char");
 	}
-	
+
 	@Test
 	public void testBorderAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(n, "border", "getBorder", "setBorder", 5, "5");
 	}
-	
+
 	@Test
 	public void testColorAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(n, "bgcolor", "getBgColor", "setBgColor", ColorImpl.valueOf("#abcdef"), "#ABCDEF");
 	}
-	
+
 	@Test
 	public void testColorCanCopeWithSpaces() throws Exception
 	{
 		n.setAttribute("bgcolor", " blue ");
 	}
-	
+
 	@Test
 	public void testCellpaddingAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(n, "cellpadding", "getCellPadding", "setCellPadding", new ValueWithUnitImpl(Wom3Unit.PERCENT, 5.2f), "5.2%");
 		TestHelperAttribute.testAttribute(n, "cellpadding", "getCellPadding", "setCellPadding", new ValueWithUnitImpl(Wom3Unit.PIXELS, 5), "5");
 	}
-	
+
 	@Test
 	public void testCellspacingAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(n, "cellspacing", "getCellSpacing", "setCellSpacing", new ValueWithUnitImpl(Wom3Unit.PERCENT, 5.2f), "5.2%");
 		TestHelperAttribute.testAttribute(n, "cellspacing", "getCellSpacing", "setCellSpacing", new ValueWithUnitImpl(Wom3Unit.PIXELS, 5), "5");
 	}
-	
+
 	@Test
 	public void testFrameAttribute() throws Exception
 	{
@@ -94,7 +95,7 @@ public class TableTest
 		TestHelperAttribute.testAttribute(this.n, "frame", "getFrame", "setFrame", Wom3TableFrame.VOID, "void");
 		TestHelperAttribute.testAttribute(this.n, "frame", "getFrame", "setFrame", Wom3TableFrame.VSIDES, "vsides");
 	}
-	
+
 	@Test
 	public void testRulesAttribute() throws Exception
 	{
@@ -104,20 +105,20 @@ public class TableTest
 		TestHelperAttribute.testAttribute(this.n, "rules", "getRules", "setRules", Wom3TableRules.NONE, "none");
 		TestHelperAttribute.testAttribute(this.n, "rules", "getRules", "setRules", Wom3TableRules.ROWS, "rows");
 	}
-	
+
 	@Test
 	public void testSummary() throws Exception
 	{
 		TestHelperAttribute.testAttribute(n, "summary", "getSummary", "setSummary", "some text");
 	}
-	
+
 	@Test
 	public void testWidthAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(n, "width", "getWidth", "setWidth", new ValueWithUnitImpl(Wom3Unit.PERCENT, 5.2f), "5.2%");
 		TestHelperAttribute.testAttribute(n, "width", "getWidth", "setWidth", new ValueWithUnitImpl(Wom3Unit.PIXELS, 5), "5");
 	}
-	
+
 	@Test
 	public void testDoesNotHaveBodyOrCaptionInitially() throws Exception
 	{
@@ -126,7 +127,7 @@ public class TableTest
 		assertNull(n.getFirstChild());
 		assertNull(n.getLastChild());
 	}
-	
+
 	@Test
 	public void testCanRemoveCaption() throws Exception
 	{
@@ -140,7 +141,7 @@ public class TableTest
 		assertNull(n.getFirstChild());
 		assertNull(n.getLastChild());
 	}
-	
+
 	@Test
 	public void testCanRemoveBody() throws Exception
 	{
@@ -154,7 +155,7 @@ public class TableTest
 		assertNull(n.getFirstChild());
 		assertNull(n.getLastChild());
 	}
-	
+
 	@Test
 	public void testCanHaveBothBodyAndCaption() throws Exception
 	{
@@ -167,7 +168,7 @@ public class TableTest
 		assertTrue(caption == n.getFirstChild());
 		assertTrue(body == n.getLastChild());
 	}
-	
+
 	@Test
 	public void testCanReplaceBothBodyAndCaption() throws Exception
 	{
@@ -175,12 +176,12 @@ public class TableTest
 		n.appendChild(body0);
 		TableCaptionImpl caption0 = (TableCaptionImpl) TestHelperDoc.genElem("caption");
 		n.setCaption(caption0);
-		
+
 		TableBodyImpl body1 = (TableBodyImpl) TestHelperDoc.genElem("tbody");
 		n.replaceChild(body1, body0);
 		TableCaptionImpl caption1 = (TableCaptionImpl) TestHelperDoc.genElem("caption");
 		n.replaceChild(caption1, caption0);
-		
+
 		assertTrue(caption1 == n.getCaption());
 		assertTrue(body1 == n.getPartitions().iterator().next());
 		assertTrue(caption1 == n.getFirstChild());

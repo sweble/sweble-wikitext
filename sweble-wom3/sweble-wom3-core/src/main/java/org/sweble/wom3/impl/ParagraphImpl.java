@@ -30,80 +30,80 @@ public class ParagraphImpl
 			Wom3Paragraph
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public ParagraphImpl(DocumentImpl owner)
 	{
 		super(owner);
 		setTopGapAttr(0);
 		setBottomGapAttr(0);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "p";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3HorizAlign getAlign()
 	{
 		return getAlignAttr("align");
 	}
-	
+
 	@Override
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align)
 	{
 		return setAlignAttr(CommonAttributeDescriptors.ATTR_DESC_ALIGN_LCRJ, "align", align);
 	}
-	
+
 	@Override
 	public int getTopGap()
 	{
 		return getIntAttr("topgap");
 	}
-	
+
 	@Override
 	public int setTopGap(int lines)
 	{
 		return setTopGapAttr(lines);
 	}
-	
+
 	private Integer setTopGapAttr(int lines)
 	{
 		return setIntAttr(ATTR_DESC_TOPGAP, "topgap", lines);
 	}
-	
+
 	@Override
 	public int getBottomGap()
 	{
 		return getIntAttr("bottomgap");
 	}
-	
+
 	@Override
 	public int setBottomGap(int lines)
 	{
 		return setBottomGapAttr(lines);
 	}
-	
+
 	private Integer setBottomGapAttr(int lines)
 	{
 		return setIntAttr(ATTR_DESC_BOTTOMGAP, "bottomgap", lines);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_TOPGAP = new AttrDescTopGap();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_BOTTOMGAP = new AttrDescBottomGap();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
@@ -111,7 +111,7 @@ public class ParagraphImpl
 		NAME_MAP.put("topgap", ATTR_DESC_TOPGAP);
 		NAME_MAP.put("bottomgap", ATTR_DESC_BOTTOMGAP);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -120,7 +120,7 @@ public class ParagraphImpl
 	{
 		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescTopGap
 			extends
 				AttributeDescriptor
@@ -134,7 +134,7 @@ public class ParagraphImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -143,7 +143,7 @@ public class ParagraphImpl
 			return AttributeVerifiers.NUMBER.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescBottomGap
 			extends
 				AttributeDescriptor
@@ -157,7 +157,7 @@ public class ParagraphImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

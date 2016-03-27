@@ -24,53 +24,53 @@ public class WtXmlCharRef
 			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtXmlCharRef()
 	{
 	}
-	
+
 	protected WtXmlCharRef(int codePoint)
 	{
 		setCodePoint(codePoint);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_XML_CHAR_REF;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private int codePoint;
-	
+
 	public final int getCodePoint()
 	{
 		return this.codePoint;
 	}
-	
+
 	public final void setCodePoint(int codePoint)
 	{
 		this.codePoint = codePoint;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -81,7 +81,7 @@ public class WtXmlCharRef
 			{
 				return WtXmlCharRef.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -89,12 +89,12 @@ public class WtXmlCharRef
 				{
 					case 0:
 						return "codePoint";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -102,12 +102,12 @@ public class WtXmlCharRef
 				{
 					case 0:
 						return WtXmlCharRef.this.getCodePoint();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -119,7 +119,7 @@ public class WtXmlCharRef
 						WtXmlCharRef.this.setCodePoint((Integer) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

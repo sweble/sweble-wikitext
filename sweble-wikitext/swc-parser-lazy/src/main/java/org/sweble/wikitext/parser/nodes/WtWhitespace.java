@@ -28,54 +28,54 @@ public class WtWhitespace
 			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
 	protected WtWhitespace()
 	{
 	}
-	
+
 	protected WtWhitespace(WtNodeList content, boolean hasNewline)
 	{
 		super(content);
 		setHasNewline(hasNewline);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_WHITESPACE;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private boolean hasNewline;
-	
+
 	public final boolean getHasNewline()
 	{
 		return this.hasNewline;
 	}
-	
+
 	public final void setHasNewline(boolean hasNewline)
 	{
 		this.hasNewline = hasNewline;
 	}
-	
+
 	@Override
 	public final int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	public int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -86,7 +86,7 @@ public class WtWhitespace
 			{
 				return WtWhitespace.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -94,12 +94,12 @@ public class WtWhitespace
 				{
 					case 0:
 						return "hasNewline";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -107,12 +107,12 @@ public class WtWhitespace
 				{
 					case 0:
 						return WtWhitespace.this.getHasNewline();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -124,7 +124,7 @@ public class WtWhitespace
 						WtWhitespace.this.setHasNewline((Boolean) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

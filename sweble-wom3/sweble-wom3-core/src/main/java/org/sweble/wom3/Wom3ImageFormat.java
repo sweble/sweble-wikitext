@@ -46,7 +46,7 @@ public enum Wom3ImageFormat
 	 * </p>
 	 */
 	UNRESTRAINED,
-	
+
 	/**
 	 * <h2>Intended use:</h2>
 	 * <p>
@@ -77,7 +77,7 @@ public enum Wom3ImageFormat
 	 * </p>
 	 */
 	FRAMELESS,
-	
+
 	/**
 	 * <h2>Intended use:</h2>
 	 * <p>
@@ -108,7 +108,7 @@ public enum Wom3ImageFormat
 	 * </p>
 	 */
 	THUMBNAIL,
-	
+
 	/**
 	 * <h2>Intended use:</h2>
 	 * <p>

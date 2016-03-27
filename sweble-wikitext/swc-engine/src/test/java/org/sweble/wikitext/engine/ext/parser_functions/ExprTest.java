@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
 
@@ -27,26 +27,26 @@ import org.junit.Test;
 public class ExprTest
 {
 	private ExprParser p;
-	
+
 	@Before
 	public void setUp()
 	{
 		p = new ExprParser();
 	}
-	
+
 	@Test
 	public void testConstantsOnlyReturnConstant() throws Exception
 	{
 		assertEquals(Math.E, Double.parseDouble(p.parse("e")), 0);
 		assertEquals(Math.PI, Double.parseDouble(p.parse("pi")), 0);
 	}
-	
+
 	@Test
 	public void testScientificNotationWorks() throws Exception
 	{
 		assertEquals(1.5e5, Double.parseDouble(p.parse("1.5e5")), 0);
 	}
-	
+
 	@Test
 	public void testUnaryPlusMinusAndNotWork() throws Exception
 	{
@@ -55,7 +55,7 @@ public class ExprTest
 		assertEquals(0, Double.parseDouble(p.parse("not 5")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("not 0")), 0);
 	}
-	
+
 	@Test
 	public void testUnaryFunctionsWork() throws Exception
 	{
@@ -72,7 +72,7 @@ public class ExprTest
 		assertEquals((double) (int) (.5), Double.parseDouble(p.parse("trunc 0.5")), 0);
 		assertEquals(Math.ceil(.5), Double.parseDouble(p.parse("ceil 0.5")), 0);
 	}
-	
+
 	@Test
 	public void testBinaryFunctionsWork() throws Exception
 	{
@@ -84,35 +84,35 @@ public class ExprTest
 		assertEquals(10, Double.parseDouble(p.parse("2+8")), 0);
 		assertEquals(-6, Double.parseDouble(p.parse("2-8")), 0);
 	}
-	
+
 	@Test
 	public void testComparisonOperatorsWork() throws Exception
 	{
 		assertEquals(1, Double.parseDouble(p.parse("1=1")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("1=0")), 0);
-		
+
 		assertEquals(0, Double.parseDouble(p.parse("1!=1")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("1!=0")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("1<>1")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("1<>0")), 0);
-		
+
 		assertEquals(0, Double.parseDouble(p.parse("1<0")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("0<1")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("0<0")), 0);
-		
+
 		assertEquals(1, Double.parseDouble(p.parse("1>0")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("0>1")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("0>0")), 0);
-		
+
 		assertEquals(1, Double.parseDouble(p.parse("1>=0")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("0>=1")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("0>=0")), 0);
-		
+
 		assertEquals(0, Double.parseDouble(p.parse("1<=0")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("0<=1")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("0<=0")), 0);
 	}
-	
+
 	@Test
 	public void testLogicalOperatorsWork() throws Exception
 	{
@@ -120,16 +120,16 @@ public class ExprTest
 		assertEquals(0, Double.parseDouble(p.parse("1 and 0")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("0 and 1")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("0 and 0")), 0);
-		
+
 		assertEquals(1, Double.parseDouble(p.parse("1 or 1")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("1 or 0")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("0 or 1")), 0);
 		assertEquals(0, Double.parseDouble(p.parse("0 or 0")), 0);
-		
+
 		assertEquals(1, Double.parseDouble(p.parse("0.1 and 0.1")), 0);
 		assertEquals(1, Double.parseDouble(p.parse("0 or 0.1")), 0);
 	}
-	
+
 	@Test
 	public void testPrecedenceRules() throws Exception
 	{
@@ -137,17 +137,17 @@ public class ExprTest
 				(5 + (5 * Math.pow(2, (Math.sin(2e5))))),
 				Double.parseDouble(p.parse("5 + 5 * 2 ^ sin 2e5")),
 				0);
-		
+
 		assertEquals(
 				round(5.1234 + 5.1234, 2),
 				Double.parseDouble(p.parse("5.1234 + 5.1234 round 2")),
 				0);
-		
+
 		assertEquals(
 				true, // true && (false == false),
 				Double.parseDouble(p.parse("1 and 0 = 0")) == 1.);
 	}
-	
+
 	@Test
 	public void testParantheses() throws Exception
 	{
@@ -160,7 +160,7 @@ public class ExprTest
 				Double.parseDouble(p.parse("(5 + (5 + 5)) * 5")),
 				0);
 	}
-	
+
 	private static double round(double value, int digits)
 	{
 		return new BigDecimal(value)

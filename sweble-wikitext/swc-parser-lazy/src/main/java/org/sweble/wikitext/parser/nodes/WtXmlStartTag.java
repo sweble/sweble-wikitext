@@ -30,9 +30,9 @@ public class WtXmlStartTag
 			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -40,55 +40,55 @@ public class WtXmlStartTag
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtXmlStartTag(String name, WtXmlAttributes xmlAttributes)
 	{
 		super(xmlAttributes);
 		setName(name);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_XML_START_TAG;
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String name;
-	
+
 	public final String getName()
 	{
 		return this.name;
 	}
-	
+
 	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
 		this.name = name;
 	}
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
 		return new WtXmlStartTagPropertyIterator();
 	}
-	
+
 	// =========================================================================
-	
+
 	protected class WtXmlStartTagPropertyIterator
 			extends
 				WtInnerNode1PropertyIterator
@@ -98,7 +98,7 @@ public class WtXmlStartTag
 		{
 			return WtXmlStartTag.this.getPropertyCount();
 		}
-		
+
 		@Override
 		protected String getName(int index)
 		{
@@ -106,12 +106,12 @@ public class WtXmlStartTag
 			{
 				case 0:
 					return "name";
-					
+
 				default:
 					return super.getName(index);
 			}
 		}
-		
+
 		@Override
 		protected Object getValue(int index)
 		{
@@ -119,12 +119,12 @@ public class WtXmlStartTag
 			{
 				case 0:
 					return WtXmlStartTag.this.getName();
-					
+
 				default:
 					return super.getValue(index);
 			}
 		}
-		
+
 		@Override
 		protected Object setValue(int index, Object value)
 		{
@@ -136,35 +136,35 @@ public class WtXmlStartTag
 					WtXmlStartTag.this.setName((String) value);
 					return old;
 				}
-				
+
 				default:
 					return super.setValue(index, value);
 			}
 		}
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
-	
+
 	public final WtXmlAttributes getXmlAttributes()
 	{
 		return (WtXmlAttributes) get(0);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public void toString(Appendable out) throws IOException
 	{
@@ -173,7 +173,7 @@ public class WtXmlStartTag
 		out.append(name);
 		out.append(']');
 		out.append('(');
-		
+
 		boolean first = true;
 		for (WtNode node : this)
 		{
@@ -185,11 +185,11 @@ public class WtXmlStartTag
 			{
 				out.append(", ");
 			}
-			
+
 			node.toString(out);
-			
+
 		}
-		
+
 		out.append(')');
 	}
 }

@@ -42,14 +42,14 @@ public interface Wom3TableRow
 	 * @return The zero-based index of this row.
 	 */
 	public int getRowIndex();
-	
+
 	/**
 	 * Get the number of cells (including colspan calculations) in this row.
 	 * 
 	 * @return The number of cells.
 	 */
 	public int getNumCols();
-	
+
 	/**
 	 * Get a cell from this row.
 	 * 
@@ -63,9 +63,9 @@ public interface Wom3TableRow
 	 *             <code>col >= getNumCols()</code>.
 	 */
 	public Wom3TableCellBase getCell(int col) throws IndexOutOfBoundsException;
-	
+
 	// ==[ The XHTML Attributes ]===============================================
-	
+
 	/**
 	 * Get the horizontal alignment of the row's content.
 	 * 
@@ -75,7 +75,7 @@ public interface Wom3TableRow
 	 *         not specified.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the horizontal alignment of the row's content.
 	 * 
@@ -86,7 +86,7 @@ public interface Wom3TableRow
 	 * @return The old horizontal alignment.
 	 */
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align);
-	
+
 	/**
 	 * Get the vertical alignment of the row's content.
 	 * 
@@ -96,7 +96,7 @@ public interface Wom3TableRow
 	 *         not specified.
 	 */
 	public Wom3TableVAlign getVAlign();
-	
+
 	/**
 	 * Set the vertical alignment of the row's content.
 	 * 
@@ -107,7 +107,7 @@ public interface Wom3TableRow
 	 * @return The old vertical alignment.
 	 */
 	public Wom3TableVAlign setVAlign(Wom3TableVAlign valign);
-	
+
 	/**
 	 * Get background color of the row.
 	 * 
@@ -117,7 +117,7 @@ public interface Wom3TableRow
 	 *         specified.
 	 */
 	public Wom3Color getBgColor();
-	
+
 	/**
 	 * Set the background color of the row.
 	 * 

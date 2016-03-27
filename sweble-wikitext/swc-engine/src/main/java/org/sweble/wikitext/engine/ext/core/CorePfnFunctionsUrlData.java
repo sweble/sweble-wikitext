@@ -46,9 +46,9 @@ public class CorePfnFunctionsUrlData
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnFunctionsUrlData(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - URL data");
@@ -56,19 +56,19 @@ public class CorePfnFunctionsUrlData
 		addParserFunction(new FilepathPfn(wikiConfig));
 		addParserFunction(new UrlencodePfn(wikiConfig));
 	}
-	
+
 	public static CorePfnFunctionsUrlData group(WikiConfig wikiConfig)
 	{
 		return new CorePfnFunctionsUrlData(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{localurl:page name}}
 	// ==       {{localurl:page name|query_string}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == {{fullurl:page name}}
@@ -76,13 +76,13 @@ public class CorePfnFunctionsUrlData
 	// == {{fullurl:interwiki:remote page name|query_string}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class FullurlPfn
 			extends
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -90,12 +90,12 @@ public class CorePfnFunctionsUrlData
 		{
 			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "fullurl");
 		}
-		
+
 		public FullurlPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "fullurl");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate pfn,
@@ -121,9 +121,9 @@ public class CorePfnFunctionsUrlData
 								"Parser function was called with too many arguments!",
 								pfn));
 			}
-			
+
 			WtNode titleNode = argsValues.get(0);
-			
+
 			String titleStr;
 			try
 			{
@@ -138,7 +138,7 @@ public class CorePfnFunctionsUrlData
 								titleNode));
 				return pfn;
 			}
-			
+
 			PageTitle title;
 			try
 			{
@@ -171,12 +171,12 @@ public class CorePfnFunctionsUrlData
 					return pfn;
 				}
 			}
-			
+
 			String queryStr = null;
 			if (argsValues.size() >= 2)
 			{
 				WtNode queryNode = argsValues.get(1);
-				
+
 				try
 				{
 					queryStr = tu().astToText(queryNode);
@@ -190,11 +190,11 @@ public class CorePfnFunctionsUrlData
 									queryNode));
 				}
 			}
-			
+
 			Namespace ns = title.getNamespace();
 			if (ns.isMediaNs())
 				title = title.newWithNamespace(frame.getWikiConfig().getFileNamespace());
-			
+
 			URL titleUrl;
 			try
 			{
@@ -204,22 +204,22 @@ public class CorePfnFunctionsUrlData
 			{
 				// Try without query string ...
 				titleUrl = title.getUrl();
-				
+
 				frame.fileWarning(
 						new InvalidNameWarning(
 								WarningSeverity.NORMAL,
 								getClass(),
 								pfn));
 			}
-			
+
 			URL url = frame.getUrlService().convertUrl(
 					UrlType.FULL,
 					titleUrl);
-			
+
 			return nf().text(url.toExternalForm());
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{canonicalurl:page name}}
@@ -227,7 +227,7 @@ public class CorePfnFunctionsUrlData
 	// ==       {{canonicalurl:interwiki:remote page name|query_string}}
 	// ==
 	// =========================================================================
-	
+
 	// =========================================================================
 	// ==
 	// == {{filepath:file name}}
@@ -235,13 +235,13 @@ public class CorePfnFunctionsUrlData
 	// == {{filepath:file name|thumbnail_size}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class FilepathPfn
 			extends
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -249,12 +249,12 @@ public class CorePfnFunctionsUrlData
 		{
 			super("filepath");
 		}
-		
+
 		public FilepathPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "filepath");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate pfn,
@@ -263,14 +263,14 @@ public class CorePfnFunctionsUrlData
 		{
 			if (args.size() < 1)
 				return pfn;
-			
+
 			PageTitle title;
 			try
 			{
 				String titleStr = tu().astToText(args.get(0)).trim();
-				
+
 				title = PageTitle.make(frame.getWikiConfig(), titleStr);
-				
+
 				title = title.newWithNamespace(frame.getWikiConfig().getFileNamespace());
 			}
 			catch (StringConversionException e1)
@@ -281,7 +281,7 @@ public class CorePfnFunctionsUrlData
 			{
 				return pfn;
 			}
-			
+
 			int size = -1;
 			boolean nowiki = false;
 			if (args.size() > 1)
@@ -289,11 +289,11 @@ public class CorePfnFunctionsUrlData
 				try
 				{
 					String opt1 = tu().astToText(args.get(1)).trim();
-					
+
 					String opt2 = null;
 					if (args.size() > 2)
 						opt2 = tu().astToText(args.get(2)).trim();
-					
+
 					String sizeStr = opt1;
 					if ("nowiki".equals(opt1))
 					{
@@ -304,7 +304,7 @@ public class CorePfnFunctionsUrlData
 					{
 						nowiki = true;
 					}
-					
+
 					if (sizeStr != null)
 						size = Integer.parseInt(sizeStr);
 				}
@@ -315,7 +315,7 @@ public class CorePfnFunctionsUrlData
 				{
 				}
 			}
-			
+
 			String url;
 			try
 			{
@@ -325,14 +325,14 @@ public class CorePfnFunctionsUrlData
 			{
 				return pfn;
 			}
-			
+
 			if (url == null)
 				return nf().text("");
-			
+
 			return nowiki ? EngineRtData.set(nf().nowiki(url)) : nf().text(url);
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == {{urlencode:string}} (or {{urlencode:string|QUERY}})
@@ -340,13 +340,13 @@ public class CorePfnFunctionsUrlData
 	// == {{urlencode:string|PATH}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class UrlencodePfn
 			extends
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -354,12 +354,12 @@ public class CorePfnFunctionsUrlData
 		{
 			super("urlencode");
 		}
-		
+
 		public UrlencodePfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "urlencode");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate pfn,
@@ -368,7 +368,7 @@ public class CorePfnFunctionsUrlData
 		{
 			if (args.size() < 1)
 				return pfn;
-			
+
 			String text;
 			try
 			{
@@ -378,14 +378,14 @@ public class CorePfnFunctionsUrlData
 			{
 				return pfn;
 			}
-			
+
 			UrlEncoding encoder = UrlEncoding.QUERY;
 			if (args.size() > 1)
 			{
 				try
 				{
 					String encoderName = tu().astToText(args.get(1)).trim();
-					
+
 					encoder = UrlEncoding.valueOf(encoderName.toUpperCase());
 				}
 				catch (StringConversionException e)
@@ -395,15 +395,15 @@ public class CorePfnFunctionsUrlData
 				{
 				}
 			}
-			
+
 			return nf().text(encoder.encode(text));
 		}
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == TODO: {{anchorencode:string}}
 	// ==
 	// =========================================================================
-	
+
 }

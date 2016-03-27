@@ -17,9 +17,33 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.nodes.WtNode.*;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.*;
-import static org.sweble.wikitext.parser.postprocessor.StackScope.*;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_EXTERNAL_LINK;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_IMAGE_LINK;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_INTERNAL_LINK;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_LCT_VAR_CONV;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CAPTION;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CELL;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_HEADER;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_IMPLICIT_TBODY;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_ROW;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_ELEMENT;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.DD;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.DT;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.LCT_VAR_CONV;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.LI;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.P;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.PAGE;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TABLE;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TBODY;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TFOOT;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.THEAD;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TR;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.UNKNOWN;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.BUTTON_SCOPE;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.GENERAL_SCOPE;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.LIST_ITEM_SCOPE;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.TABLE_SCOPE;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -65,7 +89,7 @@ import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 import de.fau.cs.osr.utils.visitor.VisitorInterface;
 import de.fau.cs.osr.utils.visitor.VisitorLogic;
 
@@ -80,109 +104,109 @@ import de.fau.cs.osr.utils.visitor.VisitorLogic;
 public class TreeBuilder
 {
 	static final boolean DEBUG = false;
-	
+
 	private static final WtNode MARKER = null;
-	
+
 	private static final WtNode BOOKMARK = new Bookmark();
-	
+
 	private final VisitorLogic<WtNode> logic = new VisitorLogic<WtNode>(null);
-	
+
 	private final AstVisitor<WtNode> inBodyMode = new TreeBuilderInBody(logic, this);
-	
+
 	private final AstVisitor<WtNode> inTableMode = new TreeBuilderInTable(logic, this);
-	
+
 	private final AstVisitor<WtNode> inTableTextMode = new TreeBuilderInTableText(logic, this);
-	
+
 	private final AstVisitor<WtNode> inCaptionMode = new TreeBuilderInCaption(logic, this);
-	
+
 	private final AstVisitor<WtNode> inColumnGroupMode = new TreeBuilderInColumnGroup(logic, this);
-	
+
 	private final AstVisitor<WtNode> inTableBodyMode = new TreeBuilderInTableBody(logic, this);
-	
+
 	private final AstVisitor<WtNode> inRowMode = new TreeBuilderInRow(logic, this);
-	
+
 	private final AstVisitor<WtNode> inCellMode = new TreeBuilderInCell(logic, this);
-	
+
 	private final LinkedList<WtNode> stack = new LinkedList<WtNode>();
-	
+
 	private final LinkedList<WtNode> activeFormattingElements = new LinkedList<WtNode>();
-	
+
 	private final LinkedList<Warning> errors = new LinkedList<Warning>();
-	
+
 	private final ElementFactory factory;
-	
+
 	private final ParserConfig config;
-	
+
 	private WtParsedWikitextPage rootNode = null;
-	
+
 	private WtNode formPointer = null;
-	
+
 	private VisitorInterface<WtNode> originalInsertionMode;
-	
+
 	private String pendingTableCharTokens = null;
-	
+
 	private boolean fosterParentingMode = false;
-	
+
 	private final WikitextNodeFactory nf;
-	
+
 	// =========================================================================
-	
+
 	public static WtParsedWikitextPage process(
 			ParserConfig config,
 			WtNode ast)
 	{
 		return new TreeBuilder(config).go(ast);
 	}
-	
+
 	// =========================================================================
-	
+
 	public TreeBuilder(ParserConfig config)
 	{
 		this.config = config;
 		this.factory = new ElementFactory(this);
 		nf = getConfig().getNodeFactory();
 	}
-	
+
 	// =========================================================================
-	
+
 	private int dbgIndent = 0;
-	
+
 	void dbgIn(String format, Object... args)
 	{
-		System.out.println(StringUtils.indent(
+		System.out.println(StringTools.indent(
 				String.format(format, args),
-				StringUtils.strrep(' ', dbgIndent * 4)));
+				StringTools.strrep(' ', dbgIndent * 4)));
 		++dbgIndent;
 	}
-	
+
 	void dbg(String format, Object... args)
 	{
-		System.out.println(StringUtils.indent(
+		System.out.println(StringTools.indent(
 				String.format(format, args),
-				StringUtils.strrep(' ', dbgIndent * 4)));
+				StringTools.strrep(' ', dbgIndent * 4)));
 	}
-	
+
 	void dbgOut(String format, Object... args)
 	{
 		--dbgIndent;
-		System.out.println(StringUtils.indent(
+		System.out.println(StringTools.indent(
 				String.format(format, args),
-				StringUtils.strrep(' ', dbgIndent * 4)));
+				StringTools.strrep(' ', dbgIndent * 4)));
 	}
-	
+
 	// =========================================================================
-	
+
 	private WtParsedWikitextPage go(WtNode ast)
 	{
 		if (DEBUG)
 			dbgIn("> TreeBuilder.go");
-		
+
 		switchInsertionMode(InsertionMode.IN_BODY);
-		
+
 		logic.go(ast);
 		if (getRootNode() == null)
 			throw new InternalError("No root node set after processing!");
-		
+
 		if (!errors.isEmpty())
 		{
 			if (getRootNode().getWarnings().isEmpty())
@@ -190,26 +214,26 @@ public class TreeBuilder
 			else
 				getRootNode().getWarnings().addAll(errors);
 		}
-		
+
 		if (DEBUG)
 			dbgOut("< TreeBuilder.go");
 		return getRootNode();
 	}
-	
+
 	// =========================================================================
-	
+
 	void processInInsertionMode(InsertionMode mode, WtNode n)
 	{
 		VisitorLogic.dispatchTo(getModeImpl(mode), n);
 	}
-	
+
 	void switchInsertionMode(InsertionMode mode)
 	{
 		if (DEBUG)
 			dbg("!! %s", mode);
 		logic.setImpl(getModeImpl(mode));
 	}
-	
+
 	VisitorInterface<WtNode> getModeImpl(InsertionMode mode)
 	{
 		switch (mode)
@@ -234,19 +258,19 @@ public class TreeBuilder
 				throw new InternalError();
 		}
 	}
-	
+
 	void setOriginalInsertionMode()
 	{
 		this.originalInsertionMode = logic.getImpl();
 	}
-	
+
 	void resetToOriginalInsertionMode()
 	{
 		if (DEBUG)
 			dbg("!! %s", this.originalInsertionMode.getClass().getSimpleName());
 		logic.setImpl(this.originalInsertionMode);
 	}
-	
+
 	/**
 	 * 12.2.3.1
 	 * 
@@ -268,7 +292,7 @@ public class TreeBuilder
 			// 4. If node is a select element, then switch the insertion mode to
 			// "in select" and abort these steps. 
 			// (fragment case)
-			
+
 			switch (getNodeType(node))
 			{
 				case TD:
@@ -277,13 +301,13 @@ public class TreeBuilder
 					// insertion mode to "in cell" and abort these steps.
 					switchInsertionMode(InsertionMode.IN_CELL);
 					return;
-					
+
 				case TR:
 					// 6. If node is a tr element, then switch the insertion mode to "in row"
 					// and abort these steps.
 					switchInsertionMode(InsertionMode.IN_ROW);
 					return;
-					
+
 				case TBODY:
 				case THEAD:
 				case TFOOT:
@@ -291,13 +315,13 @@ public class TreeBuilder
 					// mode to "in table body" and abort these steps.
 					switchInsertionMode(InsertionMode.IN_TABLE_BODY);
 					return;
-					
+
 				case CAPTION:
 					// 8. If node is a caption element, then switch the insertion mode to
 					// "in caption" and abort these steps.
 					switchInsertionMode(InsertionMode.IN_CAPTION);
 					return;
-					
+
 					/* We have no Fragment case:
 					case COLGROUP:
 					// 9. If node is a colgroup element, then switch the insertion mode to
@@ -305,13 +329,13 @@ public class TreeBuilder
 					setInsertionMode(InsertionMode.IN_COLUMN_GROUP);
 					return;
 					*/
-					
+
 				case TABLE:
 					// 10. If node is a table element, then switch the insertion mode to
 					// "in table" and abort these steps.
 					switchInsertionMode(InsertionMode.IN_TABLE);
 					return;
-					
+
 					/* We have no Fragment case:
 					case HEAD:
 					// 11. 1. If node is a head element, then switch the insertion mode to
@@ -320,13 +344,13 @@ public class TreeBuilder
 					setInsertionMode(InsertionMode.IN_BODY);
 					return;
 					*/
-					
+
 				case PAGE:
 					// 12. If node is a body element, then switch the insertion mode to
 					// "in body" and abort these steps.
 					switchInsertionMode(InsertionMode.IN_BODY);
 					return;
-					
+
 					/* We have no Fragment case:
 					// 13. If node is a frameset element, then switch the insertion mode to
 					// "in frameset" and abort these steps. (fragment case)
@@ -335,72 +359,72 @@ public class TreeBuilder
 					// 15. If last is true, then switch the insertion mode to "in body" and
 					// abort these steps. (fragment case)
 					*/
-					
+
 				default:
 					break;
 			}
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	ParserConfig getConfig()
 	{
 		return config;
 	}
-	
+
 	ElementFactory getFactory()
 	{
 		return factory;
 	}
-	
+
 	WtParsedWikitextPage getRootNode()
 	{
 		return rootNode;
 	}
-	
+
 	void setRootNode(WtParsedWikitextPage rootNode)
 	{
 		this.rootNode = rootNode;
 	}
-	
+
 	LinkedList<WtNode> getStack()
 	{
 		return stack;
 	}
-	
+
 	WtNode getFormPointer()
-	
+
 	{
 		return formPointer;
 	}
-	
+
 	void setFormPointer(WtNode formPointer)
 	{
 		this.formPointer = formPointer;
 	}
-	
+
 	// =========================================================================
-	
+
 	void resetPendingTableCharTokens()
 	{
 		this.pendingTableCharTokens = "";
 	}
-	
+
 	void appendToPendingTableCharTokens(String content)
 	{
 		this.pendingTableCharTokens += content;
 	}
-	
+
 	String getPendingTableCharTokens()
 	{
 		String text = this.pendingTableCharTokens;
 		this.pendingTableCharTokens = null;
 		return text;
 	}
-	
+
 	// =========================================================================
-	
+
 	WtNodeList getContentOfNode(WtNode node)
 	{
 		if (node instanceof WtNodeList)
@@ -413,43 +437,43 @@ public class TreeBuilder
 			{
 				case NT_INTERNAL_LINK:
 					return ((WtInternalLink) node).getTitle();
-					
+
 				case NT_EXTERNAL_LINK:
 					return ((WtExternalLink) node).getTitle();
-					
+
 				case NT_IMAGE_LINK:
 					return ((WtImageLink) node).getTitle();
-					
+
 				case NT_XML_ELEMENT:
 					return ((WtXmlElement) node).getBody();
-					
+
 				case NT_TABLE:
 					return ((WtTable) node).getBody();
-					
+
 				case NT_TABLE_IMPLICIT_TBODY:
 					return ((WtTableImplicitTableBody) node).getBody();
-					
+
 				case NT_TABLE_CAPTION:
 					return ((WtTableCaption) node).getBody();
-					
+
 				case NT_TABLE_ROW:
 					return ((WtTableRow) node).getBody();
-					
+
 				case NT_TABLE_HEADER:
 					return ((WtTableHeader) node).getBody();
-					
+
 				case NT_TABLE_CELL:
 					return ((WtTableCell) node).getBody();
-					
+
 				case NT_LCT_VAR_CONV:
 					return ((WtLctVarConv) node).getText();
-					
+
 				default:
 					throw new InternalError();
 			}
 		}
 	}
-	
+
 	WtNodeList getContentOfNodeForModification(WtNode node)
 	{
 		WtNodeList content = getContentOfNode(node);
@@ -462,27 +486,27 @@ public class TreeBuilder
 					content = nf.linkTitle(nf.list());
 					((WtInternalLink) node).setTitle((WtLinkTitle) content);
 					break;
-				
+
 				case NT_EXTERNAL_LINK:
 					content = nf.linkTitle(nf.list());
 					((WtExternalLink) node).setTitle((WtLinkTitle) content);
 					break;
-				
+
 				case NT_IMAGE_LINK:
 					content = nf.linkTitle(nf.list());
 					((WtImageLink) node).setTitle((WtLinkTitle) content);
 					break;
-				
+
 				case NT_XML_ELEMENT:
 					content = nf.body(nf.list());
 					((WtXmlElement) node).setBody((WtBody) content);
 					break;
-				
+
 				case NT_TABLE:
 					content = nf.body(nf.list());
 					((WtTable) node).setBody((WtBody) content);
 					break;
-				
+
 				default:
 					throw new InternalError();
 			}
@@ -490,12 +514,12 @@ public class TreeBuilder
 		}
 		return content;
 	}
-	
+
 	static boolean isNodeTypeOneOf(WtNode node, ElementType... types)
 	{
 		return isTypeOneOf(getNodeType(node), types);
 	}
-	
+
 	static ElementType getNodeType(WtNode node)
 	{
 		ElementType nodeType = ElementType.getType(node);
@@ -510,7 +534,7 @@ public class TreeBuilder
 		*/
 		return nodeType;
 	}
-	
+
 	static boolean isTypeOneOf(ElementType nodeType, ElementType... types)
 	{
 		for (ElementType type : types)
@@ -520,21 +544,21 @@ public class TreeBuilder
 		}
 		return false;
 	}
-	
+
 	static boolean isSameFormattingElement(WtNode e0, WtNode e1)
 	{
 		if (e0 == e1)
 			return true;
-		
+
 		ElementType t0 = getNodeType(e0);
 		ElementType t1 = getNodeType(e1);
 		if (t0 != t1)
 			return false;
-		
+
 		if (e0.getNodeType() == WtNode.NT_XML_ELEMENT)
 		{
 			WtNodeList a0 = ((WtXmlElement) e0).getXmlAttributes();
-			
+
 			if (e1.getNodeType() == WtNode.NT_XML_ELEMENT)
 			{
 				return isSameAttributes(
@@ -552,54 +576,54 @@ public class TreeBuilder
 					return false;
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	static boolean isSameAttributes(WtNodeList a0, WtNodeList a1)
 	{
 		if (a0 == a1)
 			return true;
-		
+
 		Map<String, WtNodeList> m0 = new HashMap<String, WtNodeList>();
 		for (WtNode n : a0)
 		{
 			if (n.getNodeType() != WtNode.NT_XML_ATTRIBUTE)
 				continue;
-			
+
 			WtXmlAttribute a = (WtXmlAttribute) n;
-			
+
 			// TODO: This cannot handle unresolved attribute names:
 			if (!a.getName().isResolved())
 				return false;
-			
+
 			m0.put(a.getName().getAsString(), a.getValue());
 		}
-		
+
 		for (WtNode n : a1)
 		{
 			if (n.getNodeType() != WtNode.NT_XML_ATTRIBUTE)
 				continue;
-			
+
 			WtXmlAttribute a = (WtXmlAttribute) n;
 			if (!a.getName().isResolved())
 				return false;
-			
+
 			WtNodeList v0 = m0.remove(a.getName().getAsString());
 			WtNodeList v1 = a.getValue();
-			
+
 			if (v0 == v1)
 				return true;
-			
+
 			if (!WtComparer.compareNoThrow(v0, v1, false, false))
 				return false;
 		}
-		
+
 		return m0.isEmpty();
 	}
-	
+
 	// =========================================================================
-	
+
 	void ignore(WtNode node)
 	{
 		switch (node.getNodeType())
@@ -612,15 +636,15 @@ public class TreeBuilder
 				if (!WtNodeFlags.isRepairNode(node) && hasNonEmptyRtd(node))
 					appendToCurrentNode(node);
 				break;
-			
+
 			default:
 				((TreeBuilderModeBase) logic.getImpl())
 						.dispatch(getFactory().text(WtRtDataPrinter.print(node)));
-				
+
 				//throw new InternalError();
 		}
 	}
-	
+
 	private boolean hasNonEmptyRtd(WtNode node)
 	{
 		WtRtData rtd = node.getRtd();
@@ -633,17 +657,17 @@ public class TreeBuilder
 		}
 		return false;
 	}
-	
+
 	void error(WtNode node, String message)
 	{
 		if ((node instanceof WtImStartTag) || (node instanceof WtImEndTag))
 			return;
-		
+
 		errors.add(new TreeBuilderWarning(node, message));
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * 12.2.5.1
 	 * 
@@ -664,7 +688,7 @@ public class TreeBuilder
 		getStack().push(newNode);
 		return newNode;
 	}
-	
+
 	WtNode insertAnHtmlRepairFormattingElement(WtNode sample)
 	{
 		WtNode newNode = factory.createRepairFormattingElement(sample);
@@ -672,7 +696,7 @@ public class TreeBuilder
 		getStack().push(newNode);
 		return newNode;
 	}
-	
+
 	/**
 	 * 12.2.5
 	 * 
@@ -696,15 +720,15 @@ public class TreeBuilder
 			appendToCurrentNode(text);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	WtNode getCurrentNode()
 	{
 		assert !getStack().isEmpty();
 		return getStack().peek();
 	}
-	
+
 	void appendToCurrentNode(WtNode e)
 	{
 		if (fosterParentingMode && isCurrentNodeTypeOneOf(TABLE, TBODY, TFOOT, THEAD, TR))
@@ -716,7 +740,7 @@ public class TreeBuilder
 			getContentOfNodeForModification(getCurrentNode()).add(e);
 		}
 	}
-	
+
 	WtNode pollLastChildOfCurrentNode()
 	{
 		WtNodeList content = getContentOfNode(getCurrentNode());
@@ -724,14 +748,14 @@ public class TreeBuilder
 			return null;
 		return content.get(content.size() - 1);
 	}
-	
+
 	boolean isCurrentNodeTypeOneOf(ElementType... nodeTypes)
 	{
 		return isNodeTypeOneOf(getCurrentNode(), nodeTypes);
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * The stack of open elements is said to have an element in a specific scope
 	 * consisting of a list of element types list when the following algorithm
@@ -760,33 +784,33 @@ public class TreeBuilder
 			ElementType nodeType = getNodeType(i.next());
 			if (nodeType == targetType)
 				return true;
-			
+
 			if (scope.isInList(nodeType))
 				return false;
 		}
 		throw new InternalError("This should never happen!");
 	}
-	
+
 	boolean isElementTypeInScope(ElementType elementType)
 	{
 		return isElementTypeInSpecificScope(GENERAL_SCOPE, elementType);
 	}
-	
+
 	boolean isElementTypeInListScope(ElementType elementType)
 	{
 		return isElementTypeInSpecificScope(LIST_ITEM_SCOPE, elementType);
 	}
-	
+
 	boolean isElementTypeInButtonScope(ElementType elementType)
 	{
 		return isElementTypeInSpecificScope(BUTTON_SCOPE, elementType);
 	}
-	
+
 	boolean isElementTypeInTableScope(ElementType elementType)
 	{
 		return isElementTypeInSpecificScope(TABLE_SCOPE, elementType);
 	}
-	
+
 	boolean isOneOfElementTypesInSpecificScope(
 			StackScope scope,
 			ElementType... targetTypes)
@@ -797,18 +821,18 @@ public class TreeBuilder
 			ElementType nodeType = getNodeType(i.next());
 			if (isTypeOneOf(nodeType, targetTypes))
 				return true;
-			
+
 			if (scope.isInList(nodeType))
 				return false;
 		}
 		throw new InternalError("This should never happen!");
 	}
-	
+
 	boolean isOneOfElementTypesInScope(ElementType... targetTypes)
 	{
 		return isOneOfElementTypesInSpecificScope(GENERAL_SCOPE, targetTypes);
 	}
-	
+
 	boolean isNodeInSpecificScope(StackScope scope, WtNode targetNode)
 	{
 		Iterator<WtNode> i = getStack().iterator();
@@ -817,12 +841,12 @@ public class TreeBuilder
 			WtNode node = i.next();
 			if (isSameTag(node, targetNode))
 				return true;
-			
+
 			if (scope.isInList(getNodeType(node)))
 				return false;
 		}
 	}
-	
+
 	boolean isNodeRefInSpecificScope(StackScope scope, WtNode targetNode)
 	{
 		Iterator<WtNode> i = getStack().iterator();
@@ -831,19 +855,19 @@ public class TreeBuilder
 			WtNode node = i.next();
 			if (node == targetNode)
 				return true;
-			
+
 			if (scope.isInList(getNodeType(node)))
 				return false;
 		}
 	}
-	
+
 	boolean isNodeRefInScope(WtNode targetNode)
 	{
 		return isNodeRefInSpecificScope(GENERAL_SCOPE, targetNode);
 	}
-	
+
 	// =========================================================================
-	
+
 	void removeFromStack(WtNode node)
 	{
 		Iterator<WtNode> i = getStack().iterator();
@@ -857,7 +881,7 @@ public class TreeBuilder
 		}
 		throw new InternalError("Could not remove node from stack!");
 	}
-	
+
 	boolean isInStackOfOpenElements(WtNode node)
 	{
 		for (WtNode e : getStack())
@@ -867,7 +891,7 @@ public class TreeBuilder
 		}
 		return false;
 	}
-	
+
 	WtNode getFromStack(ElementType nodeType)
 	{
 		for (WtNode e : getStack())
@@ -877,7 +901,7 @@ public class TreeBuilder
 		}
 		return null;
 	}
-	
+
 	WtNode popFromStackUntilIncluding(WtNode nodeExample)
 	{
 		while (!getStack().isEmpty())
@@ -888,7 +912,7 @@ public class TreeBuilder
 		}
 		throw new InternalError("Everything's gone :(");
 	}
-	
+
 	WtNode popFromStackUntilIncluding(ElementType nodeType)
 	{
 		while (!getStack().isEmpty())
@@ -899,7 +923,7 @@ public class TreeBuilder
 		}
 		throw new InternalError("Everything's gone :(");
 	}
-	
+
 	WtNode popFromStackUntilIncluding(ElementType... nodeTypes)
 	{
 		while (!getStack().isEmpty())
@@ -910,7 +934,7 @@ public class TreeBuilder
 		}
 		throw new InternalError("Everything's gone :(");
 	}
-	
+
 	void popFromStackUntilIncludingRef(WtNode node)
 	{
 		while (popFromStack() != node)
@@ -918,7 +942,7 @@ public class TreeBuilder
 		if (getStack().isEmpty())
 			throw new InternalError("Everything's gone :(");
 	}
-	
+
 	void popFromStackUntilExcluding(ElementType... nodeTypes)
 	{
 		while (!isTypeOneOf(getNodeType(getCurrentNode()), nodeTypes))
@@ -926,27 +950,27 @@ public class TreeBuilder
 		if (getStack().isEmpty())
 			throw new InternalError("Everything's gone :(");
 	}
-	
+
 	WtNode popFromStack()
 	{
 		return getStack().pop();
 	}
-	
+
 	void clearStackBackToTableContext()
 	{
 		popFromStackUntilExcluding(PAGE, /*SECTION_HEADING, SECTION_BODY, */TABLE);
 	}
-	
+
 	void clearStackBackToTableBodyContext()
 	{
 		popFromStackUntilExcluding(PAGE, /*SECTION_HEADING, SECTION_BODY, */TBODY, TFOOT, THEAD);
 	}
-	
+
 	void clearStackBackToTableRowContext()
 	{
 		popFromStackUntilExcluding(PAGE, /*SECTION_HEADING, SECTION_BODY, */TR);
 	}
-	
+
 	WtNode getAboveOnStack(WtNode node)
 	{
 		Iterator<WtNode> i = getStack().iterator();
@@ -960,7 +984,7 @@ public class TreeBuilder
 		}
 		return null;
 	}
-	
+
 	void insertOnStackBelow(WtNode marker, WtNode node)
 	{
 		ListIterator<WtNode> i = getStack().listIterator();
@@ -975,7 +999,7 @@ public class TreeBuilder
 		}
 		throw new InternalError("Marker MUST exist in stack!");
 	}
-	
+
 	void removeFromParent(WtNode node, WtNode parent)
 	{
 		WtNodeList content = getContentOfNode(parent);
@@ -991,9 +1015,9 @@ public class TreeBuilder
 		}
 		throw new InternalError("Node given as parent IS NOT parent of other node!");
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * 12.2.5.2
 	 * 
@@ -1011,35 +1035,35 @@ public class TreeBuilder
 		while (true)
 		{
 			ElementType nodeType = getNodeType(getCurrentNode());
-			
+
 			// OPTION, OPTGROUP, RP, RT
 			if (nodeType == excludedType || !isTypeOneOf(nodeType, DD, DT, LI, P))
 				break;
-			
+
 			popFromStack();
 		}
 	}
-	
+
 	void generateImpliedEndTags()
 	{
 		generateImpliedEndTags((ElementType) null);
 	}
-	
+
 	void generateImpliedEndTags(WtNode node)
 	{
 		while (true)
 		{
 			WtNode currentNode = getCurrentNode();
 			ElementType nodeType = getNodeType(currentNode);
-			
+
 			// OPTION, OPTGROUP, RP, RT
 			if (!isTypeOneOf(nodeType, DD, DT, LI, P) || isSameTag(currentNode, node))
 				break;
-			
+
 			popFromStack();
 		}
 	}
-	
+
 	static boolean isSameTag(WtNode n0, WtNode n1)
 	{
 		ElementType t0 = getNodeType(n0);
@@ -1063,12 +1087,12 @@ public class TreeBuilder
 					return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	// =========================================================================
-	
+
 	void pushActiveFormattingElements(WtNode node)
 	{
 		int count = 0;
@@ -1078,10 +1102,10 @@ public class TreeBuilder
 			WtNode fe = i.next();
 			if (fe == MARKER)
 				break;
-			
+
 			if (isSameFormattingElement(fe, node))
 				++count;
-			
+
 			if (count == 3)
 			{
 				i.remove();
@@ -1090,12 +1114,12 @@ public class TreeBuilder
 		}
 		activeFormattingElements.add(node);
 	}
-	
+
 	boolean isInListOfActiveFormattingElements(WtNode node)
 	{
 		return activeFormattingElements.contains(node);
 	}
-	
+
 	WtNode getActiveFormattingElement(ElementType nodeType)
 	{
 		Iterator<WtNode> i = activeFormattingElements.descendingIterator();
@@ -1104,13 +1128,13 @@ public class TreeBuilder
 			WtNode node = i.next();
 			if (node == MARKER)
 				return null;
-			
+
 			if (getNodeType(node) == nodeType)
 				return node;
 		}
 		return null;
 	}
-	
+
 	void removeFromActiveFormattingElements(WtNode node)
 	{
 		Iterator<WtNode> i = activeFormattingElements.descendingIterator();
@@ -1124,7 +1148,7 @@ public class TreeBuilder
 		}
 		throw new InternalError("Could not remove formatting element");
 	}
-	
+
 	void replaceInListOfActiveFormattingElements(
 			WtNode replacee,
 			WtNode replacement)
@@ -1140,7 +1164,7 @@ public class TreeBuilder
 		}
 		throw new InternalError("Could not replace formatting element");
 	}
-	
+
 	/**
 	 * 12.2.3.3
 	 * 
@@ -1162,13 +1186,13 @@ public class TreeBuilder
 	void reconstructActiveFormattingElements()
 	{
 		LinkedList<WtNode> list = activeFormattingElements;
-		
+
 		/* 1) If there are no entries in the list of active formatting elements, then
 		 * there is nothing to reconstruct; stop this algorithm.
 		 */
 		if (list.isEmpty())
 			return;
-		
+
 		/* 2) If the last (most recently added) entry in the list of active formatting
 		 * elements is a marker, or if it is an element that is in the stack of open
 		 * elements, then there is nothing to reconstruct; stop this algorithm.
@@ -1176,13 +1200,13 @@ public class TreeBuilder
 		WtNode last = list.getLast();
 		if (last == MARKER || isInStackOfOpenElements(last))
 			return;
-		
+
 		/* 3) Let entry be the last (most recently added) element in the list of active
 		 * formatting elements.
 		 */
 		int entryIndex = list.size() - 1;
 		WtNode entry = list.get(entryIndex);
-		
+
 		while (true)
 		{
 			/* 4) If there are no entries before entry in the list of active formatting
@@ -1194,23 +1218,23 @@ public class TreeBuilder
 				 * formatting elements.
 				 */
 				entry = list.get(--entryIndex);
-				
+
 				/* 6) If entry is neither a marker nor an element that is also in the stack of
 				 * open elements, go to step 4.
 				 */
 				if (entry != MARKER && !isInStackOfOpenElements(entry))
 					continue;
-				
+
 				/* 7) Let entry be the element one later than entry in the list of active
 				 * formatting elements.
 				 */
 				entry = list.get(++entryIndex);
 				break;
 			}
-			
+
 			break;
 		}
-		
+
 		while (true)
 		{
 			/* 8) Create an element for the token for which the element entry was created,
@@ -1220,11 +1244,11 @@ public class TreeBuilder
 			 * elements so that it is the new current node.
 			 */
 			WtNode newNode = insertAnHtmlRepairFormattingElement(entry);
-			
+
 			/* 10) Replace the entry for entry in the list with an entry for new element.
 			 */
 			list.set(entryIndex, newNode);
-			
+
 			/* 11) If the entry for new element in the list of active formatting elements is
 			 * not the last entry in the list, return to step 7.
 			 */
@@ -1233,20 +1257,20 @@ public class TreeBuilder
 			entry = list.get(++entryIndex);
 		}
 	}
-	
+
 	void insertMarkerInActiveFormattingElements()
 	{
 		this.activeFormattingElements.add(MARKER);
-		
+
 		// LctVarConv tags must be effective over marker boundaries in order
 		// to "leak" into tables
-		
+
 		LinkedList<WtNode> list = activeFormattingElements;
 		ListIterator<WtNode> iter = list.listIterator(list.size());
-		
+
 		// Skip the just inserted marker
 		iter.previous();
-		
+
 		while (iter.hasPrevious())
 		{
 			WtNode e = iter.previous();
@@ -1261,7 +1285,7 @@ public class TreeBuilder
 			}
 		}
 	}
-	
+
 	void clearActiveFormattingElementsToLastMarker()
 	{
 		Iterator<WtNode> i = this.activeFormattingElements.descendingIterator();
@@ -1273,12 +1297,12 @@ public class TreeBuilder
 				break;
 		}
 	}
-	
+
 	void placeBookmarkAfter(WtNode node)
 	{
 		ListIterator<WtNode> i = this.activeFormattingElements.listIterator(
 				this.activeFormattingElements.size());
-		
+
 		while (i.hasPrevious())
 		{
 			WtNode fe = i.previous();
@@ -1291,12 +1315,12 @@ public class TreeBuilder
 		}
 		throw new InternalError("This method must only be called if there definitily is a bookmark!");
 	}
-	
+
 	void moveBookmarkAfter(WtNode node)
 	{
 		ListIterator<WtNode> i = this.activeFormattingElements.listIterator(
 				this.activeFormattingElements.size());
-		
+
 		while (i.hasPrevious())
 		{
 			WtNode fe = i.previous();
@@ -1319,12 +1343,12 @@ public class TreeBuilder
 		}
 		throw new InternalError("This method must only be called if there definitily is a bookmark!");
 	}
-	
+
 	public void replaceBookmarkWithAndRemove(WtNode replacement, WtNode remove)
 	{
 		ListIterator<WtNode> i = this.activeFormattingElements.listIterator(
 				this.activeFormattingElements.size());
-		
+
 		while (i.hasPrevious())
 		{
 			WtNode fe = i.previous();
@@ -1346,9 +1370,9 @@ public class TreeBuilder
 		}
 		throw new InternalError("This method must only be called if there definitily is a bookmark!");
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * 12.2.5.3
 	 * 
@@ -1397,14 +1421,14 @@ public class TreeBuilder
 			getContentOfNodeForModification(getStack().getLast()).add(node);
 		}
 	}
-	
+
 	void setFosterParentingMode(boolean fosterParentingMode)
 	{
 		this.fosterParentingMode = fosterParentingMode;
 	}
-	
+
 	// =========================================================================
-	
+
 	static boolean isInlineImage(WtImageLink n)
 	{
 		switch (n.getFormat())
@@ -1412,14 +1436,14 @@ public class TreeBuilder
 			case FRAME:
 			case THUMBNAIL:
 				return false;
-				
+
 			default:
 				return (n.getHAlign() == ImageHorizAlign.UNSPECIFIED);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class Bookmark
 			extends
 				WtLeafNode

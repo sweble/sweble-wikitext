@@ -23,16 +23,16 @@ import org.sweble.wikitext.parser.nodes.WtText;
 public class ApplyToText
 {
 	private Functor fn;
-	
+
 	// =========================================================================
-	
+
 	public ApplyToText(Functor fn)
 	{
 		this.fn = fn;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void go(WtNode arg0)
 	{
 		if (arg0.getNodeType() == WtNode.NT_TEXT)
@@ -45,7 +45,7 @@ public class ApplyToText
 			{
 				if (n == null)
 					continue;
-				
+
 				if (n.isNodeType(WtNode.NT_TEXT))
 				{
 					apply((WtText) n);
@@ -57,14 +57,14 @@ public class ApplyToText
 			}
 		}
 	}
-	
+
 	private void apply(WtText arg0)
 	{
 		arg0.setContent(fn.apply(arg0.getContent()));
 	}
-	
+
 	// =========================================================================
-	
+
 	public interface Functor
 	{
 		public String apply(String text);

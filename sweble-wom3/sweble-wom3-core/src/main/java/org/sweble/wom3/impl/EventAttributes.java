@@ -23,27 +23,27 @@ import java.util.Map;
 public abstract class EventAttributes
 {
 	public static final AttrDescOnKeyPress ATTR_DESC_ONCLICK = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONDBLCLICK = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONKEYDOWN = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONKEYPRESS = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONKEYUP = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONMOUSEDOWN = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONMOUSEMOVE = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONMOUSEOUT = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONMOUSEOVER = new AttrDescOnKeyPress();
-	
+
 	public static final AttrDescOnKeyPress ATTR_DESC_ONMOUSEUP = new AttrDescOnKeyPress();
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnClick
 			extends
 				AttributeDescriptor
@@ -57,7 +57,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -66,9 +66,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnDblClick
 			extends
 				AttributeDescriptor
@@ -82,7 +82,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -91,9 +91,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnKeyDown
 			extends
 				AttributeDescriptor
@@ -107,7 +107,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -116,9 +116,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnKeyPress
 			extends
 				AttributeDescriptor
@@ -132,7 +132,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -141,9 +141,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnKeyUp
 			extends
 				AttributeDescriptor
@@ -157,7 +157,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -166,9 +166,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnMouseDown
 			extends
 				AttributeDescriptor
@@ -182,7 +182,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -191,9 +191,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnMouseMove
 			extends
 				AttributeDescriptor
@@ -207,7 +207,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -216,9 +216,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnMouseOut
 			extends
 				AttributeDescriptor
@@ -232,7 +232,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -241,9 +241,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnMouseOver
 			extends
 				AttributeDescriptor
@@ -257,7 +257,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -266,9 +266,9 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescOnMouseUp
 			extends
 				AttributeDescriptor
@@ -282,7 +282,7 @@ public abstract class EventAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -291,11 +291,11 @@ public abstract class EventAttributes
 			return AttributeVerifiers.SCRIPT.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static Map<String, AttributeDescriptor> NAME_MAP;
-	
+
 	public synchronized static Map<String, AttributeDescriptor> getNameMap()
 	{
 		Map<String, AttributeDescriptor> nameMap = NAME_MAP;
@@ -316,7 +316,7 @@ public abstract class EventAttributes
 		}
 		return nameMap;
 	}
-	
+
 	public static AttributeDescriptor getDescriptor(String name)
 	{
 		return getNameMap().get(name);

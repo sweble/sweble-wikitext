@@ -26,18 +26,18 @@ public class ExpansionException
 		extends
 			RuntimeException
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public ExpansionException(Throwable cause)
 	{
 		super(unwrap(cause));
 	}
-	
+
 	// =========================================================================
-	
+
 	private static Throwable unwrap(Throwable t)
 	{
 		while (t instanceof ExpansionException

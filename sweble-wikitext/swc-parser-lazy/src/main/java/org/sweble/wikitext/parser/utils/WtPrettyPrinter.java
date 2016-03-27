@@ -101,14 +101,14 @@ import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.PrinterBase;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class WtPrettyPrinter
 		extends
 			AstVisitor<WtNode>
 {
 	// --[ WtInnerNode1 ]-------------------------------------------------------
-	
+
 	public void visit(WtLinkOptionLinkTarget n)
 	{
 		p.print("|link=");
@@ -125,19 +125,19 @@ public class WtPrettyPrinter
 				break;
 		}
 	}
-	
+
 	public void visit(WtRedirect n)
 	{
 		p.print("#REDIRECT[[");
 		dispatch(n.getTarget());
 		p.print("]]");
 	}
-	
+
 	public void visit(WtTableImplicitTableBody n)
 	{
 		dispatch(n.getBody());
 	}
-	
+
 	public void visit(WtXmlAttribute n)
 	{
 		p.print(' ');
@@ -154,14 +154,14 @@ public class WtPrettyPrinter
 						needQuotes = false;
 				}
 			}
-			
+
 			p.print(needQuotes ? "=\"" : "=");
 			dispatch(n.getValue());
 			if (needQuotes)
 				p.print('"');
 		}
 	}
-	
+
 	public void visit(WtXmlEmptyTag n)
 	{
 		p.print('<');
@@ -169,7 +169,7 @@ public class WtPrettyPrinter
 		dispatch(n.getXmlAttributes());
 		p.print(" />");
 	}
-	
+
 	public void visit(WtXmlStartTag n)
 	{
 		p.print('<');
@@ -177,12 +177,12 @@ public class WtPrettyPrinter
 		dispatch(n.getXmlAttributes());
 		p.print(">");
 	}
-	
+
 	public void visit(WtImStartTag n)
 	{
 		// Should not appear in post-processed wikitext
 	}
-	
+
 	public void visit(WtLctRule n)
 	{
 		if (!n.isDirectConvert())
@@ -194,9 +194,9 @@ public class WtPrettyPrinter
 		p.print(":");
 		dispatch(n.getReplace());
 	}
-	
+
 	// --[ WtInnerNode2 ]-------------------------------------------------------
-	
+
 	public void visit(WtExternalLink n)
 	{
 		scope.push(n);
@@ -207,7 +207,7 @@ public class WtPrettyPrinter
 		p.print("]");
 		scope.pop();
 	}
-	
+
 	public void visit(WtInternalLink n)
 	{
 		scope.push(n);
@@ -220,7 +220,7 @@ public class WtPrettyPrinter
 		p.print(n.getPostfix());
 		scope.pop();
 	}
-	
+
 	public void visit(WtSection n)
 	{
 		scope.push(n);
@@ -230,75 +230,75 @@ public class WtPrettyPrinter
 		p.needNewlines(2);
 		scope.pop();
 	}
-	
+
 	public void visit(WtTable n)
 	{
 		p.clearEatNewlinesAndIndents();
 		p.needNewlines(2);
 		p.print("{|");
-		
+
 		dispatch(n.getXmlAttributes());
 		p.println();
-		
+
 		dispatch(n.getBody());
-		
+
 		p.clearEatNewlinesAndIndents();
 		p.capNewlines(1, 1);
 		p.println(" |}");
 		p.needNewlines(2);
 	}
-	
+
 	public void visit(WtTableCaption n)
 	{
 		p.clearEatNewlinesAndIndents();
 		p.capNewlines(1, 1);
 		p.print(" |+");
-		
+
 		if (!n.getXmlAttributes().isEmpty())
 		{
 			dispatch(n.getXmlAttributes());
 			p.print(" |");
 		}
-		
+
 		p.eatNewlinesAndIndents(2);
 		dispatch(n.getBody());
 		p.capNewlines(1, 1);
 	}
-	
+
 	public void visit(WtTableCell n)
 	{
 		p.clearEatNewlinesAndIndents();
 		p.capNewlines(1, 1);
 		p.print(" |");
-		
+
 		if (!n.getXmlAttributes().isEmpty())
 		{
 			dispatch(n.getXmlAttributes());
 			p.print(" |");
 		}
-		
+
 		p.eatNewlinesAndIndents(2);
 		dispatch(n.getBody());
 		p.capNewlines(1, 1);
 	}
-	
+
 	public void visit(WtTableHeader n)
 	{
 		p.clearEatNewlinesAndIndents();
 		p.capNewlines(1, 1);
 		p.print(" !");
-		
+
 		if (!n.getXmlAttributes().isEmpty())
 		{
 			dispatch(n.getXmlAttributes());
 			p.print(" |");
 		}
-		
+
 		p.eatNewlinesAndIndents(2);
 		dispatch(n.getBody());
 		p.capNewlines(1, 1);
 	}
-	
+
 	public void visit(WtTableRow n)
 	{
 		if (!n.isImplicit())
@@ -306,13 +306,13 @@ public class WtPrettyPrinter
 			p.clearEatNewlinesAndIndents();
 			p.capNewlines(1, 1);
 			p.print(" |-");
-			
+
 			dispatch(n.getXmlAttributes());
 			p.println();
 		}
 		dispatch(n.getBody());
 	}
-	
+
 	public void visit(WtTagExtension n)
 	{
 		p.print('<');
@@ -327,7 +327,7 @@ public class WtPrettyPrinter
 			p.print('>');
 		}
 	}
-	
+
 	public void visit(WtTemplate n)
 	{
 		if (n.isPrecededByNewline())
@@ -339,7 +339,7 @@ public class WtPrettyPrinter
 		iterate(n);
 		p.print("}}");
 	}
-	
+
 	public void visit(WtTemplateArgument n)
 	{
 		p.print('|');
@@ -350,7 +350,7 @@ public class WtPrettyPrinter
 		}
 		dispatch(n.getValue());
 	}
-	
+
 	public void visit(WtXmlElement n)
 	{
 		p.print('<');
@@ -365,7 +365,7 @@ public class WtPrettyPrinter
 			p.print('>');
 		}
 	}
-	
+
 	public void visit(WtLctVarConv n)
 	{
 		p.print("-{");
@@ -377,7 +377,7 @@ public class WtPrettyPrinter
 		dispatch(n.getText());
 		p.print("}-");
 	}
-	
+
 	public void visit(WtLctRuleConv n)
 	{
 		p.print("-{");
@@ -389,9 +389,9 @@ public class WtPrettyPrinter
 		dispatch(n.getRules());
 		p.print("}-");
 	}
-	
+
 	// --[ WtInnerNode3 ]-------------------------------------------------------
-	
+
 	public void visit(WtImageLink n)
 	{
 		scope.push(n);
@@ -401,7 +401,7 @@ public class WtPrettyPrinter
 		p.print("]]");
 		scope.pop();
 	}
-	
+
 	public void visit(WtTemplateParameter n)
 	{
 		p.print("{{{");
@@ -413,9 +413,9 @@ public class WtPrettyPrinter
 		}
 		p.print("}}}");
 	}
-	
+
 	// --[ WtLeafNode ]---------------------------------------------------------
-	
+
 	public void visit(WtHorizontalRule n)
 	{
 		p.clearEatNewlinesAndIndents();
@@ -423,18 +423,18 @@ public class WtPrettyPrinter
 		p.println("----");
 		p.needNewlines(2);
 	}
-	
+
 	public void visit(WtIllegalCodePoint n)
 	{
 		p.print(n.getCodePoint());
 	}
-	
+
 	public void visit(WtLinkOptionKeyword n)
 	{
 		p.print('|');
 		p.print(n.getKeyword());
 	}
-	
+
 	public void visit(WtLinkOptionResize n)
 	{
 		p.print('|');
@@ -451,24 +451,24 @@ public class WtPrettyPrinter
 		}
 		p.print("px");
 	}
-	
+
 	public void visit(WtPageSwitch n)
 	{
 		p.print("__");
 		p.print(n.getName());
 		p.print("__");
 	}
-	
+
 	public void visit(WtSignature n)
 	{
-		p.print(StringUtils.strrep('~', n.getTildeCount()));
+		p.print(StringTools.strrep('~', n.getTildeCount()));
 	}
-	
+
 	public void visit(WtTicks n)
 	{
-		p.print(StringUtils.strrep('\'', n.getTickCount()));
+		p.print(StringTools.strrep('\'', n.getTickCount()));
 	}
-	
+
 	public void visit(WtUrl n)
 	{
 		if (!n.getProtocol().isEmpty())
@@ -478,33 +478,33 @@ public class WtPrettyPrinter
 		}
 		p.print(n.getPath());
 	}
-	
+
 	public void visit(WtXmlCharRef n)
 	{
 		p.print("&#");
 		p.print(String.valueOf(n.getCodePoint()));
 		p.print(';');
 	}
-	
+
 	public void visit(WtXmlEndTag n)
 	{
 		p.print("</");
 		p.print(n.getName());
 		p.print('>');
 	}
-	
+
 	public void visit(WtImEndTag n)
 	{
 		// Should not appear in post-processed wikitext
 	}
-	
+
 	public void visit(WtXmlEntityRef n)
 	{
 		p.print('&');
 		p.print(n.getName());
 		p.print(';');
 	}
-	
+
 	public void visit(WtLctFlags n)
 	{
 		List<String> flags = new ArrayList<String>();
@@ -517,28 +517,28 @@ public class WtPrettyPrinter
 			p.print(flags.get(i));
 		}
 	}
-	
+
 	// --[ WtNodeList ]---------------------------------------------------------
-	
+
 	public void visit(WtNodeList n)
 	{
 		iterate(n);
 	}
-	
+
 	// --[ WtContentNode ]------------------------------------------------------
-	
+
 	public void visit(WtBody n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtBold n)
 	{
 		p.print("'''");
 		iterate(n);
 		p.print("'''");
 	}
-	
+
 	public void visit(WtDefinitionList n)
 	{
 		++insideList;
@@ -550,7 +550,7 @@ public class WtPrettyPrinter
 		scope.pop();
 		--insideList;
 	}
-	
+
 	public void visit(WtDefinitionListDef n)
 	{
 		scope.push(n);
@@ -559,7 +559,7 @@ public class WtPrettyPrinter
 		p.println();
 		scope.pop();
 	}
-	
+
 	public void visit(WtDefinitionListTerm n)
 	{
 		scope.push(n);
@@ -568,30 +568,30 @@ public class WtPrettyPrinter
 		p.println();
 		scope.pop();
 	}
-	
+
 	public void visit(WtHeading n)
 	{
 		int level = ((WtSection) scope.peek()).getLevel();
-		String equals = StringUtils.strrep('=', level);
-		
+		String equals = StringTools.strrep('=', level);
+
 		p.print(equals);
 		iterate(n);
 		p.println(equals);
 	}
-	
+
 	public void visit(WtItalics n)
 	{
 		p.print("''");
 		iterate(n);
 		p.print("''");
 	}
-	
+
 	public void visit(WtLinkOptionAltText n)
 	{
 		p.print("|alt=");
 		iterate(n);
 	}
-	
+
 	public void visit(WtLinkOptions n)
 	{
 		for (WtNode a : n)
@@ -614,7 +614,7 @@ public class WtPrettyPrinter
 			dispatch(a);
 		}
 	}
-	
+
 	public void visit(WtLinkTitle n)
 	{
 		switch (scope.peek().getNodeType())
@@ -631,7 +631,7 @@ public class WtPrettyPrinter
 		}
 		iterate(n);
 	}
-	
+
 	public void visit(WtListItem n)
 	{
 		scope.push(n);
@@ -640,13 +640,13 @@ public class WtPrettyPrinter
 		p.println();
 		scope.pop();
 	}
-	
+
 	private void printListPrefix(WtNode item)
 	{
 		String prefix = "";
-		
+
 		boolean multipleNewLevels = false;
-		
+
 		WtNode parent = scope.get(1);
 		if (scope.size() > 2 && !parent.isEmpty() && parent.get(0) == item)
 		{
@@ -658,7 +658,7 @@ public class WtPrettyPrinter
 				multipleNewLevels = true;
 			}
 		}
-		
+
 		Iterator<WtNode> i = scope.iterator();
 		outer: while (i.hasNext())
 		{
@@ -686,11 +686,11 @@ public class WtPrettyPrinter
 				default:
 					break outer;
 			}
-			
+
 			if (multipleNewLevels)
 				break;
 		}
-		
+
 		if (!multipleNewLevels)
 		{
 			p.clearEatNewlinesAndIndents();
@@ -698,19 +698,19 @@ public class WtPrettyPrinter
 		}
 		p.print(prefix);
 	}
-	
+
 	public void visit(WtName n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtOnlyInclude n)
 	{
 		p.print("<onlyinclude>");
 		iterate(n);
 		p.print("</onlyinclude>");
 	}
-	
+
 	public void visit(WtOrderedList n)
 	{
 		++insideList;
@@ -722,43 +722,43 @@ public class WtPrettyPrinter
 		scope.pop();
 		--insideList;
 	}
-	
+
 	public void visit(WtParsedWikitextPage n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtPreproWikitextPage n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtParagraph n)
 	{
 		p.needNewlines(2);
 		iterate(n);
 		p.needNewlines(2);
 	}
-	
+
 	public void visit(WtSemiPre n)
 	{
 		p.needNewlines(2);
 		iterate(n);
 		p.needNewlines(2);
 	}
-	
+
 	public void visit(WtSemiPreLine n)
 	{
 		p.print(' ');
 		iterate(n);
 		p.println();
 	}
-	
+
 	public void visit(WtTemplateArguments n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtUnorderedList n)
 	{
 		++insideList;
@@ -770,17 +770,17 @@ public class WtPrettyPrinter
 		scope.pop();
 		--insideList;
 	}
-	
+
 	public void visit(WtValue n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtWhitespace n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtXmlAttributes n)
 	{
 		for (WtNode a : n)
@@ -800,7 +800,7 @@ public class WtPrettyPrinter
 			dispatch(a);
 		}
 	}
-	
+
 	public void visit(WtLctRules n)
 	{
 		int i = 0;
@@ -814,38 +814,38 @@ public class WtPrettyPrinter
 			dispatch(rule);
 		}
 	}
-	
+
 	// --[ WtStringNode ]-------------------------------------------------------
-	
+
 	public void visit(WtIgnored n)
 	{
 		p.print(n.getContent());
 	}
-	
+
 	public void visit(WtLinkOptionGarbage n)
 	{
 		// Don't print garbage!
 	}
-	
+
 	public void visit(WtNewline n)
 	{
 		p.println();
 	}
-	
+
 	public void visit(WtPageName n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtLinkTarget.WtNoLink n)
 	{
 	}
-	
+
 	public void visit(WtXmlAttributeGarbage n)
 	{
 		// Don't print garbage!
 	}
-	
+
 	public void visit(WtXmlComment n)
 	{
 		p.print(n.getPrefix());
@@ -854,74 +854,74 @@ public class WtPrettyPrinter
 		p.print("-->");
 		p.print(n.getSuffix());
 	}
-	
+
 	public void visit(WtTagExtensionBody n)
 	{
 		p.verbatim(n.getContent());
 	}
-	
+
 	public void visit(WtLctRuleGarbage n)
 	{
 		// Don't print garbage!
 	}
-	
+
 	public void visit(WtText n)
 	{
 		p.print(n.getContent());
 	}
-	
+
 	// =========================================================================
-	
+
 	public static <T extends WtNode> String print(T node)
 	{
 		return print(new StringWriter(), node).toString();
 	}
-	
+
 	public static <T extends WtNode> Writer print(Writer writer, T node)
 	{
 		new WtPrettyPrinter(writer).go(node);
 		return writer;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected final PrinterBase p;
-	
+
 	private final LinkedList<WtNode> scope = new LinkedList<WtNode>();
-	
+
 	private boolean newlineAtEof = false;
-	
+
 	private int insideList;
-	
+
 	// =========================================================================
-	
+
 	public WtPrettyPrinter(Writer writer)
 	{
 		this.p = new PrinterBase(writer);
 		this.p.setMemoize(false);
 	}
-	
+
 	// =========================================================================
-	
+
 	public void setNewlineAtEof(boolean newlineAtEof)
 	{
 		this.newlineAtEof = newlineAtEof;
 	}
-	
+
 	public boolean isNewlineAtEof()
 	{
 		return newlineAtEof;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected WtNode before(WtNode node)
 	{
 		p.eatNewlinesAndIndents(2);
 		return super.before(node);
 	}
-	
+
 	@Override
 	protected Object after(WtNode node, Object result)
 	{

@@ -17,9 +17,53 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.nodes.WtNode.*;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.*;
-import static org.sweble.wikitext.parser.postprocessor.StackScope.*;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_IGNORED;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_ILLEGAL_CODE_POINT;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_PAGE_SWITCH;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_REDIRECT;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_SEMI_PRE;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_SIGNATURE;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CAPTION;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CELL;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_HEADER;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_ROW;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_CHAR_REF;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_COMMENT;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_ELEMENT;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_EMPTY_TAG;
+import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_ENTITY_REF;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.ADDRESS;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.CAPTION;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.DD;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.DIV;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.DT;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.EXT_LINK;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.FRAMED_IMG;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.H1;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.H2;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.H3;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.H4;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.H5;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.H6;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.INLINE_IMG;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.INT_LINK;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.LI;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.P;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.PAGE;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.SECTION;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.SECTION_BODY;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.SECTION_HEADING;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TABLE;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TBODY;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TD;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TFOOT;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TH;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.THEAD;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.TR;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.UNKNOWN;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.URL;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.GENERAL_SCOPE;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.GENERAL_SCOPE_WITHOUT_LAZY_PARSED_PAGE;
 
 import java.util.ListIterator;
 
@@ -72,9 +116,9 @@ public final class TreeBuilderInBody
 	{
 		super(logic, treeBuilder);
 	}
-	
+
 	// =====================================================================
-	
+
 	public void visit(WtImStartTag n)
 	{
 		switch (getNodeType(n))
@@ -90,7 +134,7 @@ public final class TreeBuilderInBody
 				throw new InternalError("Should not happen!");
 		}
 	}
-	
+
 	public void visit(WtImEndTag n)
 	{
 		switch (getNodeType(n))
@@ -99,7 +143,7 @@ public final class TreeBuilderInBody
 			case I:
 				endTagR30(n);
 				break;
-			
+
 			case P:
 				/**
 				 * Synthetic paragraph closing tags can be ignored if they don't
@@ -118,24 +162,24 @@ public final class TreeBuilderInBody
 					endTagR22(pEndTag);
 				}
 				break;
-			
+
 			default:
 				throw new InternalError("Should not happen!");
 		}
 	}
-	
+
 	// =====================================================================
-	
+
 	public void visit(WtXmlStartTag n)
 	{
 		handleStartTag(n);
 	}
-	
+
 	public void visit(WtXmlEmptyTag n)
 	{
 		handleStartTag(n);
 	}
-	
+
 	private void handleStartTag(WtNode n) throws InternalError
 	{
 		ElementType nodeType = getNodeType(n);
@@ -144,7 +188,7 @@ public final class TreeBuilderInBody
 			startUnknownTag(n);
 			return;
 		}
-		
+
 		switch (nodeType)
 		{
 			case ADDRESS: //ARTICLE, ASIDE,
@@ -254,7 +298,7 @@ public final class TreeBuilderInBody
 				break;
 		}
 	}
-	
+
 	private void startUnknownTag(WtNode n)
 	{
 		if (n instanceof WtNamedXmlElement)
@@ -266,12 +310,12 @@ public final class TreeBuilderInBody
 					// br, img, ...
 					startTagR34(n);
 					break;
-				
+
 				case LIKE_DIV:
 					// div, ul, ...
 					startTagR12(n);
 					break;
-				
+
 				case LIKE_ANY_OTHER:
 				case UNSPECIFIED:
 				default:
@@ -286,7 +330,7 @@ public final class TreeBuilderInBody
 			startTagR51(n);
 		}
 	}
-	
+
 	public void visit(WtXmlEndTag n)
 	{
 		ElementType nodeType = getNodeType(n);
@@ -295,7 +339,7 @@ public final class TreeBuilderInBody
 			endUnknownTag(n);
 			return;
 		}
-		
+
 		switch (nodeType)
 		{
 			case ADDRESS: //ARTICLE, ASIDE,
@@ -344,7 +388,7 @@ public final class TreeBuilderInBody
 			case INT_LINK:
 			case EXT_LINK:
 			case URL:
-				
+
 			case B:
 			case BIG:
 			case CODE:
@@ -369,7 +413,7 @@ public final class TreeBuilderInBody
 					endTagR52(n);
 		}
 	}
-	
+
 	private void endUnknownTag(WtNode n)
 	{
 		if (n instanceof WtNamedXmlElement)
@@ -381,12 +425,12 @@ public final class TreeBuilderInBody
 					// br, img, ...
 					endTagR47(n);
 					break;
-				
+
 				case LIKE_DIV:
 					// div, ul, ...
 					endTagR20(n);
 					break;
-				
+
 				case LIKE_ANY_OTHER:
 				case UNSPECIFIED:
 				default:
@@ -401,7 +445,7 @@ public final class TreeBuilderInBody
 			endTagR52(n);
 		}
 	}
-	
+
 	// =========================================================================
 	/* Nodes to consider:
 	 * InnerNode
@@ -457,13 +501,13 @@ public final class TreeBuilderInBody
 	 *   - WtImEndTag					[X]
 	 * - XmlEntityRef					[X]
 	 */
-	
+
 	public void visit(WtNode n)
 	{
 		switch (n.getNodeType())
 		{
 		// -- leaf nodes --
-		
+
 			case NT_ILLEGAL_CODE_POINT:
 			case NT_SIGNATURE:
 			case NT_XML_CHAR_REF:
@@ -479,12 +523,12 @@ public final class TreeBuilderInBody
 				// Treat these like comments
 				tokenR03(n);
 				break;
-			
+
 			// -- unexpected nodes --
-			
+
 			case NT_SEMI_PRE:
 				throw new InternalError("Node should only occur in SemiPre scope: " + n.getClass().getSimpleName());
-				
+
 			case NT_TABLE_CAPTION:
 			case NT_TABLE_CELL:
 			case NT_TABLE_HEADER:
@@ -497,7 +541,7 @@ public final class TreeBuilderInBody
 				// here...
 				startTagR50(n);
 				break;
-			
+
 			case NT_XML_ELEMENT:
 			default:
 				//throw new InternalError("Unhandled node: " + n.getClass().getSimpleName());
@@ -506,23 +550,23 @@ public final class TreeBuilderInBody
 				break;
 		}
 	}
-	
+
 	public void visit(WtParsedWikitextPage n)
 	{
 		// insertAnHtmlElement
 		WtNode newNode = getFactory().createNewElement(n);
 		tb.getStack().push(newNode);
 		tb.setRootNode((WtParsedWikitextPage) newNode);
-		
+
 		iterate(n);
-		
+
 		// 12.2.5.4.7  R10
 		// 12.2.5.4.17 R05
 		// 12.2.5.4.21 R05
-		
+
 		if (!tb.isElementTypeInSpecificScope(GENERAL_SCOPE_WITHOUT_LAZY_PARSED_PAGE, PAGE))
 			tb.error(n, "12.2.5.4.7 R10 (1)");
-		
+
 		for (WtNode node : tb.getStack())
 		{
 			switch (getNodeType(node))
@@ -547,156 +591,156 @@ public final class TreeBuilderInBody
 			}
 		}
 	}
-	
+
 	public void visit(WtText n)
 	{
 		tokenR01andR02(n);
 	}
-	
+
 	public void visit(WtNewline n)
 	{
 		tokenR01andR02(getFactory().text(n.getContent()));
 	}
-	
+
 	public void visit(WtTemplate n)
 	{
 		tokenR03(n);
 	}
-	
+
 	public void visit(WtTemplateParameter n)
 	{
 		tokenR03(n);
 	}
-	
+
 	public void visit(WtTagExtension n)
 	{
 		tokenR03(n);
 	}
-	
+
 	public void visit(WtHorizontalRule n)
 	{
 		startTagR37(n);
 	}
-	
+
 	public void visit(WtBold n)
 	{
 		startTagR28(n);
 		iterate(n);
 		endTagR30(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtItalics n)
 	{
 		startTagR28(n);
 		iterate(n);
 		endTagR30(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtListItem n)
 	{
 		startTagR16(n);
 		iterate(n);
 		endTagR23(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtOrderedList n)
 	{
 		startTagR12(n);
 		iterate(n);
 		endTagR20(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtUnorderedList n)
 	{
 		startTagR12(n);
 		iterate(n);
 		endTagR20(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtDefinitionList n)
 	{
 		startTagR12(n);
 		iterate(n);
 		endTagR20(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtDefinitionListDef n)
 	{
 		startTagR17(n);
 		iterate(n);
 		endTagR24(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtDefinitionListTerm n)
 	{
 		startTagR17(n);
 		iterate(n);
 		endTagR24(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtInternalLink n)
 	{
 		startTagR27(n);
-		
+
 		if (n.hasTitle())
 			dispatch(n.getTitle());
-		
+
 		dispatch(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtExternalLink n)
 	{
 		startTagR27(n);
-		
+
 		if (n.hasTitle())
 			dispatch(n.getTitle());
-		
+
 		dispatch(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtUrl n)
 	{
 		startTagR27(n);
 		dispatch(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtImageLink n)
 	{
 		if (TreeBuilder.isInlineImage(n))
 		{
 			startTagR51(n);
-			
+
 			if (n.hasTitle())
 				dispatch(n.getTitle());
-			
+
 			dispatch(getFactory().createSyntheticEndTag(n, INLINE_IMG));
 		}
 		else
 		{
 			startTagR12(n);
-			
+
 			if (n.hasTitle())
 				dispatch(n.getTitle());
-			
+
 			dispatch(getFactory().createSyntheticEndTag(n, FRAMED_IMG));
 		}
 	}
-	
+
 	public void visit(WtLinkTitle n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtSemiPre n)
 	{
 		startTagR12(n);
-		
+
 		if (!n.isEmpty())
 			iterate(n);
-		
+
 		dispatch(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	public void visit(WtSemiPreLine n)
 	{
 		// Lines are dissolved which is why we have to save RTD info.
@@ -707,7 +751,7 @@ public final class TreeBuilderInBody
 		if (rtd != null)
 			iterateSemiPreRtdField(rtd.getField(1));
 	}
-	
+
 	private void iterateSemiPreRtdField(Object[] field)
 	{
 		//boolean sawFirstSpace = false;
@@ -734,63 +778,63 @@ public final class TreeBuilderInBody
 			}
 		}
 	}
-	
+
 	public void visit(WtTable n)
 	{
 		startTagR33(n);
-		
+
 		if (n.hasBody())
 		{
 			iterate(n.getBody());
-			
+
 			dispatch(getFactory().createSyntheticEndTag(n));
 		}
 	}
-	
+
 	public void visit(WtSection n)
 	{
 		// We treat the section title, body and the section itself as DIV
 		// However, when it comes to stack scopes we treat those elements
 		// like something impenetrable, like a PAGE.
-		
+
 		startTagR12(n);
 		WtSection section = (WtSection) tb.getCurrentNode();
-		
+
 		// -- title ----
-		
+
 		if (visitSectionHeading(n.getHeading()))
 		{
-			
+
 			if (tb.getCurrentNode() != section)
 				throw new InternalError("Stack of open elements corrupted!");
-			
+
 			// -- body ----
-			
+
 			boolean processedBody = false;
 			if (n.hasBody())
 			{
 				if (visitSectionBody(n.getBody()))
 				{
 					processedBody = true;
-					
+
 					if (tb.getCurrentNode() != section)
 						throw new InternalError("Stack of open elements corrupted!");
 				}
 			}
-			
+
 			// -- done ----
-			
+
 			if (processedBody)
 			{
 				// Almost: endTagR20(getFactory().synEndTag(section));
 				tb.generateImpliedEndTags();
-				
+
 				if (getNodeType(tb.getCurrentNode()) != SECTION)
 					tb.error(n, "12.2.5.4.7 - R20 (2)");
-				
+
 				// We don't want native wiki markup section to interrupt table cells
 				//tb.popFromStackUntilIncluding(SECTION);
-				
+
 				tb.popFromStackUntilExcluding(PAGE, SECTION, TABLE, TBODY, TFOOT, THEAD, TR, TD, TH, CAPTION);
 				if (tb.getCurrentNode() == section)
 					tb.popFromStack();
@@ -803,7 +847,7 @@ public final class TreeBuilderInBody
 				iterate(n.getBody());
 		}
 	}
-	
+
 	/**
 	 * @return True if the heading was fully processed. False if the heading was
 	 *         interrupted by another element that forced the heading to end
@@ -813,27 +857,27 @@ public final class TreeBuilderInBody
 	{
 		if (tb.isElementTypeInButtonScope(P))
 			dispatch(getFactory().createMissingRepairEndTag(P));
-		
+
 		// Almost: tb.insertAnHtmlElement(heading);
 		WtHeading newNode = (WtHeading) getFactory().createNewElement(heading);
 		((WtSection) tb.getCurrentNode()).setHeading(newNode);
 		tb.getStack().push(newNode);
 		// ---
-		
+
 		iterate(heading);
 		if (!tb.isInStackOfOpenElements(newNode))
 			//throw new InternalError("Section heading was removed from stack prematurely!");
 			return false;
-		
+
 		// Almost: endTagR20(getFactory().synEndTag(heading));
 		tb.generateImpliedEndTags();
-		
+
 		if (getNodeType(tb.getCurrentNode()) != SECTION_HEADING)
 			tb.error(heading, "12.2.5.4.7 - R20 (2)");
-		
+
 		// We don't want native wiki markup section to interrupt table cells
 		//tb.popFromStackUntilIncluding(SECTION_HEADING);
-		
+
 		tb.popFromStackUntilExcluding(PAGE, SECTION_HEADING, TABLE, TBODY, TFOOT, THEAD, TR, TD, TH, CAPTION);
 		if (tb.getCurrentNode() == newNode)
 		{
@@ -845,7 +889,7 @@ public final class TreeBuilderInBody
 			return false;
 		}
 	}
-	
+
 	/**
 	 * @return True if the body was fully processed. False if the body was
 	 *         interrupted by another element that forced the body to end
@@ -860,27 +904,27 @@ public final class TreeBuilderInBody
 			 * scope
 			 */
 			dispatch(getFactory().createMissingRepairEndTag(P));
-		
+
 		// Almost: tb.insertAnHtmlElement(heading);
 		WtBody newNode = (WtBody) getFactory().createNewElement(body);
 		((WtSection) tb.getCurrentNode()).setBody(newNode);
 		tb.getStack().push(newNode);
 		// ---
-		
+
 		iterate(body);
 		if (!tb.isInStackOfOpenElements(newNode))
 			//throw new InternalError("Section body was removed from stack prematurely!");
 			return false;
-		
+
 		// Almost: endTagR20(getFactory().synEndTag(body));
 		tb.generateImpliedEndTags();
-		
+
 		if (getNodeType(tb.getCurrentNode()) != SECTION_BODY)
 			tb.error(body, "12.2.5.4.7 - R20 (2)");
-		
+
 		// We don't want native wiki markup section to interrupt table cells
 		//tb.popFromStackUntilIncluding(SECTION_BODY);
-		
+
 		tb.popFromStackUntilExcluding(PAGE, SECTION_BODY, TABLE, TBODY, TFOOT, THEAD, TR, TD, TH, CAPTION);
 		if (tb.getCurrentNode() == newNode)
 		{
@@ -892,16 +936,16 @@ public final class TreeBuilderInBody
 			return false;
 		}
 	}
-	
+
 	public void visit(WtLctVarConv n)
 	{
 		startTagR28(n);
 		iterate(n.getText());
 		endTagR30(getFactory().createSyntheticEndTag(n));
 	}
-	
+
 	// =====================================================================
-	
+
 	/**
 	 * R01: Whitespace token
 	 * 
@@ -912,13 +956,13 @@ public final class TreeBuilderInBody
 		tb.reconstructActiveFormattingElements();
 		tb.insertText(text);
 	}
-	
+
 	private void tokenR01andR02(WtNode n)
 	{
 		tb.reconstructActiveFormattingElements();
 		tb.appendToCurrentNode(n);
 	}
-	
+
 	/**
 	 * R03: Comment token
 	 */
@@ -926,7 +970,7 @@ public final class TreeBuilderInBody
 	{
 		tb.appendToCurrentNode(n);
 	}
-	
+
 	/**
 	 * R12: A start tag whose tag name is one of: address, article, aside,
 	 * blockquote, center, details, dialog, dir, div, dl, fieldset, figcaption,
@@ -938,7 +982,7 @@ public final class TreeBuilderInBody
 			dispatch(getFactory().createMissingRepairEndTag(P));
 		tb.insertAnHtmlElement(n);
 	}
-	
+
 	/**
 	 * R13: A start tag whose tag name is one of: h1, h2, h3, h4, h5, h6
 	 */
@@ -953,7 +997,7 @@ public final class TreeBuilderInBody
 		}
 		tb.insertAnHtmlElement(n);
 	}
-	
+
 	/**
 	 * R16: A start tag whose tag name is li
 	 */
@@ -974,7 +1018,7 @@ public final class TreeBuilderInBody
 			dispatch(getFactory().createMissingRepairEndTag(P));
 		tb.insertAnHtmlElement(n);
 	}
-	
+
 	/**
 	 * R17: A start tag whose tag name is one of: dd, dt
 	 */
@@ -995,7 +1039,7 @@ public final class TreeBuilderInBody
 			dispatch(getFactory().createMissingRepairEndTag(P));
 		tb.insertAnHtmlElement(n);
 	}
-	
+
 	/**
 	 * R20: An end tag whose tag name is one of: address, article, aside,
 	 * blockquote, button, center, details, dialog, dir, div, dl, fieldset,
@@ -1019,17 +1063,17 @@ public final class TreeBuilderInBody
 			else
 			{
 				tb.generateImpliedEndTags();
-				
+
 				if (getNodeType(tb.getCurrentNode()) != elementType)
 					tb.error(n, "12.2.5.4.7 - R20 (2)");
-				
+
 				addRtDataOfEndTag(
 						tb.popFromStackUntilIncluding(elementType),
 						n);
 			}
 		}
 	}
-	
+
 	/**
 	 * Like R20 but for unknown tags.
 	 */
@@ -1043,16 +1087,16 @@ public final class TreeBuilderInBody
 		else
 		{
 			tb.generateImpliedEndTags();
-			
+
 			if (!TreeBuilder.isSameTag(tb.getCurrentNode(), n))
 				tb.error(n, "12.2.5.4.7 - R20 (2)");
-			
+
 			addRtDataOfEndTag(
 					tb.popFromStackUntilIncluding(n),
 					n);
 		}
 	}
-	
+
 	/**
 	 * R22: An end tag whose tag name is p
 	 */
@@ -1067,13 +1111,13 @@ public final class TreeBuilderInBody
 		else
 		{
 			tb.generateImpliedEndTags(P);
-			
+
 			if (getNodeType(tb.getCurrentNode()) != P)
 				tb.error(n, "12.2.5.4.7 - R22 (2)");
-			
+
 			WtNode p = tb.popFromStackUntilIncluding(P);
 			addRtDataOfEndTag(p, n);
-			
+
 			if (!WtNodeFlags.isParserRecognized(n))
 			{
 				/* Hannes: When a paragraph is implicitly closed in front of
@@ -1084,13 +1128,13 @@ public final class TreeBuilderInBody
 				 * closing tag will come after those newlines. We'll have to
 				 * move all but two newlines after the implicit closing node.
 				 */
-				
+
 				/* Newlines are converted to text nodes and text nodes are
 				 * merged. Therefore, if there is a newline at the end of the
 				 * paragraph, the last child of the paragraph must be a text node
 				 * which will contain the newlines.
 				 */
-				
+
 				int last = p.size() - 1;
 				if (last > 0)
 				{
@@ -1099,7 +1143,7 @@ public final class TreeBuilderInBody
 					{
 						WtText tn = (WtText) t;
 						String text = tn.getContent();
-						
+
 						// extract all but the first two newlines
 						int count = 0;
 						int lastNewline = -1;
@@ -1120,7 +1164,7 @@ public final class TreeBuilderInBody
 									break outer;
 							}
 						}
-						
+
 						// if we found newlines...
 						if (count > 0)
 						{
@@ -1136,7 +1180,7 @@ public final class TreeBuilderInBody
 								p.remove(last);
 								outerNewlines = text;
 							}
-							
+
 							// and insert them after paragraph
 							tokenR01andR02(getFactory().text(outerNewlines));
 						}
@@ -1145,7 +1189,7 @@ public final class TreeBuilderInBody
 			}
 		}
 	}
-	
+
 	/**
 	 * R23: An end tag whose tag name is li
 	 */
@@ -1159,16 +1203,16 @@ public final class TreeBuilderInBody
 		else
 		{
 			tb.generateImpliedEndTags(LI);
-			
+
 			if (getNodeType(tb.getCurrentNode()) != LI)
 				tb.error(n, "12.2.5.4.7 - R23 (2)");
-			
+
 			addRtDataOfEndTag(
 					tb.popFromStackUntilIncluding(LI),
 					n);
 		}
 	}
-	
+
 	/**
 	 * R24: An end tag whose tag name is one of: dd, dt
 	 */
@@ -1183,16 +1227,16 @@ public final class TreeBuilderInBody
 		else
 		{
 			tb.generateImpliedEndTags(nodeType);
-			
+
 			if (getNodeType(tb.getCurrentNode()) != nodeType)
 				tb.error(n, "12.2.5.4.7 - R24 (2)");
-			
+
 			addRtDataOfEndTag(
 					tb.popFromStackUntilIncluding(nodeType),
 					n);
 		}
 	}
-	
+
 	/**
 	 * R25: An end tag whose tag name is one of: h1, h2, h3, h4, h5, h6
 	 */
@@ -1206,16 +1250,16 @@ public final class TreeBuilderInBody
 		else
 		{
 			tb.generateImpliedEndTags();
-			
+
 			if (getNodeType(tb.getCurrentNode()) != getNodeType(n))
 				tb.error(n, "12.2.5.4.7 - R25 (2)");
-			
+
 			addRtDataOfEndTag(
 					tb.popFromStackUntilIncluding(H1, H2, H3, H4, H5, H6),
 					n);
 		}
 	}
-	
+
 	/**
 	 * R27: A start tag whose tag name is "a"
 	 */
@@ -1226,29 +1270,29 @@ public final class TreeBuilderInBody
 				forceCloseLink(n, EXT_LINK) ||
 				forceCloseLink(n, URL))
 			/* do nothing */;
-		
+
 		tb.reconstructActiveFormattingElements();
-		
+
 		WtNode a = tb.insertAnHtmlElement(n);
 		tb.pushActiveFormattingElements(a);
 	}
-	
+
 	private boolean forceCloseLink(WtNode n, ElementType type)
 	{
 		WtNode active = tb.getActiveFormattingElement(type);
 		if (active != null)
 		{
 			tb.error(n, "12.2.5.4.7 - R27");
-			
+
 			dispatch(getFactory().createMissingRepairEndTag(type));
-			
+
 			// Remove if not already done 
 			// (can happen if not in table scope)
 			if (tb.isInStackOfOpenElements(active))
 				tb.removeFromStack(active);
 			if (tb.isInListOfActiveFormattingElements(active))
 				tb.removeFromActiveFormattingElements(active);
-			
+
 			return true;
 		}
 		else
@@ -1256,7 +1300,7 @@ public final class TreeBuilderInBody
 			return false;
 		}
 	}
-	
+
 	/**
 	 * R28: A start tag whose tag name is one of: b, big, code, em, font, i, s,
 	 * small, strike, strong, tt, u
@@ -1264,11 +1308,11 @@ public final class TreeBuilderInBody
 	private void startTagR28(WtNode n)
 	{
 		tb.reconstructActiveFormattingElements();
-		
+
 		WtNode e = tb.insertAnHtmlElement(n);
 		tb.pushActiveFormattingElements(e);
 	}
-	
+
 	/**
 	 * R30: An end tag whose tag name is one of: a, b, big, code, em, font, i,
 	 * nobr, s, small, strike, strong, tt, u
@@ -1279,7 +1323,7 @@ public final class TreeBuilderInBody
 		for (int i = 0; i < 8;)
 		{
 			++i;
-			
+
 			WtNode fe = tb.getActiveFormattingElement(nodeType);
 			if (fe == null)
 			{
@@ -1304,9 +1348,9 @@ public final class TreeBuilderInBody
 			{
 				tb.error(n, "12.2.5.4.7 - R30 (3)");
 			}
-			
+
 			ListIterator<WtNode> stackIter = tb.getStack().listIterator();
-			
+
 			WtNode commonAncestor = null;
 			while (stackIter.hasNext())
 			{
@@ -1319,10 +1363,10 @@ public final class TreeBuilderInBody
 					break;
 				}
 			}
-			
+
 			if (commonAncestor == null)
 				throw new InternalError();
-			
+
 			WtNode furthestBlock = null;
 			WtNode furthestBlockParent = fe;
 			while (stackIter.hasPrevious())
@@ -1335,19 +1379,19 @@ public final class TreeBuilderInBody
 				}
 				furthestBlockParent = e;
 			}
-			
+
 			if (furthestBlock == null)
 			{
 				tb.popFromStackUntilIncludingRef(fe);
 				addRtDataOfEndTag(fe, n);
-				
+
 				tb.removeFromActiveFormattingElements(fe);
 				return;
 			}
-			
+
 			// Step 8
 			tb.placeBookmarkAfter(fe);
-			
+
 			// Step 9
 			// Note: stackIter last returned furthestBlock after call to 
 			// previous. Make sure the next next() call will return the node 
@@ -1359,10 +1403,10 @@ public final class TreeBuilderInBody
 			inner: for (int j = 0; j < 3;)
 			{
 				++j;
-				
+
 				// Step 9.4
 				node = stackIter.next();
-				
+
 				// Step 9.5
 				if (!tb.isInListOfActiveFormattingElements(node))
 				{
@@ -1376,21 +1420,21 @@ public final class TreeBuilderInBody
 				{
 					break inner;
 				}
-				
+
 				WtNode replacement = getFactory().createRepairFormattingElement(node);
 				tb.replaceInListOfActiveFormattingElements(node, replacement);
 				stackIter.set(replacement);
 				node = replacement;
-				
+
 				// Step 9.8
 				if (lastNode == furthestBlock)
 					tb.moveBookmarkAfter(replacement);
-				
+
 				// Step 9.9
 				if (lastNodeParent != null)
 					tb.removeFromParent(lastNode, lastNodeParent);
 				tb.getContentOfNodeForModification(node).add(lastNode);
-				
+
 				// Step 9.10
 				lastNode = node;
 				// Node is the replacement node that has just been created. 
@@ -1399,7 +1443,7 @@ public final class TreeBuilderInBody
 				// to null.
 				lastNodeParent = null;
 			}
-			
+
 			// Step 10
 			if (isNodeOneOf(commonAncestor, TABLE, TBODY, TFOOT, THEAD, TR))
 			{
@@ -1413,22 +1457,22 @@ public final class TreeBuilderInBody
 					tb.removeFromParent(lastNode, lastNodeParent);
 				tb.getContentOfNodeForModification(commonAncestor).add(lastNode);
 			}
-			
+
 			WtNode adopter = getFactory().createAdopterElement(fe);
-			
+
 			WtNodeList contentOfFb = tb.getContentOfNodeForModification(furthestBlock);
 			tb.getContentOfNodeForModification(adopter).addAll(contentOfFb);
 			contentOfFb.clear();
-			
+
 			contentOfFb.add(adopter);
-			
+
 			tb.replaceBookmarkWithAndRemove(adopter, fe);
-			
+
 			tb.removeFromStack(fe);
 			tb.insertOnStackBelow(furthestBlock, adopter);
 		}
 	}
-	
+
 	/**
 	 * R33: A start tag whose tag name is table
 	 */
@@ -1437,12 +1481,12 @@ public final class TreeBuilderInBody
 		// We don't support quirks mode!
 		if (tb.isElementTypeInButtonScope(P))
 			dispatch(getFactory().createMissingRepairEndTag(P));
-		
+
 		tb.insertAnHtmlElement(n);
-		
+
 		tb.switchInsertionMode(InsertionMode.IN_TABLE);
 	}
-	
+
 	/**
 	 * R34: A start tag whose tag name is one of: area, br, embed, img, keygen,
 	 * wbr
@@ -1450,12 +1494,12 @@ public final class TreeBuilderInBody
 	private void startTagR34(WtNode n)
 	{
 		tb.reconstructActiveFormattingElements();
-		
+
 		tb.insertAnHtmlElement(n);
-		
+
 		tb.popFromStack();
 	}
-	
+
 	/**
 	 * R37: A start tag whose tag name is hr
 	 */
@@ -1463,12 +1507,12 @@ public final class TreeBuilderInBody
 	{
 		if (tb.isElementTypeInButtonScope(P))
 			dispatch(getFactory().createMissingRepairEndTag(P));
-		
+
 		tb.insertAnHtmlElement(n);
-		
+
 		tb.popFromStack();
 	}
-	
+
 	/**
 	 * R47: An end tag whose tag name is br
 	 */
@@ -1478,7 +1522,7 @@ public final class TreeBuilderInBody
 		// This is an exception for which the create() method knows a special rule
 		handleStartTag(getFactory().createElementRepair(n));
 	}
-	
+
 	/**
 	 * R50: A start tag whose tag name is one of: caption, col, colgroup, frame,
 	 * head, tbody, td, tfoot, th, thead, tr
@@ -1488,20 +1532,20 @@ public final class TreeBuilderInBody
 		tb.error(n, "12.2.5.4.7 - R50");
 		tb.ignore(n);
 	}
-	
+
 	/**
 	 * R51: Any other start tag
 	 */
 	private void startTagR51(WtNode n) throws InternalError
 	{
 		tb.reconstructActiveFormattingElements();
-		
+
 		tb.insertAnHtmlElement(n);
-		
+
 		if (n.getNodeType() == NT_XML_EMPTY_TAG)
 			tb.popFromStack();
 	}
-	
+
 	/**
 	 * R41: Any other end tag
 	 */
@@ -1512,10 +1556,10 @@ public final class TreeBuilderInBody
 			if (TreeBuilder.isSameTag(node, n))
 			{
 				tb.generateImpliedEndTags(n);
-				
+
 				if (!TreeBuilder.isSameTag(tb.getCurrentNode(), n))
 					tb.error(n, "12.2.5.4.7 - R52 (1)");
-				
+
 				tb.popFromStackUntilIncludingRef(node);
 				addRtDataOfEndTag(node, n);
 				return;

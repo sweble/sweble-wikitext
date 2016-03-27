@@ -32,44 +32,44 @@ public class DefinitionListTermImpl
 			Wom3DefinitionListTerm
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private ArrayList<Wom3DefinitionListDef> defs = new ArrayList<Wom3DefinitionListDef>();
-	
+
 	// =========================================================================
-	
+
 	public DefinitionListTermImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "dt";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getDefNum()
 	{
 		return defs.size();
 	}
-	
+
 	@Override
 	public Collection<Wom3DefinitionListDef> getDefs()
 	{
 		return Collections.unmodifiableCollection(defs);
 	}
-	
+
 	@Override
 	public Wom3DefinitionListDef getDef(int index) throws IndexOutOfBoundsException
 	{
 		return defs.get(index);
 	}
-	
+
 	@Override
 	public Wom3DefinitionListDef replaceDef(int index, Wom3DefinitionListDef def) throws IndexOutOfBoundsException
 	{
@@ -87,7 +87,7 @@ public class DefinitionListTermImpl
 			return defs.set(index, def);
 		}
 	}
-	
+
 	@Override
 	public Wom3DefinitionListDef removeDef(int index) throws IndexOutOfBoundsException
 	{
@@ -105,7 +105,7 @@ public class DefinitionListTermImpl
 			return defs.remove(index);
 		}
 	}
-	
+
 	@Override
 	public void appendDef(Wom3DefinitionListDef def)
 	{
@@ -122,7 +122,7 @@ public class DefinitionListTermImpl
 			{
 				before = this.getNextSibling();
 			}
-			
+
 			if (before == null)
 			{
 				// Is expected to assertWritable();
@@ -140,7 +140,7 @@ public class DefinitionListTermImpl
 			defs.add(def);
 		}
 	}
-	
+
 	@Override
 	public void insertDef(int beforeIndex, Wom3DefinitionListDef def) throws IndexOutOfBoundsException
 	{
@@ -167,9 +167,9 @@ public class DefinitionListTermImpl
 			defs.add(beforeIndex, def);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void defRemoved(Wom3DefinitionListDef removed)
 	{
 		for (int i = 0; i < defs.size(); ++i)
@@ -182,7 +182,7 @@ public class DefinitionListTermImpl
 		}
 		throw new InternalError();
 	}
-	
+
 	protected void defAdded(Backbone prev, Wom3DefinitionListDef added)
 	{
 		int i = 0;
@@ -208,12 +208,12 @@ public class DefinitionListTermImpl
 			p = p.getPreviousSibling();
 		}
 	}
-	
+
 	protected void appendAll(Collection<Wom3DefinitionListDef> defs)
 	{
 		this.defs.addAll(defs);
 	}
-	
+
 	protected void transfer(
 			Backbone sFirst,
 			Backbone sLast,
@@ -237,7 +237,7 @@ public class DefinitionListTermImpl
 		// Sanity check
 		if (d != sFirst)
 			throw new InternalError();
-		
+
 		// Do it!
 		other.appendAll(defs.subList(i, defs.size()));
 		while (defs.size() > i)

@@ -45,7 +45,7 @@ public class EngNowiki
 			EngNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -53,14 +53,14 @@ public class EngNowiki
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected EngNowiki(String content)
 	{
 		super(content);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int getNodeType()
 	{

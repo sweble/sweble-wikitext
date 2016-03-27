@@ -17,423 +17,220 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <!-- Parent POM: Sweble -->
+	<parent>
+		<groupId>org.sweble.F00</groupId>
+		<artifactId>F00</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
 
-  <parent>
-    <groupId>org.sweble</groupId>
-    <artifactId>sweble</artifactId>
-    <version>2.1.1-SNAPSHOT</version>
-    <relativePath>../sweble/pom.xml</relativePath>
-  </parent>
+	<groupId>org.sweble.wikitext</groupId>
+	<artifactId>sweble-wikitext</artifactId>
+	<packaging>pom</packaging>
+	<name>Sweble Wikitext Components</name>
+	<inceptionYear>2009</inceptionYear>
+	<description>
+		The Sweble Wikitext Components module provides a parser for MediaWiki's
+		wikitext and an engine trying to emulate the behavior of a MediaWiki.
+	</description>
 
-  <!-- This POM: Sweble Wikitext Components -->
+	<modules>
+		<module>swc-parser-lazy</module>
+		<module>swc-engine</module>
+		<module>swc-dumpreader</module>
+		<module>swc-article-cruncher</module>
 
-  <groupId>org.sweble.wikitext</groupId>
-  <artifactId>sweble-wikitext</artifactId>
-  <!-- Same version as parent -->
-  <packaging>pom</packaging>
+		<!-- Examples -->
+		<module>swc-example-basic</module>
+		<module>swc-example-dumpcruncher</module>
+		<module>swc-example-serialization</module>
+		<module>swc-example-xpath</module>
+	</modules>
 
-  <name>Sweble Wikitext Components</name>
-  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext</url>
-  <inceptionYear>2009</inceptionYear>
-  <description>
-    The Sweble Wikitext Components module provides a parser for MediaWiki's
-    wikitext and an engine trying to emulate the behavior of a MediaWiki.
-  </description>
+	<!-- =================================================================== -->
+	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
+	<!-- =================================================================== -->
 
-  <!-- ==[ Submodules ]===================================================== -->
+	<properties>
+		<F00.path>../</F00.path>
 
-  <modules>
-    <module>swc-parser-lazy</module>
-    <module>swc-engine</module>
-    <module>swc-dumpreader</module>
-    <module>swc-article-cruncher</module>
+		<!-- Plugin dependency versions -->
+		<maven-jaxb2-plugin.version>0.8.0</maven-jaxb2-plugin.version>
+		<maven-jflex-plugin.version>1.4.3</maven-jflex-plugin.version>
+		<maven-rats-plugin.version>1.3.0.1</maven-rats-plugin.version>
 
-    <!-- Examples -->
-    <module>swc-example-basic</module>
-    <module>swc-example-dumpcruncher</module>
-    <module>swc-example-serialization</module>
-    <module>swc-example-xpath</module>
-  </modules>
+		<jopt-simple.version>4.3</jopt-simple.version>
+		<rats-runtime.version>1.15.0</rats-runtime.version>
+		<xstream.version>1.4.8</xstream.version>
+	</properties>
 
-  <!-- ==[ Properties ]===================================================== -->
+	<!-- =================================================================== -->
+	<!-- Dependency Management - Dependency Management - Dependency Manageme -->
+	<!-- =================================================================== -->
 
-  <properties>
+	<dependencyManagement>
+		<dependencies>
 
-    <sweble-wikitext.basedir>${project.basedir}</sweble-wikitext.basedir>
-    <sweble-wikitext.etc>${sweble-wikitext.basedir}/etc</sweble-wikitext.etc>
+			<!-- JOpt Simple -->
+			<dependency>
+				<groupId>net.sf.jopt-simple</groupId>
+				<artifactId>jopt-simple</artifactId>
+				<version>${jopt-simple.version}</version>
+			</dependency>
 
-    <!-- Dependency versions -->
-    <version.dep.jaxb-impl>2.2.5</version.dep.jaxb-impl>
-    <version.dep.jsoup>1.6.3</version.dep.jsoup>
-    <version.dep.xerces>2.10.0</version.dep.xerces>
-    <version.dep.xml-resolver>1.2</version.dep.xml-resolver>
+			<!-- Rats! -->
+			<dependency>
+				<groupId>xtc</groupId>
+				<artifactId>rats-runtime</artifactId>
+				<version>${rats-runtime.version}</version>
+			</dependency>
 
-    <!-- Plugin dependency versions -->
-    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
-    <version.plugin.jflex>1.4.3</version.plugin.jflex>
-    <version.plugin.rats>1.3.0.1</version.plugin.rats>
+			<!-- XStream -->
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>${xstream.version}</version>
+			</dependency>
 
-  </properties>
+		</dependencies>
+	</dependencyManagement>
 
-  <!-- ==[ Dependency Management ]========================================== -->
+	<build>
 
-  <dependencyManagement>
-    <dependencies>
+		<!-- =============================================================== -->
+		<!-- Plugin Management - Plugin Management - Plugin Management - Plu -->
+		<!-- =============================================================== -->
 
-      <!-- JAXB Reference Implementation -->
-      <dependency>
-        <groupId>com.sun.xml.bind</groupId>
-        <artifactId>jaxb-impl</artifactId>
-        <version>${version.dep.jaxb-impl}</version>
-      </dependency>
+		<pluginManagement>
+			<plugins>
+		
+				<!-- Check and format license headers -->
+				<plugin>
+					<groupId>com.mycila</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<configuration>
+						<mapping>
+							<rats>JAVADOC_STYLE</rats>
+							<jflex>JAVADOC_STYLE</jflex>
+							<txt>SCRIPT_STYLE</txt>
+						</mapping>
+					</configuration>
+				</plugin>
 
-      <!-- jsoup: Java HTML Parser -->
-      <dependency>
-        <groupId>org.jsoup</groupId>
-        <artifactId>jsoup</artifactId>
-        <version>${version.dep.jsoup}</version>
-      </dependency>
+				<!-- JAXB Maven Plugin -->
+				<plugin>
+					<groupId>org.jvnet.jaxb2.maven2</groupId>
+					<artifactId>maven-jaxb2-plugin</artifactId>
+					<version>${maven-jaxb2-plugin.version}</version>
+				</plugin>
 
-      <!-- Apache Xerces -->
-      <dependency>
-        <groupId>xerces</groupId>
-        <artifactId>xercesImpl</artifactId>
-        <version>${version.dep.xerces}</version>
-      </dependency>
-      <dependency>
-        <groupId>xml-resolver</groupId>
-        <artifactId>xml-resolver</artifactId>
-        <version>${version.dep.xml-resolver}</version>
-      </dependency>
+				<!-- Maven JFlex Plugin -->
+				<plugin>
+					<groupId>de.jflex</groupId>
+					<artifactId>maven-jflex-plugin</artifactId>
+					<version>${maven-jflex-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>jflex-generate</id>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 
-      <!-- Utils -->
-      <dependency>
-        <groupId>de.fau.cs.osr.utils</groupId>
-        <artifactId>utils</artifactId>
-        <version>2.1.1-SNAPSHOT</version>
-      </dependency>
+				<!-- Maven Rats Plugin -->
+				<plugin>
+					<groupId>de.fau.cs.osr.maven.plugins</groupId>
+					<artifactId>maven-rats-plugin</artifactId>
+					<version>${maven-rats-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>rats-generate</id>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 
-      <!-- Parser Toolkit - Common -->
-      <dependency>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-common</artifactId>
-        <version>2.1.1-SNAPSHOT</version>
-      </dependency>
+				<!--
+					This plugin's configuration is used to store Eclipse m2e 
+					settings only. It has no influence on the Maven build 
+					itself.
+				-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.google.code.maven-replacer-plugin</groupId>
+										<artifactId>maven-replacer-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>replace</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>de.fau.cs.osr.maven.plugins</groupId>
+										<artifactId>maven-rats-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>de.jflex</groupId>
+										<artifactId>maven-jflex-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
 
-      <!-- Parser Toolkit - XML Tools -->
-      <dependency>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-xml-tools</artifactId>
-        <version>2.1.1-SNAPSHOT</version>
-      </dependency>
+			</plugins>
+		</pluginManagement>
+	</build>
 
-      <!-- Parser Toolkit - JSON Tools -->
-      <dependency>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-json-tools</artifactId>
-        <version>2.1.1-SNAPSHOT</version>
-      </dependency>
+	<!-- =================================================================== -->
+	<!-- More Project Information - More Project Information - More Project  -->
+	<!-- =================================================================== -->
 
-      <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
-      <dependency>
-        <groupId>org.sweble.wikitext</groupId>
-        <artifactId>swc-parser-lazy</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-
-      <!-- Sweble Wikitext Components - Engine -->
-      <dependency>
-        <groupId>org.sweble.wikitext</groupId>
-        <artifactId>swc-engine</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-
-      <!-- Sweble Wikitext Components - Dump Reader -->
-      <dependency>
-        <groupId>org.sweble.wikitext</groupId>
-        <artifactId>swc-dumpreader</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-
-      <!-- Sweble Wikitext Components - Article Cruncher -->
-      <dependency>
-        <groupId>org.sweble.wikitext</groupId>
-        <artifactId>swc-article-cruncher</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-
-    </dependencies>
-  </dependencyManagement>
-
-  <build>
-
-    <!-- ==[ Resource Configuration ]======================================= -->
-
-    <!--
-      see parent: <resources>
-    -->
-
-    <!-- ==[ Plugin Configuration ]========================================= -->
-
-    <plugins>
-
-      <!-- Check and format license headers -->
-      <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <configuration>
-          <header>${sweble-wikitext.etc}/license-header.txt</header>
-          <validHeaders>
-            <validHeader>${sweble-wikitext.etc}/license-header-no-copyright.txt</validHeader>
-          </validHeaders>
-          <headerDefinitions>
-            <headerDefinition>${sweble-wikitext.etc}/license-header-apt-style.xml</headerDefinition>
-          </headerDefinitions>
-          <mapping>
-             <rats>JAVADOC_STYLE</rats>
-             <jflex>JAVADOC_STYLE</jflex>
-             <apt>PTK_APT_STYLE</apt>
-             <txt>SCRIPT_STYLE</txt>
-          </mapping>
-          <strictCheck>true</strictCheck>
-          <failIfMissing>true</failIfMissing>
-          <excludes>
-            <exclude>**/*.log</exclude>
-            <exclude>**/.gitignore</exclude>
-            <exclude>etc/license-header-no-copyright.txt</exclude>
-            <exclude>LICENSE</exclude>
-            <exclude>NOTICE</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-
-      <!-- Make Git information available as properties -->
-      <plugin>
-        <groupId>pl.project13.maven</groupId>
-        <artifactId>git-commit-id-plugin</artifactId>
-      </plugin>
-
-    </plugins>
-
-    <!-- ==[ Plugin Management ]============================================ -->
-
-    <pluginManagement>
-      <plugins>
-
-        <!-- JAXB Maven Plugin -->
-        <plugin>
-          <groupId>org.jvnet.jaxb2.maven2</groupId>
-          <artifactId>maven-jaxb2-plugin</artifactId>
-          <version>${version.plugin.jaxb}</version>
-          <executions>
-            <execution>
-              <id>schema-to-java</id>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Maven JFlex Plugin -->
-        <plugin>
-          <groupId>de.jflex</groupId>
-          <artifactId>maven-jflex-plugin</artifactId>
-          <version>${version.plugin.jflex}</version>
-          <executions>
-            <execution>
-              <id>jflex-generate</id>
-              <phase>generate-sources</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Maven Rats Plugin -->
-        <plugin>
-          <groupId>de.fau.cs.osr.maven.plugins</groupId>
-          <artifactId>maven-rats-plugin</artifactId>
-          <version>${version.plugin.rats}</version>
-          <executions>
-            <execution>
-              <id>rats-generate</id>
-              <phase>generate-sources</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- This is not a real plugin. Since it is listed under 
-             pluginManagement Maven will not try to resolve it, however, the 
-             m2e will find it and handle the respective plugins as specified 
-             here -->
-        <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>1.0.0</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>com.google.code.maven-replacer-plugin</groupId>
-                    <artifactId>maven-replacer-plugin</artifactId>
-                    <versionRange>[1.0.0,)</versionRange>
-                    <goals>
-                      <goal>replace</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <execute />
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>de.fau.cs.osr.maven.plugins</groupId>
-                    <artifactId>maven-rats-plugin</artifactId>
-                    <versionRange>[1.0.0,)</versionRange>
-                    <goals>
-                      <goal>generate</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <execute />
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>de.jflex</groupId>
-                    <artifactId>maven-jflex-plugin</artifactId>
-                    <versionRange>[1.0.0,)</versionRange>
-                    <goals>
-                      <goal>generate</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <execute />
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
-        </plugin>
-
-      </plugins>
-    </pluginManagement>
-
-    <!-- ==[ Build Element Set ]============================================ -->
-
-    <!--
-      see parent: <sourceDirectory>
-                  <scriptSourceDirectory>
-                  <testSourceDirectory>
-                  <outputDirectory>
-                  <testOutputDirectory>
-                  <extensions>
-    -->
-
-  </build>
-
-  <!-- ==[ Reporting ]====================================================== -->
-
-  <!--
-    see parent: <reporting>
-  -->
-
-  <!-- ==[ More Project Information ]======================================= -->
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <!--
-    see parent: <organization>
-  -->
-
-  <developers>
-    <developer>
-      <id>driehle</id>
-      <name>Dirk Riehle</name>
-      <email>dirk.riehle@fau.de</email>
-      <roles>
-        <role>Director</role>
-      </roles>
-      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
-      <timezone>+1</timezone>
-    </developer>
-    <developer>
-      <id>hdohrn</id>
-      <name>Hannes Dohrn</name>
-      <email>hannes.dohrn@fau.de</email>
-      <roles>
-        <role>Developer</role>
-      </roles>
-      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
-      <timezone>+1</timezone>
-    </developer>
-  </developers>
-
-  <contributors>
-    <contributor>
-      <name>Daniel Naber</name>
-      <email>naber@danielnaber.de</email>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </contributor>
-  </contributors>
-
-  <!-- ==[ Environment Settings ]=========================================== -->
-
-  <!--
-    see parent: <issueManagement>
-                <ciManagement>
-                <mailingLists>
-  -->
-
-  <scm>
-    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
-    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
-    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <!--
-    see parent: <distributionManagement>
-  -->
-
-  <!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </snapshots>
-      <id>osr-public-repo</id>
-      <name>OSR Public Repository</name>
-      <url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
-    </repository>
-  </repositories>
-
-  <!-- ==[ Profiles ]======================================================= -->
-
-  <profiles>
-  </profiles>
-
+	<contributors>
+		<contributor>
+			<name>Daniel Naber</name>
+			<email>naber@danielnaber.de</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</contributor>
+	</contributors>
 </project>

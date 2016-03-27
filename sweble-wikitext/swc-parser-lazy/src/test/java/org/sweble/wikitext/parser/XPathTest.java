@@ -21,52 +21,51 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 
-import junit.framework.Assert;
-
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
+import org.junit.Assert;
 import org.junit.Test;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.NonExpandingParser;
 import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
-import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;
-import de.fau.cs.osr.utils.FileUtils;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.FileTools;
+import de.fau.cs.osr.utils.StringTools;
+import xtc.parser.ParseException;
 
 public class XPathTest
 {
 	private static final String PATH = "/nopkg-xpath";
-	
+
 	private static final boolean WARNINGS_ENABLED = false;
-	
+
 	private static final boolean GATHER_RTD = true;
-	
+
 	private static final boolean AUTO_CORRECT = false;
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testFrance() throws IOException, ParseException
 	{
 		String title = "raw-France";
-		
+
 		WtNode ast = parse(title);
-		
+
 		JXPathContext context = JXPathContext.newContext(ast);
-		
+
 		StringBuilder b = new StringBuilder();
-		
+
 		doQuery(context, b, "/WtParagraph[3]");
-		
+
 		doQuery(context, b, "(//WtSection[@level=3])[1]");
-		
+
 		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox Country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
-		
-		String actual = FileUtils.lineEndToUnix(b.toString());
-		
+
+		String actual = FileTools.lineEndToUnix(b.toString());
+
 		String expected = null;
 		try
 		{
@@ -75,27 +74,27 @@ public class XPathTest
 		catch (IOException e)
 		{
 		}
-		
+
 		Assert.assertEquals(expected, actual);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testGermany() throws IOException, ParseException
 	{
 		String title = "raw-Germany";
-		
+
 		WtNode ast = parse(title);
-		
+
 		JXPathContext context = JXPathContext.newContext(ast);
-		
+
 		StringBuilder b = new StringBuilder();
-		
+
 		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
-		
-		String actual = FileUtils.lineEndToUnix(b.toString());
-		
+
+		String actual = FileTools.lineEndToUnix(b.toString());
+
 		String expected = null;
 		try
 		{
@@ -104,68 +103,68 @@ public class XPathTest
 		catch (IOException e)
 		{
 		}
-		
+
 		Assert.assertEquals(expected, actual);
 	}
-	
+
 	// =========================================================================
-	
+
 	private final NonExpandingParser parser;
-	
+
 	public XPathTest()
 	{
 		JXPathContextReferenceImpl.addNodePointerFactory(
 				new AstNodePointerFactory());
-		
+
 		parser = new NonExpandingParser(WARNINGS_ENABLED, GATHER_RTD, AUTO_CORRECT);
 	}
-	
+
 	// =========================================================================
-	
+
 	private WtNode parse(String title) throws IOException, ParseException
 	{
 		WtNode ast = parser.parseArticle(
 				load(PATH + "/wikitext/" + title + ".wikitext"),
 				title);
-		
+
 		return ast;
 	}
-	
+
 	private String load(String path) throws IOException
 	{
 		InputStream in = getClass().getResourceAsStream(path);
 		if (in == null)
 			return null;
-		return FileUtils.lineEndToUnix(
+		return FileTools.lineEndToUnix(
 				IOUtils.toString(in, "UTF-8"));
 	}
-	
+
 	private void doQuery(
 			JXPathContext context,
 			StringBuilder b,
 			final String query)
 	{
-		b.append(StringUtils.strrep('-', 80));
+		b.append(StringTools.strrep('-', 80));
 		b.append("\n  ");
 		b.append(query);
 		b.append('\n');
-		b.append(StringUtils.strrep('-', 80));
+		b.append(StringTools.strrep('-', 80));
 		b.append('\n');
-		
+
 		int j = 1;
 		for (Iterator<?> i = context.iterate(query); i.hasNext();)
 		{
 			if (j > 1)
 			{
-				b.append(StringUtils.strrep('-', 80));
+				b.append(StringTools.strrep('-', 80));
 				b.append('\n');
 			}
 			b.append(WtAstPrinter.print((WtNode) i.next()));
 			b.append('\n');
 			++j;
 		}
-		
-		b.append(StringUtils.strrep('=', 80));
+
+		b.append(StringTools.strrep('=', 80));
 		b.append('\n');
 	}
 }

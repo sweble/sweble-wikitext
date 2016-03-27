@@ -18,43 +18,41 @@ package org.sweble.wikitext.example;
 
 import java.io.IOException;
 
-import org.sweble.wikitext.example.SerializationMethod;
-import org.sweble.wikitext.example.Serializer;
-
 public class ProfileSerialization
 {
 	private static final String ARTICLE = "raw-Germany.wikitext";
-	
+
 	public static void main(String[] args) throws IOException, Exception
 	{
 		Serializer serializer = new Serializer(
 				ProfileSerialization.class.getResourceAsStream("/" + ARTICLE),
-				ARTICLE);
-		
+				ARTICLE,
+				"UTF8");
+
 		// Parsing options
 		serializer.setParserAutoCorrectEnabled(false);
 		serializer.setParserWarningsEnabled(false);
 		serializer.setParserRtdEnabled(true);
-		
+
 		// Postprocessing options
 		serializer.setPpSimplifyAst(true);
 		serializer.setPpStripLocations(false);
 		serializer.setPpStripAllAttributes(false);
 		serializer.setPpStripRtdAttributes(false);
-		
+
 		// Be quiet, don't do timings
 		serializer.setQuiet(false);
-		
+
 		// =====================================================================
-		
+
 		serializer.setTimeParsing(true);
 		serializer.setTimeSerialization(false);
 		serializer.setTimeDeserialization(false);
 		serializer.setTimeCompression(false);
-		
+
 		//serializer.setMeasurementIterations(measurementIterations);
 		//serializer.setWarumpIterations(warumpIterations);
-		
+
 		serializer.roundTrip(SerializationMethod.JAVA);
 		//serializer.roundTrip(SerializationMethod.JSON);
 		//serializer.roundTrip(SerializationMethod.XML);

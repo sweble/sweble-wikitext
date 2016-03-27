@@ -25,9 +25,9 @@ import org.sweble.wom3.Wom3Unit;
 public class HorizontalRuleTest
 {
 	private final Wom3ElementNode n = TestHelperDoc.genElem("hr");
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testAlignAttribute() throws Exception
 	{
@@ -35,37 +35,37 @@ public class HorizontalRuleTest
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.LEFT, "left");
 		TestHelperAttribute.testAttribute(this.n, "align", "getAlign", "setAlign", Wom3HorizAlign.RIGHT, "right");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testAlignAttributeDoesNotAllowChar() throws Exception
 	{
 		n.setAttribute("align", "char");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testAlignAttributeDoesNotAllowJustify() throws Exception
 	{
 		n.setAttribute("align", "justify");
 	}
-	
+
 	@Test
 	public void testNoshadeAttribute() throws Exception
 	{
 		TestHelperAttribute.testBooleanAttribute(n, "noshade", "isNoshade", "setNoshade");
 	}
-	
+
 	@Test
 	public void testSizeAttribute() throws Exception
 	{
 		TestHelperAttribute.testAttribute(this.n, "size", "getSize", "setSize", 100, "100");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testNegativeSizeThrows() throws Exception
 	{
 		n.setAttribute("size", "-10");
 	}
-	
+
 	@Test
 	public void testWidthAttribute() throws Exception
 	{
@@ -80,7 +80,7 @@ public class HorizontalRuleTest
 		TestHelperAttribute.testAttribute(this.n, "width", "getWidth", "setWidth",
 				new ValueWithUnitImpl(Wom3Unit.PIXELS, -100), "-100");
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testInvalidWidthThrows() throws Exception
 	{

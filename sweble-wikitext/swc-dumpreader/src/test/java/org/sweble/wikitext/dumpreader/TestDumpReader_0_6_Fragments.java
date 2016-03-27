@@ -17,7 +17,10 @@
 
 package org.sweble.wikitext.dumpreader;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,44 +42,44 @@ import org.xml.sax.SAXException;
 public class TestDumpReader_0_6_Fragments
 {
 	private static final ExportSchemaVersion EXPORT_VERSION = ExportSchemaVersion.V0_6;
-	
+
 	private static final String PAGE_INPUT = "/input-0.6-page.xml";
-	
+
 	private static final String REVISION_INPUT = "/input-0.6-revision.xml";
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testPageImportNoSchema() throws JAXBException, SAXException, IOException
 	{
 		DumpUnmarshaller dr = new DumpUnmarshaller(EXPORT_VERSION, false);
 		compare(unmarshalPage(dr));
 	}
-	
+
 	@Test
 	public void testPageImportWithSchema() throws JAXBException, SAXException, IOException
 	{
 		DumpUnmarshaller dr = new DumpUnmarshaller(EXPORT_VERSION, true);
 		compare(unmarshalPage(dr));
 	}
-	
+
 	private void compare(Page page)
 	{
 		assertEquals("TITLE", page.getTitle());
 		assertEquals(BigInteger.valueOf(10), page.getId());
 		assertTrue(page.isRedirect());
 		assertEquals(BigInteger.valueOf(0), page.getNamespace());
-		
+
 		List<Revision> items = page.getRevisions();
 		assertEquals(1, items.size());
 		compare(items.get(0));
 	}
-	
+
 	private Page unmarshalPage(DumpUnmarshaller dr) throws JAXBException, IOException
 	{
 		InputStream xmlInputStream = getClass().getResourceAsStream(PAGE_INPUT);
 		Source source = new StreamSource(xmlInputStream);
-		
+
 		try
 		{
 			return dr.unmarshalToPage(source);
@@ -86,28 +89,28 @@ public class TestDumpReader_0_6_Fragments
 			xmlInputStream.close();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testRevisionImportNoSchema() throws JAXBException, SAXException, IOException
 	{
 		DumpUnmarshaller dr = new DumpUnmarshaller(EXPORT_VERSION, false);
 		compare(unmarshalRevision(dr));
 	}
-	
+
 	@Test
 	public void testRevisionImportWithSchema() throws JAXBException, SAXException, IOException
 	{
 		DumpUnmarshaller dr = new DumpUnmarshaller(EXPORT_VERSION, true);
 		compare(unmarshalRevision(dr));
 	}
-	
+
 	private Revision unmarshalRevision(DumpUnmarshaller dr) throws JAXBException, IOException
 	{
 		InputStream xmlInputStream = getClass().getResourceAsStream(REVISION_INPUT);
 		Source source = new StreamSource(xmlInputStream);
-		
+
 		try
 		{
 			return dr.unmarshalToRevision(source);
@@ -117,28 +120,28 @@ public class TestDumpReader_0_6_Fragments
 			xmlInputStream.close();
 		}
 	}
-	
+
 	private void compare(Revision rev)
 	{
 		assertEquals(BigInteger.valueOf(123456789), rev.getId());
 		assertTrue(rev.isMinor());
-		
+
 		assertFalse(rev.isCommentDeleted());
 		assertEquals("COMMENT", rev.getCommentText());
-		
+
 		assertFalse(rev.isTextDeleted());
 		assertEquals("TEXT", rev.getText());
 		assertNull(rev.getTextSha1());
-		
+
 		assertNull(rev.getContributorIp());
-		
+
 		{
 			Contributor contrib = rev.getContributor();
 			assertFalse(contrib.isDeleted());
 			assertEquals(BigInteger.valueOf(987654321), contrib.getId());
 			assertEquals("USERNAME", contrib.getUsername());
 		}
-		
+
 		{
 			DateTime ts = rev.getTimestamp();
 			assertEquals(2012, ts.getYear());

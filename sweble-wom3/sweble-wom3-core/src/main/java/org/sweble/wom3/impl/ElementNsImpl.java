@@ -29,20 +29,20 @@ public class ElementNsImpl
 			Wom3Element
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String namespaceUri;
-	
+
 	private String localName;
-	
+
 	private String prefix;
-	
+
 	// =========================================================================
-	
+
 	protected ElementNsImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	public ElementNsImpl(
 			DocumentImpl owner,
 			String namespaceUri,
@@ -52,32 +52,32 @@ public class ElementNsImpl
 		setNamespaceUri(namespaceUri);
 		setPrefixAndLocalName(qualifiedName);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getNamespaceURI()
 	{
 		return namespaceUri;
 	}
-	
+
 	@Override
 	public String getLocalName()
 	{
 		return localName;
 	}
-	
+
 	@Override
 	public String getPrefix()
 	{
 		return prefix;
 	}
-	
+
 	@Override
 	public void setPrefix(String prefix) throws DOMException
 	{
 		assertWritableOnDocument();
-		
+
 		if (getOwnerDocument().getStrictErrorChecking())
 		{
 			if ((prefix != null) && !prefix.isEmpty())
@@ -92,7 +92,7 @@ public class ElementNsImpl
 				}
 			}
 		}
-		
+
 		if ((prefix != null) && !prefix.isEmpty())
 		{
 			this.prefix = prefix;
@@ -104,9 +104,9 @@ public class ElementNsImpl
 			setNodeName(localName);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void setNamespaceUri(String namespaceUri)
 	{
 		// DOM Level 3 Core
@@ -119,21 +119,21 @@ public class ElementNsImpl
 		if (this.namespaceUri != null && this.namespaceUri.isEmpty())
 			this.namespaceUri = null;
 	}
-	
+
 	protected void setPrefixAndLocalName(String qualifiedName)
 	{
 		assertWritableOnDocument();
-		
+
 		String prefix = null;
 		String localName = null;
-		
+
 		int colon = qualifiedName.indexOf(':');
 		if (colon < 0)
 		{
 			// No prefix
 			prefix = null;
 			localName = qualifiedName;
-			
+
 			checkNamespaceUriAndName(namespaceUri, qualifiedName);
 		}
 		else
@@ -145,25 +145,25 @@ public class ElementNsImpl
 				throw new DOMException(
 						DOMException.NAMESPACE_ERR,
 						"Invalid qualified attribute name: " + qualifiedName);
-			
+
 			// We have a valid prefix
 			prefix = qualifiedName.substring(0, colon);
 			localName = qualifiedName.substring(colon + 1);
-			
+
 			checkNamespaceUriAndPrefix(prefix, namespaceUri);
-			
+
 			// FIXME: Must check according to XML version we have to support
 			Toolbox.checkValidXmlName(prefix);
 		}
-		
+
 		// FIXME: Must check according to XML version we have to support
 		Toolbox.checkValidXmlName(localName);
-		
+
 		// Only set values after checks ran
 		this.prefix = prefix;
 		this.localName = localName;
 	}
-	
+
 	private static void checkNamespaceUriAndName(
 			String namespaceUri,
 			String qualifiedName)
@@ -182,7 +182,7 @@ public class ElementNsImpl
 					"An attribute with namespace URI '" + XMLNS_URI + "' must be called 'xmlns' or must have a prefix called 'xmlns'");
 		*/
 	}
-	
+
 	private static void checkNamespaceUriAndPrefix(
 			String prefix,
 			String namespaceUri)

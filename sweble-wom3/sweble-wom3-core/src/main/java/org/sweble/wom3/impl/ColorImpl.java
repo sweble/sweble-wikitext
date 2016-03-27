@@ -27,46 +27,46 @@ public class ColorImpl
 			Wom3Color
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private char r;
-	
+
 	private char g;
-	
+
 	private char b;
-	
+
 	// =========================================================================
-	
+
 	public ColorImpl(int r, int g, int b)
 	{
 		this.r = (char) r;
 		this.g = (char) g;
 		this.b = (char) b;
 	}
-	
+
 	@Override
 	public int getRed()
 	{
 		return this.r;
 	}
-	
+
 	@Override
 	public int getGreen()
 	{
 		return this.g;
 	}
-	
+
 	@Override
 	public int getBlue()
 	{
 		return this.b;
 	}
-	
+
 	@Override
 	public String toString()
 	{
 		return String.format("#%02X%02X%02X", (int) r, (int) g, (int) b);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -77,7 +77,7 @@ public class ColorImpl
 		result = prime * result + r;
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -96,15 +96,15 @@ public class ColorImpl
 			return false;
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final Map<String, ColorImpl> namedColors;
-	
+
 	static
 	{
 		namedColors = new HashMap<String, ColorImpl>();
-		
+
 		namedColors.put("aliceblue", new ColorImpl(0xF0, 0xF8, 0xFF));
 		namedColors.put("antiquewhite", new ColorImpl(0xFA, 0xEB, 0xD7));
 		namedColors.put("aqua", new ColorImpl(0x00, 0xFF, 0xFF));
@@ -253,12 +253,12 @@ public class ColorImpl
 		namedColors.put("yellow", new ColorImpl(0xFF, 0xFF, 0x00));
 		namedColors.put("yellowgreen", new ColorImpl(0x9A, 0xCD, 0x32));
 	}
-	
+
 	public static ColorImpl valueOf(String color)
 	{
 		color = color.trim();
 		String c = color.toLowerCase();
-		
+
 		try
 		{
 			if (c.startsWith("#"))
@@ -288,10 +288,10 @@ public class ColorImpl
 		catch (IllegalArgumentException e)
 		{
 		}
-		
+
 		throw new IllegalArgumentException("Not a valid color: `" + color + "'");
 	}
-	
+
 	private static int hexToInt(char ch)
 	{
 		if (ch >= '0' && ch <= '9')

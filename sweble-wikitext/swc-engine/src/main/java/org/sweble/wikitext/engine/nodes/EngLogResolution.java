@@ -23,50 +23,50 @@ public abstract class EngLogResolution
 			EngLogContainer
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected EngLogResolution()
 	{
 	}
-	
+
 	protected EngLogResolution(boolean success)
 	{
 		setSuccess(success);
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private boolean success;
-	
+
 	public final boolean getSuccess()
 	{
 		return this.success;
 	}
-	
+
 	public final void setSuccess(boolean success)
 	{
 		this.success = success;
 	}
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 1 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
 		return new EngLogResolutionPropertyIterator();
 	}
-	
+
 	protected class EngLogResolutionPropertyIterator
 			extends
 				EngLogContainerPropertyIterator
@@ -76,7 +76,7 @@ public abstract class EngLogResolution
 		{
 			return EngLogResolution.this.getPropertyCount();
 		}
-		
+
 		@Override
 		protected String getName(int index)
 		{
@@ -84,12 +84,12 @@ public abstract class EngLogResolution
 			{
 				case 0:
 					return "success";
-					
+
 				default:
 					return super.getName(index);
 			}
 		}
-		
+
 		@Override
 		protected Object getValue(int index)
 		{
@@ -97,12 +97,12 @@ public abstract class EngLogResolution
 			{
 				case 0:
 					return EngLogResolution.this.getSuccess();
-					
+
 				default:
 					return super.getValue(index);
 			}
 		}
-		
+
 		@Override
 		protected Object setValue(int index, Object value)
 		{
@@ -114,7 +114,7 @@ public abstract class EngLogResolution
 					EngLogResolution.this.setSuccess((Boolean) value);
 					return old;
 				}
-				
+
 				default:
 					return super.setValue(index, value);
 			}

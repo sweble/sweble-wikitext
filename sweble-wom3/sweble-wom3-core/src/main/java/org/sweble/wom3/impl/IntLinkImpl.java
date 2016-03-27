@@ -28,102 +28,102 @@ public class IntLinkImpl
 			Wom3IntLink
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc("title") };
-	
+
 	private TitleImpl title;
-	
+
 	// =========================================================================
-	
+
 	public IntLinkImpl(DocumentImpl owner)
 	{
 		super(owner);
 		setTarget("unknown");
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "intlink";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
 		if (added instanceof Wom3Title)
 			this.title = (TitleImpl) added;
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
 		if (removed == this.title)
 			this.title = null;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getTarget()
 	{
 		return getAttribute("target");
 	}
-	
+
 	@Override
 	public String getLinkTarget()
 	{
 		return getTarget();
 	}
-	
+
 	@Override
 	public String setTarget(String target)
 	{
 		return setAttributeDirect(ATTR_DESC_TARGET, "target", target);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public Wom3Title setLinkTitle(Wom3Title title) throws NullPointerException
 	{
 		return (Wom3Title) replaceOrAppend(this.title, title, false);
 	}
-	
+
 	@Override
 	public Wom3Title getLinkTitle()
 	{
 		return title;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final AttrDescTarget ATTR_DESC_TARGET = new AttrDescTarget();
-	
+
 	public static final AttrDescPlainUrl ATTR_DESC_PLAIN_URL = new AttrDescPlainUrl();
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceURL,
@@ -133,7 +133,7 @@ public class IntLinkImpl
 		return getAttrDescStrict(namespaceURL, localName, qualifiedName,
 				"target", ATTR_DESC_TARGET);
 	}
-	
+
 	public static final class AttrDescTarget
 			extends
 				AttributeDescriptor
@@ -147,7 +147,7 @@ public class IntLinkImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

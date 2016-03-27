@@ -33,28 +33,28 @@ public abstract class BackboneSwcElement
 	{
 		super(owner);
 	}
-	
+
 	@Override
 	public final String getWomName()
 	{
 		return getSwcName();
 	}
-	
+
 	@Override
 	public final String getNamespaceURI()
 	{
 		return SwcNode.MWW_NS_URI;
 	}
-	
+
 	public static ChildDescriptor childDesc(String tag)
 	{
 		return childDesc(SwcNode.MWW_NS_URI, tag, 0);
 	}
-	
+
 	public static ChildDescriptor childDesc(String tag, int flags)
 	{
 		return childDesc(SwcNode.MWW_NS_URI, tag, flags);
 	}
-	
+
 	public abstract String getSwcName();
 }

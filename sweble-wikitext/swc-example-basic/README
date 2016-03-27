@@ -1,4 +1,0 @@
-
-A .jar file is generated in target/ when "mvn package -Pbuild-aggregates" is invoked:
-
-  $ java -jar target/[artifactId]-jar-with-dependencies.jar [title]

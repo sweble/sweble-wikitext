@@ -33,32 +33,32 @@ public class RefTagExt
 			TagExtensionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected RefTagExt(WikiConfig wikiConfig)
 	{
 		super("Extension - Ref");
 		addTagExtension(new RefTagExtImpl(wikiConfig));
 	}
-	
+
 	public static RefTagExt group(WikiConfig wikiConfig)
 	{
 		return new RefTagExt(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == <ref>
 	// ==
 	// =========================================================================
-	
+
 	public static final class RefTagExtImpl
 			extends
 				TagExtensionBase
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -66,12 +66,12 @@ public class RefTagExt
 		{
 			super("ref");
 		}
-		
+
 		public RefTagExtImpl(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "ref");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,

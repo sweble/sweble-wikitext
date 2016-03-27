@@ -40,7 +40,7 @@ public class WtAstPrinter
 			return;
 		super.visit(n);
 	}
-	
+
 	@Override
 	public void visit(AstLeafNode<WtNode> n)
 	{
@@ -48,7 +48,7 @@ public class WtAstPrinter
 			return;
 		super.visit(n);
 	}
-	
+
 	@Override
 	public void visit(AstNodeList<WtNode> n)
 	{
@@ -56,7 +56,7 @@ public class WtAstPrinter
 			return;
 		super.visit(n);
 	}
-	
+
 	@Override
 	public void visit(AstStringNode<WtNode> n)
 	{
@@ -64,7 +64,7 @@ public class WtAstPrinter
 			return;
 		super.visit(n);
 	}
-	
+
 	@Override
 	public void visit(AstText<WtNode> n)
 	{
@@ -72,37 +72,37 @@ public class WtAstPrinter
 			return;
 		super.visit(n);
 	}
-	
+
 	// =========================================================================
-	
+
 	private boolean printAbsent(@SuppressWarnings("rawtypes") AstNode n)
 	{
 		if (!(n instanceof WtEmptyImmutableNode))
 			return false;
-		
+
 		WtEmptyImmutableNode ein = (WtEmptyImmutableNode) n;
 		if (!ein.indicatesAbsence())
 			return false;
-		
+
 		p.indentln('-');
 		return true;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static String print(WtNode node)
 	{
 		return WtAstPrinter.print(new StringWriter(), node).toString();
 	}
-	
+
 	public static Writer print(Writer writer, WtNode node)
 	{
 		new WtAstPrinter(writer).go(node);
 		return writer;
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtAstPrinter(Writer writer)
 	{
 		super(writer);

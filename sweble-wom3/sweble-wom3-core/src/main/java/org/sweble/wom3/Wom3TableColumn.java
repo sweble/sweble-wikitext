@@ -33,14 +33,14 @@ public interface Wom3TableColumn
 	 * @return The zero-based index of this column.
 	 */
 	public int getColIndex();
-	
+
 	/**
 	 * Get the number of cells (including rowspan calculations) in this column.
 	 * 
 	 * @return The number of cells.
 	 */
 	public int getNumRows();
-	
+
 	/**
 	 * Get a cell from this column.
 	 * 

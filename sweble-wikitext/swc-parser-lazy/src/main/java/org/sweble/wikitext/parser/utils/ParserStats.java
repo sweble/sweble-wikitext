@@ -24,20 +24,20 @@ import java.util.Map.Entry;
 
 import org.sweble.wikitext.parser.parser.RatsWikitextParser;
 
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class ParserStats
 {
 	public static final class MemoizedProduction
 	{
 		public int called;
-		
+
 		public int failed;
-		
+
 		public int reused;
-		
+
 		public int parsed;
-		
+
 		@Override
 		public String toString()
 		{
@@ -49,35 +49,35 @@ public class ParserStats
 					failed);
 		}
 	}
-	
+
 	private final Map<String, MemoizedProduction> memoizedProductions =
 			new HashMap<String, MemoizedProduction>();
-	
+
 	public Map<String, MemoizedProduction> getMemoizedProductions()
 	{
 		return memoizedProductions;
 	}
-	
+
 	public void parsed(String prod)
 	{
 		getMemoizedProduction(prod).parsed++;
 	}
-	
+
 	public void failed(String prod)
 	{
 		getMemoizedProduction(prod).failed++;
 	}
-	
+
 	public void called(String prod)
 	{
 		getMemoizedProduction(prod).called++;
 	}
-	
+
 	public void reused(String prod)
 	{
 		getMemoizedProduction(prod).reused++;
 	}
-	
+
 	private MemoizedProduction getMemoizedProduction(String prod)
 	{
 		MemoizedProduction p = memoizedProductions.get(prod);
@@ -88,13 +88,13 @@ public class ParserStats
 		}
 		return p;
 	}
-	
+
 	public void dump(PrintStream err)
 	{
 		for (Entry<String, MemoizedProduction> x : RatsWikitextParser.getStats().getMemoizedProductions().entrySet())
 		{
 			err.print(x.getKey() + ":");
-			err.print(StringUtils.strrep(' ', 20 - x.getKey().length()));
+			err.print(StringTools.strrep(' ', 20 - x.getKey().length()));
 			err.println(x.getValue());
 		}
 	}

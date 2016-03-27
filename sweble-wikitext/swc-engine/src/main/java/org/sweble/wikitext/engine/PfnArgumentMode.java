@@ -25,13 +25,13 @@ public enum PfnArgumentMode
 	 * expansion is done.
 	 */
 	UNEXPANDED_VALUES,
-	
+
 	/**
 	 * The original template arguments will be collapsed as is done by
 	 * UNEXPANDED_VALUES. Then the collapsed value is expanded and trimmed.
 	 */
 	EXPANDED_AND_TRIMMED_VALUES,
-	
+
 	/**
 	 * The original template arguments are left as is.
 	 */

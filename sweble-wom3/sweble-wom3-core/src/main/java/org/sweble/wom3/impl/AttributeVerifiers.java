@@ -42,7 +42,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	NMTOKENS
 	{
 		@Override
@@ -54,7 +54,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	STYLESHEET
 	{
 		@Override
@@ -65,7 +65,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	DIR
 	{
 		@Override
@@ -80,7 +80,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	LANGUAGE_CODE
 	{
 		@Override
@@ -92,7 +92,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	SCRIPT
 	{
 		@Override
@@ -103,7 +103,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	CLEAR
 	{
 		@Override
@@ -118,7 +118,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	URL
 	{
 		@Override
@@ -135,7 +135,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	DATETIME
 	{
 		@Override
@@ -150,7 +150,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	LCR_ALIGN
 	{
 		@Override
@@ -174,7 +174,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	LCRJ_ALIGN
 	{
 		@Override
@@ -191,7 +191,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	PIXELS
 	{
 		@Override
@@ -208,7 +208,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	COLOR
 	{
 		@Override
@@ -223,7 +223,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	FONTSIZE
 	{
 		@Override
@@ -238,7 +238,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	NUMBER
 	{
 		@Override
@@ -255,7 +255,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	LENGTH
 	{
 		@Override
@@ -270,7 +270,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	OLTYPE
 	{
 		@Override
@@ -281,7 +281,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	ULTYPE
 	{
 		@Override
@@ -296,7 +296,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	},
-	
+
 	ITEMTYPE
 	{
 		@Override
@@ -401,9 +401,9 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			return true;
 		}
 	};
-	
+
 	// =========================================================================
-	
+
 	public static boolean verifyAndConvertBool(
 			Backbone parent,
 			NativeAndStringValuePair verified,
@@ -418,9 +418,9 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 			verified.strValue = attrName;
 		return (Boolean) verified.value;
 	}
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Throw if the given value exceeds its domain.
 	 * 
@@ -437,7 +437,7 @@ public enum AttributeVerifiers implements AttributeVerificationAndConverion
 		verifyRange(x, lower, upper);
 		return x;
 	}
-	
+
 	/**
 	 * Throw if the given value exceeds its domain.
 	 * 

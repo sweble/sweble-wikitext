@@ -36,19 +36,19 @@ public class WtRtDataPrettyPrinter
 	{
 		p.verbatim(n.getContent());
 	}
-	
+
 	public void visit(WtIgnored n)
 	{
 		p.verbatim(n.getContent());
 	}
-	
+
 	public void visit(WtText n)
 	{
 		p.verbatim(n.getContent());
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected Object dispatch(WtNode node)
 	{
@@ -74,9 +74,9 @@ public class WtRtDataPrettyPrinter
 		}
 		return null;
 	}
-	
+
 	// =========================================================================
-	
+
 	protected void printStringNode(WtRtData rtd, WtStringNode contentNode)
 	{
 		if (rtd != null)
@@ -88,7 +88,7 @@ public class WtRtDataPrettyPrinter
 			p.verbatim(contentNode.getContent());
 		}
 	}
-	
+
 	protected void printContentNode(WtRtData rtd, WtContentNode contentNode)
 	{
 		if (rtd != null)
@@ -102,7 +102,7 @@ public class WtRtDataPrettyPrinter
 			iterate(contentNode);
 		}
 	}
-	
+
 	protected void printAnyOtherNode(WtRtData rtd, WtNode node)
 	{
 		if (rtd != null)
@@ -120,7 +120,7 @@ public class WtRtDataPrettyPrinter
 			iterate(node);
 		}
 	}
-	
+
 	protected void printRtd(Object[] fields)
 	{
 		for (Object o : fields)
@@ -135,22 +135,22 @@ public class WtRtDataPrettyPrinter
 			}
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static <T extends WtNode> String print(T node)
 	{
 		return print(new StringWriter(), node).toString();
 	}
-	
+
 	public static <T extends WtNode> Writer print(Writer writer, T node)
 	{
 		new WtRtDataPrettyPrinter(writer).go(node);
 		return writer;
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtRtDataPrettyPrinter(Writer writer)
 	{
 		super(writer);

@@ -26,9 +26,9 @@ public class WtTemplateArgument
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -36,53 +36,53 @@ public class WtTemplateArgument
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtTemplateArgument(WtValue value)
 	{
 		super(WtName.NO_NAME, value);
 	}
-	
+
 	protected WtTemplateArgument(WtName name, WtValue value)
 	{
 		super(name, value);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_TEMPLATE_ARGUMENT;
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public final boolean hasName()
 	{
 		return getName() != WtName.NO_NAME;
 	}
-	
+
 	public final void setName(WtName name)
 	{
 		set(0, name);
 	}
-	
+
 	public final WtName getName()
 	{
 		return (WtName) get(0);
 	}
-	
+
 	public final void setValue(WtValue value)
 	{
 		set(1, value);
 	}
-	
+
 	public final WtValue getValue()
 	{
 		return (WtValue) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "name", "value" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

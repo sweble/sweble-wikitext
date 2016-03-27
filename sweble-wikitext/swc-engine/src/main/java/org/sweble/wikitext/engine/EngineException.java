@@ -24,13 +24,13 @@ public final class EngineException
 			Exception
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private final PageTitle pageTitle;
-	
+
 	private EngLogProcessingPass log;
-	
+
 	// =========================================================================
-	
+
 	public EngineException(
 			PageTitle pageTitle,
 			String message,
@@ -38,7 +38,7 @@ public final class EngineException
 	{
 		this(pageTitle, message, cause, null);
 	}
-	
+
 	public EngineException(
 			PageTitle pageTitle,
 			String message,
@@ -49,36 +49,36 @@ public final class EngineException
 		this.pageTitle = pageTitle;
 		this.log = log;
 	}
-	
+
 	// =========================================================================
-	
+
 	private static String makeMessage(PageTitle pageTitle, String message)
 	{
 		return String.format("%s (%s)", message, pageTitle.getDenormalizedFullTitle());
 	}
-	
+
 	private static Throwable unwrap(Throwable t)
 	{
 		while (t instanceof ExpansionException)
 			t = t.getCause();
 		return t;
 	}
-	
+
 	// =========================================================================
-	
+
 	public void attachLog(EngLogProcessingPass log)
 	{
 		if (this.log != null)
 			throw new IllegalStateException("Log already attached!");
-		
+
 		this.log = log;
 	}
-	
+
 	public PageTitle getPageTitle()
 	{
 		return pageTitle;
 	}
-	
+
 	public EngLogProcessingPass getLog()
 	{
 		return log;

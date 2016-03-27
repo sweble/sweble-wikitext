@@ -30,7 +30,7 @@ public class ParserFunctionIf
 			ParserFunctionsExtPfn.IfThenElseStmt
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -38,7 +38,7 @@ public class ParserFunctionIf
 	{
 		super("if", 1 /* thenArgIndex */);
 	}
-	
+
 	/**
 	 * <pre>
 	 * {{#if: 
@@ -52,7 +52,7 @@ public class ParserFunctionIf
 	{
 		super(wikiConfig, "if", 1 /* thenArgIndex */);
 	}
-	
+
 	@Override
 	protected boolean evaluateCondition(
 			WtTemplate pfn,
@@ -60,7 +60,7 @@ public class ParserFunctionIf
 			List<? extends WtNode> args)
 	{
 		WtNode test = frame.expand(args.get(0));
-		
+
 		String testStr = null;
 		try
 		{
@@ -73,11 +73,11 @@ public class ParserFunctionIf
 			// produce the empty string.
 			return true;
 		}
-		
+
 		boolean eval = false;
 		if (testStr != null)
 			eval = !testStr.isEmpty();
-		
+
 		return eval;
 	}
 }

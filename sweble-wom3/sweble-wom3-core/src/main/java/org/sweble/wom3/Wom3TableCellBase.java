@@ -34,16 +34,16 @@ public interface Wom3TableCellBase
 	 * @return The zero-based index of the row in which this cell is located.
 	 */
 	public int getRowIndex();
-	
+
 	/**
 	 * Get the zero-based index of the row in which this cell is located.
 	 * 
 	 * @return The zero-based index of the row in which this cell is located.
 	 */
 	public int getColIndex();
-	
+
 	// ==[ The XHTML Attributes ]===============================================
-	
+
 	/**
 	 * Get an abbreviation of the cell's content.
 	 * 
@@ -53,7 +53,7 @@ public interface Wom3TableCellBase
 	 *         specified.
 	 */
 	public String getAbbr();
-	
+
 	/**
 	 * Set an abbreviation of the cell's content.
 	 * 
@@ -65,7 +65,7 @@ public interface Wom3TableCellBase
 	 * @return The old abbreviation.
 	 */
 	public String setAbbr(String abbr);
-	
+
 	/**
 	 * Get categories assigned to this cell.
 	 * 
@@ -75,7 +75,7 @@ public interface Wom3TableCellBase
 	 *         specified.
 	 */
 	public String getAxis();
-	
+
 	/**
 	 * Assign categories to this cell.
 	 * 
@@ -87,7 +87,7 @@ public interface Wom3TableCellBase
 	 * @return The old categories.
 	 */
 	public String setAxis(String axis);
-	
+
 	/**
 	 * Get the scope of this cell.
 	 * 
@@ -97,7 +97,7 @@ public interface Wom3TableCellBase
 	 *         not specified.
 	 */
 	public Wom3TableCellScope getScope();
-	
+
 	/**
 	 * Set the scope of this cell.
 	 * 
@@ -108,7 +108,7 @@ public interface Wom3TableCellBase
 	 * @return The old scope.
 	 */
 	public Wom3TableCellScope setScope(Wom3TableCellScope scope);
-	
+
 	/**
 	 * Get the horizontal alignment of the cell's content.
 	 * 
@@ -118,7 +118,7 @@ public interface Wom3TableCellBase
 	 *         not specified.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the horizontal alignment of the cell's content.
 	 * 
@@ -130,7 +130,7 @@ public interface Wom3TableCellBase
 	 * @return The old horizontal alignment.
 	 */
 	public Wom3HorizAlign setAlign(Wom3HorizAlign align);
-	
+
 	/**
 	 * Get the vertical alignment of the cell's content.
 	 * 
@@ -140,7 +140,7 @@ public interface Wom3TableCellBase
 	 *         not specified.
 	 */
 	public Wom3TableVAlign getVAlign();
-	
+
 	/**
 	 * Set the vertical alignment of the cell's content.
 	 * 
@@ -152,7 +152,7 @@ public interface Wom3TableCellBase
 	 * @return The old vertical alignment.
 	 */
 	public Wom3TableVAlign setVAlign(Wom3TableVAlign valign);
-	
+
 	/**
 	 * Get background color of the cell.
 	 * 
@@ -162,7 +162,7 @@ public interface Wom3TableCellBase
 	 *         specified.
 	 */
 	public Wom3Color getBgColor();
-	
+
 	/**
 	 * Set the background color of the cell.
 	 * 
@@ -174,7 +174,7 @@ public interface Wom3TableCellBase
 	 * @return The old background color.
 	 */
 	public Wom3Color setBgColor(Wom3Color color);
-	
+
 	/**
 	 * Get number of columns this cell spans.
 	 * 
@@ -184,7 +184,7 @@ public interface Wom3TableCellBase
 	 *         attribute is not specified.
 	 */
 	public Integer getColspan();
-	
+
 	/**
 	 * Set the number of columns this cell spans.
 	 * 
@@ -202,7 +202,7 @@ public interface Wom3TableCellBase
 	 *             Thrown if the cell is spanning beyond the table's dimensions.
 	 */
 	public Integer setColspan(Integer span) throws IllegalArgumentException;
-	
+
 	/**
 	 * Get the number of rows this cell spans.
 	 * 
@@ -212,7 +212,7 @@ public interface Wom3TableCellBase
 	 *         attribute is not specified.
 	 */
 	public Integer getRowspan();
-	
+
 	/**
 	 * Set the number of rows this cell spans.
 	 * 
@@ -230,7 +230,7 @@ public interface Wom3TableCellBase
 	 *             Thrown if the cell is spanning beyond the table's dimensions.
 	 */
 	public Integer setRowspan(Integer span) throws IllegalArgumentException;
-	
+
 	/**
 	 * Tell whether content inside a cell should not wrap.
 	 * 
@@ -240,7 +240,7 @@ public interface Wom3TableCellBase
 	 *         <code>false</code> otherwise.
 	 */
 	public boolean isNowrap();
-	
+
 	/**
 	 * Set whether the content inside a cell should not wrap.
 	 * 
@@ -251,7 +251,7 @@ public interface Wom3TableCellBase
 	 * @return The old setting.
 	 */
 	public boolean setNowrap(boolean nowrap);
-	
+
 	/**
 	 * Get the width of the cell.
 	 * 
@@ -261,7 +261,7 @@ public interface Wom3TableCellBase
 	 *         if the attribute is not specified.
 	 */
 	public Wom3ValueWithUnit getWidth();
-	
+
 	/**
 	 * Set the cell's width.
 	 * 
@@ -273,7 +273,7 @@ public interface Wom3TableCellBase
 	 * @return The old width of the cell.
 	 */
 	public Wom3ValueWithUnit setWidth(Wom3ValueWithUnit width);
-	
+
 	/**
 	 * Get the height of the cell.
 	 * 
@@ -283,7 +283,7 @@ public interface Wom3TableCellBase
 	 *         if the attribute is not specified.
 	 */
 	public Wom3ValueWithUnit getHeight();
-	
+
 	/**
 	 * Set the height of the cell.
 	 * 

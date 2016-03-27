@@ -30,52 +30,52 @@ public class DumpConverter
 	{
 		if (page instanceof org.sweble.wikitext.dumpreader.export_0_5.PageType)
 			return convertToPage_0_5((org.sweble.wikitext.dumpreader.export_0_5.PageType) page);
-		
+
 		else if (page instanceof org.sweble.wikitext.dumpreader.export_0_6.PageType)
 			return convertToPage_0_6((org.sweble.wikitext.dumpreader.export_0_6.PageType) page);
-		
+
 		else if (page instanceof org.sweble.wikitext.dumpreader.export_0_7.PageType)
 			return convertToPage_0_7((org.sweble.wikitext.dumpreader.export_0_7.PageType) page);
-		
+
 		else if (page instanceof org.sweble.wikitext.dumpreader.export_0_8.PageType)
 			return convertToPage_0_8((org.sweble.wikitext.dumpreader.export_0_8.PageType) page);
-		
+
 		else if (page instanceof org.sweble.wikitext.dumpreader.export_0_9.PageType)
 			return convertToPage_0_9((org.sweble.wikitext.dumpreader.export_0_9.PageType) page);
-		
+
 		else if (page instanceof org.sweble.wikitext.dumpreader.export_0_10.PageType)
 			return convertToPage_0_10((org.sweble.wikitext.dumpreader.export_0_10.PageType) page);
-		
+
 		else
 			throw new UnsupportedDumpFormat();
 	}
-	
+
 	public Revision convertRevision(Object rev) throws UnsupportedDumpFormat
 	{
 		if (rev instanceof org.sweble.wikitext.dumpreader.export_0_5.RevisionType)
 			return convertToRevision_0_5((org.sweble.wikitext.dumpreader.export_0_5.RevisionType) rev);
-		
+
 		else if (rev instanceof org.sweble.wikitext.dumpreader.export_0_6.RevisionType)
 			return convertToRevision_0_6((org.sweble.wikitext.dumpreader.export_0_6.RevisionType) rev);
-		
+
 		else if (rev instanceof org.sweble.wikitext.dumpreader.export_0_7.RevisionType)
 			return convertToRevision_0_7((org.sweble.wikitext.dumpreader.export_0_7.RevisionType) rev);
-		
+
 		else if (rev instanceof org.sweble.wikitext.dumpreader.export_0_8.RevisionType)
 			return convertToRevision_0_8((org.sweble.wikitext.dumpreader.export_0_8.RevisionType) rev);
-		
+
 		else if (rev instanceof org.sweble.wikitext.dumpreader.export_0_9.RevisionType)
 			return convertToRevision_0_9((org.sweble.wikitext.dumpreader.export_0_9.RevisionType) rev);
-		
+
 		else if (rev instanceof org.sweble.wikitext.dumpreader.export_0_10.RevisionType)
 			return convertToRevision_0_10((org.sweble.wikitext.dumpreader.export_0_10.RevisionType) rev);
-		
+
 		else
 			throw new UnsupportedDumpFormat();
 	}
-	
+
 	// =========================================================================
-	
+
 	private Page convertToPage_0_5(
 			org.sweble.wikitext.dumpreader.export_0_5.PageType page)
 	{
@@ -91,11 +91,11 @@ public class DumpConverter
 			// - UploadItem
 			// - LogItem
 		}
-		
+
 		// We're ignoring:
 		// - getDiscussionthreadinginfo()
 		// - getRestrictions()
-		
+
 		return new Page(
 				page.getId(),
 				null,
@@ -103,21 +103,21 @@ public class DumpConverter
 				(page.getRedirect() != null) ? "" : null,
 				revisions);
 	}
-	
+
 	private Revision convertToRevision_0_5(Object item)
 	{
 		org.sweble.wikitext.dumpreader.export_0_5.RevisionType revision =
 				(org.sweble.wikitext.dumpreader.export_0_5.RevisionType) item;
-		
+
 		org.sweble.wikitext.dumpreader.export_0_5.ContributorType contributor =
 				revision.getContributor();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_5.CommentType comment =
 				revision.getComment();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_5.TextType text =
 				revision.getText();
-		
+
 		Contributor contributor_ = null;
 		String contributorIp = null;
 		if (contributor != null)
@@ -134,7 +134,7 @@ public class DumpConverter
 				contributorIp = contributor.getIp();
 			}
 		}
-		
+
 		boolean commentDeleted = false;
 		String commentText = null;
 		if (comment != null)
@@ -143,7 +143,7 @@ public class DumpConverter
 					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED;
 			commentText = comment.getValue();
 		}
-		
+
 		boolean textDeleted = false;
 		String textText = null;
 		if (text != null)
@@ -152,17 +152,17 @@ public class DumpConverter
 			// - getBytes
 			// - getId
 			// - getSpace
-			
+
 			textDeleted =
 					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_5.DeletedFlagType.DELETED;
 			textText = text.getValue();
 		}
-		
+
 		DateTime revisionTimestampDt = null;
 		XMLGregorianCalendar revisionTimestamp = revision.getTimestamp();
 		if (revisionTimestamp != null)
 			revisionTimestampDt = new DateTime(revisionTimestamp.toGregorianCalendar());
-		
+
 		return new Revision(
 				revision.getId(),
 				new BigInteger("-1"),
@@ -178,9 +178,9 @@ public class DumpConverter
 				null,
 				null);
 	}
-	
+
 	// =========================================================================
-	
+
 	private Page convertToPage_0_6(
 			org.sweble.wikitext.dumpreader.export_0_6.PageType page)
 	{
@@ -196,16 +196,16 @@ public class DumpConverter
 			// - UploadItem
 			// - LogItem
 		}
-		
+
 		// We're ignoring:
 		// - getDiscussionthreadinginfo()
 		// - getRestrictions()
 		// - getSha1()
-		
+
 		String redirectTitle = null;
 		if (page.getRedirect() != null)
 			redirectTitle = page.getRedirect().getTitle();
-		
+
 		return new Page(
 				page.getId(),
 				page.getNs(),
@@ -213,21 +213,21 @@ public class DumpConverter
 				redirectTitle,
 				revisions);
 	}
-	
+
 	private Revision convertToRevision_0_6(Object item)
 	{
 		org.sweble.wikitext.dumpreader.export_0_6.RevisionType revision =
 				(org.sweble.wikitext.dumpreader.export_0_6.RevisionType) item;
-		
+
 		org.sweble.wikitext.dumpreader.export_0_6.ContributorType contributor =
 				revision.getContributor();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_6.CommentType comment =
 				revision.getComment();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_6.TextType text =
 				revision.getText();
-		
+
 		Contributor contributor_ = null;
 		String contributorIp = null;
 		if (contributor != null)
@@ -244,7 +244,7 @@ public class DumpConverter
 				contributorIp = contributor.getIp();
 			}
 		}
-		
+
 		boolean commentDeleted = false;
 		String commentText = null;
 		if (comment != null)
@@ -253,7 +253,7 @@ public class DumpConverter
 					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED;
 			commentText = comment.getValue();
 		}
-		
+
 		boolean textDeleted = false;
 		String textText = null;
 		if (text != null)
@@ -262,17 +262,17 @@ public class DumpConverter
 			// - getBytes
 			// - getId
 			// - getSpace
-			
+
 			textDeleted =
 					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_6.DeletedFlagType.DELETED;
 			textText = text.getValue();
 		}
-		
+
 		DateTime revisionTimestampDt = null;
 		XMLGregorianCalendar revisionTimestamp = revision.getTimestamp();
 		if (revisionTimestamp != null)
 			revisionTimestampDt = new DateTime(revisionTimestamp.toGregorianCalendar());
-		
+
 		return new Revision(
 				revision.getId(),
 				new BigInteger("-1"),
@@ -288,9 +288,9 @@ public class DumpConverter
 				null,
 				null);
 	}
-	
+
 	// =========================================================================
-	
+
 	private Page convertToPage_0_7(
 			org.sweble.wikitext.dumpreader.export_0_7.PageType page)
 	{
@@ -305,15 +305,15 @@ public class DumpConverter
 			// We're ignoring:
 			// - UploadItem
 		}
-		
+
 		// We're ignoring:
 		// - getDiscussionthreadinginfo()
 		// - getRestrictions()
-		
+
 		String redirectTitle = null;
 		if (page.getRedirect() != null)
 			redirectTitle = page.getRedirect().getTitle();
-		
+
 		return new Page(
 				page.getId(),
 				page.getNs(),
@@ -321,21 +321,21 @@ public class DumpConverter
 				redirectTitle,
 				revisions);
 	}
-	
+
 	private Revision convertToRevision_0_7(Object item)
 	{
 		org.sweble.wikitext.dumpreader.export_0_7.RevisionType revision =
 				(org.sweble.wikitext.dumpreader.export_0_7.RevisionType) item;
-		
+
 		org.sweble.wikitext.dumpreader.export_0_7.ContributorType contributor =
 				revision.getContributor();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_7.CommentType comment =
 				revision.getComment();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_7.TextType text =
 				revision.getText();
-		
+
 		Contributor contributor_ = null;
 		String contributorIp = null;
 		if (contributor != null)
@@ -352,7 +352,7 @@ public class DumpConverter
 				contributorIp = contributor.getIp();
 			}
 		}
-		
+
 		boolean commentDeleted = false;
 		String commentText = null;
 		if (comment != null)
@@ -361,7 +361,7 @@ public class DumpConverter
 					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED;
 			commentText = comment.getValue();
 		}
-		
+
 		boolean textDeleted = false;
 		String textText = null;
 		if (text != null)
@@ -370,17 +370,17 @@ public class DumpConverter
 			// - getBytes
 			// - getId
 			// - getSpace
-			
+
 			textDeleted =
 					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_7.DeletedFlagType.DELETED;
 			textText = text.getValue();
 		}
-		
+
 		DateTime revisionTimestampDt = null;
 		XMLGregorianCalendar revisionTimestamp = revision.getTimestamp();
 		if (revisionTimestamp != null)
 			revisionTimestampDt = new DateTime(revisionTimestamp.toGregorianCalendar());
-		
+
 		return new Revision(
 				revision.getId(),
 				revision.getParentid(),
@@ -396,9 +396,9 @@ public class DumpConverter
 				null,
 				null);
 	}
-	
+
 	// =========================================================================
-	
+
 	private Page convertToPage_0_8(
 			org.sweble.wikitext.dumpreader.export_0_8.PageType page)
 	{
@@ -413,15 +413,15 @@ public class DumpConverter
 			// We're ignoring:
 			// - UploadItem
 		}
-		
+
 		// We're ignoring:
 		// - getDiscussionthreadinginfo()
 		// - getRestrictions()
-		
+
 		String redirectTitle = null;
 		if (page.getRedirect() != null)
 			redirectTitle = page.getRedirect().getTitle();
-		
+
 		return new Page(
 				page.getId(),
 				page.getNs(),
@@ -429,21 +429,21 @@ public class DumpConverter
 				redirectTitle,
 				revisions);
 	}
-	
+
 	private Revision convertToRevision_0_8(Object item)
 	{
 		org.sweble.wikitext.dumpreader.export_0_8.RevisionType revision =
 				(org.sweble.wikitext.dumpreader.export_0_8.RevisionType) item;
-		
+
 		org.sweble.wikitext.dumpreader.export_0_8.ContributorType contributor =
 				revision.getContributor();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_8.CommentType comment =
 				revision.getComment();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_8.TextType text =
 				revision.getText();
-		
+
 		Contributor contributor_ = null;
 		String contributorIp = null;
 		if (contributor != null)
@@ -460,7 +460,7 @@ public class DumpConverter
 				contributorIp = contributor.getIp();
 			}
 		}
-		
+
 		boolean commentDeleted = false;
 		String commentText = null;
 		if (comment != null)
@@ -469,7 +469,7 @@ public class DumpConverter
 					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED;
 			commentText = comment.getValue();
 		}
-		
+
 		boolean textDeleted = false;
 		String textText = null;
 		if (text != null)
@@ -478,17 +478,17 @@ public class DumpConverter
 			// - getBytes
 			// - getId
 			// - getSpace
-			
+
 			textDeleted =
 					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_8.DeletedFlagType.DELETED;
 			textText = text.getValue();
 		}
-		
+
 		DateTime revisionTimestampDt = null;
 		XMLGregorianCalendar revisionTimestamp = revision.getTimestamp();
 		if (revisionTimestamp != null)
 			revisionTimestampDt = new DateTime(revisionTimestamp.toGregorianCalendar());
-		
+
 		/*
 		if (!"text/x-wiki".equalsIgnoreCase(revision.getFormat()))
 			throw new UnsupportedDumpFormat("revision/format = " + revision.getFormat());
@@ -496,10 +496,10 @@ public class DumpConverter
 		if (!"wikitext".equalsIgnoreCase(revision.getModel()))
 			throw new UnsupportedDumpFormat("revision/model = " + revision.getModel());
 		*/
-		
+
 		String format = revision.getFormat();
 		String model = revision.getModel();
-		
+
 		return new Revision(
 				revision.getId(),
 				revision.getParentid(),
@@ -515,7 +515,7 @@ public class DumpConverter
 				format,
 				model);
 	}
-	
+
 	private Page convertToPage_0_9(
 			org.sweble.wikitext.dumpreader.export_0_9.PageType page)
 	{
@@ -530,38 +530,38 @@ public class DumpConverter
 			// We're ignoring:
 			// - UploadItem
 		}
-		
+
 		// We're ignoring:
 		// - getDiscussionthreadinginfo()
 		// - getRestrictions()
-		
+
 		String redirectTitle = null;
 		if (page.getRedirect() != null)
 			redirectTitle = page.getRedirect().getTitle();
-		
+
 		return new Page(
 				page.getId(),
 				page.getNs(),
 				page.getTitle(),
 				redirectTitle,
 				revisions);
-		
+
 	}
-	
+
 	private Revision convertToRevision_0_9(Object item)
 	{
 		org.sweble.wikitext.dumpreader.export_0_9.RevisionType revision =
 				(org.sweble.wikitext.dumpreader.export_0_9.RevisionType) item;
-		
+
 		org.sweble.wikitext.dumpreader.export_0_9.ContributorType contributor =
 				revision.getContributor();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_9.CommentType comment =
 				revision.getComment();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_9.TextType text =
 				revision.getText();
-		
+
 		Contributor contributor_ = null;
 		String contributorIp = null;
 		if (contributor != null)
@@ -578,7 +578,7 @@ public class DumpConverter
 				contributorIp = contributor.getIp();
 			}
 		}
-		
+
 		boolean commentDeleted = false;
 		String commentText = null;
 		if (comment != null)
@@ -587,7 +587,7 @@ public class DumpConverter
 					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_9.DeletedFlagType.DELETED;
 			commentText = comment.getValue();
 		}
-		
+
 		boolean textDeleted = false;
 		String textText = null;
 		if (text != null)
@@ -596,17 +596,17 @@ public class DumpConverter
 			// - getBytes
 			// - getId
 			// - getSpace
-			
+
 			textDeleted =
 					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_9.DeletedFlagType.DELETED;
 			textText = text.getValue();
 		}
-		
+
 		DateTime revisionTimestampDt = null;
 		XMLGregorianCalendar revisionTimestamp = revision.getTimestamp();
 		if (revisionTimestamp != null)
 			revisionTimestampDt = new DateTime(revisionTimestamp.toGregorianCalendar());
-		
+
 		/*
 		if (!"text/x-wiki".equalsIgnoreCase(revision.getFormat()))
 			throw new UnsupportedDumpFormat("revision/format = " + revision.getFormat());
@@ -614,10 +614,10 @@ public class DumpConverter
 		if (!"wikitext".equalsIgnoreCase(revision.getModel()))
 			throw new UnsupportedDumpFormat("revision/model = " + revision.getModel());
 		*/
-		
+
 		String format = revision.getFormat();
 		String model = revision.getModel();
-		
+
 		return new Revision(
 				revision.getId(),
 				revision.getParentid(),
@@ -632,9 +632,9 @@ public class DumpConverter
 				textDeleted,
 				format,
 				model);
-		
+
 	}
-	
+
 	private Page convertToPage_0_10(
 			org.sweble.wikitext.dumpreader.export_0_10.PageType page)
 	{
@@ -649,38 +649,38 @@ public class DumpConverter
 			// We're ignoring:
 			// - UploadItem
 		}
-		
+
 		// We're ignoring:
 		// - getDiscussionthreadinginfo()
 		// - getRestrictions()
-		
+
 		String redirectTitle = null;
 		if (page.getRedirect() != null)
 			redirectTitle = page.getRedirect().getTitle();
-		
+
 		return new Page(
 				page.getId(),
 				page.getNs(),
 				page.getTitle(),
 				redirectTitle,
 				revisions);
-		
+
 	}
-	
+
 	private Revision convertToRevision_0_10(Object item)
 	{
 		org.sweble.wikitext.dumpreader.export_0_10.RevisionType revision =
 				(org.sweble.wikitext.dumpreader.export_0_10.RevisionType) item;
-		
+
 		org.sweble.wikitext.dumpreader.export_0_10.ContributorType contributor =
 				revision.getContributor();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_10.CommentType comment =
 				revision.getComment();
-		
+
 		org.sweble.wikitext.dumpreader.export_0_10.TextType text =
 				revision.getText();
-		
+
 		Contributor contributor_ = null;
 		String contributorIp = null;
 		if (contributor != null)
@@ -697,7 +697,7 @@ public class DumpConverter
 				contributorIp = contributor.getIp();
 			}
 		}
-		
+
 		boolean commentDeleted = false;
 		String commentText = null;
 		if (comment != null)
@@ -706,7 +706,7 @@ public class DumpConverter
 					comment.getDeleted() == org.sweble.wikitext.dumpreader.export_0_10.DeletedFlagType.DELETED;
 			commentText = comment.getValue();
 		}
-		
+
 		boolean textDeleted = false;
 		String textText = null;
 		if (text != null)
@@ -715,17 +715,17 @@ public class DumpConverter
 			// - getBytes
 			// - getId
 			// - getSpace
-			
+
 			textDeleted =
 					text.getDeleted() == org.sweble.wikitext.dumpreader.export_0_10.DeletedFlagType.DELETED;
 			textText = text.getValue();
 		}
-		
+
 		DateTime revisionTimestampDt = null;
 		XMLGregorianCalendar revisionTimestamp = revision.getTimestamp();
 		if (revisionTimestamp != null)
 			revisionTimestampDt = new DateTime(revisionTimestamp.toGregorianCalendar());
-		
+
 		/*
 		if (!"text/x-wiki".equalsIgnoreCase(revision.getFormat()))
 			throw new UnsupportedDumpFormat("revision/format = " + revision.getFormat());
@@ -733,10 +733,10 @@ public class DumpConverter
 		if (!"wikitext".equalsIgnoreCase(revision.getModel()))
 			throw new UnsupportedDumpFormat("revision/model = " + revision.getModel());
 		*/
-		
+
 		String format = revision.getFormat();
 		String model = revision.getModel();
-		
+
 		return new Revision(
 				revision.getId(),
 				revision.getParentid(),

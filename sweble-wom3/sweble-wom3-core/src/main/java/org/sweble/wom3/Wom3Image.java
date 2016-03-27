@@ -39,7 +39,7 @@ public interface Wom3Image
 	 * @return The page title of the image.
 	 */
 	public String getSource();
-	
+
 	/**
 	 * Set the source of the image.
 	 * 
@@ -55,14 +55,14 @@ public interface Wom3Image
 	 *             Thrown if <code>null</code> is passed as source.
 	 */
 	public String setSource(String source) throws IllegalArgumentException, NullPointerException;
-	
+
 	/**
 	 * Get the image rendering format.
 	 * 
 	 * @return The image rendering format.
 	 */
 	public Wom3ImageFormat getFormat();
-	
+
 	/**
 	 * Set the image rendering format.
 	 * 
@@ -75,7 +75,7 @@ public interface Wom3Image
 	 *             Thrown if <code>null</code> is given as format.
 	 */
 	public Wom3ImageFormat setFormat(Wom3ImageFormat format) throws NullPointerException;
-	
+
 	/**
 	 * Get whether the image will be rendered with a grey border.
 	 * 
@@ -85,7 +85,7 @@ public interface Wom3Image
 	 *         <code>false</code> otherwise.
 	 */
 	public boolean isBorder();
-	
+
 	/**
 	 * Set whether the image should be rendered with a grey border
 	 * 
@@ -97,7 +97,7 @@ public interface Wom3Image
 	 * @return The old setting.
 	 */
 	public boolean setBorder(boolean border);
-	
+
 	/**
 	 * Get the horizontal alignment of the image.
 	 * 
@@ -107,7 +107,7 @@ public interface Wom3Image
 	 *         not specified.
 	 */
 	public Wom3ImageHAlign getHAlign();
-	
+
 	/**
 	 * Set the horizontal alignment of the image.
 	 * 
@@ -118,7 +118,7 @@ public interface Wom3Image
 	 * @return The old setting.
 	 */
 	public Wom3ImageHAlign setHAlign(Wom3ImageHAlign halign);
-	
+
 	/**
 	 * Get the vertical alignment of the image. Only applies to inline,
 	 * non-floating images.
@@ -129,7 +129,7 @@ public interface Wom3Image
 	 *         attribute is not specified.
 	 */
 	public Wom3ImageVAlign getVAlign();
-	
+
 	/**
 	 * Set the vertical alignment of the image. Only applies to inline,
 	 * non-floating images.
@@ -141,7 +141,7 @@ public interface Wom3Image
 	 * @return The old setting.
 	 */
 	public Wom3ImageVAlign setVAlign(Wom3ImageVAlign valign);
-	
+
 	/**
 	 * Get the width to which the image should be scaled before rendering.
 	 * 
@@ -151,7 +151,7 @@ public interface Wom3Image
 	 *         specified.
 	 */
 	public Integer getWidth();
-	
+
 	/**
 	 * Set the width to which the image should be scaled before rendering.
 	 * 
@@ -163,7 +163,7 @@ public interface Wom3Image
 	 * @return The old width in pixels.
 	 */
 	public Integer setWidth(Integer width);
-	
+
 	/**
 	 * Get the height to which the image should be scaled before rendering.
 	 * 
@@ -173,7 +173,7 @@ public interface Wom3Image
 	 *         specified.
 	 */
 	public Integer getHeight();
-	
+
 	/**
 	 * Set the height to which the image should be scaled before rendering.
 	 * 
@@ -185,7 +185,7 @@ public interface Wom3Image
 	 * @return The old height in pixels.
 	 */
 	public Integer setHeight(Integer height);
-	
+
 	/**
 	 * Whether the image will be resized according to user preferences.
 	 * 
@@ -195,7 +195,7 @@ public interface Wom3Image
 	 *         preferences, <code>false</code> otherwise.
 	 */
 	public boolean isUpright();
-	
+
 	/**
 	 * Set whether the image should will be resized according to user
 	 * preferences.
@@ -209,7 +209,7 @@ public interface Wom3Image
 	 * @return The old setting.
 	 */
 	public boolean setUpright(boolean upright);
-	
+
 	/**
 	 * Get the optional URL to which the image will link when clicked. The
 	 * optional URL and optional page link are mutually exclusive.
@@ -220,7 +220,7 @@ public interface Wom3Image
 	 *         specified.
 	 */
 	public URL getExtLink();
-	
+
 	/**
 	 * Set the optional URL to which the image will link when clicked. The
 	 * optional URL and optional page link are mutually exclusive. If the
@@ -235,7 +235,7 @@ public interface Wom3Image
 	 * @return The old URL.
 	 */
 	public URL setExtLink(URL url);
-	
+
 	/**
 	 * Get the optional page to which the image will link when clicked. The
 	 * optional page link and optional URL are mutually exclusive.
@@ -246,7 +246,7 @@ public interface Wom3Image
 	 *         specified.
 	 */
 	public String getIntLink();
-	
+
 	/**
 	 * Set the optional page to which the image will link when clicked. The
 	 * optional page and link optional URL are mutually exclusive. If the
@@ -260,7 +260,7 @@ public interface Wom3Image
 	 * @return The old page.
 	 */
 	public String setIntLink(String page);
-	
+
 	/**
 	 * Get the alternative text of the image.
 	 * 
@@ -270,7 +270,7 @@ public interface Wom3Image
 	 *         specified.
 	 */
 	public String getAlt();
-	
+
 	/**
 	 * Set the alternative text of the image.
 	 * 
@@ -282,9 +282,9 @@ public interface Wom3Image
 	 * @return The old alternative text.
 	 */
 	public String setAlt(String alt);
-	
+
 	// ==[ Caption ]============================================================
-	
+
 	/**
 	 * Get the caption of the image.
 	 * 
@@ -292,7 +292,7 @@ public interface Wom3Image
 	 *         not specify a caption.
 	 */
 	public Wom3ImageCaption getCaption();
-	
+
 	/**
 	 * Set the caption of the image.
 	 * 
@@ -302,9 +302,9 @@ public interface Wom3Image
 	 * @return The old caption.
 	 */
 	public Wom3ImageCaption setCaption(Wom3ImageCaption caption);
-	
+
 	// ==[ Link interface ]=====================================================
-	
+
 	/**
 	 * Returns the alternative text of the image. If no alternative text is
 	 * given an empty title will be returned.
@@ -313,7 +313,7 @@ public interface Wom3Image
 	 */
 	@Override
 	public Wom3Title getLinkTitle();
-	
+
 	/**
 	 * Return the target this image links to. This is the page of the image
 	 * itself or another page or url if the <code>pagelink</code> or

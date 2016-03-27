@@ -22,21 +22,21 @@ public class NamespaceException
 			RuntimeException
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	public NamespaceException()
 	{
 	}
-	
+
 	public NamespaceException(String message, Throwable cause)
 	{
 		super(message, cause);
 	}
-	
+
 	public NamespaceException(String message)
 	{
 		super(message);
 	}
-	
+
 	public NamespaceException(Throwable cause)
 	{
 		super(cause);

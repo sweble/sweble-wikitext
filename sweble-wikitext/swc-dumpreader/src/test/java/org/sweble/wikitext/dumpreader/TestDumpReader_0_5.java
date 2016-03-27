@@ -17,7 +17,9 @@
 
 package org.sweble.wikitext.dumpreader;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,10 +32,11 @@ import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventLocator;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.dumpreader.export_0_5.CaseType;
 import org.sweble.wikitext.dumpreader.export_0_5.CommentType;
 import org.sweble.wikitext.dumpreader.export_0_5.ContributorType;
@@ -44,25 +47,25 @@ import org.sweble.wikitext.dumpreader.export_0_5.RevisionType;
 import org.sweble.wikitext.dumpreader.export_0_5.SiteInfoType;
 import org.sweble.wikitext.dumpreader.export_0_5.TextType;
 
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class TestDumpReader_0_5
 {
 	private Logger logger;
-	
+
 	@Before
 	public void setUp()
 	{
-		logger = Logger.getLogger(getClass());
+		logger = LoggerFactory.getLogger(getClass());
 	}
-	
+
 	@Test
 	public void testExport() throws Throwable
 	{
 		URL resource = getClass().getResource("/input-0.5.xml");
-		String path = StringUtils.decodeUsingDefaultCharset(resource.getFile());
+		String path = StringTools.decodeUsingDefaultCharset(resource.getFile());
 		final File file = new File(path);
-		
+
 		DumpReader dr = null;
 		FileInputStream is = null;
 		try
@@ -85,13 +88,13 @@ public class TestDumpReader_0_5
 			}
 		}
 	}
-	
+
 	private final class DumpReaderExtension
 			extends
 				DumpReader
 	{
 		private final File file;
-		
+
 		private DumpReaderExtension(
 				File dumpFile,
 				InputStream is,
@@ -102,41 +105,41 @@ public class TestDumpReader_0_5
 			super(is, null, dumpFile.getAbsolutePath(), logger, true);
 			this.file = file;
 		}
-		
+
 		@Override
 		protected void processPage(Object mediaWiki, Object page)
 		{
 			{
 				MediaWikiType mw =
 						(MediaWikiType) mediaWiki;
-				
+
 				assertEquals("0.5", mw.getVersion());
-				
+
 				{
 					SiteInfoType siteinfo = mw.getSiteinfo();
 					assertEquals("BASE", siteinfo.getBase());
 					assertEquals(CaseType.FIRST_LETTER, siteinfo.getCase());
 					assertEquals("GENERATOR", siteinfo.getGenerator());
 					assertEquals("SITENAME", siteinfo.getSitename());
-					
+
 					{
 						List<NamespaceType> namespaces = siteinfo.getNamespaces().getNamespace();
 						assertEquals(3, namespaces.size());
-						
+
 						{
 							NamespaceType ns = namespaces.get(0);
 							assertEquals(BigInteger.valueOf(-1), ns.getKey());
 							assertEquals("NEGATIVE", ns.getValue());
 							assertEquals(CaseType.FIRST_LETTER, ns.getCase());
 						}
-						
+
 						{
 							NamespaceType ns = namespaces.get(1);
 							assertEquals(BigInteger.valueOf(0), ns.getKey());
 							assertEquals("", ns.getValue());
 							assertEquals(CaseType.FIRST_LETTER, ns.getCase());
 						}
-						
+
 						{
 							NamespaceType ns = namespaces.get(2);
 							assertEquals(BigInteger.valueOf(+1), ns.getKey());
@@ -146,29 +149,29 @@ public class TestDumpReader_0_5
 					}
 				}
 			}
-			
+
 			PageType p = (PageType) page;
 			assertEquals("TITLE", p.getTitle());
 			assertNull(p.getDiscussionthreadinginfo());
 			assertEquals(BigInteger.valueOf(10), p.getId());
 			assertNotNull(p.getRedirect());
 			assertNull(p.getRestrictions());
-			
+
 			{
 				List<Object> items = p.getRevisionOrUploadOrLogitem();
 				assertEquals(1, items.size());
-				
+
 				{
 					RevisionType item = (RevisionType) items.get(0);
 					assertEquals(BigInteger.valueOf(123456789), item.getId());
 					assertNotNull(item.getMinor());
-					
+
 					{
 						CommentType comment = item.getComment();
 						assertNull(comment.getDeleted());
 						assertEquals("COMMENT", comment.getValue());
 					}
-					
+
 					{
 						ContributorType contrib = item.getContributor();
 						assertNull(contrib.getDeleted());
@@ -176,7 +179,7 @@ public class TestDumpReader_0_5
 						assertNull(contrib.getIp());
 						assertEquals("USERNAME", contrib.getUsername());
 					}
-					
+
 					{
 						TextType text = item.getText();
 						assertNull(text.getBytes());
@@ -184,7 +187,7 @@ public class TestDumpReader_0_5
 						assertNull(text.getId());
 						assertEquals("TEXT", text.getValue());
 					}
-					
+
 					{
 						XMLGregorianCalendar ts = item.getTimestamp();
 						assertEquals(2012, ts.getYear());
@@ -198,11 +201,11 @@ public class TestDumpReader_0_5
 				}
 			}
 		}
-		
+
 		@Override
 		protected boolean processEvent(
 				ValidationEvent ve,
-				ValidationEventLocator vel) throws Exception
+				ValidationEventLocator vel)
 		{
 			Assert.fail(String.format(
 					"%s:%d:%d: %s",
@@ -210,7 +213,7 @@ public class TestDumpReader_0_5
 					vel.getLineNumber(),
 					vel.getColumnNumber(),
 					ve.getMessage()));
-			
+
 			return super.processEvent(ve, vel);
 		}
 	}

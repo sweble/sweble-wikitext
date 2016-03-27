@@ -17,41 +17,47 @@
 
 package org.sweble.wikitext.dumpreader;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-import org.apache.log4j.Logger;
+import javax.xml.bind.JAXBException;
+import javax.xml.stream.FactoryConfigurationError;
+import javax.xml.stream.XMLStreamException;
+
+import org.slf4j.Logger;
+import org.xml.sax.SAXException;
 
 public class DumpReaderWithHandler
 		extends
 			DumpReader
 {
 	private final DumpReaderListener listener;
-	
+
 	// =========================================================================
-	
+
 	public DumpReaderWithHandler(
 			InputStream is,
 			Charset encoding,
 			DumpReaderListener listener,
 			String url,
 			Logger logger,
-			boolean useSchema) throws Exception
+			boolean useSchema) throws JAXBException, FactoryConfigurationError, XMLStreamException, IOException, SAXException
 	{
 		super(is, encoding, url, logger, useSchema);
 		this.listener = listener;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
-	protected void processPage(Object mediaWiki, Object page) throws Exception
+	protected void processPage(Object mediaWiki, Object page)
 	{
 		listener.handlePage(mediaWiki, page);
 	}
-	
+
 	@Override
-	protected boolean processRevision(Object page, Object revision) throws Exception
+	protected boolean processRevision(Object page, Object revision)
 	{
 		return listener.handleRevisionOrUploadOrLogitem(page, revision);
 	}

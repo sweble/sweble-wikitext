@@ -23,15 +23,15 @@ import java.util.Map;
 public abstract class CoreAttributes
 {
 	public static final AttrDescId ATTR_DESC_ID = new AttrDescId();
-	
+
 	public static final AttrDescClass ATTR_DESC_CLASS = new AttrDescClass();
-	
+
 	public static final AttrDescStyle ATTR_DESC_STYLE = new AttrDescStyle();
-	
+
 	public static final AttrDescTitle ATTR_DESC_TITLE = new AttrDescTitle();
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescId
 			extends
 				AttributeDescriptor
@@ -45,7 +45,7 @@ public abstract class CoreAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -54,9 +54,9 @@ public abstract class CoreAttributes
 			return AttributeVerifiers.ID.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescClass
 			extends
 				AttributeDescriptor
@@ -70,7 +70,7 @@ public abstract class CoreAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -79,9 +79,9 @@ public abstract class CoreAttributes
 			return AttributeVerifiers.NMTOKENS.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescStyle
 			extends
 				AttributeDescriptor
@@ -95,7 +95,7 @@ public abstract class CoreAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -104,9 +104,9 @@ public abstract class CoreAttributes
 			return AttributeVerifiers.STYLESHEET.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public static final class AttrDescTitle
 			extends
 				AttributeDescriptor
@@ -120,7 +120,7 @@ public abstract class CoreAttributes
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -129,11 +129,11 @@ public abstract class CoreAttributes
 			return super.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static Map<String, AttributeDescriptor> NAME_MAP;
-	
+
 	public synchronized static Map<String, AttributeDescriptor> getNameMap()
 	{
 		Map<String, AttributeDescriptor> nameMap = NAME_MAP;
@@ -148,7 +148,7 @@ public abstract class CoreAttributes
 		}
 		return nameMap;
 	}
-	
+
 	public static AttributeDescriptor getDescriptor(String name)
 	{
 		return getNameMap().get(name);

@@ -33,7 +33,7 @@ import org.sweble.wom3.Wom3Section;
 import org.sweble.wom3.Wom3Text;
 import org.sweble.wom3.util.Wom3Visitor;
 
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 /**
  * A visitor to convert an article AST into a pure text representation. To
@@ -65,38 +65,38 @@ public class TextConverter
 			Wom3Visitor
 {
 	private static final Pattern ws = Pattern.compile("\\s+");
-	
+
 	//private final WikiConfig config;
-	
+
 	private final int wrapCol;
-	
+
 	private StringBuilder sb;
-	
+
 	private StringBuilder line;
-	
+
 	//private int extLinkNum;
-	
+
 	/**
 	 * Becomes true if we are no long at the Beginning Of the whole Document.
 	 */
 	private boolean pastBod;
-	
+
 	private int needNewlines;
-	
+
 	private boolean needSpace;
-	
+
 	private boolean noWrap;
-	
+
 	private LinkedList<Integer> sections;
-	
+
 	// =========================================================================
-	
+
 	public TextConverter(WikiConfig config, int wrapCol)
 	{
 		//this.config = config;
 		this.wrapCol = wrapCol;
 	}
-	
+
 	@Override
 	protected Wom3Node before(Wom3Node node)
 	{
@@ -111,19 +111,19 @@ public class TextConverter
 		sections = new LinkedList<Integer>();
 		return super.before(node);
 	}
-	
+
 	@Override
 	protected Object after(Wom3Node node, Object result)
 	{
 		writeNewlines(1);
-		
+
 		// This method is called by go() after visitation has finished
 		// The return value will be passed to go() which passes it to the caller
 		return sb.toString();
 	}
-	
+
 	// =========================================================================
-	
+
 	public void visit(Wom3Node n)
 	{
 		// Fallback for all nodes that are not explicitly handled below
@@ -131,27 +131,27 @@ public class TextConverter
 		write(n.getNodeName());
 		write(" />");
 	}
-	
+
 	public void visit(Wom3Document n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(Wom3Article n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(Wom3Body n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(Wom3Rtd n)
 	{
 		// IGNORE
 	}
-	
+
 	/*
 	public void visit(WtUnorderedList e)
 	{
@@ -174,26 +174,26 @@ public class TextConverter
 		iterate(p);
 	}
 	*/
-	
+
 	public void visit(Wom3Text text)
 	{
 		write(text.getTextContent());
 	}
-	
+
 	public void visit(Wom3Bold b)
 	{
 		write("**");
 		iterate(b);
 		write("**");
 	}
-	
+
 	public void visit(Wom3Italics i)
 	{
 		write("//");
 		iterate(i);
 		write("//");
 	}
-	
+
 	/*
 	public void visit(WtXmlCharRef cr)
 	{
@@ -259,7 +259,7 @@ public class TextConverter
 		write(link.getPostfix());
 	}
 	*/
-	
+
 	public void visit(Wom3Section s)
 	{
 		finishLine();
@@ -267,73 +267,73 @@ public class TextConverter
 		boolean saveNoWrap = noWrap;
 		boolean savePastBod = pastBod;
 		boolean saveNeedSpace = needSpace;
-		
+
 		sb = new StringBuilder();
 		noWrap = true;
-		
+
 		iterate(s.getHeading());
 		finishLine();
 		String title = sb.toString().trim();
-		
+
 		sb = saveSb;
-		
+
 		if (s.getLevel() >= 1)
 		{
 			while (sections.size() > s.getLevel())
 				sections.removeLast();
 			while (sections.size() < s.getLevel())
 				sections.add(1);
-			
+
 			StringBuilder sb2 = new StringBuilder();
 			for (int i = 0; i < sections.size(); ++i)
 			{
 				if (i < 1)
 					continue;
-				
+
 				sb2.append(sections.get(i));
 				sb2.append('.');
 			}
-			
+
 			if (sb2.length() > 0)
 				sb2.append(' ');
 			sb2.append(title);
 			title = sb2.toString();
 		}
-		
+
 		pastBod = savePastBod;
 		needSpace = saveNeedSpace;
-		
+
 		newline(2);
 		write(title);
 		newline(1);
-		write(StringUtils.strrep('-', title.length()));
+		write(StringTools.strrep('-', title.length()));
 		newline(2);
-		
+
 		noWrap = saveNoWrap;
-		
+
 		iterate(s.getBody());
-		
+
 		while (sections.size() > s.getLevel())
 			sections.removeLast();
 		sections.add(sections.removeLast() + 1);
 	}
-	
+
 	public void visit(Wom3Heading h)
 	{
 		iterate(h);
 	}
-	
+
 	public void visit(Wom3Paragraph p)
 	{
 		iterate(p);
 		newline(2);
 	}
-	
+
 	/*
 	public void visit(WtHorizontalRule hr)
 	{
 		newline(1);
-		write(StringUtils.strrep('-', wrapCol));
+		write(StringTools.strrep('-', wrapCol));
 		newline(2);
 	}
 	
@@ -386,7 +386,7 @@ public class TextConverter
 	
 	*/
 	// =========================================================================
-	
+
 	private void newline(int num)
 	{
 		if (pastBod)
@@ -395,61 +395,61 @@ public class TextConverter
 				needNewlines = num;
 		}
 	}
-	
+
 	private void wantSpace()
 	{
 		if (pastBod)
 			needSpace = true;
 	}
-	
+
 	private void finishLine()
 	{
 		sb.append(line.toString());
 		line.setLength(0);
 	}
-	
+
 	private void writeNewlines(int num)
 	{
 		finishLine();
-		sb.append(StringUtils.strrep('\n', num));
+		sb.append(StringTools.strrep('\n', num));
 		needNewlines = 0;
 		needSpace = false;
 	}
-	
+
 	private void writeWord(String s)
 	{
 		int length = s.length();
 		if (length == 0)
 			return;
-		
+
 		if (!noWrap && needNewlines <= 0)
 		{
 			if (needSpace)
 				length += 1;
-			
+
 			if (line.length() + length >= wrapCol && line.length() > 0)
 				writeNewlines(1);
 		}
-		
+
 		if (needSpace && needNewlines <= 0)
 			line.append(' ');
-		
+
 		if (needNewlines > 0)
 			writeNewlines(needNewlines);
-		
+
 		needSpace = false;
 		pastBod = true;
 		line.append(s);
 	}
-	
+
 	private void write(String s)
 	{
 		if (s.isEmpty())
 			return;
-		
+
 		if (Character.isSpaceChar(s.charAt(0)))
 			wantSpace();
-		
+
 		String[] words = ws.split(s);
 		for (int i = 0; i < words.length;)
 		{
@@ -457,7 +457,7 @@ public class TextConverter
 			if (++i < words.length)
 				wantSpace();
 		}
-		
+
 		if (Character.isSpaceChar(s.charAt(s.length() - 1)))
 			wantSpace();
 	}

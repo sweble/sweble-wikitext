@@ -23,7 +23,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitorNoReturn;
@@ -108,7 +109,7 @@ import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
 
 import de.fau.cs.osr.utils.FmtNotYetImplementedError;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 import de.fau.cs.osr.utils.visitor.VisitingException;
 
 public class HtmlRenderer
@@ -122,30 +123,30 @@ public class HtmlRenderer
 	{
 		dispatch(n.getPage());
 	}
-	
+
 	@Override
 	public void visit(EngNowiki n)
 	{
 		wrapText(n.getContent());
 	}
-	
+
 	public void visit(EngPage n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(EngSoftErrorNode n)
 	{
 		visit((WtXmlElement) n);
 	}
-	
+
 	@Override
 	public void visit(WtBody n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtBold n)
 	{
 		p.indentAtBol("<b>");
@@ -154,7 +155,7 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentAtBol("</b>");
 	}
-	
+
 	public void visit(WtDefinitionList n)
 	{
 		p.indentln("<dl>");
@@ -163,7 +164,7 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</dl>");
 	}
-	
+
 	public void visit(WtDefinitionListDef n)
 	{
 		p.indentln("<dd>");
@@ -172,7 +173,7 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</dd>");
 	}
-	
+
 	public void visit(WtDefinitionListTerm n)
 	{
 		p.indentln("<dt>");
@@ -181,13 +182,13 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</dt>");
 	}
-	
+
 	public void visit(WtExternalLink n)
 	{
 		if (n.hasTitle())
 		{
 			p.indentAtBol();
-			
+
 			pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s\">%!</a>",
 					callback.makeUrl(n.getTarget()),
 					n.getTitle());
@@ -197,36 +198,36 @@ public class HtmlRenderer
 			throw new FmtNotYetImplementedError();
 		}
 	}
-	
+
 	@Override
 	public void visit(WtHeading n)
 	{
 		// We handle this case in WtSection and don't dispatch to the heading.
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtHorizontalRule n)
 	{
 		p.indentAtBol("<hr />");
 	}
-	
+
 	@Override
 	public void visit(WtIgnored n)
 	{
 		// Well, ignore it ...
 	}
-	
+
 	@Override
 	public void visit(WtIllegalCodePoint n)
 	{
 		p.indentAtBol();
-		
+
 		final String cp = n.getCodePoint();
 		for (int i = 0; i < cp.length(); ++i)
 			pf("&amp;#%d;", (int) cp.charAt(i));
 	}
-	
+
 	public void visit(WtImageLink n)
 	{
 		if (!n.getTarget().isResolved())
@@ -234,7 +235,7 @@ public class HtmlRenderer
 			printAsWikitext(n);
 			return;
 		}
-		
+
 		PageTitle target;
 		try
 		{
@@ -244,10 +245,10 @@ public class HtmlRenderer
 		{
 			throw new VisitingException(e);
 		}
-		
+
 		int imgWidth = n.getWidth();
 		int imgHeight = n.getHeight();
-		
+
 		switch (n.getFormat())
 		{
 			case THUMBNAIL: // FALL THROUGH
@@ -258,13 +259,13 @@ public class HtmlRenderer
 			default:
 				break;
 		}
-		
+
 		if (n.getUpright())
 		{
 			imgWidth = 140;
 			imgHeight = -1;
 		}
-		
+
 		MediaInfo info;
 		try
 		{
@@ -277,11 +278,11 @@ public class HtmlRenderer
 		{
 			throw new VisitingException(e);
 		}
-		
+
 		boolean exists = (info != null && info.getImgUrl() != null);
-		
+
 		boolean isImage = !target.getTitle().endsWith(".ogg");
-		
+
 		if (exists && imgHeight > 0)
 		{
 			int altWidth = imgHeight * info.getImgWidth() / info.getImgHeight();
@@ -301,9 +302,9 @@ public class HtmlRenderer
 				}
 			}
 		}
-		
+
 		boolean scaled = imgWidth > 0 || imgHeight > 0;
-		
+
 		String imgUrl = null;
 		if (exists)
 		{
@@ -311,10 +312,10 @@ public class HtmlRenderer
 			if (scaled && info.getThumbUrl() != null)
 				imgUrl = info.getThumbUrl();
 		}
-		
+
 		String aClasses = "";
 		String imgClasses = "";
-		
+
 		switch (n.getFormat())
 		{
 			case THUMBNAIL:
@@ -323,12 +324,12 @@ public class HtmlRenderer
 			default:
 				break;
 		}
-		
+
 		if (n.getBorder())
 			imgClasses += " thumbborder";
-		
+
 		// -- does the image link something? --
-		
+
 		WtUrl linkUrl = null;
 		PageTitle linkTarget = target;
 		switch (n.getLink().getTargetType())
@@ -365,26 +366,26 @@ public class HtmlRenderer
 					aClasses += " image";
 				break;
 		}
-		
+
 		// -- string caption --
-		
+
 		String strCaption = null;
 		if (n.hasTitle())
 			strCaption = makeImageCaption(n);
-		
+
 		// -- <img> alt --
-		
+
 		String alt = null;
 		if (n.hasAlt())
 			alt = makeImageAltText(n);
-		
+
 		// -- <a> classes
-		
+
 		if (!aClasses.isEmpty())
 			aClasses = String.format(" class=\"%s\"", aClasses.trim());
-		
+
 		// -- <a> title --
-		
+
 		String aTitle = "";
 		if (n.getFormat() != ImageViewFormat.FRAMELESS)
 		{
@@ -403,27 +404,27 @@ public class HtmlRenderer
 		}
 		if (!aTitle.isEmpty())
 			aTitle = String.format(" title=\"%s\"", aTitle);
-		
+
 		// -- width & height --
-		
+
 		int width = -1;
 		int height = -1;
-		
+
 		if (exists)
 		{
 			width = scaled ? info.getThumbWidth() : info.getImgWidth();
-			
+
 			height = scaled ? info.getThumbHeight() : info.getImgHeight();
 		}
 		else
 			width = 180;
-		
+
 		// -- generate html --
-		
+
 		boolean hasThumbFrame = isImage &&
 				n.getFormat() == ImageViewFormat.THUMBNAIL ||
 				n.getHAlign() != ImageHorizAlign.UNSPECIFIED;
-		
+
 		if (hasThumbFrame)
 		{
 			String align = "";
@@ -441,7 +442,7 @@ public class HtmlRenderer
 					align = " tright";
 					break;
 			}
-			
+
 			String thumb = "";
 			String inner = "floatnone";
 			String style = "";
@@ -451,7 +452,7 @@ public class HtmlRenderer
 				inner = "thumbinner";
 				style = String.format(" style=\"width:%dpx;\"", width + 2);
 			}
-			
+
 			p.indent();
 			pf("<div class=\"%s\">", (thumb + align).trim());
 			p.incIndent();
@@ -459,7 +460,7 @@ public class HtmlRenderer
 			pf("<div class=\"%s\"%s>", inner, style);
 			p.println();
 			p.incIndent();
-			
+
 			aTitle = "";
 			if (!exists)
 				aTitle = String.format(" title=\"%s\"", makeImageTitle(n, target));
@@ -469,10 +470,10 @@ public class HtmlRenderer
 			if (alt == null)
 				alt = strCaption;
 		}
-		
+
 		if (alt == null)
 			alt = "";
-		
+
 		p.indentAtBol();
 		if (linkTarget != null || linkUrl != null)
 		{
@@ -481,10 +482,10 @@ public class HtmlRenderer
 					aClasses,
 					aTitle);
 		}
-		
+
 		if (!imgClasses.isEmpty())
 			imgClasses = String.format(" class=\"%s\"", imgClasses.trim());
-		
+
 		if (exists)
 		{
 			if (isImage)
@@ -505,10 +506,10 @@ public class HtmlRenderer
 		{
 			p.print(esc(makeImageTitle(n, target)));
 		}
-		
+
 		if (linkTarget != null || linkUrl != null)
 			p.print("</a>");
-		
+
 		if (n.getFormat() == ImageViewFormat.THUMBNAIL)
 		{
 			if (exists)
@@ -532,7 +533,7 @@ public class HtmlRenderer
 				pt("<div class=\"thumbcaption\">%!</div>", n.getTitle());
 			}
 		}
-		
+
 		if (hasThumbFrame)
 		{
 			p.decIndent();
@@ -541,21 +542,21 @@ public class HtmlRenderer
 			p.indentln("</div>");
 		}
 	}
-	
+
 	@Override
 	public void visit(WtImEndTag n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtImStartTag n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	public void visit(WtInternalLink n)
 	{
 		if (!n.getTarget().isResolved())
@@ -563,9 +564,9 @@ public class HtmlRenderer
 			printAsWikitext(n);
 			return;
 		}
-		
+
 		p.indentAtBol();
-		
+
 		PageTitle target;
 		try
 		{
@@ -575,17 +576,17 @@ public class HtmlRenderer
 		{
 			throw new VisitingException(e);
 		}
-		
+
 		// FIXME: I think these should be removed in the parser already?!
 		if (target.getNamespace() == wikiConfig.getNamespace("Category"))
 			return;
-		
+
 		if (!callback.resourceExists(target))
 		{
 			String title = target.getDenormalizedFullTitle();
-			
+
 			String path = UrlEncoding.WIKI.encode(target.getNormalizedFullTitle());
-			
+
 			if (n.hasTitle())
 			{
 				pt("<a href=\"%s\" class=\"new\" title=\"%s (page does not exist)\">%=%!%=</a>",
@@ -598,7 +599,7 @@ public class HtmlRenderer
 			else
 			{
 				String linkText = makeTitleFromTarget(n, target);
-				
+
 				pt("<a href=\"%s\" class=\"new\" title=\"%s (page does not exist)\">%=%=%=</a>",
 						callback.makeUrlMissingTarget(path),
 						title,
@@ -649,7 +650,7 @@ public class HtmlRenderer
 			}
 		}
 	}
-	
+
 	public void visit(WtItalics n)
 	{
 		p.indentAtBol("<i>");
@@ -658,55 +659,55 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentAtBol("</i>");
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionAltText n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionGarbage n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionKeyword n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionLinkTarget n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptionResize n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkOptions n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtLinkTitle n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtListItem n)
 	{
 		p.indentln("<li>");
@@ -715,31 +716,31 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</li>");
 	}
-	
+
 	@Override
 	public void visit(WtName n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtNewline n)
 	{
 		if (!p.atBol())
 			p.print(" ");
 	}
-	
+
 	@Override
 	public void visit(WtNodeList n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtOnlyInclude n)
 	{
 		iterate(n);
 	}
-	
+
 	public void visit(WtOrderedList n)
 	{
 		p.indentln("<ol>");
@@ -748,20 +749,20 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</ol>");
 	}
-	
+
 	@Override
 	public void visit(WtPageName n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtPageSwitch n)
 	{
 		// Hide those...
 	}
-	
+
 	public void visit(WtParagraph n)
 	{
 		p.indentln("<p>");
@@ -770,26 +771,26 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</p>");
 	}
-	
+
 	@Override
 	public void visit(WtParsedWikitextPage n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtPreproWikitextPage n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtRedirect n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	public void visit(WtSection n)
 	{
 		p.indent();
@@ -798,11 +799,11 @@ public class HtmlRenderer
 				makeSectionTitle(n.getHeading()),
 				n.getHeading(),
 				n.getLevel());
-		
+
 		p.println();
 		dispatch(n.getBody());
 	}
-	
+
 	public void visit(WtSemiPre n)
 	{
 		p.indent();
@@ -811,33 +812,33 @@ public class HtmlRenderer
 		--inPre;
 		p.println();
 	}
-	
+
 	public void visit(WtSemiPreLine n)
 	{
 		iterate(n);
 		p.println();
 	}
-	
+
 	@Override
 	public void visit(WtSignature n)
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
 	}
-	
+
 	public void visit(WtTable n)
 	{
 		p.indent();
 		pt("<table%!>", cleanAttribs(n.getXmlAttributes()));
 		p.println();
-		
+
 		p.incIndent();
 		fixTableBody(n.getBody());
 		p.decIndent();
-		
+
 		p.indentln("</table>");
 	}
-	
+
 	@Override
 	public void visit(WtTableCaption n)
 	{
@@ -849,7 +850,7 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</caption>");
 	}
-	
+
 	public void visit(WtTableCell n)
 	{
 		p.indent();
@@ -860,7 +861,7 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</td>");
 	}
-	
+
 	public void visit(WtTableHeader n)
 	{
 		p.indent();
@@ -871,7 +872,7 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</th>");
 	}
-	
+
 	public void visit(WtTableRow n)
 	{
 		boolean cellsDefined = false;
@@ -885,7 +886,7 @@ public class HtmlRenderer
 					break;
 			}
 		}
-		
+
 		if (cellsDefined)
 		{
 			p.indent();
@@ -901,12 +902,12 @@ public class HtmlRenderer
 			iterate(n.getBody());
 		}
 	}
-	
+
 	public void visit(WtTableImplicitTableBody n)
 	{
 		iterate(n.getBody());
 	}
-	
+
 	public void visit(WtTagExtension n)
 	{
 		// TODO: Should not get skipped!
@@ -914,9 +915,9 @@ public class HtmlRenderer
 			return;
 		if (n.getName().trim().equalsIgnoreCase("references"))
 			return;
-		
+
 		printAsWikitext(n);
-		
+
 		/*
 		pc("&lt;%s%!&gt;%=&lt;/%s&gt;",
 				n.getName(),
@@ -925,50 +926,50 @@ public class HtmlRenderer
 				n.getName());
 		*/
 	}
-	
+
 	@Override
 	public void visit(WtTagExtensionBody n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	@Override
 	public void visit(WtTemplate n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtTemplateArgument n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtTemplateArguments n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	@Override
 	public void visit(WtTemplateParameter n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	public void visit(WtText n)
 	{
 		wrapText(n.getContent());
 	}
-	
+
 	@Override
 	public void visit(WtTicks n)
 	{
 		// Should not happen ...
 		throw new InternalError();
 	}
-	
+
 	public void visit(WtUnorderedList n)
 	{
 		p.indentln("<ul>");
@@ -977,28 +978,28 @@ public class HtmlRenderer
 		p.decIndent();
 		p.indentln("</ul>");
 	}
-	
+
 	public void visit(WtUrl n)
 	{
 		p.indentAtBol();
-		
+
 		String url = callback.makeUrl(n);
 		pf("<a href=\"%s\">%s</a>", url, url);
 	}
-	
+
 	@Override
 	public void visit(WtValue n)
 	{
 		iterate(n);
 	}
-	
+
 	@Override
 	public void visit(WtWhitespace n)
 	{
 		if (!p.atBol())
 			p.println(" ");
 	}
-	
+
 	public void visit(WtXmlAttribute n)
 	{
 		if (!n.getName().isResolved())
@@ -1017,12 +1018,12 @@ public class HtmlRenderer
 			}
 		}
 	}
-	
+
 	public void visit(WtXmlAttributeGarbage n)
 	{
 		logger.warn("Attribute garbage: " + WtRtDataPrinter.print(n));
 	}
-	
+
 	@Override
 	public void visit(WtXmlAttributes n)
 	{
@@ -1040,19 +1041,19 @@ public class HtmlRenderer
 			}
 		}
 	}
-	
+
 	public void visit(WtXmlCharRef n)
 	{
 		p.indentAtBol();
 		pf("&#%d;", n.getCodePoint());
 	}
-	
+
 	@Override
 	public void visit(WtXmlComment n)
 	{
 		// Hide those...
 	}
-	
+
 	public void visit(WtXmlElement n)
 	{
 		if (n.hasBody())
@@ -1086,30 +1087,30 @@ public class HtmlRenderer
 			pt("<%s%! />", n.getName(), cleanAttribs(n.getXmlAttributes()));
 		}
 	}
-	
+
 	public void visit(WtXmlEmptyTag n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	public void visit(WtXmlEndTag n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	public void visit(WtXmlEntityRef n)
 	{
 		p.indentAtBol();
 		pf("&%s;", n.getName());
 	}
-	
+
 	public void visit(WtXmlStartTag n)
 	{
 		printAsWikitext(n);
 	}
-	
+
 	// =====================================================================
-	
+
 	private void wrapText(String text)
 	{
 		if (inPre > 0)
@@ -1118,10 +1119,10 @@ public class HtmlRenderer
 		}
 		else
 		{
-			p.indentAtBol(esc(StringUtils.collapseWhitespace(text)));
+			p.indentAtBol(esc(StringTools.collapseWhitespace(text)));
 		}
 	}
-	
+
 	/*
 	private void wrapText(String text)
 	{
@@ -1170,7 +1171,7 @@ public class HtmlRenderer
 				
 				String substr = text.substring(i, j);
 				if (!substr.isEmpty())
-					p.indentAtBol(esc(StringUtils.collapseWhitespace(substr)));
+					p.indentAtBol(esc(StringTools.collapseWhitespace(substr)));
 				
 				if (i < len)
 					p.println();
@@ -1180,23 +1181,23 @@ public class HtmlRenderer
 		}
 	}
 	*/
-	
+
 	private void printAsWikitext(WtNode n)
 	{
 		// TODO: Implement
 		//throw new FmtNotYetImplementedError();
 		//p.indentAtBol();
 	}
-	
+
 	private String toWikitext(WtNode value)
 	{
 		// TODO: Implement
 		//throw new FmtNotYetImplementedError();
 		return "";
 	}
-	
+
 	// =====================================================================
-	
+
 	private String makeSectionTitle(WtHeading n)
 	{
 		byte[] title;
@@ -1208,7 +1209,7 @@ public class HtmlRenderer
 		{
 			throw new VisitingException(e);
 		}
-		
+
 		StringBuilder b = new StringBuilder();
 		for (byte u : title)
 		{
@@ -1226,20 +1227,20 @@ public class HtmlRenderer
 				b.append((char) u);
 			}
 		}
-		
+
 		return b.toString();
 	}
-	
+
 	private String makeImageAltText(WtImageLink n)
 	{
 		return makeTitleFromNodes(n.getAlt());
 	}
-	
+
 	protected String makeImageCaption(WtImageLink n)
 	{
 		return makeTitleFromNodes(n.getTitle());
 	}
-	
+
 	private String makeTitleFromNodes(WtNodeList titleNode)
 	{
 		StringWriter w = new StringWriter();
@@ -1247,24 +1248,24 @@ public class HtmlRenderer
 		p.go(titleNode);
 		return w.toString();
 	}
-	
+
 	// =====================================================================
-	
+
 	static String makeLinkTitle(WtInternalLink n, PageTitle target)
 	{
 		return target.getDenormalizedFullTitle();
 	}
-	
+
 	protected String makeImageTitle(WtImageLink n, PageTitle target)
 	{
 		return target.getDenormalizedFullTitle();
 	}
-	
+
 	private String makeTitleFromTarget(WtInternalLink n, PageTitle target)
 	{
 		return makeTitleFromTarget(target, n.getTarget());
 	}
-	
+
 	private String makeTitleFromTarget(PageTitle target, WtPageName title)
 	{
 		String targetStr = title.getAsString();
@@ -1272,9 +1273,9 @@ public class HtmlRenderer
 			targetStr = targetStr.substring(1);
 		return targetStr;
 	}
-	
+
 	// =====================================================================
-	
+
 	/**
 	 * Pull garbage in between rows in front of the table.
 	 */
@@ -1301,7 +1302,7 @@ public class HtmlRenderer
 					}
 					break;
 				}
-				
+
 				case WtNode.NT_TABLE_CAPTION:
 				{
 					if (!hadRow && implicitRow != null)
@@ -1310,7 +1311,7 @@ public class HtmlRenderer
 					dispatch(c);
 					break;
 				}
-				
+
 				case WtNode.NT_TABLE_ROW:
 				{
 					if (!hadRow && implicitRow != null)
@@ -1319,7 +1320,7 @@ public class HtmlRenderer
 					dispatch(c);
 					break;
 				}
-				
+
 				default:
 				{
 					if (!hadRow && implicitRow != null)
@@ -1331,7 +1332,7 @@ public class HtmlRenderer
 			}
 		}
 	}
-	
+
 	/**
 	 * If the cell content is only one paragraph, the content of the paragraph
 	 * is returned. Otherwise the whole cell content is returned. This is done
@@ -1350,32 +1351,32 @@ public class HtmlRenderer
 					break;
 				}
 			}
-			
+
 			if (ok)
 				body = (WtParagraph) body.get(0);
 		}
-		
+
 		return body;
 	}
-	
+
 	// =====================================================================
-	
+
 	protected String cleanAttribValue(WtNodeList value)
 	{
 		try
 		{
-			return StringUtils.collapseWhitespace(tu.astToText(value)).trim();
+			return StringTools.collapseWhitespace(tu.astToText(value)).trim();
 		}
 		catch (StringConversionException e)
 		{
 			return toWikitext(value);
 		}
 	}
-	
+
 	protected WtNodeList cleanAttribs(WtNodeList xmlAttributes)
 	{
 		ArrayList<WtXmlAttribute> clean = null;
-		
+
 		WtXmlAttribute style = null;
 		for (WtNode a : xmlAttributes)
 		{
@@ -1384,7 +1385,7 @@ public class HtmlRenderer
 				WtXmlAttribute attr = (WtXmlAttribute) a;
 				if (!attr.getName().isResolved())
 					continue;
-				
+
 				String name = attr.getName().getAsString().toLowerCase();
 				if (name.equals("style"))
 				{
@@ -1404,19 +1405,19 @@ public class HtmlRenderer
 				}
 			}
 		}
-		
+
 		if (clean == null || clean.isEmpty())
 			return xmlAttributes;
-		
+
 		String newStyle = "";
 		if (style != null)
 			newStyle = cleanAttribValue(style.getValue());
-		
+
 		for (WtXmlAttribute a : clean)
 		{
 			if (!a.getName().isResolved())
 				continue;
-			
+
 			String name = a.getName().getAsString().toLowerCase();
 			if (name.equals("align"))
 			{
@@ -1432,11 +1433,11 @@ public class HtmlRenderer
 						cleanAttribValue(a.getValue())) + newStyle;
 			}
 		}
-		
+
 		WtXmlAttribute newStyleAttrib = nf.attr(
 				nf.name(nf.list(nf.text("style"))),
 				nf.value(nf.list(nf.text(newStyle))));
-		
+
 		WtNodeList newAttribs = nf.attrs(nf.list());
 		for (WtNode a : xmlAttributes)
 		{
@@ -1454,15 +1455,15 @@ public class HtmlRenderer
 				newAttribs.add(a);
 			}
 		}
-		
+
 		if (style == null)
 			newAttribs.add(newStyleAttrib);
-		
+
 		return newAttribs;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static <T extends WtNode> String print(
 			HtmlRendererCallback callback,
 			WikiConfig wikiConfig,
@@ -1471,7 +1472,7 @@ public class HtmlRenderer
 	{
 		return print(callback, wikiConfig, new StringWriter(), pageTitle, node).toString();
 	}
-	
+
 	public static <T extends WtNode> Writer print(
 			HtmlRendererCallback callback,
 			WikiConfig wikiConfig,
@@ -1482,25 +1483,25 @@ public class HtmlRenderer
 		new HtmlRenderer(callback, wikiConfig, pageTitle, writer).go(node);
 		return writer;
 	}
-	
+
 	// =========================================================================
-	
-	protected static final Logger logger = Logger.getLogger(HtmlRenderer.class);
-	
+
+	protected static final Logger logger = LoggerFactory.getLogger(HtmlRenderer.class);
+
 	protected static final Set<String> blockElements = new HashSet<String>();
-	
+
 	protected final WikiConfig wikiConfig;
-	
+
 	protected final PageTitle pageTitle;
-	
+
 	protected final EngineNodeFactory nf;
-	
+
 	protected final EngineAstTextUtils tu;
-	
+
 	protected final HtmlRendererCallback callback;
-	
+
 	protected int inPre = 0;
-	
+
 	static
 	{
 		// left out del and ins, added table elements
@@ -1539,9 +1540,9 @@ public class HtmlRenderer
 		blockElements.add("tbody");
 		blockElements.add("tfoot");
 	}
-	
+
 	// =========================================================================
-	
+
 	protected HtmlRenderer(
 			HtmlRendererCallback callback,
 			WikiConfig wikiConfig,

@@ -43,7 +43,7 @@ public interface Wom3Heading
 	 *         specified.
 	 */
 	public Wom3HorizAlign getAlign();
-	
+
 	/**
 	 * Set the alignment of the content inside the tag.
 	 * 

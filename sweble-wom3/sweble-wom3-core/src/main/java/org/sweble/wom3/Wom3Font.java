@@ -39,7 +39,7 @@ public interface Wom3Font
 	 *         specified.
 	 */
 	public Wom3Color getColor();
-	
+
 	/**
 	 * Set the color of the text content.
 	 * 
@@ -51,7 +51,7 @@ public interface Wom3Font
 	 * @return The old color of the text content.
 	 */
 	public Wom3Color setColor(Wom3Color color);
-	
+
 	/**
 	 * Get the name of the font face of the text content.
 	 * 
@@ -61,7 +61,7 @@ public interface Wom3Font
 	 *         is not specified.
 	 */
 	public String getFace();
-	
+
 	/**
 	 * Set the name of the font face.
 	 * 
@@ -72,7 +72,7 @@ public interface Wom3Font
 	 * @return The name of the old font face.
 	 */
 	public String setFace(String face);
-	
+
 	/**
 	 * Get the size of the text content.
 	 * 
@@ -81,7 +81,7 @@ public interface Wom3Font
 	 * @return The size of the text content. A value between 1 and 7.
 	 */
 	public Integer getSize();
-	
+
 	/**
 	 * Set the text size.
 	 * 

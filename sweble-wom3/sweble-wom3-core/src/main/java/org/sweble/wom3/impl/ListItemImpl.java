@@ -29,63 +29,63 @@ public class ListItemImpl
 			Wom3ListItem
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public ListItemImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getWomName()
 	{
 		return "li";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getItemType()
 	{
 		return (String) getAttributeNativeData("type");
 	}
-	
+
 	@Override
 	public String setItemType(String type)
 	{
 		return setAttributeDirect(ATTR_DESC_TYPE, "type", type);
 	}
-	
+
 	@Override
 	public Integer getItemValue()
 	{
 		return (Integer) getAttributeNativeData("value");
 	}
-	
+
 	@Override
 	public Integer setItemValue(Integer value)
 	{
 		return setAttributeDirect(ATTR_DESC_VALUE, "value", value);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_TYPE = new AttrDescType();
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_VALUE = new AttrDescValue();
-	
+
 	private static final Map<String, AttributeDescriptor> NAME_MAP = new HashMap<String, AttributeDescriptor>();
-	
+
 	static
 	{
 		NAME_MAP.putAll(UniversalAttributes.getNameMap());
 		NAME_MAP.put("type", ATTR_DESC_TYPE);
 		NAME_MAP.put("value", ATTR_DESC_VALUE);
 	}
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceUri,
@@ -94,7 +94,7 @@ public class ListItemImpl
 	{
 		return getAttrDesc(namespaceUri, localName, qualifiedName, NAME_MAP);
 	}
-	
+
 	public static final class AttrDescType
 			extends
 				AttributeDescriptor
@@ -108,7 +108,7 @@ public class ListItemImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,
@@ -117,7 +117,7 @@ public class ListItemImpl
 			return AttributeVerifiers.ITEMTYPE.verifyAndConvert(parent, verified);
 		}
 	}
-	
+
 	public static final class AttrDescValue
 			extends
 				AttributeDescriptor
@@ -131,7 +131,7 @@ public class ListItemImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

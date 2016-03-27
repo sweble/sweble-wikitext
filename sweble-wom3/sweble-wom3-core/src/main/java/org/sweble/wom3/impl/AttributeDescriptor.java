@@ -25,21 +25,21 @@ public abstract class AttributeDescriptor
 			AttributeCustomAction
 {
 	public static final int REMOVABLE = 0x01;
-	
+
 	public static final int READ_ONLY = 0x02;
-	
+
 	public static final int NORMALIZATION_MASK = 0x04 | 0x08;
-	
+
 	public static final int NORMALIZATION_NONE = 0x00;
-	
+
 	public static final int NORMALIZATION_NON_CDATA = 0x04;
-	
+
 	public static final int NORMALIZATION_CDATA = 0x08;
-	
+
 	public static final int CUSTOM_ACTION = 0x10;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * The default implementation only works for attributes whose native value
 	 * is of type string.
@@ -61,11 +61,11 @@ public abstract class AttributeDescriptor
 			verified.value = verified.strValue;
 		else
 			verified.strValue = String.valueOf(verified.value);
-		
+
 		return true;
-		
+
 	}
-	
+
 	/**
 	 * Called after the attribute was (re-)set to perform custom alterations on
 	 * WOM. Also called when an attribute is renamed. In this case it is called
@@ -90,14 +90,14 @@ public abstract class AttributeDescriptor
 			AttributeBase newAttr)
 	{
 	}
-	
+
 	/**
 	 * @return A set of flags that describe this attributes behavior.
 	 */
 	public abstract int getFlags();
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Ask whether this attribute can be removed from its parent node.
 	 */
@@ -105,7 +105,7 @@ public abstract class AttributeDescriptor
 	{
 		return (getFlags() & REMOVABLE) != 0;
 	}
-	
+
 	/**
 	 * Ask whether this attribute cannot be changed.
 	 */
@@ -113,7 +113,7 @@ public abstract class AttributeDescriptor
 	{
 		return (getFlags() & READ_ONLY) != 0;
 	}
-	
+
 	/**
 	 * Return the normalization mode for the attribute.
 	 */
@@ -121,7 +121,7 @@ public abstract class AttributeDescriptor
 	{
 		return translateNormalization(getFlags() & NORMALIZATION_MASK);
 	}
-	
+
 	/**
 	 * Whether the descriptor implements the {@link customAction} method.
 	 */
@@ -129,9 +129,9 @@ public abstract class AttributeDescriptor
 	{
 		return (getFlags() & CUSTOM_ACTION) != 0;
 	}
-	
+
 	// =========================================================================
-	
+
 	public static int makeFlags(
 			boolean removable,
 			boolean readOnly,
@@ -143,47 +143,47 @@ public abstract class AttributeDescriptor
 				| translateNormalization(normalization)
 				| (customAction ? CUSTOM_ACTION : 0);
 	}
-	
+
 	// =========================================================================
-	
+
 	public static int translateNormalization(Normalization normalization)
 	{
 		switch (normalization)
 		{
 			case CDATA:
 				return NORMALIZATION_CDATA;
-				
+
 			case NON_CDATA:
 				return NORMALIZATION_NON_CDATA;
-				
+
 			case NONE:
 				return NORMALIZATION_NONE;
-				
+
 			default:
 				throw new AssertionError();
 		}
 	}
-	
+
 	public static Normalization translateNormalization(int flag) throws AssertionError
 	{
 		switch (flag)
 		{
 			case NORMALIZATION_CDATA:
 				return Normalization.NON_CDATA;
-				
+
 			case NORMALIZATION_NON_CDATA:
 				return Normalization.NON_CDATA;
-				
+
 			case NORMALIZATION_NONE:
 				return Normalization.NONE;
-				
+
 			default:
 				throw new AssertionError();
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	public enum Normalization
 	{
 		/**
@@ -191,13 +191,13 @@ public abstract class AttributeDescriptor
 		 * post-process the resulting string.
 		 */
 		NONE,
-		
+
 		/**
 		 * Normalize the attribute's value after conversion according to these
 		 * rules: http://www.w3.org/TR/REC-xml/#AVNormalize.
 		 */
 		CDATA,
-		
+
 		/**
 		 * Normalize the attribute's value after conversion according to these
 		 * rules: http://www.w3.org/TR/REC-xml/#AVNormalize.

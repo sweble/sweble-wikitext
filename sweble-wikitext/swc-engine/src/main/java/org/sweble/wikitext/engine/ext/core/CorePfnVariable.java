@@ -31,9 +31,9 @@ public abstract class CorePfnVariable
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -43,7 +43,7 @@ public abstract class CorePfnVariable
 		// conversions.
 		super(PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
 	}
-	
+
 	/**
 	 * For un-marshaling only.
 	 */
@@ -51,14 +51,14 @@ public abstract class CorePfnVariable
 	{
 		super(argMode, name);
 	}
-	
+
 	public CorePfnVariable(WikiConfig wikiConfig, String name)
 	{
 		// Most variables don't take arguments so don't waste time with funny 
 		// conversions.
 		super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
 	}
-	
+
 	public CorePfnVariable(
 			WikiConfig wikiConfig,
 			PfnArgumentMode argMode,
@@ -66,9 +66,9 @@ public abstract class CorePfnVariable
 	{
 		super(wikiConfig, argMode, name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public final WtNode invoke(
 			WtNode var,
@@ -77,7 +77,7 @@ public abstract class CorePfnVariable
 	{
 		return invoke((WtTemplate) var, frame, argsValues);
 	}
-	
+
 	public WtNode invoke(
 			WtTemplate var,
 			ExpansionFrame frame,
@@ -85,7 +85,7 @@ public abstract class CorePfnVariable
 	{
 		return invoke(var, frame);
 	}
-	
+
 	protected WtNode invoke(WtTemplate var, ExpansionFrame frame)
 	{
 		return var;

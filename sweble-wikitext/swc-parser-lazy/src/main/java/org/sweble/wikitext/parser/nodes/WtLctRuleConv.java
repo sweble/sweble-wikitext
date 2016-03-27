@@ -24,9 +24,9 @@ public class WtLctRuleConv
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * Only for use by de-serialization code.
 	 */
@@ -34,48 +34,48 @@ public class WtLctRuleConv
 	{
 		super(Uninitialized.X);
 	}
-	
+
 	protected WtLctRuleConv(WtLctFlags flags, WtLctRules rules)
 	{
 		super(flags, rules);
 	}
-	
+
 	@Override
 	public int getNodeType()
 	{
 		return NT_LCT_RULE_CONV;
 	}
-	
+
 	// =========================================================================
 	// Children
-	
+
 	public boolean hasFlags()
 	{
 		return getFlags() != WtLctFlags.NO_FLAGS;
 	}
-	
+
 	public final void setFlags(WtLctFlags flags)
 	{
 		set(0, flags);
 	}
-	
+
 	public final WtLctFlags getFlags()
 	{
 		return (WtLctFlags) get(0);
 	}
-	
+
 	public final void setRules(WtLctRules rules)
 	{
 		set(1, rules);
 	}
-	
+
 	public final WtLctRules getRules()
 	{
 		return (WtLctRules) get(1);
 	}
-	
+
 	private static final String[] CHILD_NAMES = new String[] { "flags", "rules" };
-	
+
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;

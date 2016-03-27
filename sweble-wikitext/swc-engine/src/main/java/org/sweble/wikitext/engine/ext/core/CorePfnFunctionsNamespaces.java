@@ -32,20 +32,20 @@ public class CorePfnFunctionsNamespaces
 			ParserFunctionGroup
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	protected CorePfnFunctionsNamespaces(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - Namespaces");
 		addParserFunction(new NsPfn(wikiConfig));
 	}
-	
+
 	public static CorePfnFunctionsNamespaces group(WikiConfig wikiConfig)
 	{
 		return new CorePfnFunctionsNamespaces(wikiConfig);
 	}
-	
+
 	// =========================================================================
 	// ==
 	// == {{ns:index}}
@@ -53,13 +53,13 @@ public class CorePfnFunctionsNamespaces
 	// == {{ns:local alias}}
 	// ==
 	// =========================================================================
-	
+
 	public static final class NsPfn
 			extends
 				CorePfnFunction
 	{
 		private static final long serialVersionUID = 1L;
-		
+
 		/**
 		 * For un-marshaling only.
 		 */
@@ -67,12 +67,12 @@ public class CorePfnFunctionsNamespaces
 		{
 			super("ns");
 		}
-		
+
 		public NsPfn(WikiConfig wikiConfig)
 		{
 			super(wikiConfig, "ns");
 		}
-		
+
 		@Override
 		public WtNode invoke(
 				WtTemplate wtTemplate,
@@ -81,9 +81,9 @@ public class CorePfnFunctionsNamespaces
 		{
 			if (args.size() < 0)
 				return null;
-			
+
 			WtNode arg0 = preprocessorFrame.expand(args.get(0));
-			
+
 			String arg;
 			try
 			{
@@ -93,7 +93,7 @@ public class CorePfnFunctionsNamespaces
 			{
 				return null;
 			}
-			
+
 			Namespace namespace = preprocessorFrame.getWikiConfig().getNamespace(arg);
 			if (namespace == null)
 			{
@@ -106,14 +106,14 @@ public class CorePfnFunctionsNamespaces
 				{
 					return null;
 				}
-				
+
 				namespace = preprocessorFrame.getWikiConfig().getNamespace(ns);
 			}
-			
+
 			String result = "";
 			if (namespace != null)
 				result = namespace.getName();
-			
+
 			return nf().text(result);
 		}
 	}

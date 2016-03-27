@@ -23,57 +23,57 @@ public abstract class EngLogTargetResolution
 			EngLogResolution
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	// =========================================================================
-	
+
 	public EngLogTargetResolution()
 	{
 	}
-	
+
 	public EngLogTargetResolution(String target, boolean success)
 	{
 		super(success);
 		setTarget(target);
 	}
-	
+
 	// =========================================================================
 	// Properties
-	
+
 	private String target;
-	
+
 	public final String getTarget()
 	{
 		return this.target;
 	}
-	
+
 	public final void setTarget(String target)
 	{
 		this.target = target;
 	}
-	
+
 	private String canonical;
-	
+
 	public final String getCanonical()
 	{
 		return this.canonical;
 	}
-	
+
 	public final void setCanonical(String canonical)
 	{
 		this.canonical = canonical;
 	}
-	
+
 	@Override
 	public int getPropertyCount()
 	{
 		return 2 + getSuperPropertyCount();
 	}
-	
+
 	private final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
-	
+
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
@@ -84,7 +84,7 @@ public abstract class EngLogTargetResolution
 			{
 				return EngLogTargetResolution.this.getPropertyCount();
 			}
-			
+
 			@Override
 			protected String getName(int index)
 			{
@@ -94,12 +94,12 @@ public abstract class EngLogTargetResolution
 						return "target";
 					case 1:
 						return "canonical";
-						
+
 					default:
 						return super.getName(index);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(int index)
 			{
@@ -109,12 +109,12 @@ public abstract class EngLogTargetResolution
 						return EngLogTargetResolution.this.getTarget();
 					case 1:
 						return EngLogTargetResolution.this.getCanonical();
-						
+
 					default:
 						return super.getValue(index);
 				}
 			}
-			
+
 			@Override
 			protected Object setValue(int index, Object value)
 			{
@@ -132,7 +132,7 @@ public abstract class EngLogTargetResolution
 						EngLogTargetResolution.this.setCanonical((String) value);
 						return old;
 					}
-					
+
 					default:
 						return super.setValue(index, value);
 				}

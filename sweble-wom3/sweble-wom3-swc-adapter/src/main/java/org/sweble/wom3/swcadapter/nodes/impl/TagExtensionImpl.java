@@ -43,52 +43,52 @@ public class TagExtensionImpl
 			SwcTagExtension
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final ChildDescriptor[] BODY_DESCRIPTOR = {
 			childDesc(SwcNode.MWW_NS_URI, "attr", ChildDescriptor.MULTIPLE),
 			childDesc(SwcNode.MWW_NS_URI, "body") };
-	
+
 	private Map<String, AttrImpl> argByName;
-	
+
 	private ArrayList<AttrImpl> argByIndex;
-	
+
 	private TagExtBodyImpl body;
-	
+
 	// =========================================================================
-	
+
 	public TagExtensionImpl(DocumentImpl owner)
 	{
 		super(owner);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getSwcName()
 	{
 		return "tagext";
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	protected void allowsInsertion(Backbone prev, Backbone child)
 	{
 		checkInsertion(prev, child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsRemoval(Backbone child)
 	{
 		checkRemoval(child, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	protected void allowsReplacement(Backbone oldChild, Backbone newChild)
 	{
 		checkReplacement(oldChild, newChild, BODY_DESCRIPTOR);
 	}
-	
+
 	@Override
 	public void childInserted(Backbone prev, Backbone added)
 	{
@@ -103,7 +103,7 @@ public class TagExtensionImpl
 			this.argByName = null;
 		}
 	}
-	
+
 	@Override
 	public void childRemoved(Backbone prev, Backbone removed)
 	{
@@ -116,41 +116,41 @@ public class TagExtensionImpl
 			this.argByName = null;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public String getName()
 	{
 		return getStringAttr("name");
 	}
-	
+
 	@Override
 	public String setName(String name)
 	{
 		return setStringAttr(ATTR_DESC_NAME, "name", name);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean hasBody()
 	{
 		return this.body != null;
 	}
-	
+
 	@Override
 	public TagExtBodyImpl getBody()
 	{
 		return this.body;
 	}
-	
+
 	@Override
 	public SwcTagExtBody setBody(SwcTagExtBody body)
 	{
 		return (SwcTagExtBody) replaceOrAppend(this.body, body, false);
 	}
-	
+
 	@Override
 	public SwcAttr getXmlAttribute(int index)
 	{
@@ -162,7 +162,7 @@ public class TagExtensionImpl
 		}
 		return argByIndex.get(index);
 	}
-	
+
 	@Override
 	public SwcAttr getXmlAttribute(String name)
 	{
@@ -184,26 +184,26 @@ public class TagExtensionImpl
 		}
 		return argByName.get(name);
 	}
-	
+
 	@Override
 	public Collection<SwcAttr> getXmlAttributes()
 	{
 		// TODO: Use view instead of static excerpt!
-		
+
 		ArrayList<SwcAttr> args = new ArrayList<SwcAttr>();
 		for (Backbone i = getFirstChild(); i != null; i = i.getNextSibling())
 		{
 			if (i instanceof SwcAttr)
 				args.add((SwcAttr) i);
 		}
-		
+
 		return Collections.unmodifiableCollection(args);
 	}
-	
+
 	// =========================================================================
-	
+
 	protected static final AttributeDescriptor ATTR_DESC_NAME = new AttrDescName();
-	
+
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(
 			String namespaceURL,
@@ -213,7 +213,7 @@ public class TagExtensionImpl
 		return getAttrDescStrict(namespaceURL, localName, qualifiedName,
 				"name", ATTR_DESC_NAME);
 	}
-	
+
 	public static final class AttrDescName
 			extends
 				AttributeDescriptor
@@ -227,7 +227,7 @@ public class TagExtensionImpl
 					false /* customAction */,
 					Normalization.NON_CDATA);
 		}
-		
+
 		@Override
 		public boolean verifyAndConvert(
 				Backbone parent,

@@ -24,9 +24,9 @@ import org.sweble.wom3.Wom3SignatureFormat;
 public class SignatureTest
 {
 	private SignatureImpl n = (SignatureImpl) TestHelperDoc.genElem("signature");
-	
+
 	// =========================================================================
-	
+
 	@Test
 	public void testFormatAttribute() throws Exception
 	{
@@ -34,13 +34,13 @@ public class SignatureTest
 				Wom3SignatureFormat.USER, "user",
 				Wom3SignatureFormat.TIMESTAMP, "timestamp");
 	}
-	
+
 	@Test
 	public void testAuthorAttribute() throws Exception
 	{
 		TestHelperAttribute.testFixedAttribute(n, "author", "getAuthor", "setAuthor", "Me-Man", "He-Man");
 	}
-	
+
 	@Test
 	public void testTimestampAttribute() throws Exception
 	{
@@ -51,7 +51,7 @@ public class SignatureTest
 		TestHelperAttribute.testFixedAttribute(n, "timestamp", "getTimestamp", "setTimestamp",
 				t0, t0Str, t1, t1Str);
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testCannotSetArbitraryAttr() throws Exception
 	{

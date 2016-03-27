@@ -17,7 +17,8 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.*;
+import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.BOLD;
+import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.ITALICS;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -43,7 +44,7 @@ import org.sweble.wikitext.parser.nodes.WtWhitespace;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
-import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.StringTools;
 
 public class TicksAnalyzer
 {
@@ -51,34 +52,34 @@ public class TicksAnalyzer
 	{
 		return (new TicksAnalyzer(config)).process(a);
 	}
-	
+
 	// =========================================================================
-	
+
 	private WikitextNodeFactory nf;
-	
+
 	// =========================================================================
-	
+
 	public TicksAnalyzer(ParserConfig config)
 	{
 		this.nf = config.getNodeFactory();
 	}
-	
+
 	public WtNode process(WtNode a)
 	{
 		LinkedList<Line> lines = new LinkedList<Line>();
-		
+
 		new LineAnalyzer(lines).go(a);
-		
+
 		if (lines.isEmpty())
 			return a;
-		
+
 		analyzeOddTicksCombos(lines);
-		
+
 		return (WtNode) new TicksConverter(lines).go(a);
 	}
-	
+
 	// =========================================================================
-	
+
 	private void analyzeOddTicksCombos(LinkedList<Line> lines)
 	{
 		for (Line line : lines)
@@ -88,37 +89,37 @@ public class TicksAnalyzer
 				int firstSpace = -1;
 				int firstSlWord = -1;
 				int firstMlWord = -1;
-				
+
 				for (int i = 0; i < line.ticks.size(); ++i)
 				{
 					LineEntry entry = line.ticks.get(i);
-					
+
 					WtNode p = entry.previous;
 					if (p == null || entry.tickCount != 3)
 						continue;
-					
+
 					if (p instanceof WtContentNode)
 					{
 						WtContentNode c = (WtContentNode) p;
-						
+
 						p = null;
 						if (!c.isEmpty())
 							p = c.get(c.size() - 1);
 					}
-					
+
 					char tMinus1 = '\0';
 					char tMinus2 = '\0';
 					if (p instanceof WtStringNode)
 					{
 						String t = ((WtStringNode) p).getContent();
-						
+
 						if (t.length() >= 1)
 							tMinus1 = t.charAt(t.length() - 1);
-						
+
 						if (t.length() >= 2)
 							tMinus2 = t.charAt(t.length() - 2);
 					}
-					
+
 					if (tMinus1 == ' ')
 					{
 						if (firstSpace == -1)
@@ -135,7 +136,7 @@ public class TicksAnalyzer
 							firstMlWord = i;
 					}
 				}
-				
+
 				if (firstSlWord != -1)
 				{
 					apostrophize(line.ticks.get(firstSlWord));
@@ -151,11 +152,11 @@ public class TicksAnalyzer
 			}
 		}
 	}
-	
+
 	private void apostrophize(LineEntry entry)
 	{
 		--entry.tickCount;
-		
+
 		if (entry.prefix != null)
 		{
 			String t = entry.prefix.getContent() + "'";
@@ -166,45 +167,45 @@ public class TicksAnalyzer
 			entry.prefix = nf.text("'");
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected final class LineAnalyzer
 			extends
 				AstVisitor<WtNode>
 	{
 		private final LinkedList<Line> lines;
-		
+
 		private ArrayList<LineEntry> ticks;
-		
+
 		private int numItalics = 0;
-		
+
 		private int numBold = 0;
-		
+
 		private WtNode previous = null;
-		
+
 		public LineAnalyzer(LinkedList<Line> lines)
 		{
 			this.lines = lines;
 		}
-		
+
 		@Override
 		protected Object after(WtNode node, Object result)
 		{
 			finishLine();
 			return node;
 		}
-		
+
 		public void visit(WtNode n)
 		{
 			iterate(n);
 		}
-		
+
 		public void visit(WtNodeList list)
 		{
 			iterateContent(list);
 		}
-		
+
 		private void iterateContent(WtNodeList list)
 		{
 			previous = null;
@@ -215,42 +216,42 @@ public class TicksAnalyzer
 			}
 			previous = null;
 		}
-		
+
 		public void visit(WtNewline ws)
 		{
 			finishLine();
 		}
-		
+
 		public void visit(WtWhitespace ws)
 		{
 			if (ws.getHasNewline())
 				finishLine();
 		}
-		
+
 		public void visit(WtListItem n)
 		{
 			iterateContent(n);
 			finishLine();
 		}
-		
+
 		public void visit(WtDefinitionListTerm n)
 		{
 			iterateContent(n);
 			finishLine();
 		}
-		
+
 		public void visit(WtDefinitionListDef n)
 		{
 			iterateContent(n);
 			finishLine();
 		}
-		
+
 		public void visit(WtSemiPreLine n)
 		{
 			iterateContent(n);
 			finishLine();
 		}
-		
+
 		public void visit(WtTableCell n)
 		{
 			// Inline table cells are on one line but we want to finish after
@@ -259,7 +260,7 @@ public class TicksAnalyzer
 			iterateContent(n.getBody());
 			finishLine();
 		}
-		
+
 		public void visit(WtTableHeader n)
 		{
 			// Inline table cells are on one line but we want to finish after
@@ -268,17 +269,17 @@ public class TicksAnalyzer
 			iterateContent(n.getBody());
 			finishLine();
 		}
-		
+
 		public void visit(WtLeafNode n)
 		{
 			// Nothing to do here
 		}
-		
+
 		public void visit(WtTicks n)
 		{
 			if (ticks == null)
 				ticks = new ArrayList<TicksAnalyzer.LineEntry>();
-			
+
 			int tickCount = n.getTickCount();
 			switch (tickCount)
 			{
@@ -286,51 +287,51 @@ public class TicksAnalyzer
 					ticks.add(new LineEntry(null, null, 2));
 					++numItalics;
 					break;
-				
+
 				case 3:
 					ticks.add(new LineEntry(previous, null, 3));
 					++numBold;
 					break;
-				
+
 				case 4:
 					ticks.add(new LineEntry(previous, nf.text("'"), 3));
 					++numBold;
 					break;
-				
+
 				case 5:
 					ticks.add(new LineEntry(null, null, 5));
 					++numBold;
 					++numItalics;
 					break;
-				
+
 				default:
 					if (n.getTickCount() <= 5)
 						throw new FmtInternalLogicError();
-					
-					String excessTicks = StringUtils.strrep('\'', tickCount - 5);
-					
+
+					String excessTicks = StringTools.strrep('\'', tickCount - 5);
+
 					ticks.add(new LineEntry(null, nf.text(excessTicks), 5));
 					++numBold;
 					++numItalics;
 					break;
 			}
 		}
-		
+
 		private void finishLine()
 		{
 			if (ticks == null)
 				return;
-			
+
 			lines.add(new Line(numItalics, numBold, ticks));
-			
+
 			numItalics = 0;
 			numBold = 0;
 			ticks = null;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	private static enum State
 	{
 		None,
@@ -339,123 +340,123 @@ public class TicksAnalyzer
 		ItalicsBold,
 		BoldItalics,
 	}
-	
+
 	// =========================================================================
-	
+
 	protected final class TicksConverter
 			extends
 				AstVisitor<WtNode>
 	{
 		private final Iterator<Line> lineIter;
-		
+
 		private Iterator<LineEntry> entryIter;
-		
+
 		private State state = State.None;
-		
+
 		public TicksConverter(LinkedList<Line> lines)
 		{
 			this.lineIter = lines.iterator();
 			if (lineIter.hasNext())
 				this.entryIter = lineIter.next().ticks.iterator();
 		}
-		
+
 		public WtNode visit(WtNode n)
 		{
 			mapInPlace(n);
 			return n;
 		}
-		
+
 		public WtNode visit(WtLeafNode n)
 		{
 			// Nothing to do here
 			return n;
 		}
-		
+
 		public WtNode visit(WtTicks n)
 		{
 			LineEntry entry = nextEntry();
-			
+
 			WtNodeList result = nf.list(entry.prefix);
-			
+
 			toTag(entry, result);
-			
+
 			return result;
 		}
-		
+
 		public WtNode visit(WtNewline newline)
 		{
 			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return newline;
-			
+
 			state = State.None;
 			result.add(newline);
 			return result;
 		}
-		
+
 		public WtNode visit(WtWhitespace ws)
 		{
 			if (!ws.getHasNewline())
 				return ws;
-			
+
 			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return ws;
-			
+
 			state = State.None;
 			result.add(ws);
 			return result;
 		}
-		
+
 		public WtNode visit(WtListItem n)
 		{
 			return implicitLineScope(n);
 		}
-		
+
 		public WtNode visit(WtDefinitionListTerm n)
 		{
 			return implicitLineScope(n);
 		}
-		
+
 		public WtNode visit(WtDefinitionListDef n)
 		{
 			return implicitLineScope(n);
 		}
-		
+
 		public WtNode visit(WtSemiPreLine n)
 		{
 			return implicitLineScope(n);
 		}
-		
+
 		public WtNode visit(WtTableCell n)
 		{
 			implicitLineScope(n.getBody());
 			return n;
 		}
-		
+
 		public WtNode visit(WtTableHeader n)
 		{
 			implicitLineScope(n.getBody());
 			return n;
 		}
-		
+
 		private WtNode implicitLineScope(WtNodeList content)
 		{
 			mapInPlace(content);
 			finishLine(content);
 			return content;
 		}
-		
+
 		private void finishLine(WtNodeList body)
 		{
 			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return;
-			
+
 			state = State.None;
 			body.add(result);
 		}
-		
+
 		private LineEntry nextEntry()
 		{
 			if (!entryIter.hasNext())
@@ -465,7 +466,7 @@ public class TicksAnalyzer
 			}
 			return entryIter.next();
 		}
-		
+
 		private void toTag(LineEntry entry, WtNodeList result)
 		{
 			switch (entry.tickCount)
@@ -497,7 +498,7 @@ public class TicksAnalyzer
 							break;
 					}
 					break;
-				
+
 				case 3:
 					switch (state)
 					{
@@ -525,7 +526,7 @@ public class TicksAnalyzer
 							break;
 					}
 					break;
-				
+
 				case 5:
 					switch (state)
 					{
@@ -558,7 +559,7 @@ public class TicksAnalyzer
 					break;
 			}
 		}
-		
+
 		private WtNodeList closeRemainingTags()
 		{
 			WtNodeList result = null;
@@ -588,24 +589,24 @@ public class TicksAnalyzer
 			return result;
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected final static class Line
 	{
 		public final int numItalics;
-		
+
 		public final int numBold;
-		
+
 		public final ArrayList<LineEntry> ticks;
-		
+
 		public Line(int numItalics, int numBold, ArrayList<LineEntry> ticks)
 		{
 			this.numItalics = numItalics;
 			this.numBold = numBold;
 			this.ticks = ticks;
 		}
-		
+
 		@Override
 		public String toString()
 		{
@@ -616,24 +617,24 @@ public class TicksAnalyzer
 					(ticks != null ? ticks.toString() : "-"));
 		}
 	}
-	
+
 	// =========================================================================
-	
+
 	protected final static class LineEntry
 	{
 		public final WtNode previous;
-		
+
 		public WtText prefix;
-		
+
 		public int tickCount;
-		
+
 		public LineEntry(WtNode previous, WtText prefix, int tickCount)
 		{
 			this.previous = previous;
 			this.prefix = prefix;
 			this.tickCount = tickCount;
 		}
-		
+
 		@Override
 		public String toString()
 		{
@@ -652,11 +653,11 @@ public class TicksAnalyzer
 				}
 				pv = '"' + pv + '"';
 			}
-			
+
 			String pf = "-";
 			if (prefix != null)
 				pf = '"' + prefix.getContent() + '"';
-			
+
 			return String.format(
 					"LineEntry(%s, %s, %d)",
 					pv,
