@@ -85,7 +85,7 @@
 				<version>${osr-common.version}</version>
 			</dependency>
 
-			<!-- Utils - Testing -->
+			<!-- Utils - GetOpt -->
 			<dependency>
 				<groupId>de.fau.cs.osr.utils</groupId>
 				<artifactId>utils-getopt</artifactId>
