@@ -28,7 +28,7 @@
 		<version>3.0.0-SNAPSHOT</version>
 	</parent>
 
-	<groupId>org.sweble.sweble-parent</groupId>
+	<groupId>org.sweble</groupId>
 	<artifactId>sweble-parent</artifactId>
 	<!--<version>3.0.0-SNAPSHOT</version>-->
 	<packaging>pom</packaging>
@@ -53,11 +53,12 @@
 		<sweble-parent.etc-path>${sweble-parent.path}/etc</sweble-parent.etc-path>
 		<tooling.etc-path>${sweble-parent.etc-path}</tooling.etc-path>
 
-		<!-- sweble-parent currently does not conform :( -->
+		<!-- sweble currently does not conform :( -->
 		<maven-checkstyle-plugin.skip>true</maven-checkstyle-plugin.skip>
 
 		<!-- Dependencies -->
 		<osr-common.version>3.0.0-SNAPSHOT</osr-common.version>
+		<sweble.version>${project.version}</sweble.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -128,28 +129,28 @@
 			<dependency>
 				<groupId>org.sweble.wikitext</groupId>
 				<artifactId>swc-parser-lazy</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 
 			<!-- Sweble Wikitext Components - Engine -->
 			<dependency>
 				<groupId>org.sweble.wikitext</groupId>
 				<artifactId>swc-engine</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 
 			<!-- Sweble Wikitext Components - Dump Reader -->
 			<dependency>
 				<groupId>org.sweble.wikitext</groupId>
 				<artifactId>swc-dumpreader</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 
 			<!-- Sweble Wikitext Components - Article Cruncher -->
 			<dependency>
 				<groupId>org.sweble.wikitext</groupId>
 				<artifactId>swc-article-cruncher</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 
 			<!-- =========================================================== -->
@@ -160,21 +161,21 @@
 			<dependency>
 				<groupId>org.sweble.wom3</groupId>
 				<artifactId>sweble-wom3-core</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 
 			<!-- Sweble - WOM 3.0 JSON Tools -->
 			<dependency>
 				<groupId>org.sweble.wom3</groupId>
 				<artifactId>sweble-wom3-json-tools</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 
 			<!-- Sweble WOM 3.0 - SWC Adapter -->
 			<dependency>
 				<groupId>org.sweble.wom3</groupId>
 				<artifactId>sweble-wom3-swc-adapter</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 			
 			<!-- =========================================================== -->
@@ -185,7 +186,7 @@
 			<dependency>
 				<groupId>org.sweble.engine</groupId>
 				<artifactId>sweble-engine-serialization</artifactId>
-				<version>${project.version}</version>
+				<version>${sweble.version}</version>
 			</dependency>
 
 		</dependencies>
