@@ -58,7 +58,8 @@
 
 		<!-- Dependencies -->
 		<osr-common.version>3.0.0-SNAPSHOT</osr-common.version>
-		<sweble.version>${project.version}</sweble.version>
+		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
+		<sweble.version>3.0.0-SNAPSHOT</sweble.version>
 	</properties>
 
 	<!-- =================================================================== -->
