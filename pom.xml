@@ -17,9 +17,7 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -30,7 +28,7 @@
 
 	<groupId>org.sweble</groupId>
 	<artifactId>sweble-parent</artifactId>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>3.0.0</version>
 	<packaging>pom</packaging>
 	<name>Sweble Parent</name>
 	<inceptionYear>2010</inceptionYear>
@@ -59,7 +57,7 @@
 		<!-- Dependencies -->
 		<osr-common.version>3.0.1</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
-		<sweble.version>3.0.0-SNAPSHOT</sweble.version>
+		<sweble.version>3.0.0</sweble.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -249,7 +247,7 @@
 		<connection>scm:git://git@github.com/sweble/sweble-parent.git</connection>
 		<developerConnection>scm:git://git@mojo-forge.cs.fau.de/sweble-public/sweble-parent.git</developerConnection>
 		<url>https://github.com/sweble/sweble-parent</url>
-		<tag>HEAD</tag>
+		<tag>sweble-wikitext-3.0.0</tag>
 	</scm>
 
 	<!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
