@@ -1,0 +1,57 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtIllegalCodePoint(
+				{P} codePoint = "\uF0D8"
+				{P} rtd = RTD[ "\uF0D8" ]
+				{P} type = PRIVATE_USE_CHARACTER
+			),
+		[1] = WtIllegalCodePoint(
+				{P} codePoint = "\uF0D8"
+				{P} rtd = RTD[ "\uF0D8" ]
+				{P} type = PRIVATE_USE_CHARACTER
+			),
+		[2] = WtIllegalCodePoint(
+				{P} codePoint = "\uF0D8"
+				{P} rtd = RTD[ "\uF0D8" ]
+				{P} type = PRIVATE_USE_CHARACTER
+			),
+		[3] = WtIllegalCodePoint(
+				{P} codePoint = "\uF0D8"
+				{P} rtd = RTD[ "\uF0D8" ]
+				{P} type = PRIVATE_USE_CHARACTER
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "'''" ]
+			[0] = "foo"
+		),
+		[1] = " \n",
+		[2] = WtIllegalCodePoint(
+			{P} codePoint = "\uF0D8"
+			{P} rtd = RTD[ "\uF0D8" ]
+			{P} type = PRIVATE_USE_CHARACTER
+		),
+		[3] = "\ta\n",
+		[4] = WtIllegalCodePoint(
+			{P} codePoint = "\uF0D8"
+			{P} rtd = RTD[ "\uF0D8" ]
+			{P} type = PRIVATE_USE_CHARACTER
+		),
+		[5] = "\tb \n",
+		[6] = WtIllegalCodePoint(
+			{P} codePoint = "\uF0D8"
+			{P} rtd = RTD[ "\uF0D8" ]
+			{P} type = PRIVATE_USE_CHARACTER
+		),
+		[7] = "\tc \n",
+		[8] = WtIllegalCodePoint(
+			{P} codePoint = "\uF0D8"
+			{P} rtd = RTD[ "\uF0D8" ]
+			{P} type = PRIVATE_USE_CHARACTER
+		),
+		[9] = "\td  "
+	],
+	[1] = "\n"
+)
