@@ -80,6 +80,10 @@ public interface ParserConfig
 
 	NonStandardElementBehavior getNonStandardElementBehavior(String elementName);
 
+	boolean isFosterParenting();
+
+	boolean isFosterParentingForTransclusions();
+
 	// ==[ Language Conversion Tags ]===========================================
 
 	boolean isLctFlag(String flag);

@@ -1,0 +1,31 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: /nopkg-foster/input.wikitext/link-in-table.wikitext:3:3: <no content> : 12.2.5.4.9 R16 @ WtInternalLink.,
+		Warning: <no location>: <no content> : 12.2.5.4.9 R16 @ WtXmlEndTag.
+	]
+	[0] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName[ [0] = "Foo" ],
+		title = -
+	),
+	[1] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtTableImplicitTableBody(
+				body = WtBody[
+					[0] = WtTableRow(
+						{P} implicit = false
+						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[ [0] = "\n" ]
+					)
+				]
+			)
+		]
+	),
+	[2] = "\n"
+)

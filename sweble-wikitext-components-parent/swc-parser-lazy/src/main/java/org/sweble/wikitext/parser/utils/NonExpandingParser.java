@@ -19,7 +19,6 @@ package org.sweble.wikitext.parser.utils;
 
 import java.io.IOException;
 
-import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextEncodingValidator;
 import org.sweble.wikitext.parser.WikitextParser;
 import org.sweble.wikitext.parser.WikitextPostprocessor;
@@ -38,13 +37,13 @@ public final class NonExpandingParser
 		extends
 			ParserCommon<WtNode>
 {
-	private ParserConfig parserConfig;
+	private NonExpandingParserConfig parserConfig;
 
 	// =========================================================================
 
 	public NonExpandingParser()
 	{
-		parserConfig = new SimpleParserConfig();
+		parserConfig = new NonExpandingParserConfig();
 	}
 
 	public NonExpandingParser(
@@ -53,7 +52,7 @@ public final class NonExpandingParser
 			boolean autoCorrect)
 
 	{
-		parserConfig = new SimpleParserConfig(
+		parserConfig = new NonExpandingParserConfig(
 				warningsEnabled,
 				gatherRtd,
 				autoCorrect);

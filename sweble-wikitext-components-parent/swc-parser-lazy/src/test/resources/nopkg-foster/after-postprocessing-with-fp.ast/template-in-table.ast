@@ -1,0 +1,91 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "Infobox Ship Begin" ],
+				args = WtTemplateArguments[]
+			),
+		[1] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "Infobox Ship Image" ],
+				args = WtTemplateArguments[]
+			),
+		[2] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "Infobox Ship Career" ],
+				args = WtTemplateArguments[]
+			),
+		[3] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "Infobox Ship Characteristics" ],
+				args = WtTemplateArguments[]
+			),
+		[4] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "otherships" ],
+				args = WtTemplateArguments[
+					[0] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "Boaty McBoatface" ]
+					)
+				]
+			)
+	}
+	{P} warnings = C[
+		Warning: /nopkg-foster/input.wikitext/template-in-table.wikitext:2:3: <no content> : 12.2.5.4.9 R16 @ WtTemplate.,
+		Warning: /nopkg-foster/input.wikitext/template-in-table.wikitext:3:3: <no content> : 12.2.5.4.9 R16 @ WtTemplate.,
+		Warning: /nopkg-foster/input.wikitext/template-in-table.wikitext:4:3: <no content> : 12.2.5.4.9 R16 @ WtTemplate.
+	]
+	[0] = WtTemplate(
+		{P} precededByNewline = true
+		{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+		name = WtName[ [0] = "Infobox Ship Image" ],
+		args = WtTemplateArguments[]
+	),
+	[1] = WtTemplate(
+		{P} precededByNewline = true
+		{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+		name = WtName[ [0] = "Infobox Ship Career" ],
+		args = WtTemplateArguments[]
+	),
+	[2] = WtTemplate(
+		{P} precededByNewline = true
+		{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+		name = WtName[ [0] = "Infobox Ship Characteristics" ],
+		args = WtTemplateArguments[]
+	),
+	[3] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "Infobox Ship Begin" ],
+				args = WtTemplateArguments[]
+			)
+		],
+		body = WtBody[ [0] = "\n\n\n" ]
+	),
+	[4] = "\n",
+	[5] = WtParagraph[
+		[0] = WtTemplate(
+			{P} precededByNewline = true
+			{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+			name = WtName[ [0] = "otherships" ],
+			args = WtTemplateArguments[
+				[0] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "" <o> "" ]
+					name = -,
+					value = WtValue[ [0] = "Boaty McBoatface" ]
+				)
+			]
+		)
+	],
+	[6] = "\n"
+)

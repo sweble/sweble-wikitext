@@ -731,13 +731,29 @@ public class TreeBuilder
 
 	void appendToCurrentNode(WtNode e)
 	{
-		if (fosterParentingMode && isCurrentNodeTypeOneOf(TABLE, TBODY, TFOOT, THEAD, TR))
+		if (fosterParentingMode
+				&& getConfig().isFosterParenting()
+				&& isCurrentNodeTypeOneOf(TABLE, TBODY, TFOOT, THEAD, TR)
+				&& (getConfig().isFosterParentingForTransclusions()
+				|| !isTransclusionTypeNode(e)))
 		{
 			insertInFosterParent(e);
 		}
 		else
 		{
 			getContentOfNodeForModification(getCurrentNode()).add(e);
+		}
+	}
+
+	private boolean isTransclusionTypeNode(WtNode e)
+	{
+		switch (e.getNodeType())
+		{
+			case WtNode.NT_TEMPLATE:
+			case WtNode.NT_TEMPLATE_PARAMETER:
+				return true;
+			default:
+				return false;
 		}
 	}
 

@@ -269,6 +269,18 @@ public class SimpleParserConfig
 		return NonStandardElementBehavior.UNSPECIFIED;
 	}
 
+	@Override
+	public boolean isFosterParenting()
+	{
+		return true;
+	}
+
+	@Override
+	public boolean isFosterParentingForTransclusions()
+	{
+		return true;
+	}
+
 	// ==[ Language Conversion Tags ]===========================================
 
 	private static final Set<String> knownFlags = new HashSet<String>(Arrays.asList(
