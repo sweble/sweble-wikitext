@@ -1,0 +1,27 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplateParameter(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+				name = WtName[ [0] = "1" ],
+				default = -,
+				garbage = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[ Warning: /nopkg-foster/input.wikitext/template-param-in-table.wikitext:2:4: <no content> : 12.2.5.4.9 R16 @ WtTemplateParameter. ]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtTemplateParameter(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+				name = WtName[ [0] = "1" ],
+				default = -,
+				garbage = WtTemplateArguments[]
+			),
+			[1] = "\n"
+		]
+	),
+	[1] = "\n"
+)

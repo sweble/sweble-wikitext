@@ -358,6 +358,24 @@ public class ParserConfigImpl
 	{
 		return NonStandardElementBehavior.UNSPECIFIED;
 	}
+	
+	/**
+	 * @TODO: Add proper implementation.
+	 */
+	@Override
+	public boolean isFosterParenting()
+	{
+		return true;
+	}
+	
+	/**
+	 * @TODO: Add proper implementation.
+	 */
+	@Override
+	public boolean isFosterParentingForTransclusions()
+	{
+		return true;
+	}
 
 	// ==[ Language Conversion Tags ]===========================================
 

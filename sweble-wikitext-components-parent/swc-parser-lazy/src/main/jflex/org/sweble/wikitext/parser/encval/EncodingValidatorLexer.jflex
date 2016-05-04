@@ -69,6 +69,7 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
   private void wrapIllegalCodePoint(int line, int column, String codePoint, IllegalCodePointType type)
   {
     WtIllegalCodePoint p = nf.illegalCp(codePoint, type);
+    p.setRtd(codePoint);
     p.setNativeLocation(new AstLocation(
         file,
         line,

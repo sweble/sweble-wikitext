@@ -1,0 +1,6 @@
+{|{{Infobox Ship Begin}}
+{{Infobox Ship Image}}
+{{Infobox Ship Career}}
+{{Infobox Ship Characteristics}}
+|}
+{{otherships|Boaty McBoatface}}
