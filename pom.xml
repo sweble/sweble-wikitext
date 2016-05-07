@@ -55,6 +55,7 @@
     <!-- Examples -->
     <module>swc-example-basic</module>
     <module>swc-example-dumpcruncher</module>
+    <module>swc-example-dumpcruncher-serialization-mongo</module>
     <module>swc-example-serialization</module>
     <module>swc-example-xpath</module>
   </modules>
