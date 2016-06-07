@@ -2,6 +2,8 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+
+## 3.0.2 - 2016-06-07
 ### Changed
 - Bumped version of tooling parent pom and osr-common dependencies to 3.0.3
 
