@@ -21,10 +21,10 @@ import java.lang.reflect.Type;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.sweble.wom3.Wom3Document;
 import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.impl.DomImplementationImpl;
 import org.sweble.wom3.serialization.ScopeStack.Scope;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -52,21 +52,20 @@ public abstract class Wom3JsonTypeAdapterBase
 
 	// =========================================================================
 
-	protected Wom3Document doc;
+	protected Document doc;
 
 	@Override
-	public Wom3Document getDoc()
+	public Document getDoc()
 	{
 		if (doc == null)
 			// Create a generic document
-			doc = DomImplementationImpl.get().createDocument(
-					Wom3Node.WOM_NS_URI, "article", null);
+			doc = DomImplementationImpl.get().createDocument(null, null, null);
 
 		return doc;
 	}
 
 	@Override
-	public void setDoc(Wom3Document doc)
+	public void setDoc(Document doc)
 	{
 		this.doc = doc;
 	}
@@ -241,7 +240,7 @@ public abstract class Wom3JsonTypeAdapterBase
 	}
 
 	protected static Element createElement(
-			Wom3Document doc,
+			Document doc,
 			ScopeStack scopeStack,
 			String defaultNsUri,
 			String typeQName)
@@ -277,7 +276,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		XML_TEXT
 		{
 			@Override
-			public Node create(Wom3Document doc, String value)
+			public Node create(Document doc, String value)
 			{
 				return doc.createTextNode(value);
 			}
@@ -285,7 +284,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		ENTITY_REF
 		{
 			@Override
-			public Node create(Wom3Document doc, String value)
+			public Node create(Document doc, String value)
 			{
 				return doc.createEntityReference(value);
 			}
@@ -293,7 +292,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		CDATA
 		{
 			@Override
-			public Node create(Wom3Document doc, String value)
+			public Node create(Document doc, String value)
 			{
 				return doc.createCDATASection(value);
 			}
@@ -301,7 +300,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		COMMENT
 		{
 			@Override
-			public Node create(Wom3Document doc, String value)
+			public Node create(Document doc, String value)
 			{
 				return doc.createComment(value);
 			}
@@ -309,7 +308,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		RTD
 		{
 			@Override
-			public Node create(Wom3Document doc, String value)
+			public Node create(Document doc, String value)
 			{
 				Element elem = doc.createElementNS(Wom3Node.WOM_NS_URI, "rtd");
 				elem.appendChild(doc.createTextNode(value));
@@ -319,7 +318,7 @@ public abstract class Wom3JsonTypeAdapterBase
 		TEXT
 		{
 			@Override
-			public Node create(Wom3Document doc, String value)
+			public Node create(Document doc, String value)
 			{
 				Element elem = doc.createElementNS(Wom3Node.WOM_NS_URI, "text");
 				elem.appendChild(doc.createTextNode(value));
@@ -327,6 +326,6 @@ public abstract class Wom3JsonTypeAdapterBase
 			}
 		};
 
-		public abstract Node create(Wom3Document doc, String value);
+		public abstract Node create(Document doc, String value);
 	}
 }

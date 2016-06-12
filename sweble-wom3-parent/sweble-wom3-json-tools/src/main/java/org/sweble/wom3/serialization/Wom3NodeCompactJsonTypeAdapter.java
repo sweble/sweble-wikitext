@@ -21,10 +21,8 @@ import java.lang.reflect.Type;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.sweble.wom3.Wom3Document;
-import org.sweble.wom3.Wom3Rtd;
-import org.sweble.wom3.Wom3Text;
 import org.sweble.wom3.serialization.ScopeStack.Scope;
+import org.sweble.wom3.util.Wom3Toolbox;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Element;
@@ -79,7 +77,7 @@ public class Wom3NodeCompactJsonTypeAdapter
 			{
 				JsonObject o = null;
 
-				if (node instanceof Wom3Text || node instanceof Wom3Rtd)
+				if (Wom3Toolbox.isRtdOrText(node))
 					o = textOrRtdToJson(node);
 
 				if (o == null)
@@ -158,9 +156,9 @@ public class Wom3NodeCompactJsonTypeAdapter
 	private static JsonObject textOrRtdToJson(Node node)
 	{
 		String name = null;
-		if (node instanceof Wom3Rtd)
+		if (Wom3Toolbox.isRtd(node))
 			name = TYPE_RTD;
-		else if (node instanceof Wom3Text)
+		else if (Wom3Toolbox.isText(node))
 			name = TYPE_TEXT;
 		else
 			throw new InternalError();
@@ -183,14 +181,14 @@ public class Wom3NodeCompactJsonTypeAdapter
 			Type typeOfT,
 			JsonDeserializationContext context) throws JsonParseException
 	{
-		Wom3Document doc = getDoc();
+		Document doc = getDoc();
 		DocumentFragment fragment = doc.createDocumentFragment();
 		fragment.appendChild(fromJson(doc, json, new ScopeStack()));
 		return fragment;
 	}
 
 	private static Node fromJson(
-			Wom3Document doc,
+			Document doc,
 			JsonElement json,
 			ScopeStack scopeStack)
 	{

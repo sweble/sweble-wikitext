@@ -19,7 +19,7 @@ package org.sweble.wom3.serialization;
 
 import java.lang.reflect.Type;
 
-import org.sweble.wom3.Wom3Document;
+import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import com.google.gson.JsonDeserializationContext;
@@ -46,7 +46,7 @@ public interface Wom3JsonTypeAdapterInterface
 			Type typeOfT,
 			JsonDeserializationContext context) throws JsonParseException;
 
-	Wom3Document getDoc();
+	Document getDoc();
 
-	void setDoc(Wom3Document doc);
+	void setDoc(Document doc);
 }
