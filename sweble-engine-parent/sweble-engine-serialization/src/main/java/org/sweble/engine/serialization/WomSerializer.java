@@ -39,11 +39,11 @@ import javax.xml.transform.stream.StreamSource;
 import org.apache.commons.io.IOUtils;
 import org.apache.xerces.parsers.DOMParser;
 import org.sweble.engine.serialization.CompressorFactory.CompressionFormat;
-import org.sweble.wom3.Wom3Document;
-import org.sweble.wom3.Wom3DocumentFragment;
-import org.sweble.wom3.Wom3Node;
+import org.sweble.wom3.serialization.Wom3JsonTypeAdapterBase;
 import org.sweble.wom3.serialization.Wom3NodeCompactJsonTypeAdapter;
 import org.sweble.wom3.serialization.Wom3NodeJsonTypeAdapter;
+import org.w3c.dom.Document;
+import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -72,10 +72,30 @@ public class WomSerializer
 
 	private Transformer normalXmlTransformer;
 
+	private String documentImplClassName = org.sweble.wom3.impl.DocumentImpl.class.getName();
+
+	// =========================================================================
+
+	public WomSerializer()
+	{
+	}
+
+	// =========================================================================
+
+	public String getDocumentImplClassName()
+	{
+		return documentImplClassName;
+	}
+
+	public void setDocumentImplClassName(String documentImplClassName)
+	{
+		this.documentImplClassName = documentImplClassName;
+	}
+
 	// =========================================================================
 
 	public byte[] serialize(
-			Wom3Node wom,
+			Document wom,
 			SerializationFormat serializationFormat,
 			boolean compact,
 			boolean pretty) throws IOException, SerializationException
@@ -103,7 +123,9 @@ public class WomSerializer
 			}
 			case JSON:
 			{
-				result = getGson(compact, pretty).toJson(wom).getBytes(CHARSET);
+				result = getGson(createDocumentForSerialization(), compact, pretty)
+						.toJson(wom)
+						.getBytes(CHARSET);
 				break;
 			}
 			case XML:
@@ -133,12 +155,12 @@ public class WomSerializer
 		return result;
 	}
 
-	public Wom3Node deserialize(
+	public Document deserialize(
 			byte[] serialized,
 			SerializationFormat serializationFormat,
 			boolean compact) throws IOException, DeserializationException
 	{
-		Wom3Node result;
+		Document result;
 		switch (serializationFormat)
 		{
 			case JAVA:
@@ -149,7 +171,7 @@ public class WomSerializer
 				{
 					bais = new ByteArrayInputStream(serialized);
 					ois = new ObjectInputStream(bais);
-					result = (Wom3Node) ois.readObject();
+					result = (Document) ois.readObject();
 				}
 				catch (ClassNotFoundException e)
 				{
@@ -164,13 +186,20 @@ public class WomSerializer
 			}
 			case JSON:
 			{
-				Gson gson = getGson(compact, false);
-				Wom3DocumentFragment fragment = (Wom3DocumentFragment)
-						gson.fromJson(new String(serialized, CHARSET), Wom3Node.class);
-				result = fragment.getOwnerDocument();
-				Wom3Node root = fragment.getFirstChild();
-				fragment.removeChild(root);
-				result.replaceChild(root, result.getFirstChild());
+				DocumentFragment fragment = (DocumentFragment)
+						getGson(createDocumentForDeserialization(), compact, false)
+								.fromJson(new String(serialized, CHARSET), Node.class);
+
+				Node firstChild = fragment.getFirstChild();
+				if (firstChild.getParentNode() != null)
+					firstChild.getParentNode().removeChild(firstChild);
+
+				Document doc = (Document) fragment.getOwnerDocument();
+				if (doc.getDocumentElement() != null)
+					doc.removeChild(doc.getDocumentElement());
+				doc.appendChild(firstChild);
+
+				result = doc;
 				break;
 			}
 			case XML:
@@ -182,7 +211,7 @@ public class WomSerializer
 					InputSource is = new InputSource(bais);
 					DOMParser parser = getXmlParser();
 					parser.parse(is);
-					result = (Wom3Node) parser.getDocument();
+					result = parser.getDocument();
 				}
 				catch (SAXException e)
 				{
@@ -255,7 +284,7 @@ public class WomSerializer
 	}
 
 	public byte[] serializeAndCompress(
-			Wom3Document wom,
+			Document wom,
 			CompressionFormat compressionFormat,
 			SerializationFormat serializationFormat,
 			boolean compact,
@@ -289,7 +318,7 @@ public class WomSerializer
 					try
 					{
 						osw = new OutputStreamWriter(cos, CHARSET);
-						Gson gson = getGson(compact, pretty);
+						Gson gson = getGson(createDocumentForSerialization(), compact, pretty);
 						gson.toJson(wom, osw);
 					}
 					finally
@@ -325,7 +354,7 @@ public class WomSerializer
 		return out.toByteArray();
 	}
 
-	public Wom3Node decompressAndDeserialize(
+	public Document decompressAndDeserialize(
 			byte[] compressed,
 			CompressionFormat compressionFormat,
 			SerializationFormat serializationFormat,
@@ -338,7 +367,7 @@ public class WomSerializer
 			in = new ByteArrayInputStream(compressed);
 			cin = CompressorFactory.createCompressorInputStream(compressionFormat, in);
 
-			Wom3Node result;
+			Document result;
 			switch (serializationFormat)
 			{
 				case JAVA:
@@ -347,7 +376,7 @@ public class WomSerializer
 					try
 					{
 						ois = new ObjectInputStream(cin);
-						result = (Wom3Node) ois.readObject();
+						result = (Document) ois.readObject();
 					}
 					catch (ClassNotFoundException e)
 					{
@@ -365,8 +394,8 @@ public class WomSerializer
 					try
 					{
 						isr = new InputStreamReader(cin, CHARSET);
-						Gson gson = getGson(compact, false);
-						result = gson.fromJson(isr, Wom3Node.class);
+						Gson gson = getGson(createDocumentForDeserialization(), compact, false);
+						result = gson.fromJson(isr, Document.class);
 					}
 					finally
 					{
@@ -379,7 +408,7 @@ public class WomSerializer
 					InputSource is = new InputSource(cin);
 					DOMParser parser = getXmlParser();
 					parser.parse(is);
-					result = (Wom3Node) parser.getDocument();
+					result = parser.getDocument();
 					break;
 				}
 				default:
@@ -442,21 +471,23 @@ public class WomSerializer
 		DOMParser parser = new DOMParser();
 		parser.setProperty(
 				"http://apache.org/xml/properties/" + "dom/document-class-name",
-				"org.sweble.wom3.impl.DocumentImpl");
+				documentImplClassName);
 		return parser;
 	}
 
 	// =========================================================================
 
-	private Gson getGson(boolean compact, boolean pretty)
+	private Gson getGson(Document doc, boolean compact, boolean pretty)
 	{
 		GsonBuilder builder = new GsonBuilder();
 
-		builder.registerTypeHierarchyAdapter(
-				Node.class,
-				(compact ?
-						(new Wom3NodeCompactJsonTypeAdapter()) :
-						(new Wom3NodeJsonTypeAdapter())));
+		Wom3JsonTypeAdapterBase typeAdapter = compact ?
+				(new Wom3NodeCompactJsonTypeAdapter()) :
+				(new Wom3NodeJsonTypeAdapter());
+
+		typeAdapter.setDoc(doc);
+
+		builder.registerTypeHierarchyAdapter(Node.class, typeAdapter);
 
 		builder.serializeNulls();
 
@@ -464,5 +495,45 @@ public class WomSerializer
 			builder.setPrettyPrinting();
 
 		return builder.create();
+	}
+
+	private Document createDocumentForDeserialization() throws DeserializationException
+	{
+		try
+		{
+			return (Document) Class.forName(documentImplClassName).newInstance();
+		}
+		catch (InstantiationException e)
+		{
+			throw new DeserializationException(e);
+		}
+		catch (IllegalAccessException e)
+		{
+			throw new DeserializationException(e);
+		}
+		catch (ClassNotFoundException e)
+		{
+			throw new DeserializationException(e);
+		}
+	}
+
+	private Document createDocumentForSerialization() throws SerializationException
+	{
+		try
+		{
+			return (Document) Class.forName(documentImplClassName).newInstance();
+		}
+		catch (InstantiationException e)
+		{
+			throw new SerializationException(e);
+		}
+		catch (IllegalAccessException e)
+		{
+			throw new SerializationException(e);
+		}
+		catch (ClassNotFoundException e)
+		{
+			throw new SerializationException(e);
+		}
 	}
 }
