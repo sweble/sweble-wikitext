@@ -2,6 +2,17 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+### Changed
+- Document automatically generated during deserialization in 
+  sweble-wom3-json-tools if not doc is explicitly set does not contain article 
+  element by default any more.
+- Generalized sweble-wom3-json-tools code to work with w3c docs as well (BREAKS INTERFACE)
+- Generalized sweble-engine-serialization code to work with w3c docs as well (BREAKS INTERFACE)
+- Generalized Wom3Toolbox code to work with w3c docs as well (BREAKS INTERFACE)
+
+### Added
+- WomToolbox.{isWomElement, isRtd, isText, isRtdOrText} methods
+- WomSerializer.setDocumentImplClassName method
 
 ## 3.0.2 - 2016-06-07
 ### Changed
