@@ -21,7 +21,6 @@ import java.lang.reflect.Type;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.sweble.wom3.Wom3Document;
 import org.sweble.wom3.serialization.ScopeStack.Scope;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentFragment;
@@ -158,14 +157,14 @@ public class Wom3NodeJsonTypeAdapter
 			Type typeOfT,
 			JsonDeserializationContext context) throws JsonParseException
 	{
-		final Wom3Document doc = getDoc();
+		final Document doc = getDoc();
 		DocumentFragment fragment = doc.createDocumentFragment();
 		fragment.appendChild(fromJson(doc, json, new ScopeStack()));
 		return fragment;
 	}
 
 	private static Node fromJson(
-			Wom3Document doc,
+			Document doc,
 			JsonElement json,
 			ScopeStack scopeStack)
 	{

@@ -21,11 +21,9 @@ import java.util.ArrayList;
 
 import org.sweble.wom3.Wom3Document;
 import org.sweble.wom3.Wom3Node;
-import org.sweble.wom3.Wom3Repl;
-import org.sweble.wom3.Wom3Rtd;
-import org.sweble.wom3.Wom3Text;
 import org.sweble.wom3.impl.DocumentImpl;
 import org.sweble.wom3.impl.DomImplementationImpl;
+import org.w3c.dom.Node;
 
 public class Wom3Toolbox
 {
@@ -57,38 +55,83 @@ public class Wom3Toolbox
 				Wom3Node.WOM_NS_URI, docElemTagName, null);
 	}
 
-	public static String womToWmFast(Wom3Node wom)
+	public static String womToWmFast(Node wom)
 	{
 		StringBuilder sb = new StringBuilder();
 		womToWmFast(sb, wom);
 		return sb.toString();
 	}
 
-	public static void womToWmFast(StringBuilder sb, Wom3Node wom)
+	public static void womToWmFast(StringBuilder sb, Node wom)
 	{
-		if (wom instanceof Wom3Rtd || wom instanceof Wom3Text)
+		if ((wom == null) || (sb == null))
+			throw new NullPointerException();
+		womToWmFastRec(sb, wom);
+	}
+
+	private static void womToWmFastRec(StringBuilder sb, Node wom)
+	{
+		if ((wom.getNodeType() == Node.ELEMENT_NODE)
+				&& Wom3Node.WOM_NS_URI.equals(wom.getNamespaceURI()))
 		{
-			sb.append(wom.getTextContent());
+			String localName = wom.getLocalName();
+			if ("rtd".equals(localName) || "text".equals(localName))
+			{
+				sb.append(wom.getTextContent());
+				return;
+			}
+			else if ("repl".equals(localName))
+			{
+				// Ignore <repl>...</repl> stuff
+				return;
+			}
 		}
-		else if (wom instanceof Wom3Repl)
-		{
-			// Ignore <repl>...</repl> stuff
-		}
-		else
-		{
-			for (Wom3Node c : wom)
-				womToWmFast(sb, c);
-		}
+
+		for (Node child = wom.getFirstChild(); child != null; child = child.getNextSibling())
+			womToWmFastRec(sb, child);
 	}
 
 	// =========================================================================
 	//  WOM query & manipulation
 	// =========================================================================
 
+	public static boolean isRtdOrText(Node wom)
+	{
+		if ((wom != null)
+				&& (wom.getNodeType() == Node.ELEMENT_NODE)
+				&& Wom3Node.WOM_NS_URI.equals(wom.getNamespaceURI()))
+		{
+			String localName = wom.getLocalName();
+			return ("rtd".equals(localName) || "text".equals(localName));
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public static boolean isText(Node wom)
+	{
+		return isWomElement(wom, "text");
+	}
+
+	public static boolean isRtd(Node wom)
+	{
+		return isWomElement(wom, "rtd");
+	}
+
+	public static boolean isWomElement(Node node, String localName)
+	{
+		return (node != null)
+				&& (node.getNodeType() == Node.ELEMENT_NODE)
+				&& Wom3Node.WOM_NS_URI.equals(node.getNamespaceURI())
+				&& localName.equals(node.getLocalName());
+	}
+
 	public static void insertBefore(
-			Wom3Node parent,
-			Wom3Node insertBefore,
-			Wom3Node child)
+			Node parent,
+			Node insertBefore,
+			Node child)
 	{
 		if (insertBefore == null)
 			parent.appendChild(child);
@@ -96,21 +139,21 @@ public class Wom3Toolbox
 			parent.insertBefore(child, insertBefore);
 	}
 
-	public static Wom3Node[] getChildrenByTagName(Wom3Node wom, String name)
+	public static Node[] getChildrenByTagName(Node wom, String name)
 	{
-		ArrayList<Wom3Node> result = new ArrayList<Wom3Node>();
+		ArrayList<Node> result = new ArrayList<Node>();
 		getChildrenByTagName(wom, name, result);
-		return result.toArray(new Wom3Node[0]);
+		return result.toArray(new Node[0]);
 	}
 
 	public static void getChildrenByTagName(
-			Wom3Node node,
+			Node node,
 			String name,
-			ArrayList<Wom3Node> result)
+			ArrayList<Node> result)
 	{
 		if (node.getNodeName().equals(name))
 			result.add(node);
-		for (Wom3Node c : node)
-			getChildrenByTagName(c, name, result);
+		for (Node child = node.getFirstChild(); child != null; child = child.getNextSibling())
+			getChildrenByTagName(child, name, result);
 	}
 }
