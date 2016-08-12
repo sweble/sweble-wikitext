@@ -20,7 +20,7 @@ package org.sweble.wom3.serialization;
 import java.util.HashMap;
 import java.util.Map;
 
-final class ScopeStack
+public final class ScopeStack
 {
 	private Scope top = null;
 
@@ -63,9 +63,9 @@ final class ScopeStack
 
 	// =========================================================================
 
-	static final class Scope
+	public static final class Scope
 	{
-		final Scope parent;
+		private final Scope parent;
 
 		private String xmlns = null;
 
@@ -77,7 +77,12 @@ final class ScopeStack
 			this.parent = parent;
 		}
 
-		private String getNsUriForPrefix(String prefix)
+		public Scope getParent()
+		{
+			return parent;
+		}
+
+		public String getNsUriForPrefix(String prefix)
 		{
 			return prefixToNsUriMap.get(prefix);
 		}
@@ -90,7 +95,7 @@ final class ScopeStack
 			prefixToNsUriMap.put(prefix, valueString);
 		}
 
-		private String getXmlns()
+		public String getXmlns()
 		{
 			return xmlns;
 		}
