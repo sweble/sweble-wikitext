@@ -3,6 +3,10 @@
 
 ## Unreleased
 
+## 3.1.1 - 2016-08-12
+### Changed
+- Made ScopeStack class and methods public (including inner class Scope)
+
 ## 3.1.0 - 2016-06-13
 ### Changed
 - Document automatically generated during deserialization in 
