@@ -19,8 +19,8 @@
  * XmlElement
  * ----------
  *
- *   This grammar recognizes start and end tags separatly without matching them.
- *   Finding valid pairs of start and end tags is defered to later processing.
+ *   This grammar recognizes start and end tags separately without matching them.
+ *   Finding valid pairs of start and end tags is deferred to later processing.
  *
  *   Grammar:
  *     - '</' XmlName Ws* '>'
