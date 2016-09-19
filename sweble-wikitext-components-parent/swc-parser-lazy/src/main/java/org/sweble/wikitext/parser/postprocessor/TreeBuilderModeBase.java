@@ -129,10 +129,10 @@ public class TreeBuilderModeBase
 
 	protected static void addRtDataOfImEndTag(WtNode finish, WtRtData etRtd)
 	{
-		switch (finish.getNodeType())
+		switch (getNodeType(finish))
 		{
-			case WtNode.NT_BOLD:
-			case WtNode.NT_ITALICS:
+			case B:
+			case I:
 			{
 				RtData feRtd = finish.getRtd();
 				if (feRtd == null)
@@ -162,7 +162,7 @@ public class TreeBuilderModeBase
 			
 			default:
 				// Finish is assumed to be WtBold, WtItalics or an WtXmlElement node
-				throw new AssertionError();
+				throw new IllegalArgumentException("Node was assumed to be bold or italics, but was type "+getNodeType(finish));
 		}
 	}
 }
