@@ -168,6 +168,11 @@ public class LinkTargetParser
 
 		// Perform sanity checks on remaining title
 		{
+			// Fixes issue #45:
+			// "&_foo_;" become "& foo ;" and will not be recognized as illegal entity.
+			// Related to (**)
+			result = result.replace('_', ' ');
+
 			Matcher matcher = invalidTitle.matcher(result);
 			if (matcher.find())
 				throw new LinkTargetException(
@@ -176,7 +181,8 @@ public class LinkTargetParser
 						matcher.group());
 		}
 
-		// Strip whitespace characters
+		// Fixes issue #45:
+		// (**) Strip whitespace characters
 		// IMPORTANT: Was done after (*). Led to problems for titles like
 		// '& foo ;' which became '&_foo_;' and were treated as illegal XML
 		// entities by the sanity check. Also when done here it will not
