@@ -40,22 +40,24 @@ public class SimpleParserConfig
 			ParserConfig
 {
 	private final boolean warningsEnabled;
-	
+
 	private final boolean gatherRtd;
-	
+
 	private final boolean autoCorrect;
-	
+
+	private final boolean langConvTagsEnabled;
+
 	private final WikitextNodeFactory nodeFactory;
-	
+
 	private final AstTextUtilsImpl textUtils;
-	
+
 	// =========================================================================
-	
+
 	public SimpleParserConfig()
 	{
-		this(true, true, false);
+		this(true, true, false, true);
 	}
-	
+
 	public SimpleParserConfig(
 			boolean warningsEnabled,
 			boolean gatherRtd,
@@ -64,52 +66,69 @@ public class SimpleParserConfig
 		this.warningsEnabled = warningsEnabled;
 		this.gatherRtd = gatherRtd;
 		this.autoCorrect = autoCorrect;
+		// Issue #48: false would be the smarter setting but we stick with true
+		// for downward compatibility.
+		this.langConvTagsEnabled = true;
 		this.nodeFactory = new WikitextNodeFactoryImpl(this);
 		this.textUtils = new AstTextUtilsImpl(this);
 	}
-	
+
+	public SimpleParserConfig(
+			boolean warningsEnabled,
+			boolean gatherRtd,
+			boolean autoCorrect,
+			boolean langConvTagsEnabled)
+	{
+		this.warningsEnabled = warningsEnabled;
+		this.gatherRtd = gatherRtd;
+		this.autoCorrect = autoCorrect;
+		this.langConvTagsEnabled = langConvTagsEnabled;
+		this.nodeFactory = new WikitextNodeFactoryImpl(this);
+		this.textUtils = new AstTextUtilsImpl(this);
+	}
+
 	// ==[ Parser features ]====================================================
-	
+
 	@Override
 	public boolean isWarningsEnabled()
 	{
 		return warningsEnabled;
 	}
-	
+
 	@Override
 	public boolean isWarningLevelEnabled(WarningSeverity severity)
 	{
 		return true;
 	}
-	
+
 	@Override
 	public boolean isAutoCorrect()
 	{
 		return autoCorrect;
 	}
-	
+
 	@Override
 	public boolean isGatherRtData()
 	{
 		return gatherRtd;
 	}
-	
+
 	// ==[ AST creation ]=======================================================
-	
+
 	@Override
 	public WikitextNodeFactory getNodeFactory()
 	{
 		return nodeFactory;
 	}
-	
+
 	@Override
 	public AstTextUtils getAstTextUtils()
 	{
 		return textUtils;
 	}
-	
+
 	// ==[ Link classification and parsing ]====================================
-	
+
 	@Override
 	public boolean isUrlProtocol(String proto)
 	{
@@ -117,20 +136,20 @@ public class SimpleParserConfig
 				"https://".equalsIgnoreCase(proto) ||
 				"mail:".equalsIgnoreCase(proto);
 	}
-	
+
 	@Override
 	public String getInternalLinkPrefixPattern()
 	{
 		// Doesn't make that much sense, but needed for testing ...
 		return "[äöüßa-z]+";
 	}
-	
+
 	@Override
 	public String getInternalLinkPostfixPattern()
 	{
 		return "[äöüßa-z]+";
 	}
-	
+
 	@Override
 	public LinkType classifyTarget(String target)
 	{
@@ -143,14 +162,14 @@ public class SimpleParserConfig
 		{
 			return LinkType.INVALID;
 		}
-		
+
 		String ns = ltp.getNamespace();
 		if ("file".equalsIgnoreCase(ns) || "image".equalsIgnoreCase(ns))
 			return LinkType.IMAGE;
-		
+
 		return LinkType.PAGE;
 	}
-	
+
 	@Override
 	public boolean isNamespace(String name)
 	{
@@ -161,33 +180,33 @@ public class SimpleParserConfig
 				"media".equals(name) ||
 				"category".equals(name);
 	}
-	
+
 	@Override
 	public boolean isTalkNamespace(String resultNs)
 	{
 		return resultNs.toLowerCase().equals("talk");
 	}
-	
+
 	@Override
 	public boolean isInterwikiName(String name)
 	{
 		return "mediawiki".equalsIgnoreCase(name);
 	}
-	
+
 	@Override
 	public boolean isIwPrefixOfThisWiki(String iwPrefix)
 	{
 		return false;
 	}
-	
+
 	// ==[ Names ]==============================================================
-	
+
 	@Override
 	public boolean isValidPageSwitchName(String word)
 	{
 		return "NOTOC".equalsIgnoreCase(word);
 	}
-	
+
 	@Override
 	public boolean isValidExtensionTagName(String name)
 	{
@@ -200,20 +219,20 @@ public class SimpleParserConfig
 				"noinclude".equalsIgnoreCase(name) ||
 				"onlyinclude".equalsIgnoreCase(name);
 	}
-	
+
 	public boolean isRedirectKeyword(String keyword)
 	{
 		return keyword.equalsIgnoreCase("#redirect");
 	}
-	
+
 	// ==[ Parsing XML elements ]===============================================
-	
+
 	@Override
 	public boolean isValidXmlEntityRef(String name)
 	{
 		return true;
 	}
-	
+
 	@Override
 	public String resolveXmlEntity(String name)
 	{
@@ -255,45 +274,63 @@ public class SimpleParserConfig
 			return null;
 		}
 	}
-	
+
 	@Override
 	public Map<String, String> getXmlEntities()
 	{
 		return Collections.emptyMap();
 	}
-	
+
 	@Override
 	public NonStandardElementBehavior getNonStandardElementBehavior(
 			String elementName)
 	{
 		return NonStandardElementBehavior.UNSPECIFIED;
 	}
-	
+
 	// ==[ Language Conversion Tags ]===========================================
-	
+
 	private static final Set<String> knownFlags = new HashSet<String>(Arrays.asList(
-			"A", "T", "R", "D", "-", "H", "N"));
-	
+			"A",
+			"T",
+			"R",
+			"D",
+			"-",
+			"H",
+			"N"));
+
+	@Override
+	public boolean isLangConvTagsEnabled()
+	{
+		return langConvTagsEnabled;
+	}
+
 	public boolean isLctFlag(String flag)
 	{
 		flag = normalizeLctFlag(flag);
 		return knownFlags.contains(flag);
 	}
-	
+
 	public String normalizeLctFlag(String flag)
 	{
 		return flag.trim().toUpperCase();
 	}
-	
+
 	private static final Set<String> knownVariants = new HashSet<String>(Arrays.asList(
-			"zh", "zh-hans", "zh-hant", "zh-cn", "zh-tw", "zh-hk", "zh-sg"));
-	
+			"zh",
+			"zh-hans",
+			"zh-hant",
+			"zh-cn",
+			"zh-tw",
+			"zh-hk",
+			"zh-sg"));
+
 	public boolean isLctVariant(String variant)
 	{
 		variant = normalizeLctVariant(variant);
 		return knownVariants.contains(variant);
 	}
-	
+
 	public String normalizeLctVariant(String variant)
 	{
 		return variant.trim().toLowerCase();

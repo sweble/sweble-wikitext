@@ -32,113 +32,117 @@ public class WikitextParserState
 			ParserState<WikitextParserContext>
 {
 	private WtEntityMap entityMap = new WtEntityMapImpl();
-	
+
 	private ParserConfig config;
-	
+
 	private Pattern postfixPattern;
-	
+
 	private Pattern prefixPattern;
-	
+
 	private boolean autoCorrect;
-	
+
 	private boolean warningsEnabled;
-	
+
 	private boolean gatherRtData;
-	
+
+	private boolean langConvTagsEnabled;
+
 	// =========================================================================
-	
+
 	@Override
 	protected WikitextParserContext instantiateContext()
 	{
 		return new WikitextParserContext();
 	}
-	
+
 	// =========================================================================
-	
+
 	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}
-	
+
 	public WtNode getEntity(int id)
 	{
 		return entityMap.getEntity(id);
 	}
-	
+
 	// =========================================================================
-	
+
 	public ParserConfig getConfig()
 	{
 		return config;
 	}
-	
+
 	public void init(ParserConfig config, WtEntityMap entityMap)
 	{
 		this.config = config;
-		
+
 		this.entityMap = entityMap;
-		
+
 		this.autoCorrect = config.isAutoCorrect();
-		
+
 		this.warningsEnabled = config.isWarningsEnabled();
-		
+
 		this.gatherRtData = config.isGatherRtData();
-		
+
+		this.langConvTagsEnabled = config.isLangConvTagsEnabled();
+
 		this.prefixPattern = Pattern.compile(
 				"(" + config.getInternalLinkPrefixPattern() + ")$");
-		
+
 		this.postfixPattern = Pattern.compile(
 				config.getInternalLinkPostfixPattern());
 	}
-	
+
 	// =========================================================================
-	
+
 	public boolean isAutoCorrect()
 	{
 		return autoCorrect;
 	}
-	
+
 	public boolean isWarnignsEnabled()
 	{
 		return warningsEnabled;
 	}
-	
+
 	public boolean isGatherRtData()
 	{
 		return gatherRtData;
 	}
-	
+
 	// =========================================================================
-	
+
 	public Pattern getInternalLinkPrefixPattern()
 	{
 		return prefixPattern;
 	}
-	
+
 	public Pattern getInternalLinkPostfixPattern()
 	{
 		return postfixPattern;
 	}
-	
+
 	// =========================================================================
-	
+
 	public LinkBuilder getLinkBuilder()
 	{
 		return getTop().getLinkBuilder();
 	}
-	
+
 	public void initLinkBuilder(WtPageName target)
 	{
 		getTop().initLinkBuilder(config, target);
 	}
-	
+
 	// =========================================================================
-	
+
 	public ParserScopes getScope()
 	{
 		return getTop().getScope();
 	}
-	
+
 	public void setScope(ParserScopes scope)
 	{
 		WikitextParserContext c = getTop();
@@ -146,7 +150,7 @@ public class WikitextParserState
 		if (scope.isSticky())
 			c.addStickingScope(scope);
 	}
-	
+
 	public boolean accepts(ParserAtoms atom)
 	{
 		WikitextParserContext c = getTop();
@@ -165,7 +169,7 @@ public class WikitextParserState
 		}
 		return false;
 	}
-	
+
 	public boolean inScope(ParserScopes scope)
 	{
 		WikitextParserContext c = getTop();
@@ -178,5 +182,10 @@ public class WikitextParserState
 			int bit = 1 << scope.ordinal();
 			return 0 != (c.getStickingScopes() & bit);
 		}
+	}
+
+	public boolean isLangConvTagsEnabled()
+	{
+		return langConvTagsEnabled;
 	}
 }

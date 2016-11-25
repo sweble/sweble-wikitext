@@ -43,14 +43,13 @@ import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.utils.AstTextUtils;
 
-@XmlRootElement(
-		name = "ParserConfig",
-		namespace = "org.sweble.wikitext.engine")
+@XmlRootElement(name = "ParserConfig", namespace = "org.sweble.wikitext.engine")
 @XmlType(propOrder = {
 		"warningsEnabled",
 		"minSeverity",
 		"autoCorrect",
 		"gatherRtData",
+		"langConvTagsEnabled",
 		"internalLinkPrefixPattern",
 		"internalLinkPostfixPattern",
 		"jaxbAllowedUrlProtocols",
@@ -63,37 +62,40 @@ public class ParserConfigImpl
 			ParserConfig
 {
 	private static final Pattern URL_PROTOCOL_SYNTAX = Pattern.compile("^\\w+(:|://)$");
-	
+
 	private transient WikiConfigImpl wikiConfig;
-	
+
 	private final Map<String, String> xmlEntities = new HashMap<String, String>();
-	
+
 	@XmlElement
 	private boolean warningsEnabled;
-	
+
 	@XmlElement
 	private WarningSeverity minSeverity;
-	
+
 	@XmlElement
 	private boolean autoCorrect;
-	
+
 	@XmlElement
 	private boolean gatherRtData;
-	
+
+	@XmlElement
+	private boolean langConvTagsEnabled = true /*be backward compatible*/;
+
 	private final Set<String> allowedUrlProtocols = new HashSet<String>();
-	
+
 	@XmlElement
 	private String internalLinkPrefixPattern;
-	
+
 	@XmlElement
 	private String internalLinkPostfixPattern;
-	
+
 	private final Map<String, String> lctFlagMap = new HashMap<String, String>();
-	
+
 	private final Map<String, String> lctVariantMap = new HashMap<String, String>();
-	
+
 	// =========================================================================
-	
+
 	/**
 	 * This must only be used for de-serialization. Afterwards the wikiConfig
 	 * field has to be set explicitly!
@@ -101,13 +103,13 @@ public class ParserConfigImpl
 	protected ParserConfigImpl()
 	{
 	}
-	
+
 	public ParserConfigImpl(WikiConfigImpl wikiConfig)
 	{
 		this();
 		setWikiConfig(wikiConfig);
 	}
-	
+
 	/**
 	 * Fix ParserConfigImpl after de-serialization.
 	 */
@@ -117,9 +119,9 @@ public class ParserConfigImpl
 			throw new IllegalArgumentException();
 		this.wikiConfig = wikiConfig;
 	}
-	
+
 	// ==[ XML Entity resolution ]==============================================
-	
+
 	public void addXmlEntity(String name, String resolvesTo)
 	{
 		String old = xmlEntities.get(name);
@@ -127,81 +129,81 @@ public class ParserConfigImpl
 			throw new IllegalArgumentException("XML entity `" + name + "' already registered.");
 		xmlEntities.put(name, resolvesTo);
 	}
-	
+
 	@Override
 	public Map<String, String> getXmlEntities()
 	{
 		return xmlEntities;
 	}
-	
+
 	@Override
 	public String resolveXmlEntity(String name)
 	{
 		return xmlEntities.get(name);
 	}
-	
+
 	// ==[ Parser features ]====================================================
-	
+
 	public void setWarningsEnabled(boolean warningsEnabled)
 	{
 		this.warningsEnabled = warningsEnabled;
 	}
-	
+
 	@Override
 	public boolean isWarningsEnabled()
 	{
 		return warningsEnabled;
 	}
-	
+
 	public void setMinSeverity(WarningSeverity minSeverity)
 	{
 		this.minSeverity = minSeverity;
 	}
-	
+
 	@Override
 	public boolean isWarningLevelEnabled(WarningSeverity severity)
 	{
 		return severity.getLevel() >= this.minSeverity.getLevel();
 	}
-	
+
 	public void setAutoCorrect(boolean autoCorrect)
 	{
 		this.autoCorrect = autoCorrect;
 	}
-	
+
 	@Override
 	public boolean isAutoCorrect()
 	{
 		return autoCorrect;
 	}
-	
+
 	public void setGatherRtData(boolean gatherRtData)
 	{
 		this.gatherRtData = gatherRtData;
 	}
-	
+
 	@Override
 	public boolean isGatherRtData()
 	{
 		return gatherRtData;
 	}
-	
+
 	// ==[ AST creation ]=======================================================
-	
+
 	@Override
 	public EngineNodeFactory getNodeFactory()
 	{
 		return wikiConfig.getNodeFactory();
 	}
-	
+
 	@Override
 	public AstTextUtils getAstTextUtils()
 	{
 		return wikiConfig.getAstTextUtils();
 	}
-	
+
 	// ==[ Link classification and parsing ]====================================
-	
+
 	public void addUrlProtocol(String protocol)
 	{
 		if (allowedUrlProtocols.contains(protocol))
@@ -210,13 +212,13 @@ public class ParserConfigImpl
 			throw new IllegalArgumentException("Invalid URL protocol syntax `" + protocol + "'.");
 		allowedUrlProtocols.add(protocol);
 	}
-	
+
 	@Override
 	public boolean isUrlProtocol(String protocol)
 	{
 		return allowedUrlProtocols.contains(protocol.toLowerCase());
 	}
-	
+
 	public void setInternalLinkPrefixPattern(String pat)
 	{
 		if (pat == null)
@@ -236,13 +238,13 @@ public class ParserConfigImpl
 			this.internalLinkPrefixPattern = pat;
 		}
 	}
-	
+
 	@Override
 	public String getInternalLinkPrefixPattern()
 	{
 		return this.internalLinkPrefixPattern;
 	}
-	
+
 	public void setInternalLinkPostfixPattern(String pat)
 	{
 		if (pat == null)
@@ -262,13 +264,13 @@ public class ParserConfigImpl
 			this.internalLinkPostfixPattern = pat;
 		}
 	}
-	
+
 	@Override
 	public String getInternalLinkPostfixPattern()
 	{
 		return this.internalLinkPostfixPattern;
 	}
-	
+
 	@Override
 	public LinkType classifyTarget(String target)
 	{
@@ -281,7 +283,7 @@ public class ParserConfigImpl
 		{
 			return LinkType.INVALID;
 		}
-		
+
 		String nsStr = ltp.getNamespace();
 		if (nsStr != null)
 		{
@@ -289,49 +291,49 @@ public class ParserConfigImpl
 			if (ns != null && ns.isFileNs() && !ltp.isInitialColon())
 				return LinkType.IMAGE;
 		}
-		
+
 		return LinkType.PAGE;
 	}
-	
+
 	@Override
 	public boolean isNamespace(String nsName)
 	{
 		return this.wikiConfig.getNamespace(nsName) != null;
 	}
-	
+
 	@Override
 	public boolean isTalkNamespace(String nsName)
 	{
 		NamespaceImpl ns = this.wikiConfig.getNamespace(nsName);
 		return ns != null && ns.isTalkNamespace();
 	}
-	
+
 	@Override
 	public boolean isInterwikiName(String iwName)
 	{
 		return this.wikiConfig.getInterwiki(iwName) != null;
 	}
-	
+
 	@Override
 	public boolean isIwPrefixOfThisWiki(String iwPrefix)
 	{
 		return iwPrefix.equals(this.wikiConfig.getInterwikiPrefix());
 	}
-	
+
 	// ==[ Names ]==============================================================
-	
+
 	@Override
 	public boolean isValidPageSwitchName(String name)
 	{
 		return this.wikiConfig.getPageSwitch(name) != null;
 	}
-	
+
 	@Override
 	public boolean isValidExtensionTagName(String name)
 	{
 		return this.wikiConfig.getTagExtension(name) != null;
 	}
-	
+
 	@Override
 	public boolean isRedirectKeyword(String keyword)
 	{
@@ -340,15 +342,15 @@ public class ParserConfigImpl
 			return false;
 		return alias.hasAlias(keyword);
 	}
-	
+
 	// ==[ Parsing XML elements ]===============================================
-	
+
 	@Override
 	public boolean isValidXmlEntityRef(String name)
 	{
 		return resolveXmlEntity(name) != null;
 	}
-	
+
 	/**
 	 * @TODO: Add proper implementation.
 	 */
@@ -358,15 +360,21 @@ public class ParserConfigImpl
 	{
 		return NonStandardElementBehavior.UNSPECIFIED;
 	}
-	
+
 	// ==[ Language Conversion Tags ]===========================================
-	
+
+	@Override
+	public boolean isLangConvTagsEnabled()
+	{
+		return langConvTagsEnabled;
+	}
+
 	@Override
 	public boolean isLctFlag(String flag)
 	{
 		return lctFlagMap.containsKey(normalizeLctFlag(flag));
 	}
-	
+
 	@Override
 	public String normalizeLctFlag(String flag)
 	{
@@ -376,7 +384,7 @@ public class ParserConfigImpl
 			normalized = flag;
 		return normalized;
 	}
-	
+
 	public void addLctFlagMapping(String name, String normalized)
 	{
 		String old = lctFlagMap.get(name);
@@ -384,13 +392,13 @@ public class ParserConfigImpl
 			throw new IllegalArgumentException("LCT flag mapping `" + name + "' already registered.");
 		this.lctFlagMap.put(name, normalized);
 	}
-	
+
 	@Override
 	public boolean isLctVariant(String variant)
 	{
 		return lctVariantMap.containsKey(normalizeLctVariant(variant));
 	}
-	
+
 	@Override
 	public String normalizeLctVariant(String variant)
 	{
@@ -400,7 +408,7 @@ public class ParserConfigImpl
 			normalized = variant;
 		return normalized;
 	}
-	
+
 	public void addLctVariantMapping(String name, String normalized)
 	{
 		String old = lctVariantMap.get(name);
@@ -408,36 +416,36 @@ public class ParserConfigImpl
 			throw new IllegalArgumentException("LCT variant mapping `" + name + "' already registered.");
 		this.lctVariantMap.put(name, normalized);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class XmlEntityMapEntry
 			implements
 				Comparable<XmlEntityMapEntry>
 	{
 		@XmlAttribute
 		private String name;
-		
+
 		@XmlAttribute
 		private String value;
-		
+
 		private XmlEntityMapEntry()
 		{
 		}
-		
+
 		private XmlEntityMapEntry(String name, String value)
 		{
 			this.name = name;
 			this.value = value;
 		}
-		
+
 		@Override
 		public int compareTo(XmlEntityMapEntry o)
 		{
 			return name.compareTo(o.name);
 		}
 	}
-	
+
 	@XmlElement(name = "entity")
 	@XmlElementWrapper(name = "xmlEntities")
 	private XmlEntityMapEntry[] getJaxbXmlEntities()
@@ -449,32 +457,32 @@ public class ParserConfigImpl
 		Arrays.sort(array);
 		return array;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbXmlEntities(XmlEntityMapEntry[] xmlEntities)
 	{
 		for (XmlEntityMapEntry e : xmlEntities)
 			addXmlEntity(e.name, e.value);
 	}
-	
+
 	// =========================================================================
-	
+
 	@SuppressWarnings("unused")
 	private static final class UrlProtocolEntry
 	{
 		@XmlAttribute
 		private String name;
-		
+
 		public UrlProtocolEntry()
 		{
 		}
-		
+
 		public UrlProtocolEntry(String name)
 		{
 			this.name = name;
 		}
 	}
-	
+
 	@XmlElement(name = "protocol")
 	@XmlElementWrapper(name = "allowedUrlProtocols")
 	private UrlProtocolEntry[] getJaxbAllowedUrlProtocols()
@@ -485,43 +493,43 @@ public class ParserConfigImpl
 			array[i++] = new UrlProtocolEntry(protocol);
 		return array;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbAllowedUrlProtocols(UrlProtocolEntry[] protocols)
 	{
 		for (UrlProtocolEntry protocol : protocols)
 			addUrlProtocol(protocol.name);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class LctFlagMapEntry
 			implements
 				Comparable<LctFlagMapEntry>
 	{
 		@XmlAttribute
 		private String name;
-		
+
 		@XmlAttribute
 		private String normalized;
-		
+
 		private LctFlagMapEntry()
 		{
 		}
-		
+
 		private LctFlagMapEntry(String name, String normalized)
 		{
 			this.name = name;
 			this.normalized = normalized;
 		}
-		
+
 		@Override
 		public int compareTo(LctFlagMapEntry o)
 		{
 			return name.compareTo(o.name);
 		}
 	}
-	
+
 	@XmlElement(name = "lctFlag")
 	@XmlElementWrapper(name = "lctFlagMappings")
 	private LctFlagMapEntry[] getJaxbLctFlagMappings()
@@ -533,43 +541,43 @@ public class ParserConfigImpl
 		Arrays.sort(array);
 		return array;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbLctFlagMappings(LctFlagMapEntry[] lctFlagMap)
 	{
 		for (LctFlagMapEntry e : lctFlagMap)
 			addLctFlagMapping(e.name, e.normalized);
 	}
-	
+
 	// =========================================================================
-	
+
 	private static final class LctVariantMapEntry
 			implements
 				Comparable<LctVariantMapEntry>
 	{
 		@XmlAttribute
 		private String name;
-		
+
 		@XmlAttribute
 		private String normalized;
-		
+
 		private LctVariantMapEntry()
 		{
 		}
-		
+
 		private LctVariantMapEntry(String name, String normalized)
 		{
 			this.name = name;
 			this.normalized = normalized;
 		}
-		
+
 		@Override
 		public int compareTo(LctVariantMapEntry o)
 		{
 			return name.compareTo(o.name);
 		}
 	}
-	
+
 	@XmlElement(name = "lctVariant")
 	@XmlElementWrapper(name = "lctVariantMappings")
 	private LctVariantMapEntry[] getJaxbLctVariantMappings()
@@ -581,16 +589,16 @@ public class ParserConfigImpl
 		Arrays.sort(array);
 		return array;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void setJaxbLctVariantMappings(LctVariantMapEntry[] lctVariantMap)
 	{
 		for (LctVariantMapEntry e : lctVariantMap)
 			addLctVariantMapping(e.name, e.normalized);
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -601,6 +609,7 @@ public class ParserConfigImpl
 		result = prime * result + (gatherRtData ? 1231 : 1237);
 		result = prime * result + ((internalLinkPostfixPattern == null) ? 0 : internalLinkPostfixPattern.hashCode());
 		result = prime * result + ((internalLinkPrefixPattern == null) ? 0 : internalLinkPrefixPattern.hashCode());
+		result = prime * result + (langConvTagsEnabled ? 1231 : 1237);
 		result = prime * result + ((lctFlagMap == null) ? 0 : lctFlagMap.hashCode());
 		result = prime * result + ((lctVariantMap == null) ? 0 : lctVariantMap.hashCode());
 		result = prime * result + ((minSeverity == null) ? 0 : minSeverity.hashCode());
@@ -608,7 +617,7 @@ public class ParserConfigImpl
 		result = prime * result + ((xmlEntities == null) ? 0 : xmlEntities.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -643,6 +652,8 @@ public class ParserConfigImpl
 				return false;
 		}
 		else if (!internalLinkPrefixPattern.equals(other.internalLinkPrefixPattern))
+			return false;
+		if (langConvTagsEnabled != other.langConvTagsEnabled)
 			return false;
 		if (lctFlagMap == null)
 		{
