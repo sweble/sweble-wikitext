@@ -181,7 +181,7 @@ public class TreeBuilder
 		
 		logic.go(ast);
 		if (getRootNode() == null)
-			throw new InternalError("No root node set after processing!");
+			throw new AssertionError("No root node set after processing!");
 		
 		if (!errors.isEmpty())
 		{
@@ -231,7 +231,7 @@ public class TreeBuilder
 			case IN_TABLE_TEXT:
 				return inTableTextMode;
 			default:
-				throw new InternalError();
+				throw new AssertionError();
 		}
 	}
 	
@@ -445,7 +445,7 @@ public class TreeBuilder
 					return ((WtLctVarConv) node).getText();
 					
 				default:
-					throw new InternalError();
+					throw new AssertionError();
 			}
 		}
 	}
@@ -484,7 +484,7 @@ public class TreeBuilder
 					break;
 				
 				default:
-					throw new InternalError();
+					throw new AssertionError();
 			}
 			content.setRtd(originalContent.getRtd());
 		}
@@ -503,9 +503,9 @@ public class TreeBuilder
 		if (nodeType == null)
 		{
 			if (node instanceof WtNamedXmlElement)
-				throw new InternalError("Unknown node type: <" + ((WtNamedXmlElement) node).getName() + ">");
+				throw new AssertionError("Unknown node type: <" + ((WtNamedXmlElement) node).getName() + ">");
 			else
-				throw new InternalError("Unknown node type: " + node.getClass().getSimpleName());
+				throw new AssertionError("Unknown node type: " + node.getClass().getSimpleName());
 		}
 		*/
 		return nodeType;
@@ -617,7 +617,7 @@ public class TreeBuilder
 				((TreeBuilderModeBase) logic.getImpl())
 						.dispatch(getFactory().text(WtRtDataPrinter.print(node)));
 				
-				//throw new InternalError();
+				//throw new AssertionError();
 		}
 	}
 	
@@ -764,7 +764,7 @@ public class TreeBuilder
 			if (scope.isInList(nodeType))
 				return false;
 		}
-		throw new InternalError("This should never happen!");
+		throw new AssertionError("This should never happen!");
 	}
 	
 	boolean isElementTypeInScope(ElementType elementType)
@@ -801,7 +801,7 @@ public class TreeBuilder
 			if (scope.isInList(nodeType))
 				return false;
 		}
-		throw new InternalError("This should never happen!");
+		throw new AssertionError("This should never happen!");
 	}
 	
 	boolean isOneOfElementTypesInScope(ElementType... targetTypes)
@@ -855,7 +855,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("Could not remove node from stack!");
+		throw new AssertionError("Could not remove node from stack!");
 	}
 	
 	boolean isInStackOfOpenElements(WtNode node)
@@ -886,7 +886,7 @@ public class TreeBuilder
 			if (isSameTag(nodeExample, found))
 				return found;
 		}
-		throw new InternalError("Everything's gone :(");
+		throw new AssertionError("Everything's gone :(");
 	}
 	
 	WtNode popFromStackUntilIncluding(ElementType nodeType)
@@ -897,7 +897,7 @@ public class TreeBuilder
 			if (getNodeType(found) == nodeType)
 				return found;
 		}
-		throw new InternalError("Everything's gone :(");
+		throw new AssertionError("Everything's gone :(");
 	}
 	
 	WtNode popFromStackUntilIncluding(ElementType... nodeTypes)
@@ -908,7 +908,7 @@ public class TreeBuilder
 			if (isTypeOneOf(getNodeType(found), nodeTypes))
 				return found;
 		}
-		throw new InternalError("Everything's gone :(");
+		throw new AssertionError("Everything's gone :(");
 	}
 	
 	void popFromStackUntilIncludingRef(WtNode node)
@@ -916,7 +916,7 @@ public class TreeBuilder
 		while (popFromStack() != node)
 			;
 		if (getStack().isEmpty())
-			throw new InternalError("Everything's gone :(");
+			throw new AssertionError("Everything's gone :(");
 	}
 	
 	void popFromStackUntilExcluding(ElementType... nodeTypes)
@@ -924,7 +924,7 @@ public class TreeBuilder
 		while (!isTypeOneOf(getNodeType(getCurrentNode()), nodeTypes))
 			popFromStack();
 		if (getStack().isEmpty())
-			throw new InternalError("Everything's gone :(");
+			throw new AssertionError("Everything's gone :(");
 	}
 	
 	WtNode popFromStack()
@@ -973,7 +973,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("Marker MUST exist in stack!");
+		throw new AssertionError("Marker MUST exist in stack!");
 	}
 	
 	void removeFromParent(WtNode node, WtNode parent)
@@ -989,7 +989,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("Node given as parent IS NOT parent of other node!");
+		throw new AssertionError("Node given as parent IS NOT parent of other node!");
 	}
 	
 	// =========================================================================
@@ -1122,7 +1122,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("Could not remove formatting element");
+		throw new AssertionError("Could not remove formatting element");
 	}
 	
 	void replaceInListOfActiveFormattingElements(
@@ -1138,7 +1138,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("Could not replace formatting element");
+		throw new AssertionError("Could not replace formatting element");
 	}
 	
 	/**
@@ -1289,7 +1289,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("This method must only be called if there definitily is a bookmark!");
+		throw new AssertionError("This method must only be called if there definitily is a bookmark!");
 	}
 	
 	void moveBookmarkAfter(WtNode node)
@@ -1317,7 +1317,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("This method must only be called if there definitily is a bookmark!");
+		throw new AssertionError("This method must only be called if there definitily is a bookmark!");
 	}
 	
 	public void replaceBookmarkWithAndRemove(WtNode replacement, WtNode remove)
@@ -1344,7 +1344,7 @@ public class TreeBuilder
 				return;
 			}
 		}
-		throw new InternalError("This method must only be called if there definitily is a bookmark!");
+		throw new AssertionError("This method must only be called if there definitily is a bookmark!");
 	}
 	
 	// =========================================================================

@@ -120,7 +120,7 @@ public class WtPrettyPrinter
 				break;
 			case DEFAULT:
 				// This should NOT happen ...
-				throw new InternalError();
+				throw new AssertionError();
 			case NO_LINK:
 				break;
 		}

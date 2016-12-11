@@ -258,7 +258,7 @@ public class ExprParser
 					}
 					
 					default:
-						throw new InternalError();
+						throw new AssertionError();
 				}
 			}
 		}
@@ -847,7 +847,7 @@ public class ExprParser
 			@Override
 			public void apply(Stack<Double> operands)
 			{
-				throw new InternalError();
+				throw new AssertionError();
 			}
 		},
 		RPAREN(-1, ")")
@@ -855,7 +855,7 @@ public class ExprParser
 			@Override
 			public void apply(Stack<Double> operands)
 			{
-				throw new InternalError();
+				throw new AssertionError();
 			}
 		};
 		

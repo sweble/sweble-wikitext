@@ -64,7 +64,7 @@ public class DummyStorer
 			trace.signOff(getClass(), null);
 			
 			if (!jobTraces.remove(trace))
-				throw new InternalError("Missing job trace");
+				throw new AssertionError("Missing job trace");
 		}
 	}
 	

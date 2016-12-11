@@ -500,7 +500,7 @@ public class WikitextNodeFactoryImpl
 				default:
 					// Unresolved templates and the like
 					// We cannot translate those...
-					//throw new InternalError("Is that an option?");
+					//throw new AssertionError("Is that an option?");
 			}
 		}
 		

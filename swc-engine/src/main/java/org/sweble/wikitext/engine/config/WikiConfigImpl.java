@@ -449,7 +449,7 @@ public class WikiConfigImpl
 			throw new IllegalArgumentException("No alias registered for parser function `" + pfn.getId() + "'.");
 		
 		if (aliasToPfnMap.put(alias, pfn) != null)
-			throw new InternalError("Alias collision should not be possible...");
+			throw new AssertionError("Alias collision should not be possible...");
 	}
 	
 	@Override
