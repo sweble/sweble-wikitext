@@ -28,6 +28,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TimeZone;
 
 import javax.xml.bind.JAXBContext;
@@ -142,6 +143,13 @@ public class WikiConfigImpl
 	
 	private WikiRuntimeInfo runtimeInfo;
 	
+	// -- Switches --
+
+	@XmlAttribute(required = false)
+	private boolean tagExtensionNamesCaseSensitive = true;
+
+	private final Map<String, TagExtensionBase> tagExtensionLookup = new HashMap<String, TagExtensionBase>();
+
 	// =========================================================================
 	
 	public WikiConfigImpl()
@@ -179,6 +187,29 @@ public class WikiConfigImpl
 	public EngineAstTextUtils getAstTextUtils()
 	{
 		return textUtils;
+	}
+	
+	// ==[ Switches ]===========================================================
+	
+	public boolean isTagExtensionNamesCaseSensitive()
+	{
+		return tagExtensionNamesCaseSensitive;
+	}
+
+	public void setTagExtensionNamesCaseSensitive(boolean tagExtensionNamesCaseSensitive)
+	{
+		if (this.tagExtensionNamesCaseSensitive == tagExtensionNamesCaseSensitive)
+			return;
+		this.tagExtensionNamesCaseSensitive = tagExtensionNamesCaseSensitive;
+		for (Entry<String, TagExtensionBase> tagExt : tagExtensions.entrySet())
+		{
+			String key = tagExtensionNamesCaseSensitive ?
+					tagExt.getKey() :
+					tagExt.getKey().toLowerCase();
+			tagExtensionLookup.put(
+					key,
+					tagExt.getValue());
+		}
 	}
 	
 	// ==[ Namespaces ]=========================================================
@@ -472,14 +503,21 @@ public class WikiConfigImpl
 	protected void addTagExtension(TagExtensionBase tagExt)
 	{
 		TagExtensionBase old = tagExtensions.get(tagExt.getId());
-		
+
 		if (old == tagExt)
-			throw new IllegalArgumentException("The tag extension `" + tagExt.getId() + "' is already registered.");
-		
+			throw new IllegalArgumentException(
+					"The tag extension `" + tagExt.getId() + "' is already registered.");
+
 		if (old != null)
-			throw new IllegalArgumentException("A tag extension with the same id `" + tagExt.getId() + "' is already registered.");
-		
+			throw new IllegalArgumentException(
+					"A tag extension with the same id `" + tagExt.getId() + "' is already registered.");
+
 		tagExtensions.put(tagExt.getId(), tagExt);
+
+		String lookupName = tagExtensionNamesCaseSensitive ?
+				tagExt.getId() :
+				tagExt.getId().toLowerCase();
+		tagExtensionLookup.put(lookupName, tagExt);
 	}
 	
 	@Override
@@ -491,7 +529,10 @@ public class WikiConfigImpl
 	@Override
 	public TagExtensionBase getTagExtension(String name)
 	{
-		return tagExtensions.get(name);
+		String lookupName = tagExtensionNamesCaseSensitive ?
+				name :
+				name.toLowerCase();
+		return tagExtensionLookup.get(lookupName);
 	}
 	
 	// ==[ Properties of the wiki instance ]====================================
@@ -574,15 +615,16 @@ public class WikiConfigImpl
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((aliasesById == null) ? 0 : aliasesById.hashCode());
-		result = prime * result + ((engineConfig == null) ? 0 : engineConfig.hashCode());
 		result = prime * result + ((contentLang == null) ? 0 : contentLang.hashCode());
 		result = prime * result + ((defaultNamespace == null) ? 0 : defaultNamespace.hashCode());
+		result = prime * result + ((engineConfig == null) ? 0 : engineConfig.hashCode());
 		result = prime * result + ((iwPrefix == null) ? 0 : iwPrefix.hashCode());
 		result = prime * result + ((namespaceById == null) ? 0 : namespaceById.hashCode());
 		result = prime * result + ((parserConfig == null) ? 0 : parserConfig.hashCode());
 		result = prime * result + ((pfnGroups == null) ? 0 : pfnGroups.hashCode());
 		result = prime * result + ((prefixToInterwikiMap == null) ? 0 : prefixToInterwikiMap.hashCode());
 		result = prime * result + ((tagExtGroups == null) ? 0 : tagExtGroups.hashCode());
+		result = prime * result + (tagExtensionNamesCaseSensitive ? 1231 : 1237);
 		result = prime * result + ((templateNamespace == null) ? 0 : templateNamespace.hashCode());
 		result = prime * result + ((wikiUrl == null) ? 0 : wikiUrl.hashCode());
 		return result;
@@ -605,13 +647,6 @@ public class WikiConfigImpl
 		}
 		else if (!aliasesById.equals(other.aliasesById))
 			return false;
-		if (engineConfig == null)
-		{
-			if (other.engineConfig != null)
-				return false;
-		}
-		else if (!engineConfig.equals(other.engineConfig))
-			return false;
 		if (contentLang == null)
 		{
 			if (other.contentLang != null)
@@ -625,6 +660,13 @@ public class WikiConfigImpl
 				return false;
 		}
 		else if (!defaultNamespace.equals(other.defaultNamespace))
+			return false;
+		if (engineConfig == null)
+		{
+			if (other.engineConfig != null)
+				return false;
+		}
+		else if (!engineConfig.equals(other.engineConfig))
 			return false;
 		if (iwPrefix == null)
 		{
@@ -667,6 +709,8 @@ public class WikiConfigImpl
 				return false;
 		}
 		else if (!tagExtGroups.equals(other.tagExtGroups))
+			return false;
+		if (tagExtensionNamesCaseSensitive != other.tagExtensionNamesCaseSensitive)
 			return false;
 		if (templateNamespace == null)
 		{
@@ -764,14 +808,16 @@ public class WikiConfigImpl
 	{
 		for (ParserFunctionBase pf : config.getParserFunctions())
 			pf.setWikiConfig(config);
-		
+
 		for (TagExtensionBase te : config.getTagExtensions())
 			te.setWikiConfig(config);
-		
+
 		config.parserConfig.setWikiConfig(config);
-		
+
 		config.nodeFactory = new EngineNodeFactoryImpl(config.parserConfig);
-		
+
+		config.setTagExtensionNamesCaseSensitive(config.tagExtensionNamesCaseSensitive);
+
 		return config;
 	}
 	
