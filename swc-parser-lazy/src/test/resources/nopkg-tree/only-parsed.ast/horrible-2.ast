@@ -1,0 +1,52 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "before ",
+	[2] = WtXmlStartTag(
+		{P} name = "span"
+		{P} rtd = RTD[ "<span" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[ [0] = "style" ],
+				value = WtValue[ [0] = "font-face: bold" ]
+			)
+		]
+	),
+	[3] = "... ",
+	[4] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName[ [0] = "User:User" ],
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = WtXmlStartTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" ]
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[1] = "User",
+			[2] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			)
+		)
+	),
+	[5] = WtTicks(
+		{P} rtd = RTD[ "'''" ]
+		{P} tickCount = 3
+	),
+	[6] = WtXmlEndTag(
+		{P} name = "span"
+		{P} rtd = RTD[ "</span>" ]
+	),
+	[7] = " after",
+	[8] = WtImEndTag(
+		{P} name = "@p"
+	)
+)
