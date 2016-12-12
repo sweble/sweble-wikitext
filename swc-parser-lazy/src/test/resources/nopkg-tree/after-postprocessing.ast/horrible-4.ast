@@ -1,0 +1,49 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-tree/input.wikitext/horrible-4.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+	]
+	[0] = WtParagraph[
+		[0] = "before ",
+		[1] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "" ]
+			[0] = "Hallo sch\u00F6ne"
+		),
+		[2] = "\nWelt"
+	],
+	[1] = "\n\n",
+	[2] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[
+				[0] = "Hallo",
+				[1] = WtBold(
+					{P} rtd = RTD[ "'''" <o> "" ]
+					[0] = " sch\u00F6ne"
+				),
+				[2] = "\nWelt"
+			]
+		)
+	],
+	[3] = WtXmlElement(
+		{P} name = "b"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = "\n\n",
+			[1] = WtParagraph[
+				[0] = "before ",
+				[1] = WtXmlElement(
+					{P} name = "b"
+					{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+					xmlAttributes = WtXmlAttributes[],
+					body = WtBody[ [0] = "Hallo sch\u00F6ne\nWelt" ]
+				)
+			]
+		]
+	)
+)

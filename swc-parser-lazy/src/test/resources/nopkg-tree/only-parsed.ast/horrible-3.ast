@@ -1,0 +1,29 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "before ",
+	[2] = WtXmlStartTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "<b" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[ [0] = "style" ],
+				value = WtValue[ [0] = "color:red;" ]
+			)
+		]
+	),
+	[3] = "\u00B9",
+	[4] = WtTicks(
+		{P} rtd = RTD[ "'''" ]
+		{P} tickCount = 3
+	),
+	[5] = " after",
+	[6] = WtImEndTag(
+		{P} name = "@p"
+	)
+)
