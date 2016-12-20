@@ -1,15 +1,14 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
 	{P} warnings = C[
-		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
-		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
-		Warning: /nopkg-tree/input.wikitext/horrible-4.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+		Warning: /nopkg-tree/input.wikitext/horrible-4.wikitext:17:31: <no content> : 12.2.5.4.7 - R52 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-tree/input.wikitext/horrible-4.wikitext:26:10: <no content> : 12.2.5.4.7 - R52 (2) @ WtXmlEndTag.
 	]
 	[0] = WtParagraph[
 		[0] = "before ",
 		[1] = WtBold(
 			{P} rtd = RTD[ "'''" <o> "" ]
-			[0] = "Hallo sch\u00F6ne"
+			[0] = "Hallo schoene"
 		),
 		[2] = "\nWelt"
 	],
@@ -18,32 +17,102 @@ WtParsedWikitextPage(
 		[0] = "before ",
 		[1] = WtXmlElement(
 			{P} name = "b"
-			{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+			{P} rtd = RTD[ "<b" <o> ">" <o> "'''" ]
 			xmlAttributes = WtXmlAttributes[],
-			body = WtBody[
-				[0] = "Hallo",
-				[1] = WtBold(
-					{P} rtd = RTD[ "'''" <o> "" ]
-					[0] = " sch\u00F6ne"
-				),
-				[2] = "\nWelt"
-			]
+			body = WtBody[ [0] = "Hallo" ]
+		),
+		[2] = " schoene\nWelt"
+	],
+	[3] = "\n\n",
+	[4] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "Hallo schoene\nWelt\n" ]
 		)
 	],
-	[3] = WtXmlElement(
-		{P} name = "b"
-		xmlAttributes = WtXmlAttributes[],
-		body = WtBody[
-			[0] = "\n\n",
-			[1] = WtParagraph[
-				[0] = "before ",
-				[1] = WtXmlElement(
-					{P} name = "b"
-					{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
-					xmlAttributes = WtXmlAttributes[],
-					body = WtBody[ [0] = "Hallo sch\u00F6ne\nWelt" ]
-				)
-			]
-		]
-	)
+	[5] = "\n\n",
+	[6] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "<b" <o> ">" <o> "'''" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "Hallo" ]
+		),
+		[2] = " schoene\nWelt"
+	],
+	[7] = "\n\n",
+	[8] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "<b" <o> ">" <o> "'''" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "Hallo" ]
+		),
+		[2] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "" ]
+			[0] = " schoene"
+		),
+		[3] = "\nWelt"
+	],
+	[9] = "\n\n",
+	[10] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "<b" <o> ">" <o> "'''" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "Hallo" ]
+		),
+		[2] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "" ]
+			[0] = " schoene",
+			[1] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			)
+		),
+		[3] = "\nWelt"
+	],
+	[11] = "\n\n",
+	[12] = WtParagraph[
+		[0] = "before ",
+		[1] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "</b>" ]
+			[0] = "Hallo"
+		),
+		[2] = " schoene\nWelt"
+	],
+	[13] = "\n\n",
+	[14] = WtParagraph[
+		[0] = "before ",
+		[1] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "" ]
+			[0] = WtBold(
+				{P} rtd = RTD[ "'''" <o> "</b>" ]
+				[0] = "Hallo"
+			),
+			[1] = " schoene"
+		),
+		[2] = "\nWelt"
+	],
+	[15] = "\n\n",
+	[16] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlEndTag(
+			{P} name = "b"
+			{P} rtd = RTD[ "</b>" ]
+		),
+		[2] = "Hallo",
+		[3] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "" ]
+			[0] = " schoene"
+		),
+		[4] = "\nWelt"
+	],
+	[17] = "\n"
 )

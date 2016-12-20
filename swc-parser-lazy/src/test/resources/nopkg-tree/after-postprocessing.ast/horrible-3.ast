@@ -1,11 +1,11 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[ Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag. ]
+	{P} warnings = C[]
 	[0] = WtParagraph[
 		[0] = "before ",
 		[1] = WtXmlElement(
 			{P} name = "b"
-			{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+			{P} rtd = RTD[ "<b" <o> ">" <o> "'''" ]
 			xmlAttributes = WtXmlAttributes[
 				[0] = WtXmlAttribute(
 					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
@@ -13,13 +13,8 @@ WtParsedWikitextPage(
 					value = WtValue[ [0] = "color:red;" ]
 				)
 			],
-			body = WtBody[
-				[0] = "\u00B9",
-				[1] = WtBold(
-					{P} rtd = RTD[ "'''" <o> "" ]
-					[0] = " after"
-				)
-			]
-		)
+			body = WtBody[ [0] = "\u00B9" ]
+		),
+		[2] = " after"
 	]
 )

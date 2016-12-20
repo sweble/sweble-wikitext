@@ -25,18 +25,3 @@ Welt
 
 before </b>Hallo''' schoene
 Welt
-
-before '''Hallo<b> schoene''' foo
-Welt
-
-before '''''Hallo<b> schoene''' foo
-Welt
-
-before '''''Hallo<b> schoene<i> bar
-Welt
-
-before '''Hallo<b> schoene
-Welt
-
-before <b>Hallo
-schoene''' Welt
