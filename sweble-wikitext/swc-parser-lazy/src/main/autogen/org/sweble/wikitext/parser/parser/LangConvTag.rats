@@ -1,0 +1,362 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * LanguageConversionTag
+ * ---------------------
+ *
+ *   Grammar:
+ *     - "-{" TEXT "}-"
+ *     - "-{" FLAGS "|" ( A "=>" )? VARIANT ":" B ( ";" ( A "=>" )? VARIANT ":" B )* "|" TEXT }-
+ *
+ */
+
+module org.sweble.wikitext.parser.parser.LangConvTag;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.State;
+import org.sweble.wikitext.parser.parser.Url;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+import org.sweble.wikitext.parser.utils.ParserCharSequence;
+import org.sweble.wikitext.parser.utils.Warnings;
+
+
+
+
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  /**
+   * Remove intermediate paragraph start and end tags at the beginning and at
+   * the end of the body. But only if no more than one newline are in front of
+   * the start tag or no more than one newline follows the last paragraph end
+   * tag.
+   * 
+   * Hint: If there are no more than one newline in front of the start tag
+   * there cannot be any newlines directly after the start tag. This is
+   * because newlines are only pulled after the start tag if there are more
+   * than two newlines in front of the start tag.
+   */
+  private WtBody cleanProtectedContent(WtBody text)
+  {
+    if (text.isEmpty())
+      return text;
+    
+    int newlines = 0;
+    int pPosAtBeginning = 0;
+    int pPosFromEnd = 0;
+    
+    boolean foundStartP = false;
+    outer: for (WtNode n : text)
+    {
+      switch (n.getNodeType())
+      {
+        case WtNode.NT_NEWLINE:
+          ++newlines;
+          if (newlines > 1)
+            // More than one newline
+            break outer;
+          break;
+        case WtNode.NT_IM_START_TAG:
+          if (((WtImStartTag) n).getName() == "@p")
+          {
+            // We have less than two newlines and a paragraph -> get to work
+            foundStartP = true;
+            break outer;
+          }
+          break;
+        case WtNode.NT_IGNORED:
+        case WtNode.NT_XML_COMMENT:
+        case WtNode.NT_TEXT:
+          // Spaces and transparent stuff can be found in between newlines
+          break;
+        default:
+          // The body does not start with a paragraph anyway
+          break outer;
+      }
+      
+      ++pPosAtBeginning;
+    }
+    
+    newlines = 0;
+    ListIterator<WtNode> i = text.listIterator(text.size());
+    boolean foundEndP = false;
+    outer: while (i.hasPrevious())
+    {
+      WtNode n = i.previous();
+      switch (n.getNodeType())
+      {
+        case WtNode.NT_NEWLINE:
+          ++newlines;
+          if (newlines > 1)
+            // More than one newline
+            break outer;
+          break;
+        case WtNode.NT_IM_END_TAG:
+          if (((WtImEndTag) n).getName() == "@p")
+          {
+            // We have less than two newlines and a paragraph -> get to work
+            foundEndP = true;
+            break outer;
+          }
+          break;
+        case WtNode.NT_IGNORED:
+        case WtNode.NT_XML_COMMENT:
+        case WtNode.NT_TEXT:
+          // Spaces and transparent stuff can be found in between newlines
+          break;
+        default:
+          // The body does not end with a paragraph anyway
+          break outer;
+      }
+      
+      ++pPosFromEnd;
+    }
+    
+    if (!foundStartP && !foundEndP)
+      // nothing to do
+      return text;
+    
+    WtBody body = nf.body(nf.list());
+    
+    Iterator<WtNode> j = text.iterator();
+    int contentSize = text.size();
+    
+    if (foundStartP)
+    {
+      // Add stuff in front of first start tag
+      for (int k = 0; k < pPosAtBeginning; ++k)
+        body.add(j.next());
+      
+      // Skip paragraph tag
+      j.next();
+      
+      contentSize -= pPosAtBeginning + 1;
+    }
+
+    if (foundEndP)
+    {
+      contentSize -= pPosFromEnd + 1;
+    }
+    
+    for (int k = 0; k < contentSize; ++k)
+      body.add(j.next());
+    
+    if (foundEndP)
+    {
+      // Skip paragraph tag
+      j.next();
+      
+      // Add stuff following the last end tag
+      for (int k = 0; k < pPosFromEnd; ++k)
+        body.add(j.next());
+    }
+    
+    return body;
+  }
+  
+  private boolean hasFlag(WtLctFlags flags, char c)
+  {
+    return flags.getFlags().contains("" + c);
+  }
+  
+  private boolean containsVariant(WtLctFlags flags)
+  {
+    return !flags.getVariants().isEmpty();
+  }
+
+  private boolean isVariant(String name)
+  {
+    return this.getState().getConfig().isLctVariant(name);
+  }
+}
+
+
+
+
+// -- LanguageConversionTag ----------------------------------------------------
+
+transient WtNode LanguageConversionTag =
+    &{ isLangConvTagsEnabled() } "-{" yyValue:LanguageConversionTagChoice
+  / "-"
+    {
+      yyValue = nf.text("-");
+    }
+;
+
+inline void InlineContentStopperLangConvTag =
+    &{ inScope(ParserScopes.LCT_RULE_TEXT) }         ( "}-" / ';' )
+  / &{ inScope(ParserScopes.LCT_PROTECTED_CONTENT) }   "}-"
+;
+
+private transient WtNode LanguageConversionTagChoice =
+    LctConvertToSpecifiedVariant
+  / LctRuleBasedConvert
+  / LctProtect
+;
+
+/* If flags are given AND contain a variant the stuff after the '|' is treated 
+ * as text to be converted into the given variant. The flag 'R' is set in any case.
+ */
+private transient WtLctVarConv LctConvertToSpecifiedVariant =
+  flags:LctFlags void:'|' &{ containsVariant(flags) || hasFlag(flags, 'N')  || hasFlag(flags, 'R') } text:LctProtectedContentStar "}-"
+  {
+    yyValue = nf.lctVarConv(flags, cleanProtectedContent(text));
+    setRtd(yyValue, "-{", SEP, '|', SEP, "}-");
+  }
+;
+
+/* The flags do not specify a language variant and neither the 'N' 
+ * nor the 'R' flag is set. In this case the part after the '|' is a set of rules.
+ */
+private transient WtLctRuleConv LctRuleBasedConvert =
+  flags:( LctFlags void:'|' )? rules:LctRulePlus "}-"
+  {
+    if (flags == null)
+      flags = nf.noLctFlags();
+    yyValue = nf.lctRuleConv(flags, nf.lctRules(rules));
+    setRtd(yyValue, "-{", SEP, (yyValue.hasFlags() ? "|" : null), SEP, "}-");
+  }
+;
+
+/* A list of flags, separated by ';'.
+ * Flags have to be further processed. Some flags turn off other flags,
+ * some flags add additional flags and some flags enable the identification
+ * of variant names (which would be ignored otherwise).
+ */
+private WtLctFlags LctFlags =
+  head:LctFlag tail:( void:';' LctFlag )*
+  {
+    List<String> flags = new Pair<String>(head, tail).list();
+    yyValue = nf.lctFlags(flags);
+    setRtd(yyValue, org.apache.commons.lang.StringUtils.join(flags, ';'));
+  }
+;
+
+private String LctFlagPipe =
+;
+
+/* A flag usually is a single letter or symbol.
+ * Some language variants have words which map to one of those symbols.
+ * Finally a flag can also be the name of a language variant.
+ *
+ * Default flags: A, T, R, D, -, H, N
+ * Implicit flags: S, +, E
+ * Examples for additional flags from LanguageSr.php: ријеч => W, писмо => S
+ * Examples for language variant names: zh-hans, zh-hk
+ */
+private String LctFlag =
+  ( [ \-0-9A-Za-z_] / [\u0080-\uFFFD] / LctNewline )*
+;
+
+private String LctNewline =
+  [\r\n] !BlockStopper !LooksLikeALineStartProd
+;
+
+private transient WtNodeList LctRulePlus =
+  head:LctRule tail:( void:';' LctRuleOrGarbage )*
+  {
+    Pair<WtNode> t = tail;
+    while (!t.isEmpty())
+    {
+      WtRtData rtd = t.head().getRtd();
+      if (rtd != null)
+        rtd.prepend(";");
+      t = t.tail();
+    }
+
+    yyValue = nf.list(head, tail);
+  }
+;
+
+private transient WtNode LctRuleOrGarbage =
+    LctRule
+  / LctRuleGarbageStar
+;
+
+private transient WtLctRule LctRule =
+    a:LctConvPatternPlus "=>" v:LctVariantColon ":" b:LctRuleTextStar
+    {
+      yyValue = nf.lctRule(a, v, b);
+      setRtd(yyValue, a, "=>", v, ":", SEP);
+    }
+  / v:LctVariantColon ":" b:LctRuleTextStar
+    {
+      yyValue= nf.lctRule(v, b);
+      setRtd(yyValue, v, ":", SEP);
+    }
+;
+
+private transient String LctVariantColon =
+  yyValue:LctVariant &":" !( &{ accept(ParserAtoms.PLAIN_EXTERNAL_LINK) } ":" path:UrlPathString &{ isProtocol(yyValue, path) } )
+;
+
+private String LctConvPatternPlus =
+  ( [ !"$%&'()+,\-.0-9=?@A-Za-z^_`~] / [\u0080-\uFFFD] / LctNewline )+
+;
+
+private String LctVariant =
+  yyValue:LctFlag &{ isVariant(yyValue) }
+;
+
+private transient stateful WtLctRuleText LctRuleTextStar =
+  {
+    enter(ParserScopes.LCT_RULE_TEXT);
+  }
+  content:InlineContentStar
+  {
+    yyValue = nf.lctRuleText(content);
+  }
+;
+
+private transient WtLctRuleGarbage LctRuleGarbageStar =
+  LctRuleTextStar
+  {
+    String content = difference(yyStart, yyResult);
+    yyValue = setRtd(nf.lctGarbage(content), content);
+  }
+;
+
+/* No flags, no rules -> just protect the content in braces from language 
+ * conversion.
+ */
+private transient WtLctVarConv LctProtect =
+  flags:( LctFlags void:'|' )? text:LctProtectedContentStar "}-"
+  {
+    if (flags == null)
+      flags = nf.noLctFlags();
+    yyValue = nf.lctVarConv(flags, cleanProtectedContent(text));
+    setRtd(yyValue, "-{", SEP, (yyValue.hasFlags() ? "|" : null), SEP, "}-");
+  }
+;
+
+private transient stateful WtBody LctProtectedContentStar =
+  {
+    enter(ParserScopes.LCT_PROTECTED_CONTENT);
+  }
+  content:BolBlockContent
+  {
+    yyValue = nf.body(content);
+  }
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

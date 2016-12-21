@@ -1,0 +1,16 @@
+EngPage[
+	[0] = WtParagraph[],
+	[1] = WtXmlElement(
+		{P} name = "PRE"
+		{P} rtd = RTD[ "<PRE" <o> ">" <o> "</PRE>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = "\n\t",
+			[1] = WtItalics(
+				{P} rtd = RTD[ "''" <o> "''" ]
+				[0] = "Block"
+			),
+			[2] = "\n"
+		]
+	)
+]

@@ -1,0 +1,37 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Table-2">
+   <body>
+      <table>
+         <rtd>{|
+</rtd>
+         <tbody>
+            <tr>
+               <th>
+                  <rtd> !</rtd>
+                  <p topgap="0" bottomgap="0">
+                     <text>foo</text>
+                  </p>
+                  <text>
+</text>
+               </th>
+            </tr>
+            <tr>
+               <rtd> |-
+</rtd>
+               <td>
+                  <rtd> |</rtd>
+                  <p topgap="0" bottomgap="0">
+                     <text>bar</text>
+                  </p>
+                  <text>
+</text>
+               </td>
+            </tr>
+         </tbody>
+         <rtd> |}</rtd>
+      </table>
+   </body>
+</article>

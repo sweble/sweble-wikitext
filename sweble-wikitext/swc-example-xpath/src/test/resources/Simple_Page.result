@@ -1,0 +1,17 @@
+(//WtInternalLink)[1]:
+"""[[Somewhere|Item 1]]"""
+
+(//WtTableCell)[1]:
+""" | Cell 1.1 """
+
+(//WtTableCell)[2]:
+"""|| Cell 1.2 
+"""
+
+(//WtTableCell)[3]:
+""" | Cell 2.1 """
+
+(//WtTableCell)[4]:
+"""|| Cell 2.2
+"""
+

@@ -1,0 +1,13 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "X ",
+		[1] = WtUrl(
+			{P} path = "//www.example.com/u(gl)y"
+			{P} protocol = "http"
+			{P} rtd = RTD[ "http://www.example.com/u(gl)y" ]
+		),
+		[2] = ": Z"
+	]
+)

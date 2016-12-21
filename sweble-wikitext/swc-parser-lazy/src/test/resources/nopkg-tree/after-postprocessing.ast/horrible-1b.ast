@@ -1,0 +1,41 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "before ",
+		[1] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName[ [0] = "User:User" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "User"
+			)
+		),
+		[2] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "'''" ]
+			[0] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "" ]
+				target = WtPageName[ [0] = "User talk:User" ],
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "User"
+				)
+			)
+		),
+		[3] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "" <o> "" <o> "]]" ]
+			target = WtPageName(
+				{P} rtd = RTD[  ]
+				[0] = "User talk:User"
+			),
+			title = WtLinkTitle[ [0] = "x" ]
+		),
+		[4] = " after"
+	]
+)

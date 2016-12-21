@@ -1,0 +1,3 @@
+''' some bold text '''
+{{{1|''italic default value''}}}
+{{some template|{{{2|[[some link]]}}}}}

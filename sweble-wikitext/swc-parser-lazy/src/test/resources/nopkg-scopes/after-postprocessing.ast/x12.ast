@@ -1,0 +1,77 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x12.wikitext:1:40: <no content> : 12.2.5.4.7 - R20 (2) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x12.wikitext:1:49: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x12.wikitext:1:56: <no content> : 12.2.5.4.7 - R20 (1) @ WtXmlEndTag.,
+		Warning: /nopkg-scopes/input.wikitext/x12.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+	]
+	[0] = WtParagraph[
+		[0] = "0 ",
+		[1] = WtXmlElement(
+			{P} name = "i"
+			{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[
+				[0] = " a ",
+				[1] = WtXmlElement(
+					{P} name = "b"
+					{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+					xmlAttributes = WtXmlAttributes[],
+					body = WtBody[ [0] = " b " ]
+				)
+			]
+		)
+	],
+	[1] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "i"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "b"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = " c ",
+							[1] = WtXmlElement(
+								{P} name = "blockquote"
+								{P} rtd = RTD[ "<blockquote" <o> ">" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[ [0] = " d " ]
+							)
+						]
+					)
+				]
+			)
+		]
+	),
+	[2] = WtXmlElement(
+		{P} name = "i"
+		{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = " e " ]
+			)
+		]
+	),
+	[3] = WtXmlElement(
+		{P} name = "b"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = " f ",
+			[1] = WtXmlEndTag(
+				{P} name = "blockquote"
+				{P} rtd = RTD[ "</blockquote>" ]
+			),
+			[2] = " g"
+		]
+	)
+)

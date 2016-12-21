@@ -1,0 +1,29 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[1] = WtParagraph[
+		[0] = WtUrl(
+			{P} path = "//example.com"
+			{P} protocol = "http"
+			{P} rtd = RTD[ "http://example.com" ]
+		)
+	],
+	[2] = "\n",
+	[3] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[4] = "\n\n",
+	[5] = WtParagraph[
+		[0] = "before ",
+		[1] = WtUrl(
+			{P} path = "mustermann@musterfirma.com"
+			{P} protocol = "mail"
+			{P} rtd = RTD[ "mail:mustermann@musterfirma.com" ]
+		),
+		[2] = " after"
+	],
+	[6] = "\n"
+)

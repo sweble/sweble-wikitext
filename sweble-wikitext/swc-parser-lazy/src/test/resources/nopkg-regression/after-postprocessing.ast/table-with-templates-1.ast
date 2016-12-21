@@ -1,0 +1,38 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "A\n" ],
+				args = WtTemplateArguments[]
+			),
+		[1] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "B\n" ],
+				args = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttributeGarbage[
+				[0] = WtTemplate(
+					{P} precededByNewline = false
+					{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+					name = WtName[ [0] = "A\n" ],
+					args = WtTemplateArguments[]
+				),
+				[1] = WtTemplate(
+					{P} precededByNewline = false
+					{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+					name = WtName[ [0] = "B\n" ],
+					args = WtTemplateArguments[]
+				)
+			]
+		],
+		body = WtBody[]
+	),
+	[1] = "\n"
+)

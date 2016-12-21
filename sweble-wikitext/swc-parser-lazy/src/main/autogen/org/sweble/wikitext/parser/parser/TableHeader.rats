@@ -1,0 +1,161 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+module org.sweble.wikitext.parser.parser.TableHeader;
+
+import org.sweble.wikitext.parser.utils.Assert;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.TableAttributeInline;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+
+
+
+// -- Table Header --[ State Aware Memoization ]--------------------------------
+
+noinline transient WtNode TableHeader =
+ ^{
+    StateAwareResult r = (StateAwareResult) pTableHeaderMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pTableHeaderTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized WtNode TableHeaderMemoized =
+  ^{
+      Result yyResult = new StateAwareResult("TableHeader", getContext(), pTableHeaderTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+   }
+;
+
+
+
+
+// -- Table Header -------------------------------------------------------------
+
+noinline transient WtNode TableHeaderTransient =
+    &( pExtSpaceStar '!' ) inline:TableInlineHeaderPlus last:TableBlockHeader?
+    {
+      yyValue = nf.list(inline, last);
+    }
+  / &( pExtSpaceStar '!' ) header:TableBlockHeader
+    {
+      yyValue = header;
+    }
+;
+
+inline void InlineContentStopperTableHeader =
+  &{ inScope(ParserScopes.TABLE_INLINE_HEADER) } ( "!!" / "||" )
+;
+
+
+
+
+// -- Table Inline Header ------------------------------------------------------
+
+private transient WtNodeList TableInlineHeaderPlus =
+  headers:( TableInlineHeader &( "||" / "!!" ) )+
+  {
+    yyValue = nf.list(headers);
+  }
+;
+
+private inline WtTableHeader TableInlineHeader =
+  rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:InlineContentStar
+  {
+    yyValue = setRtd(
+      nf.th(attributes.attrs, body),
+      rt0, prefix, SEP, attributes.rt1, SEP);
+  }
+;
+
+
+
+
+// -- Table Block Header -------------------------------------------------------
+
+private inline WtTableHeader TableBlockHeader =
+  rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:BlockContentStar &ExpectedFollowUp
+  {
+    yyValue = setRtd(
+      nf.th(attributes.attrs, body),
+      rt0, prefix, SEP, attributes.rt1, SEP);
+  }
+;
+
+private inline void ExpectedFollowUp =
+  pExtSpaceStar ( "!" / "|+" / "|-" / "|}" / "|" / Eof )
+;
+
+
+
+
+// -- Table Header Attributes --------------------------------------------------
+
+private TableMemberAttributes Attributes =
+    &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
+    {
+      yyValue = new TableMemberAttributes();
+      yyValue.attrs = attrs;
+      yyValue.rt1 = new Object[] {ws, '|'};
+    }
+  / {
+      yyValue = new TableMemberAttributes();
+      yyValue.attrs = nf.emptyAttrs();
+      yyValue.rt1 = null;
+    }
+;
+
+private transient void AttrPossible =
+  ( ![<|] !"[[" !"!!" !slEol _ )* ( ( '|' !'|' ) / ( '!' !'!' ) )
+;
+
+
+
+
+// -- Table Header Inline Content ----------------------------------------------
+
+private inline stateful WtBody InlineContentStar =
+  {
+    enter(ParserScopes.TABLE_INLINE_HEADER);
+  }
+  content:InlineContentPlus
+  {
+    yyValue = nf.body(content);
+  }
+;
+
+private inline stateful WtBody BlockContentStar =
+  {
+    enter(ParserScopes.TABLE_CELL);
+  }
+  content:BlockContent
+  {
+    yyValue = nf.body(content);
+  }
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

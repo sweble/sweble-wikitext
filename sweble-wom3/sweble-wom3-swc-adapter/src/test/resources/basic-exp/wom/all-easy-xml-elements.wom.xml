@@ -1,0 +1,368 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="All-easy-xml-elements">
+   <body>
+      <p topgap="0" bottomgap="0">
+         <abbr attr="value">
+            <rtd>&lt;ABBR attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/ABBR&gt;</rtd>
+         </abbr>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <b attr="value">
+            <rtd>&lt;B attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/B&gt;</rtd>
+         </b>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <big attr="value">
+            <rtd>&lt;BIG attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/BIG&gt;</rtd>
+         </big>
+      </p>
+      <text>
+
+</text>
+      <blockquote attr="value" cite="http://somewhere">
+         <rtd>&lt;BLOCKQUOTE attr="value" cite="http://somewhere"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/BLOCKQUOTE&gt;</rtd>
+      </blockquote>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <br attr="value" clear="left">
+            <rtd>&lt;BR attr="value" clear="left"/&gt;</rtd>
+         </br>
+         <text>
+</text>
+         <br attr="value" clear="all">
+            <rtd>&lt;BR attr="value" clear="all"/&gt;</rtd>
+         </br>
+         <text>
+</text>
+         <br attr="value" clear="right">
+            <rtd>&lt;BR attr="value" clear="right"/&gt;</rtd>
+         </br>
+         <text>
+</text>
+         <br attr="value" clear="none">
+            <rtd>&lt;BR attr="value" clear="none"/&gt;</rtd>
+         </br>
+      </p>
+      <text>
+
+</text>
+      <center attr="value">
+         <rtd>&lt;CENTER attr="value"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/CENTER&gt;</rtd>
+      </center>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <cite attr="value">
+            <rtd>&lt;CITE attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/CITE&gt;</rtd>
+         </cite>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <code attr="value">
+            <rtd>&lt;CODE attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/CODE&gt;</rtd>
+         </code>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <del attr="value" cite="http://somewhere" datetime="2007-12-24T18:21Z">
+            <rtd>&lt;DEL attr="value" cite="http://somewhere" datetime="2007-12-24T18:21Z"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/DEL&gt;</rtd>
+         </del>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <dfn attr="value">
+            <rtd>&lt;DFN attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/DFN&gt;</rtd>
+         </dfn>
+      </p>
+      <text>
+
+</text>
+      <div attr="value" align="left">
+         <rtd>&lt;DIV attr="value" align="left"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/DIV&gt;</rtd>
+      </div>
+      <text>
+</text>
+      <div attr="value" align="center">
+         <rtd>&lt;DIV attr="value" align="center"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/DIV&gt;</rtd>
+      </div>
+      <text>
+</text>
+      <div attr="value" align="right">
+         <rtd>&lt;DIV attr="value" align="right"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/DIV&gt;</rtd>
+      </div>
+      <text>
+</text>
+      <div attr="value" align="justify">
+         <rtd>&lt;DIV attr="value" align="justify"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/DIV&gt;</rtd>
+      </div>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <em attr="value">
+            <rtd>&lt;EM attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/EM&gt;</rtd>
+         </em>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <font attr="value" color="#FF0000" face="Arial" size="5">
+            <rtd>&lt;FONT attr="value" color="#FF0000" face="Arial" size="5"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/FONT&gt;</rtd>
+         </font>
+      </p>
+      <text>
+
+</text>
+      <hr attr="value" noshade="noshade">
+         <rtd>&lt;HR attr="value" noshade="noshade" /&gt;</rtd>
+      </hr>
+      <text>
+</text>
+      <hr attr="value" size="2">
+         <rtd>&lt;HR attr="value" size="2" /&gt;</rtd>
+      </hr>
+      <text>
+</text>
+      <hr attr="value" width="64">
+         <rtd>&lt;HR attr="value" width="64" /&gt;</rtd>
+      </hr>
+      <text>
+</text>
+      <hr attr="value" width="50%">
+         <rtd>&lt;HR attr="value" width="50%" /&gt;</rtd>
+      </hr>
+      <text>
+</text>
+      <hr attr="value" align="left">
+         <rtd>&lt;HR attr="value" align="left" /&gt;</rtd>
+      </hr>
+      <text>
+</text>
+      <hr attr="value" align="center">
+         <rtd>&lt;HR attr="value" align="center" /&gt;</rtd>
+      </hr>
+      <text>
+</text>
+      <hr attr="value" align="right">
+         <rtd>&lt;HR attr="value" align="right" /&gt;</rtd>
+      </hr>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <i attr="value">
+            <rtd>&lt;I attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/I&gt;</rtd>
+         </i>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <ins attr="value" cite="http://somewhere" datetime="2007-12-24T18:21Z">
+            <rtd>&lt;INS attr="value" cite="http://somewhere" datetime="2007-12-24T18:21Z"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/INS&gt;</rtd>
+         </ins>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <kbd attr="value">
+            <rtd>&lt;KBD attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/KBD&gt;</rtd>
+         </kbd>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0" attr="value" align="left">
+         <rtd>&lt;P attr="value" align="left"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/P&gt;</rtd>
+      </p>
+      <text>
+</text>
+      <p topgap="0" bottomgap="0" attr="value" align="center">
+         <rtd>&lt;P attr="value" align="center"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/P&gt;</rtd>
+      </p>
+      <text>
+</text>
+      <p topgap="0" bottomgap="0" attr="value" align="right">
+         <rtd>&lt;P attr="value" align="right"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/P&gt;</rtd>
+      </p>
+      <text>
+</text>
+      <p topgap="0" bottomgap="0" attr="value" align="justify">
+         <rtd>&lt;P attr="value" align="justify"&gt;</rtd>
+         <text>... content ...</text>
+         <rtd>&lt;/P&gt;</rtd>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <strike attr="value">
+            <rtd>&lt;S attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/S&gt;</rtd>
+         </strike>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <samp attr="value">
+            <rtd>&lt;SAMP attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/SAMP&gt;</rtd>
+         </samp>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <small attr="value">
+            <rtd>&lt;SMALL attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/SMALL&gt;</rtd>
+         </small>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <span attr="value">
+            <rtd>&lt;SPAN attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/SPAN&gt;</rtd>
+         </span>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <strike attr="value">
+            <rtd>&lt;STRIKE attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/STRIKE&gt;</rtd>
+         </strike>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <strong attr="value">
+            <rtd>&lt;STRONG attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/STRONG&gt;</rtd>
+         </strong>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <sub attr="value">
+            <rtd>&lt;SUB attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/SUB&gt;</rtd>
+         </sub>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <sup attr="value">
+            <rtd>&lt;SUP attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/SUP&gt;</rtd>
+         </sup>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <tt attr="value">
+            <rtd>&lt;TT attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/TT&gt;</rtd>
+         </tt>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <u attr="value">
+            <rtd>&lt;U attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/U&gt;</rtd>
+         </u>
+      </p>
+      <text>
+
+</text>
+      <p topgap="0" bottomgap="0">
+         <var attr="value">
+            <rtd>&lt;VAR attr="value"&gt;</rtd>
+            <text>... content ...</text>
+            <rtd>&lt;/VAR&gt;</rtd>
+         </var>
+      </p>
+   </body>
+</article>

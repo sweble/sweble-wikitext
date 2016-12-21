@@ -1,0 +1,43 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " some comment "
+				{P} prefix = ""
+				{P} rtd = RTD[ " <!-- some comment -->" ]
+				{P} suffix = ""
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlComment(
+				{P} content = " some comment "
+				{P} prefix = ""
+				{P} rtd = RTD[ " <!-- some comment -->" ]
+				{P} suffix = ""
+			)
+		],
+		body = WtBody[
+			[0] = WtTableImplicitTableBody(
+				body = WtBody[
+					[0] = WtTableRow(
+						{P} implicit = true
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtTableCell(
+								{P} rtd = RTD[ " |" <o> "" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = WtParagraph[ [0] = " A cell" ],
+									[1] = "\n"
+								]
+							)
+						]
+					)
+				]
+			)
+		]
+	),
+	[1] = "\n"
+)

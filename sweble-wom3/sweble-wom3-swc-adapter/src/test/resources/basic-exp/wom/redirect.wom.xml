@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Redirect">
+   <redirect target="me" did="0"/>
+   <body>
+      <p topgap="0" bottomgap="0">
+         <subst did="0">
+            <repl/>
+            <for>
+               <mww:redirect>
+                  <rtd>#REDIRECT[[</rtd>
+                  <text>me</text>
+                  <rtd>|somewhere]]</rtd>
+               </mww:redirect>
+            </for>
+         </subst>
+         <text> and some more text ...</text>
+      </p>
+   </body>
+</article>

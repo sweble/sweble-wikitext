@@ -1,0 +1,37 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Hallo Welt!",
+	[2] = WtNewline("\n"),
+	[3] = WtXmlStartTag(
+		{P} name = "dd"
+		{P} rtd = RTD[ "<dd" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[4] = "Some item",
+	[5] = WtXmlEndTag(
+		{P} name = "dd"
+		{P} rtd = RTD[ "</dd>" ]
+	),
+	[6] = WtNewline("\n"),
+	[7] = WtXmlStartTag(
+		{P} name = "dt"
+		{P} rtd = RTD[ "<dt" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[8] = "Some item",
+	[9] = WtXmlEndTag(
+		{P} name = "dt"
+		{P} rtd = RTD[ "</dt>" ]
+	),
+	[10] = WtNewline("\n"),
+	[11] = "Tsch\u00FCss!",
+	[12] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[13] = WtNewline("\n")
+)

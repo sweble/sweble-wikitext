@@ -1,0 +1,9 @@
+
+{| border="1"
+ ! class="bar" | Header
+ |}
+
+{|
+ |- border="2"
+ ! class="foo"
+ |}

@@ -1,0 +1,36 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[],
+	[1] = WtImageLink(
+		{P} border = false
+		{P} format = THUMBNAIL
+		{P} hAlign = UNSPECIFIED
+		{P} height = -1
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		{P} upright = false
+		{P} vAlign = MIDDLE
+		{P} width = -1
+		target = WtPageName[ [0] = "File:X" ],
+		options = WtLinkOptions[
+			[0] = WtLinkOptionKeyword(
+				{P} keyword = "thumb"
+				{P} rtd = RTD[ "|thumb" ]
+			),
+			[1] = WtLinkOptionAltText(
+				{P} rtd = RTD[ "|alt=" <o> "" ]
+				[0] = "Y"
+			),
+			[2] = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName[ [0] = "Z" ],
+					title = -
+				)
+			)
+		]
+	)
+)

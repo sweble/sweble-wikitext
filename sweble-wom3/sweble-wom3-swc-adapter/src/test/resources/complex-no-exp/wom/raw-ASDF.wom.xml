@@ -1,0 +1,196 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Raw-ASDF">
+   <body>
+      <p topgap="0" bottomgap="0">
+         <b>
+            <rtd>'''</rtd>
+            <text>asdf</text>
+            <rtd>'''</rtd>
+         </b>
+         <text> or </text>
+         <b>
+            <rtd>'''</rtd>
+            <text>ASDF</text>
+            <rtd>'''</rtd>
+         </b>
+         <text> may refer to </text>
+      </p>
+      <text>
+</text>
+      <ul>
+         <li>
+            <rtd>*</rtd>
+            <text> </text>
+            <intlink target="Alabama State Defense Force">
+               <rtd>[[Alabama State Defense Force]]</rtd>
+            </intlink>
+            <text>, a military entity</text>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> </text>
+            <intlink target="Alaska State Defense Force">
+               <rtd>[[Alaska State Defense Force]]</rtd>
+            </intlink>
+            <text>, a military entity</text>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> </text>
+            <intlink target="Another System Definition Facility">
+               <rtd>[[Another System Definition Facility]]</rtd>
+            </intlink>
+            <text>, the most commonly used build system for Common Lisp</text>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> </text>
+            <intlink target="Association of Synchronous Data Formats">
+               <rtd>[[Association of Synchronous Data Formats]]</rtd>
+            </intlink>
+            <text>, an organization that advances the use of synchronous data transmission technology</text>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> Average Squared Difference Function, a mapping used in </text>
+            <subst>
+               <repl>
+                  <intlink target="pitch detection algorithm">
+                     <title>
+                        <text>pitch detection algorithms</text>
+                     </title>
+                  </intlink>
+               </repl>
+               <for>
+                  <mww:intlink target="pitch detection algorithm" postfix="s">
+                     <rtd>[[pitch detection algorithm]]s</rtd>
+                  </mww:intlink>
+               </for>
+            </subst>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> asdf, the first four letters in the </text>
+            <intlink target="home row">
+               <rtd>[[home row]]</rtd>
+            </intlink>
+            <text> on a </text>
+            <intlink target="QWERTY">
+               <rtd>[[QWERTY]]</rtd>
+            </intlink>
+            <text> keyboard</text>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> asdf movie, a series of </text>
+            <subst>
+               <repl>
+                  <intlink target="viral video">
+                     <title>
+                        <text>viral videos</text>
+                     </title>
+                  </intlink>
+               </repl>
+               <for>
+                  <mww:intlink target="viral video" postfix="s">
+                     <rtd>[[viral video]]s</rtd>
+                  </mww:intlink>
+               </for>
+            </subst>
+            <rtd>
+</rtd>
+         </li>
+         <li>
+            <rtd>*</rtd>
+            <text> Asdf.com is a random chat board where the point is to not always stay on topic.</text>
+         </li>
+      </ul>
+      <text>
+</text>
+      <section level="2">
+         <heading>
+            <rtd>==</rtd>
+            <text> See also </text>
+            <rtd>==</rtd>
+         </heading>
+         <body>
+            <text>
+</text>
+            <ul>
+               <li>
+                  <rtd>*</rtd>
+                  <text> </text>
+                  <intlink target="Hoverboard ASDF">
+                     <rtd>[[Hoverboard ASDF]]</rtd>
+                  </intlink>
+                  <rtd>
+</rtd>
+               </li>
+               <li>
+                  <rtd>*</rtd>
+                  <text> </text>
+                  <intlink target="Japan Air Self-Defense Force">
+                     <rtd>[[Japan Air Self-Defense Force]]</rtd>
+                  </intlink>
+                  <rtd>
+</rtd>
+               </li>
+               <li>
+                  <rtd>*</rtd>
+                  <text> </text>
+                  <intlink target="QWERTY">
+                     <rtd>[[QWERTY]]</rtd>
+                  </intlink>
+               </li>
+            </ul>
+            <text>
+
+</text>
+            <p topgap="0" bottomgap="0">
+               <intlink target="Category:Initialisms">
+                  <rtd>[[Category:Initialisms]]</rtd>
+               </intlink>
+               <text>
+</text>
+               <mww:transclusion>
+                  <rtd>{{</rtd>
+                  <mww:name>
+                     <text>disambig</text>
+                  </mww:name>
+                  <rtd>}}</rtd>
+               </mww:transclusion>
+            </p>
+            <text>
+
+</text>
+            <p topgap="0" bottomgap="0">
+               <intlink target="de:ASDF">
+                  <rtd>[[de:ASDF]]</rtd>
+               </intlink>
+               <text>
+</text>
+               <intlink target="fr:ASDF">
+                  <rtd>[[fr:ASDF]]</rtd>
+               </intlink>
+            </p>
+            <text>
+</text>
+         </body>
+      </section>
+   </body>
+</article>

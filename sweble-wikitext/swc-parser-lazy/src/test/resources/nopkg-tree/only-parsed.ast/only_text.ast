@@ -1,0 +1,12 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Hallo Welt!",
+	[2] = WtImEndTag(
+		{P} name = "@p"
+	)
+)

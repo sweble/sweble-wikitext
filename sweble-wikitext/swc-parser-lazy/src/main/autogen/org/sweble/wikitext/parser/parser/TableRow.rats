@@ -1,0 +1,139 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * TableRow
+ * --------
+ *
+ *   Grammar:
+ *     - WS* '|-' TableAttribute* S*
+ *
+ */
+
+module org.sweble.wikitext.parser.parser.TableRow;
+
+import org.sweble.wikitext.parser.utils.Assert;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.TableAttribute;
+import org.sweble.wikitext.parser.parser.TableCell;
+import org.sweble.wikitext.parser.parser.TableHeader;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+
+
+
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TableRowBody
+      extends
+          WtTempNode
+  {
+    WtNode rt0;
+    String rt1;
+    WtBody body;
+  }
+}
+
+
+
+
+// -- Table Row --[ State Aware Memoization ]-----------------------------------
+
+noinline transient WtNode TableRow =
+ ^{
+    final StateAwareResult r = (StateAwareResult) pTableRowMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pTableRowTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized WtNode TableRowMemoized =
+ ^{
+    final Result yyResult = new StateAwareResult("TableRow", getContext(), pTableRowTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+
+
+
+// -- Table Row ----------------------------------------------------------------
+
+noinline transient WtNode TableRowTransient =
+  rt0:pExtSpaceStar "|-" attributes:TableAttributeStar body:TableRowBody
+  {
+    yyValue = setRtd(
+      nf.tr(attributes, body.body),
+      rt0, "|-", SEP, body.rt0, body.rt1, SEP);
+  }
+;
+
+private inline TableRowBody TableRowBody =
+    rt0:pExtSpaceStar rt1:pEol body:TableRowContentStar
+    {
+      yyValue = new TableRowBody();
+      yyValue.rt0 = rt0;
+      yyValue.rt1 = rt1;
+      yyValue.body = body;
+    }
+  / rt0:pExtSpaceStar Eof
+    {
+      // Warning will be issued by the surrounding table.
+      yyValue = new TableRowBody();
+      yyValue.rt0 = rt0;
+      yyValue.rt1 = "";
+      yyValue.body = nf.emptyBody();
+    }
+;
+
+private transient stateful WtBody TableRowContentStar =
+  {
+    enter(ParserScopes.TABLE_ELEMENTS);
+  }
+  garbage:InlineBlockContent content:TableRowElement* &RowDoneSanityCheck
+  {
+    yyValue = nf.body(nf.list(garbage, nf.list(content)));
+  }
+;
+
+private inline WtNode TableRowElement =
+    &TableRowElementPrefix ( TableCell / TableHeader )
+;
+
+private inline void RowDoneSanityCheck =
+  pExtSpaceStar ( "|+" / "|-" / "|}" / Eof )
+;
+
+private inline void TableRowElementPrefix =
+    pExtSpaceStar "|" ![+}\-]
+  / pExtSpaceStar "!"
+;
+
+
+
+
+
+// -- End of file --------------------------------------------------------------

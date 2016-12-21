@@ -1,0 +1,26 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: /nopkg-tree/input.wikitext/text_and_nested_headings.wikitext:2:8: <no content> : 12.2.5.4.7 - R13 @ WtXmlStartTag.,
+		Warning: /nopkg-tree/input.wikitext/text_and_nested_headings.wikitext:2:42: <no content> : 12.2.5.4.7 - R25 (1) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[ [0] = "Hallo Welt!\n" ],
+	[1] = WtXmlElement(
+		{P} name = "h1"
+		{P} rtd = RTD[ "<h1" <o> ">" <o> "" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[ [0] = "A " ]
+	),
+	[2] = WtXmlElement(
+		{P} name = "h2"
+		{P} rtd = RTD[ "<h2" <o> ">" <o> "</h2>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[ [0] = "An inner heading" ]
+	),
+	[3] = " heading",
+	[4] = WtXmlEndTag(
+		{P} name = "h1"
+		{P} rtd = RTD[ "</h1>" ]
+	),
+	[5] = "\nTsch\u00FCss!\n"
+)

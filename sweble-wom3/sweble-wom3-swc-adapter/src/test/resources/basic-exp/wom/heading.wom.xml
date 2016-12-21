@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<article xmlns="http://sweble.org/schema/wom30"
+         xmlns:mww="http://sweble.org/schema/mww30"
+         version="3.0"
+         title="Heading">
+   <body>
+      <section level="2">
+         <heading>
+            <rtd>==</rtd>
+            <text> Heading </text>
+            <rtd>==</rtd>
+         </heading>
+         <body>
+            <text>
+
+</text>
+            <p topgap="0" bottomgap="0">
+               <text>Body</text>
+            </p>
+            <text>
+</text>
+         </body>
+      </section>
+   </body>
+</article>

@@ -1,0 +1,68 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTagExtension(
+				{P} name = "pre"
+				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtTagExtensionBody("T|a\n|b")
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+				name = WtName[ [0] = "border" ],
+				value = WtValue[ [0] = "1" ]
+			)
+		],
+		body = WtBody[
+			[0] = WtTableImplicitTableBody(
+				body = WtBody[
+					[0] = WtTableRow(
+						{P} implicit = true
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtTableCell(
+								{P} rtd = RTD[ "|" <o> "" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = "1",
+									[1] = WtTagExtension(
+										{P} name = "pre"
+										{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
+										xmlAttributes = WtXmlAttributes[],
+										body = WtTagExtensionBody("T|a\n|b")
+									)
+								]
+							),
+							[1] = WtTableCell(
+								{P} rtd = RTD[ "||" <o> "" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = "2",
+									[1] = WtXmlElement(
+										{P} name = "span"
+										{P} rtd = RTD[ "<span" <o> "\n>" <o> "</span>" ]
+										xmlAttributes = WtXmlAttributes[],
+										body = WtBody[ [0] = "X" ]
+									),
+									[2] = "Y"
+								]
+							),
+							[2] = WtTableCell(
+								{P} rtd = RTD[ "||" <o> "" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = WtParagraph[ [0] = "3" ],
+									[1] = "\n"
+								]
+							)
+						]
+					)
+				]
+			)
+		]
+	)
+)

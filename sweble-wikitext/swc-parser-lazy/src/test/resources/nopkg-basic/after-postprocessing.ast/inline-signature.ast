@@ -1,0 +1,59 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = "~"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (none): /nopkg-basic/input.wikitext/inline-signature.wikitext:2:2 - 4: "~~" : This looks like a Signature, however a signature consists of at least 3 tildes. ]
+				{P} content = "~~"
+			)
+		),
+		[2] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{P} rtd = RTD[ "~~~" ]
+				{P} tildeCount = 3
+			)
+		),
+		[3] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{P} rtd = RTD[ "~~~~" ]
+				{P} tildeCount = 4
+			)
+		),
+		[4] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{P} rtd = RTD[ "~~~~~" ]
+				{P} tildeCount = 5
+			)
+		),
+		[5] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{A} warnings = C[ Warning (informative): /nopkg-basic/input.wikitext/inline-signature.wikitext:6:2 - 8: "~~~~~~" : Signatures consist only of 3 to 5 tildes. ]
+				{P} rtd = RTD[ "~~~~~" ]
+				{P} tildeCount = 5
+			),
+			[1] = "~"
+		),
+		[6] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = WtSignature(
+				{A} warnings = C[ Warning (informative): /nopkg-basic/input.wikitext/inline-signature.wikitext:7:2 - 9: "~~~~~~~" : Signatures consist only of 3 to 5 tildes. ]
+				{P} rtd = RTD[ "~~~~~" ]
+				{P} tildeCount = 5
+			),
+			[1] = WtText(
+				{A} warnings = C[ Warning (none): /nopkg-basic/input.wikitext/inline-signature.wikitext:7:7 - 9: "~~" : This looks like a Signature, however a signature consists of at least 3 tildes. ]
+				{P} content = "~~"
+			)
+		)
+	]
+)

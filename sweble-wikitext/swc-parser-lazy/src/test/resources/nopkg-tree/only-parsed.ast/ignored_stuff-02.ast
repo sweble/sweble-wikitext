@@ -1,0 +1,16 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtIgnored("<noinclude>"),
+		[1] = WtIgnored("</noinclude>")
+	}
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtSemiPre[
+		[0] = WtSemiPreLine(
+			{P} rtd = RTD[ WtIgnored("<noinclude>") + " " <o> "" ]
+			[0] = "only visible when viewed directly ",
+			[1] = WtIgnored("</noinclude>")
+		)
+	],
+	[2] = WtNewline("\n")
+)

@@ -1,0 +1,3 @@
+#REDIRECT[[link]]
+{{name|arg0|arg1=value1|arg2={{{parameter2}}}}}
+

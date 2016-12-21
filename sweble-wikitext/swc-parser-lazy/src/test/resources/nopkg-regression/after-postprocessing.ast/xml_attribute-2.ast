@@ -1,0 +1,16 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[ Warning: <no location>: <no content> : 12.2.5.4.9 R16 @ WtText. ]
+	[0] = "\"hallo\"\n",
+	[1] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} rtd = RTD[ " " <o> "=" <o> "" ]
+				name = WtName[ [0] = "x" ],
+				value = WtValue[]
+			)
+		],
+		body = WtBody[]
+	)
+)

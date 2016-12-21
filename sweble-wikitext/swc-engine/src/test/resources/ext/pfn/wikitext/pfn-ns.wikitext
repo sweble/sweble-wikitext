@@ -1,0 +1,20 @@
+<!-- The engine supports this test fully -->
+
+{{ns:-2}};{{ns:Media}}
+{{ns:-1}};{{ns:Special}}
+{{ns:0}};{{ns:}}
+{{ns:2}};{{ns:User}}
+{{ns:4}};{{ns:Wikipedia}}
+{{ns:6}};{{ns:File}};{{ns:Image}}
+{{ns:8}};{{ns:MediaWiki}}
+{{ns:10}};{{ns:Template}}
+{{ns:12}};{{ns:Help}}
+{{ns:14}};{{ns:Category}}
+{{ns:1}};{{ns:Talk}}
+{{ns:3}};{{ns:User talk}}
+{{ns:5}};{{ns:Wikipedia talk}}
+{{ns:7}};{{ns:File talk}};{{ns:Image talk}}
+{{ns:9}};{{ns:MediaWiki talk}}
+{{ns:11}};{{ns:Template talk}}
+{{ns:13}};{{ns:Help talk}}
+{{ns:15}};{{ns:Category talk}}

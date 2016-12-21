@@ -1,0 +1,47 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = false
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "Some Template" ],
+				args = WtTemplateArguments[
+					[0] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "Some Template Argument" ]
+					)
+				]
+			),
+		[1] = WtTemplateParameter(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{{" <o> "|" <o> "" <o> "}}}" ]
+				name = WtName[ [0] = "Some Template Parameter" ],
+				default = WtValue[ [0] = "Some Template Parameter Default Value" ],
+				garbage = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtTemplate(
+			{P} precededByNewline = false
+			{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+			name = WtName[ [0] = "Some Template" ],
+			args = WtTemplateArguments[
+				[0] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "" <o> "" ]
+					name = -,
+					value = WtValue[ [0] = "Some Template Argument" ]
+				)
+			]
+		),
+		[1] = "\n",
+		[2] = WtTemplateParameter(
+			{P} precededByNewline = true
+			{P} rtd = RTD[ "{{{" <o> "|" <o> "" <o> "}}}" ]
+			name = WtName[ [0] = "Some Template Parameter" ],
+			default = WtValue[ [0] = "Some Template Parameter Default Value" ],
+			garbage = WtTemplateArguments[]
+		)
+	],
+	[1] = "\n"
+)

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses/.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble Engine -->
+
+  <parent>
+    <groupId>org.sweble.engine</groupId>
+    <artifactId>sweble-engine</artifactId>
+    <version>2.1.1-SNAPSHOT</version>
+  </parent>
+
+  <!-- This POM: Sweble Engine - Serialization -->
+
+  <!-- Same groupId as parent -->
+  <artifactId>sweble-engine-serialization</artifactId>
+  <!-- Same version as parent -->
+  <packaging>jar</packaging>
+
+  <name>Sweble Engine Serialization</name>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-engine/sweble-engine-serialization</url>
+  <inceptionYear>2013</inceptionYear>
+  <description />
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+
+    <sweble-engine.basedir>${project.parent.basedir}</sweble-engine.basedir>
+
+  </properties>
+
+  <!-- ==[ Dependencies ]=================================================== -->
+
+  <dependencies>
+
+    <!-- Apache Commons -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-math3</artifactId>
+    </dependency>
+
+    <!-- Sweble - WOM 3.0 JSON Tools -->
+    <dependency>
+      <groupId>org.sweble.wom3</groupId>
+      <artifactId>sweble-wom3-json-tools</artifactId>
+    </dependency>
+
+    <!-- Sweble - WOM 3.0 SWC Adapter -->
+    <dependency>
+      <groupId>org.sweble.wom3</groupId>
+      <artifactId>sweble-wom3-swc-adapter</artifactId>
+    </dependency>
+
+    <!--
+      Testing
+    -->
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <!-- I assume the configuration is inherited from the parent -->
+          <excludes>
+            <!-- These excludes should be the same as in the parent project -->
+            <exclude>**/*.log</exclude>
+            <exclude>**/.gitignore</exclude>
+            <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
+            <exclude>src/site/resources/css/site.css</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
+
+            <!-- Extra excludes for this project -->
+            <exclude>src/test/resources/**/*.wikitext</exclude>
+            <exclude>src/test/resources/**/NOTICE</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement>
+    </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-engine.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-engine.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-engine.git;a=summary</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles />
+
+</project>

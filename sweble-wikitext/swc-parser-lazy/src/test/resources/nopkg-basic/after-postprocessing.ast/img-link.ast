@@ -1,0 +1,329 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test1" ],
+			options = WtLinkOptions[]
+		)
+	],
+	[1] = "\n\n",
+	[2] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test2" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "Alt Text"
+				)
+			]
+		)
+	],
+	[3] = "\n\n",
+	[4] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test3" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "Alt Text"
+				),
+				[1] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[5] = "\n\n",
+	[6] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test4" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionLinkTarget(
+					{P} rtd = RTD[ "|link=" <o> "" ]
+					{P} targetType = NO_LINK
+					target = -
+				),
+				[1] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[7] = "\n\n",
+	[8] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test5" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionLinkTarget(
+					{P} rtd = RTD[ "|link=" <o> "" ]
+					{P} targetType = PAGE
+					target = WtPageName[ [0] = " " ]
+				),
+				[1] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[9] = "\n\n",
+	[10] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test6" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionLinkTarget(
+					{P} rtd = RTD[ "|link=" <o> "" ]
+					{P} targetType = URL
+					target = WtUrl(
+						{P} path = "//example.com"
+						{P} protocol = "http"
+						{P} rtd = RTD[ "http://example.com" ]
+					)
+				),
+				[1] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[11] = "\n\n",
+	[12] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test7" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionLinkTarget(
+					{P} rtd = RTD[ "|link=" <o> "" ]
+					{P} targetType = PAGE
+					target = WtPageName[ [0] = "Some Page" ]
+				),
+				[1] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[13] = "\n\n",
+	[14] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = true
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = true
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test8" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "Alt Text"
+				),
+				[1] = WtLinkOptionKeyword(
+					{P} keyword = "upright"
+					{P} rtd = RTD[ "|upright" ]
+				),
+				[2] = WtLinkOptionKeyword(
+					{P} keyword = "border"
+					{P} rtd = RTD[ "|border" ]
+				),
+				[3] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[15] = "\n\n",
+	[16] = WtParagraph[],
+	[17] = WtImageLink(
+		{P} border = true
+		{P} format = FRAME
+		{P} hAlign = RIGHT
+		{P} height = -1
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		{P} upright = true
+		{P} vAlign = BOTTOM
+		{P} width = -1
+		target = WtPageName[ [0] = "Image:Test9" ],
+		options = WtLinkOptions[
+			[0] = WtLinkOptionAltText(
+				{P} rtd = RTD[ "|alt=" <o> "" ]
+				[0] = "Alt Text"
+			),
+			[1] = WtLinkOptionKeyword(
+				{P} keyword = "frame"
+				{P} rtd = RTD[ "|frame" ]
+			),
+			[2] = WtLinkOptionKeyword(
+				{P} keyword = "bottom"
+				{P} rtd = RTD[ "|bottom" ]
+			),
+			[3] = WtLinkOptionKeyword(
+				{P} keyword = "right"
+				{P} rtd = RTD[ "|right" ]
+			),
+			[4] = WtLinkOptionKeyword(
+				{P} keyword = "upright"
+				{P} rtd = RTD[ "|upright" ]
+			),
+			[5] = WtLinkOptionKeyword(
+				{P} keyword = "border"
+				{P} rtd = RTD[ "|border" ]
+			),
+			[6] = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Title"
+			)
+		]
+	),
+	[18] = "\n\n",
+	[19] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = 128
+			target = WtPageName[ [0] = "Image:Test10" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "Alt Text"
+				),
+				[1] = WtLinkOptionResize(
+					{P} height = -1
+					{P} rtd = RTD[ "|128px" ]
+					{P} width = 128
+				),
+				[2] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[20] = "\n\n",
+	[21] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = 512
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "Image:Test11" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "Alt Text"
+				),
+				[1] = WtLinkOptionResize(
+					{P} height = 512
+					{P} rtd = RTD[ "|x512px" ]
+					{P} width = -1
+				),
+				[2] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[22] = "\n\n",
+	[23] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = 512
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = 128
+			target = WtPageName[ [0] = "Image:Test12" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "Alt Text"
+				),
+				[1] = WtLinkOptionResize(
+					{P} height = 512
+					{P} rtd = RTD[ "|128x512px" ]
+					{P} width = 128
+				),
+				[2] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Title"
+				)
+			]
+		)
+	],
+	[24] = "\n"
+)

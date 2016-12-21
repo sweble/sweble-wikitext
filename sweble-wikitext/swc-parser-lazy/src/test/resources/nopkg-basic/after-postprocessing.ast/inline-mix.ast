@@ -1,0 +1,74 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " comment "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- comment -->" ]
+				{P} suffix = ""
+			)
+	}
+	{P} warnings = C[]
+	[0] = "\n",
+	[1] = WtSemiPre[
+		[0] = " ",
+		[1] = WtSignature(
+			{P} rtd = RTD[ "~~~" ]
+			{P} tildeCount = 3
+		),
+		[2] = " ",
+		[3] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = " ",
+			[1] = WtSignature(
+				{P} rtd = RTD[ "~~~~" ]
+				{P} tildeCount = 4
+			),
+			[2] = " ",
+			[3] = WtBold(
+				{P} rtd = RTD[ "'''" <o> "'''" ]
+				[0] = " ",
+				[1] = WtXmlComment(
+					{P} content = " comment "
+					{P} prefix = ""
+					{P} rtd = RTD[ "<!-- comment -->" ]
+					{P} suffix = ""
+				),
+				[2] = " ",
+				[3] = WtSignature(
+					{P} rtd = RTD[ "~~~~~" ]
+					{P} tildeCount = 5
+				),
+				[4] = " ",
+				[5] = WtUrl(
+					{P} path = "//example.com"
+					{P} protocol = "http"
+					{P} rtd = RTD[ "http://example.com" ]
+				),
+				[6] = " ",
+				[7] = WtExternalLink(
+					{P} rtd = RTD[ "[" <o> "" <o> "]" ]
+					target = WtUrl(
+						{P} path = "//example.com"
+						{P} protocol = "http"
+						{P} rtd = RTD[ "http://example.com" ]
+					),
+					title = -
+				),
+				[8] = " "
+			)
+		),
+		[4] = " ",
+		[5] = WtPageSwitch(
+			{P} name = "NOTOC"
+			{P} rtd = RTD[ "__NOTOC__" ]
+		),
+		[6] = " ",
+		[7] = WtXmlEntityRef(
+			{P} name = "amp"
+			{P} resolved = "&"
+			{P} rtd = RTD[ "&amp;" ]
+		),
+		[8] = " ignored "
+	],
+	[2] = "\n"
+)

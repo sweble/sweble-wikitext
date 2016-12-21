@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble Wikitext Components -->
+
+  <parent>
+    <groupId>org.sweble.wikitext</groupId>
+    <artifactId>sweble-wikitext</artifactId>
+    <version>2.1.1-SNAPSHOT</version>
+  </parent>
+
+  <!-- This POM: Sweble Wikitext Components - Sweble Wikitext Parser -->
+
+  <!-- Same groupId as parent -->
+  <artifactId>swc-parser-lazy</artifactId>
+  <!-- Same version as parent -->
+  <packaging>jar</packaging>
+
+  <name>SWC - Sweble Wikitext Parser</name>
+  <url>http://sweble.org/sites/swc-devel/alpha-latest/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
+  <inceptionYear>2010</inceptionYear>
+  <description>
+    A parser for MediaWiki's Wikitext.
+  </description>
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+
+    <sweble-wikitext.basedir>${project.parent.basedir}</sweble-wikitext.basedir>
+
+  </properties>
+
+  <!-- ==[ Dependencies ]=================================================== -->
+
+  <dependencies>
+
+    <!-- Apache Commons -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+
+    <!-- NEVER RELEASE/DEPLOY THIS DEPENDENCY!
+         IT'S A GPL LIBRARY!
+    <dependency>
+      <groupId>xtc</groupId>
+      <artifactId>rats</artifactId>
+      <version>1.15.0</version>
+    </dependency>
+     -->
+
+    <!-- Parser Toolkit - Common -->
+    <dependency>
+      <groupId>de.fau.cs.osr.ptk</groupId>
+      <artifactId>ptk-common</artifactId>
+    </dependency>
+
+    <!--
+      Testing
+    -->
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Add various source directories -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/main/autogen</source>
+                <source>${project.build.directory}/generated-sources</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Generate JFlex lexers -->
+      <plugin>
+        <groupId>de.jflex</groupId>
+        <artifactId>maven-jflex-plugin</artifactId>
+        <configuration>
+          <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+          <lexDefinitions>
+            <lexDefinition>${project.basedir}/src/main/autogen</lexDefinition>
+          </lexDefinitions>
+        </configuration>
+      </plugin>
+
+      <!-- Generate Rats! parsers -->
+      <plugin>
+        <groupId>de.fau.cs.osr.maven.plugins</groupId>
+        <artifactId>maven-rats-plugin</artifactId>
+        <configuration>
+          <baseDir>${project.basedir}/src/main/autogen</baseDir>
+          <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+          <ratsInputFiles>
+            <ratsInputFile>org/sweble/wikitext/parser/parser/RatsWikitextParser.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser/preprocessor/RatsWikitextPreprocessor.rats</ratsInputFile>
+          </ratsInputFiles>
+        </configuration>
+      </plugin>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <!-- I assume the configuration is inherited from the parent -->
+          <excludes>
+            <!-- These excludes should be the same as in the parent project -->
+            <exclude>**/*.log</exclude>
+            <exclude>**/.gitignore</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
+
+            <!-- Extra excludes for this project -->
+            <exclude>src/test/resources/**/NOTICE</exclude>
+            <exclude>src/test/resources/**/*.disabled</exclude>
+            <exclude>src/test/resources/**/*.wikitext</exclude>
+            <exclude>src/test/resources/**/*.ast</exclude>
+            <exclude>src/test/resources/**/*.txt</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Get rid of warnings in auto-generated code -->
+      <plugin>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>maven-replacer-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>replace</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <includes>
+            <!-- Using ${project.build.directory} instead of target
+                 DOES NOT WORK! -->
+            <include>target/generated-sources/**/*Lexer.java</include>
+            <include>target/generated-sources/**/*Preprocessor.java</include>
+            <include>target/generated-sources/**/*Parser.java</include>
+          </includes>
+
+          <regex>true</regex>
+          <regexFlags>
+            <regexFlag>MULTILINE</regexFlag>
+          </regexFlags>
+
+          <replacements>
+            <replacement>
+              <token>^(@SuppressWarnings\(.*?\)\s+)?(((public|final)\s+)*)class</token>
+              <value>@SuppressWarnings("all") $2class</value>
+            </replacement>
+          </replacements>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement>
+    </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <inherited>false</inherited>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+
+</project>

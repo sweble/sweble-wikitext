@@ -1,0 +1,23 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "File:x" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "\n "
+				)
+			]
+		)
+	]
+)

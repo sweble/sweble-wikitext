@@ -1,0 +1,22 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtText(
+			{A} warnings = C[ Warning (informative): /nopkg-basic/input.wikitext/nesting-1.wikitext:1:1 - 10: "[[Target1" : This looks like a Internal Link, however the finishing `]]' is missing. ]
+			{P} content = "[["
+		),
+		[1] = "Target1|Title1a ",
+		[2] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName[ [0] = "Target2" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Title2"
+			)
+		),
+		[3] = " Title1b]]"
+	]
+)

@@ -1,0 +1,173 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * Semi Pre Block Level Element
+ * ----------------------------
+ *
+ *   Grammar:
+ *     - SemiPreLine (Eol SemiPreLine)*
+ *
+ * Semi Pre Line
+ * -------------
+ *
+ *   Grammar:
+ *     - Eol? ' ' SemiPreContentStar
+ *
+ */
+
+module org.sweble.wikitext.parser.parser.SemiPre;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.State;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+
+
+
+// -- SemiPre --[ State Aware Memoization ]-------------------------------------
+
+noinline transient WtNode SemiPre =
+ ^{
+    StateAwareResult r = (StateAwareResult) pSemiPreMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pSemiPreTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized WtNode SemiPreMemoized =
+ ^{
+    Result yyResult = new StateAwareResult("SemiPre", getContext(), pSemiPreTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+
+
+
+// -- SemiPre ------------------------------------------------------------------
+
+/* A SemiPre section cannot begin with a line consisting only of whitespace.
+ * All following lines may contain only whitespace.
+ *
+ * A line containing BlockElemStart or BlockElemEnd will not be recognized as
+ * SemiPre line. Furthermore, if a line is located within a block element it
+ * should not be recognized as SemiPre line. We cannot guarantee this behavior 
+ * here.
+ * FIXME: We will have to unwrap SemiPre lines later if we should discover that
+ * they appear inside a block element.
+ */
+noinline transient WtNode SemiPreTransient =
+  &{ accept(ParserAtoms.SEMI_PRE) } first:FirstSemiPreLine tail:( SemiPreLine )*
+  {
+    yyValue = nf.semiPre(nf.list(first, tail));
+  }
+;
+
+private inline WtSemiPreLine FirstSemiPreLine =
+  rt1:pTpStar ' ' !EmptyLine !HasBlockElem content:SemiPreContentStar
+  {
+    yyValue = setRtd(
+      nf.semiPreLine(content),
+      rt1, ' ', SEP);
+  }
+;
+
+private inline WtSemiPreLine SemiPreLine =
+  rt0:pEol rt1:pTpStar ' ' !HasBlockElem content:SemiPreContentStar
+  {
+    yyValue = setRtd(
+      nf.semiPreLine(content),
+      rt0, rt1, ' ', SEP);
+  }
+;
+
+private inline void EmptyLine =
+  pExtSpaceStar slEol
+;
+
+/* If there is a start tag or end tag (BlockElemStart/End) on a line, that
+ * line will never be recognized as SemiPre. Furthermore, if a previous line 
+ * had a start tag (BlockElemStart) and no end tag has been encountered since 
+ * then the line will also not be recognized as SemiPre. However, we can only
+ * model the behavior of the first case with these rules.
+ * TODO: Model the scoping behvior in a post-processing step.
+ */
+private inline void HasBlockElem =
+  ( !BlockElemStart !BlockElemEnd !slEol _ )* ( BlockElemStart / BlockElemEnd )
+;
+
+private inline void BlockElemStart =
+    "<table"
+  / "<blockquote"
+  / "<caption"   // That's my own idea...
+  / "<h1"
+  / "<h2"
+  / "<h3"
+  / "<h4"
+  / "<h5"
+  / "<h6"
+  / "<pre"
+  / "<tr"
+  / "<p"
+  / "<ul"
+  / "<ol"
+  / "<dl"
+  / "<li"
+  / "</tr"
+  / "</td"
+  / "</th"
+;
+
+private inline void BlockElemEnd =
+    "</table"
+  / "</blockquote"
+  / "</h1"
+  / "</h2"
+  / "</h3"
+  / "</h4"
+  / "</h5"
+  / "</h6"
+  / "<td"
+  / "<th"
+  / "<" '/'? "div"
+  / "<hr"
+  / "</pre"
+  / "</p"
+  / "</li"
+  / "</ul"
+  / "</ol"
+  / "</dl"
+  / "<" '/'? "center"
+;
+
+private inline stateful WtNodeList SemiPreContentStar =
+  {
+    enter(ParserScopes.SEMI_PRE);
+  }
+  InlineContentStar
+;
+
+
+
+
+// -- End of file -------------------------------------------------------------

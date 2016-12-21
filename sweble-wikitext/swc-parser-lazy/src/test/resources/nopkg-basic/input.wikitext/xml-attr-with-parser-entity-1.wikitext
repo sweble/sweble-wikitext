@@ -1,0 +1,5 @@
+<div {{name}}='value'></div>
+<div {{name}}="value"></div>
+<div {{name}}=value></div>
+
+<div {{name}}='value' {{name 2}}="value 2" {{name3}}=value3></div>

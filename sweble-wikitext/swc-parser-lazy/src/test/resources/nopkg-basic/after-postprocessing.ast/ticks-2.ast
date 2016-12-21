@@ -1,0 +1,59 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "italic\nbold\nbold+italic" ],
+	[1] = "\n\n",
+	[2] = WtParagraph[ [0] = "'hmmm\nhmm'\nMark's\nMark's" ],
+	[3] = "\n\n",
+	[4] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " ",
+			[1] = WtItalics(
+				{P} rtd = RTD[ "''" <o> "" ]
+				[0] = "Item 1"
+			)
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " ",
+			[1] = WtBold(
+				{P} rtd = RTD[ "'''" <o> "" ]
+				[0] = "Item 2"
+			)
+		),
+		[2] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " ",
+			[1] = WtItalics(
+				{P} rtd = RTD[ "''" <o> "" ]
+				[0] = WtBold(
+					{P} rtd = RTD[ "'''" <o> "" ]
+					[0] = "Item 3"
+				)
+			)
+		)
+	],
+	[5] = "\n\n",
+	[6] = WtSemiPre[
+		[0] = " ",
+		[1] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "" ]
+			[0] = "Pre 1"
+		),
+		[2] = "\n ",
+		[3] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "" ]
+			[0] = "Pre 2"
+		),
+		[4] = "\n ",
+		[5] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "" ]
+			[0] = WtBold(
+				{P} rtd = RTD[ "'''" <o> "" ]
+				[0] = "Pre 3"
+			)
+		)
+	],
+	[7] = "\n"
+)

@@ -1,0 +1,1352 @@
+{{Dablink|This article is about the country. For other uses of terms redirecting here, see [[Germany (disambiguation)]] and [[Deutschland (disambiguation)]].}}
+{{Use dmy dates|date=January 2011}}
+{{pp-semi-protected|small=yes}}
+{{pp-move-indef}}
+{{Featured article}}
+{{Infobox country
+|native_name=<span style="line-height:1.33em;">{{lang|de|''Bundesrepublik Deutschland''}}
+|conventional_long_name=<span style="line-height:1.33em;">Federal Republic of Germany</span>
+|common_name=Germany
+|national_anthem=<center>[[File:Deutschlandlied played by USAREUR Band.ogg]]</center><br />The third stanza of {{lang|de|''[[Deutschlandlied|Das Lied der Deutschen]]''}}
+|image_flag=Flag of Germany.svg
+|image_coat=Coat of Arms of Germany.svg
+|image_map=EU-Germany.svg
+|map_caption={{map_caption|location_color=dark green|region=Europe|region_color=dark grey|subregion=the [[European Union]]|subregion_color=green|legend=EU-Germany.svg}}
+|official_languages=[[German language|German]] {{Ref|1}}
+|demonym=German
+|capital=[[Berlin]]
+|latd=52|latm=31|latNS=N|longd=13|longm=23|longEW=E
+|largest_city=capital
+|government_type=[[Federal republic|Federal]] [[parliamentary republic]]
+|leader_title1=[[President of Germany|President (Head of State)]]
+|leader_name1=[[Christian Wulff]] ([[Christian Democratic Union (Germany)|CDU]])
+|leader_title2=[[Chancellor of Germany (Federal Republic of Germany)|Chancellor (Head of Government)]]
+|leader_name2=[[Angela Merkel]] ([[Christian Democratic Union (Germany)|CDU]])
+|leader_title3=[[President of the Bundestag]]
+|leader_name3=[[Norbert Lammert]] ([[Christian Democratic Union (Germany)|CDU]])
+|leader_title4=[[President of the Bundesrat]]
+|leader_name4=[[Hannelore Kraft]] ([[Social Democratic Party of Germany|SPD]])
+|sovereignty_type=[[Kingdom of Germany|Formation]]
+|sovereignty_note=
+|established_event1=[[Holy Roman Empire]]
+|established_date1=2 February 962
+|established_event2=[[Unification of Germany|Unification]]
+|established_date2=18 January 1871
+|established_event3=[[History of Germany|Federal Republic]]
+|established_date3=23 May 1949
+|established_event4=[[German reunification|Reunification]]
+|established_date4=3 October 1990
+|accessionEUdate=25 March 1957
+|EUseats=99
+|area_km2=357,021
+|area_sq_mi=137,847 <!--Do not remove per [[WP:MOSNUM]]-->
+|area_rank=63rd
+|area_magnitude=1 E11
+|percent_water=2.416
+|population_estimate = 81,757,600
+|population_estimate_year = 2010
+|population_estimate_rank = 15th
+|population_census =
+|population_census_year =
+|population_estimate_year = Jan.&nbsp;1,&nbsp;2010
+|population_estimate_rank = 15th
+|population_density_km2 = 229
+|population_density_sq_mi = 593 <!--Do not remove per [[WP:MOSNUM]]-->
+|population_density_rank = 55th
+|GDP_PPP_year = 2010
+|GDP_PPP = $2.932&nbsp;trillion<ref name="IMF">{{cite encyclopedia|url=http://www.imf.org/external/pubs/ft/weo/2010/02/weodata/weorept.aspx?pr.x=61&pr.y=14&sy=2008&ey=2015&scsm=1&ssd=1&sort=country&ds=.&br=1&c=134&s=NGDP_R%2CNGDP_RPCH%2CNGDP%2CNGDPD%2CNGDP_D%2CNGDPRPC%2CNGDPPC%2CNGDPDPC%2CNGAP_NPGDP%2CPPPGDP%2CPPPPC%2CPPPSH%2CPPPEX%2CNID_NGDP%2CNGSD_NGDP&grp=0&a=|title=Germany|publisher=International Monetary Fund|accessdate=20 February 2011}}</ref>
+|GDP_PPP_rank=
+|GDP_PPP_per_capita=$35,930<ref name="IMF"/>
+|GDP_PPP_per_capita_rank=
+|GDP_nominal=$3.305&nbsp;trillion<ref name="IMF"/>
+|GDP_nominal_rank=
+|GDP_nominal_year=2010
+|GDP_nominal_per_capita=$40,511<ref name="IMF"/>
+|GDP_nominal_per_capita_rank=
+|HDI_year=2010
+|HDI={{increase}} 0.885<ref name="UNDP">{{cite web|url=http://hdr.undp.org/en/media/HDR_2010_EN_Table1.pdf|title=Human development indices|publisher=[[United Nations Development Programme]]|accessdate=4 November 2010}}</ref>
+|HDI_rank=10th
+|HDI_category=<span style="color:#090;">very&nbsp;high</span>
+|Gini=27 {{Update after|2011|04|reason=Regularly check CIA factbook or http://www.wider.unu.edu/research/Database/en_GB/wiid/ }}
+|Gini_year=2006
+|Gini_category=<span style="color:#090;">low</span>
+|currency=[[Euro]] ([[Euro sign|€]]){{Ref|2}}(2002 – present)
+|currency_code=EUR
+|time_zone=CET
+|utc_offset=+1
+|time_zone_DST=CEST
+|utc_offset_DST=+2
+|drives_on=right
+|cctld= [[.de]] {{Ref|3}}
+|calling_code=[[Telephone numbers in Germany|49]]
+|ISO_3166-1_alpha2=DE
+|ISO_3166-1_alpha3=DEU
+|ISO_3166-1_numeric=?
+|alt_sport_code=GER
+|vehicle_code=D
+|aircraft_code=D
+|footnote1={{note|1}} Danish, [[Low German]], [[Sorbian languages|Sorbian]], [[Romani language|Romany]], and [[Frisian languages|Frisian]] are officially recognised and protected by the [[European Charter for Regional or Minority Languages|ECRML]].
+|footnote2= {{note|2}} Before 2002: [[Deutsche Mark]] (DEM).
+|footnote3={{note|3}} Also [[.eu]], shared with other [[European Union]] member states.
+}}
+
+'''Germany''' ({{IPAc-en|En-uk-Germany.ogg|ˈ|dʒ|ɜr|m|ən|i}}), officially the '''Federal Republic of Germany''' ({{lang-de|Bundesrepublik Deutschland}}, {{IPA-de|ˈbʊndəsʁepuˌbliːk ˈdɔʏtʃlant|pron|De-Bundesrepublik_Deutschland.ogg}}),<ref name="Duden6">{{cite book |editor=Max Mangold (ed.)|title=Duden, Aussprachewörterbuch (Duden Pronunciation Dictionary) |edition=6th |year=1995 |publisher=Dudenverlag Bibliographisches Institut & F.A. Brockhaus |location=Mannheim |language=German |isbn=3-411-04066-1|pages=271, 53f}}</ref><ref group="note">The country's long name in its [[Languages of Germany|regional languages]] include:
+*{{lang-dsb|Nimska zwězkowa republika}};
+*{{lang-hsb|Němska zwjazkowa republika}};
+*{{lang-da|Forbundsrepublikken Tyskland}};
+*{{lang-nds| Bundsrepubliek Düütschland}};
+*{{lang-rmy|I Federalni Republika Jermaniya}};
+*[[Frisian language|Frisian]]: Bûnsrepublyk Dútslân;
+*[[Palatinate German]]: Bundesrepublik vun Daitschlond</ref> is a country in [[Western Europe|Western]] and [[Central Europe]]. It is bordered to the north by the [[North Sea]], [[Denmark]], and the [[Baltic Sea]]; to the east by [[Poland]] and the [[Czech Republic]]; to the south by [[Austria]] and [[Switzerland]]; and to the west by [[France]], [[Luxembourg]], [[Belgium]], and the [[Netherlands]]. The territory of Germany covers an area of 357,021&nbsp;km<sup>2</sup> and is influenced by a [[temperate climate|temperate seasonal climate]]. With 81.8&nbsp;million inhabitants, it is the most populous member state of the [[European Union]],<ref name="population">{{cite web |url=http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-QA-09-047/EN/KS-QA-09-047-EN.PDF |title=First demographic estimates for 2009 |publisher=[[Eurostat]] |accessdate=31 January 2010}}</ref> and home to the [[List of countries by immigrant population|third-largest number of international migrants]] worldwide.<ref>{{cite web |url=http://www.migrationinformation.org/datahub/countrydata/country.cfm |title=Germany: Inflow of foreign population by country of nationality, 1994 to 2003 | publisher = Migrationinformation.org |accessdate=4 January 2010}}</ref>
+
+A region named [[Germania]], inhabited by several [[Germanic people]]s, was [[Germania (book)|documented]] before AD&nbsp;100. Beginning in the 10th century, German territories formed a central part of the [[Holy Roman Empire]], which lasted until 1806. During the 16th century, northern German regions became the centre of the [[Protestant Reformation]] while southern and western parts remained dominated by [[Roman Catholic]] denominations. As a modern [[nation-state]], the country was first [[Unification of Germany|unified]] in 1871, with the inception of the [[German Empire]]. After the proclamation of the [[Weimar Republic]] in 1918 the [[Third Reich]] followed in 1933. The period was marked by a dictatorship and the initiation of [[World War II]]. After 1945, Germany was divided by [[Allied Occupation Zones in Germany|allied occupation]], and evolved into two states, [[East Germany]] and [[West Germany]]. In 1990 Germany was [[German reunification|reunified]]. West Germany was a founding member of the [[European Communities|European Community]] in 1957, which became the EU in 1993. It is part of the [[Schengen Area]] and since 1999 a member the [[eurozone]].<ref>{{cite news |title=On Jan.&nbsp;1, out of many arises one Euro |newspaper=St. Petersburg Times |location= Florida, USA |first= Susan | last = Taylor Martin |date=28 December 1998 |page=National, 1.A }}</ref><ref name="euroc">{{Cite news|title = Germans Say Goodbye to the Mark, a Symbol of Strength and Unity |newspaper=The New York Times| accessdate = 26 April 2010| url = http://www.nytimes.com/2002/01/01/world/germans-say-goodbye-to-the-mark-a-symbol-of-strength-and-unity.html?pagewanted=1 |first=Edmund L. | last = Andrews |date=1 January 2002 }}</ref><ref>{{Cite news |title = Euro notes and coins to flood continent |first=David | last = Smith |date=15 June 2001 |newspaper=New Straits Times| location = Kuala Lumpur | accessdate = 26 April 2010| url = http://news.google.co.uk/newspapers?id=liwhAAAAIBAJ&sjid=j3gFAAAAIBAJ&pg=1283,3813941&dq=germany+euro+currency+introduced+1999&hl=en }}</ref>
+
+Germany is a [[Federation|federal]] [[parliamentary republic]] of [[States of Germany|sixteen states]]. The capital and largest city is [[Berlin]]. Germany is a member of the [[United Nations]], [[NATO]], the [[G8]], the [[G-20 major economies|G20]], the [[OECD]] and assumed a nonpermanent seat on the [[UN Security Council]] for the 2011–12 term. It is a [[Great power#Aftermath of the Cold War|major power]] with the world's [[List of countries by GDP (nominal)|fourth largest economy]] by nominal [[GDP]] and the [[List of countries by GDP (PPP)|fifth largest]] by [[purchasing power parity]]. It is the [[List of countries by exports|second largest exporter]] and [[List of countries by imports|third largest importer]] of goods. In absolute terms, Germany allocates the third biggest annual [[development aid]] budget in the world,<ref>{{cite news | url = http://www.topnews.in/germany-worlds-second-biggest-aid-donor-after-us-229970 | title = Germany world's second biggest aid donor after US | work = TopNews India | accessdate = 10 April 2008 | agency = DPA | date = 4 April 2008 }}</ref> while its [[List of countries by military expenditures|military expenditure ranked seventh]].<ref>{{cite web |url=http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archiveurl=http://web.archive.org/web/20070814224502/http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archivedate=14 August 2007 |title=The fifteen major spenders in 2006 |accessdate=23 August 2007 |year=2007 |format=PDF |work=Recent trends in military expenditure| publisher=Stockholm International Peace Research Institute}}</ref> The country has developed a [[List of countries by Human Development Index|very high standard of living]] and a comprehensive system of [[social security]]. It holds a key position in European affairs and maintains a multitude of close partnerships on a global level.<ref>{{cite news | url=http://www.iht.com/articles/2008/04/04/europe/poll.php | title = The leader of Europe? Answers an ocean apart | newspaper = International Herald Tribune | date = 4 April 2008 | accessdate =4 April 2008 | location = Paris }}</ref> Germany is recognised as a scientific and technological leader in several fields.<ref>[http://www.innovations-report.de/html/berichte/informationstechnologie/bericht-109339.html Confidently into the Future with Reliable Technology] www.innovations-report.de. 7 May 2008. Retrieved 4 April 2008.</ref>
+
+==History==
+
+{{Main|History of Germany}}
+
+===Etymology===
+
+{{Main|Names of Germany|List of country name etymologies}}
+
+The English word "Germany" derives from the [[Greek language|Greek]] <ref>{{cite book|last = Stümpel|first = Gustav|title = Name und Nationalität der Germanen. Eine neue Untersuchung zu Poseidonios, Caesar und Tacitus|origyear = 1932|publisher = Dieterich|location = Leipzig|language = German|pages = 60}}</ref> term [[Germania]]. The name "Germania" came into use after [[Julius Caesar]] adopted it from a [[Gaulish language|Gallic]] term for the peoples east of the [[Rhine]] that could possibly have meant "neighbour", or "men of forests", or even "men with spears".<ref>{{cite book |last= Schulze |first=Hagen |authorlink=Hagen Schulze |title=Germany: A New History |publisher= [[Harvard University Press]]|page=4 |year=1998 |isbn= 0-674-80688-3}}</ref><ref>{{cite book | url=http://www.oxfordreference.com/views/ENTRY.html?subview=Main&entry=t27.e6407 | section = German | title = The Concise Oxford Dictionary of English Etymology | editor = Hoad, T.F. | publisher = Oxford University Press | year = 1996 | accessdate = 4 March 2008 }}</ref><ref>{{cite web|url=http://www.zeno.org/Meyers-1905/A/G%C4%93r |title=Meyers Encyclopedia:Ger |publisher=Zeno.org |accessdate=26 September 2010}}</ref>
+
+===Germanic tribes 750 BC–260===
+
+{{Main|Germanic peoples|Germania}}
+
+[[File:Germanic tribes (750BC-1AD).png|thumb|left|Expansion of the [[Germanic peoples|Germanic tribes]] 750 BC – AD&nbsp;1]]
+The [[ethnogenesis]] of the [[Germanic peoples|Germanic tribes]] is assumed to have occurred during the [[Nordic Bronze Age]], or at the latest during the [[Pre-Roman Iron Age]]. From southern Scandinavia and northern Germany, the tribes began expanding south, east and west in the 1st century&nbsp;BC, coming into contact with the [[Celt]]ic tribes of [[Gaul]] as well as [[Iranian peoples|Iranian]], [[Balts|Baltic]], and [[Slavic peoples|Slavic]] tribes in [[Eastern Europe]]. Little is known about early Germanic history, except through their recorded interactions with the [[Roman Empire]], etymological research and archaeological finds.<ref name="Claster">{{cite book | first = Jill N. | last = Claster | title = Medieval Experience: 300–1400 | publisher = [[New York University Press]] | year = 1982 | page = 35 | isbn=0-8147-1381-5 }}</ref>
+
+Under [[Augustus]], the Roman General [[Publius Quinctilius Varus]] began to invade Germania (a term used by the Romans to define a territory running roughly from the [[Rhine]] to the [[Ural Mountains]]), and it was in this period that the Germanic tribes became familiar with Roman tactics of warfare while maintaining their tribal identity. In AD&nbsp;9, three [[Roman legion]]s led by Varus were defeated by the [[Cheruscan]] leader [[Arminius]] in the [[Battle of the Teutoburg Forest]]. Modern Germany, as far as the [[Rhine]] and the [[Danube]], thus remained outside the Roman Empire. By AD&nbsp;100, the time of [[Tacitus]]' ''[[Germania (book)|Germania]]'', Germanic tribes settled along the Rhine and the Danube (the [[Limes Germanicus]]) , occupying most of the area of modern Germany; Austria, southern [[Bavaria]] and the western [[Rhineland]], however, were Roman provinces. The 3rd century saw the emergence of a number of large West Germanic tribes: [[Alamanni]], [[Franks]], [[Chatti]], [[Saxons]], [[Frisians]], [[Sicambri]], and [[Thuringii]]. Around 260, the Germanic peoples broke through the Limes and the Danube frontier into Roman-controlled lands.<ref name="Cambridge ancient history">{{cite book | series= The Cambridge Ancient History | title = The crisis of empire, A.D. 193–337 | volume = 12 | page = 442 | isbn=0-521-30199-8 | first = Alan K. | last = Bowman | first2 = Peter | last2 = Garnsey | first3 = Averil | last3 = Cameron | publisher = Cambridge University Press | year = 2005}}</ref>
+
+===Migration Period and Frankish Empire 260-800===
+
+{{Main|Migration Period|Franks}}
+After the invasion of the [[Huns]] 375 and with the decline of Rome from 395 began the great migration, during which the Germanic tribes moved further and further to the southwest. Simultaneously several large tribes formed on the territory of modern Germany and displaced the smaller Germanic tribes. These were the [[Franks]] and [[Alamanni]] in the West, the [[Saxons]] in the North, the [[Bavarians]] in the South and the [[Thuringians]] in the East who walked into the nearly deserted areas of today's East Germany in the 7th Century to the Elbe-Saale line which marked the new border to the Slavic tribes. Large segments of the population of today's East Germany were characterized as Slavic (Germania Slavica) in the Early Middle Age. Only during the High Middle Ages, they were assimilated ([[Ostsiedlung]]). The main part of Western and Central Europe and thus also large areas of today's South and West Germany were occupied by the Franks, now Northern Germany was ruled by the Saxons and Slavs. All areas of the former [[Frankish Empire]] associated with todays Germany were in the eastern part of the empire, which had been known since the [[Merovingian]] period as [[Austrasia]]. A certain self-rule of Austrasia appeared the first time in 614 as King [[Clotaire II]] had to sign the ''Edictum Chlotharii'', in which it was confirmed that each of the three Frankish sub-kingdoms (Neustria, Austrasia, Burgundy) came under the rule of a [[Mayor of the Palace]].
+
+===Holy Roman Empire 962–1806===
+
+{{Main|Holy Roman Empire}}
+{{See also|Medieval demography|Ostsiedlung}}
+
+[[File:Weltliche Schatzkammer Wien (169)pano.jpg|thumb|upright|The [[Imperial Crown of the Holy Roman Empire|Imperial Crown]] of the [[Holy Roman Empire]], created around AD&nbsp;1000]]
+
+On 25 December 800, [[Charlemagne]] founded the [[Carolingian Empire]], which was [[Treaty of Verdun|divided in 843]]. The medieval empire resulted from the [[East Francia|eastern portion]] of this division and existed in varying forms from 962 until 1806. Its territory stretched from the [[Eider River]] in the north to the [[Mediterranean Sea|Mediterranean]] coast in the south. Often referred to as the [[Holy Roman Empire]] (or the Old Empire), it was officially called the ''Sacrum Romanum Imperium Nationis Germanicæ'' (Holy Roman Empire of the German Nation) starting in 1448, to adjust the title to its then reduced territory.
+
+[[File:Martin Luther by Lucas Cranach der Ältere.jpeg|thumb|left|150px|[[Martin Luther]] initiated the [[Protestant Reformation]].]]
+
+Under the reign of the [[Ottonian]] emperors (919–1024), the [[Stem duchy|duchies]] of [[Duchy of Lorraine|Lorraine]], [[Duchy of Saxony|Saxony]], [[Franconia]], [[Swabia]], [[Thuringia]], and [[Bavaria]] were consolidated, and the German king was crowned [[Holy Roman Emperor]] of these regions in 962. Under the reign of the [[Salian]] emperors (1024–1125), the Holy Roman Empire absorbed northern Italy and [[Burgundy (region)|Burgundy]], although the emperors lost power through the [[Investiture Controversy]]. Under the [[House of Hohenstaufen|Hohenstaufen]] emperors (1138–1254), the German princes increased their influence further south and east into territories inhabited by [[Slavic peoples|Slavs]], preceding [[History of German settlement in Eastern Europe|German settlement]] in these areas and further east ''([[Ostsiedlung]])''. Northern German towns grew prosperous as members of the [[Hanseatic League]]. Starting with the [[Great Famine of 1315–1317|Great Famine]] in 1315, then the [[Black Death]] of 1348–50, the population of Germany plummeted.<ref>{{ cite book | url=http://www.vlib.us/medieval/lectures/black_death.html | title = The Great Famine (1315–1317) and the Black Death (1346–1351) | first = Lynn Harry | last = Nelson | publisher = [[University of Kansas]] }}</ref>
+
+The edict of the [[Golden Bull of 1356|Golden Bull]] in 1356 provided the basic constitution of the empire that lasted until its dissolution. It codified the election of the emperor by seven [[prince-elector]]s who ruled some of the most powerful principalities and archbishoprics. Beginning in the 15th century, the emperors were elected nearly exclusively from the [[Habsburg]] dynasty of [[Archduchy of Austria|Austria]].
+
+The monk [[Martin Luther]] publicised his [[The 95 Theses|95 Theses]] in 1517, challenging practices of the [[Roman Catholic Church]], initiating the [[Protestant Reformation]]. A separate [[Lutheranism|Lutheran]] church became the official religion in many German states after 1530. Religious conflict led to the [[Thirty Years' War]] (1618–1648), which devastated German lands.<ref>Rempel, Gerhard. [http://mars.wnec.edu/~grempel/courses/wc2/lectures/30yearswar.html The Thirty-Years-War]. Western [[New England College]].</ref> The population of the German states was reduced by about 30%.<ref>{{cite book | url=http://books.google.com/?id=eGsCGAdH4YQC&pg=PA51&dq#v=onepage&q=&f=false | title = The savage wars of peace: England, Japan and the Malthusian trap | first = Alan | last = Macfarlane | year = 1997 | page=51 |isbn = 0-631-18117-2 }}</ref> The [[Peace of Westphalia]] (1648) ended religious warfare among the German states, but the empire was ''de facto'' divided into numerous independent principalities. From 1740 onwards, the [[German dualism|dualism]] between the Austrian [[Habsburg Monarchy]] and the [[Kingdom of Prussia]] dominated German history. In 1806, the ''Imperium'' was overrun and dissolved as a result of the [[Napoleonic Wars]].<ref name="concise h">{{cite book | last = Fulbrook | first = Mary | title = A Concise History of Germany | publisher = Cambridge University Press | year = 1991 | page = 97 | isbn = 0-521-54071-2 }}</ref>
+
+===Restoration and revolution 1814–1871===
+
+{{Main|German Confederation}}
+
+[[File:Nationalversammlung.jpg|thumb|[[Frankfurt parliament]] in 1848]]
+
+Following the fall of [[Napoleon I of France|Napoleon Bonaparte]], the [[Congress of Vienna]] convened in 1814 and founded the [[German Confederation]] (Deutscher Bund), a loose league of [[List of German Confederation member states|39 sovereign states]]. Disagreement with [[European Restoration|restoration]] politics partly led to the rise of [[Liberalism in Germany|liberal]] movements, demanding unity and freedom. These, however, were followed by new measures of repression by the Austrian statesman [[Klemens Wenzel von Metternich|Metternich]]. The ''[[Zollverein]]'', a tariff union, profoundly furthered economic unity in the German states. During this era many [[Germans]] had been stirred by the ideals of the [[French Revolution]], and [[nationalism]] became a more significant force, especially among young intellectuals. For the first time, the colours of black, red and gold were chosen to represent the movement, which later became the [[Flag of Germany|national colours]].<ref>Martin, Norman. [http://www.fotw.net/flags/de1848.html German Confederation 1815–1866 (Germany)]. Flags of the World. 5 October 2000. Retrieved 7 December 2006.</ref>
+
+In the light of a [[Revolutions of 1848|series of revolutionary movements in Europe]], which successfully established a republic [[Revolutions of 1848 in France|in France]], intellectuals and commoners started the [[Revolutions of 1848 in the German states]]. The monarchs initially yielded to the revolutionaries' liberal demands. King [[Frederick William IV of Prussia]] was offered the title of [[Emperor]], but with a loss of power; he rejected the crown and the proposed constitution, leading to a temporary setback for the movement. Conflict between King [[William I, German Emperor|William I]] of [[Prussia]] and the increasingly liberal parliament erupted over military reforms in 1862, and the king appointed [[Otto von Bismarck]] the new [[Prime Minister of Prussia]]. Bismarck successfully waged [[Second War of Schleswig|war on Denmark]] in 1864. Prussian victory in the [[Austro-Prussian War]] of 1866 enabled him to create the [[North German Federation]] (Norddeutscher Bund) and to exclude [[Austrian Empire|Austria]], formerly the leading German state, from the affairs of the remaining German states.
+
+===German Empire 1871–1918===
+
+{{Main|German Empire|World War I}}
+
+[[File:Wernerprokla.jpg|thumb|right|Foundation of modern Germany in [[Versailles]], France, 1871. [[Otto von Bismarck|Bismarck]] is at the centre in a white uniform.]]
+
+The state known as ''Germany'' was [[political union|unified]] as a modern nation-state in 1871, when the [[German Empire]] was forged, with the [[Kingdom of Prussia]] as its largest constituent.
+After the French defeat in the [[Franco-Prussian War]], the German Empire was proclaimed in [[Palace of Versailles|Versailles]] on 18 January 1871. The [[House of Hohenzollern|Hohenzollern]] dynasty of Prussia ruled the new empire, whose capital was Berlin. The empire was a unification of all the scattered parts of Germany except Austria ({{lang|de|[[Kleindeutsche Lösung|''Kleindeutschland'']]}}, or "Lesser Germany"). But internally the official political unification came rather sequentially: Germany had no national flag until 1892 and no national hymn until after WW I. Beginning in 1884, Germany began establishing [[List of former German colonies|several colonies]] outside Europe.
+
+[[File:Map-DR-Prussia.svg|left|thumb|Imperial Germany (1871–1918), with the dominant [[Kingdom of Prussia]] in blue]]
+
+In the {{lang|de|''[[Gründerzeit]]''}} period following the [[unification of Germany]], Emperor [[William I, German Emperor|William I's]] foreign policy secured Germany's position as a great nation by forging alliances, isolating [[French Third Republic|France]] by diplomatic means, and avoiding war. Under [[William II, German Emperor|William II]], however, Germany, [[New Imperialism|like other European powers]], took an [[imperialism|imperialistic]] course leading to friction with neighbouring countries. Most alliances in which Germany had been previously involved were not renewed, and new alliances excluded the country. Specifically, France established new relationships by signing the [[Entente Cordiale]] with Great Britain and securing ties with the [[Russian Empire]]. Aside from its contacts with [[Austria-Hungary]], Germany became increasingly isolated.
+
+Germany's imperialism reached outside its own country, and it joined many other powers in Europe in claiming its share of Africa. The [[Berlin Conference]] divided Africa between the European powers. Germany owned several pieces of land in Africa including [[German East Africa]], [[German South-West Africa|South-West Africa]], [[Togoland|Togo]], and [[Cameroon]]. The [[Scramble for Africa]] caused tension between the [[great power]]s that may have contributed to the conditions that led to [[World War I]].
+
+The [[Assassination in Sarajevo|assassination]] of [[Archduke Franz Ferdinand of Austria|Austria's crown prince]] on 28 June 1914 triggered [[World War I]]. Germany, as part of the unsuccessful [[Central Powers]], suffered defeat against the [[Allies of World War I|Allied Powers]] in [[World War I casualties|one of the bloodiest]] conflicts of all time. An estimated two million German soldiers died in World War I.<ref>{{cite news | url = http://www.spiegel.de/international/germany/0,1518,530319,00.html | title = Last German World War I Veteran Believed to Have Died | newspaper = Spiegel Online | date = 22 January 2008 | first = David | last = Crossland }}</ref> The [[German Revolution]] broke out in November 1918, and Emperor William II and all German ruling princes [[abdication|abdicated]]. An [[Armistice with Germany (Compiègne)|armistice]] putting an end to the war was signed on 11 November, and Germany was forced to sign the [[Treaty of Versailles]] in June 1919. Its negotiation, contrary to traditional post-war diplomacy, excluded the defeated Central Powers. The treaty was perceived in Germany as a humiliating continuation of the war. The treaty's harshness is often cited as an influence toward the later rise of [[Nazism]] in the country.<ref name="lee h">{{cite book | first = Stephen J. | last = Lee | title = Europe, 1890–1945 | publisher = Routledge | year = 2003 | page = 131 | isbn = 0-415-25455-8 | location = London}}</ref>
+
+===Weimar Republic 1919–1933===
+
+{{Main|Weimar Republic}}
+
+[[File:Ausrufung Republik Scheidemann.jpg|upright|thumb|[[Philipp Scheidemann]] proclaiming the German Republic in 1918. The [[Weimar Republic|Weimar]] era was dominated by political unrest.]]
+
+At the beginning of the German Revolution, Germany was declared a [[republic]] and the monarchy collapsed. However, the struggle for power continued, with radical-left communists [[Bavarian Socialist Republic|seizing power in Bavaria]], but failing to take control of all of Germany. The revolution came to an end in August 1919, when the [[Weimar Republic]] was formally established. The [[Weimar Constitution]] came into effect with its signing by [[President of Germany|President]] [[Friedrich Ebert]] on 11 August 1919.
+
+Suffering from the [[Great Depression]], the harsh peace conditions dictated by the [[Treaty of Versailles]], and a long succession of more or less unstable governments, the people of Germany increasingly lacked identification with their political system and the "Establishment Parties" in their [[parliamentary democracy]]. This was exacerbated by a widespread right-wing ([[monarchism|monarchist]], ''[[Völkisch movement|völkisch]]'', and Nazi) {{lang|de|''[[Dolchstoßlegende]]''}}, which promoted the view that Germany had lost World War I because of the efforts and influence of those who wanted to overthrow the government. The top brass of the Weimar government was accused of betraying the German Nation by signing the Versailles Treaty, while the radical left-wing [[communism|communists]], such as the [[Spartacist League]], had wanted a revolution to abolish "[[capitalism|capitalist rule]]" in favour of a {{lang|de|''[[Council communism|Räterepublik]]''}}, and were also targeted.
+
+Discontentment with the new Weimar government helped fuel the growth of the [[Communist Party of Germany|German Communist Party]]. Many conservatives were drawn towards the reactionary/revolutionary right, particularly the National Socialist German Workers Party—the [[Nazi Party]]. By 1932, these two parties controlled the majority of parliament (296 total parliamentary seats by July 1932). After a series of unsuccessful cabinets, President [[Paul von Hindenburg]] made a crucial decision: on 30 January 1933, seeing little alternative and pushed by right-wing advisors, von Hindenburg appointed [[Adolf Hitler]] as [[Chancellor of Germany (German Reich)|Chancellor of Germany]], honouring Hitler's request.
+
+===Third Reich 1933–1945===
+
+{{Main|Nazi Germany}}
+
+[[File:Bundesarchiv Bild 183-S33882, Adolf Hitler retouched.jpg|thumb|upright|[[Adolf Hitler]], chancellor of the ''[[Nazi Germany|Großdeutsches Reich]]'']]
+
+On 27 February 1933 the [[Reichstag fire|Reichstag]] building went up in flames, and a consequent [[Reichstag Fire Decree|emergency decree]] abrogated basic citizens' rights. An [[Enabling Act]] passed in parliament gave Hitler unrestricted legislative power. Only the [[Social Democratic Party of Germany|Social Democratic Party]] voted against it, while [[KPD|Communist]] [[Member of Parliament|MPs]] had already been imprisoned.<ref>{{cite web |url=http://www.dhm.de/lemo/html/nazi/innenpolitik/ermaechtigungsgesetz/index.html |title=Das Ermächtigungsgesetz 1933 |accessdate=12 September 2008 |publisher=[[Deutsches Historisches Museum]]| language=German |quote=An der Abstimmung nicht teilnehmen konnten die 81 Abgeordneten der Kommunistischen Partei Deutschlands (KPD). Ihre Mandate waren auf Basis der Reichstagsbrandverordnung bereits am 8. März 1933 annulliert worden. }}<br />Stackelberg, Roderick (1999). ''Hitler's Germany: origins, interpretations, legacies''. Routledge. p. 103. ISBN 0-415-20114-4. <br />Scheck, Raffael. [http://www.colby.edu/personal/r/rmscheck/GermanyE1.html Establishing a Dictatorship: The Stabilization of Nazi Power] Colby College. Retrieved 12 July 2006.</ref> Using his powers to crush any actual or potential resistance, Hitler established a centralised [[totalitarian state]] within months. Industry was revitalised with a focus on military rearmament.<ref>{{cite web |url=http://www.dhm.de/lemo/html/nazi/wirtschaft/index.html|title=Industrie und Wirtschaft |accessdate=12 September 2008 |publisher=Deutsches Historisches Museum |language=German |quote=Der Vierjahresplan sollte ab 1936 die wirtschaftliche Kriegsfähigkeit Deutschlands herbeiführen. . . .Bereits im Februar 1933 erklärte Hitler, dass alle öffentlichen Maßnahmen zur Arbeitsbeschaffung zugleich der "Wehrhaftmachung" zu dienen hätten und den Interessen des Staates untergeordnet seien. . . .}}</ref> In 1935, Germany reacquired control of the [[Saar (League of Nations)|Saar]] and in 1936 military control of the [[Rhineland]], both of which had been lost in the [[Treaty of Versailles]].
+
+Leading to [[World War II]] and roughly in parallel with military rearmament, German foreign policy became more aggressive and [[Lebensraum|expansionistic]]. In 1938 and 1939, [[Anschluss|Austria]] and [[German occupation of Czechoslovakia|Czechoslovakia]] were brought under control and the [[invasion of Poland]] prepared through the [[Molotov–Ribbentrop pact]] and [[Operation Himmler]]. On 1 September 1939 the German [[Wehrmacht]] launched a [[blitzkrieg]] on [[Second Polish Republic|Poland]], which was swiftly occupied by Germany and by the Soviet [[Red Army]]. The UK and France declared war on Germany, marking the beginning of World War II in Europe. As the war progressed, Germany and its [[Axis powers|allies]] quickly gained control of much of [[Occupied Europe|continental Europe]] while the plan to [[Operation Sea Lion|occupy the United Kingdom]] failed.
+
+[[File:Potsdamer Platz 1945.jpg|thumb|left|Berlin in ruins after [[World War II]], [[Potsdamer Platz]] 1945]]On 22 June 1941, Germany broke the [[Molotov–Ribbentrop pact]] and [[Operation Barbarossa|invaded the Soviet Union]]. The same year, [[Empire of Japan|Japan]] [[Attack on Pearl Harbor|attacked]] the American base at Pearl Harbor, and Germany declared war on the United States as a consequence of its alliance with Japan. Although the German army advanced into the Soviet Union quite rapidly, the [[Battle of Stalingrad]] marked a major turning point in the war. Subsequently, the German army started to retreat on the [[Eastern Front (World War II)|Eastern front]]. In September 1943, Germany's ally Italy surrendered, and German forces were forced to defend an additional front in Italy. [[Normandy Landings|D-Day]] marked another major turning point in the war, opening up a [[Western Front (World War II)|Western front]]; the Allied forces landed on the beaches of [[Normandy]] and made advances towards German territory. Germany's defeat soon followed. On 8 May 1945, [[Victory in Europe Day|the German armed forces surrendered]] after the [[Red Army]] occupied Berlin. Approximately seven million German soldiers and civilians – including [[ethnic Germans]] from Eastern Europe – died during World War II.<ref>Steinberg, Heinz Günter. ''Die Bevölkerungsentwicklung in Deutschland im Zweiten Weltkrieg: mit einem Überblick über die Entwicklung von 1945 bis 1990.'' Bonn 1991.</ref>
+
+In what later became known as [[The Holocaust]], the Third Reich regime enacted governmental policies directly subjugating many dissidents and minorities. About seventeen million people were murdered by the Nazis during the Holocaust, including six million [[Jews]] and a sizable number of [[Porajmos|Gypsies]], [[Jehovah's Witnesses]], [[Generalplan Ost|Poles and other Slavs]], including [[Nazi crimes against Soviet POWs|Soviet POWs]], [[Action T4|people with mental and/or physical disabilities]], homosexuals, and members of the political opposition.<ref>Niewyk, Donald L.; Nicosia, Francis R. [http://books.google.ca/books?id=lpDTIUklB2MC&pg=PP1&dq=Niewyk,+Donald+L.+The+Columbia+Guide+to+the+Holocaust&sig=4igufxQHRCNrkjwRuMt1if_mf5M#PPA45,M1 ''The Columbia Guide to the Holocaust''], [[Columbia University Press]], 2000, pp. 45–52.</ref> World War II and the Nazi genocide were responsible for more than 40&nbsp;million dead in Europe.<ref>{{cite news | url = http://news.bbc.co.uk/2/hi/europe/4530565.stm | title = Leaders mourn Soviet wartime dead | work = BBC News Online |location = London | date = 9 May 2005 }}</ref> The [[Nuremberg trials]] of [[Nazi war criminals]] were held after World War II.<ref>"[http://www.bbc.co.uk/history/worldwars/wwtwo/nuremberg_article_01.shtml Nuremberg: Nazis On Trial]". Professor Richard Overy. BBC History.</ref>
+{{Clear}}
+
+===Division and reunification 1945–1990===
+
+{{Main|History of Germany (1945–1990)}}
+
+[[File:Map-Germany-1945.svg|thumb|Post-WWII [[Allied Occupation Zones in Germany|occupation zones]] of Germany, in its 1937 borders, with territories east of the [[Oder-Neisse line]] shown as annexed by Poland and the Soviet Union, plus the [[Saar (protectorate)|Saar protectorate]] and divided Berlin. [[East Germany]] was formed by the Soviet Zone, while West Germany was formed by the American, British, and French zones in 1949 and the Saar in 1957.]]
+
+The war resulted in the [[World War II casualties|death of over seven million German soldiers and civilians]]; [[Oder-Neisse line|large territorial losses]]; [[Expulsion of Germans after World War II|the expulsion of about 15&nbsp;million Germans]] from [[Former eastern territories of Germany|the eastern areas of Germany]] and other countries; [[Rape during the occupation of Germany|mass rape of German women]];<ref>{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 409–412 | quote = Altogether at least 2&nbsp;million German women are thought to have been raped . . . }}<br />{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 31–32 | quote =He [the Komsomol leader, Maltsev] went on to boast that '2&nbsp;million of our children were born in Germany.' }}</ref> and the destruction of multiple major cities. The remaining national territory and Berlin were partitioned by the [[Allies of World War II|Allies]] into four military occupation zones.
+
+The western sectors, controlled by France, the United Kingdom, and the United States, were merged on 23 May 1949, to form the ''[[West Germany|Federal Republic of Germany]]'' (''Bundesrepublik Deutschland''); on 7 October 1949, the Soviet Zone became the ''[[East Germany|German Democratic Republic]]'' (''Deutsche Demokratische Republik'', or DDR). They were, mainly outside Germany, informally known as "West Germany" and "East Germany", and the two parts of Berlin as "[[West Berlin]]" and "[[East Berlin]]". East Germany selected East Berlin as its capital, while West Germany chose [[Bonn]]. However, West Germany declared the status of its capital Bonn as provisional, in order to emphasise its stance that the two-state solution was an artificial ''status quo'' that was to be overcome one day.<ref name="provisional">{{cite book | last = Wise | first = Michael Z. | title = Capital dilemma: Germany's search for a new architecture of democracy| year = 1998| publisher = Princeton Architectural Press | isbn =978-1-56898-134-5 | page = 23 | chapter = Bonn, Capital of Self-Effacement}}</ref>
+
+West Germany, established as a federal parliamentary republic with a "[[social market economy]]", was allied with the United States, the UK and France. The country came to enjoy prolonged economic growth beginning in the early 1950s ({{lang|de|''[[Wirtschaftswunder]]''}}). West Germany joined [[NATO]] in 1955 and was a founding member of the [[European Economic Community]] in 1957. On 1 January 1957, following a plebiscite, [[Saarland]] became part of West Germany by virtue of article 23 {{lang|de|''[[Grundgesetz]]''}}, having been occupied by France since 1947.
+
+[[File:Thefalloftheberlinwall1989.JPG|thumb|left|The [[Berlin Wall]] in front of the [[Brandenburg Gate]] shortly after its opening in 1989]]
+
+East Germany was an [[Eastern bloc]] state under political and military control by the [[USSR]] via the latter's occupation forces and the [[Warsaw Pact]]. While claiming to be a democracy, political power was solely executed by leading members (''[[Politburo]]'') of the communist-controlled [[Socialist Unity Party of Germany|SED (''Socialist Unity Party of Germany'')]]. Their power was ensured by the [[Stasi]], a secret service of immense size, and a variety of SED suborganizations controlling every aspect of society. In return, the basic needs of the population were satisfied at low cost by the state. A Soviet-style [[command economy]] was set up; later, the GDR became a [[Comecon]] state. While [[Communist propaganda|East German propaganda]] was based on the benefits of the GDR's social programs and the alleged constant threat of a West German invasion, many of her citizens looked to the West for political freedoms and economic prosperity.<ref>{{cite news | last = Colchester | first = Nico | url = http://www.ft.com/cms/s/504285c4-68b6-11da-bd30-0000779e2340,dwp_uuid=6f876a3c-e19f-11da-bf4c-0000779e2340.html | title = D-mark day dawns | newspaper = [[Financial Times]] | location = London | date = 1 January 2001 | accessdate = 7 December 2006 }}</ref> The [[Berlin Wall]], built in 1961 to stop East Germans from escaping to West Germany, became a symbol of the [[Cold War]].
+
+Tensions between East and West Germany were somewhat reduced in the early 1970s by Chancellor [[Willy Brandt]]'s {{lang|de|''[[Ostpolitik]]''}}, which included the ''de facto'' acceptance of Germany's territorial losses in World War II.
+
+In summer 1989, Hungary decided (2 May) to dismantle the [[Iron Curtain]] and open the borders (23 August), causing an exodus of thousands of [[East Germans]] (11 September) to West Germany via Hungary.
+This had devastating effects on the [[GDR]], with [[Monday demonstrations in East Germany|mass demonstrations]]. The East German authorities unexpectedly eased the border restrictions in November, allowing East German citizens to travel to the West. Originally intended as a pressure valve to retain East Germany as a state, the opening of the border actually led to an acceleration of the [[Die Wende|''Wende'' reform process]] in East Germany, which finally concluded with the ''[[Treaty on the Final Settlement with Respect to Germany|Two Plus Four Treaty]]'' a year later on 12 September 1990, under which the four occupying powers renounced their rights under the Instrument of Surrender, and Germany regained full [[sovereignty]]. This permitted [[German reunification]] on 3 October 1990, with the accession of the five re-established states in the former GDR ([[New states of Germany|new states]] or "neue Länder").
+
+===Berlin Republic and the EU 1990–present===
+
+{{Main|History of Germany since 1990}}
+
+[[File:Euro banknotes.png|thumb| A new currency, the [[Euro]], began circulating on 1 January 2002.<ref name="euroc"/>]]
+
+Based on the Bonn-Berlin Act, adopted by the parliament on 10 March 1994, Berlin once again became the capital of the reunified Germany, while Bonn obtained the unique status of a ''Bundesstadt'' (federal city) retaining some federal ministries.<ref>{{de icon}} [http://www.wdr.de/themen/politik/nrw03/bonn_berlin/060914.jhtml?rubrikenstyle=politik Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 14 September 2006.</ref><ref>{{de icon}} [http://www.wdr.de/themen/politik/deutschland/bonn_berlin/060619.jhtml?rubrikenstyle=politik Deutschlands heimliche Hauptstadt Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 20 June 2006.</ref> The relocation of the government was completed in 1999.
+
+Since reunification, Germany has taken a more active role in the [[European Union]] and NATO. Germany sent a peacekeeping force to secure stability in the [[1999 NATO bombing in Yugoslavia|Balkans]] and sent a force of [[Bundeswehr|German troops]] to [[Afghanistan]] as part of a NATO effort to provide [[War in Afghanistan (2001–present)|security in that country]] after the ousting of the [[Taliban]].<ref name="ARM">Dempsey, Judy. [http://www.iht.com/articles/2006/10/31/news/germany.php Germany is planning a Bosnia withdrawal] International Herald Tribune. 31 October 2006. Retrieved 30 November 2006.</ref> These deployments were controversial, since after the war, Germany was bound by domestic law only to deploy troops for defence roles. Deployments to foreign territories were understood not to be covered by the defence provision; however, the parliamentary vote on the issue effectively legalised the participation in a peacekeeping context.
+
+In 2005, [[Angela Merkel]] was elected the first female Chancellor of Germany. From 2005 to 2009, she led a [[grand coalition (Germany)|grand coalition]] supported by her own parliamentary group (consisting of [[Christian Democratic Union (Germany)|CDU]] and [[Christian Social Union of Bavaria|CSU]]) and the [[Social Democratic Party of Germany|Social Democratic Party (SPD)]]. Following general elections on 27 September 2009, Merkel built the current coalition government replacing the Social Democratic Party with the [[Free Democratic Party (Germany)|Free Democratic Party (FDP)]].
+
+==Geography==
+
+{{Main|Geography of Germany}}
+
+[[File:Deutschland topo.jpg|thumb|upright|right|Topographic map]]
+
+Germany is located in the Central Europe, the territory covers {{convert|357021|km2|sqmi|0|abbr=on}}, consisting of {{convert|349223|km2|sqmi|0|abbr=on}} of land and {{convert|7798|km2|sqmi|0|abbr=on}} of water. It is the seventh largest country by area in Europe and the 63rd largest in the world. It lies mostly between latitudes [[47th parallel north|47°]] and [[55th parallel north|55° N]] (the tip of [[Sylt]] is just north of 55°), and longitudes [[5th meridian east|5°]] and [[16th meridian east|16° E]].
+
+Elevation ranges from the mountains of the [[Alps]] (highest point: the [[Zugspitze]] at {{convert|2962|m|ft|0|disp=s}}) in the south to the shores of the [[North Sea]] (Nordsee) in the north-west and the [[Baltic Sea]] (Ostsee) in the north-east. Between lie the forested uplands of central Germany and the low-lying lands of northern Germany (lowest point: [[Wilstermarsch]] at {{convert|3.54|m|ft|1|disp=s}} below sea level), traversed by some of Europe's major rivers such as the [[Rhine]], [[Danube]] and [[Elbe]].<ref name="CIA">{{Cite web| url = https://www.cia.gov/library/publications/the-world-factbook/geos/gm.html| title = CIA Factbook | accessdate = 23 October 2010| author=CIA | authorlink = Central Intelligence Agency}}</ref>
+
+Germany shares borders with more European countries than any other country on the continent. Its neighbours are Denmark in the north, Poland and the Czech Republic in the east, Austria and Switzerland in the south, France and [[Luxembourg]] in the south-west and Belgium and the Netherlands in the north-west.
+
+The most significant natural resources are iron ore, coal, [[potash]], timber, [[lignite]], [[uranium]], copper, natural gas, [[salt]], nickel, [[arable land]] and water.
+
+===Administrative divisions===
+
+{{Main|States of Germany|List of administrative divisions of Germany}}
+
+Germany comprises [[States of Germany|16 states]] (''Bundesländer''), which are further subdivided into 439 [[Districts of Germany|districts]] (''Kreise'') and cities (''kreisfreie Städte'').
+
+{{German Federal States|options=float:left; font-size:90%; border:3px; max-width:480px; width:50%;}}
+
+{| style="background:none;" cellspacing="2px"
+ |
+
+{| class="sortable wikitable" style="text-align:left; font-size:90%;"
+ |- style="font-size:100%; text-align:right;"
+ ! style="width:140px;" | [[States of Germany|State]] 
+ ! style="width:85px;" | Capital 
+ ! style="width:85px;" | Area (km²)
+ ! style="width:85px;" | Population
+ |-
+ | [[Baden-Württemberg]] 
+ | [[Stuttgart]] 
+ | style="text-align:right" |35,752
+ | style="text-align:right" |10,717,000
+ |-
+ | [[Bavaria]] 
+ | [[Munich]] 
+ | style="text-align:right" |70,549
+ | style="text-align:right" |12,444,000
+ |-
+ | Berlin 
+ | Berlin 
+ | style="text-align:right" |892
+ | style="text-align:right" |3,400,000
+ |-
+ | [[Brandenburg]] 
+ | [[Potsdam]] 
+ | style="text-align:right" |29,477
+ | style="text-align:right" |2,568,000
+ |-
+ | [[Bremen (state)|Bremen]] 
+ | [[Bremen]] 
+ | style="text-align:right" |404
+ | style="text-align:right" |663,000
+ |-
+ | [[Hamburg]] 
+ | [[Hamburg]] 
+ | style="text-align:right" |755
+ | style="text-align:right" |1,735,000
+ |-
+ | [[Hesse]] 
+ | [[Wiesbaden]] 
+ | style="text-align:right" |21,115
+ | style="text-align:right" |6,098,000
+ |-
+ | [[Mecklenburg-Vorpommern]] 
+ | [[Schwerin]] 
+ | style="text-align:right" |23,174
+ | style="text-align:right" |1,720,000
+ |-
+ | [[Lower Saxony]] 
+ | [[Hanover]] 
+ | style="text-align:right" |47,618
+ | style="text-align:right" |8,001,000
+ |-
+ | [[North Rhine-Westphalia]] 
+ | [[Düsseldorf]] 
+ | style="text-align:right" |34,043
+ | style="text-align:right" |18,075,000
+ |-
+ | [[Rhineland-Palatinate]] 
+ | [[Mainz]] 
+ | style="text-align:right" |19,847
+ | style="text-align:right" |4,061,000
+ |-
+ | [[Saarland]] 
+ | [[Saarbrücken]] 
+ | style="text-align:right" |2,569
+ | style="text-align:right" |1,056,000
+ |-
+ | [[Saxony]] 
+ | [[Dresden]] 
+ | style="text-align:right" |18,416
+ | style="text-align:right" |4,296,000
+ |-
+ | [[Saxony-Anhalt]] 
+ | [[Magdeburg]] 
+ | style="text-align:right" |20,445
+ | style="text-align:right" |2,494,000
+ |-
+ | [[Schleswig-Holstein]] 
+ | [[Kiel]] 
+ | style="text-align:right" |15,763
+ | style="text-align:right" |2,829,000
+ |-
+ | [[Thuringia]] 
+ | [[Erfurt]] 
+ | style="text-align:right" |16,172
+ | style="text-align:right" |2,355,000
+ |}
+ |}
+
+===Climate===
+
+{{multiple image
+   | align = right
+   | image1 = Sylt Rotes Kliff.jpg
+   | width1 = 177
+   | caption1 = Summer coastal climate on the island [[Sylt]]  in [[Schleswig-Holstein]]
+   | alt1 = Coastal dunes
+   | image2 = Thüringerwald.JPG
+   | width2 = 210
+   | caption2 =  [[Thuringian Forest]]s during wintertime
+   | alt2 = Thuringian Forest
+}}
+
+Most of Germany has a [[temperate|temperate seasonal climate]] in which humid westerly winds predominate. The climate is moderated by the [[North Atlantic Current|North Atlantic Drift]], which is the northern extension of the [[Gulf Stream]]. This warmer water affects the areas bordering the North Sea including the area along the Rhine, which flows into the North Sea. Consequently in the north-west and the north, the climate is [[oceanic climate|oceanic]]; [[Precipitation (meteorology)|rainfall]] occurs year round with a maximum during summer.
+
+Winters are mild and summers tend to be cool, though temperatures can exceed {{convert|30|°C|°F|lk=on}} for prolonged periods. In the east, the climate is more [[continental climate|continental]]; winters can be very cold, summers can be very warm, and long dry periods are often recorded. Central and southern Germany are transition regions which vary from moderately oceanic to continental.
+
+In addition to the maritime and continental climates that predominate over most of the country, the Alpine regions in the extreme south and, to a lesser degree, some areas of the Central German Uplands have a so-called mountain climate. This climate is characterised by lower temperatures because of higher altitudes and greater precipitation caused by air becoming moisture-laden as it lifts over higher terrain.<ref>[http://www.germanculture.com.ua/library/facts/bl_climate.htm Climate In Germany] GermanCulture. Retrieved 2010-26-08.</ref>
+
+===Biodiversity===
+
+{{multiple image
+   | align = right
+   | width2 = 202
+   | image2    = Hintersee.jpg
+   | caption2   = [[Alps|Alpine]] terrain in [[Bavaria]]. One third of the country's area is covered with woods.
+   | alt2 = Alpine terrain
+   | width1 = 180
+   | image1    = Cervus elaphus 11.jpg
+   | caption1   = [[Red Deer|Deer]] are widespread species to be found in the wild.
+   | alt1 = Red Deer
+}}
+
+[[Phytogeography|Phytogeographically]], Germany is shared between the Atlantic European and Central European provinces of the [[Circumboreal Region]] within the [[Boreal Kingdom]]. The territory of Germany can be subdivided into two [[ecoregion]]s: European-Mediterranean montane mixed forests and Northeast-Atlantic shelf marine.<ref>[http://www.panda.org/about_our_earth/ecoregions/ecoregion_list/ List of Ecoregions: Terrestrial Ecoregions] WWF. Retrieved 21 November 2000.</ref> The majority of Germany is covered by either [[arable land]] (33%) or [[forestry]] and [[woodland]] (31%). Only 15% is covered by permanent pastures.
+
+Plants and animals are those generally common to middle Europe. Beeches, oaks, and other deciduous trees constitute one-third of the forests; conifers are increasing as a result of reforestation. Spruce and fir trees predominate in the upper mountains, while pine and larch are found in sandy soil. There are many species of ferns, flowers, fungi, and mosses. Fish abound in the rivers and the North Sea. Wild animals include deer, wild boar, mouflon, fox, badger, hare, and small numbers of beavers. Various migratory birds cross Germany in the spring and autumn.
+
+The [[List of national parks of Germany|national parks in Germany]] include the [[Wadden Sea National Parks]], the [[Jasmund National Park]], the [[Vorpommern Lagoon Area National Park]], the [[Müritz National Park]], the [[Lower Oder Valley National Park]], the [[Harz National Park]], the [[Saxon Switzerland National Park]] and the [[Bavarian Forest National Park]].
+
+Germany is known for its many [[zoological garden]]s, wildlife parks, aquaria, and bird parks.<ref>[http://www.eupedia.com/europe/zoological_gardens_europe.shtml List of famous Zoological gardens in European countries] www.eupedia.com. Retrieved 17 October 2008.</ref> More than 400 registered zoos and animal parks operate in Germany, which is believed to be the largest number in any single country of the world.<ref>[http://www.americanzoos.info/Zoofacts.html Some interesting zoo facts] www.americanzoos.info/. Retrieved 17 October 2008.</ref> The [[Berlin Zoological Garden|Zoologischer Garten Berlin]] is the oldest zoo in Germany and presents the most comprehensive collection of species in the world.<ref>{{de icon}}[http://www.zoo-berlin.de/en/understand/zahlen-fakten.html Tierstatistik 2008]{{dead link|date=September 2010}}, Zoo Berlin. Retrieved 19 November 2009.</ref>
+
+===Environment===
+
+{{multiple image
+   | align = right
+   | width2 = 200
+   | image2    = Aquila chrysaetos Flickr.jpg
+   | caption2   = The [[golden eagle|eagle]] is a protected bird of prey and the national [[heraldic animal]].
+   | alt2 = Eagle
+   | width1 = 185
+   | image1    = HeideblueteTiefental.JPG
+   | caption1   = The [[Lüneburg Heath Nature Reserve]] in [[Lower Saxony]]
+   | alt1 = Lüneburg Heath
+}}
+
+Germany is known for its environmental consciousness.<ref>[http://docs.google.com/viewer?a=v&q=cache:ULS2JqlpDgEJ:dzforum.de/downloads/020101311.pdf+Starting+points+and+focus+of+environmental+communication+site:dzforum.de&hl=en&pid=bl&srcid=ADGEESiPmGynU-6SalJJqHpsYQsnf6um5_nPW6Wz6R3HgEOQZEV2kxltI0OWaCuWNrWugnjPki98ww1R0r_-VfGBYjxnfLY2Zg8tzzwsagtvTi-w1-FgqsPK-iEYJgRjRyvzIsVQJgrF&sig=AHIEtbTTWzlVX6stOR-oJP4FxK20wmyGmA Starting points and focus of environmental communication], German Federal Environmental Foundation, 16 October 2004.</ref> Most Germans consider [[anthropogenic]] causes to be a significant factor in [[global warming]].<ref>{{Cite web| url = http://www.worldpublicopinion.org/pipa/pdf/sep07/BBCClimate_Sep07_rpt.pdf| title = All Countries Need to Take Major Steps on Climate Change: Global Poll| accessdate = 11 February 2008 | author=PIPA| date =24 September 2007| format = PDF|publisher=BBC World service Poll, carried out by Globescan| publisher=[[Program on International Policy Attitudes]] at the [[University of Maryland, College Park]]|quote=Eighty-seven percent of German respondents agree that human activity is a significant cause of climate change and 95 percent think it is necessary to take measures to deal with the problem.}}</ref> The state is committed to the [[Kyoto protocol]] and several other treaties promoting biodiversity, low emission standards, recycling, and the use of renewable energy, and supports sustainable development at a global level.<ref>[http://www.umweltbundesamt.de/uba-info-presse-e/2004/pe04-056.htm Reinforcing Germany's environmental protection industry]{{dead link|date=September 2010}} Umweltbundesamt. Retrieved 25 November 2007.</ref>
+
+The German government has initiated wide-ranging emission reduction activities and the country's overall emissions are falling.<ref>[http://timesofindia.indiatimes.com/Earth/Germany_greenest_country_in_the_world/articleshow/3151766.cms Germany greenest country in the world] ''Times of India''. Retrieved 25 November 2008.</ref> For example, since 1964, air pollution in Germany has been regulated by strict "[[TA Luft]]" legislation. Nevertheless Germany's [[List of countries by carbon dioxide emissions per capita|carbon dioxide emissions per capita]] are among the highest in the EU, although they are significantly lower than those of Australia, Canada, Saudi Arabia and the United States.
+
+Emissions from coal-burning utilities and industries contribute to air pollution. Acid rain, resulting from sulphur dioxide emissions, continues to damage German forests. Pollution in the Baltic Sea from raw sewage and industrial effluents from rivers in former East Germany have been reduced. The government under Chancellor Schröder announced the intention to end the use of nuclear power for producing electricity. Germany is working to meet EU commitments to identify nature preservation areas in line with the EU's Flora, Fauna, and Habitat directive. Germany's last glaciers in the Alpine region are experiencing deglaciation. Natural hazards are river flooding in spring and stormy winds occurring in all regions.
+
+==Politics==
+
+{{Main|Politics of Germany}}
+
+[[File:Politisches System des Bundes und der Länder in Deutschland.svg|thumb|230px|The political system of Germany is written down in the [[Basic Law for the Federal Republic of Germany|Basic Law (Grundgesetz)]]. ]]
+
+Germany is a [[federal republic|federal]], [[parliamentary democratic|parliamentary]], [[representative democracy|representative democratic]] republic. The German political system operates under a framework laid out in the 1949 constitutional document known as the [[Basic Law for the Federal Republic of Germany|''Grundgesetz'']] (Basic Law). By calling the document ''Grundgesetz'', rather than ''Verfassung'' (constitution), the authors expressed the intention that it would be replaced by a proper constitution once Germany was reunited as one state.
+
+Amendments to the ''Grundgesetz'' generally require a two-thirds majority of both chambers of the parliament; the fundamental principles of the constitution, as expressed in the articles guaranteeing human dignity, the separation of powers, the federal structure, and the rule of law are valid in perpetuity.<ref name="Art 79">{{Cite web|url=http://www.gesetze-im-internet.de/gg/art_79.html|title=Article 79 of the ''Grundgesetz''|work=Bundesministerium der Justiz|publisher=www.gesetze-im-internet.de|language=German|accessdate=7 December 2008}}</ref> Despite the initial intention, the ''Grundgesetz'' remained in effect after the [[German reunification]] in 1990, with only minor amendments.
+
+===Government===
+
+[[File:Christian Wulff 2008-04-17.jpg|thumb|left|[[Christian Wulff]] has been the [[President of Germany]] since June 2010. The head of state holds primarily representative powers.]]
+
+The President, [[Christian Wulff]], is the [[head of state]] and invested primarily with representative responsibilities and powers. He is elected by the ''[[Bundesversammlung (Germany)|Bundesversammlung]]'' (federal convention), an institution consisting of the members of the ''Bundestag'' and an equal number of state delegates.
+
+The second highest official in the [[German order of precedence]] is the ''Bundestagspräsident'' ([[President of the Bundestag|President of the ''Bundestag'']]), who is elected by the ''Bundestag'' and responsible for overseeing the daily sessions of the body.
+
+The third-highest official and the [[head of government]] is the Chancellor, who is appointed by the ''Bundespräsident'' after being elected by the ''Bundestag''. The Chancellor can be removed by a [[constructive vote of no confidence]] by the ''Bundestag'', where constructive implies that the ''Bundestag'' simultaneously has to elect a successor.
+
+[[File:Reichstag building Berlin view from west before sunset.jpg|thumb|290px|The [[Reichstag (building)|Reichstag]] in Berlin is the site of the German parliament (Bundestag)]]
+
+The [[Chancellor of Germany|Chancellor]]—currently [[Angela Merkel]]—is the [[head of government]] and exercises [[executive (government)|executive power]], similar to the role of a Prime Minister in other [[parliamentary system|parliamentary democracies]]. Federal [[legislative power]] is vested in the parliament consisting of the ''[[Bundestag]]'' (Federal Diet) and ''[[Bundesrat of Germany|Bundesrat]]'' (Federal Council), which together form a unique type of legislative body. The ''Bundestag'' is elected through [[direct election]]s, by [[proportional representation]] ([[mixed member proportional representation|mixed-member]]). The members of the ''Bundesrat'' represent the governments of the [[States of Germany|sixteen federated states]] and are members of the state cabinets. The respective state governments have the right to appoint and remove their envoys at any time.
+
+Since 1949, the party system has been dominated by the [[Christian Democratic Union (Germany)|Christian Democratic Union]] and the [[Social Democratic Party of Germany]] with all chancellors hitherto being member of either party. However, the smaller liberal [[Free Democratic Party (Germany)|Free Democratic Party]] (which has had members in the ''Bundestag'' since 1949) and the [[Alliance '90/The Greens]] (which has controlled seats in parliament since 1983) have also played important roles,<ref>[http://countrystudies.us/germany/159.htm Christian Democratic Union/Christian Social Union] U.S. Library of Congress. Retrieved 7 December 2006.</ref> as they are regularly the smaller partner of a [[coalition government]].
+
+===Law===
+
+{{Main|Judiciary of Germany|Law enforcement in Germany}}
+
+[[File:Karlsruhe bundesverfassungsgericht.jpg|right|thumb|The [[Federal Constitutional Court of Germany|Federal Constitutional Court]] (Bundesverfassungsgericht) in [[Karlsruhe]]]]
+
+The [[Judiciary of Germany]] is independent of the executive and the legislative branches. Germany has a [[civil law (legal system)|civil or statute law system]] that is based on [[Roman law]] with some references to [[Germanic law]]. The ''[[Federal Constitutional Court of Germany|Bundesverfassungsgericht]]'' (Federal Constitutional Court), located in Karlsruhe, is the German Supreme Court responsible for constitutional matters, with power of [[judicial review]].<ref>[http://www.bundesverfassungsgericht.de/en/index.html Federal Constitutional Court], Bundesverfassungsgericht.de. Retrieved 13 April 2007.</ref> It acts as the highest legal authority and ensures that legislative and judicial practice conforms to the [[Basic Law for the Federal Republic of Germany]] (Basic Law). It acts independently of the other state bodies, but cannot act on its own behalf.
+
+Germany's supreme court system, called ''Oberste Gerichtshöfe des Bundes'', is specialised. For civil and criminal cases, the highest court of appeal is the [[Federal Court of Justice of Germany|Federal Court of Justice]], located in [[Karlsruhe]] and [[Leipzig]]. The courtroom style is [[inquisitorial system|inquisitorial]]. Other Federal Courts are the [[Federal Labor Court of Germany|Federal Labour Court]] in [[Erfurt]], the [[Bundessozialgericht|Federal Social Court]] in [[Kassel]], the [[Federal Finance Court of Germany|Federal Finance Court]] in [[Munich]] and the [[Federal Administrative Court of Germany|Federal Administrative Court]] in Leipzig.
+
+[[File:HH Polizeihauptmeister MZ.jpg|thumb|150px|left|German [[Landespolizei|state police]] officer in [[Hamburg]]]]
+
+[[Criminal law]] and [[private law]] are codified on the national level in the ''[[Strafgesetzbuch]]'' and the ''[[Bürgerliches Gesetzbuch]]'' respectively. The German penal system is aimed towards rehabilitation of the criminal; its secondary goal is the protection of the general public.<ref>{{de icon}} [http://www.gesetze-im-internet.de/stvollzg/__2.html § 2 Strafvollzugsgesetz] Bundesministerium der Justiz. Retrieved 19 November 2009.</ref> To achieve the latter, a convicted criminal can be put in preventive detention (''Sicherungsverwahrung'') in addition to the regular sentence if he is considered to be a threat to the general public. The ''[[Völkerstrafgesetzbuch]]'' regulates the consequences of [[crimes against humanity]], [[genocide]] and [[war crimes]]. It gives German courts [[universal jurisdiction]] if prosecution by a court of the country where the crime was committed, or by an international court, is not possible.
+
+Legislative power is divided between the federation and the state level. The Basic Law presumes that all legislative power remains at the state level unless otherwise designated by the Basic Law itself.
+
+Any federal law overrides state law if the legislative power lies at the federal level. A famous example is the purported Hessian provision for the death penalty, which goes against the ban on capital punishment under the Basic Law, rendering the Hessian provision invalid. The ''[[Bundesrat of Germany|Bundesrat]]'' is the federal organ through which the states participate in national legislation. State participation in federal legislation is necessary if the law falls within the area of concurrent legislative power, requires states to administer federal regulations, or is so designated by the Basic Law. Every state has its own constitutional court. The ''[[Amtsgericht]]e'', ''Landgerichte'' and ''Oberlandesgerichte'' are state courts of [[general jurisdiction]]. They are competent whether the action is based on federal or state law.
+
+Many of the fundamental matters of [[administrative law]] remain in the jurisdiction of the states, though most states base their own laws in that area on the 1976 ''Verwaltungsverfahrensgesetz'' (Administrative Proceedings Act) covering important points of administrative law. The ''Oberverwaltungsgerichte'' are the highest level of administrative jurisdiction concerning the state administrations, unless the question of law concerns federal law or state law identical to federal law. In such cases, final appeal to the Federal Administrative Court is possible.
+
+===Foreign relations===
+
+{{Main|Foreign relations of Germany}}
+
+[[File:33rdG8Leaders.jpg|thumb|Chancellor [[Angela Merkel]], the head of government, hosting the [[G8]] summit in [[Heiligendamm]].]]
+
+Germany maintains a network of 229 diplomatic missions abroad and holds relations with more than 190 countries.<ref>[http://www.auswaertiges-amt.de/EN/AAmt/Auslandsvertretungen/Uebersicht_node.html German Missions Abroad] German Federal Foreign Office. Retrieved 31 December 2010.</ref> As member it is the largest contributor to the budget of the European Union (providing 20%) and third largest contributor to the United Nations (providing 8%). Germany is a member of the NATO defence alliance, the Organisation of Economic Co-operation and Development (OECD), the G8, the G20, the World Bank and the International Monetary Fund (IMF).
+
+Germany has played a leading role in the European Union since its inception and has maintained a [[Franco-German cooperation|strong alliance with France]] since the end of World War II. The alliance was especially close in the late 1980s and early 1990s under the leadership of [[Christian Democratic Union (Germany)|Christian Democrat]] [[Helmut Kohl]] and [[Socialist Party (France)|Socialist]] [[François Mitterrand]]. Germany is at the forefront of European states seeking to advance the creation of a more unified European political, defence, and security apparatus.<ref>[http://www.elysee.fr/elysee/anglais/speeches_and_documents/2004/declaration_by_the_franco-german_defence_and_security_council.1096.html Declaration by the Franco-German Defence and Security Council] Elysee.fr 13 May 3004. Retrieved 3 December 2006.</ref> For a number of decades after WWII, the Federal Republic of Germany kept a notably low profile in international relations, because of both its recent history and its occupation by foreign powers.<ref>Glaab, Manuela.&nbsp;[http://web.archive.org/web/20071121072523/http://en.internationalepolitik.de/archiv/2003/spring2003/german-foreign-policy.html German Foreign Policy: Book Review] Internationale Politik. Spring 2003. Retrieved 3 January 2007.</ref>
+
+[[File:Rometreaty.jpg|thumb|left|Germany is a founding member of the [[European Economic Community|EEC]] in 1957, which became the European Union in 1993. It maintains close relations with its neighbours to coordinate EU politics.]]
+
+During the Cold War, Germany's partition by the [[Iron Curtain]] made it a symbol of East-West tensions and a political battleground in Europe. However, Willy Brandt's Ostpolitik was a key factor in the ''[[détente]]'' of the 1970s.<ref>Harrison, Hope. {{PDFlink|[http://www.ghi-dc.org/files/publications/bu_supp/supp1/supp-01_005.pdf ''The Berlin Wall, Ostpolitik and Détente]|91.1&nbsp;KB}} German historical institute, Washington, DC, Bulletin supplement 1, 2004, ''American détente and German ostpolitik, 1969–1972".</ref> In 1999, Chancellor [[Gerhard Schröder]]'s government defined a new basis for German foreign policy by taking a full part in the decisions surrounding the [[Kosovo War|NATO war against Yugoslavia]] and by sending German troops into combat for the first time since World War II.<ref>[http://www.dw-world.de/dw/article/0,2144,1741310,00.html Germany's New Face Abroad] [[Deutsche Welle]]. 14 October 2005. Retrieved 3 December 2006.</ref>
+
+[[File:Defense ministers of NATO 2000.jpg|thumb|right|West Germany became a [[NATO]] member in 1955. (Defence ministers in 2000)]]
+
+The governments of Germany and the United States are close political allies.<ref>[http://www.state.gov/r/pa/ei/bgn/3997.htm Background Note: Germany] U.S. Department of State. 6 July 2006. Retrieved 3 December 2006.</ref> The 1948 [[Marshall Plan]] and strong cultural ties have crafted a strong bond between the two countries, although Schröder's very vocal opposition to the [[Iraq War]] suggested the end of [[Atlanticism]] and a relative cooling of German-American relations.<ref>[http://www.economist.com/world/europe/displaystory.cfm?story_id=7141311 ''Ready for a Bush hug?''], [[The Economist]], 6 July 2006. Retrieved 31 December 2006.</ref> The two countries are also economically interdependent: 8.8% of German exports are U.S.-bound and 6.6% of German imports originate from the U.S.<ref name="econ_factsheet_may2006">{{PDFlink|[http://germany.usembassy.gov/germany/img/assets/9336/econ_factsheet_may2006.pdf U.S.-German Economic Relations Factsheet]|32.8&nbsp;KB}} U.S. Embassy in Berlin. May 2006. Retrieved 3 December 2006.</ref> Other signs of the close ties include the continuing position of German-Americans as the largest ethnic group in the U.S.<ref>[http://www.census.gov/Press-Release/www/releases/archives/census_2000/001870.html German Still Most Frequently Reported Ancestry] [[U.S. Census Bureau]] 30 June 2004. Retrieved 3 December 2006. {{Dead link|date=June 2010| bot=DASHBot}}</ref> and the status of [[Ramstein Air Base]] (near [[Kaiserslautern]]) as the largest U.S. military community outside the U.S.<ref>[http://benefits.military.com/misc/installations/Base_Content.jsp?id=1675 Kaiserslautern, Germany Overview] U.S. Military. Retrieved 3 December 2006.</ref>
+
+The development policy of the Federal Republic of Germany is an independent area of German foreign policy. It is formulated by the Federal Ministry for Economic Cooperation and Development (BMZ) and carried out by the implementing organisations. The German government sees development policy as a joint responsibility of the international community.<ref>[http://www.bmz.de/en/index.html Aims of German development policy] Federal Ministry for Economic Cooperation and Development 10 April 2008. Retrieved 7 December 2008.</ref> It is the world's third biggest aid donor after the United States and France.<ref>[http://www.oecd.org/dataoecd/17/9/44981892.pdf Table: Net Official Development Assistance 2009] OECD</ref> Germany spent 0.37 per cent of its gross domestic product (GDP) on development, which is below the government's target of increasing aid to 0.51 per cent of GDP by 2010. The international target of 0.7% of GNP would have not been reached either.
+
+===Military===
+
+{{Main|Bundeswehr}}
+
+[[File:Fregatte Mecklenburg-Vorpommern F218.jpg|right|thumb|The ''Mecklenburg-Vorpommern'' participated in a [[United Nations Interim Force in Lebanon|UNIFIL II]] operation off the coast of [[Lebanon]].]]
+
+Germany's military, the ''[[Bundeswehr]]'', is a military force with ''[[German Army|Heer]]'' (Army), ''[[German Navy|Marine]]'' (Navy), ''[[Luftwaffe]]'' (Air Force), [[Central Medical Services|''Zentraler Sanitätsdienst'']] (Central Medical Services) and ''[[Streitkräftebasis]]'' (Joint Support Service) branches. Military service is compulsory for men at the age of 18, and conscripts serve six-month tours of duty. Conscientious objectors may instead opt for an equal length of ''[[Zivildienst]]'' (roughly translated as civilian service), or a six year commitment to (voluntary) emergency services like a [[Volunteer fire department|fire department]], the [[German Red Cross|Red Cross]] or the [[Technisches Hilfswerk|THW]]. In 2005, military spending was an estimated 1.5% of the country's GDP.<ref name="CIA"/> In peacetime, the Bundeswehr is commanded by the Minister of Defence. If Germany went to war, which according to the constitution is allowed only for defensive purposes, the Chancellor would become commander in chief of the ''Bundeswehr''.<ref>{{de icon}} [http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html Grundgesetz für die Bundesrepublik Deutschland: Article 115a]{{dead link|date=September 2010}} Bundestag.de. Retrieved 19 November 2009. {{Wayback|url=http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html|date =20080614163824|bot=DASHBot}}{{dead link|date=September 2010}}</ref>
+
+[[File:Eurofighter 9803.ogg|thumb|left|A [[Eurofighter Typhoon|Eurofighter]] flight demonstration]]
+
+The Bundeswehr employs 200,500 professional soldiers, 55,000 18–25&nbsp;year-old conscripts who serve for at least six months under current rules, and 2,500 active reservists at any given time. Roughly 300,000 reservists are available to the Armed Forces and participate in defence exercises as well as deployments abroad.
+
+Since 2001 women can serve in all functions of service without restriction, but they are not subject to conscription. There are presently around 14,500 women on active duty and a number of female reservists who take part in all duties including peacekeeping missions and other operations. Two female medical officers have been promoted to a General rank so far.
+
+{{As of|2009|11}}, the German military had about 8,300 troops stationed in foreign countries as part of various international peacekeeping forces, including 2,470 Bundeswehr soldiers in [[Kosovo]], 4,520 German troops in the NATO-led [[International Security Assistance Force|ISAF]] force in [[Afghanistan]] and [[Uzbekistan]], and 450 troops with [[UNIFIL]] in [[Lebanon]].<ref name="Bundeswehr1">{{Cite web|url=http://www.bundeswehr.de/portal/a/bwde/einsaetze/einsatzzahlen?yw_contentURL=/C1256EF4002AED30/W264VFT2439INFODE/content.jsp|title=Einsatzzahlen – Die Stärke der deutschen Einsatzkontingente|accessdate=8 November 2009|publisher=[[Bundeswehr]]|language=German}}</ref>
+{{clearleft}}
+
+==Economy==
+
+{{Main|Economy of Germany}}
+
+[[File:S-Klasse W221.jpg|thumb|A Mercedes-Benz automobile. Germany was the world's leading exporter of goods from 2003 to 2008.<ref>{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}</ref>]]
+
+Germany has a [[social market economy]] characterised by a highly qualified [[labour force]], a developed [[infrastructure]], a large [[capital stock]], a low level of corruption,<ref>{{Cite web |url=http://www.transparency.org/policy_research/surveys_indices/cpi/2009/cpi_2009_table |title=CPI 2009 table |publisher=Transparency International |accessdate=18 November 2009}}</ref> and a high level of [[innovation]].<ref>{{Cite web|url=http://www.nam.org/innovationreport.pdf |title=The Innovation Imperative in Manufacturing: How the United States Can Restore Its Edge |format=PDF |date= |accessdate=26 September 2010}}</ref> It has the largest national economy in Europe, the [[List of countries by GDP (nominal)|fourth largest by nominal GDP]] in the world, and ranked [[List of countries by GDP (PPP)|fifth by GDP (PPP)]] in 2009. The [[Tertiary sector of industry|service sector]] contributes around 70% of the total GDP, industry 29.1%, and agriculture 0.9%. In July 2010 the average national unemployment rate was 7.5%, ranging from 4.1% in Bavaria to 13.6% in Berlin. First estimations indicate a 3.6% increase in the price-adjusted Gross Domestic Product (GDP) for 2010, which followed a 4.7% drop recorded in 2009.<ref>"German Economy Experiences Record Growth in 2010" [http://www.germany.info/Vertretung/usa/en/__pr/P__Wash/2011/01/12__GDP__2010__PR.html German Embassy Press Release 12 Jan. 2011]</ref>
+
+[[File:Eurozone.svg|thumb|upright|left|Germany is part of a monetary union, the [[eurozone]] (dark blue), and of the [[Internal Market (European Union)|EU single market]]. ]]
+
+Since the age of [[industrialisation]], the country has been a driver, innovator, and beneficiary of an ever more globalised economy. Germany is a founding member of the EU, the G8 and the G20 and was the world's largest exporter from 2003 to 2008. In 2009 it remains the [[List of countries by exports|second largest exporter]] and third largest importer of goods while generating a [[trade surplus]] of $189.7&nbsp;billion.<ref>[Germany Trade Statistics 2009], [[suite101.com]], 1 April 2010. Retrieved 25 August 2010.</ref>
+
+Most of the country's export products are in engineering, especially in machinery, automobiles, chemical goods and metals.<ref name="CIA"/> Germany is the leading producer of wind turbines and solar power technology in the world. The largest annual international trade fairs and congresses are held in several German cities such as Hanover, Frankfurt, and Berlin.<ref>[http://web.archive.org/web/20061210163253/http://www.german-renewable-energy.com/Renewables/Navigation/Englisch/wind-power.html Wind Power] Federal Ministry of Economics and Technology (Germany) Retrieved 30 November 2006.</ref>
+
+Germany is an advocate of closer European economic and political integration. Its commercial policies are increasingly determined by agreements among European Union (EU) members and EU [[single market]] legislation. Germany introduced the common European currency, the euro on 1 January 2002. Its monetary policy is set by the [[European Central Bank]] in Frankfurt.
+
+Two decades after [[German reunification]], [[standard of living|standards of living]] and per capita incomes remain significantly higher in the states of the former West Germany than in the former East.<ref name="FR">Berg, S., Winter, S., Wassermann, A. [http://www.spiegel.de/international/spiegel/0,1518,373639,00.html The Price of a Failed Reunification] Spiegel Online International. 5 September 2005. Retrieved 28 November 2006.</ref> The modernisation and integration of the eastern German economy continues to be a long-term process scheduled to last until the year 2019, with annual transfers from west to east amounting to roughly $80&nbsp;billion.<ref>{{Cite news| url=http://www.nytimes.com/2009/06/19/world/europe/19germany.html | work=The New York Times | title=In East Germany, a Decline as Stark as a Wall | first=Nicholas | last=Kulish | date=19 June 2009 | accessdate=31 March 2010}}</ref>
+
+The nominal GDP of Germany contracted in the second and third quarters of 2008, putting the country in a technical recession following a global and [[Late 2000s recession in Europe|European recession]] cycle.<ref>{{Cite news| url= http://www.guardian.co.uk/world/2008/nov/14/oecd-recession-germany-inflation-deflation | title= Germany officially in recession as OECD expects US to lead recovery|work=The Guardian |location=UK |date=14 November 2008 | first=Kathryn | last=Hopkins | accessdate=31 March 2010}}</ref> In January 2009 the German government under Angela Merkel approved a €50&nbsp;billion ($70&nbsp;billion) economic stimulus plan to protect several sectors from a downturn and a subsequent rise in unemployment rates.<ref>{{Cite news| url= http://www.france24.com/en/20090106-germany-agrees-new-50-billion-euro-stimulus-plan| title= Germany agrees on 50-billion-euro stimulus plan|publisher=France 24| date=6 January 2009}}</ref>
+
+===Corporations===
+
+[[File:Siemens Palais.JPG|thumb|Seat of the [[Siemens|Siemens AG]] in Munich. The city is the headquarter of 7 [[Fortune Global 500]] companies.]]
+[[File:Frankfurt Am Main-Stadtansicht von der Deutschherrnbruecke zu Beginn der Abenddaemmerung.jpg|thumb|[[Frankfurt am Main|Frankfurt]] is a financial [[global city]], seat of the [[European Central Bank]], and an international aviation hub.]]
+
+Of the world's 500 largest stock market listed companies measured by [[revenue]] in 2010, the [[Fortune Global 500]], 37 are headquartered in Germany. 30 Germany based companies are included in the [[DAX]], the German stock market index, trading on the [[Frankfurt Stock Exchange]].
+
+Well known global brands are [[Mercedes-Benz]], [[BMW]], [[Adidas]], [[Audi]], [[Porsche]], [[Volkswagen]], [[DHL Express|DHL]], [[T-Mobile]], [[Lufthansa]], [[SAP AG|SAP]], and [[Nivea]].<ref>[http://web.archive.org/web/20080106165521/http://bwnt.businessweek.com/brand/2006/ The 100 Top Brands 2006], Businessweek. Retrieved 26 November 2007.</ref>
+
+Germany is recognised for its highly specialised [[small and medium enterprises]]. Around 1000 of these mostly family-owned companies are global market leaders in their segment and are usually labelled [[Hidden Champions|hidden champions]].<ref>[http://www.businessweek.com/news/2010-09-23/germany-has-1-000-market-leading-companies-manager-magazin-says.html Germany Has 1,000 Market-Leading Companies, Manager-Magazin Says], Businessweek. Retrieved 23 September 2010.</ref>
+
+The list includes the largest companies by turnover in 2009. Unranked are the largest bank and the largest insurance company in 2007:
+
+{| class="wikitable sortable" style="text-align:right;"
+ |- style="background:#efefef;"
+ ! style="text-align:center;" | Rank<ref>[http://money.cnn.com/magazines/fortune/global500/2010/countries/Germany.html], CNN Money. Retrieved 7 August 2010.</ref>
+ ! style="text-align:center;" | Name
+ ! style="text-align:center;" | Headquarters
+ ! style="text-align:center;" | Revenue<br />(Mil.&nbsp;€) 
+ ! style="text-align:center;" | Profit<br />(Mil.&nbsp;€) 
+ ! style="text-align:center;" | Employees<br />(World)
+ |-
+ | 1. 
+ | style="text-align:left;" | [[Volkswagen AG]] 
+ | style="text-align:left;" | [[Wolfsburg]] 
+ | 108,897 
+ | 4,120 
+ | 329,305
+ |-
+ | 2. 
+ | style="text-align:left;" | [[Daimler AG]] 
+ | style="text-align:left;" | [[Stuttgart]] 
+ | 99,399 
+ | 3,985 
+ | 272,382
+ |-
+ | 3. 
+ | style="text-align:left;" | [[Siemens AG]] 
+ | style="text-align:left;" | [[Munich]]/Berlin 
+ | 72,488 
+ | 3,806 
+ | 398,200
+ |-
+ | 4. 
+ | style="text-align:left;" | [[E.ON|E.ON AG]] 
+ | style="text-align:left;" | [[Düsseldorf]] 
+ | 68,731 
+ | 7,204 
+ | 87,815
+ |-
+ | 5. 
+ | style="text-align:left;" | [[Metro AG]] 
+ | style="text-align:left;" | [[Düsseldorf]] 
+ | 64,337 
+ | 825 
+ | 242,378
+ |-
+ | 6. 
+ | style="text-align:left;" | [[Deutsche Post AG]] 
+ | style="text-align:left;" | [[Bonn]] 
+ | 63,512 
+ | 1,389 
+ | 475,100
+ |-
+ | 7. 
+ | style="text-align:left;" | [[Deutsche Telekom AG]] 
+ | style="text-align:left;" | [[Bonn]] 
+ | 62,516 
+ | 569 
+ | 241,426
+ |-
+ | 8. 
+ | style="text-align:left;" | [[BASF|BASF SE]] 
+ | style="text-align:left;" | [[Ludwigshafen am Rhein|Ludwigshafen]] 
+ | 57,951 
+ | 4,065 
+ | 95,175
+ |-
+ | 9. 
+ | style="text-align:left;" | [[BMW AG]] 
+ | style="text-align:left;" | [[Munich]] 
+ | 56,018 
+ | 3,126 
+ | 107,539
+ |-
+ | 10. 
+ | style="text-align:left;" | [[ThyssenKrupp AG]] 
+ | style="text-align:left;" | [[Essen]]/[[Duisburg]] 
+ | 51,723 
+ | 2,102 
+ | 191,350
+ |}
+
+===Transport===
+
+{{Main|Transport in Germany|Rail transport in Germany}}
+
+[[File:ICE 3M KRM.jpg|thumb|The [[ICE 3]] train]]
+
+With its central position in Europe, Germany is an important transportation hub. This is reflected in its dense and modern transportation networks. The extensive motorway ([[Autobahn]]) network ranks worldwide third largest in its total length and features a lack of blanket speed limits on the majority of routes.<ref name="adac">{{Cite web|authorlink=www.adac.de/verkehrs-experten|title=Autobahn-Temporegelung|publisher=[[ADAC]]|date=October 2007|url=http://www.adac.de/images/SP_Tempolimit_V%201%2E0_tcm8-199598.pdf|format=PDF|language=German|accessdate=15 November 2008}} {{Dead link|date=June 2010| bot=DASHBot}}</ref>
+
+Germany has established a polycentric network of [[high-speed rail|high-speed trains]]. The [[InterCityExpress]] or ''ICE'' is the most advanced service category of the [[Deutsche Bahn]] and serves major German cities as well as destinations in neighbouring countries. The train maximum speed varies between 160&nbsp;km/h and 300&nbsp;km/h. Connections are offered at either 30-minute, hourly, or two-hourly intervals.<ref>{{de icon}} [http://web.archive.org/web/20070809140315/http://www.db.de/site/bahn/de/unternehmen/investor__relations/finanzberichte/geschaeftsbericht/geschaeftsbericht__2006.html Geschäftsbericht 2006 der Deutschen Bahn AG], [[Deutsche Bahn]]. Retrieved 19 November 2009.</ref>
+
+The largest German airports are the [[Frankfurt International Airport]] and the [[Munich International Airport]], both are global hubs of [[Lufthansa]]. Other major airports are [[Tegel Airport|Berlin Tegel]], [[Schönefeld Airport|Berlin Schönefeld]], [[Düsseldorf International Airport|Düsseldorf]], [[Hamburg Airport|Hamburg]], [[Cologne Bonn Airport|Cologne-Bonn]], [[Leipzig/Halle Airport|Leipzig/Halle]] and in the future [[Berlin Brandenburg International Airport]].
+
+===Energy===
+
+{{Main|Energy in Germany}}
+
+[[File:Windgermany.JPG|thumb|The largest [[solar power]] and [[Wind power in the European Union|second-largest wind power]] capacity in the world is installed in Germany.]]
+
+Germany is the world's fifth largest consumer of energy, and two-thirds of its primary energy was imported in 2002. In the same year, Germany was Europe's largest consumer of electricity, totalling 512.9 terawatt-hours. Government policy promotes energy conservation and the development of [[renewable energy]] sources, such as solar, [[wind power|wind]], [[biomass]], hydroelectric, and [[geothermal power|geothermal]] energy. As a result of energy-saving measures, [[Efficient energy use|energy efficiency]] has been improving since the beginning of the 1970s. The government has set the goal of meeting half the country's energy demands from renewable sources by 2050.
+
+In 2000, the government and the [[Nuclear power in Germany|German nuclear power industry]] agreed to phase out all [[nuclear power plant]]s by 2021.<ref>[http://news.bbc.co.uk/2/hi/europe/4295389.stm Germany split over green energy], BBC. Retrieved 13 April 2007.</ref> Renewable energy still plays a more modest role in energy consumption. In 2006, energy consumption was met by the following sources: oil (36%); coal, including lignite (24%); natural gas (23%); nuclear (13%); hydro-electric and wind power (1%); and other (4%). However, the share of renewable energy in electricity supply has been rapidly increasing, reaching 14% in 2007. The German government has set a new target to increase this share to 27% by 2020.
+
+===Technology===
+
+{{Main|German inventors and discoverers}}
+
+[[File:Fächertextur.jpg|thumb|left|[[Liquid crystal]] visualised by a polarising microscope. Germany is a pioneer research center for [[nanotechnology]] and [[material engineering]].<ref>[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08.</ref>]]
+
+Germany has been the home of many famous inventors and [[engineer]]s, such as [[Johannes Gutenberg]], who is credited with the invention of [[movable type]] [[printing]] in Europe; [[Hans Geiger]], the creator of the [[Geiger counter]]; and [[Konrad Zuse]], who built the first fully automatic digital computer.<ref>Horst, Zuse. [http://www.epemag.com/zuse/ The Life and Work of Konrad Zuse]{{dead link|date=September 2010}} Everyday Practical Electronics (EPE) Online. Retrieved 2 January 2007. {{Wayback|url=http://www.epemag.com/zuse/|date =20070220074134|bot=DASHBot}}{{dead link|date=September 2010}}</ref> German inventors, engineers and industrialists such as [[Count]] [[Ferdinand von Zeppelin]], [[Otto Lilienthal]], [[Gottlieb Daimler]], [[Rudolf Diesel]], [[Hugo Junkers]] and [[Karl Benz]] helped shape modern automotive and air transportation technology.<ref>{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|title=Automobile|publisher=Microsoft Encarta Online Encyclopedia 2006|accessdate=2 January 2007|archiveurl=http://web.archive.org/web/20080420212258/http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|archivedate=20 April 2008}}</ref><ref>[http://www.centennialofflight.gov/essay/Lighter_than_air/zeppelin/LTA8.htm The Zeppelin] U.S. Centennial of Flight Commission. Retrieved 2 January 2007.</ref>
+
+[[Aerospace engineering|Aerospace engineer]] [[Wernher von Braun]] developed the [[V-2 rocket|first space rocket]] and later on was a prominent member of [[NASA]] and developed the [[Saturn V]] Moon rocket, which paved the way for the success of the US [[Apollo program]]. [[Heinrich Rudolf Hertz]]'s work in the domain of [[electromagnetic radiation]] was pivotal to the development of modern telecommunication.<ref>[http://www.itu.int/aboutitu/HistoricalFigures.html Historical figures in telecommunications.] International Telecommunication Union. 14 January 2004. Retrieved 2 January 2007.</ref>
+
+With regard to triadic patents Germany is in third place after the USA and Japan. With more than 26,500 registrations for patents submitted to the European Patent Office, Germany is the leading European nation. [[Siemens]], [[Robert Bosch GmbH|Bosch]] and [[BASF]], with almost 5,000 registrations for patents between them in 2008, are among the Top 5 of more than 35,000 companies registering patents. Together with the USA and Japan, with regard to patents for nano, bio and new technologies Germany is one of the world’s most active nations. With around one third of triadic patents Germany leads the way worldwide in the field of vehicle emission reduction.<ref>[http://www.tatsachen-ueber-deutschland.de/en/education-and-research/main-content-07/industry-strongly-engaged-in-research.html Industry strongly engaged in research] Facts about Germany. Retrieved 2010-29-08.</ref>
+
+===Science===
+
+{{Main|Science and technology in Germany}}
+
+[[File:Einstein 1921 by F Schmutzer.jpg|thumb|upright|[[Albert Einstein]]]]
+Germany's achievements in sciences have been significant and [[research and development]] efforts form an integral part of the [[Economy of Germany|country's economy]]. Germany has been the home of some of the most prominent researchers in various scientific fields.<ref>[http://www.campus-germany.de/english/2.60.260.html Back to the Future: Germany – A Country of Research] German Academic Exchange Service (23 February 2005). Retrieved 8 December 2006.</ref>
+
+The [[Nobel Prize]] has been awarded to [[Nobel laureates by country|103 German laureates]].<ref>[http://nobelprize.org/ Nobel Prize], Nobelprize.org. Retrieved 19 November 2009.</ref> For most of the 20th century, [[Evolution of Nobel Prizes by country|German laureates had more awards]] than those of any other nation, especially in the sciences (i.e., [[Nobel Prize in Physics|physics]], [[Nobel Prize in Chemistry|chemistry]], and [[Nobel Prize in Physiology or Medicine|physiology or medicine]]).<ref>[http://www.sciencenews.org/view/generic/id/63944/title/Swedish_academy_awards Swedish academy awards] ScienceNews web edition, 1 October 2010.</ref><ref>National Science Nobel Prize shares 1901–2009 [http://www.idsia.ch/~juergen/sci.html by citizenship at the time of the award] and [http://www.idsia.ch/~juergen/scinat.html by country of birth]. From [[Jürgen Schmidhuber|J. Schmidhuber]] (2010), [http://www.idsia.ch/~juergen/nobelshare.html Evolution of National Nobel Prize Shares in the 20th Century] at [http://arxiv.org/abs/1009.2634 arXiv:1009.2634v1]</ref>
+
+The work of [[Albert Einstein]] and [[Max Planck]] was crucial to the foundation of modern [[physics]], which [[Werner Heisenberg]] and [[Max Born]] developed further.<ref>Roberts, J. M. ''The New Penguin History of the World'', Penguin History, 2002. Pg. 1014. ISBN 0-14-100723-0.</ref> They were preceded by physicists such as [[Hermann von Helmholtz]], [[Joseph von Fraunhofer]], and [[Daniel Gabriel Fahrenheit]]. [[Wilhelm Conrad Röntgen]] discovered [[X-ray]]s, which are called ''Röntgenstrahlen'' (Röntgen-rays) in German and many other languages. This accomplishment made him the first winner of the [[Nobel Prize in Physics]] in 1901.<ref>[http://web.archive.org/web/20080402061044/http://www.history.com/encyclopedia.do?articleId=226611 The Alfred B. Nobel Prize Winners, 1901–2003] History Channel from ''The World Almanac and Book of Facts'' 2006. Retrieved 2 January 2007.</ref> Numerous significant [[mathematician]]s were born in Germany, including [[Carl Friedrich Gauss]], [[David Hilbert]], [[Bernhard Riemann]], [[Gottfried Leibniz]], [[Karl Weierstrass]] and [[Hermann Weyl]].
+
+Important research institutions in Germany are the [[Max Planck Society]], the [[Helmholtz Association of German Research Centres|Helmholtz Association]] and the [[Fraunhofer Society]]. They are independently or externally connected to the university system and contribute to a considerable extent to the scientific output. The prestigious [[Gottfried Wilhelm Leibniz Prize]] is granted to ten scientists and academics every year. With a maximum of €2.5&nbsp;million per award it is one of highest endowed research prizes in the world.<ref>[http://web.archive.org/web/20080621091621/http://www.dfg.de/en/research_funding/scientific_prizes/gw_leibniz_prize.html Gottfried Wilhelm Leibniz Prize], DFG. Retrieved 12 March 2007.</ref>
+
+==Demographics==
+
+[[File:Bevölkerungsdichte.gif|thumb|Population density in German states (left) and communities (right)]]
+{{Main|Demographics of Germany|Germans|Social issues in Germany}}
+
+With estimated 81.8&nbsp;million inhabitants in January 2010,<ref name="population"/> Germany is the most populous country in the European Union and ranks as the [[List of countries by population|15th largest country]] in the world in terms of population. Its [[List of sovereign states and dependent territories by population density|population density]] stands at 229.4 inhabitants per square kilometre.
+
+The overall [[List of countries by life expectancy|life expectancy in Germany]] at birth is 79.9 years. The [[Total fertility rate|fertility rate]] of 1.4 children per mother, or 7.9 births per 1000 inhabitants in 2009, is one of the [[List of sovereign states and dependent territories by fertility rate|lowest in the world]].<ref>{{Cite web |url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2010/01/PD10__034__12641,templateId=renderPrint.psml|title=Durchschnittliche Kinderzahl 2008 in den neuen Ländern angestiegen|author=[[Federal Statistical Office of Germany|Destatis]] |language=German|accessdate=31 January 2010}}</ref> [[Death rates]] are continuously exceeding low-level [[birth rates]].<ref>{{Cite web | title = Demographic Transition Model | publisher=Barcelona Field Studies Centre | date = 27 September 2009 | url = http://geographyfieldwork.com/DemographicTransition.htm | accessdate = 23 May 2010}}</ref>
+
+The [[Federal Statistical Office of Germany]] forecast that, as a result, the population will shrink to between 65 and 70 million by 2060 (depending on the level of net migration).<ref>The forecast of 65 million assumes a net migration of +100,000 per year; the forecast of 70 million assumes a net migration of +200,000 per year.<br/>{{cite press release | publisher=[[Federal Statistical Office of Germany|Destatis]] | date = 2009-11-18| language = German|title=Pressemitteilung Nr.435 vom 18.11.2009:Im Jahr 2060 wird jeder Siebente 80 Jahre oder älter sein| trans_title = Press Release No. 435 of 18 November 2009: By 2006, every seventh person will be eighty or older| url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2009/11/PD09__435__12411,templateId=renderPrint.psml | accessdate = 2011-02-12| quote = Heute leben in Deutschland etwa 82 Millionen Menschen, 2060 werden es voraussichtlich nur noch 65 bis 70 Millionen sein. (Today there are 82 million people living in Germany; in 2006 it is forecast to be only 65 to 70 million.)}}<br/>
+More details on the methodology, detailed tables broken down by age and sex, etc. are provided at 
+{{cite web| url = http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/abisz/Bevoelkerungsvorausberechnung,templateId=renderPrint.psml| title = Bevölkerungsentwicklung in Deutschland bis 2060| trans_title = Population development in Germany till 2060| date = 2009-11-18| publisher = [[Statistisches Bundesamt]] | language = German| accessdate = 2011-02-15}}</ref>
+
+[[File:Pyramide Allemagne.PNG|thumb|left|Germany's [[population pyramid]] in 2005]]
+
+Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class.
+
+[[Germans]] make up 91% of the population of Germany. As of 2004, about seven million foreign citizens were registered in Germany, and 19% of the country's residents were of foreign or partially foreign descent (including persons descending or partially descending from [[ethnic German]] repatriates), 96% of whom lived in Western Germany or Berlin. It is estimated by the [[Federal Statistical Office of Germany]] that nearly 30% of Germans aged 5 years and younger have at least one parent who was born abroad.
+
+===Migration===
+
+[[File:Population of German territories 1800 - 2000.JPG|thumb|Population of German territories 1800–2000 and [[immigrant]] population from 1975–2000]]
+
+The [[United Nations Population Fund]] lists Germany as host to the [[List of countries by immigrant population|third-highest number of international migrants worldwide]], about 5% or 10&nbsp;million of all 191&nbsp;million migrants.<ref>[http://www.unfpa.org/publications/detail.cfm?ID=294&filterListType= State of World Population 2006] United Nations Population Fund. 2006. Retrieved 1 January 2007.</ref> As a consequence of [[Immigration to Germany|restrictions]] to Germany's formerly rather unrestricted laws on [[right of asylum|asylum]] and immigration, the number of immigrants seeking asylum or claiming German ethnicity (mostly from the former Soviet Union) has been declining steadily since 2000.<ref>"[http://www.focus-migration.de/Germany.1509.0.html?&L=1 Focus-Migration: Germany]".</ref>
+
+In 2009, 20% of the population had immigrant roots, the highest since records were kept since 1945.<ref>{{Cite news | title=20% of Germans have immigrant roots | newspaper=Burlington Free Press | location=Burlington, Vermont, USA | pages= 4A | date=15 July 2010 }}</ref> {{As of|2008}}, the largest national group of people with a migrant background was from Turkey (2.5&nbsp;million), followed by Italy (776,000) and Poland (687,000).<ref>{{Cite web|url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Content/Statistiken/Bevoelkerung/MigrationIntegration/Migrationshintergrund/Tabellen/Content100/MigrationshintergrundStaatsangehoerigkeit,templateId=renderPrint.psml|title=Bevölkerung nach Migrationshintergrund|accessdate=26 March 2010|publisher=German Federal Statistical Office|language=German}}</ref>
+
+Large numbers of people with full or significant German ancestry are found in the
+United States (50&nbsp;million),<ref>{{Cite web |url=http://factfinder.census.gov/servlet/IPTable?_bm=y&-reg=ACS_2005_EST_G00_S0201:535;ACS_2005_EST_G00_S0201PR:535;ACS_2005_EST_G00_S0201T:535;ACS_2005_EST_G00_S0201TPR:535&-qr_name=ACS_2005_EST_G00_S0201&-qr_name=ACS_2005_EST_G00_S0201PR&-qr_name=ACS_2005_EST_G00_S0201T&-qr_name=ACS_2005_EST_G00_S0201TPR&-ds_name=ACS_2005_EST_G00_&-TABLE_NAMEX=&-ci_type=A&-redoLog=false&-charIterations=047&-geo_id=01000US&-format=&-_lang=en|coauthors=United States Census Bureau|title=U.S. Census Bureau, 2005 American Community Survey|accessdate=15 April 2007}} The 1990 census gives 57.9&nbsp;million, or 23.3% of the U.S. population.</ref> [[Brazil]] (5&nbsp;million)<ref>{{pt icon}} [http://www.passeiweb.com/na_ponta_lingua/sala_de_aula/geografia/geografia_do_brasil/demografia_imigracoes/brasil_imigracoes_alemanha A Imigração Alemã no Brasil] Deutsche Welle. Retrieved 19 November 2009.</ref> and Canada (3&nbsp;million).<ref>[http://www12.statcan.ca/english/census01/products/highlight/ETO/Table1.cfm?Lang=E&T=501&GV=1&GID=0 2001 Canadian Census] gives 2,742,765 total respondents stating their ''ethnic origin'' as partly German, with 705,600 stating "single-ancestry".</ref> About 3&nbsp;million "Aussiedler"—ethnic Germans, mainly from Eastern Europe and the former Soviet Union—have resettled in Germany since 1987.<ref>[http://www.migrationinformation.org/Feature/display.cfm?ID=201 "Fewer Ethnic Germans Immigrating to Ancestral Homeland"]. ''Migration Information Source.'' February 2004</ref>
+
+===Urbanisation===
+
+{{See also|Metropolitan Regions in Germany|List of cities in Germany|List of cities in Germany with more than 100,000 inhabitants}}
+
+Germany has a number of large cities; the most populous are: [[Berlin]], [[Hamburg]], [[Munich]], [[Cologne]], [[Frankfurt]], and [[Stuttgart]]. The largest [[conurbation]] is the [[Rhine-Ruhr]] region (12&nbsp;million), including [[Düsseldorf]] (the capital of [[North Rhine-Westphalia]]), [[Cologne]], [[Essen]], [[Dortmund]], [[Duisburg]], and [[Bochum]].
+
+{| width="97%" align="center" style="border: 1px solid darkgray; background: #f9f9f9"
+ ! colspan="9" style="padding:0.3em 0; font-size:120%;" | Largest cities of Germany
+ |-
+ | rowspan="11" align="center" valign="top" | [[File:Cityscapeberlin2006.JPG|border|160px|Berlin]]<br />[[Berlin]]<br />[[File:Hamburg-090612-0164-DSC 8261-Hafen-von-Jugendherberge.jpg|border|160px|Hamburg]]<br />[[Hamburg]]<br />[[File:München Panorama.JPG|border|160px|Munich]]<br />[[Munich|Munich (München)]]
+ ! style="text-align:center; background:#f5f5f5;" | Rank
+ ! style="text-align:left; background:#f5f5f5;" | City
+ ! style="text-align:right; background:#f5f5f5;" | Population
+ | rowspan="11" width="50" | &nbsp;
+ ! style="text-align:center; background:#f5f5f5;" | Rank
+ ! style="text-align:left; background:#f5f5f5;" | City
+ ! style="text-align:right; background:#f5f5f5;" | Population
+ | rowspan="11" align="center" valign="top" | [[File:Köln Panorama.jpg|border|160px|Cologne]]<br />[[Cologne|Cologne (Köln)]]<br />
+[[File:Hauptwache Frankfurt am Main.jpg|border|160px|Frankfurt am Main]]<br />[[Frankfurt am Main|Frankfurt]]<br />[[File:Stg-schlossplatz-kunstmuseum.jpg|border|160px|Stuttgart]]<br />[[Stuttgart]]
+ |-
+ | align="center" style="background:#f0f0f0;" |  1 
+ | align="left" | [[Berlin]] 
+ | align="right" | 3,442,675
+ | align="center" style="background:#f0f0f0;" | 11 
+ | align="left" | [[Hannover]] 
+ | align="right" | 520,966
+ |-
+ | align="center" style="background:#f0f0f0;" |  2 
+ | align="left" | [[Hamburg]] 
+ | align="right" | 1,774,224
+ | align="center" style="background:#f0f0f0;" | 12 
+ | align="left" | [[Leipzig]] 
+ | align="right" | 518,862
+ |-
+ | align="center" style="background:#f0f0f0;" |  3 
+ | align="left" | [[Munich]] 
+ | align="right" | 1,330,440
+ | align="center" style="background:#f0f0f0;" | 13 
+ | align="left" | [[Dresden]] 
+ | align="right" | 517,052
+ |-
+ | align="center" style="background:#f0f0f0;" |  4 
+ | align="left" | [[Cologne]] 
+ | align="right" | 998,105
+ | align="center" style="background:#f0f0f0;" | 14 
+ | align="left" | [[Nuremberg]] 
+ | align="right" | 503,673
+ |-
+ | align="center" style="background:#f0f0f0;" |  5 
+ | align="left" | [[Frankfurt am Main|Frankfurt]] 
+ | align="right" | 671,927
+ | align="center" style="background:#f0f0f0;" | 15 
+ | align="left" | [[Duisburg]] 
+ | align="right" | 491,931
+ |-
+ | align="center" style="background:#f0f0f0;" |  6 
+ | align="left" | [[Stuttgart]] 
+ | align="right" | 601,646
+ | align="center" style="background:#f0f0f0;" | 16 
+ | align="left" | [[Bochum]] 
+ | align="right" | 376,319
+ |-
+ | align="center" style="background:#f0f0f0;" |  7 
+ | align="left" | [[Düsseldorf]] 
+ | align="right" | 586,217
+ | align="center" style="background:#f0f0f0;" | 17 
+ | align="left" | [[Wuppertal]] 
+ | align="right" | 351,050
+ |-
+ | align="center" style="background:#f0f0f0;" |  8 
+ | align="left" | [[Dortmund]] 
+ | align="right" | 581,308
+ | align="center" style="background:#f0f0f0;" | 18 
+ | align="left" | [[Bielefeld]] 
+ | align="right" | 323,084
+ |-
+ | align="center" style="background:#f0f0f0;" |  9 
+ | align="left" | [[Essen]] 
+ | align="right" | 576,259
+ | align="center" style="background:#f0f0f0;" | 19 
+ | align="left" | [[Bonn]] 
+ | align="right" | 319,841
+ |-
+ | align="center" style="background:#f0f0f0;" | 10 
+ | align="left" | [[Bremen]] 
+ | align="right" | 547,685
+ | align="center" style="background:#f0f0f0;" | 20 
+ | align="left" | [[Mannheim]] 
+ | align="right" | 311,969
+ |-
+ | colspan="9" align="center" | <small>Source: {{cite web |title=Mitglieder des Deutschen Städtetages |publisher=Deutschen Städtetag |date=31 December 2009 |accessdate=18 February 2011 |url=http://www.staedtetag.de/10/staedte/nach_einwohner/index.html |language=German}}</small>
+ |}
+
+===Languages===
+
+{{Main|Languages of Germany}}
+
+[[File:Knowledge German EU map.png|thumb|upright|Knowledge of German in European countries]]
+
+German is the official and predominant spoken language in Germany.<ref name="Eurobarometer Languages"/> It is one of 23 official languages in the European Union, and one of the three [[working language]]s of the [[European Commission]], along with English and French. Recognised native minority languages in Germany are Danish, [[Sorbian languages|Sorbian]], [[Romany language|Romany]], and [[Frisian languages|Frisian]]. They are officially protected by the [[ECRML]]. The most used immigrant languages are [[Turkish language|Turkish]], [[Kurdish language|Kurdish]], Polish, the [[Balkan languages]], and Russian.
+
+Standard German is a [[West Germanic languages|West Germanic language]] and is closely related to and classified alongside English, [[Dutch language|Dutch]], and the [[Frisian languages]]. To a lesser extent, it is also related to the [[East Germanic languages|East]] (extinct) and [[North Germanic languages]]. Most German vocabulary is derived from the Germanic branch of the Indo-European language family.<ref name="Many tongues, one family">{{Cite web|title=Many tongues, one family. Languages in the European Union|publisher=[[Europa (web portal)]] |author=[[European Commission]] |year=2004|url=http://ec.europa.eu/publications/booklets/move/45/en.pdf|format=PDF |accessdate=3 February 2007}}</ref> Significant minorities of words are derived from [[Latin]] and Greek, with a smaller amount from French and most recently English (known as [[Denglisch]]). German is written using the Latin alphabet. In addition to the 26 standard letters, German has three vowels with [[Umlaut (diacritic)|Umlauts]], namely ä, ö, and ü, as well as the [[Eszett]] or ''scharfes S'' (''sharp s'') which is written "ß".
+{{multiple image
+   | align = left
+   | width2 = 170
+   | image2    = De-Faust - Der Tragödie erster Teil-Prolog und Auf dem Theater-wikisource.ogg
+   | caption2   = Spoken German in [[Goethe's Faust]]
+   | alt2 = Goethe´s German
+   | width1 = 100
+   | image1    = Faust spricht mit dem Erdgeist, Margret Hofheinz-Döring, Öl, 1969 (WV-Nr.4385).jpg
+   | caption1   = 
+   | alt1 = Faust
+}}
+German [[dialect]]s are distinguished from [[variety (linguistics)|varieties]] of [[standard German]]. German dialects are traditional local varieties and are traced back to the different German tribes. Many of them are not easily understandable to a speaker of standard German, since they often differ in [[lexicon]], [[phonology]], and [[syntax]].
+
+Around the world, German has approximately 100&nbsp;million [[First language|native speakers]] and also about 80&nbsp;million non-native speakers.<ref name="natgeo2006">{{Cite book|authorlink=National Geographic|title=National Geographic Collegiate Atlas of the World|publisher=R.R Donnelley & Sons Company|year=2006|month=April|location=Willard, Ohio|pages=257–270|isbn=Regular:0-7922-3662-9, 978-0-7922-3662-7. Deluxe:0-7922-7976-X, 978-0-7922-7976-1}}</ref> German is the main language of about 90&nbsp;million people (18%) in the EU. 67% of German citizens claim to be able to communicate in at least one foreign language, 27% in at least two languages other than their own.<ref name="Eurobarometer Languages">{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Survey)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_en.pdf| format=PDF |accessdate=3 February 2007}}<br />{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Executive Summary)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_sum_en.pdf|format=PDF|doi=|accessdate=3 February 2007}}</ref>
+
+===Religion===
+
+{{Main|Religion in Germany}}
+
+[[File:Colognecathedralatnight.JPG|thumb|upright|The [[Cologne Cathedral]] at the [[Rhine]] river is a [[UNESCO World Heritage Site]].]]
+
+According to organisational reporting based on projections in 2008 about 34.1% Germans have [[irreligion|no registered religious denomination]]. According to a poll by Der Spiegel magazine, 45% believe in God, and just a quarter in Jesus Christ.<ref>{{Cite web|url=http://www.adherents.com/adhloc/Wh_112.html |title=By Location |publisher=Adherents.com |date= |accessdate=26 September 2010}}</ref>
+
+Christianity is the largest religion in Germany, with around 49.4&nbsp;million adherents (62.8%) in 2008<ref name="ekd">{{de icon}} {{Cite web|url=http://www.ekd.de/statistik/mitglieder.html |title=EKD-Statistik: Christen in Deutschland 2007 |publisher=Evangelische Kirche in Deutschland |date= |accessdate=13 February 2010}}</ref> of which 24.5&nbsp;million are [[Protestantism|Protestants]] (29.9%) belonging to the EKD and 24.9&nbsp;million are Catholics (30.0%) in 2008, the remainder belong to small denominations (each (considerably ) less than 0.5% of the German population).<ref>[http://fowid.de/fileadmin/datenarchiv/Religionszugehoerigkeit_Bevoelkerung__1950-2008.pdf Konfessionen in Deutschland](German), fowid. Retrieved 2010, 9 September-09.</ref> The second largest religion is [[Islam in Germany|Islam]] with an estimated 3.8 to 4.3&nbsp;million adherents (4.6 to 5.2%)<ref name="MLD 2.1"/> followed by [[Buddhism]] and Judaism, both with around 200,000 adherents (0.3%). [[Hinduism]] has some 90,000 adherents (0.1%) and [[Sikhism]] 75,000 (0.1%). All other religious communities in Germany have fewer than 50,000 (<0.1%) adherents.
+{{bar box
+|title=Religion in Germany (2008)
+|titlebar=#ddd
+|float=left
+|bars=
+{{bar percent|[[Irreligion|No Religion]]|Yellow|34.1}}
+{{bar percent|[[Roman Catholicism]]|Orange|30.0}}
+{{bar percent|[[Protestantism]]|MediumAquamarine|29.9}}
+{{bar percent|[[Islam]]|#f99|4.0}}
+{{bar percent|[[Eastern Orthodox Church|Orthodox Christianity]]|DarkGray|1.6}}
+{{bar percent|[[Judaism]]|Blue|0.2}}
+{{bar percent|[[Buddhism]]|Black|0.2}}
+}}
+
+Protestantism is concentrated in the north and east and [[Roman Catholicism in Germany|Roman Catholicism]] is concentrated in the south and west. Pope [[Benedict XVI]], was born in [[Bavaria]]. [[irreligion|Non-religious]] people, including atheists and agnostics might make as many as 55%, and are especially numerous in the former [[German Democratic Republic|East Germany]] and major metropolitan areas.<ref>{{de icon}} [http://www.remid.de/remid_info_zahlen.htm Religionen in Deutschland: Mitgliederzahlen] Religionswissenschaftlicher Medien- und Informationsdienst; 31 October 2009. Retrieved 19 November 2009.</ref>
+
+Of the roughly 4&nbsp;million Muslims, most are [[Sunni Islam|Sunnis]] and [[Alevites]] from [[Turkey]], but there are a small number of [[Shia Islam|Shi'ites]] and other denominations.<ref name="MLD 2.1">{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt für Migration und Flüchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page = 80 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Demnach leben in Deutschland zwischen 3,8 und4,3 Millionen Muslime [. . .] beträgt der Anteil der Muslime an der Gesamtbevölkerungzwischen 4,6 und 5,2 Prozent. Rund 45 Prozent der in Deutschland lebenden Muslime sind deutsche Staatsangehörige,rund 55 Prozent haben eine ausländische Staatsangehörigkeit. }}</ref><ref name="MLD 2.2">{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt für Migration und Flüchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page= 97 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Der Anteil der Sunniten unter den in den Haushalten lebenden Muslimen beträgt 74 Prozent }}
+* 74.1% [[Sunni Islam|Sunni]]
+* 12.7% [[Alevi]]te
+* 7.1% [[Shia Islam|Schiite]]
+* 1.7% [[Ahmadiyya|Ahmadi]]
+* 0.3% [[Ibadi]]
+* 0.1% [[Sufism|Sufi]]/mystic
+* 4.0% other
+</ref> 1.6% of the country's overall population declare themselves [[Orthodox Christians]], [[Serbs]] and [[Greeks]] being the most numerous.<ref name="ekd"/> Germany has Europe's third-largest [[History of the Jews in Germany|Jewish population]] (after France and the United Kingdom).<ref>Blake, Mariah. [http://www.csmonitor.com/2006/1110/p25s02-woeu.html In Nazi cradle, Germany marks Jewish renaissance] [[Christian Science Monitor]]. 10 November 2006. Retrieved 30 November 2006.</ref> In 2004, twice as many Jews from former [[Soviet Union|Soviet]] republics settled in Germany as in [[Israel]], bringing the total Jewish population to more than 200,000, compared to 30,000 prior to [[German reunification]]. Large cities with significant Jewish populations include Berlin, [[Frankfurt]] and [[Munich]].<ref>[http://www.eurojewcong.org/ejc/news.php?id_article=81 The Jewish Community of Germany] European Jewish Congress. Retrieved 30 November 2006.</ref> Around 250,000 active [[Buddhism|Buddhists]] live in Germany; 50% of them are Asian immigrants.<ref>{{de icon}} [[Die Zeit]] 12/07, page 13</ref>
+
+According to the [[Eurobarometer]] poll 2005, 47% of German citizens agreed with the statement "I believe there is a God", whereas 25% agreed with "I believe there is some sort of spirit or life force" and 25% said "I do not believe there is any sort of spirit, god, or life force".<ref name="EUROBAROMETER">{{Cite web|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_225_report_en.pdf|title=Eurobarometer on Social Values, Science and technology 2005 (page 11)|accessdate=5 May 2007|format=PDF}}</ref>
+
+===Education===
+
+{{Main|Education in Germany}}
+
+[[File:Kindergartenfrankfurt.jpg|thumb|Kindergarten in [[Hessen]]]]
+
+Responsibility for educational oversight in Germany lies primarily with the [[States of Germany|federated states]] individually, whilst the federal government only has a minor role.<!--Kulturhoheit--> Optional [[kindergarten]] education is provided for all children between three and six years old, after which school attendance is [[compulsory education|compulsory]] for at least nine years. Primary education usually lasts for four years and public schools are not stratified at this stage.<ref name="ED">{{PDFlink|[http://lcweb2.loc.gov/frd/cs/profiles/Germany.pdf Country profile: Germany]|177&nbsp;KB}} U.S. Library of Congress. December 2005. Retrieved 4 December 2006.</ref> In contrast, secondary education includes three traditional types of schools based on a pupil's ability as determined by teacher recommendations: the ''[[Gymnasium (school)|Gymnasium]]'' enrolls the most gifted children and prepares students for university studies, and attendance lasts eight or nine years depending on the state; the ''[[Realschule]]'' has a broader range of emphasis for intermediate students and lasts six years; the ''[[Hauptschule]]'' prepares pupils for vocational education.
+
+[[File:Heidelberg Universitätsbibliothek 2003.jpg|thumb|left|The [[University of Heidelberg]] was established in 1386.]]
+
+Since the 1960s, a reform movement attempted to unify secondary education in a ''Gesamtschule'' ([[comprehensive school]]). However, instead of overcoming the stratification, Gesamtschule just became a fourth type of secondary school. Since about 2000, several West German Länder simplified their school system to two or three tiers. Motives were: The example of Eastern Germany where in the 1990s, following reunification, a two-tier school system was established; mediocre scores in the [[Programme for International Student Assessment]] (PISA), first published in 2001, prompted a nation-wide debate about the school system, and in particular about the social selectivity of early stratification;<ref>In PISA 2000, Germany was the country with the highest correlation between test score and social background index. In the following test periods, this result could not be replicated.</ref> having low standards of achievement, inner-city Hauptschulen were increasingly considered dysfunctional by some people; outside the main metropolitan areas, the population is shrinking, so that according to some people it becomes increasingly impractical to maintain a three- or four-tier school system.
+
+A special system of apprenticeship called ''Duale Ausbildung'' ("dual education") allows pupils in [[vocational training]] to learn in a company as well as in a state-run vocational school.<ref name="ED"/>
+
+To enter a [[List of universities in Germany|university in Germany]], high school students are generally required to take the ''[[Abitur]]'' examination, which is similar to [[Advanced Level (UK)|A-levels in the UK]] and typically done at the age of 18 or 19. However, students possessing a diploma from a [[vocational school]] may also apply for [[matriculation]] in certain subjects. Germany's universities are recognised internationally, indicating the high education standards in the country. In the [[Academic Ranking of World Universities|ARWU]] ranking for 2008, six of the top 100 universities in the world are in Germany, and 18 in the top 200.<ref name="ARWU">{{Cite web|title=Top 100 World Universities|publisher=[[Academic Ranking of World Universities|ARWU]]|url=http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archiveurl=http://web.archive.org/web/20080822124509/http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archivedate=22 August 2008|accessdate=14 March 2009}}</ref> Nearly all German universities are public (i.e. non-private) institutions, charging tuition fees ranging from €50–500 per semester for each student.<ref>[http://www.daad.de/deutschland/studium/studienplanung/00493.en.html#headline_0_1 Tuition Fees in Germany] German Academic Exchange Service. Retrieved 30 November 2006.</ref>
+
+===Health===
+
+{{Main|Health in Germany}}
+
+[[File:UniKlinik (Freiburg) 4.jpg|thumb|Department of Surgery in the [[University Medical Center Freiburg]]]]
+
+Germany has the world's oldest [[universal health care]] system, with origins dating back to [[Otto von Bismarck]]'s [[Otto von Bismarck#Bismarck's social legislation|Social legislation]] in 1883. Currently the population is covered by a basic health insurance plan provided by statute, which provides a standard level of coverage. The remainder opt for private health insurance, which frequently offers additional benefits. According to the [[World Health Organization]], Germany's [[health care system]] was 77% government-funded and 23% privately funded as of 2004.<ref name="WHOSIS">[http://www.who.int/whosis/database/core/core_select.cfm World Health Organization Statistical Information System: Core Health Indicators]. Retrieved 13 November 2010.</ref> In 2005, Germany spent 10.7% of GDP on health care, or US$3,628 per capita.
+
+Germany ranked 20th in the world in [[life expectancy]] with [[List of countries by life expectancy|76,5 years for men and 82,1 years for woman]]. It had a very low [[infant mortality rate]] (4.3 per 1,000 [[Live birth (human)|live births]]), and it was tied for eighth place in the number of practicing physicians, at per 1,000 people (3.3).
+
+In 2002 the top diagnosis for male patients released from the hospital was [[heart disease]], followed by [[Alcoholism|alcohol-related disorders]] and [[hernias]]. For women, the top diagnoses related to [[pregnancies]], breast cancer, and heart weakness. At the end of 2004, some 44,000 Germans, or less than 0.1 percent of the population, were infected with [[HIV/AIDS]]. According to a 2003 survey, 37 percent of adult males and 28 percent of adult females in Germany are smokers. A 2007 study shows Germany has the highest number of overweight people in Europe.<ref name="DW1">{{Cite news|title=Topping the EU Fat Stats, Germany Plans Anti-Obesity Drive|url=http://www.dw-world.de/dw/article/0,,2449356,00.html|publisher=Deutsche Welle|date=20 April 2007|accessdate=25 June 2010}}</ref><ref name="BBC1">{{Cite news|title=Germany launches obesity campaign|url=http://news.bbc.co.uk/2/hi/health/6639227.stm|publisher=BBC|date=9 May 2007|accessdate =25 June 2010}}</ref>
+
+==Culture==
+
+{{Main|Culture of Germany}}
+
+[[File:Beethoven.jpg|thumb|left|upright|[[Ludwig van Beethoven]] (1770–1827), composer]]
+
+German culture began long before the rise of Germany as a [[nation-state]] and spanned the entire German-speaking world. From its roots, culture in Germany has been shaped by major intellectual and popular currents in Europe, both religious and [[secularism|secular]]. As a result, German artistic achievements have to be seen in a larger framework of European [[high culture]], Western [[popculture]], and globally connected [[subculture]].<ref>{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|title=Federal Republic of Germany: Culture|publisher=Encarta Online Encyclopedia 2006|accessdate=5 November 2010|archiveurl=http://web.archive.org/web/20080328162029/http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|archivedate=28 March 2008}}</ref><ref>[http://www.scribd.com/doc/30887674/Modern-German-Culture The Cambridge Companion to Modern German Culture]. Retrieved 9 November 2010.</ref> Historically Germany has been called ''Das Land der Dichter und Denker'' (the land of poets and thinkers).<ref>Wasser, Jeremy. [http://www.spiegel.de/international/0,1518,410135,00.html Spätzle Westerns] Spiegel Online International. 6 April 2006. Retrieved 6 December 2006.</ref>
+
+In Germany, the federated states are in charge of the cultural institutions. There are 240 subsidised theatres, hundreds of symphonic orchestras, thousands of museums and over 25,000 libraries spread over the 16 states. These cultural opportunities are enjoyed by many millions: there are over 91&nbsp;million German museum visits every year; annually, 20&nbsp;million go to theatres and operas; while 3.6&nbsp;million listen to the great symphonic orchestras.<ref>[http://www.study-in-germany.de/english/4.303.659.html Unbelievable Multitude] www.study-in-germany.de Retrieved 17 October 2008.</ref>
+
+[[File:Berlin night.jpg|thumb|Berlin is a centre of arts, nightlife, music, architecture and festivals]]
+
+The UNESCO inscribed 33 properties in [[Table of World Heritage Sites by country|Germany on the World Heritage List]].<ref>[http://www.worldheritagesite.org/countries/germany.html World Heritage Sites in Germany] www.worldheritagesite.org Retrieved 3 October 2010.</ref>
+
+Numerous German painters have enjoyed international prestige through their work in diverse artistic styles. [[Hans Holbein the Younger]], [[Matthias Grünewald]], and [[Albrecht Dürer]] were important artists of the [[Renaissance]], [[Caspar David Friedrich]] of [[Romanticism]], and [[Max Ernst]] of [[Surrealism]]. Architectural contributions from Germany include the [[Carolingian architecture|Carolingian]] and [[Ottonian architecture|Ottonian styles]], which were important precursors of [[Romanesque architecture|Romanesque]]. The region later became the site of significant works in styles such as [[Gothic architecture|Gothic]], [[Renaissance architecture|Renaissance]] and [[Baroque architecture|Baroque]]. Germany was particularly important in the early [[modern architecture|modern movement]], especially through the [[Bauhaus]] movement founded by [[Walter Gropius]]. [[Ludwig Mies van der Rohe]], also from Germany, became one of the world's most renowned architects in the second half of the 20th century. The glass façade skyscraper was his idea.<ref>2006 A Dictionary of Architecture and Landscape Architecture (Paperback) , Second (in English) , Oxford University Press, 880. ISBN 0-19-860678-8</ref>
+
+===Literature===
+
+{{Main|German literature}}
+
+German literature can be traced back to the Middle Ages and the works of writers such as [[Walther von der Vogelweide]] and [[Wolfram von Eschenbach]]. Various German authors and poets have won great renown, including [[Johann Wolfgang von Goethe]] and [[Friedrich Schiller]]. The collections of folk tales published by the [[Brothers Grimm]] popularised [[German folklore]] on an international level.
+Influential authors of the 20th century include [[Thomas Mann]], [[Bertolt Brecht]], [[Hermann Hesse]], [[Heinrich Böll]], and [[Günter Grass]].<ref name="nobel">{{Cite web|url=http://nobelprize.org/nobel_prizes/literature/articles/espmark/index.html|title=The Nobel Prize in Literature|publisher=Nobelprize.org|date=3 December 1999|author=Kjell Espmark|accessdate=14 August 2006}}</ref>
+
+{| class="wikitable" style="text-align:right; margin-right:50px;"
+ |-
+ ! align="center" |[[Johann Wolfgang von Goethe|Johann Wolfgang v. Goethe]]<br /><small>(1749–1832)</small>
+ ! align="center" |[[Friedrich Schiller]]<br /><small>(1759–1805)</small>
+ ! align="center" |[[Brothers Grimm]]<br /><small>(1785–1863)</small>
+ ! align="center" |[[Thomas Mann]]<br /><small>(1875–1955)</small>
+ ! align="center" |[[Hermann Hesse]]<br /><small>(1877–1962)</small>
+ |-
+ | align="left" | [[File:Johann Heinrich Wilhelm Tischbein 007.jpg|190px]] 
+ | align="left" | [[File:Gerhard von Kügelgen 001.jpg|129px]]
+ | align="left" | [[File:Grimm1.jpg|125px]]
+ | align="left" | [[File:Thomas Mann 1929.jpg|106px]] 
+ | align="left" | [[File:Hermann Hesse 1927 Photo Gret Widmann.jpg|110px]]
+ |}
+
+===Philosophy===
+
+{{Main|German philosophy}}
+
+[[File:Immanuel Kant (painted portrait).jpg|thumb|upright|[[Immanuel Kant]] (1724–1804)]]
+
+Germany's influence on philosophy is historically significant and many notable German philosophers have helped shape [[Western philosophy]] since the Middle Ages. The rise of the modern natural sciences and the related decline of religion raised a series of questions, which recur throughout German philosophy, concerning the relationships between knowledge and faith, reason and emotion, and scientific, ethical, and artistic ways of seeing the world.
+
+[[Gottfried Leibniz]]'s contributions to [[rationalism]]; the establishment of classical [[German idealism]] by [[Immanuel Kant]], [[Johann Gottlieb Fichte]], [[Georg Wilhelm Friedrich Hegel]] and [[Friedrich Wilhelm Joseph Schelling]]; [[Arthur Schopenhauer]]'s composition of metaphysical pessimism; [[Karl Marx]]'s and [[Friedrich Engels]]' formulation of [[communist theory]]; [[Friedrich Nietzsche]]'s development of [[perspectivism]]; [[Gottlob Frege]]'s contributions to the dawn of [[analytic philosophy]]; [[Martin Heidegger]]'s works on Being; and the development of the [[Frankfurt school]] by [[Max Horkheimer]], [[Theodor Adorno]], [[Herbert Marcuse]] and [[Jürgen Habermas]] have been particularly influential.
+
+In the 21st century Germany has been an important country for the development of contemporary analytic philosophy in continental Europe, along with France, Austria, Switzerland and the Scandinavian countries.<ref>Searle, John. (1987). ''The Blackwell Companion to Philosophy'', "Introduction". Wiley-Blackwell.</ref>
+
+===Cinema===
+
+{{Main|Cinema of Germany}}
+
+[[File:Derblaueengel.jpg|thumb|upright|[[Marlene Dietrich]] in ''[[The Blue Angel]]'' in 1930, Germany's first major film with sound]]
+
+German cinema dates back to the very early years of the medium with the work of [[Max Skladanowsky]]. It was particularly influential during the years of the Weimar Republic with [[German expressionism|German expressionists]] such as [[Robert Wiene]] and [[Friedrich Wilhelm Murnau]]. Austrian-based director [[Fritz Lang]], who became a German citizen in 1926 and whose career flourished in the pre-war German film industry, is said to have been a major influence on Hollywood cinema. His silent movie [[Metropolis (film)|Metropolis]] (1927) is referred to as the birth of modern Science Fiction movies.
+
+In 1930 Austrian-American [[Josef von Sternberg]] directed ''[[The Blue Angel]]'', which was the first major German [[sound film]] and it brought world fame to actress [[Marlene Dietrich]].<ref>{{Cite book |last= Bordwell |first= David |authorlink= David Bordwell |coauthors= Kristin Thompson|title= Film History: An Introduction|origdate= |origyear= 1994 |edition= 2nd |year= 2003 |publisher=McGraw-Hill |location= New York City |isbn= 978-0-07-115141-2 |page= 204 |chapter= The Introduction of Sound}}</ref> Impressionist documentary [[Berlin: Symphony of a Great City]], directed by [[Walter Ruttmann]], is a prominent example of the city symphony genre. The Nazi era produced mostly propaganda films although the work of [[Leni Riefenstahl]] still introduced new aesthetics to film.<ref>[http://www.filmbug.com/db/343340 Leni Riefenstahl], Filmbug Movie Stars. Retrieved 13 April 2007.</ref>
+
+[[File:Berlinale2007.jpg|thumb|left|The Berlinale Palast during the [[Berlin Film Festival]] in February 2007]]
+
+During the 1970s and 80s, [[New German Cinema]] directors such as [[Volker Schlöndorff]], [[Werner Herzog]], [[Wim Wenders]], and [[Rainer Werner Fassbinder]] put West German cinema back on the international stage with their often provocative films.<ref>[http://www.fassbinderfoundation.de/node.php/en/home Rainer Werner Fassbinder], Fassbinder Foundation. Retrieved 13 April 2007.</ref>
+More recently, films such as ''[[Good Bye Lenin!]]'' (2003), ''[[Head-On|Gegen die Wand (Head-on)]]'' (2004), ''[[Der Untergang|Der Untergang (Downfall)]]'' (2004), and ''[[Der Baader Meinhof Komplex]]'' (2008) have enjoyed international success.
+
+The [[Academy Award for Best Foreign Language Film]] went to the German production ''[[The Tin Drum (film)|Die Blechtrommel (The Tin Drum)]]'' in 1979, to ''[[Nowhere in Africa]]'' in 2002, and to ''[[The Lives of Others|Das Leben der Anderen (The Lives of Others)]]'' in 2007.<ref>[http://www.imdb.com/title/tt0405094/awards Awards:Das Leben der Anderen], IMDb. Retrieved 13 April 2007.</ref> Among the most famous German actors are Marlene Dietrich, [[Klaus Kinski]], [[Hanna Schygulla]], [[Armin Mueller-Stahl]], [[Jürgen Prochnow]], and [[Thomas Kretschmann]].
+
+The [[Berlin Film Festival]], held annually since 1951, is one of the world's foremost film festivals. An international jury places emphasis on representing films from all over the world and awards the winners with the Golden and Silver Bears.<ref>''[http://www.fiapf.org/pdf/2006accreditedFestivalsDirectory.pdf 2006 FIAPF accredited Festivals Directory], International Federation of Film Producers Associations, retrieved on 11 December 2006.''</ref> The annual [[European Film Award]]s ceremony is held every second year in the city of Berlin, where the [[European Film Academy]] (EFA) is located. The [[Babelsberg Studios]] in Potsdam are the oldest large-scale film studios in the world and a centre for international film production.
+
+===Music===
+
+{{Main|Music of Germany}}
+
+Germany claims some of the world's most renowned classical music composers, including [[Ludwig van Beethoven]], [[Johann Sebastian Bach]], [[Johannes Brahms]], and [[Richard Wagner]]. As of 2006, Germany is the fifth largest music market in the world and has influenced popular music through artists such as [[Kraftwerk]], [[Boney M.]], [[Nico]], [[Nina Hagen]], [[Scorpions (band)|Scorpions]], [[Toten Hosen]], [[Tokio Hotel]], [[Rammstein]] and [[Paul van Dyk]].<ref>[http://web.archive.org/web/20070205193206/http://news.warez.com/p2pnet/music-market-worth-us32-billion.html Music market worth US$ 32&nbsp;billion] P2pnet.net 7 April 2004. Retrieved 7 December 2006.</ref>
+
+{| class="wikitable" style="text-align:right; margin-right:50px;"
+ |-
+ ! align="center" |[[J.S.Bach]]<br /><small>[[Toccata and Fugue in D minor, BWV 565|Toccata und Fuge]]</small>
+ ! align="center" |[[Ludwig van Beethoven|L.v. Beethoven]]<br /><small>[[Symphony No. 5 (Beethoven)|Symphonie 5 c-moll]]</small>
+ ! align="center" |[[Richard Wagner|R. Wagner]]<br /><small>[[Die Walküre]]</small>
+ ! align="center" |[[Kraftwerk]]<br /><small>[[Computer World|Computerwelt Pt. 2]]</small>
+ ! align="center" |[[Modern Talking]]<br /><small>[[Brother Louie (Modern Talking song)|Brother Louie]]</small>
+ ! align="center" |[[Rammstein]]<br /><small>[[Ohne dich]]</small>
+ |-
+ | style="text-align:left; background:#dcdcdc;" | [[File:Toccata et Fugue BWV565.ogg|110px]] 
+ | style="text-align:left; background:#d3d3d3;" | [[File:Ludwig van Beethoven - Symphonie 5 c-moll - 1. Allegro con brio.ogg|110px]]
+ | style="text-align:left; background:silver;" |[[File:Wagner - die walkure fantasie.ogg|110px]] 
+ | style="text-align:left; background:darkGrey;" | [[File:Kraftwerk - computerwelt - computerwelt 2.ogg|110px]] 
+ | style="text-align:left; background:gray;" | [[File:Brother Louie MT.ogg|110px]]
+ | style="text-align:left; background:dimGrey;" | [[File:Rammstein - Ohne dich (sample).ogg|110px]]
+ |}
+
+===Media===
+
+[[File:FrankfurterBuchmesse2008.JPG|thumb|The [[Frankfurt Book Fair]] in 2008]]
+
+Germany's television market is the largest in Europe, with some 34&nbsp;million TV households.
+The many regional and national public broadcasters are organised in line with the federal political structure. Around 90% of German households have cable or satellite TV, and viewers can choose from a variety of free-to-view public and commercial channels. Pay-TV services have not become popular or successful while public TV broadcasters [[ZDF]] and [[ARD (broadcaster)|ARD]] offer a range of digital-only channels.<ref>[http://news.bbc.co.uk/2/hi/europe/country_profiles/1047864.stm Country profile: Germany], BBC News. Retrieved 7 December 2007.</ref>
+
+Germany is home to some of the world's largest media conglomerates, including [[Bertelsmann]], the [[Axel Springer AG]] and [[ProSiebenSat.1 Media]].
+
+The German-speaking book publishers produce about 700&nbsp;million copies of books every year, with about 80,000 titles, nearly 60,000 of them new publications. Germany is in third place on international statistics after the English-speaking book market and the People’s Republic of China.<ref>[http://www.land-der-ideen.de/CDA/facts_printing,4563,0,,en.html Germany – Land of ideas], www.land-der-ideen.de Retrieved 12 December 2010.</ref> The [[Frankfurt Book Fair]] is considered to be the most important book fair in the world for international deals and trading and has a tradition that spans over 500 years.
+
+The country's news is provided for English speakers e.g. by news magazine [[Der Spiegel]] and state broadcaster [[Deutsche Welle]].
+
+===Sports===
+
+{{Main|Sport in Germany}}
+
+[[File:Michael Schumacher 2010 Malaysia.jpg|thumb|upright|140px|[[Michael Schumacher]] has won seven [[Formula One]] championships.]]
+
+Sport forms an integral part of German life. Twenty-seven million Germans are members of a sports club and an additional twelve million pursue such an activity individually.<ref name="sports">{{Cite web | url = http://www.germany.info/relaunch/culture/life/sports.html | title = Germany Info: Culture & Life: Sports | publisher=Germany Embassy in Washington, D.C | accessdate = 28 December 2006}}</ref> [[Association football]] is the most popular sport. With more than 6.3&nbsp;million official members, the [[German Football Association]] (''Deutscher Fußball-Bund'') is the largest sports organisation of its kind worldwide.<ref name="sports"/> The [[Fußball-Bundesliga|Bundesliga]] attracts the second highest [[List of attendance figures at domestic professional sports leagues|average attendance]] of any professional sports league in the world. The [[Germany national football team|German national football team]] won the [[FIFA World Cup]] in 1954, 1974 and 1990 and the [[UEFA European Football Championship]] in 1972, 1980 and 1996. Germany has hosted the FIFA World Cup in [[FIFA World Cup 1974|1974]] and [[FIFA World Cup 2006|2006]] and the [[UEFA European Football Championship]] in [[UEFA Euro 1988|1988]]. Among the most successful and renowned footballers are
+[[Franz Beckenbauer]], [[Gerd Müller]], [[Jürgen Klinsmann]], [[Lothar Matthäus]], and [[Oliver Kahn]]. Other popular spectator sports include [[team handball|handball]], volleyball, basketball, [[ice hockey]], and tennis.<ref name="sports"/>
+
+[[File:AllianzArenaSunset.jpg|thumb|left|The [[Allianz Arena]] is host to the football club [[Bayern Munich]] and was a venue for the [[2006 FIFA World Cup]].]]
+
+Germany is one of the leading motor sports countries in the world. Race-winning cars, teams and drivers have come from Germany. The most successful [[Formula One]] driver in history, [[Michael Schumacher]], has set many significant motor sport records during his career, having won more [[List of Formula One World Drivers' Champions|Formula One World Drivers' Championships]] and more Formula One races than any other driver since Formula One's debut season in 1950. He is one of the highest paid sportsmen in history and became a billionaire athlete.<ref>{{Cite news | url = http://sport.guardian.co.uk/formulaone/story/0,,1929091,00.html | title = What we will miss about Michael Schumacher | newspaper=The Guardian | date = 23 October 2006 | accessdate = 19 October 2007 | location=London | first=David | last=Ornstein }}</ref> Constructors like [[BMW]] and [[Mercedes-Benz|Mercedes]] are among the leading manufacturers in motor sport. Additionally, [[Porsche]] has won the [[24 Hours of Le Mans]], a prestigious annual endurance race held in France, 16 times, and [[Audi]] has won it 9 times. The [[Deutsche Tourenwagen Masters]] is a popular series in Germany.
+
+Historically, German sportsmen have been some of the most successful contenders in the Olympic Games, ranking third in an [[all-time Olympic Games medal count]], combining East and West German medals. In the [[2008 Summer Olympics]], Germany finished fifth in the medal count,<ref>{{Cite web | url = http://results.beijing2008.cn/WRM/ENG/INF/GL/95A/GL0000000.shtml | title = Beijing 2008 Medal Table | publisher=The Official Website of the Beijing 2008 Olympic Games | accessdate = 8 September 2008}}</ref> while in the [[2006 Winter Olympics]] they finished first.<ref>{{Cite web | url = http://www.olympic.org/uk/games/past/table_uk.asp?OLGT=2&OLGY=2006 | title = Turin 2006 Medal Table | publisher=International Olympic Committee | accessdate = 28 December 2006}}</ref>
+Germany has hosted the Summer Olympic Games twice, in Berlin in [[1936 Summer Olympics|1936]] and in [[Munich]] in [[1972 Summer Olympics|1972]]. The Winter Olympic Games took place in Germany once in [[1936 Winter Olympics|1936]] when they were staged in the [[Bavaria]]n twin towns of [[Garmisch]] and [[Partenkirchen]].
+
+===Cuisine===
+
+{{Main|German cuisine}}
+
+[[File:144215094 be5e39f10f b.jpg|thumb|A ''[[Schwarzwälder Kirschtorte]]'' (Black Forest cake)]]
+
+German cuisine varies from region to region. The southern regions of [[Bavarian cuisine|Bavaria]] and Swabia, for instance, share a culinary culture with Switzerland and Austria. Pork, beef, and poultry are the main varieties of meat consumed in Germany, with pork being the most popular.<ref>{{Cite web | url = http://www.nationmaster.com/country/gm-germany/foo-food | title = German food stats | publisher=www.nationmaster.com | accessdate = 26 November 2007}}</ref> Throughout all regions, meat is often eaten in sausage form. More than 1500 different types of [[sausage]] are produced in Germany. [[Organic food]] has gained a market share of around 3.0%, and is predicted to increase further.<ref>{{Cite web | url = http://www.organic-europe.net/country_reports/germany/default.asp | title = Organic Agriculture in Germany | publisher=organic-Europe | accessdate = 26 November 2007}}</ref>
+
+A popular German saying has the meaning: "Breakfast like an emperor, lunch like a king, and dine like a beggar." Breakfast is usually a selection of breads and rolls with jam and honey or cold meats and cheese, sometimes accompanied by a boiled egg. Cereals or muesli with milk or [[yoghurt]] is less common but widespread.<ref>[http://www.cp-pc.ca/english/germany/eating.html Eating the German way], Cultural Profiles Project. Retrieved 2007, 26 November.</ref> More than 300 types of bread are sold in bakery shops across the country.<ref>[http://www.germany-tourism.de/ENG/culture_and_events/culinary_germany_brot.htm 300 Types of Bread], www.germany-tourism.de. Retrieved 2007, 26 November.</ref>
+
+[[File:Buffet Germany.jpg|thumb|left|A typical cheese and cold meat [[buffet]] served at private festivities]]
+
+As a country with many immigrants, Germany has adopted many international dishes into its cuisine and daily eating habits. [[Italian cuisine|Italian]] dishes like pizza and pasta, [[Turkish cuisine|Turkish]] and [[Arab]] dishes like [[Doner kebab|Döner Kebab]] and [[Falafel]] are well established, especially in bigger cities. International [[Hamburger|burger]] chains, as well as [[Chinese cuisine|Chinese]] and [[Greek cuisine|Greek]] restaurants, are widespread. [[Indian cuisine|Indian]], [[Thai cuisine|Thai]], [[Japanese cuisine|Japanese]], and other Asian cuisines have gained popularity in recent decades.
+Among high-profile restaurants in Germany, the [[Michelin guide]] has awarded nine restaurants three stars, the highest designation, while 15 more received two stars.<ref>[http://www.dw-world.de/dw/article/0,2144,2914502,00.html Schnitzel Outcooks Spaghetti in Michelin Guide], Deutsche Welle. Retrieved 2007, 26 November.</ref> German restaurants have become the world's second most decorated eateries after France.<ref>[http://in.reuters.com/article/lifestyleMolt/idINL1447732320071114 German cuisine beats Italy, Spain in gourmet stars], Reuters India. Retrieved 2007, 26 November.</ref>
+
+Although wine is becoming more popular in many parts of Germany, the national alcoholic drink is beer. German beer consumption per person is declining but—at 116 litres annually—it is still among the highest in the world.<ref>[http://www.royalunibrew.com/Default.aspx?ID=266 Europe's largest beer market], royalunibrew.com. Retrieved 2007, 26 November.</ref> Beer varieties include [[Altbier|Alt]], [[Bock]], [[Dunkel]], [[Kölsch (beer)|Kölsch]], [[Lager]], [[Malzbier]], [[Pilsener|Pils]], and [[Weizenbier]]. Among 18 surveyed western countries, Germany ranked 14th in the list of per capita consumption of soft drinks in general, while it ranked third in the consumption of fruit juices.<ref>[http://www.nationmaster.com/graph/foo_sof_dri_con-food-soft-drink-consumption Soft drink consumption], www.nationmaster.com. Retrieved 2007, 26 November.</ref> Furthermore, carbonated mineral water and ''[[Spritzer#Non-alcoholic spritzer|Schorle]]'' (its mixture with fruit juice) are very popular in Germany.
+
+===Society===
+
+[[File:Schloss-Neuschwanstein.jpg|thumb|right|Tourism is an important industry in parts of Germany([[Neuschwanstein Castle]])]]
+
+Germany is a modern, cosmopolitan, creative society, shaped by a plurality of lifestyles and regional identities.<ref>[http://www.germany.info/Vertretung/usa/en/07__Culture__Lifestyle__Travel/01/__Society.html Society] The German Mission to the United states. Retrieved 16 October 2010.</ref> The country has established a high level of [[gender equality]], promotes [[Disability rights movement|disability rights]], and is legally and socially tolerant towards homosexuals. Gays and lesbians can legally adopt their partner's biological children, and [[civil union]]s have been permitted since 2001.<ref>[http://www.news24.com/News24/World/News/0,,2-10-1462_1613010,00.html Germany extends gay rights]{{dead link|date=September 2010}} News24.com. Retrieved 25 November 2007.</ref> The Vice-Chancellor [[Guido Westerwelle]] and the mayor of Berlin, [[Klaus Wowereit]], are openly gay.<ref name="gayscity">{{Cite news |last=Weinthal |first=Benjamin |title=He's Gay, and That's Okay |newspaper=[[Gay City News]] | location = New York |date=31 August 2006 |url=http://www.gaycitynews.com/articles/2006/08/31/gay_city_news_archives/past%20issues/17334472.txt |accessdate=3 September 2009}}</ref>{{Update after|2011|09|reason=elections in Berlin}}
+
+During the last decade of the 20th century, Germany changed its attitude towards immigrants. Until the mid-1990s the opinion was widespread that Germany is not a country of immigration, even though about 20% of the population were of non-German origin. Today the government and a majority of the German society are acknowledging that immigrants from diverse ethnocultural backgrounds are part of the German society and that controlled immigration should be initiated based on qualification standards.<ref>{{Cite book | first = Friedrich | last = Heckmann | url = http://books.google.com/?id=l9yTtCAnQWwC&pg=PA53&lpg=PA53&dq=cdu+immigrant+einwanderungsland#PPA53,M1 | title = The Integration of Immigrants in European Societies: national differences and trends of convergence| publisher=Lucius & Lucius | location = Stuttgart | pages = 51 ff. | year = 2003 | isbn = 978-3-8282-0181-1 | accessdate = 28 October 2010 }}</ref>
+
+Since the 2006 FIFA World Cup, the internal and external evaluation of Germany's national image has changed.<ref>[http://www.brandovation.net/ How Germany won the World Cup of Nation Branding] BrandOvation. Retrieved 25 November 2007.</ref> In annually conducted global surveys known as [[Nation Brands Index]], Germany became significantly and repeatedly more highly ranked after the tournament. People in 20 different states assessed the country's reputation in terms of culture, politics, exports, its people and its attractiveness to tourists, immigrants and investments. Germany has been named the world's second most valued nation among 50 countries in 2010.<ref>{{Cite press release | title = 2010 Anholt-GfK Roper Nation Brands Index | publisher=[[GfK]] | date = 12 October 2010 | url = http://www.gfk.com/group/press_information/press_releases/006688/index.en.html | accessdate = 15 October 2010 }}</ref> Another global opinion poll, for the [[BBC]], revealed that Germany is recognised for the most positive influence in the world in 2010. A majority of 59% have a positive view of the country, while 14% have a negative view.<ref>{{Cite news | url = http://news.bbc.co.uk/2/hi/8626041.stm | title = World warming to US under Obama, BBC poll suggests |publisher=BBC News Online | location = London | date = 19 April 2010 |accessdate = 28 October 2010 }}</ref><ref>[http://news.bbc.co.uk/2/shared/bsp/hi/pdfs/160410bbcwspoll.pdf BBC World Service Poll], BBC News. Retrieved 19 April 2010.</ref>
+
+With an expenditure of €67&nbsp;billion on international travel in 2008, Germans spent more money on travel than any other country. The most visited destinations were Spain, Italy and Austria.<ref>{{Cite news | url = http://economictimes.indiatimes.com/ET-Cetera/Germans-spend-most-on-foreign-trips-Industry-group/articleshow/4250332.cms | title = Germans spend most on foreign trips: Industry group] | date = 10 March 2009 | location = New Delhi | newspaper=The Economic Times |accessdate = 15 March 2009 }}</ref>
+{{-}}
+
+==See also==
+
+{{Portal box|Germany|European Union}}
+
+* [[Outline of Germany]]
+
+{{Template group
+|title = Articles Related to Germany
+|list =
+{{Germany topics}}
+{{States of Germany |titlestyle=background:#ddf;}}
+{{Template group
+|title = Geographic locale
+|list =
+{{Geographic location
+ | Northwest = ''[[North Sea]]'' <br /> {{Flag|The Netherlands}}
+ | North = {{Flag|Denmark}}
+ | Northeast = ''[[Baltic Sea]]''
+ | West = {{Flag|Belgium}} <br /> {{Flag|Luxembourg}}
+ | Centre = {{Flagicon|Germany}} [[Outline of Germany|Germany]]
+ | East = {{Flag|Poland}} <br /> {{Flag|Czech Republic}}
+ | Southwest = {{Flag|France}}
+ | South = {{Flag|Switzerland}} • {{Flag|Austria}}
+ | Southeast = {{Flag|Austria}}
+}}
+{{Sovereign states of Europe}}
+{{Countries bordering the Baltic Sea}}
+}}
+{{Template group
+|title = International membership
+|list =
+{{EU members}}
+{{North Atlantic Treaty Organisation (NATO)}}
+{{Organisation for Economic Co-operation and Development}}
+{{G8 nations}}
+{{G20}}
+{{WTO members}}
+{{Council of Europe}}
+{{OSCE}}
+}}
+{{National personifications}}
+}}
+
+==Notes==
+
+{{Reflist|group=note}}
+
+==References==
+
+{{Reflist|colwidth=30em}}
+
+==External links==
+
+{{Spoken Wikipedia-2|2008-06-24|Germany (Spoken Article) Part 1.ogg|Germany (Spoken Article) Part 2.ogg}}
+{{Sister project links|Germany}}
+
+* [http://www.deutschland.de/ Deutschland.de] – Official Germany portal (non-profit)
+* [http://www.bundeskanzlerin.de/ Official site of German Chancellor] (German and English)
+* [http://www.dw-world.de/ Deutsche Welle] – Germany's international broadcaster
+* [https://www.cia.gov/library/publications/world-leaders-1/world-leaders-g/germany.html Chief of State and Cabinet Members]
+* {{CIA World Factbook link|gm|Germany}}
+* [http://www.britannica.com/EBchecked/topic/231186/Germany Germany] entry at ''[[Encyclopædia Britannica]]''
+* [http://ucblibraries.colorado.edu/govpubs/for/germany.htm Germany] at ''UCB Libraries GovPubs''
+* {{dmoz|Regional/Europe/Germany}}
+
+{{Wikiatlas|Germany}}
+
+* [http://www.tatsachen-ueber-deutschland.de/en/ Facts about Germany] – by the German Federal Foreign Office
+* [http://www.destatis.de/e_home.htm Destatis.de] – Federal Statistical Office Germany {{en icon}}
+
+{{osmrelation-inline|51477}}
+
+[[Category:Germany| ]]
+[[Category:European countries]]
+[[Category:Member states of the European Union]]
+[[Category:Alpine countries]]
+[[Category:Countries bordering the Atlantic Ocean]]
+[[Category:Countries bordering the Baltic Sea]]
+[[Category:Republics]]
+[[Category:Federal countries]]
+[[Category:German-speaking countries]]
+[[Category:G8 nations]]
+[[Category:G20 nations]]
+[[Category:Liberal democracies]]
+[[Category:Western Europe]]
+[[Category:Member states of the Union for the Mediterranean]]
+[[Category:States and territories established in 1871]]
+[[Category:Members of the North Atlantic Treaty Organization]]
+
+{{Link GA|da}}
+{{Link GA|de}}
+{{Link GA|eo}}
+{{Link GA|es}}
+{{Link GA|lt}}
+{{Link GA|zh}}
+{{Link FA|af}}
+{{Link FA|gv}}
+{{Link FA|hr}}
+{{Link FA|lv}}
+{{Link FA|mr}}
+{{Link FA|nah}}
+{{Link FA|pt}}
+{{Link FA|sq}}
+{{Link FA|tr}}
+{{Link FA|yi}}
+[[ace:Jeureuman]]
+[[af:Duitsland]]
+[[als:Deutschland]]
+[[am:ጀርመን]]
+[[ang:Þēodscland]]
+[[ab:Алмантәыла]]
+[[ar:ألمانيا]]
+[[an:Alemanya]]
+[[arc:ܓܪܡܢ]]
+[[roa-rup:Ghermãnia]]
+[[frp:Alemagne]]
+[[ast:Alemaña]]
+[[gn:Alemaña]]
+[[ay:Alimaña]]
+[[az:Almaniya]]
+[[bm:Jermani]]
+[[bn:জার্মানি]]
+[[zh-min-nan:Tek-kok]]
+[[ba:Германия]]
+[[be:Германія]]
+[[be-x-old:Нямеччына]]
+[[bcl:Alemanya]]
+[[bi:Germany]]
+[[bar:Deitschland]]
+[[bo:འཇར་མན།]]
+[[bs:Njemačka]]
+[[br:Alamagn]]
+[[bg:Германия]]
+[[ca:Alemanya]]
+[[cv:Германи]]
+[[ceb:Alemanya]]
+[[cs:Německo]]
+[[cbk-zam:Alemania]]
+[[tum:Germany]]
+[[co:Germania]]
+[[cy:Yr Almaen]]
+[[da:Tyskland]]
+[[pdc:Deitschland]]
+[[de:Deutschland]]
+[[dv:ޖަރުމަނުވިލާތް]]
+[[nv:Béésh Bichʼahii Bikéyah]]
+[[dsb:Nimska]]
+[[dz:ཇཱར་མ་ནི་]]
+[[et:Saksamaa]]
+[[el:Γερμανία]]
+[[eml:Germâgna]]
+[[myv:Германия Мастор]]
+[[es:Alemania]]
+[[eo:Germanio]]
+[[ext:Alemaña]]
+[[eu:Alemania]]
+[[ee:Germany]]
+[[fa:آلمان]]
+[[hif:Germany]]
+[[fo:Týskland]]
+[[fr:Allemagne]]
+[[fy:Dútslân]]
+[[fur:Gjermanie]]
+[[ga:An Ghearmáin]]
+[[gv:Yn Ghermaan]]
+[[gd:A' Ghearmailt]]
+[[gl:Alemaña - Deutschland]]
+[[frr:Tjüschlönj]]
+[[gan:德國]]
+[[gag:Germaniya]]
+[[got:𐌸𐌹𐌿𐌳𐌹𐍃𐌺𐌰𐌻𐌰𐌽𐌳]]
+[[hak:Tet-koet]]
+[[xal:Ниицәтә Немшин Орн]]
+[[ko:독일]]
+[[haw:Kelemānia]]
+[[hy:Գերմանիա]]
+[[hi:जर्मनी]]
+[[hsb:Němska]]
+[[hr:Njemačka]]
+[[io:Germania]]
+[[ig:Jémanị]]
+[[ilo:Alemania]]
+[[bpy:জার্মানি]]
+[[id:Jerman]]
+[[ia:Germania]]
+[[ie:Germania]]
+[[iu:ᔮᒪᓂ/jaamani]]
+[[os:Герман]]
+[[xh:IJamani]]
+[[zu:IJalimani]]
+[[is:Þýskaland]]
+[[it:Germania]]
+[[he:גרמניה]]
+[[jv:Jerman]]
+[[kl:Tysklandi]]
+[[kn:ಜರ್ಮನಿ]]
+[[pam:Alemania]]
+[[ka:გერმანია]]
+[[ks:जर्मनी]]
+[[csb:Miemieckô]]
+[[kk:Алмания]]
+[[kw:Almayn]]
+[[rw:Ubudage]]
+[[ky:Германия]]
+[[rn:Ubudagi]]
+[[sw:Ujerumani]]
+[[kv:Германия]]
+[[kg:Alemanyi]]
+[[ht:Almay]]
+[[ku:Almanya]]
+[[koi:Немечму]]
+[[lad:Almania]]
+[[krc:Германия]]
+[[lo:ປະເທດເຢັຽລະມັນ]]
+[[la:Germania]]
+[[lv:Vācija]]
+[[lb:Däitschland]]
+[[lt:Vokietija]]
+[[lij:Germania]]
+[[li:Duutsjlandj]]
+[[ln:Alémani]]
+[[jbo:dotygu'e]]
+[[lg:Girimane]]
+[[lmo:Germania]]
+[[hu:Németország]]
+[[mk:Германија]]
+[[mg:Alemaina]]
+[[ml:ജർമ്മനി]]
+[[mt:Ġermanja]]
+[[mi:Tiamana]]
+[[mr:जर्मनी]]
+[[arz:المانيا]]
+[[mzn:آلمان]]
+[[ms:Jerman]]
+[[cdo:Dáik-guók]]
+[[mdf:Германие мастор]]
+[[mn:Герман]]
+[[my:ဂျာမနီနိုင်ငံ]]
+[[nah:Teutontlālpan]]
+[[na:Germany]]
+[[nl:Duitsland]]
+[[nds-nl:Duutslaand]]
+[[ne:जर्मनी]]
+[[new:जर्मनी]]
+[[ja:ドイツ]]
+[[nap:Germania]]
+[[ce:Германи]]
+[[pih:Doichland]]
+[[no:Tyskland]]
+[[nn:Tyskland]]
+[[nrm:Allemangne]]
+[[nov:Germania]]
+[[oc:Alemanha]]
+[[mhr:Немыч Эл]]
+[[uz:Olmoniya]]
+[[pa:ਜਰਮਨੀ]]
+[[pag:Germany]]
+[[pnb:جرمنی]]
+[[pap:Alemania]]
+[[ps:آلمان]]
+[[km:អាល្លឺម៉ង់]]
+[[pcd:Alemanne]]
+[[pfl:Daitschlond]]
+[[pms:Gërmania]]
+[[tpi:Siamani]]
+[[nds:Düütschland]]
+[[pl:Niemcy]]
+[[pnt:Γερμανία]]
+[[pt:Alemanha]]
+[[kaa:Germaniya]]
+[[crh:Almaniya]]
+[[ty:Heremani]]
+[[ksh:Dütschland]]
+[[ro:Germania]]
+[[rmy:Jermaniya]]
+[[rm:Germania]]
+[[qu:Alimanya]]
+[[ru:Германия]]
+[[rue:Нїмецько]]
+[[sah:Германия]]
+[[se:Duiska]]
+[[sm:Siamani]]
+[[sa:जर्मनी]]
+[[sc:Germània]]
+[[sco:Germany]]
+[[stq:Düütsklound]]
+[[sq:Gjermania]]
+[[scn:Girmania]]
+[[simple:Germany]]
+[[ss:IJalimane]]
+[[sk:Nemecko]]
+[[cu:Нѣ́мьци]]
+[[sl:Nemčija]]
+[[szl:Mjymcy]]
+[[so:Jarmalka]]
+[[ckb:ئاڵمانیا]]
+[[srn:Doysrikondre]]
+[[sr:Немачка]]
+[[sh:Nemačka]]
+[[su:Jérman]]
+[[fi:Saksa]]
+[[sv:Tyskland]]
+[[tl:Alemanya]]
+[[ta:செருமனி]]
+[[kab:Lalman]]
+[[tt:Алмания]]
+[[te:జర్మనీ]]
+[[tet:Alemaña]]
+[[th:ประเทศเยอรมนี]]
+[[ti:ጀርመን]]
+[[tg:Олмон]]
+[[chr:ᎠᏛᏥ]]
+[[tr:Almanya]]
+[[tk:Germaniýa]]
+[[udm:Германия]]
+[[uk:Німеччина]]
+[[ur:جرمنی]]
+[[ug:گېرمانىيە]]
+[[za:Dwzgoz]]
+[[vec:Germania]]
+[[vi:Đức]]
+[[vo:Deutän]]
+[[fiu-vro:S'aksamaa]]
+[[wa:Almagne]]
+[[zh-classical:德國]]
+[[vls:Duutsland]]
+[[war:Alemanya]]
+[[wo:Almaañ]]
+[[wuu:德国]]
+[[ts:Jarimani]]
+[[yi:דייטשלאנד]]
+[[yo:Jẹ́mánì]]
+[[zh-yue:德國]]
+[[diq:Almanya]]
+[[zea:Duutsland]]
+[[bat-smg:Vuokītėjė]]
+[[zh:德国]]

@@ -1,0 +1,11 @@
+!! article
+Main Page
+!! text
+The main page is available in every MediaWiki
+!! endarticle
+
+!! test
+A completely empty page
+!! input
+!! result
+!! end

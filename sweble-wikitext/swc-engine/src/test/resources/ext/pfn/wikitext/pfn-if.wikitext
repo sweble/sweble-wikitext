@@ -1,0 +1,14 @@
+<!-- The engine supports this test fully -->
+
+{{#if: | yes | no}}
+{{#if: string | yes | no}}
+{{#if:      | yes | no}}
+{{#if:
+
+
+| yes | no}}
+{{#if: 1==2 | yes | no }}
+{{#if: 0 | yes | no }}
+{{#if: foo | yes }}
+{{#if: | yes }}
+{{#if: foo | | no}}

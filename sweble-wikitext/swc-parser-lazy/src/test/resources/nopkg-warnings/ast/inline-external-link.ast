@@ -1,0 +1,50 @@
+WtParsedWikitextPage(
+  Properties:
+    {N} entityMap = EntityMap {}
+    {N} warnings = []
+
+  [
+    WtParagraph([
+      WtText(
+        Properties:
+          {N} content = "\n["
+          warnings = [Warning: This looks like a External Link, however the finishing `]' is missing: "[http://example.com"]
+      )
+      WtUrl(
+        Properties:
+          {N} path = "//example.com"
+          {N} protocol = "http"
+          {N} rtd = RTD[ "http://example.com" ]
+      )
+      WtText(" Example\n\n")
+    ])
+    WtParagraph([
+      WtText(
+        Properties:
+          {N} content = "["
+          warnings = [Warning: This looks like a External Link, however the finishing `]' is missing: "[http://example.com"]
+      )
+      WtUrl(
+        Properties:
+          {N} path = "//example.com"
+          {N} protocol = "http"
+          {N} rtd = RTD[ "http://example.com" ]
+      )
+      WtText("\n\n")
+    ])
+    WtParagraph([
+      WtText(
+        Properties:
+          {N} content = "[http:\n\n"
+          warnings = [Warning: This looks like a External Link, however the actual URL is missing: "["]
+      )
+    ])
+    WtParagraph([
+      WtText(
+        Properties:
+          {N} content = "[\n"
+          warnings = [Warning: This looks like a External Link, however the actual URL is missing: "["]
+      )
+    ])
+  ]
+)

@@ -1,0 +1,19 @@
+<!-- The engine supports this test fully -->
+Media;Media
+Special;Special
+;
+User;User
+Wikipedia;Wikipedia
+File;File;File
+MediaWiki;MediaWiki
+Template;Template
+Help;Help
+Category;Category
+Talk;Talk
+User talk;User talk
+Wikipedia talk;Wikipedia talk
+File talk;File talk;File talk
+MediaWiki talk;MediaWiki talk
+Template talk;Template talk
+Help talk;Help talk
+Category talk;Category talk

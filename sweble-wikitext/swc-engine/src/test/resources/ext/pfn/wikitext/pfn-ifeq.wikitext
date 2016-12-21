@@ -1,0 +1,15 @@
+<!-- The engine DOES NOT YET support this test fully -->
+
+{{#ifeq: 01 | 1 | yes | no}}
+{{#ifeq: 0 | -0 | yes | no}}
+{{#ifeq: 1e3 | 1000 | yes | no}}
+{{#ifeq: {{#expr:10^3}} | 1000 | yes | no}}
+{{#ifeq: foo | bar | yes | no}}
+{{#ifeq: foo | Foo | yes | no}}
+{{#ifeq: "01" | "1" | yes | no}}
+{{#ifeq: 10^3 | 1000 | yes | no}}
+{{#ifeq: 12345678901234567 | 12345678901234568 | 1 | 0}} <!-- NOT SUPPORTED YET: Should really be "0"! -->
+{{#ifeq: <nowiki>foo</nowiki> | <nowiki>foo</nowiki> | yes | no}} <!-- NOT SUPPORTED YET: Should really be "no"! -->
+{{#ifeq: <math>foo</math> | <math>foo</math> | yes | no}}
+{{#ifeq: {{#tag:math|foo}} | {{#tag:math|foo}} | yes | no}}
+{{#ifeq: [[foo]] | [[foo]] | yes | no}}

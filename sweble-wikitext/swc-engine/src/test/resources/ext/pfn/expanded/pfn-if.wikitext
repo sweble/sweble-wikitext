@@ -1,0 +1,8 @@
+<!-- The engine supports this test fully -->
+no
+yes
+no
+no
+yes
+yes
+yes

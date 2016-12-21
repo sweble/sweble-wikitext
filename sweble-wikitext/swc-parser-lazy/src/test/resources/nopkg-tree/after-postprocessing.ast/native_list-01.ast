@@ -1,0 +1,30 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "List 1" ],
+	[1] = "\n",
+	[2] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " Item 1"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " Item 2"
+		)
+	],
+	[3] = "\n\n",
+	[4] = WtParagraph[ [0] = "List 2" ],
+	[5] = "\n",
+	[6] = WtOrderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "#" <o> "\n" ]
+			[0] = " Item 1"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "#" <o> "" ]
+			[0] = " Item 2"
+		)
+	],
+	[7] = "\n\n"
+)
