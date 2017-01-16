@@ -24,7 +24,7 @@
 	<parent>
 		<groupId>org.sweble.wom3</groupId>
 		<artifactId>sweble-wom3-parent</artifactId>
-		<version>3.1.1</version>
+		<version>3.1.2</version>
 	</parent>
 
 	<artifactId>sweble-wom3-json-tools</artifactId>
