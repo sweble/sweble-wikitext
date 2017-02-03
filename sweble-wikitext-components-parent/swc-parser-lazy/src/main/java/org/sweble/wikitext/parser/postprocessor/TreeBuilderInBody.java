@@ -215,7 +215,20 @@ public final class TreeBuilderInBody
 				startTagR13(n);
 				break;
 			case PRE: /*, "LISTING"*/
-				throw new InternalError("This must not happen!");
+				/**
+				 * Issue InternalError #35: I assume that the original idea of the InternalError was this: &lt;pre>
+				 * elements are always handled as tag extension and should never show up here as elements. The problem
+				 * is: Tag extension name matching is not done case insensitive while HTML element recognition on the
+				 * other hand is case insensitive. An all uppercase PRE element will not be recognized as tag extension
+				 * and cause an internal error here. We will now introduce a switch that turns on case insensitive tag
+				 * extension name matching if requested but we still have to fix this issue for devs who do not want to
+				 * turn on case insensitive matching. We'll treat the element like a real &lt;pre> element.
+				 */
+				startTagR14(n);
+				break;
+
+				// throw new InternalError("This must not happen!");
+
 				//startTagR14(n);
 				//break;
 				/*
@@ -998,6 +1011,18 @@ public final class TreeBuilderInBody
 		tb.insertAnHtmlElement(n);
 	}
 
+	/**
+	 * R14: A start tag whose tag name is one of: "pre", "listing"
+	 */
+	private void startTagR14(WtNode n)
+	{
+		if (tb.isElementTypeInButtonScope(P))
+			dispatch(getFactory().createMissingRepairEndTag(P));
+		tb.insertAnHtmlElement(n);
+		// FIXME: If the next token is a U+000A LINE FEED (LF) character token, then ignore that token and move on to
+		// the next one. (Newlines at the start of pre blocks are ignored as an authoring convenience.)
+	}
+	
 	/**
 	 * R16: A start tag whose tag name is li
 	 */

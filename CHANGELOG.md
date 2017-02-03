@@ -11,6 +11,8 @@
 - Changed order of processing in LinkTargetParser to fix issue #45 and perform
   link title sanity check with underscores replaced by spaces.
   The title `Template:Did you know nominations/Steve Taylor & The Perfect Foil; Wow to the Deadness' contains invalid entities: &_The_Perfect_Foil;
+- Fixed InternalError during postprocessing when encountering a <PRE> tag all
+  caps by treating it as startTagR14.
 
 ## 3.1.2 - 2017-01-16
 ### Changed

@@ -104,8 +104,9 @@ public class WikiConfigImpl
 
 	// -- Aliases --
 
-	private final Map<String, I18nAliasImpl> aliases = new HashMap<String, I18nAliasImpl>();
+	private final Map<String, I18nAliasImpl> aliasesById = new HashMap<String, I18nAliasImpl>();
 
+	/** Keys are lower-case for case-insensitive lookups. */
 	private transient final Map<String, I18nAliasImpl> nameToAliasMap = new HashMap<String, I18nAliasImpl>();
 
 	// -- Parser Functions --
@@ -130,6 +131,7 @@ public class WikiConfigImpl
 
 	private final Map<Integer, NamespaceImpl> namespaceById = new HashMap<Integer, NamespaceImpl>();
 
+	/** Keys are lower-case for case-insensitive lookups. */
 	private transient final Map<String, NamespaceImpl> namespaceByName = new HashMap<String, NamespaceImpl>();
 
 	private NamespaceImpl templateNamespace;
@@ -333,7 +335,7 @@ public class WikiConfigImpl
 	 */
 	public void addI18nAlias(I18nAliasImpl alias)
 	{
-		I18nAliasImpl old = aliases.get(alias.getId());
+		I18nAliasImpl old = aliasesById.get(alias.getId());
 
 		if (old == alias || (old != null && old.equals(alias)))
 			throw new IllegalArgumentException("This alias is already registered: " + alias.getId());
@@ -355,7 +357,7 @@ public class WikiConfigImpl
 			nameToAliasMap.put(lcAlias, alias);
 		}
 
-		aliases.put(alias.getId(), alias);
+		aliasesById.put(alias.getId(), alias);
 	}
 
 	@Override
@@ -371,14 +373,14 @@ public class WikiConfigImpl
 
 	public I18nAliasImpl getI18nAliasById(String id)
 	{
-		return aliases.get(id);
+		return aliasesById.get(id);
 	}
 
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Collection<I18nAlias> getI18nAliases()
 	{
-		return (Collection) Collections.unmodifiableCollection(aliases.values());
+		return (Collection) Collections.unmodifiableCollection(aliasesById.values());
 	}
 
 	// ==[ Tag extensions, parser functions and page switches ]=================
@@ -411,7 +413,7 @@ public class WikiConfigImpl
 
 		parserFunctions.put(pfn.getId(), pfn);
 
-		I18nAliasImpl alias = aliases.get(pfn.getId());
+		I18nAliasImpl alias = aliasesById.get(pfn.getId());
 		if (alias == null)
 			throw new IllegalArgumentException("No alias registered for parser function `" + pfn.getId() + "'.");
 
@@ -571,7 +573,7 @@ public class WikiConfigImpl
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((aliases == null) ? 0 : aliases.hashCode());
+		result = prime * result + ((aliasesById == null) ? 0 : aliasesById.hashCode());
 		result = prime * result + ((engineConfig == null) ? 0 : engineConfig.hashCode());
 		result = prime * result + ((contentLang == null) ? 0 : contentLang.hashCode());
 		result = prime * result + ((defaultNamespace == null) ? 0 : defaultNamespace.hashCode());
@@ -596,12 +598,12 @@ public class WikiConfigImpl
 		if (getClass() != obj.getClass())
 			return false;
 		WikiConfigImpl other = (WikiConfigImpl) obj;
-		if (aliases == null)
+		if (aliasesById == null)
 		{
-			if (other.aliases != null)
+			if (other.aliasesById != null)
 				return false;
 		}
-		else if (!aliases.equals(other.aliases))
+		else if (!aliasesById.equals(other.aliasesById))
 			return false;
 		if (engineConfig == null)
 		{
@@ -827,8 +829,8 @@ public class WikiConfigImpl
 	@XmlElementWrapper(name = "i18nAliases")
 	private I18nAliasImpl[] getJaxbAliases()
 	{
-		I18nAliasImpl[] jaxbAliases = this.aliases.values().toArray(
-				new I18nAliasImpl[this.aliases.size()]);
+		I18nAliasImpl[] jaxbAliases = this.aliasesById.values().toArray(
+				new I18nAliasImpl[this.aliasesById.size()]);
 		Arrays.sort(jaxbAliases);
 		return jaxbAliases;
 	}
