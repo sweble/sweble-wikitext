@@ -392,8 +392,13 @@ public final class ExpansionVisitor
 		for (Object arg : n.getArgs())
 			args.add((WtTemplateArgument) arg);
 
-		// First see if it is a parser function
-		WtNode result = resolveTemplateAsPfn(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
+		// First see if it needs exceptional treatment
+		WtNode result = resolveTemplateAsExceptional(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
+
+		if (result == null)
+		{
+			// Then see if it is a parser function
+			result = resolveTemplateAsPfn(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
 
 		if (result == null)
 		{
@@ -420,6 +425,7 @@ public final class ExpansionVisitor
 				fileInvalidTemplateNameWarning(n, e);
 			}
 		}
+		}
 
 		if (result == null)
 			result = markError(n);
@@ -433,6 +439,21 @@ public final class ExpansionVisitor
 	{
 		// FIXME: IMPLEMENT!
 		return false;
+	}
+
+	/**
+	 * Right now only identifies the special {{!}} => |
+	 */
+	private WtNode resolveTemplateAsExceptional(
+			WtTemplate n,
+			String title,
+			WtNodeList tail,
+			ArrayList<WtTemplateArgument> args,
+			boolean hadNewline) throws ExpansionException
+	{
+		if (title.equals("!") && tail.isEmpty() && args.isEmpty())
+			return nf.text("|");
+		return null;
 	}
 
 	/**

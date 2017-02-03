@@ -8,6 +8,7 @@
   parsing of `-{ }-` Language Converter tags
 - Added switch tagExtensionNamesCaseSensitive to help with issue #43: pre tag
   support is case sensitive
+- Automatically expanding `{{!}}` to `|` thus fixing issue #47
 
 ### Fixed
 - Changed order of processing in LinkTargetParser to fix issue #45 and perform
