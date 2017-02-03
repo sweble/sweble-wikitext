@@ -591,7 +591,7 @@ public final class ExpansionVisitor
 				return argValues;
 			}
 			default:
-				throw new InternalError();
+				throw new AssertionError();
 		}
 	}
 
@@ -1124,7 +1124,7 @@ public final class ExpansionVisitor
 			 * That's not true any more: the #tag: pfn can also generate
 			 * tag extensions, whether they were registered or not.
 			 */
-			//throw new InternalError("Cannot find tag extension: " + name);
+			//throw new AssertionError("Cannot find tag extension: " + name);
 			return null;
 
 		HashMap<String, WtNodeList> attrMap = prepareTagExtensionAttributes(attrs);
@@ -1240,7 +1240,7 @@ public final class ExpansionVisitor
 			 * parser (which only then will produce this magic word node)
 			 * there also has to be a magic word object.
 			 */
-			throw new InternalError("Cannot find tag extension: " + name);
+			throw new AssertionError("Cannot find tag extension: " + name);
 
 		WtNode result = mw.invoke(
 				n,

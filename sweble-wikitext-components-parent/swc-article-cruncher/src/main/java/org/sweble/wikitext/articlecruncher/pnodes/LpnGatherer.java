@@ -90,7 +90,7 @@ public class LpnGatherer
 						break;
 
 					default:
-						throw new InternalError();
+						throw new AssertionError();
 				}
 
 				processedJobs.put(processedJob);

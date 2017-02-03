@@ -16,6 +16,8 @@
   contains invalid entities: &_The_Perfect_Foil;
 - Fixed InternalError during postprocessing when encountering a <PRE> tag all
   caps by treating it as startTagR14.
+- Replaced throw new InternalError by AssertionError to fix bug
+  #35 Internal Error
 
 ## 3.1.2 - 2017-01-16
 ### Changed

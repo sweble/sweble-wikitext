@@ -685,7 +685,7 @@ public class WtEngineImpl
 			 * with the entities from the entity map (if present).
 			 * 
 			 * TODO: That's a lie I believe. In the preprocessor's State.rats
-			 * the getEntity() method always throws an InternalError suggesting
+			 * the getEntity() method always throws an AssertionError suggesting
 			 * that the preprocessor cannot handle entites...
 			 * 
 			 * I think that's a bug!

@@ -119,7 +119,7 @@ public class MassExpansionTest
 			{
 				String zfname = zipFile.getName();
 				if (!zfname.toLowerCase().endsWith(".zip"))
-					throw new InternalError();
+					throw new AssertionError();
 				suiteName = zfname.substring(0, zfname.length() - 4);
 			}
 

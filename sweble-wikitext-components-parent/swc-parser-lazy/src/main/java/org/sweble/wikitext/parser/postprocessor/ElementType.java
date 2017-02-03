@@ -469,7 +469,7 @@ public enum ElementType
 				return LCT_VAR_CONV;
 
 			default:
-				throw new InternalError();
+				throw new AssertionError();
 		}
 	}
 
@@ -477,7 +477,7 @@ public enum ElementType
 	{
 		String name = e.getName().toLowerCase();
 		if (name.isEmpty())
-			throw new InternalError();
+			throw new AssertionError();
 
 		if (name.charAt(0) == '@')
 		{

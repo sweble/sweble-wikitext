@@ -148,7 +148,7 @@ public class TreeBuilderModeBase
 
 			default:
 				// Finish is assumed to be WtBold or WtItalics
-				throw new InternalError();
+				throw new AssertionError();
 		}
 	}
 }
