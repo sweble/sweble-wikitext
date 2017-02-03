@@ -1435,7 +1435,7 @@ public final class TreeBuilderInBody
 				// Step 9.5
 				if (!tb.isInListOfActiveFormattingElements(node))
 				{
-					// Node is guarantteed to be on stack. From here we 
+					// Node is guaranteed to be on stack. From here we 
 					// definitely get to step 9.4 next. Make sure, we know
 					// which node was "above" node before node was removed.
 					stackIter.remove();

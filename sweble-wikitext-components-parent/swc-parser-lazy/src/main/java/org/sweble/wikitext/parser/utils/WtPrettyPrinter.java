@@ -164,6 +164,8 @@ public class WtPrettyPrinter
 
 	public void visit(WtXmlEmptyTag n)
 	{
+		if (n.getName().startsWith("#"))
+			return;
 		p.print('<');
 		p.print(n.getName());
 		dispatch(n.getXmlAttributes());
@@ -172,6 +174,8 @@ public class WtPrettyPrinter
 
 	public void visit(WtXmlStartTag n)
 	{
+		if (n.getName().startsWith("#"))
+			return;
 		p.print('<');
 		p.print(n.getName());
 		dispatch(n.getXmlAttributes());
@@ -488,6 +492,8 @@ public class WtPrettyPrinter
 
 	public void visit(WtXmlEndTag n)
 	{
+		if (n.getName().startsWith("#"))
+			return;
 		p.print("</");
 		p.print(n.getName());
 		p.print('>');
