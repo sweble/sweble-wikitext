@@ -45,6 +45,8 @@ public class WikitextParserState
 
 	private boolean gatherRtData;
 
+	private boolean langConvTagsEnabled;
+
 	// =========================================================================
 
 	@Override
@@ -83,6 +85,8 @@ public class WikitextParserState
 		this.warningsEnabled = config.isWarningsEnabled();
 
 		this.gatherRtData = config.isGatherRtData();
+
+		this.langConvTagsEnabled = config.isLangConvTagsEnabled();
 
 		this.prefixPattern = Pattern.compile(
 				"(" + config.getInternalLinkPrefixPattern() + ")$");
@@ -178,5 +182,10 @@ public class WikitextParserState
 			int bit = 1 << scope.ordinal();
 			return 0 != (c.getStickingScopes() & bit);
 		}
+	}
+
+	public boolean isLangConvTagsEnabled()
+	{
+		return langConvTagsEnabled;
 	}
 }

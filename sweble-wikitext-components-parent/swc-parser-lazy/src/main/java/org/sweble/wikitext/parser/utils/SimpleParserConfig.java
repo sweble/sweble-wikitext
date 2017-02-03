@@ -45,6 +45,8 @@ public class SimpleParserConfig
 
 	private final boolean autoCorrect;
 
+	private final boolean langConvTagsEnabled;
+
 	private final WikitextNodeFactory nodeFactory;
 
 	private final AstTextUtilsImpl textUtils;
@@ -53,7 +55,7 @@ public class SimpleParserConfig
 
 	public SimpleParserConfig()
 	{
-		this(true, true, false);
+		this(true, true, false, true);
 	}
 
 	public SimpleParserConfig(
@@ -64,6 +66,23 @@ public class SimpleParserConfig
 		this.warningsEnabled = warningsEnabled;
 		this.gatherRtd = gatherRtd;
 		this.autoCorrect = autoCorrect;
+		// Issue #48: false would be the smarter setting but we stick with true
+		// for downward compatibility.
+		this.langConvTagsEnabled = true;
+		this.nodeFactory = new WikitextNodeFactoryImpl(this);
+		this.textUtils = new AstTextUtilsImpl(this);
+	}
+
+	public SimpleParserConfig(
+			boolean warningsEnabled,
+			boolean gatherRtd,
+			boolean autoCorrect,
+			boolean langConvTagsEnabled)
+	{
+		this.warningsEnabled = warningsEnabled;
+		this.gatherRtd = gatherRtd;
+		this.autoCorrect = autoCorrect;
+		this.langConvTagsEnabled = langConvTagsEnabled;
 		this.nodeFactory = new WikitextNodeFactoryImpl(this);
 		this.textUtils = new AstTextUtilsImpl(this);
 	}
@@ -284,7 +303,19 @@ public class SimpleParserConfig
 	// ==[ Language Conversion Tags ]===========================================
 
 	private static final Set<String> knownFlags = new HashSet<String>(Arrays.asList(
-			"A", "T", "R", "D", "-", "H", "N"));
+			"A",
+			"T",
+			"R",
+			"D",
+			"-",
+			"H",
+			"N"));
+
+	@Override
+	public boolean isLangConvTagsEnabled()
+	{
+		return langConvTagsEnabled;
+	}
 
 	public boolean isLctFlag(String flag)
 	{
@@ -298,7 +329,13 @@ public class SimpleParserConfig
 	}
 
 	private static final Set<String> knownVariants = new HashSet<String>(Arrays.asList(
-			"zh", "zh-hans", "zh-hant", "zh-cn", "zh-tw", "zh-hk", "zh-sg"));
+			"zh",
+			"zh-hans",
+			"zh-hant",
+			"zh-cn",
+			"zh-tw",
+			"zh-hk",
+			"zh-sg"));
 
 	public boolean isLctVariant(String variant)
 	{

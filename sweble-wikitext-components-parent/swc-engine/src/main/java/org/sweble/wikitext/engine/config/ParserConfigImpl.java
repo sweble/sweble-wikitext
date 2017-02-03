@@ -43,14 +43,13 @@ import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.utils.AstTextUtils;
 
-@XmlRootElement(
-		name = "ParserConfig",
-		namespace = "org.sweble.wikitext.engine")
+@XmlRootElement(name = "ParserConfig", namespace = "org.sweble.wikitext.engine")
 @XmlType(propOrder = {
 		"warningsEnabled",
 		"minSeverity",
 		"autoCorrect",
 		"gatherRtData",
+		"langConvTagsEnabled",
 		"internalLinkPrefixPattern",
 		"internalLinkPostfixPattern",
 		"jaxbAllowedUrlProtocols",
@@ -79,6 +78,9 @@ public class ParserConfigImpl
 
 	@XmlElement
 	private boolean gatherRtData;
+
+	@XmlElement
+	private boolean langConvTagsEnabled = true /*be backward compatible*/;
 
 	private final Set<String> allowedUrlProtocols = new HashSet<String>();
 
@@ -380,6 +382,12 @@ public class ParserConfigImpl
 	// ==[ Language Conversion Tags ]===========================================
 
 	@Override
+	public boolean isLangConvTagsEnabled()
+	{
+		return langConvTagsEnabled;
+	}
+
+	@Override
 	public boolean isLctFlag(String flag)
 	{
 		return lctFlagMap.containsKey(normalizeLctFlag(flag));
@@ -619,6 +627,7 @@ public class ParserConfigImpl
 		result = prime * result + (gatherRtData ? 1231 : 1237);
 		result = prime * result + ((internalLinkPostfixPattern == null) ? 0 : internalLinkPostfixPattern.hashCode());
 		result = prime * result + ((internalLinkPrefixPattern == null) ? 0 : internalLinkPrefixPattern.hashCode());
+		result = prime * result + (langConvTagsEnabled ? 1231 : 1237);
 		result = prime * result + ((lctFlagMap == null) ? 0 : lctFlagMap.hashCode());
 		result = prime * result + ((lctVariantMap == null) ? 0 : lctVariantMap.hashCode());
 		result = prime * result + ((minSeverity == null) ? 0 : minSeverity.hashCode());
@@ -661,6 +670,8 @@ public class ParserConfigImpl
 				return false;
 		}
 		else if (!internalLinkPrefixPattern.equals(other.internalLinkPrefixPattern))
+			return false;
+		if (langConvTagsEnabled != other.langConvTagsEnabled)
 			return false;
 		if (lctFlagMap == null)
 		{

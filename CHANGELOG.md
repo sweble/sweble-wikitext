@@ -4,6 +4,8 @@
 ## Unreleased
 ### Changed
 - More fine grained engine integration test helper functions
+- Implemented switch langConvTagsEnabled to help with issue #48 Too aggressive
+  parsing of `-{ }-` Language Converter tags
 
 ### Fixed
 - Changed order of processing in LinkTargetParser to fix issue #45 and perform

@@ -93,6 +93,11 @@ body
 
   // ===========================================================================
 
+  private boolean isLangConvTagsEnabled()
+  {
+      return getState().isLangConvTagsEnabled();
+  }
+
   private boolean isWarningsEnabled()
   {
       return getState().isWarnignsEnabled();
