@@ -16,18 +16,35 @@
  */
 package org.sweble.wikitext.engine;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 
 public class PageTitleTest
 {
+	/** Tests fix to issue #45. */
 	@Test
 	public void testName() throws Exception
 	{
 		WikiConfigImpl config = DefaultConfigEnWp.generate();
-		PageTitle.make(
+
+		// Must not fail with illegal entity error
+		PageTitle title = PageTitle.make(
 				config,
 				"Template:Did you know nominations/Steve Taylor & The Perfect Foil; Wow to the Deadness");
+
+		PageTitle title2 = PageTitle.make(
+				config,
+				title.getNormalizedFullTitle());
+
+		assertEquals(title, title2);
+
+		PageTitle title3 = PageTitle.make(
+				config,
+				title.getDenormalizedFullTitle());
+
+		assertEquals(title, title3);
 	}
 }

@@ -6,7 +6,8 @@
 - More fine grained engine integration test helper functions
 
 ### Fixed
-- Changed order of processing in LinkTargetParser to fix issue #45 
+- Changed order of processing in LinkTargetParser to fix issue #45 and perform
+  link title sanity check with underscores replaced by spaces.
   The title `Template:Did you know nominations/Steve Taylor & The Perfect Foil; Wow to the Deadness' contains invalid entities: &_The_Perfect_Foil;
 
 ## 3.1.2 - 2017-01-16
