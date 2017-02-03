@@ -106,6 +106,59 @@ public abstract class EngineIntegrationTestBase
 			boolean forInclusion,
 			PrinterInterface printer) throws IOException, LinkTargetException, EngineException
 	{
+		EngProcessedPage ast = expand(inputFile, callback, forInclusion);
+
+		printAndCompare(inputFile, inputSubDir, expectedSubDir, printer, ast);
+	}
+
+	public void expandPostprocessPrintAndCompare(
+			File inputFile,
+			String inputSubDir,
+			String expectedSubDir,
+			ExpansionCallback callback,
+			boolean forInclusion,
+			PrinterInterface printer) throws IOException, LinkTargetException, EngineException
+	{
+		FileContent inputFileContent = new FileContent(inputFile);
+
+		String fileTitle = inputFile.getName();
+		int i = fileTitle.lastIndexOf('.');
+		if (i != -1)
+			fileTitle = fileTitle.substring(0, i);
+
+		PageTitle title = PageTitle.make(config, fileTitle);
+		PageId pageId = new PageId(title, -1);
+		EngProcessedPage ast = engine.postprocess(
+				pageId,
+				inputFileContent.getContent(),
+				callback);
+
+		printAndCompare(inputFile, inputSubDir, expectedSubDir, printer, ast);
+	}
+
+	private void printAndCompare(File inputFile, String inputSubDir, String expectedSubDir, PrinterInterface printer,
+			EngProcessedPage ast)
+		throws IOException
+	{
+		String actual1 = printToString(ast.getPage(), printer);
+		String actual = actual1;
+
+		File expectedFile = TestResourcesFixture.rebase(
+				inputFile,
+				inputSubDir,
+				expectedSubDir,
+				printer.getPrintoutType(),
+				true /* don't throw if file doesn't exist */);
+
+		FileCompare cmp = new FileCompare(getResources());
+		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
+	}
+
+	private EngProcessedPage expand(File inputFile, ExpansionCallback callback, boolean forInclusion)
+		throws IOException,
+			LinkTargetException,
+			EngineException
+	{
 		FileContent inputFileContent = new FileContent(inputFile);
 
 		String fileTitle = inputFile.getName();
@@ -120,29 +173,7 @@ public abstract class EngineIntegrationTestBase
 				inputFileContent.getContent(),
 				forInclusion,
 				callback);
-
-		String actual = printToString(ast.getPage(), printer);
-
-		File expectedFile = TestResourcesFixture.rebase(
-				inputFile,
-				inputSubDir,
-				expectedSubDir,
-				printer.getPrintoutType(),
-				true /* don't throw if file doesn't exist */);
-
-		FileCompare cmp = new FileCompare(getResources());
-		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
-	}
-
-	public void expandPrintAndCompare(
-			File inputFile,
-			String inputSubDir,
-			String expectedSubDir,
-			ExpansionCallback callback,
-			boolean forInclusion) throws IOException, LinkTargetException, EngineException
-	{
-		TypedEnginePrettyPrinter printer = new TypedEnginePrettyPrinter();
-		expandPrintAndCompare(inputFile, inputSubDir, expectedSubDir, callback, forInclusion, printer);
+		return ast;
 	}
 
 	public void expandPrintAndCompare(
@@ -169,6 +200,25 @@ public abstract class EngineIntegrationTestBase
 		boolean forInclusion = false;
 
 		expandPrintAndCompare(
+				inputFile,
+				inputSubDir,
+				expectedSubDir,
+				callback,
+				forInclusion,
+				printer);
+	}
+
+	public void expandPostprocessPrintAndCompare(
+			File inputFile,
+			String inputSubDir,
+			String expectedSubDir,
+			PrinterInterface printer) throws IOException, LinkTargetException, EngineException
+	{
+		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
+
+		boolean forInclusion = false;
+
+		expandPostprocessPrintAndCompare(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,

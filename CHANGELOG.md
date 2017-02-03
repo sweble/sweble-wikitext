@@ -3,6 +3,8 @@
 
 ## Unreleased
 ### Changed
+- More fine grained engine integration test helper functions
+
 ### Fixed
 - Changed order of processing in LinkTargetParser to fix issue #45 
   The title `Template:Did you know nominations/Steve Taylor & The Perfect Foil; Wow to the Deadness' contains invalid entities: &_The_Perfect_Foil;
