@@ -43,7 +43,7 @@ import de.fau.cs.osr.utils.StringTools;
 import de.fau.cs.osr.utils.TestResourcesFixture;
 import de.fau.cs.osr.utils.WrappedException;
 
-public abstract class EngineIntegrationTestBase
+public class EngineIntegrationTestBase
 {
 	private static final Logger logger = LoggerFactory.getLogger(EngineIntegrationTestBase.class);
 
@@ -55,7 +55,7 @@ public abstract class EngineIntegrationTestBase
 
 	// =========================================================================
 
-	protected static TestResourcesFixture getTestResourcesFixture()
+	public static TestResourcesFixture getTestResourcesFixture()
 	{
 		try
 		{
