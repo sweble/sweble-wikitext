@@ -1,0 +1,20 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "<b" <o> ">" <o> "'''" ]
+			xmlAttributes = WtXmlAttributes[
+				[0] = WtXmlAttribute(
+					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+					name = WtName[ [0] = "style" ],
+					value = WtValue[ [0] = "color:red;" ]
+				)
+			],
+			body = WtBody[ [0] = "\u00B9" ]
+		),
+		[2] = " after"
+	]
+)

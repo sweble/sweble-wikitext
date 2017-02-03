@@ -18,6 +18,9 @@
   caps by treating it as startTagR14.
 - Replaced throw new InternalError by AssertionError to fix bug
   #35 Internal Error
+- Ignoring virtual xml tags in WtPrettyPrinter (Caused problems in issue #44)
+- Differentiating between italic/bold started by html tag or ticks thus partly
+  fixing issue #44
 
 ## 3.1.2 - 2017-01-16
 ### Changed

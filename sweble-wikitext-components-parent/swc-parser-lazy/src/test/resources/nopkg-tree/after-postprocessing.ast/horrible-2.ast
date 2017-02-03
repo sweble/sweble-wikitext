@@ -1,0 +1,43 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: /nopkg-tree/input.wikitext/horrible-2.wikitext:1:72: <no content> : 12.2.5.4.7 - R52 (1) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[
+		[0] = "before ",
+		[1] = WtXmlElement(
+			{P} name = "span"
+			{P} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
+			xmlAttributes = WtXmlAttributes[
+				[0] = WtXmlAttribute(
+					{P} rtd = RTD[ " " <o> "=\"" <o> "\"" ]
+					name = WtName[ [0] = "style" ],
+					value = WtValue[ [0] = "font-face: bold" ]
+				)
+			],
+			body = WtBody[
+				[0] = "... ",
+				[1] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName[ [0] = "User:User" ],
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = WtXmlElement(
+							{P} name = "b"
+							{P} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
+							xmlAttributes = WtXmlAttributes[],
+							body = WtBody[ [0] = "User" ]
+						)
+					)
+				),
+				[2] = WtBold(
+					{P} rtd = RTD[ "'''" <o> "" ]
+				)
+			]
+		),
+		[2] = WtBold[ [0] = " after" ]
+	]
+)
