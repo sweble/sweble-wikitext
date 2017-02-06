@@ -392,8 +392,13 @@ public final class ExpansionVisitor
 		for (Object arg : n.getArgs())
 			args.add((WtTemplateArgument) arg);
 
-		// First see if it is a parser function
-		WtNode result = resolveTemplateAsPfn(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
+		// First see if it needs exceptional treatment
+		WtNode result = resolveTemplateAsExceptional(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
+
+		if (result == null)
+		{
+			// Then see if it is a parser function
+			result = resolveTemplateAsPfn(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
 
 		if (result == null)
 		{
@@ -420,6 +425,7 @@ public final class ExpansionVisitor
 				fileInvalidTemplateNameWarning(n, e);
 			}
 		}
+		}
 
 		if (result == null)
 			result = markError(n);
@@ -433,6 +439,21 @@ public final class ExpansionVisitor
 	{
 		// FIXME: IMPLEMENT!
 		return false;
+	}
+
+	/**
+	 * Right now only identifies the special {{!}} => |
+	 */
+	private WtNode resolveTemplateAsExceptional(
+			WtTemplate n,
+			String title,
+			WtNodeList tail,
+			ArrayList<WtTemplateArgument> args,
+			boolean hadNewline) throws ExpansionException
+	{
+		if (title.equals("!") && tail.isEmpty() && args.isEmpty())
+			return nf.text("|");
+		return null;
 	}
 
 	/**
@@ -591,7 +612,7 @@ public final class ExpansionVisitor
 				return argValues;
 			}
 			default:
-				throw new InternalError();
+				throw new AssertionError();
 		}
 	}
 
@@ -1124,7 +1145,7 @@ public final class ExpansionVisitor
 			 * That's not true any more: the #tag: pfn can also generate
 			 * tag extensions, whether they were registered or not.
 			 */
-			//throw new InternalError("Cannot find tag extension: " + name);
+			//throw new AssertionError("Cannot find tag extension: " + name);
 			return null;
 
 		HashMap<String, WtNodeList> attrMap = prepareTagExtensionAttributes(attrs);
@@ -1240,7 +1261,7 @@ public final class ExpansionVisitor
 			 * parser (which only then will produce this magic word node)
 			 * there also has to be a magic word object.
 			 */
-			throw new InternalError("Cannot find tag extension: " + name);
+			throw new AssertionError("Cannot find tag extension: " + name);
 
 		WtNode result = mw.invoke(
 				n,

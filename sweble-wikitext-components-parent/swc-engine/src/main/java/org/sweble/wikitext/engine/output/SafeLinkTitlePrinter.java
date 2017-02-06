@@ -211,14 +211,14 @@ public class SafeLinkTitlePrinter
 	public void visit(WtImEndTag n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtImStartTag n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	public void visit(WtInternalLink n)
@@ -258,35 +258,35 @@ public class SafeLinkTitlePrinter
 	public void visit(WtLinkOptionGarbage n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptionKeyword n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptionLinkTarget n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptionResize n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptions n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	public void visit(WtLinkTitle n)
@@ -333,7 +333,7 @@ public class SafeLinkTitlePrinter
 	public void visit(WtPageName n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
@@ -443,7 +443,7 @@ public class SafeLinkTitlePrinter
 	public void visit(WtTagExtensionBody n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
@@ -479,7 +479,7 @@ public class SafeLinkTitlePrinter
 	public void visit(WtTicks n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override

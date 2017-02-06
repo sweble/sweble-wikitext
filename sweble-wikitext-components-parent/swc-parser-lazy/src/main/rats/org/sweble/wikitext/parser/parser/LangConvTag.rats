@@ -193,10 +193,10 @@ body
 // -- LanguageConversionTag ----------------------------------------------------
 
 transient WtNode LanguageConversionTag =
-    "-{" yyValue:LanguageConversionTagChoice
-  / "-{"
+    &{ isLangConvTagsEnabled() } "-{" yyValue:LanguageConversionTagChoice
+  / "-"
     {
-      yyValue = nf.text("-{");
+      yyValue = nf.text("-");
     }
 ;
 

@@ -131,7 +131,7 @@ public final class TreeBuilderInBody
 				startTagR12(n);
 				break;
 			default:
-				throw new InternalError("Should not happen!");
+				throw new AssertionError("Should not happen!");
 		}
 	}
 
@@ -164,7 +164,7 @@ public final class TreeBuilderInBody
 				break;
 
 			default:
-				throw new InternalError("Should not happen!");
+				throw new AssertionError("Should not happen!");
 		}
 	}
 
@@ -180,7 +180,7 @@ public final class TreeBuilderInBody
 		handleStartTag(n);
 	}
 
-	private void handleStartTag(WtNode n) throws InternalError
+	private void handleStartTag(WtNode n)
 	{
 		ElementType nodeType = getNodeType(n);
 		if (nodeType == null)
@@ -215,7 +215,20 @@ public final class TreeBuilderInBody
 				startTagR13(n);
 				break;
 			case PRE: /*, "LISTING"*/
-				throw new InternalError("This must not happen!");
+				/**
+				 * Issue AssertionError #35: I assume that the original idea of the AssertionError was this: &lt;pre>
+				 * elements are always handled as tag extension and should never show up here as elements. The problem
+				 * is: Tag extension name matching is not done case insensitive while HTML element recognition on the
+				 * other hand is case insensitive. An all uppercase PRE element will not be recognized as tag extension
+				 * and cause an internal error here. We will now introduce a switch that turns on case insensitive tag
+				 * extension name matching if requested but we still have to fix this issue for devs who do not want to
+				 * turn on case insensitive matching. We'll treat the element like a real &lt;pre> element.
+				 */
+				startTagR14(n);
+				break;
+
+				// throw new AssertionError("This must not happen!");
+
 				//startTagR14(n);
 				//break;
 				/*
@@ -237,7 +250,7 @@ public final class TreeBuilderInBody
 			*/
 			/*
 			case A:
-			throw new InternalError("This must not happen!");
+			throw new AssertionError("This must not happen!");
 			*/
 			case B:
 			case BIG:
@@ -261,7 +274,7 @@ public final class TreeBuilderInBody
 				startTagR34(n);
 				break;
 			case IMG:
-				throw new InternalError("This must not happen!");
+				throw new AssertionError("This must not happen!");
 				/*
 				case INPUT:
 				startTagR35(n);
@@ -527,13 +540,13 @@ public final class TreeBuilderInBody
 			// -- unexpected nodes --
 
 			case NT_SEMI_PRE:
-				throw new InternalError("Node should only occur in SemiPre scope: " + n.getClass().getSimpleName());
+				throw new AssertionError("Node should only occur in SemiPre scope: " + n.getClass().getSimpleName());
 
 			case NT_TABLE_CAPTION:
 			case NT_TABLE_CELL:
 			case NT_TABLE_HEADER:
 			case NT_TABLE_ROW:
-				//throw new InternalError("Node should only occur in Table scope: " + n.getClass().getSimpleName());
+				//throw new AssertionError("Node should only occur in Table scope: " + n.getClass().getSimpleName());
 				// Although native WtNode tables elements are always correctly 
 				// nested by the parser, it is possible that the TreeBuilder
 				// leaves the table/row/cell scope before all the tables/... 
@@ -544,7 +557,7 @@ public final class TreeBuilderInBody
 
 			case NT_XML_ELEMENT:
 			default:
-				//throw new InternalError("Unhandled node: " + n.getClass().getSimpleName());
+				//throw new AssertionError("Unhandled node: " + n.getClass().getSimpleName());
 				// Treat these like comments
 				tokenR03(n);
 				break;
@@ -806,7 +819,7 @@ public final class TreeBuilderInBody
 		{
 
 			if (tb.getCurrentNode() != section)
-				throw new InternalError("Stack of open elements corrupted!");
+				throw new AssertionError("Stack of open elements corrupted!");
 
 			// -- body ----
 
@@ -818,7 +831,7 @@ public final class TreeBuilderInBody
 					processedBody = true;
 
 					if (tb.getCurrentNode() != section)
-						throw new InternalError("Stack of open elements corrupted!");
+						throw new AssertionError("Stack of open elements corrupted!");
 				}
 			}
 
@@ -866,7 +879,7 @@ public final class TreeBuilderInBody
 
 		iterate(heading);
 		if (!tb.isInStackOfOpenElements(newNode))
-			//throw new InternalError("Section heading was removed from stack prematurely!");
+			//throw new AssertionError("Section heading was removed from stack prematurely!");
 			return false;
 
 		// Almost: endTagR20(getFactory().synEndTag(heading));
@@ -895,7 +908,7 @@ public final class TreeBuilderInBody
 	 *         interrupted by another element that forced the body to end
 	 *         prematurely.
 	 */
-	public boolean visitSectionBody(WtBody body) throws InternalError
+	public boolean visitSectionBody(WtBody body)
 	{
 		if (tb.isElementTypeInButtonScope(P))
 			/**
@@ -913,7 +926,7 @@ public final class TreeBuilderInBody
 
 		iterate(body);
 		if (!tb.isInStackOfOpenElements(newNode))
-			//throw new InternalError("Section body was removed from stack prematurely!");
+			//throw new AssertionError("Section body was removed from stack prematurely!");
 			return false;
 
 		// Almost: endTagR20(getFactory().synEndTag(body));
@@ -998,6 +1011,18 @@ public final class TreeBuilderInBody
 		tb.insertAnHtmlElement(n);
 	}
 
+	/**
+	 * R14: A start tag whose tag name is one of: "pre", "listing"
+	 */
+	private void startTagR14(WtNode n)
+	{
+		if (tb.isElementTypeInButtonScope(P))
+			dispatch(getFactory().createMissingRepairEndTag(P));
+		tb.insertAnHtmlElement(n);
+		// FIXME: If the next token is a U+000A LINE FEED (LF) character token, then ignore that token and move on to
+		// the next one. (Newlines at the start of pre blocks are ignored as an authoring convenience.)
+	}
+	
 	/**
 	 * R16: A start tag whose tag name is li
 	 */
@@ -1365,7 +1390,7 @@ public final class TreeBuilderInBody
 			}
 
 			if (commonAncestor == null)
-				throw new InternalError();
+				throw new AssertionError();
 
 			WtNode furthestBlock = null;
 			WtNode furthestBlockParent = fe;
@@ -1410,7 +1435,7 @@ public final class TreeBuilderInBody
 				// Step 9.5
 				if (!tb.isInListOfActiveFormattingElements(node))
 				{
-					// Node is guarantteed to be on stack. From here we 
+					// Node is guaranteed to be on stack. From here we 
 					// definitely get to step 9.4 next. Make sure, we know
 					// which node was "above" node before node was removed.
 					stackIter.remove();
@@ -1536,7 +1561,7 @@ public final class TreeBuilderInBody
 	/**
 	 * R51: Any other start tag
 	 */
-	private void startTagR51(WtNode n) throws InternalError
+	private void startTagR51(WtNode n)
 	{
 		tb.reconstructActiveFormattingElements();
 

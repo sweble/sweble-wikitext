@@ -252,7 +252,7 @@ public class ElementFactory
 
 			case NT_IM_END_TAG:
 			case NT_XML_END_TAG:
-				throw new InternalError();
+				throw new AssertionError();
 
 			default:
 				return createFromNative(elementType, template, suppressRtd);
@@ -291,7 +291,7 @@ public class ElementFactory
 				break;
 
 			default:
-				throw new InternalError("Don't know how to create intermediate element: " + elementType);
+				throw new AssertionError("Don't know how to create intermediate element: " + elementType);
 		}
 
 		copyNodeAttributes(template, newElement);
@@ -326,7 +326,7 @@ public class ElementFactory
 				break;
 
 			default:
-				throw new InternalError();
+				throw new AssertionError();
 		}
 
 		if (suppressRtd)
@@ -538,7 +538,7 @@ public class ElementFactory
 				break;
 
 			default:
-				throw new InternalError("Don't know how to create element for: " + elementType);
+				throw new AssertionError("Don't know how to create element for: " + elementType);
 		}
 
 		if (!suppressRtd)

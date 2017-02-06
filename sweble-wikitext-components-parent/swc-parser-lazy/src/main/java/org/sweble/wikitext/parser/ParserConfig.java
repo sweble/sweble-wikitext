@@ -86,6 +86,8 @@ public interface ParserConfig
 
 	// ==[ Language Conversion Tags ]===========================================
 
+	boolean isLangConvTagsEnabled();
+
 	boolean isLctFlag(String flag);
 
 	String normalizeLctFlag(String flag);

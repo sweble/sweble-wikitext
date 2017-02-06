@@ -2,7 +2,28 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+
+## 3.1.3 - 2017-02-06
 ### Changed
+- More fine grained engine integration test helper functions
+- Implemented switch langConvTagsEnabled to help with issue #48 Too aggressive
+  parsing of `-{ }-` Language Converter tags
+- Added switch tagExtensionNamesCaseSensitive to help with issue #43: pre tag
+  support is case sensitive
+- Automatically expanding `{{!}}` to `|` thus fixing issue #47
+
+### Fixed
+- Changed order of processing in LinkTargetParser to fix issue #45 and perform
+  link title sanity check with underscores replaced by spaces.
+  The title `Template:Did you know nominations/Steve Taylor & The Perfect Foil; Wow to the Deadness'
+  contains invalid entities: &_The_Perfect_Foil;
+- Fixed InternalError during postprocessing when encountering a <PRE> tag all
+  caps by treating it as startTagR14.
+- Replaced throw new InternalError by AssertionError to fix bug
+  #35 Internal Error
+- Ignoring virtual xml tags in WtPrettyPrinter (Caused problems in issue #44)
+- Differentiating between italic/bold started by html tag or ticks thus partly
+  fixing issue #44
 
 ## 3.1.2 - 2017-01-16
 ### Changed

@@ -466,7 +466,7 @@ public final class TreeBuilderInTable
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
-			// throw new InternalError();
+			// throw new AssertionError();
 		}
 
 		private void rule02(WtNode n)
@@ -548,7 +548,7 @@ public final class TreeBuilderInTable
 			{
 				// We have no fragment case!
 				if (getNodeType(tb.popFromStack()) != COLGROUP)
-					throw new InternalError();
+					throw new AssertionError();
 				tb.switchInsertionMode(InsertionMode.IN_TABLE);
 			}
 			else if (nodeType == COL)
@@ -565,7 +565,7 @@ public final class TreeBuilderInTable
 		public void visit(WtNode n)
 		{
 			// anythingElse(n);
-			throw new InternalError();
+			throw new AssertionError();
 		}
 
 		public void visit(WtText n)
@@ -690,7 +690,7 @@ public final class TreeBuilderInTable
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
-			// throw new InternalError();
+			// throw new AssertionError();
 		}
 
 		public void visit(WtTableRow n)
@@ -783,7 +783,7 @@ public final class TreeBuilderInTable
 					default:
 						// Any other garbage should have been hoisted in front 
 						// of the table already.
-						throw new InternalError();
+						throw new AssertionError();
 				}
 			}
 			return false;
@@ -804,7 +804,7 @@ public final class TreeBuilderInTable
 					dispatch(getFactory().createMissingRepairEndTag(curNodeType));
 					break;
 				default:
-					throw new InternalError();
+					throw new AssertionError();
 			}
 
 			dispatch(n);
@@ -875,7 +875,7 @@ public final class TreeBuilderInTable
 					tb.clearStackBackToTableRowContext();
 					WtNode row = tb.popFromStack();
 					if (getNodeType(row) != TR)
-						throw new InternalError();
+						throw new AssertionError();
 					addRtDataOfEndTag(row, n);
 					tb.switchInsertionMode(InsertionMode.IN_TABLE_BODY);
 					break;
@@ -915,7 +915,7 @@ public final class TreeBuilderInTable
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
-			// throw new InternalError(n.toString());
+			// throw new AssertionError(n.toString());
 		}
 
 		public void visit(WtTableCell n)
@@ -1061,7 +1061,7 @@ public final class TreeBuilderInTable
 								// We don't have a fragment case. Then,
 								// according to spec, this can only happen
 								// for TBODY, TFOOT and THEAD
-								throw new InternalError(nodeType.toString());
+								throw new AssertionError(nodeType.toString());
 						}
 					}
 					else
@@ -1079,7 +1079,7 @@ public final class TreeBuilderInTable
 		public void visit(WtNode n)
 		{
 			anythingElse(n);
-			// throw new InternalError(n.toString());
+			// throw new AssertionError(n.toString());
 		}
 
 		public void visit(WtTableCaption n)
@@ -1130,7 +1130,7 @@ public final class TreeBuilderInTable
 			else
 			{
 				if (!tb.isElementTypeInTableScope(TH))
-					throw new InternalError();
+					throw new AssertionError();
 				dispatch(getFactory().createMissingRepairEndTag(TH));
 			}
 		}

@@ -146,9 +146,23 @@ public class TreeBuilderModeBase
 				break;
 			}
 
+			case WtNode.NT_XML_ELEMENT:
+			{
+				RtData feRtd = finish.getRtd();
+				if (feRtd == null)
+				{
+					finish.setRtd(RtData.SEP, RtData.SEP, etRtd.getField(0));
+				}
+				else
+				{
+					feRtd.setField(2, etRtd.getField(0));
+				}
+				break;
+			}
+			
 			default:
-				// Finish is assumed to be WtBold or WtItalics
-				throw new InternalError();
+				// Finish is assumed to be WtBold, WtItalics or an WtXmlElement node
+				throw new AssertionError();
 		}
 	}
 }

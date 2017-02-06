@@ -79,24 +79,24 @@ public class NodeTypeEngVisitor
 	@Override
 	protected final Object visitUnspecific(AstNode<WtNode> node)
 	{
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	protected final Object visit(AstText<WtNode> node)
 	{
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	protected final Object visit(AstNodeList<WtNode> node)
 	{
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	protected final Object visit(AstParserEntity<WtNode> node)
 	{
-		throw new InternalError();
+		throw new AssertionError();
 	}
 }

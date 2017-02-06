@@ -139,19 +139,15 @@ public class LinkTargetParser
 			result = matcher.replaceAll("");
 		}
 
-		// Trim whitespace
+		// Trim whitespace (*)
 		{
 			result = StringTools.trim(result);
 		}
 
-		// Strip whitespace characters
-		{
-			Matcher matcher = spacePlusPattern.matcher(result);
-			result = matcher.replaceAll("_");
-		}
-
+		/*
 		// Remove trailing whitespace characters
 		result = StringTools.trimUnderscores(result);
+		*/
 
 		if (result.isEmpty())
 			throw new LinkTargetException(Reason.EMPTY_TARGET, target);
@@ -172,12 +168,28 @@ public class LinkTargetParser
 
 		// Perform sanity checks on remaining title
 		{
+			// Fixes issue #45:
+			// "&_foo_;" become "& foo ;" and will not be recognized as illegal entity.
+			// Related to (**)
+			result = result.replace('_', ' ');
+
 			Matcher matcher = invalidTitle.matcher(result);
 			if (matcher.find())
 				throw new LinkTargetException(
 						Reason.INVALID_ENTITIES,
 						target,
 						matcher.group());
+		}
+
+		// Fixes issue #45:
+		// (**) Strip whitespace characters
+		// IMPORTANT: Was done after (*). Led to problems for titles like
+		// '& foo ;' which became '&_foo_;' and were treated as illegal XML
+		// entities by the sanity check. Also when done here it will not
+		// affect the fragment which seems to be a good thing...
+		{
+			Matcher matcher = spacePlusPattern.matcher(result);
+			result = matcher.replaceAll("_");
 		}
 
 		// Empty links to a namespace alone are not allowed

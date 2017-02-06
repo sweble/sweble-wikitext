@@ -41,6 +41,8 @@ import org.sweble.wikitext.parser.nodes.WtTableHeader;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtTicks;
 import org.sweble.wikitext.parser.nodes.WtWhitespace;
+import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
+import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
@@ -353,6 +355,10 @@ public class TicksAnalyzer
 
 		private State state = State.None;
 
+		private boolean elementStartedItalic = false;
+		
+		private boolean elementStartedBold = false;
+		
 		public TicksConverter(LinkedList<Line> lines)
 		{
 			this.lineIter = lines.iterator();
@@ -383,13 +389,91 @@ public class TicksAnalyzer
 			return result;
 		}
 
+		public WtNode visit(WtXmlStartTag n)
+		{
+			if (n.getName().equalsIgnoreCase("i"))
+			{
+				switch (state)
+				{
+					case Italics:
+					case BoldItalics:
+					case ItalicsBold:
+						break;
+					case Bold:
+						state = State.BoldItalics;
+						break;
+					case None:
+						state = State.Italics;
+						break;
+				}
+				elementStartedItalic = true;
+			}
+			else if (n.getName().equalsIgnoreCase("b"))
+			{
+				switch (state)
+				{
+					case Bold:
+					case BoldItalics:
+					case ItalicsBold:
+						break;
+					case Italics:
+						state = State.ItalicsBold;
+						break;
+					case None:
+						state = State.Bold;
+						break;
+				}
+				elementStartedBold = true;
+			}
+			mapInPlace(n);
+			return n;
+		}
+
+		public WtNode visit(WtXmlEndTag n)
+		{
+			if (n.getName().equalsIgnoreCase("i"))
+			{
+				switch (state)
+				{
+					case Italics:
+						state = State.None;
+						break;
+					case BoldItalics:
+					case ItalicsBold:
+						state = State.Bold;
+						break;
+					case Bold:
+					case None:
+						break;
+				}
+				elementStartedItalic = false;
+			}
+			else if (n.getName().equalsIgnoreCase("b"))
+			{
+				switch (state)
+				{
+					case Bold:
+						state = State.None;
+						break;
+					case BoldItalics:
+					case ItalicsBold:
+						state = State.Italics;
+						break;
+					case Italics:
+					case None:
+						break;
+				}
+				elementStartedBold = false;
+			}
+			mapInPlace(n);
+			return n;
+		}
+
 		public WtNode visit(WtNewline newline)
 		{
 			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return newline;
-
-			state = State.None;
 			result.add(newline);
 			return result;
 		}
@@ -398,12 +482,9 @@ public class TicksAnalyzer
 		{
 			if (!ws.getHasNewline())
 				return ws;
-
 			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return ws;
-
-			state = State.None;
 			result.add(ws);
 			return result;
 		}
@@ -452,8 +533,6 @@ public class TicksAnalyzer
 			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return;
-
-			state = State.None;
 			body.add(result);
 		}
 
@@ -566,22 +645,62 @@ public class TicksAnalyzer
 			switch (state)
 			{
 				case Italics:
+					if (!elementStartedItalic)
+					{
 					result = nf.list();
 					result.add(ITALICS.createClose(nf, true));
+						state = State.None;
+					}
 					break;
 				case Bold:
+					if (!elementStartedBold)
+					{
 					result = nf.list();
 					result.add(BOLD.createClose(nf, true));
+						state = State.None;
+					}
 					break;
 				case BoldItalics:
+					if (!elementStartedItalic && !elementStartedBold)
+					{
 					result = nf.list();
 					result.add(ITALICS.createClose(nf, true));
 					result.add(BOLD.createClose(nf, true));
+						state = State.None;
+					}
+					else if (elementStartedItalic)
+					{
+						result = nf.list();
+						result.add(BOLD.createClose(nf, true));
+						state = State.Italics;
+					}
+					else if (!elementStartedBold)
+					{
+						result = nf.list();
+						result.add(ITALICS.createClose(nf, true));
+						state = State.Bold;
+					}
 					break;
 				case ItalicsBold:
+					if (!elementStartedItalic && !elementStartedBold)
+					{
 					result = nf.list();
 					result.add(BOLD.createClose(nf, true));
 					result.add(ITALICS.createClose(nf, true));
+						state = State.None;
+					}
+					else if (elementStartedItalic)
+					{
+						result = nf.list();
+						result.add(BOLD.createClose(nf, true));
+						state = State.Italics;
+					}
+					else if (!elementStartedBold)
+					{
+						result = nf.list();
+						result.add(ITALICS.createClose(nf, true));
+						state = State.Bold;
+					}
 					break;
 				case None:
 					break;

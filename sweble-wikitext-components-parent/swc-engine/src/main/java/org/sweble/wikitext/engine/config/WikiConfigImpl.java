@@ -28,6 +28,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TimeZone;
 
 import javax.xml.bind.JAXBContext;
@@ -104,8 +105,9 @@ public class WikiConfigImpl
 
 	// -- Aliases --
 
-	private final Map<String, I18nAliasImpl> aliases = new HashMap<String, I18nAliasImpl>();
+	private final Map<String, I18nAliasImpl> aliasesById = new HashMap<String, I18nAliasImpl>();
 
+	/** Keys are lower-case for case-insensitive lookups. */
 	private transient final Map<String, I18nAliasImpl> nameToAliasMap = new HashMap<String, I18nAliasImpl>();
 
 	// -- Parser Functions --
@@ -130,6 +132,7 @@ public class WikiConfigImpl
 
 	private final Map<Integer, NamespaceImpl> namespaceById = new HashMap<Integer, NamespaceImpl>();
 
+	/** Keys are lower-case for case-insensitive lookups. */
 	private transient final Map<String, NamespaceImpl> namespaceByName = new HashMap<String, NamespaceImpl>();
 
 	private NamespaceImpl templateNamespace;
@@ -139,6 +142,13 @@ public class WikiConfigImpl
 	// -- Runtime information --
 
 	private WikiRuntimeInfo runtimeInfo;
+
+	// -- Switches --
+
+	@XmlAttribute(required = false)
+	private boolean tagExtensionNamesCaseSensitive = true;
+
+	private final Map<String, TagExtensionBase> tagExtensionLookup = new HashMap<String, TagExtensionBase>();
 
 	// =========================================================================
 
@@ -179,6 +189,29 @@ public class WikiConfigImpl
 		return textUtils;
 	}
 
+	// ==[ Switches ]===========================================================
+	
+	public boolean isTagExtensionNamesCaseSensitive()
+	{
+		return tagExtensionNamesCaseSensitive;
+	}
+
+	public void setTagExtensionNamesCaseSensitive(boolean tagExtensionNamesCaseSensitive)
+	{
+		if (this.tagExtensionNamesCaseSensitive == tagExtensionNamesCaseSensitive)
+			return;
+		this.tagExtensionNamesCaseSensitive = tagExtensionNamesCaseSensitive;
+		for (Entry<String, TagExtensionBase> tagExt : tagExtensions.entrySet())
+		{
+			String key = tagExtensionNamesCaseSensitive ?
+					tagExt.getKey() :
+					tagExt.getKey().toLowerCase();
+			tagExtensionLookup.put(
+					key,
+					tagExt.getValue());
+		}
+	}
+	
 	// ==[ Namespaces ]=========================================================
 
 	public void addNamespace(NamespaceImpl ns)
@@ -333,7 +366,7 @@ public class WikiConfigImpl
 	 */
 	public void addI18nAlias(I18nAliasImpl alias)
 	{
-		I18nAliasImpl old = aliases.get(alias.getId());
+		I18nAliasImpl old = aliasesById.get(alias.getId());
 
 		if (old == alias || (old != null && old.equals(alias)))
 			throw new IllegalArgumentException("This alias is already registered: " + alias.getId());
@@ -355,7 +388,7 @@ public class WikiConfigImpl
 			nameToAliasMap.put(lcAlias, alias);
 		}
 
-		aliases.put(alias.getId(), alias);
+		aliasesById.put(alias.getId(), alias);
 	}
 
 	@Override
@@ -371,14 +404,14 @@ public class WikiConfigImpl
 
 	public I18nAliasImpl getI18nAliasById(String id)
 	{
-		return aliases.get(id);
+		return aliasesById.get(id);
 	}
 
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Collection<I18nAlias> getI18nAliases()
 	{
-		return (Collection) Collections.unmodifiableCollection(aliases.values());
+		return (Collection) Collections.unmodifiableCollection(aliasesById.values());
 	}
 
 	// ==[ Tag extensions, parser functions and page switches ]=================
@@ -411,12 +444,12 @@ public class WikiConfigImpl
 
 		parserFunctions.put(pfn.getId(), pfn);
 
-		I18nAliasImpl alias = aliases.get(pfn.getId());
+		I18nAliasImpl alias = aliasesById.get(pfn.getId());
 		if (alias == null)
 			throw new IllegalArgumentException("No alias registered for parser function `" + pfn.getId() + "'.");
 
 		if (aliasToPfnMap.put(alias, pfn) != null)
-			throw new InternalError("Alias collision should not be possible...");
+			throw new AssertionError("Alias collision should not be possible...");
 	}
 
 	@Override
@@ -472,12 +505,19 @@ public class WikiConfigImpl
 		TagExtensionBase old = tagExtensions.get(tagExt.getId());
 
 		if (old == tagExt)
-			throw new IllegalArgumentException("The tag extension `" + tagExt.getId() + "' is already registered.");
+			throw new IllegalArgumentException(
+					"The tag extension `" + tagExt.getId() + "' is already registered.");
 
 		if (old != null)
-			throw new IllegalArgumentException("A tag extension with the same id `" + tagExt.getId() + "' is already registered.");
+			throw new IllegalArgumentException(
+					"A tag extension with the same id `" + tagExt.getId() + "' is already registered.");
 
 		tagExtensions.put(tagExt.getId(), tagExt);
+
+		String lookupName = tagExtensionNamesCaseSensitive ?
+				tagExt.getId() :
+				tagExt.getId().toLowerCase();
+		tagExtensionLookup.put(lookupName, tagExt);
 	}
 
 	@Override
@@ -489,7 +529,10 @@ public class WikiConfigImpl
 	@Override
 	public TagExtensionBase getTagExtension(String name)
 	{
-		return tagExtensions.get(name);
+		String lookupName = tagExtensionNamesCaseSensitive ?
+				name :
+				name.toLowerCase();
+		return tagExtensionLookup.get(lookupName);
 	}
 
 	// ==[ Properties of the wiki instance ]====================================
@@ -571,16 +614,17 @@ public class WikiConfigImpl
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((aliases == null) ? 0 : aliases.hashCode());
-		result = prime * result + ((engineConfig == null) ? 0 : engineConfig.hashCode());
+		result = prime * result + ((aliasesById == null) ? 0 : aliasesById.hashCode());
 		result = prime * result + ((contentLang == null) ? 0 : contentLang.hashCode());
 		result = prime * result + ((defaultNamespace == null) ? 0 : defaultNamespace.hashCode());
+		result = prime * result + ((engineConfig == null) ? 0 : engineConfig.hashCode());
 		result = prime * result + ((iwPrefix == null) ? 0 : iwPrefix.hashCode());
 		result = prime * result + ((namespaceById == null) ? 0 : namespaceById.hashCode());
 		result = prime * result + ((parserConfig == null) ? 0 : parserConfig.hashCode());
 		result = prime * result + ((pfnGroups == null) ? 0 : pfnGroups.hashCode());
 		result = prime * result + ((prefixToInterwikiMap == null) ? 0 : prefixToInterwikiMap.hashCode());
 		result = prime * result + ((tagExtGroups == null) ? 0 : tagExtGroups.hashCode());
+		result = prime * result + (tagExtensionNamesCaseSensitive ? 1231 : 1237);
 		result = prime * result + ((templateNamespace == null) ? 0 : templateNamespace.hashCode());
 		result = prime * result + ((wikiUrl == null) ? 0 : wikiUrl.hashCode());
 		return result;
@@ -596,19 +640,12 @@ public class WikiConfigImpl
 		if (getClass() != obj.getClass())
 			return false;
 		WikiConfigImpl other = (WikiConfigImpl) obj;
-		if (aliases == null)
+		if (aliasesById == null)
 		{
-			if (other.aliases != null)
+			if (other.aliasesById != null)
 				return false;
 		}
-		else if (!aliases.equals(other.aliases))
-			return false;
-		if (engineConfig == null)
-		{
-			if (other.engineConfig != null)
-				return false;
-		}
-		else if (!engineConfig.equals(other.engineConfig))
+		else if (!aliasesById.equals(other.aliasesById))
 			return false;
 		if (contentLang == null)
 		{
@@ -623,6 +660,13 @@ public class WikiConfigImpl
 				return false;
 		}
 		else if (!defaultNamespace.equals(other.defaultNamespace))
+			return false;
+		if (engineConfig == null)
+		{
+			if (other.engineConfig != null)
+				return false;
+		}
+		else if (!engineConfig.equals(other.engineConfig))
 			return false;
 		if (iwPrefix == null)
 		{
@@ -665,6 +709,8 @@ public class WikiConfigImpl
 				return false;
 		}
 		else if (!tagExtGroups.equals(other.tagExtGroups))
+			return false;
+		if (tagExtensionNamesCaseSensitive != other.tagExtensionNamesCaseSensitive)
 			return false;
 		if (templateNamespace == null)
 		{
@@ -770,6 +816,8 @@ public class WikiConfigImpl
 
 		config.nodeFactory = new EngineNodeFactoryImpl(config.parserConfig);
 
+		config.setTagExtensionNamesCaseSensitive(config.tagExtensionNamesCaseSensitive);
+
 		return config;
 	}
 
@@ -827,8 +875,8 @@ public class WikiConfigImpl
 	@XmlElementWrapper(name = "i18nAliases")
 	private I18nAliasImpl[] getJaxbAliases()
 	{
-		I18nAliasImpl[] jaxbAliases = this.aliases.values().toArray(
-				new I18nAliasImpl[this.aliases.size()]);
+		I18nAliasImpl[] jaxbAliases = this.aliasesById.values().toArray(
+				new I18nAliasImpl[this.aliasesById.size()]);
 		Arrays.sort(jaxbAliases);
 		return jaxbAliases;
 	}

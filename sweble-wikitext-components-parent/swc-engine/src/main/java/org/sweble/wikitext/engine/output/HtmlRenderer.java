@@ -203,7 +203,7 @@ public class HtmlRenderer
 	public void visit(WtHeading n)
 	{
 		// We handle this case in WtSection and don't dispatch to the heading.
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
@@ -547,14 +547,14 @@ public class HtmlRenderer
 	public void visit(WtImEndTag n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtImStartTag n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	public void visit(WtInternalLink n)
@@ -664,42 +664,42 @@ public class HtmlRenderer
 	public void visit(WtLinkOptionAltText n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptionGarbage n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptionKeyword n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptionLinkTarget n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptionResize n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
 	public void visit(WtLinkOptions n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
@@ -754,7 +754,7 @@ public class HtmlRenderer
 	public void visit(WtPageName n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
@@ -931,7 +931,7 @@ public class HtmlRenderer
 	public void visit(WtTagExtensionBody n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	@Override
@@ -967,7 +967,7 @@ public class HtmlRenderer
 	public void visit(WtTicks n)
 	{
 		// Should not happen ...
-		throw new InternalError();
+		throw new AssertionError();
 	}
 
 	public void visit(WtUnorderedList n)

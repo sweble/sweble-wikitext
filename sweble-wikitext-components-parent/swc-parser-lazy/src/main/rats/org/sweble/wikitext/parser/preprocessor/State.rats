@@ -76,7 +76,7 @@ body
 
   public WtNode getEntity(int id)
   {
-    throw new InternalError("Entities should never occur in pre-processing!");
+    throw new AssertionError("Entities should never occur in pre-processing!");
   }
 }
 

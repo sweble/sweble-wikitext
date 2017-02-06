@@ -19,6 +19,7 @@ package org.sweble.wikitext.parser.utils;
 
 import java.io.IOException;
 
+import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextEncodingValidator;
 import org.sweble.wikitext.parser.WikitextParser;
 import org.sweble.wikitext.parser.WikitextPostprocessor;
@@ -37,7 +38,7 @@ public final class NonExpandingParser
 		extends
 			ParserCommon<WtNode>
 {
-	private NonExpandingParserConfig parserConfig;
+	private ParserConfig parserConfig;
 
 	// =========================================================================
 
@@ -58,6 +59,20 @@ public final class NonExpandingParser
 				autoCorrect);
 	}
 
+	public NonExpandingParser(
+			boolean warningsEnabled,
+			boolean gatherRtd,
+			boolean autoCorrect,
+			boolean langConvTagsEnabled)
+
+	{
+		parserConfig = new SimpleParserConfig(
+				warningsEnabled,
+				gatherRtd,
+				autoCorrect,
+				langConvTagsEnabled);
+	}
+
 	// =========================================================================
 
 	@Override
@@ -73,8 +88,7 @@ public final class NonExpandingParser
 
 		WikitextPreprocessor prep = new WikitextPreprocessor(parserConfig);
 
-		WtPreproWikitextPage prepArticle =
-				(WtPreproWikitextPage) prep.parseArticle(validated, title, false);
+		WtPreproWikitextPage prepArticle = (WtPreproWikitextPage) prep.parseArticle(validated, title, false);
 
 		// Parsing
 
@@ -83,15 +97,13 @@ public final class NonExpandingParser
 
 		WikitextParser p = new WikitextParser(parserConfig);
 
-		WtParsedWikitextPage parsedArticle =
-				(WtParsedWikitextPage) p.parseArticle(ppw, title);
+		WtParsedWikitextPage parsedArticle = (WtParsedWikitextPage) p.parseArticle(ppw, title);
 
 		// Post-processing
 
 		WikitextPostprocessor postp = new WikitextPostprocessor(parserConfig);
 
-		WtParsedWikitextPage postpArticle =
-				(WtParsedWikitextPage) postp.postprocess(parsedArticle, title);
+		WtParsedWikitextPage postpArticle = (WtParsedWikitextPage) postp.postprocess(parsedArticle, title);
 
 		// User-defined processing
 
