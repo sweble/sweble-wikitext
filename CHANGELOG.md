@@ -2,6 +2,8 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+
+## 3.1.3 - 2017-02-06
 ### Changed
 - More fine grained engine integration test helper functions
 - Implemented switch langConvTagsEnabled to help with issue #48 Too aggressive
