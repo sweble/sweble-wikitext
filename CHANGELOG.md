@@ -2,6 +2,14 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+### Added
+- Added missing setter methods ing ParserConfigImpl
+
+### Changed
+- ParserConfigImpl now has proper fields for nonStandardElementBehavior, 
+  fosterParenting, and fosterParentingForTransclusions and loads/saves those
+  fields from the XML configuration
+
 ### Fixed
 - Fixed bug in pre-processor which resulted in exception when encountering wiki
   markup similar to this: "<ref></ref><</ref>".
