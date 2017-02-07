@@ -2,6 +2,9 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+### Fixed
+- Fixed bug in pre-processor which resulted in exception when encountering wiki
+  markup similar to this: "<ref></ref><</ref>".
 
 ## 3.1.3 - 2017-02-06
 ### Changed
