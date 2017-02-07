@@ -86,6 +86,16 @@ public final class TreeBuilderInTable
 			case TABLE:
 				startTagR09(n);
 				break;
+			case P:
+				/**
+				 * The parser generates intermediate paragraph tags inside HTML
+				 * tables because it does not understand the scope. We can
+				 * simply ignore those intermediate paragraphs which do not
+				 * contain any other information that could get lost.
+				 */
+				if (n.getNodeType() != WtNode.NT_IM_START_TAG)
+					anythingElseR16(n);
+				break;
 			default:
 				anythingElseR16(n);
 				return;
@@ -117,6 +127,16 @@ public final class TreeBuilderInTable
 			case THEAD:
 			case TR:
 				endTagR11(n);
+				break;
+			case P:
+				/**
+				 * The parser generates intermediate paragraph tags inside HTML
+				 * tables because it does not understand the scope. We can
+				 * simply ignore those intermediate paragraphs which do not
+				 * contain any other information that could get lost.
+				 */
+				if (n.getNodeType() != WtNode.NT_IM_END_TAG)
+					anythingElseR16(n);
 				break;
 			default:
 				anythingElseR16(n);
@@ -211,7 +231,6 @@ public final class TreeBuilderInTable
 	/**
 	 * R01: A character token, if the current node is table, tbody, tfoot,
 	 * thead, or tr element
-	 * 
 	 */
 	private void tokenR01(WtNode node)
 	{
@@ -223,7 +242,6 @@ public final class TreeBuilderInTable
 
 	/**
 	 * R02: A comment token
-	 * 
 	 */
 	private void tokenR02(WtNode n)
 	{
@@ -232,7 +250,6 @@ public final class TreeBuilderInTable
 
 	/**
 	 * R04: A start tag whose tag name is caption
-	 * 
 	 */
 	private void startTagR04(WtNode n)
 	{
@@ -244,7 +261,6 @@ public final class TreeBuilderInTable
 
 	/**
 	 * R05: A start tag whose tag name is colgroup
-	 * 
 	 */
 	private void startTagR05(WtNode n)
 	{
@@ -255,7 +271,6 @@ public final class TreeBuilderInTable
 
 	/**
 	 * R06: A start tag whose tag name is col
-	 * 
 	 */
 	private void startTagR06(WtNode n)
 	{
@@ -265,7 +280,6 @@ public final class TreeBuilderInTable
 
 	/**
 	 * R07: A start tag whose tag name is one of: tbody, tfoot, thead
-	 * 
 	 */
 	private void startTagR07(WtNode n)
 	{
@@ -276,7 +290,6 @@ public final class TreeBuilderInTable
 
 	/**
 	 * R08: A start tag whose tag name is one of: td, th, tr
-	 * 
 	 */
 	private void startTagR08(WtNode n)
 	{
@@ -770,7 +783,7 @@ public final class TreeBuilderInTable
 						return false;
 					case WtNode.NT_TEXT:
 						// Whitespace only text can be part of the table.
-						// Non-whitespace text should have been hoisted in 
+						// Non-whitespace text should have been hoisted in
 						// front of the table already -> no need to check.
 						continue;
 					case WtNode.NT_TABLE_CAPTION:
@@ -781,7 +794,7 @@ public final class TreeBuilderInTable
 						else
 							; // FALL THROUGH
 					default:
-						// Any other garbage should have been hoisted in front 
+						// Any other garbage should have been hoisted in front
 						// of the table already.
 						throw new AssertionError();
 				}

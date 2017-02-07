@@ -9,6 +9,8 @@
 - ParserConfigImpl now has proper fields for nonStandardElementBehavior, 
   fosterParenting, and fosterParentingForTransclusions and loads/saves those
   fields from the XML configuration
+- Intermediate paragraph tags are no longer subject to foster parenting during
+  post-processing
 
 ### Fixed
 - Fixed bug in pre-processor which resulted in exception when encountering wiki

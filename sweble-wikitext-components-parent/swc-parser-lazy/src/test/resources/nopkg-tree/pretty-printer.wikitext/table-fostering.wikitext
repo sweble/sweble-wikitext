@@ -1,0 +1,11 @@
+foo
+
+<table>
+    <tr><td>x
+    
+
+    y
+
+</td></tr>
+</table>
+foo

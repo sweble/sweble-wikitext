@@ -1,0 +1,35 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "foo\n" ],
+	[1] = WtXmlElement(
+		{P} name = "table"
+		{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = "\n\n    ",
+			[1] = WtTableImplicitTableBody(
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "tr"
+						{P} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtXmlElement(
+								{P} name = "td"
+								{P} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = "x\n    \n",
+									[1] = WtParagraph[ [0] = "    y" ]
+								]
+							)
+						]
+					),
+					[1] = "\n"
+				]
+			)
+		]
+	),
+	[2] = "\nfoo"
+)
