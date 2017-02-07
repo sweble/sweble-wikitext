@@ -40,6 +40,8 @@
 
 module org.sweble.wikitext.parser.preprocessor.XmlElement;
 
+import org.sweble.wikitext.parser.preprocessor.State;
+
 import org.sweble.wikitext.parser.utils.Roundtrip;
 import org.sweble.wikitext.parser.utils.Whitespace as Whitespace;
 import org.sweble.wikitext.parser.utils.XmlName;
@@ -92,19 +94,19 @@ body
 
 // -- XML Element --------------------------------------------------------------
 
-WtNode XmlElement =
+stateful WtNode XmlElement =
   '<' yyValue:
   ( "!--" yyValue:XmlComment
   / '/'   yyValue:IgnoredClosingTag
   /       IgnoredOpeningTag
   /       IgnoredElements
   /       TagExtension
-  /       Greater
+  /       LeftAngleBracket
   )
 ;
 
-private inline WtText Greater =
-  !ValidClosingTag
+private inline WtText LeftAngleBracket =
+  !ValidClosingTagAfterLeftAngleBracket
   {
     yyValue = nf.text("<");
   }
@@ -177,6 +179,9 @@ private transient String XmlCommentContent =
 
 
 // -- Ignored opening, closing tags --------------------------------------------
+// Ignored tags are noinclude, includeonly and onlyinclude, depending on whether
+// we are parsing for inclusion or not. The effect is that the tag itself is 
+// ignored because its contents shall be included in the given parsing mode.
 
 private transient WtNode IgnoredClosingTag =
   name:IgnoredTagName garbage:IgnoredTagGarbage '>'
@@ -204,6 +209,10 @@ private transient String IgnoredTagGarbage =
 
 
 // -- Ignored elements ---------------------------------------------------------
+// Ignored elements are noinclude, includeonly and onlyinclude, depending on 
+// whether we are parsing for inclusion or not. The effect is that the contents 
+// of those elements are ignored and thus the whole element is cut out of the 
+// wikitext as intended. 
 
 private transient WtNode IgnoredElements =
     header:IgnoredElementHeader
@@ -299,11 +308,15 @@ private transient String TagContentStar =
 
 // -- Opening and closing names/tags -------------------------------------------
 
-private transient String ValidClosingTag =
-  "</" endTag:ClosingTagHeader &{ isValidClosingTag(endTag.name) }
+private transient String ValidClosingTagAfterLeftAngleBracket =
+  "/" endTag:ClosingTagHeader &{ isValidClosingTag(endTag.name) }
   {
     yyValue = "</" + endTag.name + endTag.ws + ">";
   }
+;
+
+private transient String ValidClosingTag =
+  "<" yyValue:ValidClosingTagAfterLeftAngleBracket
 ;
 
 private transient ClosingTagHeader ClosingTagHeader =

@@ -1,0 +1,24 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtTagExtension(
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtTagExtensionBody("")
+			)
+	}
+	{P} warnings = C[ Warning: /nopkg-regression/input.wikitext/xml-elements.wikitext:1:7: <no content> : 12.2.5.4.7 - R52 (2) @ WtXmlEndTag. ]
+	[0] = WtParagraph[
+		[0] = WtTagExtension(
+			{P} name = "ref"
+			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtTagExtensionBody("")
+		),
+		[1] = "<",
+		[2] = WtXmlEndTag(
+			{P} name = "ref"
+			{P} rtd = RTD[ "</ref>" ]
+		)
+	]
+)
