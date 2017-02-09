@@ -48,7 +48,7 @@ public class WikitextParserContext
 		WikitextParserContext p = (WikitextParserContext) parent;
 		this.stickingScopes = p.stickingScopes;
 		this.scope = p.scope;
-		this.linkBuilder = p.linkBuilder; //null;
+		this.linkBuilder = p.linkBuilder; // null;
 	}
 
 	// =========================================================================
@@ -118,5 +118,11 @@ public class WikitextParserContext
 		if (stickingScopes != other.stickingScopes)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "WikitextParserContext [stickingScopes=" + stickingScopes + ", scope=" + scope + "]";
 	}
 }

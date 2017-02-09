@@ -162,6 +162,8 @@ void grmbl =
   SemiPreTransient          SectionsTransient         HeadingTransient
   HorizontalRuleMemoized    ExternalLinkMemoized      ParagraphMemoized
   HorizontalRuleTransient   ExternalLinkTransient     ParagraphTransient
+  OptionsAndTitleMemoized
+  OptionsAndTitleTransient
 ;
 
 
