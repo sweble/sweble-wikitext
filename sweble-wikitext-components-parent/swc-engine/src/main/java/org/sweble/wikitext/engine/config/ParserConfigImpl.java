@@ -50,6 +50,9 @@ import org.sweble.wikitext.parser.utils.AstTextUtils;
 		"autoCorrect",
 		"gatherRtData",
 		"langConvTagsEnabled",
+		"nonStandardElementBehavior",
+		"fosterParenting",
+		"fosterParentingForTransclusions",
 		"internalLinkPrefixPattern",
 		"internalLinkPostfixPattern",
 		"jaxbAllowedUrlProtocols",
@@ -81,6 +84,16 @@ public class ParserConfigImpl
 
 	@XmlElement
 	private boolean langConvTagsEnabled = true /*be backward compatible*/;
+
+	@XmlElement
+	private NonStandardElementBehavior nonStandardElementBehavior =
+			NonStandardElementBehavior.UNSPECIFIED /*be backward compatible*/;
+
+	@XmlElement
+	private boolean fosterParenting = true /*be backward compatible*/;
+
+	@XmlElement
+	private boolean fosterParentingForTransclusions = true /*be backward compatible*/;
 
 	private final Set<String> allowedUrlProtocols = new HashSet<String>();
 
@@ -158,6 +171,11 @@ public class ParserConfigImpl
 	public void setMinSeverity(WarningSeverity minSeverity)
 	{
 		this.minSeverity = minSeverity;
+	}
+
+	public WarningSeverity getMinSeverity()
+	{
+		return minSeverity;
 	}
 
 	@Override
@@ -351,35 +369,46 @@ public class ParserConfigImpl
 		return resolveXmlEntity(name) != null;
 	}
 
-	/**
-	 * @TODO: Add proper implementation.
-	 */
+	public void setNonStandardElementBehavior(NonStandardElementBehavior nonStandardElementBehavior)
+	{
+		this.nonStandardElementBehavior = nonStandardElementBehavior;
+	}
+
 	@Override
 	public NonStandardElementBehavior getNonStandardElementBehavior(
 			String elementName)
 	{
-		return NonStandardElementBehavior.UNSPECIFIED;
+		return nonStandardElementBehavior;
 	}
-	
-	/**
-	 * @TODO: Add proper implementation.
-	 */
+
+	public void setFosterParenting(boolean fosterParenting)
+	{
+		this.fosterParenting = fosterParenting;
+	}
+
 	@Override
 	public boolean isFosterParenting()
 	{
-		return true;
+		return fosterParenting;
 	}
-	
-	/**
-	 * @TODO: Add proper implementation.
-	 */
+
+	public void setFosterParentingForTransclusions(boolean fosterParentingForTransclusions)
+	{
+		this.fosterParentingForTransclusions = fosterParentingForTransclusions;
+	}
+
 	@Override
 	public boolean isFosterParentingForTransclusions()
 	{
-		return true;
+		return fosterParentingForTransclusions;
 	}
 
 	// ==[ Language Conversion Tags ]===========================================
+
+	public void setLangConvTagsEnabled(boolean langConvTagsEnabled)
+	{
+		this.langConvTagsEnabled = langConvTagsEnabled;
+	}
 
 	@Override
 	public boolean isLangConvTagsEnabled()
@@ -624,6 +653,8 @@ public class ParserConfigImpl
 		int result = 1;
 		result = prime * result + ((allowedUrlProtocols == null) ? 0 : allowedUrlProtocols.hashCode());
 		result = prime * result + (autoCorrect ? 1231 : 1237);
+		result = prime * result + (fosterParenting ? 1231 : 1237);
+		result = prime * result + (fosterParentingForTransclusions ? 1231 : 1237);
 		result = prime * result + (gatherRtData ? 1231 : 1237);
 		result = prime * result + ((internalLinkPostfixPattern == null) ? 0 : internalLinkPostfixPattern.hashCode());
 		result = prime * result + ((internalLinkPrefixPattern == null) ? 0 : internalLinkPrefixPattern.hashCode());
@@ -631,6 +662,7 @@ public class ParserConfigImpl
 		result = prime * result + ((lctFlagMap == null) ? 0 : lctFlagMap.hashCode());
 		result = prime * result + ((lctVariantMap == null) ? 0 : lctVariantMap.hashCode());
 		result = prime * result + ((minSeverity == null) ? 0 : minSeverity.hashCode());
+		result = prime * result + ((nonStandardElementBehavior == null) ? 0 : nonStandardElementBehavior.hashCode());
 		result = prime * result + (warningsEnabled ? 1231 : 1237);
 		result = prime * result + ((xmlEntities == null) ? 0 : xmlEntities.hashCode());
 		return result;
@@ -654,6 +686,10 @@ public class ParserConfigImpl
 		else if (!allowedUrlProtocols.equals(other.allowedUrlProtocols))
 			return false;
 		if (autoCorrect != other.autoCorrect)
+			return false;
+		if (fosterParenting != other.fosterParenting)
+			return false;
+		if (fosterParentingForTransclusions != other.fosterParentingForTransclusions)
 			return false;
 		if (gatherRtData != other.gatherRtData)
 			return false;
@@ -688,6 +724,8 @@ public class ParserConfigImpl
 		else if (!lctVariantMap.equals(other.lctVariantMap))
 			return false;
 		if (minSeverity != other.minSeverity)
+			return false;
+		if (nonStandardElementBehavior != other.nonStandardElementBehavior)
 			return false;
 		if (warningsEnabled != other.warningsEnabled)
 			return false;

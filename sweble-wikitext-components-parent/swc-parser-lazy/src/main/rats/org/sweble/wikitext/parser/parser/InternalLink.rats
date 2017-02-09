@@ -315,7 +315,27 @@ private inline WtNode InternalLinkAutoCorrect =
 
 // -- Options ------------------------------------------------------------------
 
-private inline WtLinkOptions OptionsAndTitle =
+noinline transient WtLinkOptions OptionsAndTitle =
+ ^{
+    StateAwareResult r = (StateAwareResult) pOptionsAndTitleMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pOptionsAndTitleTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized WtLinkOptions OptionsAndTitleMemoized =
+ ^{
+    Result yyResult = new StateAwareResult("OptionsAndTitle", getContext(), pOptionsAndTitleTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+noinline transient WtLinkOptions OptionsAndTitleTransient =
     &{ !getLinkBuilder().isImageTarget() } title:LinkTitle?
     {
       yyValue = nf.linkOpts(title);

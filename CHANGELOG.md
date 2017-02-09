@@ -3,6 +3,25 @@
 
 ## Unreleased
 
+## 3.1.4 - 2017-02-09
+### Added
+- Added missing setter methods ing ParserConfigImpl.
+
+### Changed
+- ParserConfigImpl now has proper fields for nonStandardElementBehavior, 
+  fosterParenting, and fosterParentingForTransclusions and loads/saves those
+  fields from the XML configuration.
+- Intermediate paragraph tags are no longer subject to foster parenting during
+  post-processing.
+- Improved parser grammer to improve performance.
+- Updated to osr-common 3.0.5.
+
+### Fixed
+- Fixed bug in pre-processor which resulted in exception when encountering wiki
+  markup similar to this: "<ref></ref><</ref>".
+- Improved parser grammar to avoid case where illegally nested internal links
+  caused a recursive cascade that practically never finished.
+
 ## 3.1.3 - 2017-02-06
 ### Changed
 - More fine grained engine integration test helper functions

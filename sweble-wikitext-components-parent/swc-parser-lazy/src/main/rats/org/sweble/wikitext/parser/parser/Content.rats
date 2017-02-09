@@ -376,14 +376,54 @@ private inline WtNode InlineTextBlockMore =
 
 // -- Inline Content -----------------------------------------------------------
 
-transient WtNodeList InlineContentStar =
+noinline transient WtNodeList InlineContentStar =
+ ^{
+    StateAwareResult r = (StateAwareResult) pInlineContentStarMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pInlineContentStarTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized WtNodeList InlineContentStarMemoized =
+ ^{
+    Result yyResult = new StateAwareResult("InlineContentStar", getContext(), pInlineContentStarTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+noinline transient WtNodeList InlineContentStarTransient =
   content:InlineContentChoice*
   {
     yyValue = nf.list(content);
   }
 ;
 
-transient WtNodeList InlineContentPlus =
+noinline transient WtNodeList InlineContentPlus =
+ ^{
+    StateAwareResult r = (StateAwareResult) pInlineContentPlusMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pInlineContentPlusTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized WtNodeList InlineContentPlusMemoized =
+ ^{
+    Result yyResult = new StateAwareResult("InlineContentPlus", getContext(), pInlineContentPlusTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+noinline transient WtNodeList InlineContentPlusTransient =
   content:InlineContentChoice+
   {
     yyValue = nf.list(content);
@@ -462,7 +502,7 @@ private inline void InlineContentStopper =
  * production to see and consume them).
  */
 
-private WtText TextPlus =
+private memoized WtText TextPlus =
   text:TextPlusStr
   {
     yyValue = nf.text(text);

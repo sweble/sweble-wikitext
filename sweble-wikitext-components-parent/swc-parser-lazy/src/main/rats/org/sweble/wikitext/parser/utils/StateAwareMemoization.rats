@@ -53,6 +53,8 @@ body
 
     private Result result;
 
+    private Object[] moreResults;
+
     /* DEBUG ONLY
     private final String prod;
 
@@ -63,14 +65,29 @@ body
     {
       super(-1);
       setResult(context, result);
-
-      /* <DEBUG ONLY>
+      /* DEBUG ONLY
       this.prod = prod;
       */
     }
 
     public Result setResult(WikitextParserContext context, Result result)
     {
+      if (this.context != null)
+      {
+        Object[] moreResultsNew;
+        if (moreResults != null)
+        {
+          moreResultsNew = new Object[moreResults.length + 2];
+          System.arraycopy(moreResults, 0, moreResultsNew, 0, moreResults.length);
+        }
+        else
+        {
+          moreResultsNew = new Object[2];
+        }
+        moreResultsNew[moreResultsNew.length - 2] = this.context;
+        moreResultsNew[moreResultsNew.length - 1] = this.result;
+        moreResults = moreResultsNew;
+      }
       this.context = context;
       this.result = result;
       /* DEBUG ONLY
@@ -86,27 +103,43 @@ body
 
     public Result getResult(WikitextParserContext newContext)
     {
+      Result validResult = null;
+      if (this.context.equals(newContext))
+      {
+        validResult = result;
+      }
+      else if (moreResults != null)
+      {
+        for (int i = 0; i < moreResults.length; i += 2)
+        {
+          WikitextParserContext context = (WikitextParserContext) moreResults[i];
+          if (context.equals(newContext))
+          {
+            Result result = (Result) moreResults[i + 1];
+            moreResults[i + 0] = this.context;
+            moreResults[i + 1] = this.result;
+            this.context = context;
+            this.result = result;
+            validResult = result;
+            break;
+          }
+        }
+      }
+
       /* DEBUG ONLY
       if (stats != null)
       {
         stats.called(prod);
-        if (this.context.equals(newContext))
+        if (validResult != null)
         {
           if (reused)
             stats.reused(prod);
-
           reused = true;
-          return result;
         }
-        return null;
       }
-      else
       */
-      {
-        if (this.context.equals(newContext))
-          return result;
-        return null;
-      }
+
+      return validResult;
     }
 
     /* DEBUG + VERBOSE ONLY
