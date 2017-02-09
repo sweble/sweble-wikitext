@@ -112,7 +112,7 @@ private inline void ExpectedFollowUp =
 
 // -- Table Header Attributes --------------------------------------------------
 
-private TableMemberAttributes Attributes =
+private memoized TableMemberAttributes Attributes =
     &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
     {
       yyValue = new TableMemberAttributes();

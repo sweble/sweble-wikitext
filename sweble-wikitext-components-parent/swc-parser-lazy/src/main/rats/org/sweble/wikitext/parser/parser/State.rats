@@ -35,7 +35,7 @@ import org.sweble.wikitext.parser.utils.Trickery;
 
 body
 {
-  static final int noEolScopes;
+  static final int noEolScopesMask;
   static
   {
     int sc = 0;
@@ -44,7 +44,7 @@ body
       if (s.isNoEolScope())
       sc |= 1 << s.ordinal();
     }
-    noEolScopes = sc;
+    noEolScopesMask = sc;
   }
 
   // ===========================================================================
@@ -73,7 +73,7 @@ body
 
   private boolean acceptEol()
   {
-    return 0 == (noEolScopes & getContext().getStickingScopes());
+    return 0 == (getContext().getStickingScopes() & noEolScopesMask);
   }
 
   private boolean accept(ParserAtoms atom)

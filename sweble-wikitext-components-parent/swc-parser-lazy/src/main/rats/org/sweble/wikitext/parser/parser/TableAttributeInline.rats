@@ -28,6 +28,8 @@ modify org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
 
 WtXmlAttributes TableAttributeInlineStar = XmlAttributeStar ;
 
+// pEol is stateless; We imported utils.Whitespace and not parser.Whitespace.
+
 void XmlAttrGarbageStopper := &'|' / &pEol ;
 
 void XmlAttrValueStopper := &[<|] / &pEol ;

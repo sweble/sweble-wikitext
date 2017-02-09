@@ -52,6 +52,9 @@ transient void    slEolOrEof    = slEol
 
 // -- Redefinition of EOL Stateful productions ---------------------------------
 
+// IMPORTANT: Due to this redefinition all production including Eol, pEol or 
+// pEolNode are stateful and must not be memoized naively! 
+
 String pEol :=
   <DUMMY> &{ acceptEol() } pSlEol
 ;
@@ -130,6 +133,10 @@ private inline WtNode pExtSpaceAtom =
 
 // -- Preserved Extended Whitespace --------------------------------------------
 
+// IMPORTANT: Due to this redefinition of Eol, pEol and pEolNode all whitespace
+// productions are context sensitive and can only be memoized with 
+// StateAwareResult. 
+
 noinline transient WtNode pExtWsStar =
  ^{
     StateAwareResult r = (StateAwareResult) ppExtWsStarMemoized(yyBase);
@@ -157,6 +164,7 @@ noinline transient WtWhitespace pExtWsStarTransient =
   }
 ;
 
+/*
 noinline transient WtNode pExtWsPlus =
  ^{
     StateAwareResult r = (StateAwareResult) ppExtWsPlusMemoized(yyBase);
@@ -187,6 +195,7 @@ noinline transient WtWhitespace pExtWsPlusTransient =
       yyValue = nf.ws(nf.list(ws), true);
     }
 ;
+*/
 
 private inline WtNode pExtWsAtom =
     ws:pWsPlus

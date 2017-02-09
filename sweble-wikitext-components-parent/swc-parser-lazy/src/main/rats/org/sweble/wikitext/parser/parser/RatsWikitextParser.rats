@@ -152,18 +152,18 @@ Article =
 public
 transient
 void grmbl =
-  ListMemoized              InternalLinkMemoized      TableMemoized
-  ListTransient             InternalLinkTransient     TableTransient
-  TableCaptionMemoized      TableRowMemoized          TableHeaderMemoized
-  TableCaptionTransient     TableRowTransient         TableHeaderTransient
-  TableCellMemoized         pExtWsStarMemoized        ListMemoized
-  TableCellTransient        pExtWsStarTransient       ListTransient
-  SemiPreMemoized           SectionsMemoized          HeadingMemoized
-  SemiPreTransient          SectionsTransient         HeadingTransient
-  HorizontalRuleMemoized    ExternalLinkMemoized      ParagraphMemoized
-  HorizontalRuleTransient   ExternalLinkTransient     ParagraphTransient
-  OptionsAndTitleMemoized
-  OptionsAndTitleTransient
+  ListMemoized              InternalLinkMemoized        TableMemoized
+  ListTransient             InternalLinkTransient       TableTransient
+  TableCaptionMemoized      TableRowMemoized            TableHeaderMemoized
+  TableCaptionTransient     TableRowTransient           TableHeaderTransient
+  TableCellMemoized         ListMemoized                pExtWsStarMemoized
+  TableCellTransient        ListTransient               pExtWsStarTransient
+  SemiPreMemoized           SectionsMemoized            HeadingMemoized
+  SemiPreTransient          SectionsTransient           HeadingTransient
+  HorizontalRuleMemoized    ExternalLinkMemoized        ParagraphMemoized
+  HorizontalRuleTransient   ExternalLinkTransient       ParagraphTransient
+  OptionsAndTitleMemoized   InlineContentStarMemoized   InlineContentPlusMemoized
+  OptionsAndTitleTransient  InlineContentStarTransient  InlineContentPlusTransient
 ;
 
 

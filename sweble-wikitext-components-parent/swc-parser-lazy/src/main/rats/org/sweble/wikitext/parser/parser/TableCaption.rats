@@ -84,7 +84,7 @@ private inline String Garbage =
   }
 ;
 
-private transient String GarbageStar =
+private  String GarbageStar =
   ( !( slEol pExtSpaceStar [|!] ) _ )*
 ;
 
@@ -97,7 +97,7 @@ private inline void ExpectedFollowUp =
 
 // -- Table Caption Attributes -------------------------------------------------
 
-private TableMemberAttributes Attributes =
+private memoized TableMemberAttributes Attributes =
     &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
     {
       yyValue = new TableMemberAttributes();
