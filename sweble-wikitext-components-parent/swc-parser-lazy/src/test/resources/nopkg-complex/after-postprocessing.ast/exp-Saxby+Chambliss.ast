@@ -2730,9 +2730,7 @@ WtParsedWikitextPage(
 								]
 							),
 							[3] = "\n",
-							[4] = WtParagraph[],
-							[5] = WtParagraph[],
-							[6] = WtXmlElement(
+							[4] = WtXmlElement(
 								{P} name = "table"
 								{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 								xmlAttributes = WtXmlAttributes[
@@ -2842,8 +2840,8 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[7] = "\nOn November 4, 2008, Chambliss received 49.8% of the vote, while ",
-							[8] = WtInternalLink(
+							[5] = "\nOn November 4, 2008, Chambliss received 49.8% of the vote, while ",
+							[6] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -2853,8 +2851,8 @@ WtParsedWikitextPage(
 									[0] = "Democratic"
 								)
 							),
-							[9] = " challenger ",
-							[10] = WtInternalLink(
+							[7] = " challenger ",
+							[8] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -2864,8 +2862,8 @@ WtParsedWikitextPage(
 									[0] = "Jim Martin"
 								)
 							),
-							[11] = " received 46.8% and ",
-							[12] = WtInternalLink(
+							[9] = " received 46.8% and ",
+							[10] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -2875,16 +2873,16 @@ WtParsedWikitextPage(
 									[0] = "Libertarian"
 								)
 							),
-							[13] = " ",
-							[14] = WtInternalLink(
+							[11] = " ",
+							[12] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName[ [0] = "Allen Buckley" ],
 								title = -
 							),
-							[15] = " received 3.4% of the vote.",
-							[16] = WtTagExtension(
+							[13] = " received 3.4% of the vote.",
+							[14] = WtTagExtension(
 								{P} name = "ref"
 								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 								xmlAttributes = WtXmlAttributes[
@@ -2896,10 +2894,10 @@ WtParsedWikitextPage(
 								],
 								body = WtTagExtensionBody("{{cite news\n  | title = \" Georgia Election Results\"\n  | publisher = ''[[Secretary of State of Georgia]]''\n  | date = 2008-11-04\n  | url = http://www.sos.georgia.gov/elections/election_results/2008_1104/swfed.htm\n  | accessdate = 2008-11-12 }}")
 							),
+							[15] = "\n\n",
+							[16] = WtParagraph[ [0] = "Since no candidate exceeded 50% of the vote, a runoff election between Chambliss and Martin was held on December 2, 2008." ],
 							[17] = "\n\n",
-							[18] = WtParagraph[ [0] = "Since no candidate exceeded 50% of the vote, a runoff election between Chambliss and Martin was held on December 2, 2008." ],
-							[19] = "\n\n",
-							[20] = WtParagraph[
+							[18] = WtParagraph[
 								[0] = "Chambliss defeated Martin 57.5% to 42.5% in the runoff election.",
 								[1] = WtTagExtension(
 									{P} name = "ref"
@@ -2926,7 +2924,7 @@ WtParsedWikitextPage(
 									body = WtTagExtensionBody("{{cite news |title=Georgia Election Results |curly=y |url=http://sos.georgia.gov/elections/election_results/2008_1202/003.htm |work=State of Georgia Secretary of State |date=December 2, 2008 |accessdate=3 December 2008}}")
 								)
 							],
-							[21] = "\n\n"
+							[19] = "\n\n"
 						]
 					),
 					[3] = WtSection(
@@ -5137,9 +5135,7 @@ WtParsedWikitextPage(
 		body = WtBody[
 			[0] = "\n",
 			[1] = WtParagraph[],
-			[2] = WtParagraph[],
-			[3] = WtParagraph[],
-			[4] = WtXmlElement(
+			[2] = WtXmlElement(
 				{P} name = "table"
 				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -5249,8 +5245,8 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[5] = "\n",
-			[6] = WtUnorderedList[
+			[3] = "\n",
+			[4] = WtUnorderedList[
 				[0] = WtListItem(
 					{P} rtd = RTD[ "*" <o> "\n" ]
 					[0] = WtExternalLink(
@@ -5295,11 +5291,9 @@ WtParsedWikitextPage(
 					[1] = ", Facebook Page"
 				)
 			],
-			[7] = "\n",
-			[8] = WtParagraph[],
-			[9] = WtParagraph[],
-			[10] = WtParagraph[],
-			[11] = WtXmlElement(
+			[5] = "\n",
+			[6] = WtParagraph[],
+			[7] = WtXmlElement(
 				{P} name = "table"
 				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -5417,8 +5411,8 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[12] = "\n",
-			[13] = WtUnorderedList[
+			[8] = "\n",
+			[9] = WtUnorderedList[
 				[0] = WtListItem(
 					{P} rtd = RTD[ "*" <o> "" ]
 					[0] = WtExternalLink(
@@ -5437,8 +5431,8 @@ WtParsedWikitextPage(
 					)
 				)
 			],
-			[14] = "\n\n",
-			[15] = WtUnorderedList[
+			[10] = "\n\n",
+			[11] = WtUnorderedList[
 				[0] = WtListItem(
 					{P} rtd = RTD[ "*" <o> "\n" ]
 					[0] = " ",
@@ -5601,8 +5595,8 @@ WtParsedWikitextPage(
 					[1] = " profile"
 				)
 			],
-			[16] = "\n\n",
-			[17] = WtTable(
+			[12] = "\n\n",
+			[13] = WtTable(
 				{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 				xmlAttributes = WtXmlAttributes[
 					[0] = WtXmlAttribute(
@@ -6685,9 +6679,9 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[18] = "\n",
-			[19] = WtParagraph[],
-			[20] = WtXmlElement(
+			[14] = "\n",
+			[15] = WtParagraph[],
+			[16] = WtXmlElement(
 				{P} name = "table"
 				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -7911,8 +7905,8 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[21] = "\n",
-			[22] = WtXmlElement(
+			[17] = "\n",
+			[18] = WtXmlElement(
 				{P} name = "table"
 				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -9667,8 +9661,8 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[23] = "\n",
-			[24] = WtXmlElement(
+			[19] = "\n",
+			[20] = WtXmlElement(
 				{P} name = "table"
 				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -12110,8 +12104,8 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[25] = "\n",
-			[26] = WtXmlElement(
+			[21] = "\n",
+			[22] = WtXmlElement(
 				{P} name = "table"
 				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -16099,7 +16093,7 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[27] = "\n\n"
+			[23] = "\n\n"
 		]
 	),
 	[10] = WtSection(
