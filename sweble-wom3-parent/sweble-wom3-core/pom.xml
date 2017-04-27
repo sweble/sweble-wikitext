@@ -55,12 +55,6 @@
 			<artifactId>joda-time</artifactId>
 		</dependency>
 
-		<!-- XML APIs -->
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-		</dependency>
-
 		<!-- The XSLT and XQuery Processor (Saxon Home Edition) -->
 		<dependency>
 			<groupId>net.sf.saxon</groupId>
@@ -99,4 +93,28 @@
 		</dependency>
 
 	</dependencies>
+
+	<build>
+
+		<!-- =============================================================== -->
+		<!-- Plugin Management - Plugin Management - Plugin Management - Plu -->
+		<!-- =============================================================== -->
+
+		<pluginManagement>
+			<plugins>
+
+				<!-- Maven Dependency Plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<configuration>
+						<ignoredUsedUndeclaredDependencies>
+							<ignoredUsedUndeclaredDependency>xml-apis:xml-apis</ignoredUsedUndeclaredDependency>
+						</ignoredUsedUndeclaredDependencies>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

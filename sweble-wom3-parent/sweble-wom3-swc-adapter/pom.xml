@@ -62,12 +62,6 @@
 			<artifactId>joda-time</artifactId>
 		</dependency>
 
-		<!-- XML APIs -->
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-		</dependency>
-
 		<!-- Utils -->
 		<dependency>
 			<groupId>de.fau.cs.osr.utils</groupId>

@@ -49,12 +49,6 @@
 
 	<dependencies>
 
-		<!-- XML APIs -->
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-		</dependency>
-
 		<!-- Gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>

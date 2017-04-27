@@ -63,12 +63,6 @@
 			<artifactId>commons-io</artifactId>
 		</dependency>
 
-		<!-- XML APIs -->
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-		</dependency>
-
 		<!-- Apache Xerces2 -->
 		<dependency>
 			<groupId>xerces</groupId>
@@ -175,6 +169,9 @@
 							<usedDependencies>
 								<usedDependency>net.sf.saxon:Saxon-HE</usedDependency>
 							</usedDependencies>
+							<ignoredUsedUndeclaredDependencies>
+								<ignoredUsedUndeclaredDependency>xml-apis:xml-apis</ignoredUsedUndeclaredDependency>
+							</ignoredUsedUndeclaredDependencies>
 						</configuration>
 					</execution>
 				</executions>

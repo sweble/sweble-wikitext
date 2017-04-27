@@ -57,12 +57,6 @@
 			<artifactId>commons-io</artifactId>
 		</dependency>
 
-		<!-- XML APIs -->
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-		</dependency>
-
 		<!-- Apache Xerces2 -->
 		<dependency>
 			<groupId>xerces</groupId>
@@ -110,33 +104,46 @@
 	<build>
 
 		<!-- =============================================================== -->
-		<!-- Plugins - Plugins - Plugins - Plugins - Plugins - Plugins - Plu -->
+		<!-- Plugin Management - Plugin Management - Plugin Management - Plu -->
 		<!-- =============================================================== -->
 
-		<plugins>
+		<pluginManagement>
+			<plugins>
 
-			<!-- Check and format license headers -->
-			<plugin>
-				<groupId>com.mycila</groupId>
-				<artifactId>license-maven-plugin</artifactId>
-				<configuration>
-					<excludes combine.children="append">
-						<exclude>src/test/resources/**/*.wikitext</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
+				<!-- Check and format license headers -->
+				<plugin>
+					<groupId>com.mycila</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<configuration>
+						<excludes combine.children="append">
+							<exclude>src/test/resources/**/*.wikitext</exclude>
+						</excludes>
+					</configuration>
+				</plugin>
 
-			<!-- Forbidden APIs -->
-			<plugin>
-				<groupId>de.thetaphi</groupId>
-				<artifactId>forbiddenapis</artifactId>
-				<configuration>
-					<bundledSignatures combine.children="append">
-						<bundledSignature>commons-io-unsafe-1.4</bundledSignature>
-					</bundledSignatures>
-				</configuration>
-			</plugin>
+				<!-- Forbidden APIs -->
+				<plugin>
+					<groupId>de.thetaphi</groupId>
+					<artifactId>forbiddenapis</artifactId>
+					<configuration>
+						<bundledSignatures combine.children="append">
+							<bundledSignature>commons-io-unsafe-1.4</bundledSignature>
+						</bundledSignatures>
+					</configuration>
+				</plugin>
 
-		</plugins>
+				<!-- Maven Dependency Plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<configuration>
+						<ignoredUsedUndeclaredDependencies>
+							<ignoredUsedUndeclaredDependency>xml-apis:xml-apis</ignoredUsedUndeclaredDependency>
+						</ignoredUsedUndeclaredDependencies>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>
