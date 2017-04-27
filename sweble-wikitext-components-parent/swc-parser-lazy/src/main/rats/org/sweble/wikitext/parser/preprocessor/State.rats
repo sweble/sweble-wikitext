@@ -74,9 +74,23 @@ body
     return getState().isRedirectKeyword(keyword);
   }
 
-  public WtNode getEntity(int id)
+  public WtNode getEntity(int id) throws IOException
   {
-    throw new AssertionError("Entities should never occur in pre-processing!");
+    if (getState().getEntity(id) instanceof WtIllegalCodePoint)
+    {
+      if (getState().isConvertIllegalCodePoints())
+      {
+        return nf.text("\uFFFD");
+      }
+      else
+      {
+        throw new IOException("Illegal character in critical location.");
+      }
+    }
+    else
+    {
+      throw new AssertionError("Entities should never occur in pre-processing.");
+    }
   }
 }
 

@@ -25,10 +25,13 @@ public class ValidatedWikitext
 
 	private WtEntityMap entityMap;
 
-	public ValidatedWikitext(String wikitext, WtEntityMap entityMap)
+	private boolean containsIllegalCodePoints;
+
+	public ValidatedWikitext(String wikitext, WtEntityMap entityMap, boolean containsIllegalCodePoints)
 	{
 		this.wikitext = wikitext;
 		this.entityMap = entityMap;
+		this.containsIllegalCodePoints = containsIllegalCodePoints;
 	}
 
 	public String getWikitext()
@@ -39,5 +42,10 @@ public class ValidatedWikitext
 	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
+	}
+
+	public boolean containsIllegalCodePoints()
+	{
+		return containsIllegalCodePoints;
 	}
 }

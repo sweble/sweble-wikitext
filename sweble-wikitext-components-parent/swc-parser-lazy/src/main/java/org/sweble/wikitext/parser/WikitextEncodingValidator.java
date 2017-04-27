@@ -45,7 +45,7 @@ public class WikitextEncodingValidator
 
 		in.close();
 
-		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
+		return new ValidatedWikitext(lexer.getWikitext(), entityMap, lexer.containsIllegalCodePoints());
 	}
 
 	public ValidatedWikitext validate(
@@ -64,7 +64,7 @@ public class WikitextEncodingValidator
 		while (lexer.yylex() != null)
 			;
 
-		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
+		return new ValidatedWikitext(lexer.getWikitext(), entityMap, lexer.containsIllegalCodePoints());
 	}
 
 	public ValidatedWikitext validate(

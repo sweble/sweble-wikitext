@@ -2,6 +2,12 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+### Added
+- Added containsIllegalCodePoints() to class ValidatedWikitext.
+- Added convertIllegalCodePoints option to ParserConfig.
+
+### Removed
+- Removed xml-apis dependencies.
 
 ## 3.1.4 - 2017-02-09
 ### Added

@@ -45,6 +45,7 @@ import org.sweble.wikitext.parser.utils.AstTextUtils;
 
 @XmlRootElement(name = "ParserConfig", namespace = "org.sweble.wikitext.engine")
 @XmlType(propOrder = {
+		"convertIllegalCodePoints",
 		"warningsEnabled",
 		"minSeverity",
 		"autoCorrect",
@@ -69,6 +70,9 @@ public class ParserConfigImpl
 	private transient WikiConfigImpl wikiConfig;
 
 	private final Map<String, String> xmlEntities = new HashMap<String, String>();
+
+	@XmlElement
+	private boolean convertIllegalCodePoints;
 
 	@XmlElement
 	private boolean warningsEnabled;
@@ -154,7 +158,20 @@ public class ParserConfigImpl
 	{
 		return xmlEntities.get(name);
 	}
+	
+	// ==[ Preprocessor features ]==============================================
 
+	public void setConvertIllegalCodePoints(boolean convertIllegalCodePoints)
+	{
+		this.convertIllegalCodePoints = convertIllegalCodePoints;
+	}
+	
+	@Override
+	public boolean isConvertIllegalCodePoints()
+	{
+		return convertIllegalCodePoints;
+	}
+	
 	// ==[ Parser features ]====================================================
 
 	public void setWarningsEnabled(boolean warningsEnabled)

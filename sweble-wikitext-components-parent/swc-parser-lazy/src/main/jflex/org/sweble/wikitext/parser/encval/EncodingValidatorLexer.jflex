@@ -49,6 +49,8 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
   private WikitextNodeFactory nf;
 
+  private boolean containsIllegalCodePoints = false;
+
   // ===========================================================================
 
   public void setEntityMap(WtEntityMap entityMap)
@@ -80,11 +82,17 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
     text.append('\uE000');
     text.append(id);
     text.append('\uE001');
+
+    containsIllegalCodePoints = true;
   }
 
   public String getWikitext()
   {
     return text.toString();
+  }
+
+  public boolean containsIllegalCodePoints() {
+    return containsIllegalCodePoints;
   }
 %}
 

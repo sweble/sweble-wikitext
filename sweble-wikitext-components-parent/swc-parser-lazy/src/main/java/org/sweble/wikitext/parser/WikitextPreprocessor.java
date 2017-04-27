@@ -60,14 +60,28 @@ public class WikitextPreprocessor
 	@Override
 	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
-		return parseArticle(new ValidatedWikitext(src, new WtEntityMapImpl()), title, false);
+		return parseArticle(
+				new ValidatedWikitext(
+						src,
+						new WtEntityMapImpl(),
+						false/*containsIllegalCodePoints*/),
+				title,
+				false);
 	}
 
 	public WtNode parseArticle(
 			ValidatedWikitext wikitext,
 			String title,
-			boolean forInclusion) throws IOException, ParseException
+			boolean forInclusion)
+		throws IOException,
+			ParseException
 	{
+		/*
+		if (wikitext.containsIllegalCodePoints() && !config.isConvertIllegalCodePoints())
+			throw new IllegalArgumentException(
+					"Input contains illegal code points but preprocessor is not allowed to convert them.");
+		*/
+		
 		Reader in = new StringReader(wikitext.getWikitext());
 
 		int inputSize = wikitext.getWikitext().getBytes().length;

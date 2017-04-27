@@ -30,6 +30,17 @@ public interface ParserConfig
 		extends
 			XmlEntityResolver
 {
+	// ==[ Preprocessor features ]==============================================
+
+	/**
+	 * Tells the preprocessor to convert illegal code points into the
+	 * replacement character (U+7fff) when the code point appears in a
+	 * problematic place (currently only inside XML attributes). Otherwise the
+	 * preprocessor will fail if illegal code points are present in problematic
+	 * places and conversion is not allowed.
+	 */
+	boolean isConvertIllegalCodePoints();
+
 	// ==[ Parser features ]====================================================
 
 	boolean isWarningsEnabled();
