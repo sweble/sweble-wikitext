@@ -159,7 +159,7 @@ public class ParserConfigImpl
 		return xmlEntities.get(name);
 	}
 	
-	// ==[ Preprocessor features ]==============================================
+	// ==[ Encoding validation features ]=======================================
 
 	public void setConvertIllegalCodePoints(boolean convertIllegalCodePoints)
 	{

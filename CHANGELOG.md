@@ -2,9 +2,13 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+### Changed
+- Pre-processing stage now replaced entities
+
 ### Added
 - Added containsIllegalCodePoints() to class ValidatedWikitext.
-- Added convertIllegalCodePoints option to ParserConfig.
+- Added convertIllegalCodePoints option to ParserConfig which affect encoding 
+  validation stage.
 
 ### Removed
 - Removed xml-apis dependencies.

@@ -149,11 +149,6 @@ public class WikitextPreprocessorState
 		this.hasOnlyInclude = hasOnlyInclude;
 	}
 
-	public boolean isConvertIllegalCodePoints()
-	{
-		return this.config.isConvertIllegalCodePoints();
-	}
-
 	public boolean isParseForInclusion()
 	{
 		return parseForInclusion;

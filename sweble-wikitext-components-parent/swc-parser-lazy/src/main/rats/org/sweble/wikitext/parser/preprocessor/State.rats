@@ -76,6 +76,8 @@ body
 
   public WtNode getEntity(int id) throws IOException
   {
+    return getState().getEntity(id);
+    /*
     if (getState().getEntity(id) instanceof WtIllegalCodePoint)
     {
       if (getState().isConvertIllegalCodePoints())
@@ -91,6 +93,7 @@ body
     {
       throw new AssertionError("Entities should never occur in pre-processing.");
     }
+    */
   }
 }
 

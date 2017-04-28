@@ -112,7 +112,7 @@ public class SimpleParserConfig
 		this.textUtils = new AstTextUtilsImpl(this);
 	}
 
-	// ==[ Preprocessor features ]==============================================
+	// ==[ Encoding validation features ]=======================================
 
 	@Override
 	public boolean isConvertIllegalCodePoints()

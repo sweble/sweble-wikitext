@@ -39,6 +39,7 @@ public class WikitextEncodingValidator
 		lexer.setFile(title);
 		lexer.setEntityMap(entityMap);
 		lexer.setWikitextNodeFactory(parserConfig.getNodeFactory());
+		lexer.setConvertIllegalCodePoints(parserConfig.isConvertIllegalCodePoints());
 
 		while (lexer.yylex() != null)
 			;

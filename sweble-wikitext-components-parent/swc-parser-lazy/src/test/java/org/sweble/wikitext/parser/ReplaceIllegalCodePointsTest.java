@@ -19,9 +19,8 @@ package org.sweble.wikitext.parser;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.io.IOException;
-
 import org.junit.Test;
+import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
@@ -29,7 +28,7 @@ import org.sweble.wikitext.parser.utils.NonExpandingParser;
 
 public class ReplaceIllegalCodePointsTest
 {
-	@Test(expected = IOException.class)
+	@Test
 	public void testForIllegalCodePoint() throws Exception
 	{
 		NonExpandingParser parser = new NonExpandingParser(
@@ -39,7 +38,17 @@ public class ReplaceIllegalCodePointsTest
 				false /*autoCorrect*/,
 				true /*langConvTagsEnabled*/);
 
-		parser.parseArticle("<ref foo=\"\u007F\" />", "title");
+		WtNode article = parser.parseArticle("<ref foo=\"\u007f\" />", "title");
+
+		WtNode attr = findAttribute(article);
+		assertNotNull(attr);
+
+		/*
+		PrinterInterface printer = new TypedWtAstPrinter();
+		System.out.println(printToString(attr, printer));
+		*/
+
+		assertEquals("\u007f", ((WtIllegalCodePoint) ((WtXmlAttribute) attr).getValue().get(0)).getCodePoint());
 	}
 
 	@Test
@@ -56,6 +65,11 @@ public class ReplaceIllegalCodePointsTest
 
 		WtNode attr = findAttribute(article);
 		assertNotNull(attr);
+
+		/*
+		PrinterInterface printer = new TypedWtAstPrinter();
+		System.out.println(printToString(attr, printer));
+		*/
 
 		assertEquals("\ufffd", ((WtText) ((WtXmlAttribute) attr).getValue().get(0)).getContent());
 	}
