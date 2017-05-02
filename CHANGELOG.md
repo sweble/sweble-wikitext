@@ -10,6 +10,9 @@
   - Allowed EXTERNAL_LINK and PLAIN_EXTERNAL_LINK in IMAGE_LINK_TITLE scope.
   - Removed what I believe to be unnecessary complexity from internal link 
     grammar. 
+- LanguageConfigGenerate automatically prefixes a magic word with "#" or adds  
+  the postfix ":" if the same magic word is prefixed or postfixed in 
+  DefaultConfigEnWp.
 
 ### Added
 - Added containsIllegalCodePoints() to class ValidatedWikitext.
