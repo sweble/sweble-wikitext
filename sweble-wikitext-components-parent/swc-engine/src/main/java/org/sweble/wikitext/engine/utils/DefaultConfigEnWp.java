@@ -4222,7 +4222,7 @@ public class DefaultConfigEnWp
 
 	}
 
-	protected void addI18nAlises(WikiConfigImpl c)
+	protected void addI18nAliases(WikiConfigImpl c)
 	{
 		/*
 		c.addI18nAlias(new I18nAliasImpl(
