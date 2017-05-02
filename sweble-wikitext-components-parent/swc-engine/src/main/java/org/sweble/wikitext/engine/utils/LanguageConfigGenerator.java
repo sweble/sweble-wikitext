@@ -108,6 +108,10 @@ public class LanguageConfigGenerator
 			WikiConfigImpl wikiConfig,
 			String apiUrlMagicWords) throws IOException, ParserConfigurationException, SAXException
 	{
+		// Template when to add '#' prefix to i18n aliases
+		WikiConfigImpl template = new WikiConfigImpl();
+		new DefaultConfigEnWp().addI18nAlises(template);
+
 		Document document = getXMLFromUlr(apiUrlMagicWords);
 		NodeList apiI18NAliases = document.getElementsByTagName("magicword");
 
@@ -123,6 +127,25 @@ public class LanguageConfigGenerator
 			{
 				iscaseSensitive = true;
 			}
+			I18nAliasImpl defaultalias = template.getI18nAliasById(name);
+			String prefix = "", postfix = "";
+			boolean postoptional = false;
+			if (defaultalias != null)
+			{
+				for (String a : defaultalias.getAliases())
+				{
+					if (a.startsWith("#"))
+					{
+						prefix = "#";
+					}
+					if (a.endsWith(":"))
+					{
+						postfix = ":";
+					} else {
+						postoptional = true;
+					}
+				}
+			}
 
 			Node aliasesNode = apii18NAlias.getFirstChild();
 			NodeList aliasesList = aliasesNode.getChildNodes();
@@ -131,7 +154,26 @@ public class LanguageConfigGenerator
 			{
 				Node aliasNode = aliasesList.item(j);
 				String aliasString = aliasNode.getTextContent();
-				aliases.add(aliasString);
+				if (prefix.length() > 0 && !aliasString.startsWith(prefix))
+				{
+					aliasString = prefix + aliasString;
+				}
+				if (postoptional || postfix.length() == 0 || aliasString.endsWith(postfix))
+				{
+					// Add without change to the postfix:
+					aliases.add(aliasString);
+				}
+				if (postfix.length() > 0)
+				{
+					if (!aliasString.endsWith(postfix))
+					{
+						// Add missing postfix:
+						aliases.add(aliasString + postfix);
+					} else if (postoptional) {
+						// Remove existing, optional postfix:
+						aliases.add(aliasString.substring(0, aliasString.length() - postfix.length()));
+					}
+				}
 			}
 			I18nAliasImpl I18Alias = new I18nAliasImpl(name, iscaseSensitive, aliases);
 			try
