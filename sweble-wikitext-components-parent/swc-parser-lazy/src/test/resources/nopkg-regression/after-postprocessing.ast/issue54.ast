@@ -1,0 +1,32 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[ Warning: <no location>: <no content> : 12.2.5.4.7 - R24 (2) @ WtXmlEndTag. ]
+	[0] = WtParagraph[],
+	[1] = WtImageLink(
+		{P} border = false
+		{P} format = THUMBNAIL
+		{P} hAlign = UNSPECIFIED
+		{P} height = -1
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		{P} upright = false
+		{P} vAlign = MIDDLE
+		{P} width = -1
+		target = WtPageName[ [0] = "File:Richard Chancellor" ],
+		options = WtLinkOptions[
+			[0] = WtLinkOptionKeyword(
+				{P} keyword = "thumb"
+				{P} rtd = RTD[ "|thumb" ]
+			),
+			[1] = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = WtXmlElement(
+					{P} name = "center"
+					{P} rtd = RTD[ "<center" <o> ">" <o> "" ]
+					xmlAttributes = WtXmlAttributes[],
+					body = WtBody[ [0] = "Richard Chancellor (1553)" ]
+				)
+			)
+		]
+	),
+	[2] = "\nText"
+)

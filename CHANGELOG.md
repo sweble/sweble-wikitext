@@ -24,6 +24,8 @@
 
 ### Fixed
 - Fixed '|' parsing in external link URLs.
+- Framed image links force all block elements inside their title to close when 
+  the title scope closes.
 
 ## 3.1.4 - 2017-02-09
 ### Added

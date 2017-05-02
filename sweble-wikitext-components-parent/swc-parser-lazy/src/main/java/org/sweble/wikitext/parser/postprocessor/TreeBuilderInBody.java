@@ -419,6 +419,12 @@ public final class TreeBuilderInBody
 			case BR:
 				endTagR47(n);
 				break;
+			case FRAMED_IMG:
+				endTagFramedImage(n);
+				break;
+				/*
+			case INLINE_IMG:
+				*/
 			default:
 				if (nodeType == UNKNOWN)
 					endUnknownTag(n);
@@ -1242,6 +1248,30 @@ public final class TreeBuilderInBody
 	 * R24: An end tag whose tag name is one of: dd, dt
 	 */
 	private void endTagR24(WtNode n)
+	{
+		ElementType nodeType = getNodeType(n);
+		if (!tb.isElementTypeInScope(nodeType))
+		{
+			tb.error(n, "12.2.5.4.7 - R24 (1)");
+			tb.ignore(n);
+		}
+		else
+		{
+			tb.generateImpliedEndTags(nodeType);
+
+			if (getNodeType(tb.getCurrentNode()) != nodeType)
+				tb.error(n, "12.2.5.4.7 - R24 (2)");
+
+			addRtDataOfEndTag(
+					tb.popFromStackUntilIncluding(nodeType),
+					n);
+		}
+	}
+
+	/**
+	 * The same as R24.
+	 */
+	private void endTagFramedImage(WtNode n)
 	{
 		ElementType nodeType = getNodeType(n);
 		if (!tb.isElementTypeInScope(nodeType))
