@@ -1,0 +1,195 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtExternalLink(
+			{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+			target = WtUrl(
+				{P} path = "//www.cos.uni-heidelberg.de/index.php/sfb873?|SFB&l=_e"
+				{P} protocol = "http"
+				{P} rtd = RTD[ "http://www.cos.uni-heidelberg.de/index.php/sfb873?|SFB&l=_e" ]
+			),
+			title = WtLinkTitle[ [0] = "SFB 873" ]
+		)
+	],
+	[1] = "\n\n",
+	[2] = WtParagraph[
+		[0] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName[ [0] = "Hallo" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Foo http://heise.de Bar"
+			)
+		)
+	],
+	[3] = "\n\n",
+	[4] = WtParagraph[
+		[0] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName[ [0] = "Hallo" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Foo [http://heise.de Boo] Bar"
+			)
+		)
+	],
+	[5] = "\n\n",
+	[6] = WtParagraph[
+		[0] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName[ [0] = "Hallo" ],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Foo [http://www.cos.uni-heidelberg.de/index.php/sfb873?|SFB",
+				[1] = WtText(
+					{A} warnings = C[ Warning (informative): /nopkg-basic/input.wikitext/int-ext-link-1.wikitext:7:68 - 69: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+					{P} content = "&"
+				),
+				[2] = "l=_e FooBar] Bar"
+			)
+		)
+	],
+	[7] = "\n\n",
+	[8] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "image:foo" ],
+			options = WtLinkOptions[
+				[0] = WtLinkOptionLinkTarget(
+					{P} rtd = RTD[ "|link=" <o> "" ]
+					{P} targetType = URL
+					target = WtUrl(
+						{P} path = "//heise.de?"
+						{P} protocol = "http"
+						{P} rtd = RTD[ "http://heise.de?" ]
+					)
+				),
+				[1] = WtLinkOptionGarbage(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "SFB"
+				),
+				[2] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Titel"
+				)
+			]
+		)
+	],
+	[9] = "\n\n",
+	[10] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "image:foo" ],
+			options = WtLinkOptions[
+				[0] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Foo ",
+					[1] = WtExternalLink(
+						{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+						target = WtUrl(
+							{P} path = "//www.cos.uni-heidelberg.de/index.php/sfb873?|SFB&l=_e"
+							{P} protocol = "http"
+							{P} rtd = RTD[ "http://www.cos.uni-heidelberg.de/index.php/sfb873?|SFB&l=_e" ]
+						),
+						title = WtLinkTitle[ [0] = "SFB 873" ]
+					),
+					[2] = " Bar"
+				)
+			]
+		)
+	],
+	[11] = "\n\n",
+	[12] = WtParagraph[
+		[0] = WtImageLink(
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName[ [0] = "image:x" ],
+			options = WtLinkOptions[
+				[0] = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "a",
+					[1] = WtExternalLink(
+						{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+						target = WtUrl(
+							{P} path = "//b|c"
+							{P} protocol = "http"
+							{P} rtd = RTD[ "http://b|c" ]
+						),
+						title = WtLinkTitle[ [0] = "d" ]
+					),
+					[2] = "e"
+				)
+			]
+		)
+	],
+	[13] = "\n\n",
+	[14] = WtParagraph[],
+	[15] = WtImageLink(
+		{P} border = false
+		{P} format = THUMBNAIL
+		{P} hAlign = LEFT
+		{P} height = -1
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		{P} upright = false
+		{P} vAlign = MIDDLE
+		{P} width = -1
+		target = WtPageName[ [0] = "File:Eurofighter 9803.ogg" ],
+		options = WtLinkOptions[
+			[0] = WtLinkOptionKeyword(
+				{P} keyword = "thumb"
+				{P} rtd = RTD[ "|thumb" ]
+			),
+			[1] = WtLinkOptionGarbage(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "thumbtime=32"
+			),
+			[2] = WtLinkOptionKeyword(
+				{P} keyword = "left"
+				{P} rtd = RTD[ "|left" ]
+			),
+			[3] = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "A ",
+				[1] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName[ [0] = "Eurofighter Typhoon" ],
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "Eurofighter"
+					)
+				),
+				[2] = " flight demonstration"
+			)
+		]
+	),
+	[16] = "\n"
+)

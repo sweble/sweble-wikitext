@@ -21,6 +21,7 @@ public enum ParserAtoms
 {
 	INTERNAL_LINK,
 	EXTERNAL_LINK,
+	/** Guess that's a different name for "just a URL" */
 	PLAIN_EXTERNAL_LINK,
 	HORIZONTAL_RULE,
 	LIST,

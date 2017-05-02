@@ -3,7 +3,13 @@
 
 ## Unreleased
 ### Changed
-- Pre-processing stage now replaced entities
+- Pre-processing stage now replaced entities.
+- Refactored internal link parsing:
+  - Deleted INTERNAL_LINK_ALT scope
+  - Allowed EXTERNAL_LINK in IMAGE_LINK_ALT scope.
+  - Allowed EXTERNAL_LINK and PLAIN_EXTERNAL_LINK in IMAGE_LINK_TITLE scope.
+  - Removed what I believe to be unnecessary complexity from internal link 
+    grammar. 
 
 ### Added
 - Added containsIllegalCodePoints() to class ValidatedWikitext.
@@ -12,6 +18,9 @@
 
 ### Removed
 - Removed xml-apis dependencies.
+
+### Fixed
+- Fixed '|' parsing in external link URLs.
 
 ## 3.1.4 - 2017-02-09
 ### Added

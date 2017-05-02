@@ -217,10 +217,13 @@ noinline transient WtNode InternalLinkTransient =
 ;
 
 inline void InlineContentStopperInternalLink =
+    /* I have no idea what a INTERNAL_LINK_ALT even is. Therefore this 
+     * alternative makes no sense to me.
     &{ inScope(ParserScopes.INTERNAL_LINK_ALT)   } ( "]]" / "[[" InternalLinkChoice / '|' )
-  / &{ inScope(ParserScopes.INTERNAL_LINK_TITLE) } ( "]]" / "[[" InternalLinkChoice )
+  / */
+    &{ inScope(ParserScopes.INTERNAL_LINK_TITLE) } ( "]]" / "[[" InternalLinkChoice )
   / &{ inScope(ParserScopes.IMAGE_LINK_ALT)      } ( "]]" / '|' )
-  / &{ inScope(ParserScopes.IMAGE_LINK_TITLE)    } ( "]]" )
+  / &{ inScope(ParserScopes.IMAGE_LINK_TITLE)    } ( "]]" / '|' )
 ;
 
 private transient stateful WtNode InternalLinkChoice =
@@ -340,7 +343,7 @@ noinline transient WtLinkOptions OptionsAndTitleTransient =
     {
       yyValue = nf.linkOpts(title);
     }
-  / yyValue:LinkOptionStar
+  / &{ getLinkBuilder().isImageTarget() } yyValue:LinkOptionStar
 ;
 
 private transient WtLinkOptions LinkOptionStar =
@@ -459,8 +462,15 @@ private transient stateful WtNode LinkOptionNameValue =
 				'|', rt0, "link=", SEP, rt1);
     }
   / rt0:pExtWsStar "alt="
+    /* I don't know why it says INTERNAL_LINK_ALT. This is not a thing...
+     * alt= options in MediaWiki do accept links (int/ext) and strip the syntax
+     * which suggests that links in alt= options are properly parsed
     {
       enter(ParserScopes.INTERNAL_LINK_ALT);
+    }
+     */
+    {
+      enter(ParserScopes.IMAGE_LINK_ALT);
     }
     alt:LinkTitleContentStar
     {
@@ -471,7 +481,7 @@ private transient stateful WtNode LinkOptionNameValue =
 ;
 
 private inline WtLinkTarget LinkTargetOverride =
-    Url
+    UrlNoPipe
   / LinkTarget
 ;
 
@@ -495,10 +505,20 @@ private inline WtNode LinkOptionUnresolved =
 // -- Link Option Title --------------------------------------------------------
 
 private inline stateful WtLinkTitle LinkOptionTitle =
+  /* LinkOptionTitle is only used in productions 
+   * LinkOptionStar -> LinkOptionChoice which are only invoked if we ARE dealing
+   * with an image target.  Therefore the condition on isImageTarget() does not
+   * make sense to me. Also I do not understand why we would enter the LINK_ALT 
+   * scope instead of the "normal" scope. The alt scope only makes sense when
+   * we are dealing with the "alt=" part of the LinkOptionNameValue production.
   {
     enter(getLinkBuilder().isImageTarget() ?
         ParserScopes.IMAGE_LINK_ALT :
         ParserScopes.INTERNAL_LINK_ALT);
+  }
+  */
+  {
+    enter(ParserScopes.IMAGE_LINK_TITLE);
   }
   content:LinkTitleContentStar
   {
@@ -514,10 +534,17 @@ private inline stateful WtLinkTitle LinkOptionTitle =
 // -- Link Title ---------------------------------------------------------------
 
 private inline stateful WtLinkTitle LinkTitle =
+  /* LinkTitle is only used in production OptionsAndTitleTransient and it will 
+   * only be tried if we are NOT dealing with an image target. Therefore the
+   * condition on isImageTarget() does not make sense to me.
   {
     enter(getLinkBuilder().isImageTarget() ?
         ParserScopes.IMAGE_LINK_TITLE :
         ParserScopes.INTERNAL_LINK_TITLE);
+  }
+  */
+  {
+    enter(ParserScopes.INTERNAL_LINK_TITLE);
   }
   '|' title:LinkTitleContentStar
   {

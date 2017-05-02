@@ -21,7 +21,7 @@
  *
  *   Grammar:
  *     - Protocol ::= [A-Za-z] [A-Za-z0-9+\-.]*
- *     - Path     ::= [^\u0000-\u0020\u007F\uE000\u2028\u2029\u0085\"\[\]<>|]+
+ *     - Path     ::= [^\u0000-\u0020\u007F\uE000\u2028\u2029\u0085\"\[\]<>]+
  *     - Url      ::= Scheme ':' Path
  *
  */
@@ -180,9 +180,26 @@ WtUrl Url =
     }
 ;
 
+WtUrl UrlNoPipe =
+    protocol:UrlProtocolString ':' path:UrlPathNoPipeString &{ isProtocol(protocol, path) }
+    {
+      yyValue = setRtd(
+        nf.url(protocol, path),
+        protocol, ':', path);
+    }
+  / &"//" path:UrlPathNoPipeString
+    {
+      yyValue = setRtd(
+        nf.url("", path),
+        path);
+    }
+;
+
 String UrlProtocolString = tUrlProtocolString ;
 
 String UrlPathString = tUrlPathString ;
+
+String UrlPathNoPipeString = tUrlPathNoPipeString ;
 
 /* The part before the separator ":".
  * According to http://www.ietf.org/rfc/rfc1738.txt
@@ -196,6 +213,10 @@ private transient String tUrlProtocolString =
  * FIXME: Is this the official RFC or is this what MediaWiki expects?
  */
 private transient String tUrlPathString =
+  ( ![\u0000-\u0020] ![\"\[\]<>\u007F\uE000\u2028\u2029\u0085] _ )+
+;
+
+private transient String tUrlPathNoPipeString =
   ( ![\u0000-\u0020] ![\"\[\]<>|\u007F\uE000\u2028\u2029\u0085] _ )+
 ;
 
