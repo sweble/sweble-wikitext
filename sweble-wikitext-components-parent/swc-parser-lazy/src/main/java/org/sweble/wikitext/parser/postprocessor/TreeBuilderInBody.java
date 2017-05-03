@@ -274,7 +274,7 @@ public final class TreeBuilderInBody
 				startTagR34(n);
 				break;
 			case IMG:
-				throw new AssertionError("This must not happen!");
+				throw new UnsupportedOperationException("The HTML img tag is not permitted on MediaWiki.");
 				/*
 				case INPUT:
 				startTagR35(n);
