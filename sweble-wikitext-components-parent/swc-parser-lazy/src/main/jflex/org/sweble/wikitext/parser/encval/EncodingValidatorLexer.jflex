@@ -49,6 +49,10 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
   private WikitextNodeFactory nf;
 
+  private boolean containsIllegalCodePoints = false;
+
+  private boolean convertIllegalCodePoints = false;
+
   // ===========================================================================
 
   public void setEntityMap(WtEntityMap entityMap)
@@ -66,6 +70,11 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
     this.nf = nodeFactory;
   }
 
+  public void setConvertIllegalCodePoints(boolean convert)
+  {
+    this.convertIllegalCodePoints = convert;
+  }
+
   private void wrapIllegalCodePoint(int line, int column, String codePoint, IllegalCodePointType type)
   {
     WtIllegalCodePoint p = nf.illegalCp(codePoint, type);
@@ -77,14 +86,27 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
     int id = entityMap.registerEntity(p);
 
-    text.append('\uE000');
-    text.append(id);
-    text.append('\uE001');
+    if (convertIllegalCodePoints)
+    {
+      text.append('\uFFFD');
+    }
+    else
+    {
+      text.append('\uE000');
+      text.append(id);
+      text.append('\uE001');
+    }
+
+    containsIllegalCodePoints = true;
   }
 
   public String getWikitext()
   {
     return text.toString();
+  }
+
+  public boolean containsIllegalCodePoints() {
+    return containsIllegalCodePoints;
   }
 %}
 

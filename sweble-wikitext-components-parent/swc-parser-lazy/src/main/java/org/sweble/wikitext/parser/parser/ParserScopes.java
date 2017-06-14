@@ -28,6 +28,7 @@ public enum ParserScopes
 		}
 	},
 
+	/* That is not even a thing. I don't know why I've added it...
 	INTERNAL_LINK_ALT
 	{
 		@Override
@@ -53,6 +54,7 @@ public enum ParserScopes
 			return true;
 		}
 	},
+	*/
 
 	IMAGE_LINK_ALT
 	{
@@ -65,7 +67,11 @@ public enum ParserScopes
 			//case INTERNAL_LINK: // terminates the outer internal link
 				case LIST:
 				case SEMI_PRE:
+					/* It appears that external links are properly parsed in MediaWiki and then stripped of their 
+					 * syntactic sugar before being rendered into the alt="" attribute. Therefore we must not exclude
+					 * external links from parsing.
 				case EXTERNAL_LINK:
+					*/
 				case PLAIN_EXTERNAL_LINK:
 					return false;
 				default:
@@ -117,8 +123,10 @@ public enum ParserScopes
 			//case INTERNAL_LINK: // terminates the outer internal link
 				case LIST:
 				case SEMI_PRE:
+					/* I don't know why those were forbidden. After all an image's caption can contain all kinds of links...
 				case EXTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
+					*/
 					return false;
 				default:
 					return true;

@@ -24,13 +24,16 @@
 	<parent>
 		<groupId>org.sweble.engine</groupId>
 		<artifactId>sweble-engine-parent</artifactId>
-		<version>3.1.4</version>
+		<version>3.1.5</version>
 	</parent>
 
 	<artifactId>sweble-engine-serialization-eval</artifactId>
 	<packaging>jar</packaging>
 	<name>Sweble Engine Serialization Evaluation</name>
 	<inceptionYear>2013</inceptionYear>
+	<description>
+		A module for evaluating the serialization module's performance.
+	</description>
 
 	<!-- =================================================================== -->
 	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
@@ -61,12 +64,6 @@
 			<!-- Also add signature "commons-io-unsafe-<ver>" to forbiddenapis plugin -->
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-		</dependency>
-
-		<!-- XML APIs -->
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
 		</dependency>
 
 		<!-- Apache Xerces2 -->
@@ -175,6 +172,9 @@
 							<usedDependencies>
 								<usedDependency>net.sf.saxon:Saxon-HE</usedDependency>
 							</usedDependencies>
+							<ignoredUsedUndeclaredDependencies>
+								<ignoredUsedUndeclaredDependency>xml-apis:xml-apis</ignoredUsedUndeclaredDependency>
+							</ignoredUsedUndeclaredDependencies>
 						</configuration>
 					</execution>
 				</executions>

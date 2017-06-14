@@ -1,0 +1,36 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[],
+	[1] = WtImageLink(
+		{P} border = false
+		{P} format = FRAME
+		{P} hAlign = UNSPECIFIED
+		{P} height = -1
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		{P} upright = false
+		{P} vAlign = MIDDLE
+		{P} width = -1
+		target = WtPageName[ [0] = "image:x" ],
+		options = WtLinkOptions[
+			[0] = WtLinkOptionKeyword(
+				{P} keyword = "frame"
+				{P} rtd = RTD[ "|frame" ]
+			),
+			[1] = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "a",
+				[1] = WtExternalLink(
+					{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+					target = WtUrl(
+						{P} path = "//b|c"
+						{P} protocol = "http"
+						{P} rtd = RTD[ "http://b|c" ]
+					),
+					title = WtLinkTitle[ [0] = "d" ]
+				),
+				[2] = "e"
+			)
+		]
+	)
+)

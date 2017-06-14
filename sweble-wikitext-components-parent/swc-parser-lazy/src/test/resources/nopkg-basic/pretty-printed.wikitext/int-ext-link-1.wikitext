@@ -1,0 +1,15 @@
+[http://www.cos.uni-heidelberg.de/index.php/sfb873?|SFB&l=_e SFB 873]
+
+[[Hallo|Foo http://heise.de Bar]]
+
+[[Hallo|Foo [http://heise.de Boo] Bar]]
+
+[[Hallo|Foo [http://www.cos.uni-heidelberg.de/index.php/sfb873?|SFB&l=_e FooBar] Bar]]
+
+[[image:foo|link=http://heise.de?|Titel]]
+
+[[image:foo|Foo [http://www.cos.uni-heidelberg.de/index.php/sfb873?|SFB&l=_e SFB 873] Bar]]
+
+[[image:x|a[http://b|c d]e]]
+
+[[File:Eurofighter 9803.ogg|thumb|left|A [[Eurofighter Typhoon|Eurofighter]] flight demonstration]]

@@ -72,6 +72,22 @@ public final class NonExpandingParser
 				autoCorrect,
 				langConvTagsEnabled);
 	}
+	
+	public NonExpandingParser(
+			boolean convertIllegalCodePoints,
+			boolean warningsEnabled,
+			boolean gatherRtd,
+			boolean autoCorrect,
+			boolean langConvTagsEnabled)
+
+	{
+		parserConfig = new SimpleParserConfig(
+				convertIllegalCodePoints,
+				warningsEnabled,
+				gatherRtd,
+				autoCorrect,
+				langConvTagsEnabled);
+	}
 
 	// =========================================================================
 

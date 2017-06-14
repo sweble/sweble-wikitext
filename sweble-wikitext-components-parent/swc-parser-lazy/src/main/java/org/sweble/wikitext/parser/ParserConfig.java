@@ -30,6 +30,10 @@ public interface ParserConfig
 		extends
 			XmlEntityResolver
 {
+	// ==[ Encoding validation features ]=======================================
+
+	boolean isConvertIllegalCodePoints();
+
 	// ==[ Parser features ]====================================================
 
 	boolean isWarningsEnabled();

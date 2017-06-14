@@ -41,17 +41,24 @@ import org.xml.sax.SAXException;
  */
 public class LanguageConfigGenerator
 {
-	public static final String API_ENDPOINT_MAGICWORDS = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=magicwords&format=xml";
+	public static final String API_ENDPOINT_MAGICWORDS =
+			".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=magicwords&format=xml";
 
-	public static final String API_ENDPOINT_INTERWIKIMAP = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=interwikimap&format=xml";
+	public static final String API_ENDPOINT_INTERWIKIMAP =
+			".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=interwikimap&format=xml";
 
-	public static final String API_ENDPOINT_NAMESPACES = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespaces&format=xml";
+	public static final String API_ENDPOINT_NAMESPACES =
+			".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespaces&format=xml";
 
-	public static final String API_ENDPOINT_NAMESPACEALIASES = ".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespacealiases&format=xml";
+	public static final String API_ENDPOINT_NAMESPACEALIASES =
+			".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=namespacealiases&format=xml";
 
 	// =========================================================================
 
-	public static WikiConfig generateWikiConfig(String languagePrefix) throws IOException, ParserConfigurationException, SAXException
+	public static WikiConfig generateWikiConfig(String languagePrefix)
+		throws IOException,
+			ParserConfigurationException,
+			SAXException
 	{
 		return generateWikiConfig(
 				languagePrefix + " wiki",
@@ -62,7 +69,10 @@ public class LanguageConfigGenerator
 	public static WikiConfig generateWikiConfig(
 			String siteName,
 			String siteURL,
-			String languagePrefix) throws IOException, ParserConfigurationException, SAXException
+			String languagePrefix)
+		throws IOException,
+			ParserConfigurationException,
+			SAXException
 	{
 		String endpointPrefix = "https://" + languagePrefix;
 		return generateWikiConfig(
@@ -82,7 +92,10 @@ public class LanguageConfigGenerator
 			String apiUrlNamespacealiases,
 			String apiUrlNamespaces,
 			String apiUrlInterwikimap,
-			String apiUrlMagicwords) throws IOException, ParserConfigurationException, SAXException
+			String apiUrlMagicwords)
+		throws IOException,
+			ParserConfigurationException,
+			SAXException
 	{
 		WikiConfigImpl wikiConfig = new WikiConfigImpl();
 		wikiConfig.setSiteName(siteName);
@@ -106,37 +119,89 @@ public class LanguageConfigGenerator
 
 	public static void addi18NAliases(
 			WikiConfigImpl wikiConfig,
-			String apiUrlMagicWords) throws IOException, ParserConfigurationException, SAXException
+			String apiUrlMagicWords)
+		throws IOException,
+			ParserConfigurationException,
+			SAXException
 	{
-		Document document = getXMLFromUlr(apiUrlMagicWords);
-		NodeList apiI18NAliases = document.getElementsByTagName("magicword");
+		// Template when to add '#' prefix to i18n aliases
+		WikiConfigImpl template = new WikiConfigImpl();
+		new DefaultConfigEnWp().addI18nAliases(template);
 
-		for (int i = 0; i < apiI18NAliases.getLength(); i++)
+		Document document = getXMLFromUrl(apiUrlMagicWords);
+		NodeList apiI18nAliases = document.getElementsByTagName("magicword");
+
+		for (int i = 0; i < apiI18nAliases.getLength(); i++)
 		{
-			Node apii18NAlias = apiI18NAliases.item(i);
-			NamedNodeMap attributes = apii18NAlias.getAttributes();
+			Node apiI18nAlias = apiI18nAliases.item(i);
+			NamedNodeMap attributes = apiI18nAlias.getAttributes();
 
 			String name = attributes.getNamedItem("name").getNodeValue();
-			boolean iscaseSensitive = false;
+			boolean isCaseSensitive = false;
 			Node caseSensitive = attributes.getNamedItem("case-sensitive");
 			if (caseSensitive != null)
 			{
-				iscaseSensitive = true;
+				isCaseSensitive = true;
 			}
 
-			Node aliasesNode = apii18NAlias.getFirstChild();
+			I18nAliasImpl defaultAlias = template.getI18nAliasById(name);
+			String prefix = "";
+			String postfix = "";
+			boolean postOptional = false;
+			if (defaultAlias != null)
+			{
+				for (String a : defaultAlias.getAliases())
+				{
+					if (a.startsWith("#"))
+					{
+						prefix = "#";
+					}
+
+					if (a.endsWith(":"))
+					{
+						postfix = ":";
+					}
+					else
+					{
+						postOptional = true;
+					}
+				}
+			}
+
+			Node aliasesNode = apiI18nAlias.getFirstChild();
 			NodeList aliasesList = aliasesNode.getChildNodes();
 			ArrayList<String> aliases = new ArrayList<String>();
 			for (int j = 0; j < aliasesList.getLength(); j++)
 			{
 				Node aliasNode = aliasesList.item(j);
 				String aliasString = aliasNode.getTextContent();
-				aliases.add(aliasString);
+				if (prefix.length() > 0 && !aliasString.startsWith(prefix))
+				{
+					aliasString = prefix + aliasString;
+				}
+				if (postOptional || postfix.length() == 0 || aliasString.endsWith(postfix))
+				{
+					// Add without change to the postfix:
+					aliases.add(aliasString);
+				}
+				if (postfix.length() > 0)
+				{
+					if (!aliasString.endsWith(postfix))
+					{
+						// Add missing postfix:
+						aliases.add(aliasString + postfix);
+					}
+					else if (postOptional)
+					{
+						// Remove existing, optional postfix:
+						aliases.add(aliasString.substring(0, aliasString.length() - postfix.length()));
+					}
+				}
 			}
-			I18nAliasImpl I18Alias = new I18nAliasImpl(name, iscaseSensitive, aliases);
+			I18nAliasImpl i18nAlias = new I18nAliasImpl(name, isCaseSensitive, aliases);
 			try
 			{
-				wikiConfig.addI18nAlias(I18Alias);
+				wikiConfig.addI18nAlias(i18nAlias);
 			}
 			catch (Exception e)
 			{
@@ -148,9 +213,12 @@ public class LanguageConfigGenerator
 
 	public static void addInterwikis(
 			WikiConfigImpl wikiConfig,
-			String apiUrlInterwikiMap) throws IOException, ParserConfigurationException, SAXException
+			String apiUrlInterwikiMap)
+		throws IOException,
+			ParserConfigurationException,
+			SAXException
 	{
-		Document document = getXMLFromUlr(apiUrlInterwikiMap);
+		Document document = getXMLFromUrl(apiUrlInterwikiMap);
 		NodeList apiInterwikis = document.getElementsByTagName("iw");
 
 		for (int i = 0; i < apiInterwikis.getLength(); i++)
@@ -177,9 +245,12 @@ public class LanguageConfigGenerator
 	public static void addNamespaces(
 			WikiConfigImpl wikiConfig,
 			String apiUrlNamespaces,
-			MultiValueMap nameSpaceAliases) throws IOException, ParserConfigurationException, SAXException
+			MultiValueMap nameSpaceAliases)
+		throws IOException,
+			ParserConfigurationException,
+			SAXException
 	{
-		Document document = getXMLFromUlr(apiUrlNamespaces);
+		Document document = getXMLFromUrl(apiUrlNamespaces);
 		NodeList apiNamespaces = document.getElementsByTagName("ns");
 
 		for (int i = 0; i < apiNamespaces.getLength(); i++)
@@ -215,7 +286,12 @@ public class LanguageConfigGenerator
 				aliases = tmp;
 			}
 
-			NamespaceImpl namespace = new NamespaceImpl(id.intValue(), name, canonical, canHaveSubpages, fileNs,
+			NamespaceImpl namespace = new NamespaceImpl(
+					id.intValue(),
+					name,
+					canonical,
+					canHaveSubpages,
+					fileNs,
 					aliases);
 			wikiConfig.addNamespace(namespace);
 
@@ -232,9 +308,12 @@ public class LanguageConfigGenerator
 	}
 
 	public static MultiValueMap getNamespaceAliases(
-			String apiUrlNamespaceAliases) throws IOException, ParserConfigurationException, SAXException
+			String apiUrlNamespaceAliases)
+		throws IOException,
+			ParserConfigurationException,
+			SAXException
 	{
-		Document document = getXMLFromUlr(apiUrlNamespaceAliases);
+		Document document = getXMLFromUrl(apiUrlNamespaceAliases);
 		NodeList namespaceAliasess = document.getElementsByTagName("ns");
 		MultiValueMap namespaces = new MultiValueMap();
 
@@ -250,7 +329,9 @@ public class LanguageConfigGenerator
 		return namespaces;
 	}
 
-	public static Document getXMLFromUlr(String urlString) throws IOException, ParserConfigurationException,
+	public static Document getXMLFromUrl(String urlString)
+		throws IOException,
+			ParserConfigurationException,
 			SAXException
 	{
 		URL url = new URL(urlString);

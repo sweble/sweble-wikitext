@@ -39,6 +39,8 @@ public class SimpleParserConfig
 		implements
 			ParserConfig
 {
+	private final boolean convertIllegalCodePoints;
+
 	private final boolean warningsEnabled;
 
 	private final boolean gatherRtd;
@@ -55,7 +57,12 @@ public class SimpleParserConfig
 
 	public SimpleParserConfig()
 	{
-		this(true, true, false, true);
+		this(
+				false /*convertIllegalCodePoints*/,
+				true /*warningsEnabled*/,
+				true/*gatherRtd*/,
+				false/*autoCorrect*/,
+				true/*langConvTagsEnabled*/);
 	}
 
 	public SimpleParserConfig(
@@ -63,6 +70,7 @@ public class SimpleParserConfig
 			boolean gatherRtd,
 			boolean autoCorrect)
 	{
+		this.convertIllegalCodePoints = false;
 		this.warningsEnabled = warningsEnabled;
 		this.gatherRtd = gatherRtd;
 		this.autoCorrect = autoCorrect;
@@ -79,12 +87,37 @@ public class SimpleParserConfig
 			boolean autoCorrect,
 			boolean langConvTagsEnabled)
 	{
+		this.convertIllegalCodePoints = false;
 		this.warningsEnabled = warningsEnabled;
 		this.gatherRtd = gatherRtd;
 		this.autoCorrect = autoCorrect;
 		this.langConvTagsEnabled = langConvTagsEnabled;
 		this.nodeFactory = new WikitextNodeFactoryImpl(this);
 		this.textUtils = new AstTextUtilsImpl(this);
+	}
+
+	public SimpleParserConfig(
+			boolean convertIllegalCodePoints,
+			boolean warningsEnabled,
+			boolean gatherRtd,
+			boolean autoCorrect,
+			boolean langConvTagsEnabled)
+	{
+		this.convertIllegalCodePoints = convertIllegalCodePoints;
+		this.warningsEnabled = warningsEnabled;
+		this.gatherRtd = gatherRtd;
+		this.autoCorrect = autoCorrect;
+		this.langConvTagsEnabled = langConvTagsEnabled;
+		this.nodeFactory = new WikitextNodeFactoryImpl(this);
+		this.textUtils = new AstTextUtilsImpl(this);
+	}
+
+	// ==[ Encoding validation features ]=======================================
+
+	@Override
+	public boolean isConvertIllegalCodePoints()
+	{
+		return convertIllegalCodePoints;
 	}
 
 	// ==[ Parser features ]====================================================

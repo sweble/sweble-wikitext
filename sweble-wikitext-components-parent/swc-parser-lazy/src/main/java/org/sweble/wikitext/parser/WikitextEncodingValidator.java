@@ -39,13 +39,14 @@ public class WikitextEncodingValidator
 		lexer.setFile(title);
 		lexer.setEntityMap(entityMap);
 		lexer.setWikitextNodeFactory(parserConfig.getNodeFactory());
+		lexer.setConvertIllegalCodePoints(parserConfig.isConvertIllegalCodePoints());
 
 		while (lexer.yylex() != null)
 			;
 
 		in.close();
 
-		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
+		return new ValidatedWikitext(lexer.getWikitext(), entityMap, lexer.containsIllegalCodePoints());
 	}
 
 	public ValidatedWikitext validate(
@@ -64,7 +65,7 @@ public class WikitextEncodingValidator
 		while (lexer.yylex() != null)
 			;
 
-		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
+		return new ValidatedWikitext(lexer.getWikitext(), entityMap, lexer.containsIllegalCodePoints());
 	}
 
 	public ValidatedWikitext validate(

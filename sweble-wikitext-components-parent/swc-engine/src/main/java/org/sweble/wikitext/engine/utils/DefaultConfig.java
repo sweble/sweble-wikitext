@@ -68,7 +68,7 @@ public class DefaultConfig
 
 		addInterwikis(c);
 
-		addI18nAlises(c);
+		addI18nAliases(c);
 
 		// --[ Parser functions ]--
 
@@ -557,7 +557,7 @@ public class DefaultConfig
 	{
 	}
 
-	protected void addI18nAlises(WikiConfigImpl c)
+	protected void addI18nAliases(WikiConfigImpl c)
 	{
 	}
 

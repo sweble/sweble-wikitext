@@ -24,7 +24,7 @@
 	<parent>
 		<groupId>org.sweble</groupId>
 		<artifactId>sweble-parent</artifactId>
-		<version>3.1.4</version>
+		<version>3.1.5</version>
 	</parent>
 
 	<groupId>org.sweble.engine</groupId>
@@ -32,6 +32,10 @@
 	<packaging>pom</packaging>
 	<name>Sweble Engine Parent</name>
 	<inceptionYear>2013</inceptionYear>
+	<description>
+		The Sweble Engine modules provide components required to build a wiki 
+		engine.
+	</description>
 
 	<modules>
 		<module>sweble-engine-serialization</module>

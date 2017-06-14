@@ -19,6 +19,7 @@ package org.sweble.wikitext.parser.preprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.ParserState;
 
@@ -183,5 +184,10 @@ public class WikitextPreprocessorState
 	public boolean isRedirectKeyword(String keyword)
 	{
 		return config.isRedirectKeyword(keyword);
+	}
+
+	public WtNode getEntity(int id)
+	{
+		return entityMap.getEntity(id);
 	}
 }
