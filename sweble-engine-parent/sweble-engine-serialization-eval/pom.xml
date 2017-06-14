@@ -31,6 +31,9 @@
 	<packaging>jar</packaging>
 	<name>Sweble Engine Serialization Evaluation</name>
 	<inceptionYear>2013</inceptionYear>
+	<description>
+		A module for evaluating the serialization module's performance.
+	</description>
 
 	<!-- =================================================================== -->
 	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->

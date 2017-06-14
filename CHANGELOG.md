@@ -2,6 +2,8 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+
+## 3.1.5 - 2017-06-14
 ### Changed
 - Pre-processing stage now replaced entities.
 - Refactored internal link parsing:
@@ -26,6 +28,9 @@
 - Fixed '|' parsing in external link URLs.
 - Framed image links force all block elements inside their title to close when 
   the title scope closes.
+- Added missing descriptions to pom.xml files. The release to oss.sonatype.org 
+  was failing with a validation error that complained about the missing 
+  descriptions.
 
 ## 3.1.4 - 2017-02-09
 ### Added

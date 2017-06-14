@@ -31,6 +31,9 @@
 	<packaging>jar</packaging>
 	<name>Sweble Engine Serialization</name>
 	<inceptionYear>2013</inceptionYear>
+	<description>
+		A module for serializing and deserializing WOM as JSON or XML.
+	</description>
 
 	<!-- =================================================================== -->
 	<!-- Properties - Properties - Properties - Properties - Properties - Pr -->
