@@ -2,6 +2,8 @@
 [A guide to writing change logs][keepachangelog]
 
 ## Unreleased
+### Changed
+- Added jenkins profile which generates coverage reports when build in Jenkins.
 
 ## 3.1.5 - 2017-06-14
 ### Changed
