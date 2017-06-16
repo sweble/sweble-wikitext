@@ -4,6 +4,7 @@
 ## Unreleased
 ### Changed
 - Added jenkins profile which generates coverage reports when build in Jenkins.
+- Bumped version of tooling parent pom and osr-common dependencies to 3.0.7-SNAPSHOT
 
 ## 3.1.5 - 2017-06-14
 ### Changed
