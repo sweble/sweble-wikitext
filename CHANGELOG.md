@@ -6,6 +6,7 @@
 - Added jenkins profile which generates coverage reports when build in Jenkins.
 - Bumped version of tooling parent pom and osr-common dependencies to 3.0.7-SNAPSHOT.
 - HtmlRenderer.visit(EngProcessedPage n) properly implemented.
+- HtmlRenderer.visit(WtRedirect n) properly implemented.
 - Ignoring IntelliJ project files and directories.
 
 ## 3.1.5 - 2017-06-14
