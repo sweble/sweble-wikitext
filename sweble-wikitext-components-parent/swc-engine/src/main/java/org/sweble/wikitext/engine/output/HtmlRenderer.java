@@ -118,6 +118,10 @@ public class HtmlRenderer
 		implements
 			CompleteEngineVisitorNoReturn
 {
+
+	// Fix #62: Counter for sequential number for untitled external links
+	private Long untitledLinkCounter = 1L;
+
 	@Override
 	public void visit(EngProcessedPage n)
 	{
@@ -195,7 +199,9 @@ public class HtmlRenderer
 		}
 		else
 		{
-			throw new FmtNotYetImplementedError();
+			// Fix #62: Use sequential number if the title is missing
+			pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s\">[" + untitledLinkCounter++ + "]</a>",
+					callback.makeUrl(n.getTarget()));
 		}
 	}
 
