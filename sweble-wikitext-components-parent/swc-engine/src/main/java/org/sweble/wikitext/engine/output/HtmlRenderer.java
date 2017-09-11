@@ -16,6 +16,23 @@
  */
 package org.sweble.wikitext.engine.output;
 
+import de.fau.cs.osr.utils.FmtNotYetImplementedError;
+import de.fau.cs.osr.utils.StringTools;
+import de.fau.cs.osr.utils.visitor.VisitingException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.sweble.wikitext.engine.PageTitle;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.*;
+import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
+import org.sweble.wikitext.engine.utils.UrlEncoding;
+import org.sweble.wikitext.parser.nodes.*;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
+import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
+
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
@@ -23,104 +40,25 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.nodes.CompleteEngineVisitorNoReturn;
-import org.sweble.wikitext.engine.nodes.EngNowiki;
-import org.sweble.wikitext.engine.nodes.EngPage;
-import org.sweble.wikitext.engine.nodes.EngProcessedPage;
-import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
-import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
-import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
-import org.sweble.wikitext.engine.utils.UrlEncoding;
-import org.sweble.wikitext.parser.nodes.WtBody;
-import org.sweble.wikitext.parser.nodes.WtBold;
-import org.sweble.wikitext.parser.nodes.WtDefinitionList;
-import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
-import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
-import org.sweble.wikitext.parser.nodes.WtExternalLink;
-import org.sweble.wikitext.parser.nodes.WtHeading;
-import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
-import org.sweble.wikitext.parser.nodes.WtIgnored;
-import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
-import org.sweble.wikitext.parser.nodes.WtImEndTag;
-import org.sweble.wikitext.parser.nodes.WtImStartTag;
-import org.sweble.wikitext.parser.nodes.WtImageLink;
-import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
-import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
-import org.sweble.wikitext.parser.nodes.WtInternalLink;
-import org.sweble.wikitext.parser.nodes.WtItalics;
-import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
-import org.sweble.wikitext.parser.nodes.WtLinkOptionGarbage;
-import org.sweble.wikitext.parser.nodes.WtLinkOptionKeyword;
-import org.sweble.wikitext.parser.nodes.WtLinkOptionLinkTarget;
-import org.sweble.wikitext.parser.nodes.WtLinkOptionResize;
-import org.sweble.wikitext.parser.nodes.WtLinkOptions;
-import org.sweble.wikitext.parser.nodes.WtLinkTitle;
-import org.sweble.wikitext.parser.nodes.WtListItem;
-import org.sweble.wikitext.parser.nodes.WtName;
-import org.sweble.wikitext.parser.nodes.WtNewline;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtOnlyInclude;
-import org.sweble.wikitext.parser.nodes.WtOrderedList;
-import org.sweble.wikitext.parser.nodes.WtPageName;
-import org.sweble.wikitext.parser.nodes.WtPageSwitch;
-import org.sweble.wikitext.parser.nodes.WtParagraph;
-import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtRedirect;
-import org.sweble.wikitext.parser.nodes.WtSection;
-import org.sweble.wikitext.parser.nodes.WtSemiPre;
-import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
-import org.sweble.wikitext.parser.nodes.WtSignature;
-import org.sweble.wikitext.parser.nodes.WtTable;
-import org.sweble.wikitext.parser.nodes.WtTableCaption;
-import org.sweble.wikitext.parser.nodes.WtTableCell;
-import org.sweble.wikitext.parser.nodes.WtTableHeader;
-import org.sweble.wikitext.parser.nodes.WtTableImplicitTableBody;
-import org.sweble.wikitext.parser.nodes.WtTableRow;
-import org.sweble.wikitext.parser.nodes.WtTagExtension;
-import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
-import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
-import org.sweble.wikitext.parser.nodes.WtTemplateArguments;
-import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
-import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.WtTicks;
-import org.sweble.wikitext.parser.nodes.WtUnorderedList;
-import org.sweble.wikitext.parser.nodes.WtUrl;
-import org.sweble.wikitext.parser.nodes.WtValue;
-import org.sweble.wikitext.parser.nodes.WtWhitespace;
-import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
-import org.sweble.wikitext.parser.nodes.WtXmlAttributeGarbage;
-import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
-import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
-import org.sweble.wikitext.parser.nodes.WtXmlComment;
-import org.sweble.wikitext.parser.nodes.WtXmlElement;
-import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
-import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
-import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
-import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
-import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.WtRtDataPrinter;
-
-import de.fau.cs.osr.utils.FmtNotYetImplementedError;
-import de.fau.cs.osr.utils.StringTools;
-import de.fau.cs.osr.utils.visitor.VisitingException;
-
 public class HtmlRenderer
 		extends
 			HtmlRendererBase
 		implements
 			CompleteEngineVisitorNoReturn
 {
-
 	// Fix #62: Counter for sequential number for untitled external links
-	private Long untitledLinkCounter = 1L;
+	private long untitledLinkCounter = 1L;
+
+	// =====================================================================
+
+	@Override
+	protected WtNode before(WtNode node)
+	{
+		untitledLinkCounter = 1L;
+		return super.before(node);
+	}
+
+	// =====================================================================
 
 	@Override
 	public void visit(EngProcessedPage n)
@@ -200,7 +138,8 @@ public class HtmlRenderer
 		else
 		{
 			// Fix #62: Use sequential number if the title is missing
-			pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s\">[" + untitledLinkCounter++ + "]</a>",
+			long seqNumber = untitledLinkCounter++;
+			pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s\">[" + seqNumber + "]</a>",
 					callback.makeUrl(n.getTarget()));
 		}
 	}
@@ -795,14 +734,17 @@ public class HtmlRenderer
 	{
 		// Fixes issue #65, we render a link to the redirect target
 		PageTitle pt;
-        	try {
-            		pt = PageTitle.make(this.wikiConfig, n.getTarget().getAsString());
-        	} catch (LinkTargetException e) {
-            		throw new VisitingException(e);
-        	}
+		try
+		{
+			pt = PageTitle.make(this.wikiConfig, n.getTarget().getAsString());
+		}
+		catch (LinkTargetException e)
+		{
+			throw new VisitingException(e);
+		}
 
-        	String url = callback.makeUrl(pt);
-        	pf("<a href=\"%s\">%s</a>", url, pt.getDenormalizedFullTitle());	
+		String url = callback.makeUrl(pt);
+		pf("<a href=\"%s\">%s</a>", url, pt.getDenormalizedFullTitle());
 	}
 
 	public void visit(WtSection n)
