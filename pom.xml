@@ -23,12 +23,12 @@
 	<parent>
 		<groupId>de.fau.cs.osr</groupId>
 		<artifactId>tooling</artifactId>
-		<version>3.0.6</version>
+		<version>3.0.8</version>
 	</parent>
 
 	<groupId>org.sweble</groupId>
 	<artifactId>sweble-parent</artifactId>
-	<version>3.1.5</version>
+	<version>3.1.6</version>
 	<packaging>pom</packaging>
 	<name>Sweble Parent</name>
 	<inceptionYear>2010</inceptionYear>
@@ -55,9 +55,9 @@
 		<maven-checkstyle-plugin.skip>true</maven-checkstyle-plugin.skip>
 
 		<!-- Dependencies -->
-		<osr-common.version>3.0.6</osr-common.version>
+		<osr-common.version>3.0.8</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
-		<sweble.version>3.1.5</sweble.version>
+		<sweble.version>3.1.6</sweble.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -247,7 +247,7 @@
 		<connection>scm:git://git@github.com/sweble/sweble-parent.git</connection>
 		<developerConnection>scm:git://git@mojo-forge.cs.fau.de/sweble-public/sweble-parent.git</developerConnection>
 		<url>https://github.com/sweble/sweble-parent</url>
-		<tag>sweble-wikitext-3.1.5</tag>
+		<tag>sweble-wikitext-3.1.6</tag>
 	</scm>
 
 	<!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
@@ -266,4 +266,50 @@
 			<url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
 		</repository>
 	</repositories>
+
+	<!-- =================================================================== -->
+	<!-- Profiles - Profiles - Profiles - Profiles - Profiles - Profiles - P -->
+	<!-- =================================================================== -->
+
+	<profiles>
+
+		<!-- ==[ enable code coverage on Jenkins ]========================== -->
+		<!--
+			Jenkins by default defines a property BUILD_NUMBER which is used to
+			enable the profile.
+		-->
+		<profile>
+			<id>jenkins</id>
+			<activation>
+				<property>
+					<name>env.BUILD_NUMBER</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>${cobertura-maven-plugin.version}</version>
+						<configuration>
+							<formats>
+								<format>xml</format>
+							</formats>
+							<quiet>true</quiet>
+							<aggregate>true</aggregate>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>cobertura</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+    </profiles>
 </project>
