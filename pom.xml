@@ -28,7 +28,7 @@
 
 	<groupId>org.sweble</groupId>
 	<artifactId>sweble-parent</artifactId>
-	<version>3.1.6-SNAPSHOT</version>
+	<version>3.1.7-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Sweble Parent</name>
 	<inceptionYear>2010</inceptionYear>
@@ -57,7 +57,7 @@
 		<!-- Dependencies -->
 		<osr-common.version>3.0.8</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
-		<sweble.version>3.1.6-SNAPSHOT</sweble.version>
+		<sweble.version>3.1.7-SNAPSHOT</sweble.version>
 	</properties>
 
 	<!-- =================================================================== -->
