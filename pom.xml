@@ -28,7 +28,7 @@
 
 	<groupId>org.sweble</groupId>
 	<artifactId>sweble-parent</artifactId>
-	<version>3.1.6-SNAPSHOT</version>
+	<version>3.1.6</version>
 	<packaging>pom</packaging>
 	<name>Sweble Parent</name>
 	<inceptionYear>2010</inceptionYear>
@@ -57,7 +57,7 @@
 		<!-- Dependencies -->
 		<osr-common.version>3.0.8</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
-		<sweble.version>3.1.6-SNAPSHOT</sweble.version>
+		<sweble.version>3.1.6</sweble.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -247,7 +247,7 @@
 		<connection>scm:git://git@github.com/sweble/sweble-parent.git</connection>
 		<developerConnection>scm:git://git@mojo-forge.cs.fau.de/sweble-public/sweble-parent.git</developerConnection>
 		<url>https://github.com/sweble/sweble-parent</url>
-		<tag>HEAD</tag>
+		<tag>sweble-wikitext-3.1.6</tag>
 	</scm>
 
 	<!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
