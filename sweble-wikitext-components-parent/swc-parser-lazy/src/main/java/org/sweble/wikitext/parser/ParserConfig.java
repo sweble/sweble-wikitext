@@ -99,4 +99,8 @@ public interface ParserConfig
 	boolean isLctVariant(String variant);
 
 	String normalizeLctVariant(String variant);
+
+	// ==[ Misc ]===============================================================
+
+	boolean isPreserveSemiPreLeadingSpace();
 }

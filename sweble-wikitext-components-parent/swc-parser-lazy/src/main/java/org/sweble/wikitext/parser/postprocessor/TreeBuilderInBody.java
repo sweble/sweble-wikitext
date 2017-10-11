@@ -17,94 +17,16 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_IGNORED;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_ILLEGAL_CODE_POINT;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_PAGE_SWITCH;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_REDIRECT;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_SEMI_PRE;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_SIGNATURE;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CAPTION;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_CELL;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_HEADER;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_TABLE_ROW;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_CHAR_REF;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_COMMENT;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_ELEMENT;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_EMPTY_TAG;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_ENTITY_REF;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.ADDRESS;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.CAPTION;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.DD;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.DIV;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.DT;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.EXT_LINK;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.FRAMED_IMG;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.H1;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.H2;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.H3;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.H4;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.H5;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.H6;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.INLINE_IMG;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.INT_LINK;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.LI;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.P;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.PAGE;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.SECTION;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.SECTION_BODY;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.SECTION_HEADING;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.TABLE;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.TBODY;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.TD;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.TFOOT;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.TH;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.THEAD;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.TR;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.UNKNOWN;
-import static org.sweble.wikitext.parser.postprocessor.ElementType.URL;
-import static org.sweble.wikitext.parser.postprocessor.StackScope.GENERAL_SCOPE;
-import static org.sweble.wikitext.parser.postprocessor.StackScope.GENERAL_SCOPE_WITHOUT_LAZY_PARSED_PAGE;
+import de.fau.cs.osr.utils.visitor.VisitorLogic;
+import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.*;
 
 import java.util.ListIterator;
 
-import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.WtBody;
-import org.sweble.wikitext.parser.nodes.WtBold;
-import org.sweble.wikitext.parser.nodes.WtDefinitionList;
-import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
-import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
-import org.sweble.wikitext.parser.nodes.WtExternalLink;
-import org.sweble.wikitext.parser.nodes.WtHeading;
-import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
-import org.sweble.wikitext.parser.nodes.WtImEndTag;
-import org.sweble.wikitext.parser.nodes.WtImStartTag;
-import org.sweble.wikitext.parser.nodes.WtImageLink;
-import org.sweble.wikitext.parser.nodes.WtInternalLink;
-import org.sweble.wikitext.parser.nodes.WtItalics;
-import org.sweble.wikitext.parser.nodes.WtLctVarConv;
-import org.sweble.wikitext.parser.nodes.WtLinkTitle;
-import org.sweble.wikitext.parser.nodes.WtListItem;
-import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
-import org.sweble.wikitext.parser.nodes.WtNewline;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtOrderedList;
-import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtSection;
-import org.sweble.wikitext.parser.nodes.WtSemiPre;
-import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
-import org.sweble.wikitext.parser.nodes.WtTable;
-import org.sweble.wikitext.parser.nodes.WtTagExtension;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
-import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
-import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.WtUnorderedList;
-import org.sweble.wikitext.parser.nodes.WtUrl;
-import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
-import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
-import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
-
-import de.fau.cs.osr.utils.visitor.VisitorLogic;
+import static org.sweble.wikitext.parser.nodes.WtNode.*;
+import static org.sweble.wikitext.parser.postprocessor.ElementType.*;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.GENERAL_SCOPE;
+import static org.sweble.wikitext.parser.postprocessor.StackScope.GENERAL_SCOPE_WITHOUT_LAZY_PARSED_PAGE;
 
 public final class TreeBuilderInBody
 		extends
@@ -774,37 +696,60 @@ public final class TreeBuilderInBody
 	{
 		// Lines are dissolved which is why we have to save RTD info.
 		WtRtData rtd = n.getRtd();
-		if (rtd != null)
-			iterateSemiPreRtdField(rtd.getField(0));
+		iterateSemiPreRtdField(rtd);
 		iterate(n);
-		if (rtd != null)
-			iterateSemiPreRtdField(rtd.getField(1));
+		iterateSemiPreRtdField(rtd, 1);
 	}
 
-	private void iterateSemiPreRtdField(Object[] field)
+	private void iterateSemiPreRtdField(WtRtData rtd)
 	{
-		//boolean sawFirstSpace = false;
-		for (Object o : field)
+		if (tb.getConfig().isPreserveSemiPreLeadingSpace())
 		{
-			if (o instanceof WtNode)
+			Object[] field = rtd.getField(0);
+			int lastItem = field.length - 1;
+			for (int i = 0; i <= lastItem; i += 1)
 			{
-				dispatch((WtNode) o);
-			}
-			else
-			{
-				String text = String.valueOf(o);
-				/*
-				if (!sawFirstSpace && !text.isEmpty() && text.charAt(0) == ' ')
+				if ((i == lastItem) && (field[i] instanceof String))
 				{
-					sawFirstSpace = true;
-					if (text.length() == 1)
-						continue;
-					
-					text = text.substring(1);
+					String content = (String) field[i];
+					int lastChar = content.length() - 1;
+					if (lastChar >= 0 && content.charAt(lastChar) == ' ')
+					{
+						if (lastChar > 0)
+							dispatch(getFactory().text(content.substring(0, lastChar)));
+
+						tb.appendToCurrentNode(getFactory().createSemiPreRtdNode());
+						break;
+					}
 				}
-				*/
-				dispatch(getFactory().text(text));
+
+				rtdToContent(field[i]);
 			}
+		}
+		else
+		{
+			iterateSemiPreRtdField(rtd, 0);
+		}
+	}
+
+	private void iterateSemiPreRtdField(WtRtData rtd, int index)
+	{
+		if (rtd != null)
+		{
+			for (Object o : rtd.getField(index))
+				rtdToContent(o);
+		}
+	}
+
+	private void rtdToContent(Object o)
+	{
+		if (o instanceof WtNode)
+		{
+			dispatch((WtNode) o);
+		}
+		else
+		{
+			dispatch(getFactory().text(String.valueOf(o)));
 		}
 	}
 
