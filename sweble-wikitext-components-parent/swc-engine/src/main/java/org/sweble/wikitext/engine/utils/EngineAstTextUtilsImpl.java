@@ -192,11 +192,11 @@ public class EngineAstTextUtilsImpl
 
 	// =========================================================================
 
-	private static class SimpleEngineStringConverter
+	public static class SimpleEngineStringConverter
 			extends
 				SimpleStringConverter
 	{
-		private boolean doNotConvertNowiki;
+		protected boolean doNotConvertNowiki;
 
 		public SimpleEngineStringConverter()
 		{
@@ -244,11 +244,11 @@ public class EngineAstTextUtilsImpl
 
 	// =========================================================================
 
-	private class PartialEngineStringConverter
+	public class PartialEngineStringConverter
 			extends
 				PartialStringConverter
 	{
-		private boolean doNotConvertNowiki;
+		protected boolean doNotConvertNowiki;
 
 		public PartialEngineStringConverter()
 		{
