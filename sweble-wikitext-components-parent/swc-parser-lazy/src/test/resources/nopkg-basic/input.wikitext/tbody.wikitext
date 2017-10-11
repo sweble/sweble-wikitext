@@ -1,0 +1,10 @@
+<table>
+  <caption>caption</caption>
+  <caption>ignore this</caption>
+  <tbody>
+    <tr>
+      <th>th</th>
+      <td>td</td>
+    </tr>
+  </tbody>
+</table>

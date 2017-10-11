@@ -110,7 +110,7 @@ private inline void EmptyLine =
  * had a start tag (BlockElemStart) and no end tag has been encountered since 
  * then the line will also not be recognized as SemiPre. However, we can only
  * model the behavior of the first case with these rules.
- * TODO: Model the scoping behvior in a post-processing step.
+ * TODO: Model the scoping behavior in a post-processing step.
  */
 private inline void HasBlockElem =
   ( !BlockElemStart !BlockElemEnd !slEol _ )* ( BlockElemStart / BlockElemEnd )
@@ -120,6 +120,7 @@ private inline void BlockElemStart =
     "<table"
   / "<blockquote"
   / "<caption"   // That's my own idea...
+  / "<tbody"    // That's my own idea...
   / "<h1"
   / "<h2"
   / "<h3"
@@ -141,6 +142,7 @@ private inline void BlockElemStart =
 private inline void BlockElemEnd =
     "</table"
   / "</blockquote"
+  / "</tbody"
   / "</h1"
   / "</h2"
   / "</h3"

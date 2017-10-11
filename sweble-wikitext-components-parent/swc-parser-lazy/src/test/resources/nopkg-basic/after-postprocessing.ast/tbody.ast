@@ -1,0 +1,60 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[],
+	[1] = WtXmlElement(
+		{P} name = "table"
+		{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = "\n  ",
+			[1] = WtXmlElement(
+				{P} name = "caption"
+				{P} rtd = RTD[ "<caption" <o> ">" <o> "</caption>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "caption" ]
+			),
+			[2] = "\n  ",
+			[3] = WtXmlElement(
+				{P} name = "caption"
+				{P} rtd = RTD[ "<caption" <o> ">" <o> "</caption>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "ignore this" ]
+			),
+			[4] = "\n  ",
+			[5] = WtXmlElement(
+				{P} name = "tbody"
+				{P} rtd = RTD[ "<tbody" <o> ">" <o> "</tbody>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[
+					[0] = "\n    ",
+					[1] = WtXmlElement(
+						{P} name = "tr"
+						{P} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = "\n      ",
+							[1] = WtXmlElement(
+								{P} name = "th"
+								{P} rtd = RTD[ "<th" <o> ">" <o> "</th>" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[ [0] = "th" ]
+							),
+							[2] = "\n      ",
+							[3] = WtXmlElement(
+								{P} name = "td"
+								{P} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[ [0] = "td" ]
+							),
+							[4] = "\n    "
+						]
+					),
+					[2] = "\n  "
+				]
+			),
+			[6] = "\n"
+		]
+	),
+	[2] = "\n"
+)
