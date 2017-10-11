@@ -27,6 +27,9 @@ public enum NonStandardElementBehavior
 	/** Treat like a block element (e.g. &lt;div>). */
 	LIKE_DIV,
 
+	/** Treat like a formatting element (e.g. &lt;b>). */
+	LIKE_FORMATTING,
+
 	/** Treat like an inline element (e.g. &lt;span>). */
 	LIKE_ANY_OTHER,
 }

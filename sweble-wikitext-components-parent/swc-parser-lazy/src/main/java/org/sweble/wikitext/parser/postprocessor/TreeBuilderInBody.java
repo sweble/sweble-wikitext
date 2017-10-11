@@ -329,6 +329,11 @@ public final class TreeBuilderInBody
 					startTagR12(n);
 					break;
 
+				case LIKE_FORMATTING:
+					// b, ...
+					startTagR28(n);
+					break;
+
 				case LIKE_ANY_OTHER:
 				case UNSPECIFIED:
 				default:
@@ -448,6 +453,11 @@ public final class TreeBuilderInBody
 				case LIKE_DIV:
 					// div, ul, ...
 					endTagR20(n);
+					break;
+
+				case LIKE_FORMATTING:
+					// b, ...
+					endTagR30(n);
 					break;
 
 				case LIKE_ANY_OTHER:
