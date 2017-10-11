@@ -105,7 +105,7 @@ public class DefaultConfig
 
 		pc.addUrlProtocol("http://");
 		pc.addUrlProtocol("https://");
-		pc.addUrlProtocol("mail:");
+		pc.addUrlProtocol("mailto:");
 
 		pc.setInternalLinkPrefixPattern(null);
 		pc.setInternalLinkPostfixPattern(null);

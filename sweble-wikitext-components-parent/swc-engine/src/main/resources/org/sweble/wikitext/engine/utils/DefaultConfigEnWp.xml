@@ -925,7 +925,7 @@
         <gatherRtData>true</gatherRtData>
         <internalLinkPostfixPattern>[a-z]+</internalLinkPostfixPattern>
         <allowedUrlProtocols>
-            <protocol name="mail:"/>
+            <protocol name="mailto:"/>
             <protocol name="https://"/>
             <protocol name="http://"/>
         </allowedUrlProtocols>
