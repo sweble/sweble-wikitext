@@ -64,7 +64,7 @@ public class ParserFunctionTime
 
 		String format = expandArgToString(frame, args, 0);
 		if (format == null)
-			return error(_("Cannot convert format argument to string!"));
+			return error("Cannot convert format argument to string!");
 
 		// ---- timestamp
 
@@ -73,11 +73,11 @@ public class ParserFunctionTime
 		{
 			timestampStr = expandArgToString(frame, args, 1);
 			if (timestampStr == null)
-				return error(_("Cannot convert timestamp argument to string!"));
+				return error("Cannot convert timestamp argument to string!");
 		}
 
 		if (timestampStr != null && !timestampStr.isEmpty())
-			return notYetImplemented(_("Cannot handle non-empty timestamp argument!"));
+			return notYetImplemented("Cannot handle non-empty timestamp argument!");
 
 		// ---- language
 
@@ -86,11 +86,11 @@ public class ParserFunctionTime
 		{
 			languageTag = expandArgToString(frame, args, 2);
 			if (languageTag == null)
-				return error(_("Cannot convert language argument to string!"));
+				return error("Cannot convert language argument to string!");
 		}
 
 		if (languageTag != null && !languageTag.isEmpty())
-			return notYetImplemented(_("Cannot handle non-empty language argument!"));
+			return notYetImplemented("Cannot handle non-empty language argument!");
 
 		languageTag = "en";
 
@@ -134,11 +134,6 @@ public class ParserFunctionTime
 		}
 
 		return nf().text(sb.toString());
-	}
-
-	private String _(String string, Object... args)
-	{
-		return string;
 	}
 
 	private String expandArgToString(
