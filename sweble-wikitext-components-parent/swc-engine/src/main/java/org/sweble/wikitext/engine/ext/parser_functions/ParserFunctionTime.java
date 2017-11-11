@@ -103,6 +103,9 @@ public class ParserFunctionTime
 		return format(format, timestamp, locale);
 	}
 
+	/**
+	 * @see https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions##time
+	 */
 	private WtNode format(String format, Calendar timestamp, Locale locale)
 	{
 		StringBuilder sb = new StringBuilder();
@@ -112,19 +115,133 @@ public class ParserFunctionTime
 			char ch = format.charAt(i);
 			switch (ch)
 			{
-				case 'j':
-					sb.append(timestamp.get(GregorianCalendar.DAY_OF_MONTH));
+				case 'Y': // 4-digit year
+					sb.append(timestamp.get(Calendar.YEAR));
 					break;
 
-				case 'Y':
-					sb.append(timestamp.get(GregorianCalendar.YEAR));
+				case 'y': // 2-digit year
+					sb.append(timestamp.get(Calendar.YEAR) % 100);
 					break;
 
-				case 'F':
+				case 'L': // '1' if it's a leap year, '0' if not
+					GregorianCalendar gregCal = new GregorianCalendar(locale);
+					if (gregCal.isLeapYear(timestamp.get(Calendar.YEAR)))
+					{
+						sb.append('1');
+					} else
+					{
+						sb.append('0');
+					}
+					break;
+
+				case 'n': // month index, not zero-padded	
+					sb.append(timestamp.get(Calendar.MONTH) + 1);
+					break;
+
+				case 'm': // month index, zero-padded	
+					int month = timestamp.get(Calendar.MONTH) + 1;
+					if (month < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(month);
+					break;
+
+				case 'M': // abbreviation of the month name
+					sb.append(timestamp.getDisplayName(
+							Calendar.MONTH,
+							Calendar.SHORT,
+							locale));
+					break;
+
+				case 'F': // full month name
 					sb.append(timestamp.getDisplayName(
 							GregorianCalendar.MONTH,
 							GregorianCalendar.LONG,
 							locale));
+					break;
+
+				case 'j': // day of the month, not zero-padded
+					sb.append(timestamp.get(GregorianCalendar.DAY_OF_MONTH));
+					break;
+
+				case 'd': // day of the month, zero-padded
+					int day = timestamp.get(GregorianCalendar.DAY_OF_MONTH);
+					if (day < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(day);
+					break;
+
+				case 'a': // am, pm
+					if (timestamp.get(Calendar.AM_PM) == Calendar.AM)
+					{
+						sb.append("am");
+					} 
+					else
+					{
+						sb.append("pm");
+					}
+					break;
+
+				case 'A': // AM, PM
+					if (timestamp.get(Calendar.AM_PM) == Calendar.AM)
+					{
+						sb.append("AM");
+					} 
+					else
+					{
+						sb.append("PM");
+					}
+					break;
+
+				case 'g': // hour in 12-hour format, not zero-padded	
+					sb.append(timestamp.get(GregorianCalendar.HOUR));
+					break;
+
+				case 'h': // hour in 12-hour format, zero-padded	
+					int hour = timestamp.get(GregorianCalendar.HOUR);
+					if (hour < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(hour);
+					break;
+
+				case 'G': // hour in 24-hour format, not zero-padded	
+					sb.append(timestamp.get(GregorianCalendar.HOUR_OF_DAY));
+					break;
+
+				case 'H': // hour in 24-hour format, zero-padded	
+					int hod = timestamp.get(GregorianCalendar.HOUR_OF_DAY);
+					if (hod < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(hod);
+					break;
+
+				case 'i': // minutes past the hour, zero-padded	
+					int min = timestamp.get(GregorianCalendar.MINUTE);
+					if (min < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(min);
+					break;
+
+				case 's': // seconds past the minute, zero-padded	
+					int sec = timestamp.get(GregorianCalendar.SECOND);
+					if (sec < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(sec);
+					break;
+
+				case 'U': // Unix time
+					sb.append(timestamp.getTimeInMillis() / 1000);
 					break;
 
 				default:
