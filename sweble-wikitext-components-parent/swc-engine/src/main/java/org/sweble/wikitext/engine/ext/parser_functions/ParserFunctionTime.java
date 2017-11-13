@@ -109,10 +109,26 @@ public class ParserFunctionTime
 	private WtNode format(String format, Calendar timestamp, Locale locale)
 	{
 		StringBuilder sb = new StringBuilder();
+		boolean isCharInComment = false;
+		int tmp;
 
 		for (int i = 0; i < format.length(); ++i)
 		{
 			char ch = format.charAt(i);
+
+			if (ch == '"')
+			{
+				isCharInComment = !isCharInComment;
+				continue;
+			}
+
+			if (isCharInComment)
+			{
+				// character is part of a comment, skip interpretation
+				sb.append(ch);
+				continue;
+			}
+
 			switch (ch)
 			{
 				case 'Y': // 4-digit year
@@ -139,12 +155,12 @@ public class ParserFunctionTime
 					break;
 
 				case 'm': // month index, zero-padded	
-					int month = timestamp.get(Calendar.MONTH) + 1;
-					if (month < 10)
+					tmp = timestamp.get(Calendar.MONTH) + 1;
+					if (tmp < 10)
 					{
 						sb.append('0');
 					}
-					sb.append(month);
+					sb.append(tmp);
 					break;
 
 				case 'M': // abbreviation of the month name
@@ -156,30 +172,64 @@ public class ParserFunctionTime
 
 				case 'F': // full month name
 					sb.append(timestamp.getDisplayName(
-							GregorianCalendar.MONTH,
-							GregorianCalendar.LONG,
+							Calendar.MONTH,
+							Calendar.LONG,
 							locale));
 					break;
 
-				case 'j': // day of the month, not zero-padded
-					sb.append(timestamp.get(GregorianCalendar.DAY_OF_MONTH));
-					break;
-
-				case 'd': // day of the month, zero-padded
-					int day = timestamp.get(GregorianCalendar.DAY_OF_MONTH);
-					if (day < 10)
+				case 'W': // ISO 8601 week number, zero-padded.
+					tmp = timestamp.get(Calendar.WEEK_OF_YEAR);
+					if (tmp < 10)
 					{
 						sb.append('0');
 					}
-					sb.append(day);
+					sb.append(tmp);
+					break;
+
+				case 'j': // day of the month, not zero-padded
+					sb.append(timestamp.get(Calendar.DAY_OF_MONTH));
+					break;
+
+				case 'd': // day of the month, zero-padded
+					tmp = timestamp.get(Calendar.DAY_OF_MONTH);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp);
+					break;
+
+				case 'z': // day of the year (January 1 = 0)
+					sb.append(timestamp.get(Calendar.DAY_OF_YEAR) - 1);
+					break;
+
+				case 'D': // abbreviation for the day of the week
+					sb.append(timestamp.getDisplayName(
+							Calendar.DAY_OF_WEEK,
+							Calendar.SHORT,
+							locale));
+					break;
+
+				case 'l': // the full weekday name
+					sb.append(timestamp.getDisplayName(
+							Calendar.DAY_OF_WEEK,
+							Calendar.LONG,
+							locale));
+					break;
+
+				case 'N': // ISO 8601 day of the week (Monday = 1, Sunday = 7)
+					sb.append(((timestamp.get(Calendar.DAY_OF_WEEK) + 5) % 7) + 1);
+					break;
+
+				case 'w': // Number of the day of the week (Sunday = 0, Saturday = 6)
+					sb.append(timestamp.get(Calendar.DAY_OF_WEEK) - 1);
 					break;
 
 				case 'a': // am, pm
 					if (timestamp.get(Calendar.AM_PM) == Calendar.AM)
 					{
 						sb.append("am");
-					} 
-					else
+					} else
 					{
 						sb.append("pm");
 					}
@@ -189,59 +239,139 @@ public class ParserFunctionTime
 					if (timestamp.get(Calendar.AM_PM) == Calendar.AM)
 					{
 						sb.append("AM");
-					} 
-					else
+					} else
 					{
 						sb.append("PM");
 					}
 					break;
 
 				case 'g': // hour in 12-hour format, not zero-padded	
-					sb.append(timestamp.get(GregorianCalendar.HOUR));
+					sb.append(timestamp.get(Calendar.HOUR));
 					break;
 
 				case 'h': // hour in 12-hour format, zero-padded	
-					int hour = timestamp.get(GregorianCalendar.HOUR);
-					if (hour < 10)
+					tmp = timestamp.get(Calendar.HOUR);
+					if (tmp < 10)
 					{
 						sb.append('0');
 					}
-					sb.append(hour);
+					sb.append(tmp);
 					break;
 
 				case 'G': // hour in 24-hour format, not zero-padded	
-					sb.append(timestamp.get(GregorianCalendar.HOUR_OF_DAY));
+					sb.append(timestamp.get(Calendar.HOUR_OF_DAY));
 					break;
 
 				case 'H': // hour in 24-hour format, zero-padded	
-					int hod = timestamp.get(GregorianCalendar.HOUR_OF_DAY);
-					if (hod < 10)
+					tmp = timestamp.get(Calendar.HOUR_OF_DAY);
+					if (tmp < 10)
 					{
 						sb.append('0');
 					}
-					sb.append(hod);
+					sb.append(tmp);
 					break;
 
 				case 'i': // minutes past the hour, zero-padded	
-					int min = timestamp.get(GregorianCalendar.MINUTE);
-					if (min < 10)
+					tmp = timestamp.get(Calendar.MINUTE);
+					if (tmp < 10)
 					{
 						sb.append('0');
 					}
-					sb.append(min);
+					sb.append(tmp);
 					break;
 
 				case 's': // seconds past the minute, zero-padded	
-					int sec = timestamp.get(GregorianCalendar.SECOND);
-					if (sec < 10)
+					tmp = timestamp.get(Calendar.SECOND);
+					if (tmp < 10)
 					{
 						sb.append('0');
 					}
-					sb.append(sec);
+					sb.append(tmp);
 					break;
 
 				case 'U': // Unix time
 					sb.append(timestamp.getTimeInMillis() / 1000);
+					break;
+
+				case 't': // number of days in the current month
+					sb.append(timestamp.getActualMaximum(timestamp.get(Calendar.MONTH)));
+					break;
+
+				case 'c': // ISO 8601 formatted date, equivalent to Y-m-d"T"H:i:s+00:00	
+					sb.append(timestamp.get(Calendar.YEAR)).append('-');
+
+					tmp = timestamp.get(Calendar.MONTH) + 1;
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append('-');
+
+					tmp = timestamp.get(Calendar.DAY_OF_MONTH);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append('T');
+
+					tmp = timestamp.get(Calendar.HOUR_OF_DAY);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append(':');
+
+					tmp = timestamp.get(Calendar.MINUTE);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append(':');
+
+					tmp = timestamp.get(Calendar.SECOND);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append("+00:00");
+					break;
+
+				case 'r': // RFC 5322 formatted date, equivalent to D, j M Y H:i:s +0000
+					sb.append(timestamp.getDisplayName(
+							Calendar.DAY_OF_WEEK,
+							Calendar.SHORT,
+							Locale.US)) // no i18n
+							.append(", ")
+							.append(timestamp.get(Calendar.DAY_OF_MONTH))
+							.append(' ')
+							.append(timestamp.getDisplayName(
+									Calendar.MONTH,
+									Calendar.SHORT,
+									Locale.US)) // no i18n
+							.append(' ')
+							.append(timestamp.get(Calendar.YEAR))
+							.append(' ');
+
+					tmp = timestamp.get(Calendar.HOUR_OF_DAY);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append(':');
+
+					tmp = timestamp.get(Calendar.MINUTE);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append(':');
+
+					tmp = timestamp.get(Calendar.SECOND);
+					if (tmp < 10)
+					{
+						sb.append('0');
+					}
+					sb.append(tmp).append(" +0000");
 					break;
 
 				default:
