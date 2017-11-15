@@ -100,13 +100,22 @@ public class ParserFunctionTime
 
 		Calendar timestamp = getWikiConfig().getRuntimeInfo().getDateAndTime(locale);
 
-		return format(format, timestamp, locale);
+		return nf().text(format(format, timestamp, locale));
 	}
 
 	/**
+	 * Interprets the symbols in the <code>format</code> string and returns the
+	 * result with the inserted date/time fields.
+	 *
+	 * @param format 
+	 *            The string to interpret.
+	 * @param timestamp
+	 *            The date/time used to populate the fields.
+	 * @param locale
+	 *            The locale for i18n.
 	 * @see https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions##time
 	 */
-	private WtNode format(String format, Calendar timestamp, Locale locale)
+	protected static String format(String format, Calendar timestamp, Locale locale)
 	{
 		StringBuilder sb = new StringBuilder();
 		boolean isCharInComment = false;
@@ -150,11 +159,11 @@ public class ParserFunctionTime
 					}
 					break;
 
-				case 'n': // month index, not zero-padded	
+				case 'n': // month index, not zero-padded
 					sb.append(timestamp.get(Calendar.MONTH) + 1);
 					break;
 
-				case 'm': // month index, zero-padded	
+				case 'm': // month index, zero-padded
 					tmp = timestamp.get(Calendar.MONTH) + 1;
 					if (tmp < 10)
 					{
@@ -245,11 +254,11 @@ public class ParserFunctionTime
 					}
 					break;
 
-				case 'g': // hour in 12-hour format, not zero-padded	
+				case 'g': // hour in 12-hour format, not zero-padded
 					sb.append(timestamp.get(Calendar.HOUR));
 					break;
 
-				case 'h': // hour in 12-hour format, zero-padded	
+				case 'h': // hour in 12-hour format, zero-padded
 					tmp = timestamp.get(Calendar.HOUR);
 					if (tmp < 10)
 					{
@@ -258,11 +267,11 @@ public class ParserFunctionTime
 					sb.append(tmp);
 					break;
 
-				case 'G': // hour in 24-hour format, not zero-padded	
+				case 'G': // hour in 24-hour format, not zero-padded
 					sb.append(timestamp.get(Calendar.HOUR_OF_DAY));
 					break;
 
-				case 'H': // hour in 24-hour format, zero-padded	
+				case 'H': // hour in 24-hour format, zero-padded
 					tmp = timestamp.get(Calendar.HOUR_OF_DAY);
 					if (tmp < 10)
 					{
@@ -271,7 +280,7 @@ public class ParserFunctionTime
 					sb.append(tmp);
 					break;
 
-				case 'i': // minutes past the hour, zero-padded	
+				case 'i': // minutes past the hour, zero-padded
 					tmp = timestamp.get(Calendar.MINUTE);
 					if (tmp < 10)
 					{
@@ -280,7 +289,7 @@ public class ParserFunctionTime
 					sb.append(tmp);
 					break;
 
-				case 's': // seconds past the minute, zero-padded	
+				case 's': // seconds past the minute, zero-padded
 					tmp = timestamp.get(Calendar.SECOND);
 					if (tmp < 10)
 					{
@@ -294,10 +303,10 @@ public class ParserFunctionTime
 					break;
 
 				case 't': // number of days in the current month
-					sb.append(timestamp.getActualMaximum(timestamp.get(Calendar.MONTH)));
+					sb.append(timestamp.getActualMaximum(Calendar.DAY_OF_MONTH));
 					break;
 
-				case 'c': // ISO 8601 formatted date, equivalent to Y-m-d"T"H:i:s+00:00	
+				case 'c': // ISO 8601 formatted date, equivalent to Y-m-d"T"H:i:s+00:00
 					sb.append(timestamp.get(Calendar.YEAR)).append('-');
 
 					tmp = timestamp.get(Calendar.MONTH) + 1;
@@ -380,7 +389,7 @@ public class ParserFunctionTime
 			}
 		}
 
-		return nf().text(sb.toString());
+		return sb.toString();
 	}
 
 	private String expandArgToString(
