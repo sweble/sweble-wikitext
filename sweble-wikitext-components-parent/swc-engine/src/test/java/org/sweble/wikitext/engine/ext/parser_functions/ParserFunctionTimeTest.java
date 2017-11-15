@@ -167,7 +167,7 @@ public class ParserFunctionTimeTest
 
 		// check Unix time
 		format = "U";
-		expResult = "1488844923";
+		expResult = "1488848523";
 		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
 
 		// check number of days in the current month

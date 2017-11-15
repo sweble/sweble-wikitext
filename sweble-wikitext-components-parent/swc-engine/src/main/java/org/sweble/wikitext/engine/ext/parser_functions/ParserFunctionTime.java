@@ -115,7 +115,9 @@ public class ParserFunctionTime
 	 *            The locale for i18n.
 	 * @see https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions##time
 	 */
-	protected static String format(String format, Calendar timestamp, Locale locale)
+	protected static String format(final String format,
+			final Calendar timestamp,
+			final Locale locale)
 	{
 		StringBuilder sb = new StringBuilder();
 		boolean isCharInComment = false;
@@ -299,7 +301,9 @@ public class ParserFunctionTime
 					break;
 
 				case 'U': // Unix time
-					sb.append(timestamp.getTimeInMillis() / 1000);
+					long timeUtc = timestamp.getTimeInMillis();
+					timeUtc += timestamp.getTimeZone().getOffset(timeUtc);
+					sb.append(timeUtc / 1000L);
 					break;
 
 				case 't': // number of days in the current month
