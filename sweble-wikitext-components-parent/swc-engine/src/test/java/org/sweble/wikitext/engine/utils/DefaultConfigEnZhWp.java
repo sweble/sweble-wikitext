@@ -4269,11 +4269,12 @@ public class DefaultConfigEnZhWp
 				"time",
 				false,
 				Arrays.asList("#time:")));
-		/*
+
 		c.addI18nAlias(new I18nAliasImpl(
 				"timel",
 				false,
-				Arrays.asList("timel")));
+				Arrays.asList("#timel:")));
+		/*
 		c.addI18nAlias(new I18nAliasImpl(
 				"rel2abs",
 				false,

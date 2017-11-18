@@ -39,6 +39,7 @@ public class ParserFunctionsPfnExt
 		addParserFunction(new ParserFunctionIfExpr(wikiConfig));
 		addParserFunction(new ParserFunctionSwitch(wikiConfig));
 		addParserFunction(new ParserFunctionTime(wikiConfig));
+		addParserFunction(new ParserFunctionTimeLocal(wikiConfig));
 		addParserFunction(new ParserFunctionTitleparts(wikiConfig));
 	}
 
