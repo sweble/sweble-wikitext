@@ -21,6 +21,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.WikiConfig;
@@ -99,6 +100,7 @@ public class ParserFunctionTime
 		Locale locale = new Locale(languageTag);
 
 		Calendar timestamp = getWikiConfig().getRuntimeInfo().getDateAndTime(locale);
+		timestamp.setTimeZone(TimeZone.getTimeZone("UTC"));
 
 		return nf().text(format(format, timestamp, locale));
 	}
@@ -113,9 +115,12 @@ public class ParserFunctionTime
 	 *            The date/time used to populate the fields.
 	 * @param locale
 	 *            The locale for i18n.
+	 * @return The formated string with substituted symbols.
 	 * @see https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions##time
 	 */
-	protected static String format(String format, Calendar timestamp, Locale locale)
+	protected static String format(final String format,
+			final Calendar timestamp,
+			final Locale locale)
 	{
 		StringBuilder sb = new StringBuilder();
 		boolean isCharInComment = false;
@@ -299,7 +304,34 @@ public class ParserFunctionTime
 					break;
 
 				case 'U': // Unix time
-					sb.append(timestamp.getTimeInMillis() / 1000);
+					long timeUtc = timestamp.getTimeInMillis();
+					timeUtc += timestamp.getTimeZone().getOffset(timeUtc);
+					sb.append(timeUtc / 1000L);
+					break;
+
+				case 'e': // time zone identifier
+					sb.append(timestamp.getTimeZone().getID());
+					break;
+
+				case 'I': // '1' if Daylight Saving Time if currently used, otherwise '0'
+					sb.append(timestamp.get(Calendar.DST_OFFSET) != 0 ? '1' : '0');
+					break;
+
+				case 'O': // difference to Greenwich time (GMT)
+					sb.append(localOffsetAsString(timestamp));
+					break;
+
+				case 'P': // difference to Greenwich time (GMT), with colon
+					sb.append(localOffsetAsStringWithColon(timestamp));
+					break;
+
+				case 'Z': // time zone offset in seconds
+					sb.append(timestamp.getTimeZone()
+							.getOffset(timestamp.getTimeInMillis()) / 1000L);
+					break;
+
+				case 'T': // time zone abbreviation
+					sb.append(timestamp.getTimeZone().getID());
 					break;
 
 				case 't': // number of days in the current month
@@ -342,7 +374,8 @@ public class ParserFunctionTime
 					{
 						sb.append('0');
 					}
-					sb.append(tmp).append("+00:00");
+					sb.append(tmp)
+							.append(localOffsetAsStringWithColon(timestamp));
 					break;
 
 				case 'r': // RFC 5322 formatted date, equivalent to D, j M Y H:i:s +0000
@@ -380,7 +413,9 @@ public class ParserFunctionTime
 					{
 						sb.append('0');
 					}
-					sb.append(tmp).append(" +0000");
+					sb.append(tmp)
+							.append(' ')
+							.append(localOffsetAsString(timestamp));
 					break;
 
 				default:
@@ -388,6 +423,89 @@ public class ParserFunctionTime
 					break;
 			}
 		}
+
+		return sb.toString();
+	}
+
+	/**
+	 * Gathers the local offset from the given timestamp and returns it as a
+	 * formated string according to the RFC 5322 specification. The offset may
+	 * also contain the Daylight Saving Time in dependence of the corresponding
+	 * time zone.
+	 *
+	 * @param timestamp The timestamp containing the local time offset.
+	 * @return A string in the form of "+/-hhmm" (e.g. "+0100).
+	 */
+	private static String localOffsetAsString(final Calendar timestamp)
+	{
+		StringBuilder sb = new StringBuilder();
+		int offset = timestamp.getTimeZone().getOffset(timestamp.getTimeInMillis());
+		offset = offset / 1000 / 60; // in minutes
+		int hours = offset / 60;
+		int minutes = offset % 60;
+
+		if (offset < 0)
+		{
+			sb.append('-');
+		} else
+		{
+			sb.append('+');
+		}
+
+		hours = Math.abs(hours);
+		if (hours < 10)
+		{
+			sb.append('0');
+		}
+		sb.append(hours);
+
+		minutes = Math.abs(minutes);
+		if (minutes < 10)
+		{
+			sb.append('0');
+		}
+		sb.append(minutes);
+
+		return sb.toString();
+	}
+
+	/**
+	 * Gathers the local offset from the given timestamp and returns it as a
+	 * formated string. The offset may also contain the Daylight Saving Time in
+	 * dependence of the corresponding time zone.
+	 *
+	 * @param timestamp The timestamp containing the local time offset.
+	 * @return A string in the form of "+/-hh:mm" (e.g. "+01:00).
+	 */
+	private static String localOffsetAsStringWithColon(final Calendar timestamp)
+	{
+		StringBuilder sb = new StringBuilder();
+		int offset = timestamp.getTimeZone().getOffset(timestamp.getTimeInMillis());
+		offset = offset / 1000 / 60; // in minutes
+		int hours = offset / 60;
+		int minutes = offset % 60;
+
+		if (offset < 0)
+		{
+			sb.append('-');
+		} else
+		{
+			sb.append('+');
+		}
+
+		hours = Math.abs(hours);
+		if (hours < 10)
+		{
+			sb.append('0');
+		}
+		sb.append(hours).append(':');
+
+		minutes = Math.abs(minutes);
+		if (minutes < 10)
+		{
+			sb.append('0');
+		}
+		sb.append(minutes);
 
 		return sb.toString();
 	}

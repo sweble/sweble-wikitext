@@ -20,6 +20,7 @@ package org.sweble.wikitext.engine.ext.parser_functions;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.TimeZone;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -30,6 +31,7 @@ public class ParserFunctionTimeTest
 	{
 		// Tuesday, 7th March 2017, 01:02:03 AM
 		final Calendar timestamp = new GregorianCalendar(2017, Calendar.MARCH, 7, 1, 2, 3);
+		timestamp.setTimeZone(TimeZone.getTimeZone("UTC"));
 		Locale locale = Locale.ENGLISH;
 
 		// check year 4-digit
@@ -167,7 +169,35 @@ public class ParserFunctionTimeTest
 
 		// check Unix time
 		format = "U";
-		expResult = "1488844923";
+		expResult = "1488848523";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		// check time zone identifier
+		format = "e";
+		expResult = "UTC";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		// check if Daylight Saving Time is currently used
+		format = "I";
+		expResult = "0";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		format = "O";
+		expResult = "+0000";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		format = "P";
+		expResult = "+00:00";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		// check time zone offset in seconds
+		format = "Z";
+		expResult = "0";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		// check time zone abbreviation
+		format = "T";
+		expResult = "UTC";
 		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
 
 		// check number of days in the current month
