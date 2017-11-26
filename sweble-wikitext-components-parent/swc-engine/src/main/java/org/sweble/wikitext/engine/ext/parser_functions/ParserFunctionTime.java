@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine.ext.parser_functions;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
@@ -30,9 +31,17 @@ import org.sweble.wikitext.engine.nodes.EngineRtData;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.engine.utils.StringToDateTimeConverter;
 
 import de.fau.cs.osr.utils.StringTools;
 
+/**
+ * Parser function for the <code>#time</code> template. This template works only
+ * on the time base of UTC+0 (GMT). For functions depending on the local
+ * time of the client, or a predefined time zone, see <code>#timel</code>.
+ *
+ * @see {@link ParserFunctionTimeLocal}
+ */
 public class ParserFunctionTime
 		extends
 			ParserFunctionsExtPfn
@@ -67,19 +76,6 @@ public class ParserFunctionTime
 		if (format == null)
 			return error("Cannot convert format argument to string!");
 
-		// ---- timestamp
-
-		String timestampStr = null;
-		if (args.size() >= 2)
-		{
-			timestampStr = expandArgToString(frame, args, 1);
-			if (timestampStr == null)
-				return error("Cannot convert timestamp argument to string!");
-		}
-
-		if (timestampStr != null && !timestampStr.isEmpty())
-			return notYetImplemented("Cannot handle non-empty timestamp argument!");
-
 		// ---- language
 
 		String languageTag = null;
@@ -90,17 +86,48 @@ public class ParserFunctionTime
 				return error("Cannot convert language argument to string!");
 		}
 
+		Locale locale = null;
 		if (languageTag != null && !languageTag.isEmpty())
-			return notYetImplemented("Cannot handle non-empty language argument!");
+		{
+			locale = Locale.forLanguageTag(languageTag);
+			if (locale == null)
+			{
+				return notYetImplemented("Cannot handle non-empty language argument!");
+			}
+		}
 
-		languageTag = "en";
+		if (locale == null)
+		{
+			locale = Locale.ENGLISH; // default Locale if not defined
+		}
+
+		// ---- timestamp
+
+		Calendar timestamp = Calendar.getInstance(TimeZone.getTimeZone("UTC"), locale); 
+		timestamp.set(Calendar.DST_OFFSET, 0);
+
+		if (args.size() >= 2)
+		{
+			String timestampStr = expandArgToString(frame, args, 1);
+			if (timestampStr == null)
+				return error("Cannot convert timestamp argument to string!");
+
+			if (!timestampStr.isEmpty())
+			{
+				StringToDateTimeConverter conv = new StringToDateTimeConverter();
+				Date argumentDate = conv.convertString(timestampStr);
+				if (argumentDate != null)
+				{
+					timestamp.setTime(argumentDate);
+				}
+				else
+				{
+					return notYetImplemented("Cannot handle non-empty timestamp argument!");
+				}
+			}
+		}
 
 		// ---- let's format ourselves a date...
-
-		Locale locale = new Locale(languageTag);
-
-		Calendar timestamp = getWikiConfig().getRuntimeInfo().getDateAndTime(locale);
-		timestamp.setTimeZone(TimeZone.getTimeZone("UTC"));
 
 		return nf().text(format(format, timestamp, locale));
 	}
@@ -109,7 +136,7 @@ public class ParserFunctionTime
 	 * Interprets the symbols in the <code>format</code> string and returns the
 	 * result with the inserted date/time fields.
 	 *
-	 * @param format 
+	 * @param format
 	 *            The string to interpret.
 	 * @param timestamp
 	 *            The date/time used to populate the fields.
