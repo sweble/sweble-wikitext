@@ -102,7 +102,7 @@ public class CorePfnVariablesDateAndTime
 
 		public CurrentMonthPfn(WikiConfig wikiConfig)
 		{
-			super(wikiConfig, "currentmonth");
+			super(wikiConfig, "currentmonth"); 
 		}
 
 		@Override
