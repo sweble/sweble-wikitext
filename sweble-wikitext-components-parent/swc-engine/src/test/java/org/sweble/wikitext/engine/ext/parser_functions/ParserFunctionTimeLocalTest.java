@@ -53,6 +53,7 @@ public class ParserFunctionTimeLocalTest
 		expResult = "0";
 		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
 		Calendar activeDst = new GregorianCalendar(2017, Calendar.JULY, 7, 1, 2, 3);
+		activeDst.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
 		expResult = "1";
 		assertEquals(expResult, ParserFunctionTime.format(format, activeDst, locale));
 
@@ -87,6 +88,7 @@ public class ParserFunctionTimeLocalTest
 		expResult = "0";
 		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
 		activeDst = new GregorianCalendar(2017, Calendar.JULY, 7, 1, 2, 3);
+		activeDst.setTimeZone(TimeZone.getTimeZone("PST"));
 		expResult = "1";
 		assertEquals(expResult, ParserFunctionTime.format(format, activeDst, locale));
 
@@ -101,6 +103,24 @@ public class ParserFunctionTimeLocalTest
 		// check time zone offset in seconds
 		format = "Z";
 		expResult = "-28800";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		// test also with Australian Central Standard Time
+		timestamp.setTimeZone(TimeZone.getTimeZone("ACT")); // UTC+09:30
+		format = "P";
+		expResult = "+09:30";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		format = "O";
+		expResult = "+0930";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		format = "P";
+		expResult = "+09:30";
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
+
+		format = "Z";
+		expResult = "34200";
 		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
 	}
 }
