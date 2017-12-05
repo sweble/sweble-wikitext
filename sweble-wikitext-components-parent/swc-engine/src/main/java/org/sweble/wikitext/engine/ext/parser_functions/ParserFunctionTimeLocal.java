@@ -19,12 +19,14 @@ package org.sweble.wikitext.engine.ext.parser_functions;
 
 import de.fau.cs.osr.utils.StringTools;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.engine.nodes.EngineRtData;
+import org.sweble.wikitext.engine.utils.StringToDateTimeConverter;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -65,19 +67,6 @@ public class ParserFunctionTimeLocal
 		if (format == null)
 			return error("Cannot convert format argument to string!");
 
-		// ---- timestamp
-
-		String timestampStr = null;
-		if (args.size() >= 2)
-		{
-			timestampStr = expandArgToString(frame, args, 1);
-			if (timestampStr == null)
-				return error("Cannot convert timestamp argument to string!");
-		}
-
-		if (timestampStr != null && !timestampStr.isEmpty())
-			return notYetImplemented("Cannot handle non-empty timestamp argument!");
-
 		// ---- language
 
 		String languageTag = null;
@@ -88,16 +77,48 @@ public class ParserFunctionTimeLocal
 				return error("Cannot convert language argument to string!");
 		}
 
+		Locale locale = null;
 		if (languageTag != null && !languageTag.isEmpty())
-			return notYetImplemented("Cannot handle non-empty language argument!");
+		{
 
-		languageTag = "en";
+			locale = Locale.forLanguageTag(languageTag);
+			if (locale == null)
+			{
+				return notYetImplemented("Cannot handle non-empty language argument!");
+			}
+		}
 
-		// ---- let's format ourselves a date...
+		if (locale == null)
+		{
+			locale = Locale.ENGLISH; // default Locale if not defined
+		}
 
-		Locale locale = new Locale(languageTag);
+		// ---- timestamp
 
 		Calendar timestamp = getWikiConfig().getRuntimeInfo().getDateAndTime(locale);
+
+		if (args.size() >= 2)
+		{
+			String timestampStr = expandArgToString(frame, args, 1);
+			if (timestampStr == null)
+				return error("Cannot convert timestamp argument to string!");
+
+			if (!timestampStr.isEmpty())
+			{
+				StringToDateTimeConverter conv = new StringToDateTimeConverter(timestamp);
+				Date argumentDate = conv.convertString(timestampStr);
+				if (argumentDate != null)
+				{
+					timestamp.setTime(argumentDate);
+				}
+				else
+				{
+					return notYetImplemented("Cannot handle non-empty timestamp argument!");
+				}
+			}
+		}
+
+		// ---- let's format ourselves a date...
 
 		return nf().text(ParserFunctionTime.format(format, timestamp, locale));
 	}

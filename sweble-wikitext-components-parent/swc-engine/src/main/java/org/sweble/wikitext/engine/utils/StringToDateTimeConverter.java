@@ -65,6 +65,7 @@ public final class StringToDateTimeConverter
 		matchers.add(new NowMatcher());
 		matchers.add(new TomorrowMatcher());
 		matchers.add(new DaysMatcher());
+		matchers.add(new UnixTimestampMatcher());
 		matchers.add(new DateFormatMatcher("dd.MM.yyyy"));
 		matchers.add(new DateFormatMatcher("d MMM yyyy"));
 		matchers.add(new DateFormatMatcher("yyyy.MM.dd G 'at' HH:mm:ss z"));
@@ -179,10 +180,46 @@ public final class StringToDateTimeConverter
 		{
 			if (days.matcher(input).matches())
 			{
-				int days = Integer.parseInt(input.split(" ")[0]);
-				calendar.setTime(new Date()); // set current time
-				calendar.add(Calendar.DAY_OF_YEAR, days);
-				return calendar.getTime();
+				try
+				{
+					int day = Integer.parseInt(input.split(" ")[0]);
+					calendar.setTime(new Date()); // set current time
+					calendar.add(Calendar.DAY_OF_YEAR, day);
+					return calendar.getTime();
+				}
+				catch (Exception ex)
+				{
+					return null;
+				}
+			}
+			return null;
+		}
+	}
+
+	/**
+	 * Handles the Unix timestamp as parameter in the form of "@1512163343",
+	 * where '@' identifies it as a Unix timestamp with a exact digit count of
+	 * 10, representing the seconds since 01 January 1970 00:00:00.
+	 */
+	private class UnixTimestampMatcher implements DateTimeMatcher
+	{
+		private final Pattern unixTimestamp = Pattern.compile("@?\\d{10}");
+
+		@Override
+		public Date tryConvert(String input)
+		{
+			if (unixTimestamp.matcher(input).matches())
+			{
+				try
+				{
+					long timestamp = Long.parseUnsignedLong(input.substring(1));
+					calendar.setTimeInMillis(timestamp * 1000L);
+					return calendar.getTime();
+				}
+				catch (Exception ex)
+				{
+					return null;
+				}
 			}
 			return null;
 		}
