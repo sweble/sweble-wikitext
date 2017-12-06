@@ -39,6 +39,7 @@ import org.sweble.wikitext.engine.ext.core.CorePfnVariablesStatistics;
 import org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata;
 import org.sweble.wikitext.engine.ext.math.MathTagExt;
 import org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionsPfnExt;
+import org.sweble.wikitext.engine.ext.convert.ConvertPnfExt;
 import org.sweble.wikitext.engine.ext.ref.RefTagExt;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 
@@ -580,6 +581,7 @@ public class DefaultConfig
 		c.addParserFunctionGroup(CorePfnVariablesTechnicalMetadata.group(c));
 
 		c.addParserFunctionGroup(ParserFunctionsPfnExt.group(c));
+		c.addParserFunctionGroup(ConvertPnfExt.group(c));
 	}
 
 	protected void addTagExtensions(WikiConfigImpl c)
