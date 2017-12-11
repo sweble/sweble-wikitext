@@ -23,7 +23,7 @@
 	<parent>
 		<groupId>de.fau.cs.osr</groupId>
 		<artifactId>tooling</artifactId>
-		<version>3.0.8</version>
+		<version>3.0.9-SNAPSHOT</version>
 	</parent>
 
 	<groupId>org.sweble</groupId>
@@ -55,7 +55,7 @@
 		<maven-checkstyle-plugin.skip>true</maven-checkstyle-plugin.skip>
 
 		<!-- Dependencies -->
-		<osr-common.version>3.0.8</osr-common.version>
+		<osr-common.version>3.0.9-SNAPSHOT</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
 		<sweble.version>3.1.8-SNAPSHOT</sweble.version>
 	</properties>
