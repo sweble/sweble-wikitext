@@ -333,6 +333,12 @@ public class SimpleParserConfig
 		return true;
 	}
 
+	@Override
+	public boolean isPreserveSemiPreLeadingSpace()
+	{
+		return false;
+	}
+
 	// ==[ Language Conversion Tags ]===========================================
 
 	private static final Set<String> knownFlags = new HashSet<String>(Arrays.asList(

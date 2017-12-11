@@ -17,23 +17,6 @@
 
 package org.sweble.wikitext.engine.config;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.NonStandardElementBehavior;
 import org.sweble.wikitext.parser.ParserConfig;
@@ -42,6 +25,12 @@ import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.utils.AstTextUtils;
+
+import javax.xml.bind.annotation.*;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 @XmlRootElement(name = "ParserConfig", namespace = "org.sweble.wikitext.engine")
 @XmlType(propOrder = {
@@ -54,6 +43,7 @@ import org.sweble.wikitext.parser.utils.AstTextUtils;
 		"nonStandardElementBehavior",
 		"fosterParenting",
 		"fosterParentingForTransclusions",
+		"preserveSemiPreLeadingSpace",
 		"internalLinkPrefixPattern",
 		"internalLinkPostfixPattern",
 		"jaxbAllowedUrlProtocols",
@@ -98,6 +88,9 @@ public class ParserConfigImpl
 
 	@XmlElement
 	private boolean fosterParentingForTransclusions = true /*be backward compatible*/;
+
+	@XmlElement
+	private boolean preserveSemiPreLeadingSpace = false /*be backward compatible*/;
 
 	private final Set<String> allowedUrlProtocols = new HashSet<String>();
 
@@ -418,6 +411,17 @@ public class ParserConfigImpl
 	public boolean isFosterParentingForTransclusions()
 	{
 		return fosterParentingForTransclusions;
+	}
+
+	public void setPreserveSemiPreLeadingSpace(boolean preserveSemiPreLeadingSpace)
+	{
+		this.preserveSemiPreLeadingSpace = preserveSemiPreLeadingSpace;
+	}
+
+	@Override
+	public boolean isPreserveSemiPreLeadingSpace()
+	{
+		return preserveSemiPreLeadingSpace;
 	}
 
 	// ==[ Language Conversion Tags ]===========================================

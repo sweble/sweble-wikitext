@@ -677,7 +677,7 @@ public final class TreeBuilderInTable
 					else
 					{
 						tb.clearStackBackToTableBodyContext();
-						tb.popFromStack();
+						addRtDataOfEndTag(tb.popFromStack(), n);
 						tb.switchInsertionMode(InsertionMode.IN_TABLE);
 					}
 					break;

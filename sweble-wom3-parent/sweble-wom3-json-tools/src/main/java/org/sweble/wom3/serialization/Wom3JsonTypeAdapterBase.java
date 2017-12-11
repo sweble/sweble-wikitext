@@ -17,10 +17,7 @@
  */
 package org.sweble.wom3.serialization;
 
-import java.lang.reflect.Type;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.google.gson.*;
 import org.sweble.wom3.Wom3Node;
 import org.sweble.wom3.impl.DomImplementationImpl;
 import org.sweble.wom3.serialization.ScopeStack.Scope;
@@ -29,16 +26,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
+import java.lang.reflect.Type;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public abstract class Wom3JsonTypeAdapterBase
 		implements
-			Wom3JsonTypeAdapterInterface
+		Wom3JsonTypeAdapterInterface
 {
 	protected static final String XMLNS_URI = "http://www.w3.org/2000/xmlns/";
 
@@ -130,14 +124,24 @@ public abstract class Wom3JsonTypeAdapterBase
 
 			if (prefix == null || prefix.isEmpty())
 			{
-				String xmlns = scopeStack.getXmlns();
-				if (!nsUri.equals(xmlns))
+				if (node.getNodeType() == Node.ATTRIBUTE_NODE)
 				{
-					if (scope == null)
-						scope = scopeStack.push();
-					scope.setXmlns(nsUri);
-					String declName = ATTRIBUTE_PREFIX + XMLNS_PREFIX;
-					o.add(declName, new JsonPrimitive(nsUri));
+					// Attributes without prefix are in no namespace (also not the default namespace)
+					if (!nsUri.isEmpty())
+						throw new JsonParseException(
+								"Attribute has namespace URI but no prefix: " + node.getNodeName());
+				}
+				else
+				{
+					String xmlns = scopeStack.getXmlns();
+					if (!nsUri.equals(xmlns))
+					{
+						if (scope == null)
+							scope = scopeStack.push();
+						scope.setXmlns(nsUri);
+						String declName = ATTRIBUTE_PREFIX + XMLNS_PREFIX;
+						o.add(declName, new JsonPrimitive(nsUri));
+					}
 				}
 			}
 			else
@@ -274,57 +278,57 @@ public abstract class Wom3JsonTypeAdapterBase
 	protected static enum ValueTypes
 	{
 		XML_TEXT
-		{
-			@Override
-			public Node create(Document doc, String value)
-			{
-				return doc.createTextNode(value);
-			}
-		},
+				{
+					@Override
+					public Node create(Document doc, String value)
+					{
+						return doc.createTextNode(value);
+					}
+				},
 		ENTITY_REF
-		{
-			@Override
-			public Node create(Document doc, String value)
-			{
-				return doc.createEntityReference(value);
-			}
-		},
+				{
+					@Override
+					public Node create(Document doc, String value)
+					{
+						return doc.createEntityReference(value);
+					}
+				},
 		CDATA
-		{
-			@Override
-			public Node create(Document doc, String value)
-			{
-				return doc.createCDATASection(value);
-			}
-		},
+				{
+					@Override
+					public Node create(Document doc, String value)
+					{
+						return doc.createCDATASection(value);
+					}
+				},
 		COMMENT
-		{
-			@Override
-			public Node create(Document doc, String value)
-			{
-				return doc.createComment(value);
-			}
-		},
+				{
+					@Override
+					public Node create(Document doc, String value)
+					{
+						return doc.createComment(value);
+					}
+				},
 		RTD
-		{
-			@Override
-			public Node create(Document doc, String value)
-			{
-				Element elem = doc.createElementNS(Wom3Node.WOM_NS_URI, "rtd");
-				elem.appendChild(doc.createTextNode(value));
-				return elem;
-			}
-		},
+				{
+					@Override
+					public Node create(Document doc, String value)
+					{
+						Element elem = doc.createElementNS(Wom3Node.WOM_NS_URI, "rtd");
+						elem.appendChild(doc.createTextNode(value));
+						return elem;
+					}
+				},
 		TEXT
-		{
-			@Override
-			public Node create(Document doc, String value)
-			{
-				Element elem = doc.createElementNS(Wom3Node.WOM_NS_URI, "text");
-				elem.appendChild(doc.createTextNode(value));
-				return elem;
-			}
-		};
+				{
+					@Override
+					public Node create(Document doc, String value)
+					{
+						Element elem = doc.createElementNS(Wom3Node.WOM_NS_URI, "text");
+						elem.appendChild(doc.createTextNode(value));
+						return elem;
+					}
+				};
 
 		public abstract Node create(Document doc, String value);
 	}

@@ -831,6 +831,9 @@
         <i18nAlias id="time" caseSensitive="false">
             <alias>#time:</alias>
         </i18nAlias>
+        <i18nAlias id="timel" caseSensitive="false">
+            <alias>#timel:</alias>
+        </i18nAlias>
         <i18nAlias id="titleparts" caseSensitive="false">
             <alias>#titleparts:</alias>
         </i18nAlias>
@@ -903,6 +906,7 @@
             <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionIfExpr"/>
             <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionSwitch"/>
             <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionTime"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionTimeLocal"/>
             <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionTitleparts"/>
         </pfnGroup>
     </pfnGroups>
@@ -925,7 +929,7 @@
         <gatherRtData>true</gatherRtData>
         <internalLinkPostfixPattern>[a-z]+</internalLinkPostfixPattern>
         <allowedUrlProtocols>
-            <protocol name="mail:"/>
+            <protocol name="mailto:"/>
             <protocol name="https://"/>
             <protocol name="http://"/>
         </allowedUrlProtocols>

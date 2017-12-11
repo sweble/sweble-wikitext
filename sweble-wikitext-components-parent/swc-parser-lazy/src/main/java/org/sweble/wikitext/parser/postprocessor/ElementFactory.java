@@ -14,51 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_IM_END_TAG;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_IM_START_TAG;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_ELEMENT;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_EMPTY_TAG;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_END_TAG;
-import static org.sweble.wikitext.parser.nodes.WtNode.NT_XML_START_TAG;
+import de.fau.cs.osr.ptk.common.ast.RtData;
+import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.*;
+
+import static org.sweble.wikitext.parser.nodes.WtNode.*;
 import static org.sweble.wikitext.parser.postprocessor.ElementType.getType;
 import static org.sweble.wikitext.parser.postprocessor.TreeBuilder.getNodeType;
-
-import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
-import org.sweble.wikitext.parser.nodes.WtBody;
-import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtEmptyImmutableNode;
-import org.sweble.wikitext.parser.nodes.WtExternalLink;
-import org.sweble.wikitext.parser.nodes.WtHeading;
-import org.sweble.wikitext.parser.nodes.WtImageLink;
-import org.sweble.wikitext.parser.nodes.WtIntermediate;
-import org.sweble.wikitext.parser.nodes.WtInternalLink;
-import org.sweble.wikitext.parser.nodes.WtLctFlags;
-import org.sweble.wikitext.parser.nodes.WtLctVarConv;
-import org.sweble.wikitext.parser.nodes.WtLinkOptions;
-import org.sweble.wikitext.parser.nodes.WtLinkTitle;
-import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtPageName;
-import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtSection;
-import org.sweble.wikitext.parser.nodes.WtTable;
-import org.sweble.wikitext.parser.nodes.WtTableCaption;
-import org.sweble.wikitext.parser.nodes.WtTableCell;
-import org.sweble.wikitext.parser.nodes.WtTableHeader;
-import org.sweble.wikitext.parser.nodes.WtTableRow;
-import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.WtUrl;
-import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
-import org.sweble.wikitext.parser.nodes.WtXmlElement;
-import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
-import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
-import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
-
-import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class ElementFactory
 {
@@ -189,7 +153,7 @@ public class ElementFactory
 
 	/**
 	 * Only used by adoption agency algorithm to create the adopting node.
-	 * 
+	 *
 	 * I'm not sure if the adopter is a repair element. I think it is, but we
 	 * probably have to render it fully, otherwise things could get messy. After
 	 * all the adoption agency algorithm completely rearranges nodes thus
@@ -773,10 +737,10 @@ public class ElementFactory
 			if (!suppressRtd)
 				newBody.setRtd(template.getRtd());
 			else
-				/**
-				 * We never suppress RTD of the body node's children. Only the
-				 * RTD information of the body node itself.
-				 */
+			/**
+			 * We never suppress RTD of the body node's children. Only the
+			 * RTD information of the body node itself.
+			 */
 				;//newBody.suppressRtd();
 		}
 		else
@@ -822,5 +786,14 @@ public class ElementFactory
 			attr.suppressRtd();
 		*/
 		return clone;
+	}
+
+	// =========================================================================
+
+	public WtNode createSemiPreRtdNode()
+	{
+		WtSemiPreLine semiPreLine = nf.semiPreLine(nf.emptyList());
+		semiPreLine.setRtd(" ", WtRtData.SEP);
+		return semiPreLine;
 	}
 }

@@ -1,6 +1,18 @@
 # Change Log
 [A guide to writing change logs][keepachangelog]
 
+## 3.1.7 - unreleased
+### Changed
+- Fixed missing RTD information on tbody element and added it to list of elements that cancel a semipre block
+- *StringConverter classes in AstTextUtilsImpl and EngineAstTextUtilsImpl are now public
+
+### Added
+- New formatting option for non standard elements: LIKE_FORMATTING
+- New option preserveSemiPreLeadingSpace which allows to recognize and remove leading spaces in semi pre blocks
+
+### Fixed
+- Fixed wrong default enwp configuration: protocol mail -> mailto
+
 ## 3.1.6 - 2017-09-14
 ### Changed
 - Added jenkins profile which generates coverage reports when build in Jenkins.
