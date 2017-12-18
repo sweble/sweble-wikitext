@@ -23,20 +23,23 @@ import static org.junit.Assert.*;
 
 public class ConvertTest
 {
-	static double EPSILON = 1E-6;
+	private static final double EPSILON = 1E-6;
 
 	@Test
 	public void testIsNumberValid()
 	{
 		assertTrue(Convert.isNumberValid("1"));
 		assertTrue(Convert.isNumberValid("123"));
+		assertTrue(Convert.isNumberValid("–123")); // en dash (u+2013)
 		assertTrue(Convert.isNumberValid("1,234,567"));
 		assertTrue(Convert.isNumberValid("0.5"));
 		assertTrue(Convert.isNumberValid("12.3e-15"));
+		assertTrue(Convert.isNumberValid("12.3e–15")); // en dash
 		assertTrue(Convert.isNumberValid("1/2"));
 		assertTrue(Convert.isNumberValid("1⁄2"));
 		assertTrue(Convert.isNumberValid("2+1⁄2"));
 		assertTrue(Convert.isNumberValid("-2-1⁄2"));
+		assertTrue(Convert.isNumberValid("–2–1⁄2")); // en dash
 		assertTrue(Convert.isNumberValid("1//2"));
 		assertTrue(Convert.isNumberValid("2+1//2"));
 
@@ -50,15 +53,19 @@ public class ConvertTest
 	{
 		assertEquals(1d, Convert.parseNumber("1"), EPSILON);
 		assertEquals(123d, Convert.parseNumber("123"), EPSILON);
+		assertEquals(-123d, Convert.parseNumber("–123"), EPSILON); // en dash
 		assertEquals(1234567d, Convert.parseNumber("1,234,567"), EPSILON);
 		assertEquals(0.5, Convert.parseNumber("0.5"), EPSILON);
 		assertEquals(1.23e-4, Convert.parseNumber("12.3e-5"), EPSILON);
+		assertEquals(1.23e-4, Convert.parseNumber("12.3e–5"), EPSILON); // en dash
 		assertEquals(0.5, Convert.parseNumber("1/2"), EPSILON);
 		assertEquals(0.33333333, Convert.parseNumber("1⁄3"), EPSILON);
 		assertEquals(2.5, Convert.parseNumber("2+1⁄2"), EPSILON);
 		assertEquals(-2.5, Convert.parseNumber("-2-1⁄2"), EPSILON);
 		assertEquals(0.5, Convert.parseNumber("1//2"), EPSILON);
 		assertEquals(2.5, Convert.parseNumber("2+1//2"), EPSILON);
+		assertEquals(123d, Convert.parseNumber("+123"), EPSILON);
+		assertEquals(-123d, Convert.parseNumber("-123"), EPSILON);
 	}
 
 	@Test(expected=NumberFormatException.class)

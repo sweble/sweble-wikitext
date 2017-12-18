@@ -32,70 +32,72 @@ public enum Units
 {
 	// lengths: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/length
 
-	GIGAMETRE	(1E9,	"Gm",	"gigameter",	null,	"gigameter"), // mi
-	MEAGAMETRE	(1E6,	"Mm",	"megametre",	null,	"megameter"),
-	KILOMETRE	(1000d,	"km",	"kilometre",	null,	"kilometer"),
-	HECTOMETRE	(100d,	"hm",	"hectometre",	null,	"hectometer"), // ft
-	DECAMETRE	(10d,	"dam",	"decametre",	null,	"dekameter"), 
-	METRE		(1d,	"m",	"metre",		null,	"meter"), // ft in
-	DECIMETRE	(0.1,	"dm",	"decimetre",	null,	"decimeter"), // in
-	CENTIMETRE	(0.01,	"cm",	"centimetre",	null,	"centimeter"),
-	MILLIMETRE	(0.001,	"mm",	"millimetre",	null,	"millimeter"),
-	MICROMETRE1	(1E-6,	"µm",	"micrometre",	null,	"micrometer"),
-	MICROMETRE2	(1E-6,	"um",	"micrometre",	null,	"micrometer"),
-	MICRON		(1E-6,	"µm",	"micron"),
-	NANOMETRE	(1E-9,	"nm",	"nanometre",	null,	"nanometer"),
-	ANGSTROM1	(1E-10,	"Å",	"ångström"),
-	ANGSTROM2	(1E-10,	"angstrom",	"ångström"),
-	MILE			(1609.344,	"mi",	"mile"),
-	FURLONG		(201.168,	"fur",	"furlong"),
-	CHAIN		(20.11684023368,	"ch",	"chain"),
-	ROD			(5.0292,	"rd",	"rod"),
-	POLE			(5.0292,	"pole",	"pole"),
-	PERCH		(5.0292,	"perch",	"perch"),
-	FATHOM		(1.8288,	"fathom",	"fathom"),
-	YHARD		(0.9144,	"yd",	"yard"),
-	FOOT		(0.3048,	"ft",	"foot",	"feet"),
-	HAND			(0.1016,	"h", "hand"),
-	INCH		(0.0254,	"in",	"in",	"inch",	"inches"),
-	MICORINCH	(2.54E-8,	"uin",	"µin",	"microinch",	"microinches"),
-	NAUTICAL_MILE(1852d,		"nmi",	"nautical mile"),
-	ASTRONOMICAL_UNIT(149597870691d,	"AU",	"astronomical unit"),
-	PICA			(0.0042175176,	"pica",	"pica"),
-	QUARTER		(402.336,	"qt",	"quarter",	"quarter"),
+	GIGAMETRE	(1E9,		"Gm",	"gigametre",	DefCvt.MI,	null,	"gigameter"),
+	MEAGAMETRE	(1E6,		"Mm",	"megametre",	DefCvt.MI,	null,	"megameter"),
+	KILOMETRE	(1000d,		"km",	"kilometre",	DefCvt.MI,	null,	"kilometer"),
+	HECTOMETRE	(100d,		"hm",	"hectometre",	DefCvt.MI,	null,	"hectometer"),
+	DECAMETRE	(10d,		"dam",	"decametre",	DefCvt.MI,	null,	"dekameter"),
+	METRE		(1d,		"m",	"metre",		DefCvt.FT_AND_IN,	null,	"meter"),
+	DECIMETRE	(0.1,		"dm",	"decimetre",	DefCvt.IN,	null,	"decimeter"),
+	CENTIMETRE	(0.01,		"cm",	"centimetre",	DefCvt.IN,	null,	"centimeter"),
+	MILLIMETRE	(0.001,		"mm",	"millimetre",	DefCvt.IN,	null,	"millimeter"),
+	MICROMETRE1	(1E-6,		"µm",	"micrometre",	DefCvt.IN,	null,	"micrometer"),
+	MICROMETRE2	(1E-6,		"um",	"micrometre",	DefCvt.IN,	null,	"micrometer"),
+	NANOMETRE	(1E-9,		"nm",	"nanometre",	DefCvt.IN,	null,	"nanometer"),
+	ANGSTROM1	(1E-10,		"Å",	"ångström",		DefCvt.IN),
+	ANGSTROM2	(1E-10,		"angstrom",	"ångström",	DefCvt.IN),
+	MILE			(1609.344,	"mi",	"mile",			DefCvt.KM),
+	FURLONG		(201.168,	"fur",	"furlong",		DefCvt.FT_M),
+	CHAIN		(20.11684023368,	"ch",	"chain",	DefCvt.FT_M),
+	ROD			(5.0292,	"rd",	"rod",			DefCvt.FT_M),
+	POLE			(5.0292,	"pole",	"pole",			DefCvt.FT_M),
+	PERCH		(5.0292,	"perch",	"perch",	DefCvt.FT_M),
+	FATHOM		(1.8288,	"fathom",	"fathom",	DefCvt.FT_M),
+	YHARD		(0.9144,	"yd",	"yard",			DefCvt.M),
+	FOOT		(0.3048,	"ft",	"foot",			DefCvt.M,	"feet"),
+	HAND			(0.1016,	"hand",	"hand",			DefCvt.IN_CM),
+	INCH		(0.0254,	"in",	"inch",			DefCvt.MM,	"inches"),
+	MICORINCH1	(2.54E-8,	"µin",	"microinch",	DefCvt.NM,	"microinches"),
+	MICORINCH2	(2.54E-8,	"uin",	"microinch",	DefCvt.NM,	"microinches"),
+//	NAUTICAL_MILE(1852d,		"nmi",	"nautical mile"),
+//	ASTRONOMICAL_UNIT(149597870691d,	"AU",	"astronomical unit"),
+//	PICA			(0.0042175176,	"pica",	"pica"),
+//	QUARTER		(402.336,	"qt",	"quarter",	"quarter"),
 
 	// masses: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/mass
 
-	GRAM		(0.001,		"g",	"gram"),
-	DECIGRAM	(0.0001,	"dg",	"decigram"),
-	KILOGRAM	(1d,		"kg",	"kilogram"),
-	POUND		(0.45359237, "pl",	"pound"),
-	OUNCE		(0.028349523125, "oz",	"ounce"),
-	TONNE		(1000d,		"t",	"tonne"),
-	METRIC_TON	(1000d,		"t",	"metric ton"),
+	KILOGRAM	(1d,		"kg",	"kilogram",		DefCvt.LB),
+	GRAM		(0.001,		"g",	"gram",			DefCvt.OZ),
+	DECIGRAM	(0.0001,	"dg",	"decigram",		DefCvt.OZ),
+	POUND		(0.45359237, "lb",	"pound",		DefCvt.KG),
+	OUNCE		(0.028349523125, "oz",	"ounce",	DefCvt.G),
+//	TONNE		(1000d,		"t",	"tonne",		),
+//	METRIC_TON	(1000d,		"t",	"metric ton",	),
 	;
 
 	private final double scale; // is always the SI base of the corresponding unit type
 	private final String unitSymbol;
 	private final String unitName;
+	private final DefCvt defaultConv;
 	private final String plural;
 	private final String usName;
 
-	Units(double scale, String unitSymbol, String unitName)
+	Units(double scale, String unitSymbol, String unitName, DefCvt defaultConv)
 	{
-		this(scale, unitSymbol, unitName, null, null);
+		this(scale, unitSymbol, unitName, defaultConv, null, null);
 	}
 
-	Units(double scale, String unitSymbol, String unitName, String plural)
+	Units(double scale, String unitSymbol, String unitName, DefCvt defaultConv, String plural)
 	{
-		this(scale, unitSymbol, unitName, plural, null);
+		this(scale, unitSymbol, unitName, defaultConv, plural, null);
 	}
 
-	Units(double scale, String unitSymbol, String unitName, String plural, String usName)
+	Units(double scale, String unitSymbol, String unitName, DefCvt defaultConv, String plural, String usName)
 	{
 		this.scale = scale;
 		this.unitSymbol = unitSymbol;
 		this.unitName = unitName;
+		this.defaultConv = defaultConv;
 		this.plural = plural;
 		this.usName = usName;
 	}
@@ -113,6 +115,11 @@ public enum Units
 	public final String getUnitName()
 	{
 		return unitName;
+	}
+
+	public final DefCvt getDefaultCvt()
+	{
+		return defaultConv;
 	}
 
 	/**

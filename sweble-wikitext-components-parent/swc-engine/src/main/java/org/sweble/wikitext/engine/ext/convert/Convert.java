@@ -18,10 +18,12 @@
 package org.sweble.wikitext.engine.ext.convert;
 
 import de.fau.cs.osr.utils.StringTools;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.sweble.wikitext.engine.ExpansionFrame;
@@ -32,15 +34,19 @@ import org.sweble.wikitext.engine.nodes.EngineRtData;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 
-
 /**
+ * Template which converts a measurement unit into another. (e.g.
+ * {{convert|1|m}} -> "1 metre (3 ft 3 in)")
+ *
  * @see https://en.wikipedia.org/wiki/Template:Convert/doc
  * @see https://en.wikipedia.org/wiki/Help:Convert
  */
 public class Convert
 		extends
-			ParserFunctionBase
+		ParserFunctionBase
 {
+	private static DecimalFormat fmt = createDecimalFormater();
+
 	public Convert()
 	{
 		super("convert");
@@ -57,29 +63,15 @@ public class Convert
 			ExpansionFrame frame,
 			List<? extends WtNode> args)
 	{
-		if (args.size() < 2)
-		{
-			return error("Too few arguments!");
-		}
-
-		ArrayList<String> strArgs = new ArrayList<String>(args.size());
-		for (int i = 0; i < args.size(); i++)
-		{
-			String tmpStr = expandArgToString(frame, args, i);
-			if (tmpStr == null)
-			{
-				return error("Cannot convert argument to string!");
-			}
-			strArgs.add(tmpStr);
-		}
-
-		double value = Double.NaN;
+		ArrayList<String> strArgs;
+		double value;
 		try
 		{
-			value = Double.parseDouble(strArgs.get(0));
-		} catch (NumberFormatException ex)
+			strArgs = parseArguments(frame, args);
+			value = parseNumber(strArgs.get(0));
+		} catch (Exception ex)
 		{
-			return error("Cannot convert value argument!");
+			return error(ex.getMessage());
 		}
 
 		Units srcUnit = searchUnitFromName(strArgs.get(1));
@@ -88,43 +80,37 @@ public class Convert
 			return error("Cannot convert source unit argument!");
 		}
 
-		Units destUnit = null;
-		if (args.size() > 2)
+		if (strArgs.size() <= 2)
 		{
-			destUnit = searchUnitFromName(strArgs.get(2));
-			if (destUnit == null)
-			{
-				return error("Cannot convert destination unit argument!");
-			}
+			String dest = convertToDefaultUnit(value, srcUnit, true);
+			String unitName = (Math.abs(value) == 1d)
+					? srcUnit.getUnitName() : srcUnit.getPluralName();
+			// Caution: Wikipedia uses '−' (U+2212) as minus sign!
+			String srcValueStr = strArgs.get(0).replaceAll("-", "−");
+			String result = srcValueStr + " " + unitName + " (" + dest + ")";
+			return nf().text(result);
 		}
 
-		double convertedValue = srcUnit.getScale() * value * destUnit.getScale();
+		Units destUnit = searchUnitFromName(strArgs.get(2));
+		if (destUnit == null)
+		{
+			return error("Cannot convert destination unit argument!");
+		}
+
+		double convertedValue = srcUnit.getScale() * value / destUnit.getScale();
 
 		String srcName;
 		if (Math.abs(value) == 1d)
 		{
 			srcName = srcUnit.getUnitName();
-		} else {
+		} else
+		{
 			srcName = srcUnit.getPluralName();
 		}
 
-		String convertedValStr;
-		if (Math.abs(convertedValue) < 1E-3)
-		{
-			NumberFormat formatter = new DecimalFormat("0.0E0");
-			convertedValStr = formatter.format(convertedValue);
-			convertedValStr = convertedValStr.replace("E", "×10");
-			convertedValStr = convertedValStr.replace("-", "−");
-		} else if (Math.abs(convertedValue) < 10d)
-		{
-			convertedValStr = String.format("%.2f", convertedValue);
-		} else
-		{
-			convertedValStr = String.format("%.1f", convertedValue);
-		}
-
-		String result = strArgs.get(0) + " " + srcName 
-				+ " (" + convertedValStr + " " + destUnit.getUnitSymbol() + ")";
+		String result = strArgs.get(0) + " " + srcName
+				+ " (" + formatNumberDefault(convertedValue)
+				+ " " + destUnit.getUnitSymbol() + ")";
 		return nf().text(result);
 	}
 
@@ -147,10 +133,45 @@ public class Convert
 		return format;
 	}
 
-	private EngSoftErrorNode error(String msg)
+	private EngSoftErrorNode error(final String msg)
 	{
 		return EngineRtData.set(nf().softError(
 				EngineRtData.set(nf().nowiki(StringTools.escHtml(msg)))));
+	}
+
+	/**
+	 *
+	 * @param frame
+	 * @param args
+	 * @throws IllegalArgumentException
+	 */
+	private ArrayList<String> parseArguments(
+			final ExpansionFrame frame,
+			final List<? extends WtNode> args)
+			throws IllegalArgumentException
+	{
+		if (args.size() < 2)
+		{
+			throw new IllegalArgumentException("Too few arguments!");
+		}
+
+		ArrayList<String> strArgs = new ArrayList<String>(args.size());
+		for (int i = 0; i < args.size(); i++)
+		{
+			String tmpStr = expandArgToString(frame, args, i);
+			if (tmpStr == null)
+			{
+				throw new IllegalArgumentException("Cannot convert argument to string!");
+			}
+			strArgs.add(tmpStr);
+		}
+
+		if (!isNumberValid(strArgs.get(0)))
+		{
+			throw new IllegalArgumentException("The first argument is not a vaild number!");
+		}
+
+		return strArgs;
 	}
 
 	/**
@@ -159,36 +180,31 @@ public class Convert
 	 * @param name The official name or symbol for the Unit.
 	 * @return The Unit corresponding to the name or null if no match was found.
 	 */
-	private Units searchUnitFromName(String name)
+	protected static Units searchUnitFromName(final String name)
 	{
-			for (Units ut : Units.values())
+		for (Units ut : Units.values())
+		{
+			if (name.equals(ut.getUnitSymbol()) || name.equals(ut.getUnitName()))
 			{
-				if (name.equals(ut.getUnitSymbol())
-						|| name.equals(ut.getUnitName()))
-				{
-					return ut;
-				}
+				return ut;
 			}
-			return null;
+		}
+		return null;
 	}
 
 	/**
-	 * Checks if the given number-string is probably a valid value. Since the
-	 * check is only made on appearing characters, there might be the chance
-	 * that a wrong used number syntax let a conversion with {@link parseNumber}
-	 * fail.
+	 * Checks if the given number string is probably a valid value. Since the
+	 * check is only made on appearing characters, there might be the chance,
+	 * that a wrong used number syntax let a conversion with
+	 * {@link parseNumber()} fail anyway.
 	 *
 	 * @param numberStr The number as string to check.
 	 * @return True if the string is most likely a valid value, otherwise false.
-	 * @see parseNumber
+	 * @see parseNumber()
 	 */
-	protected static boolean isNumberValid(String numberStr)
+	protected static boolean isNumberValid(final String numberStr)
 	{
-		if (numberStr.matches("[0-9,.e/⁄\\-\\+]+"))
-		{
-			return true;
-		}
-		return false;
+		return numberStr.matches("[0-9,.e/⁄\\-\\+–]+");
 	}
 
 	/**
@@ -208,19 +224,20 @@ public class Convert
 	 *
 	 * @param numberStr The number as string to convert.
 	 * @return The parsed number as double value.
-	 * @throws NumberFormatException Is thrown when the conversion failed.
+	 * @throws NumberFormatException
 	 * @see https://en.wikipedia.org/wiki/Template:Convert/doc#Numbers
 	 */
-	protected static double parseNumber(String numberStr) 
+	protected static double parseNumber(final String numberStr)
 			throws NumberFormatException
 	{
 		double value;
-		numberStr = numberStr.replace(",", ""); // remove thousand separators
+		String number = numberStr.replace(",", ""); // remove thousand separators
+		number = number.replaceAll("–", "-"); // replace all the pesky en dashes
 
-		Matcher fractionMatcher = Pattern.compile("[/⁄]").matcher(numberStr);
+		Matcher fractionMatcher = Pattern.compile("[/⁄]").matcher(number);
 		if (fractionMatcher.find())
 		{
-			String[] fraction = numberStr.split("//|[/⁄]");
+			String[] fraction = number.split("//|[/⁄]");
 			if (fraction.length != 2)
 			{
 				throw new NumberFormatException("Invalid fraction!");
@@ -228,8 +245,6 @@ public class Convert
 
 			String numerator = fraction[0];
 			String denominator = fraction[1];
-			double wholeNum = 0d; // whole number part for mixed fractions like 2½
-
 			int idxPlus = numerator.lastIndexOf('+');
 			int idxMinus = numerator.lastIndexOf('-');
 
@@ -239,6 +254,9 @@ public class Convert
 						"Should be a number, not a expression which requires"
 						+ " calculations!");
 			}
+
+			// whole number part for mixed fractions like 2 ½
+			double wholeNum = 0d;
 
 			int idx = Math.max(idxPlus, idxMinus);
 			if (idx != -1)
@@ -257,7 +275,9 @@ public class Convert
 
 			try
 			{
-				value = wholeNum + Double.parseDouble(numerator) / Double.parseDouble(denominator);
+				value = wholeNum
+						+ Double.parseDouble(numerator)
+						/ Double.parseDouble(denominator);
 			} catch (NumberFormatException ex)
 			{
 				throw ex;
@@ -265,11 +285,227 @@ public class Convert
 			return value;
 		}
 
-		try {
-			value = Double.parseDouble(numberStr);
-		} catch (NumberFormatException ex) {
+		try
+		{
+			value = Double.parseDouble(number);
+		} catch (NumberFormatException ex)
+		{
 			throw ex;
 		}
 		return value;
 	}
+
+	/**
+	 * Converts the given source unit value to its default destination unit.
+	 * This is necessary when no target unit was given via arguments.
+	 *
+	 * @param value The value to convert.
+	 * @param srcUnit The unit type of the given value.
+	 * @param isAbbreviated Determines whether the unit symbol or the entire
+	 * name is used as descriptor.
+	 * @return The converted and default formated number as String including the
+	 * unit descriptor (symbol or name), or null on error.
+	 * @see convertBaseTo()
+	 */
+	protected static String convertToDefaultUnit(
+			double value,
+			Units srcUnit,
+			boolean isAbbreviated)
+	{
+		assert (srcUnit != null);
+
+		final double siBasedValue = srcUnit.getScale() * value;
+		final DefCvt defCvt = srcUnit.getDefaultCvt();
+		final String[] cvtUnits = defCvt.getUnits();
+		final Units destUnitA = searchUnitFromName(cvtUnits[0]);
+		if (destUnitA == null)
+		{
+			return null;
+		}
+
+		if (cvtUnits.length <= 1)
+		{
+			return convertBaseTo(siBasedValue, destUnitA, isAbbreviated);
+		} else
+		{
+			if (defCvt.isMixedNotation())
+			{
+				int limit = defCvt.getMixedNotationLimit();
+				if (value >= limit)
+				{
+					return convertBaseTo(siBasedValue, destUnitA, isAbbreviated);
+				} else
+				{
+					Units majorUnit = destUnitA;
+					Units minorUnit = searchUnitFromName(cvtUnits[1]);
+
+					if (minorUnit == null)
+					{
+						return null;
+					}
+
+					double convertedVal = srcUnit.getScale() * value / minorUnit.getScale();
+					double transitScale = majorUnit.getScale() / minorUnit.getScale();
+					double convertedMinorVal = convertedVal % transitScale;
+					double convertedMajorVal = (convertedVal - convertedMinorVal) / transitScale;
+					String majorUnitName;
+					String minorUnitName;
+
+					if (isAbbreviated)
+					{
+						majorUnitName = majorUnit.getUnitSymbol();
+						minorUnitName = minorUnit.getUnitSymbol();
+					} else
+					{
+						if (value == 1d)
+						{
+							majorUnitName = majorUnit.getUnitName();
+							minorUnitName = minorUnit.getUnitName();
+						} else
+						{
+							majorUnitName = majorUnit.getPluralName();
+							minorUnitName = minorUnit.getPluralName();
+						}
+					}
+					DecimalFormat fmt = new DecimalFormat("0;−#");
+					return fmt.format(convertedMajorVal)
+							+ " " + majorUnitName
+							+ " " + fmt.format(convertedMinorVal)
+							+ " " + minorUnitName;
+				}
+			} else
+			{
+				Units destUnitB = searchUnitFromName(cvtUnits[1]);
+				if (destUnitB == null)
+				{
+					return null;
+				}
+
+				return convertBaseTo(siBasedValue, destUnitA, isAbbreviated)
+						+ "; " + convertBaseTo(siBasedValue, destUnitB, isAbbreviated);
+			}
+		}
+	}
+
+	/**
+	 * Converts a SI base value to the given destination unit and returns the
+	 * default formated Number with unit descriptor.
+	 *
+	 * @param siBaseValue The value given in a SI base unit.
+	 * @param destUnit The Unite the value gets converted to.
+	 * @param isAbbreviated Determines whether the unit symbol or the entire
+	 * name is used as descriptor.
+	 * @return The converted and default formated number as String including the
+	 * unit descriptor (symbol or name), or null on error.
+	 */
+	protected static String convertBaseTo(
+			double siBaseValue,
+			Units destUnit,
+			boolean isAbbreviated)
+	{
+		assert (destUnit != null);
+
+		double convertedValue = siBaseValue / destUnit.getScale();
+		String destNameStr;
+		if (isAbbreviated)
+		{
+			destNameStr = destUnit.getUnitSymbol();
+		} else
+		{
+			if (siBaseValue == 1d)
+			{
+				destNameStr = destUnit.getUnitName();
+			} else
+			{
+				destNameStr = destUnit.getPluralName();
+			}
+		}
+		return formatNumberDefault(convertedValue) + " " + destNameStr;
+	}
+
+	/**
+	 * Formats the given value like Wikipedia does on default. This includes the
+	 * conversion to scientific notation, adding of thousand separators and
+	 * rounding on various scales (depending on the amount of digits).
+	 *
+	 * @param convertedValue The value to format.
+	 * @return The formated value as string.
+	 */
+	protected static String formatNumberDefault(double convertedValue)
+	{
+		String convertedValStr;
+		final double absValue = Math.abs(convertedValue);
+		if (absValue < 1E-4)
+		{
+			DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(Locale.US);
+			symbols.setExponentSeparator("×10");
+			symbols.setMinusSign('−'); // uses en dash (U+2013)
+
+			DecimalFormat fmt = new DecimalFormat("0.0E0", symbols);
+			convertedValStr = fmt.format(convertedValue);
+		} else if (absValue < 0.001)
+		{
+			convertedValStr = formatNumberRounded(convertedValue, 5);
+		} else if (absValue < 0.01)
+		{
+			convertedValStr = formatNumberRounded(convertedValue, 4);
+		} else if (absValue < 0.1)
+		{
+			convertedValStr = formatNumberRounded(convertedValue, 3);
+		} else if (absValue < 1d)
+		{
+			convertedValStr = formatNumberRounded(convertedValue, 2);
+		} else if (absValue >= 10d)
+		{
+			if (absValue >= 100d)
+			{
+				// round large values to the two most significant digits
+				int i = 0;
+				for (int j = 100; j < absValue; j *= 10, i++);
+
+				convertedValue -= convertedValue % Math.pow(10d, i);
+			}
+
+			convertedValStr = formatNumberRounded(convertedValue, 0);
+		} else
+		{
+			convertedValStr = formatNumberRounded(convertedValue, 1);
+		}
+
+		return convertedValStr;
+	}
+
+	/**
+	 * Rounds and formats a value to the given count of digits after the
+	 * floating point.
+	 * 
+	 * @param convertedValue The value to format.
+	 * @param digitsAfterFloatingPoint Digits behind the floating point [0..17].
+	 * @return The formated value as String.
+	 */
+	protected static String formatNumberRounded(
+			double convertedValue,
+			int digitsAfterFloatingPoint)
+	{
+		if (digitsAfterFloatingPoint > 17)
+		{
+			digitsAfterFloatingPoint = 17;
+		}
+
+		fmt.setMinimumFractionDigits(digitsAfterFloatingPoint);
+		fmt.setMaximumFractionDigits(digitsAfterFloatingPoint);
+
+		return fmt.format(convertedValue);
+	}
+
+	static private DecimalFormat createDecimalFormater() {
+		DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(Locale.US);
+		symbols.setExponentSeparator("×10");
+		symbols.setMinusSign('−'); // uses en dash (U+2013)
+
+		// uses '−' (U+2212) as minus
+		DecimalFormat fmt = new DecimalFormat("0.0;−#", symbols);
+		fmt.setRoundingMode(RoundingMode.HALF_UP);
+		return fmt;
+	} 
 }
