@@ -31,6 +31,14 @@ public enum DefCvt
 	FT_M(Consts.FT_M),
 	KM_MI(Consts.KM_MI),
 	IN_CM(Consts.IN_CM),
+	GLY(Consts.GLY),
+	MLY(Consts.MLY),
+	KLY(Consts.KLY),
+	LY(Consts.LY),
+	MPC(Consts.MPC),
+	KPC(Consts.KPC),
+	PC(Consts.PC),
+	AU(Consts.AU),
 
 	OZ(Consts.OZ),
 	LB(Consts.LB),
@@ -114,6 +122,14 @@ public enum DefCvt
 		private final static String[] KM_MI = {"km", "mi"};
 		private final static String[] IN_CM = {"in", "cm"};
 		private final static String[] NM = {"nm"};
+		private final static String[] GLY = {"Gly"};
+		private final static String[] MLY = {"Mly"};
+		private final static String[] KLY = {"kly"};
+		private final static String[] LY = {"ly"};
+		private final static String[] MPC = {"Mpc"};
+		private final static String[] KPC = {"kpc"};
+		private final static String[] PC = {"pc"};
+		private final static String[] AU = {"AU"};
 
 		private final static String[] OZ = {"oz"};
 		private final static String[] LB = {"lb"};

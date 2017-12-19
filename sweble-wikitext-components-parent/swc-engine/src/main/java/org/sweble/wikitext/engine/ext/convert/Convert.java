@@ -18,6 +18,8 @@
 package org.sweble.wikitext.engine.ext.convert;
 
 import de.fau.cs.osr.utils.StringTools;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -46,6 +48,7 @@ public class Convert
 		ParserFunctionBase
 {
 	private static DecimalFormat fmt = createDecimalFormater();
+	private static DecimalFormat sciFmt = createScientificFormater();
 
 	public Convert()
 	{
@@ -74,24 +77,26 @@ public class Convert
 			return error(ex.getMessage());
 		}
 
-		Units srcUnit = searchUnitFromName(strArgs.get(1));
+		Units srcUnit = Units.searchUnitFromName(strArgs.get(1));
 		if (srcUnit == null)
 		{
 			return error("Cannot convert source unit argument!");
 		}
+
+		// Caution: Wikipedia uses '−' (\u2212) as minus sign!
+		String srcValueStr = strArgs.get(0).replaceAll("-", "−");
 
 		if (strArgs.size() <= 2)
 		{
 			String dest = convertToDefaultUnit(value, srcUnit, true);
 			String unitName = (Math.abs(value) == 1d)
 					? srcUnit.getUnitName() : srcUnit.getPluralName();
-			// Caution: Wikipedia uses '−' (U+2212) as minus sign!
-			String srcValueStr = strArgs.get(0).replaceAll("-", "−");
+
 			String result = srcValueStr + " " + unitName + " (" + dest + ")";
 			return nf().text(result);
 		}
 
-		Units destUnit = searchUnitFromName(strArgs.get(2));
+		Units destUnit = Units.searchUnitFromName(strArgs.get(2));
 		if (destUnit == null)
 		{
 			return error("Cannot convert destination unit argument!");
@@ -108,7 +113,7 @@ public class Convert
 			srcName = srcUnit.getPluralName();
 		}
 
-		String result = strArgs.get(0) + " " + srcName
+		String result = srcValueStr + " " + srcName
 				+ " (" + formatNumberDefault(convertedValue)
 				+ " " + destUnit.getUnitSymbol() + ")";
 		return nf().text(result);
@@ -172,24 +177,6 @@ public class Convert
 		}
 
 		return strArgs;
-	}
-
-	/**
-	 * Searches the Unit according to the given name.
-	 *
-	 * @param name The official name or symbol for the Unit.
-	 * @return The Unit corresponding to the name or null if no match was found.
-	 */
-	protected static Units searchUnitFromName(final String name)
-	{
-		for (Units ut : Units.values())
-		{
-			if (name.equals(ut.getUnitSymbol()) || name.equals(ut.getUnitName()))
-			{
-				return ut;
-			}
-		}
-		return null;
 	}
 
 	/**
@@ -317,7 +304,7 @@ public class Convert
 		final double siBasedValue = srcUnit.getScale() * value;
 		final DefCvt defCvt = srcUnit.getDefaultCvt();
 		final String[] cvtUnits = defCvt.getUnits();
-		final Units destUnitA = searchUnitFromName(cvtUnits[0]);
+		final Units destUnitA = Units.searchUnitFromName(cvtUnits[0]);
 		if (destUnitA == null)
 		{
 			return null;
@@ -337,7 +324,7 @@ public class Convert
 				} else
 				{
 					Units majorUnit = destUnitA;
-					Units minorUnit = searchUnitFromName(cvtUnits[1]);
+					Units minorUnit = Units.searchUnitFromName(cvtUnits[1]);
 
 					if (minorUnit == null)
 					{
@@ -375,7 +362,7 @@ public class Convert
 				}
 			} else
 			{
-				Units destUnitB = searchUnitFromName(cvtUnits[1]);
+				Units destUnitB = Units.searchUnitFromName(cvtUnits[1]);
 				if (destUnitB == null)
 				{
 					return null;
@@ -435,41 +422,27 @@ public class Convert
 	{
 		String convertedValStr;
 		final double absValue = Math.abs(convertedValue);
-		if (absValue < 1E-4)
+		if (absValue < 1E-9)
 		{
-			DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(Locale.US);
-			symbols.setExponentSeparator("×10");
-			symbols.setMinusSign('−'); // uses en dash (U+2013)
-
-			DecimalFormat fmt = new DecimalFormat("0.0E0", symbols);
-			convertedValStr = fmt.format(convertedValue);
-		} else if (absValue < 0.001)
-		{
-			convertedValStr = formatNumberRounded(convertedValue, 5);
-		} else if (absValue < 0.01)
-		{
-			convertedValStr = formatNumberRounded(convertedValue, 4);
-		} else if (absValue < 0.1)
-		{
-			convertedValStr = formatNumberRounded(convertedValue, 3);
+			convertedValStr = sciFmt.format(convertedValue);
 		} else if (absValue < 1d)
 		{
-			convertedValStr = formatNumberRounded(convertedValue, 2);
-		} else if (absValue >= 10d)
-		{
-			if (absValue >= 100d)
-			{
-				// round large values to the two most significant digits
-				int i = 0;
-				for (int j = 100; j < absValue; j *= 10, i++);
-
-				convertedValue -= convertedValue % Math.pow(10d, i);
-			}
-
-			convertedValStr = formatNumberRounded(convertedValue, 0);
-		} else
+			BigDecimal bd = new BigDecimal(convertedValue);
+			bd = bd.round(new MathContext(2));
+			convertedValStr = bd.toPlainString().replace("\u002D", "\u2212");
+		} else if (absValue < 10d)
 		{
 			convertedValStr = formatNumberRounded(convertedValue, 1);
+		} else if (absValue < 100d)
+		{
+			convertedValStr = formatNumberRounded(convertedValue, 0);
+		} else if (absValue < 1e9)
+		{
+			BigDecimal bd = new BigDecimal(convertedValue);
+			bd = bd.round(new MathContext(2));
+			convertedValStr = formatNumberRounded(bd.doubleValue(), 0);
+		} else {
+			convertedValStr = sciFmt.format(convertedValue);
 		}
 
 		return convertedValStr;
@@ -499,13 +472,20 @@ public class Convert
 	}
 
 	static private DecimalFormat createDecimalFormater() {
+		// uses '−' (\u2212) as minus
+		DecimalFormat fmt = new DecimalFormat("0.0;−#");
+		fmt.setRoundingMode(RoundingMode.HALF_UP);
+		fmt.setGroupingSize(3);
+		fmt.setGroupingUsed(true);
+		return fmt;
+	}
+
+	static private DecimalFormat createScientificFormater() {
 		DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(Locale.US);
 		symbols.setExponentSeparator("×10");
-		symbols.setMinusSign('−'); // uses en dash (U+2013)
+		symbols.setMinusSign('−'); // uses en dash (\u2013)
 
-		// uses '−' (U+2212) as minus
-		DecimalFormat fmt = new DecimalFormat("0.0;−#", symbols);
-		fmt.setRoundingMode(RoundingMode.HALF_UP);
+		DecimalFormat fmt = new DecimalFormat("0.0E0", symbols);
 		return fmt;
-	} 
+	}
 }

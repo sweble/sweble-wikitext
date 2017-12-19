@@ -32,20 +32,18 @@ public enum Units
 {
 	// lengths: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/length
 
-	GIGAMETRE	(1E9,		"Gm",	"gigametre",	DefCvt.MI,	null,	"gigameter"),
-	MEAGAMETRE	(1E6,		"Mm",	"megametre",	DefCvt.MI,	null,	"megameter"),
-	KILOMETRE	(1000d,		"km",	"kilometre",	DefCvt.MI,	null,	"kilometer"),
-	HECTOMETRE	(100d,		"hm",	"hectometre",	DefCvt.MI,	null,	"hectometer"),
-	DECAMETRE	(10d,		"dam",	"decametre",	DefCvt.MI,	null,	"dekameter"),
-	METRE		(1d,		"m",	"metre",		DefCvt.FT_AND_IN,	null,	"meter"),
-	DECIMETRE	(0.1,		"dm",	"decimetre",	DefCvt.IN,	null,	"decimeter"),
-	CENTIMETRE	(0.01,		"cm",	"centimetre",	DefCvt.IN,	null,	"centimeter"),
-	MILLIMETRE	(0.001,		"mm",	"millimetre",	DefCvt.IN,	null,	"millimeter"),
-	MICROMETRE1	(1E-6,		"µm",	"micrometre",	DefCvt.IN,	null,	"micrometer"),
-	MICROMETRE2	(1E-6,		"um",	"micrometre",	DefCvt.IN,	null,	"micrometer"),
-	NANOMETRE	(1E-9,		"nm",	"nanometre",	DefCvt.IN,	null,	"nanometer"),
-	ANGSTROM1	(1E-10,		"Å",	"ångström",		DefCvt.IN),
-	ANGSTROM2	(1E-10,		"angstrom",	"ångström",	DefCvt.IN),
+	GIGAMETRE	(1e9,		"Gm",	"gigametre",	DefCvt.MI,	null,	null,	"gigameter"),
+	MEAGAMETRE	(1e6,		"Mm",	"megametre",	DefCvt.MI,	null,	null,	"megameter"),
+	KILOMETRE	(1000d,		"km",	"kilometre",	DefCvt.MI,	null,	null,	"kilometer"),
+	HECTOMETRE	(100d,		"hm",	"hectometre",	DefCvt.MI,	null,	null,	"hectometer"),
+	DECAMETRE	(10d,		"dam",	"decametre",	DefCvt.MI,	null,	null,	"dekameter"),
+	METRE		(1d,		"m",	"metre",		DefCvt.FT_AND_IN, null,	null,	"meter"),
+	DECIMETRE	(0.1,		"dm",	"decimetre",	DefCvt.IN,	null,	null,	"decimeter"),
+	CENTIMETRE	(0.01,		"cm",	"centimetre",	DefCvt.IN,	null,	null,	"centimeter"),
+	MILLIMETRE	(0.001,		"mm",	"millimetre",	DefCvt.IN,	null,	null,	"millimeter"),
+	MICROMETRE	(1e-6,		"µm",	"micrometre",	DefCvt.IN, UnitCodes.MICROMETRE,	null,	"micrometer"),
+	NANOMETRE	(1e-9,		"nm",	"nanometre",	DefCvt.IN,	null,	null,	"nanometer"),
+	ANGSTROM	(1e-10,		"Å",	"ångström",		DefCvt.IN,	UnitCodes.ANGSTROM, null, null),
 	MILE			(1609.344,	"mi",	"mile",			DefCvt.KM),
 	FURLONG		(201.168,	"fur",	"furlong",		DefCvt.FT_M),
 	CHAIN		(20.11684023368,	"ch",	"chain",	DefCvt.FT_M),
@@ -57,12 +55,20 @@ public enum Units
 	FOOT		(0.3048,	"ft",	"foot",			DefCvt.M,	"feet"),
 	HAND			(0.1016,	"hand",	"hand",			DefCvt.IN_CM),
 	INCH		(0.0254,	"in",	"inch",			DefCvt.MM,	"inches"),
-	MICORINCH1	(2.54E-8,	"µin",	"microinch",	DefCvt.NM,	"microinches"),
-	MICORINCH2	(2.54E-8,	"uin",	"microinch",	DefCvt.NM,	"microinches"),
-//	NAUTICAL_MILE(1852d,		"nmi",	"nautical mile"),
-//	ASTRONOMICAL_UNIT(149597870691d,	"AU",	"astronomical unit"),
-//	PICA			(0.0042175176,	"pica",	"pica"),
-//	QUARTER		(402.336,	"qt",	"quarter",	"quarter"),
+	MICORINCH	(2.54e-8,	"µin",	"microinch",	DefCvt.NM, UnitCodes.MICROINCH, null,	"microinches"),
+	BANANA		(0.1778,	"banana",	"banana",	DefCvt.IN_CM),
+	NAUTICAL_MILE(1852d,		"nmi",	"nautical mile", DefCvt.KM_MI),
+	NAUTICAL_MILE_OLD_BRIT(1853.184,	"(Brit) nmi",	"British nautical mile", DefCvt.KM_MI, UnitCodes.NAUTICAL_MILE_OLD_BRIT,null,null),
+	NAUTICAL_MILE_OLD_US(1853.24496,		"(pre‑1954 US) nmi",	"(pre-1954 US) nautical mile", DefCvt.KM_MI, UnitCodes.NAUTICAL_MILE_OLD_US, null,null),
+	GIGAPARSEC(3.0856776e25,	"Gpc",	"gigaparsec",	DefCvt.GLY),
+	MEGAPARSEC(3.0856776e22,	"Mpc",	"megaparsec",	DefCvt.MLY),
+	KILOPARSEC(3.0856776e19,	"kpc",	"kiloparsec",	DefCvt.KLY),
+	PARSEC(3.0856776e16,		"pc",	"parsec",		DefCvt.LY),
+	GIGALIGHT_YEAR(9.4607304725808e24,	"Gly",	"gigalight-year", DefCvt.MPC),
+	MEGALIGHT_YEAR(9.4607304725808e21,	"Mly",	"megalight-year", DefCvt.KPC),
+	KILOLIGHT_YEAR(9.4607304725808e18,	"kly",	"kilolight-year", DefCvt.PC),
+	LIGHT_YEAR(9460730472580800d,		"ly",	"light-year", DefCvt.AU),
+	ASTRONOMICAL_UNIT(149597870691d,	"AU",	"astronomical unit", DefCvt.KM_MI),
 
 	// masses: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/mass
 
@@ -78,25 +84,27 @@ public enum Units
 	private final double scale; // is always the SI base of the corresponding unit type
 	private final String unitSymbol;
 	private final String unitName;
+	private final String[] unitCodes;
 	private final DefCvt defaultConv;
 	private final String plural;
 	private final String usName;
 
 	Units(double scale, String unitSymbol, String unitName, DefCvt defaultConv)
 	{
-		this(scale, unitSymbol, unitName, defaultConv, null, null);
+		this(scale, unitSymbol, unitName, defaultConv, null, null, null);
 	}
 
 	Units(double scale, String unitSymbol, String unitName, DefCvt defaultConv, String plural)
 	{
-		this(scale, unitSymbol, unitName, defaultConv, plural, null);
+		this(scale, unitSymbol, unitName, defaultConv, null, plural, null);
 	}
 
-	Units(double scale, String unitSymbol, String unitName, DefCvt defaultConv, String plural, String usName)
+	Units(double scale, String unitSymbol, String unitName, DefCvt defaultConv, String[] unitCodes, String plural, String usName)
 	{
 		this.scale = scale;
 		this.unitSymbol = unitSymbol;
 		this.unitName = unitName;
+		this.unitCodes = unitCodes;
 		this.defaultConv = defaultConv;
 		this.plural = plural;
 		this.usName = usName;
@@ -115,6 +123,11 @@ public enum Units
 	public final String getUnitName()
 	{
 		return unitName;
+	}
+
+	public final String[] getUnitCodes()
+	{
+		return unitCodes;
 	}
 
 	public final DefCvt getDefaultCvt()
@@ -146,5 +159,43 @@ public enum Units
 	public final String getUsName()
 	{
 		return usName;
+	}
+
+	/**
+	 * Searches the Unit according to the given name.
+	 *
+	 * @param name The official name, symbol or alternating code for the Unit.
+	 * @return The Unit corresponding to the name or null if no match was found.
+	 */
+	public static Units searchUnitFromName(final String name)
+	{
+		for (Units ut : Units.values())
+		{
+			if (name.equals(ut.getUnitSymbol()) || name.equals(ut.getUnitName()))
+			{
+				return ut;
+			}
+
+			if (ut.getUnitCodes() != null)
+			{
+				for (String code : ut.getUnitCodes())
+				{
+					if (name.equals(code))
+					{
+						return ut;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	private static class UnitCodes
+	{
+		private final static String[] MICROMETRE = {"um"};
+		private final static String[] ANGSTROM = {"angstrom"};
+		private final static String[] MICROINCH = {"uin"};
+		private final static String[] NAUTICAL_MILE_OLD_BRIT = {"oldUKnmi", "admiralty nmi", "Brnmi", "admi"};
+		private final static String[] NAUTICAL_MILE_OLD_US = {"oldUSnmi", "pre1954USnmi", "pre1954U.S.nmi"};
 	}
 }
