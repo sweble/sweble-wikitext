@@ -422,14 +422,14 @@ public class Convert
 	{
 		String convertedValStr;
 		final double absValue = Math.abs(convertedValue);
-		if (absValue < 1E-9)
+		if (absValue < 1e-9)
 		{
 			convertedValStr = sciFmt.format(convertedValue);
 		} else if (absValue < 1d)
 		{
 			BigDecimal bd = new BigDecimal(convertedValue);
 			bd = bd.round(new MathContext(2));
-			convertedValStr = bd.toPlainString().replace("\u002D", "\u2212");
+			convertedValStr = bd.toPlainString().replace('\u002D', '\u2212');
 		} else if (absValue < 10d)
 		{
 			convertedValStr = formatNumberRounded(convertedValue, 1);
@@ -453,16 +453,17 @@ public class Convert
 	 * floating point.
 	 * 
 	 * @param convertedValue The value to format.
-	 * @param digitsAfterFloatingPoint Digits behind the floating point [0..17].
+	 * @param digitsAfterFloatingPoint Digits behind the floating point [0..16].
 	 * @return The formated value as String.
 	 */
 	protected static String formatNumberRounded(
 			double convertedValue,
 			int digitsAfterFloatingPoint)
 	{
-		if (digitsAfterFloatingPoint > 17)
+		final int MAX_DIGITS_AFTER_FLOATING_POINT = 16;
+		if (digitsAfterFloatingPoint > MAX_DIGITS_AFTER_FLOATING_POINT)
 		{
-			digitsAfterFloatingPoint = 17;
+			digitsAfterFloatingPoint = MAX_DIGITS_AFTER_FLOATING_POINT;
 		}
 
 		fmt.setMinimumFractionDigits(digitsAfterFloatingPoint);

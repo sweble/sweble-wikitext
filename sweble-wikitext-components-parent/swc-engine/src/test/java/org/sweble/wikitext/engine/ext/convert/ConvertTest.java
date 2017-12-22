@@ -73,4 +73,50 @@ public class ConvertTest
 	{
 		Convert.parseNumber("-2+1⁄2");
 	}
+
+	@Test
+	public void testFormatNumberDefault()
+	{
+		assertEquals("1.0", Convert.formatNumberDefault(1));
+		assertEquals("−1.0", Convert.formatNumberDefault(-1));
+		assertEquals("11", Convert.formatNumberDefault(11));
+		assertEquals("110", Convert.formatNumberDefault(111));
+		assertEquals("120", Convert.formatNumberDefault(115));
+		assertEquals("1,100", Convert.formatNumberDefault(1111));
+		assertEquals("0.10", Convert.formatNumberDefault(0.1));
+		assertEquals("0.11", Convert.formatNumberDefault(0.11));
+		assertEquals("0.11", Convert.formatNumberDefault(0.111));
+		assertEquals("0.11", Convert.formatNumberDefault(0.114));
+		assertEquals("0.12", Convert.formatNumberDefault(0.115));
+		assertEquals("−0.11", Convert.formatNumberDefault(-0.114));
+		assertEquals("−0.12", Convert.formatNumberDefault(-0.115));
+		assertEquals("0.0011", Convert.formatNumberDefault(0.0011));
+		assertEquals("0.0000000010", Convert.formatNumberDefault(0.000000001));
+		assertEquals("1.0×10−10", Convert.formatNumberDefault(0.0000000001));
+		assertEquals("−1.0×10−10", Convert.formatNumberDefault(-0.0000000001));
+		assertEquals("11,000,000", Convert.formatNumberDefault(11000000));
+		assertEquals("−11,000,000", Convert.formatNumberDefault(-11000000));
+		assertEquals("1.1×1010", Convert.formatNumberDefault(11000000000d));
+	}
+
+	@Test
+	public void testFormatNumberRounded()
+	{
+		assertEquals("1", Convert.formatNumberRounded(1.123456789, 0));
+		assertEquals("1.1", Convert.formatNumberRounded(1.123456789, 1));
+		assertEquals("1.12", Convert.formatNumberRounded(1.123456789, 2));
+		assertEquals("1.123", Convert.formatNumberRounded(1.123456789, 3));
+		assertEquals("1", Convert.formatNumberRounded(1.4, 0));
+		assertEquals("2", Convert.formatNumberRounded(1.5, 0));
+		assertEquals("−1", Convert.formatNumberRounded(-1.4, 0));
+		assertEquals("−2", Convert.formatNumberRounded(-1.5, 0));
+		assertEquals("1", Convert.formatNumberRounded(1.123456789, -1));
+		assertEquals("1.123456789012346", Convert.formatNumberRounded(1.123456789012345678, 15));
+		assertEquals("1.1234567890123457", Convert.formatNumberRounded(1.123456789012345678, 16));
+		assertEquals("1.1234567890123457", Convert.formatNumberRounded(1.123456789012345678, 17));
+		assertEquals("−1.123456789012346", Convert.formatNumberRounded(-1.123456789012345678, 15));
+		assertEquals("−1.1234567890123457", Convert.formatNumberRounded(-1.123456789012345678, 16));
+		assertEquals("−1.1234567890123457", Convert.formatNumberRounded(-1.123456789012345678, 17));
+		assertEquals("100,000.00", Convert.formatNumberRounded(100000, 2));
+	}
 }
