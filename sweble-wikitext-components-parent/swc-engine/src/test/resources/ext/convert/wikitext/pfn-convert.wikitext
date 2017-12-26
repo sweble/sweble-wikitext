@@ -79,3 +79,9 @@
 {{convert|3|m|cm|abbr=off}}
 {{convert|3|m|cm|abbr=values}}
 {{convert|3|m|cm|abbr=~}}
+{{convert|1|m|sp=us}}
+{{convert|2|m|sp=us}}
+{{convert|1|m|cm|sp=us|abbr=off}}
+{{convert|2|m|cm|sp=us|abbr=off}}
+{{convert|100|cm|m|abbr=off|sp=us}}
+{{convert|200|cm|m|abbr=off|sp=us}}
