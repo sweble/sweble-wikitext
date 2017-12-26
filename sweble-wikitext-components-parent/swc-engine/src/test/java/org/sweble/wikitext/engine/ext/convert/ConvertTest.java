@@ -92,11 +92,11 @@ public class ConvertTest
 		assertEquals("−0.12", Convert.formatNumberDefault(-0.115));
 		assertEquals("0.0011", Convert.formatNumberDefault(0.0011));
 		assertEquals("0.0000000010", Convert.formatNumberDefault(0.000000001));
-		assertEquals("1.0×10−10", Convert.formatNumberDefault(0.0000000001));
-		assertEquals("−1.0×10−10", Convert.formatNumberDefault(-0.0000000001));
+		assertEquals("1.0×10<sup>−10</sup>", Convert.formatNumberDefault(0.0000000001));
+		assertEquals("−1.0×10<sup>−10</sup>", Convert.formatNumberDefault(-0.0000000001));
 		assertEquals("11,000,000", Convert.formatNumberDefault(11000000));
 		assertEquals("−11,000,000", Convert.formatNumberDefault(-11000000));
-		assertEquals("1.1×1010", Convert.formatNumberDefault(11000000000d));
+		assertEquals("1.1×10<sup>10</sup>", Convert.formatNumberDefault(11000000000d));
 	}
 
 	@Test

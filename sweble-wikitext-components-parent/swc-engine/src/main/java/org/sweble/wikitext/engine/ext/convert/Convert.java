@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.lang3.StringUtils;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.config.WikiConfig;
@@ -49,6 +50,23 @@ public class Convert
 {
 	private static DecimalFormat fmt = createDecimalFormater();
 	private static DecimalFormat sciFmt = createScientificFormater();
+	private static int DEFAULT_SIG_FIG = 2;
+	private int sigFig = DEFAULT_SIG_FIG; // significant figures
+
+	/**
+	 * The different abbreviation modes:
+	 *
+	 * "out" (def): 2 metres (6 ft 7 in)
+	 * "on"       : 2 m (6 ft 7 in)
+	 * "unit"     : 2 m (6 ft 7 in)
+	 * "in"       : 2 m (6 feet 7 inches)
+	 * "none"     : 2 metres (6 feet 7 inches)
+	 * "off"      : 2 metres (6 feet 7 inches)
+	 * "values"   : 2 (6 ft 7 in)
+	 * "~"        : 2 metres [m] (6 ft 7 in)
+	 */
+	static enum AbbreviationMode {OUT, ON, UNIT, IN, NONE, OFF, VALUES, TILDE};
+	private AbbreviationMode abbrMode = AbbreviationMode.OUT;
 
 	public Convert()
 	{
@@ -88,11 +106,13 @@ public class Convert
 
 		if (strArgs.size() <= 2)
 		{
-			String dest = convertToDefaultUnit(value, srcUnit, true);
-			String unitName = (Math.abs(value) == 1d)
-					? srcUnit.getUnitName() : srcUnit.getPluralName();
+			String dest = convertToDefaultUnit(value, srcUnit, abbrMode);
+			String srcUnitName = getSourceUnitName(srcUnit, abbrMode, !(Math.abs(value) == 1d)); 
+			if (srcUnitName == null) {
+				return error("Connot determinate output format!");
+			}
 
-			String result = srcValueStr + " " + unitName + " (" + dest + ")";
+			String result = srcValueStr + " " + srcUnitName + "(" + dest + ")";
 			return nf().text(result);
 		}
 
@@ -102,20 +122,21 @@ public class Convert
 			return error("Cannot convert destination unit argument!");
 		}
 
-		double convertedValue = srcUnit.getScale() * value / destUnit.getScale();
-
-		String srcName;
-		if (Math.abs(value) == 1d)
+		if (!Units.isSameUnitType(srcUnit, destUnit))
 		{
-			srcName = srcUnit.getUnitName();
-		} else
-		{
-			srcName = srcUnit.getPluralName();
+			return error("Connot convert units with different types!");
 		}
 
-		String result = srcValueStr + " " + srcName
-				+ " (" + formatNumberDefault(convertedValue)
-				+ " " + destUnit.getUnitSymbol() + ")";
+		double convertedValue = srcUnit.getScale() * value / destUnit.getScale();
+		String srcUnitName = getSourceUnitName(srcUnit, abbrMode, !(Math.abs(value) == 1d)); 
+		if (srcUnitName == null) {
+			return error("Connot determinate output format!");
+		}
+
+		String destUnitName = getDestUnitName(destUnit, abbrMode, !(Math.abs(convertedValue) == 1d));
+		String result = srcValueStr + " " + srcUnitName
+				+ "(" + formatNumberDefault(convertedValue, sigFig)
+				+ destUnitName + ")";
 		return nf().text(result);
 	}
 
@@ -145,6 +166,8 @@ public class Convert
 	}
 
 	/**
+	 * Parses the given arguments into a String list and also resolves some
+	 * formating parameters.
 	 *
 	 * @param frame
 	 * @param args
@@ -174,6 +197,51 @@ public class Convert
 		if (!isNumberValid(strArgs.get(0)))
 		{
 			throw new IllegalArgumentException("The first argument is not a vaild number!");
+		}
+
+		for (int i = 1; i < strArgs.size(); i++)
+		{
+			if (strArgs.get(i).contains("="))
+			{
+				final String[] spl = strArgs.get(i).split("=");
+				final String arg = StringUtils.trim(spl[0]);
+				final String opt = StringUtils.trim(spl[1]);
+				if (arg.equals("abbr"))
+				{
+
+					if (opt.equals("in")) {
+						abbrMode = AbbreviationMode.IN;
+					} else if (opt.equals("off") || opt.equals("none")) {
+						abbrMode = AbbreviationMode.OFF; // same as "none"
+					} else if (opt.equals("on")) {
+						abbrMode = AbbreviationMode.ON;
+					} else if (opt.equals("out")) {
+						abbrMode = AbbreviationMode.OUT;
+					} else if (opt.equals("unit")) {
+						abbrMode = AbbreviationMode.UNIT;
+					} else if (opt.equals("values")) {
+						abbrMode = AbbreviationMode.VALUES;
+					} else if (opt.equals("~")) {
+						abbrMode = AbbreviationMode.TILDE;
+					} else {
+						throw new IllegalArgumentException("Invalid abbreviation option!");
+					}
+					// parameter is resloved, so no further processing
+					strArgs.remove(i); 
+				} else if (arg.equals("sigfig"))
+				{
+					sigFig = Integer.parseInt(opt);
+					// TODO: ...
+					// parameter is resloved, so no further processing
+					strArgs.remove(i); // do not process any further
+				} else
+				{
+					throw new IllegalArgumentException("Unknow argument!");
+				}
+			} else
+			{
+				// TODO: search for other options
+			}
 		}
 
 		return strArgs;
@@ -288,8 +356,8 @@ public class Convert
 	 *
 	 * @param value The value to convert.
 	 * @param srcUnit The unit type of the given value.
-	 * @param isAbbreviated Determines whether the unit symbol or the entire
-	 * name is used as descriptor.
+	 * @param abbreviationMode Determines the way to describe the unit (symbol
+	 * or name).
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
 	 * @see convertBaseTo()
@@ -297,7 +365,7 @@ public class Convert
 	protected static String convertToDefaultUnit(
 			double value,
 			Units srcUnit,
-			boolean isAbbreviated)
+			AbbreviationMode abbreviationMode)
 	{
 		assert (srcUnit != null);
 
@@ -312,7 +380,7 @@ public class Convert
 
 		if (cvtUnits.length <= 1)
 		{
-			return convertBaseTo(siBasedValue, destUnitA, isAbbreviated);
+			return convertBaseTo(siBasedValue, destUnitA, abbreviationMode);
 		} else
 		{
 			if (defCvt.isMixedNotation())
@@ -320,7 +388,7 @@ public class Convert
 				int limit = defCvt.getMixedNotationLimit();
 				if (value >= limit)
 				{
-					return convertBaseTo(siBasedValue, destUnitA, isAbbreviated);
+					return convertBaseTo(siBasedValue, destUnitA, abbreviationMode);
 				} else
 				{
 					Units majorUnit = destUnitA;
@@ -338,22 +406,33 @@ public class Convert
 					String majorUnitName;
 					String minorUnitName;
 
-					if (isAbbreviated)
+					switch (abbreviationMode)
 					{
-						majorUnitName = majorUnit.getUnitSymbol();
-						minorUnitName = minorUnit.getUnitSymbol();
-					} else
-					{
-						if (value == 1d)
-						{
-							majorUnitName = majorUnit.getUnitName();
-							minorUnitName = minorUnit.getUnitName();
-						} else
-						{
-							majorUnitName = majorUnit.getPluralName();
-							minorUnitName = minorUnit.getPluralName();
-						}
+						case OUT:
+						case ON:
+						case UNIT:
+						case VALUES:
+						case TILDE:
+							majorUnitName = majorUnit.getUnitSymbol();
+							minorUnitName = minorUnit.getUnitSymbol();
+							break;
+						case IN:
+						case NONE:
+						case OFF:
+							if (value == 1d)
+							{
+								majorUnitName = majorUnit.getUnitName();
+								minorUnitName = minorUnit.getUnitName();
+							} else
+							{
+								majorUnitName = majorUnit.getPluralName();
+								minorUnitName = minorUnit.getPluralName();
+							}
+							break;
+						default:
+							return null;
 					}
+
 					DecimalFormat fmt = new DecimalFormat("0;−#");
 					return fmt.format(convertedMajorVal)
 							+ " " + majorUnitName
@@ -368,8 +447,8 @@ public class Convert
 					return null;
 				}
 
-				return convertBaseTo(siBasedValue, destUnitA, isAbbreviated)
-						+ "; " + convertBaseTo(siBasedValue, destUnitB, isAbbreviated);
+				return convertBaseTo(siBasedValue, destUnitA, abbreviationMode)
+						+ "; " + convertBaseTo(siBasedValue, destUnitB, abbreviationMode);
 			}
 		}
 	}
@@ -380,7 +459,7 @@ public class Convert
 	 *
 	 * @param siBaseValue The value given in a SI base unit.
 	 * @param destUnit The Unite the value gets converted to.
-	 * @param isAbbreviated Determines whether the unit symbol or the entire
+	 * @param abbreviationMode Determines whether the unit symbol or the entire
 	 * name is used as descriptor.
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
@@ -388,26 +467,18 @@ public class Convert
 	protected static String convertBaseTo(
 			double siBaseValue,
 			Units destUnit,
-			boolean isAbbreviated)
+			AbbreviationMode abbreviationMode)
 	{
 		assert (destUnit != null);
 
 		double convertedValue = siBaseValue / destUnit.getScale();
-		String destNameStr;
-		if (isAbbreviated)
+		String destNameStr = getDestUnitName(destUnit, abbreviationMode, !(Math.abs(siBaseValue) == 1d));
+		if (destNameStr == null)
 		{
-			destNameStr = destUnit.getUnitSymbol();
-		} else
-		{
-			if (siBaseValue == 1d)
-			{
-				destNameStr = destUnit.getUnitName();
-			} else
-			{
-				destNameStr = destUnit.getPluralName();
-			}
+			return null;
 		}
-		return formatNumberDefault(convertedValue) + " " + destNameStr;
+
+		return formatNumberDefault(convertedValue) + destNameStr;
 	}
 
 	/**
@@ -416,9 +487,12 @@ public class Convert
 	 * rounding on various scales (depending on the amount of digits).
 	 *
 	 * @param convertedValue The value to format.
+	 * @param sigFig The count of significant figures to round.
 	 * @return The formated value as string.
 	 */
-	protected static String formatNumberDefault(double convertedValue)
+	protected static String formatNumberDefault(
+			double convertedValue,
+			int sigFig)
 	{
 		String convertedValStr;
 		final double absValue = Math.abs(convertedValue);
@@ -439,13 +513,18 @@ public class Convert
 		} else if (absValue < 1e9)
 		{
 			BigDecimal bd = new BigDecimal(convertedValue);
-			bd = bd.round(new MathContext(2));
+			bd = bd.round(new MathContext(sigFig));
 			convertedValStr = formatNumberRounded(bd.doubleValue(), 0);
 		} else {
 			convertedValStr = sciFmt.format(convertedValue);
 		}
 
 		return convertedValStr;
+	}
+
+	protected static String formatNumberDefault(double convertedValue)
+	{
+		return formatNumberDefault(convertedValue, DEFAULT_SIG_FIG);
 	}
 
 	/**
@@ -466,10 +545,11 @@ public class Convert
 			digitsAfterFloatingPoint = MAX_DIGITS_AFTER_FLOATING_POINT;
 		}
 
-		fmt.setMinimumFractionDigits(digitsAfterFloatingPoint);
-		fmt.setMaximumFractionDigits(digitsAfterFloatingPoint);
+		DecimalFormat tmpFmt = (DecimalFormat) fmt.clone();
+		tmpFmt.setMinimumFractionDigits(digitsAfterFloatingPoint);
+		tmpFmt.setMaximumFractionDigits(digitsAfterFloatingPoint);
 
-		return fmt.format(convertedValue);
+		return tmpFmt.format(convertedValue);
 	}
 
 	static private DecimalFormat createDecimalFormater() {
@@ -483,10 +563,88 @@ public class Convert
 
 	static private DecimalFormat createScientificFormater() {
 		DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(Locale.US);
-		symbols.setExponentSeparator("×10");
+		symbols.setExponentSeparator("×10<sup>");
 		symbols.setMinusSign('−'); // uses en dash (\u2013)
 
 		DecimalFormat fmt = new DecimalFormat("0.0E0", symbols);
+		fmt.setPositiveSuffix("</sup>");
+		fmt.setNegativeSuffix("</sup>");
 		return fmt;
+	}
+
+	static private String getSourceUnitName(Units srcUnit,
+			AbbreviationMode abbrMode,
+			boolean isPlural)
+	{
+		String srcUnitName;
+		switch (abbrMode)
+		{
+			case ON:
+			case UNIT:
+			case IN:
+				srcUnitName = srcUnit.getUnitSymbol() + " ";
+				break;
+			case OUT:
+			case NONE:
+			case OFF:
+				if (isPlural)
+				{
+					srcUnitName = srcUnit.getPluralName() + " ";
+				} else
+				{
+					srcUnitName = srcUnit.getUnitName() + " ";
+				}
+				break;
+			case VALUES:
+				srcUnitName = "";
+				break;
+			case TILDE:
+				if (isPlural)
+				{
+					srcUnitName = srcUnit.getPluralName();
+				} else
+				{
+					srcUnitName = srcUnit.getUnitName();
+				}
+				srcUnitName += " [" + srcUnit.getUnitSymbol()+ "] ";
+				break;
+			default:
+				return null;
+		}
+		return srcUnitName;
+	}
+
+	private static String getDestUnitName(
+			Units destUnit,
+			AbbreviationMode abbrMode,
+			boolean isPlural)
+	{
+		String destUnitName;
+		switch (abbrMode)
+		{
+			case OUT:
+			case ON:
+			case UNIT:
+			case TILDE:
+				destUnitName = " " + destUnit.getUnitSymbol();
+				break;
+			case VALUES:
+				destUnitName = "";
+				break;
+			case IN:
+			case NONE:
+			case OFF:
+				if (isPlural)
+				{
+					destUnitName = " " + destUnit.getPluralName();
+				} else
+				{
+					destUnitName = " " + destUnit.getUnitName();
+				}
+				break;
+			default:
+				return null;
+		}
+		return destUnitName;
 	}
 }

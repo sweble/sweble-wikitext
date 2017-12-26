@@ -59,3 +59,23 @@
 {{convert|1|ly|km}}
 {{convert|1|AU|km}}
 {{convert|-1|Gly|km}}
+{{convert|2|Gly|nm}}
+{{convert|1|AU|km|sigfig=4}}
+{{convert|1|AU|km|sigfig = 6}}
+{{convert|2|m}}
+{{convert|2|m|abbr=out}}
+{{convert|2|m|abbr=on}}
+{{convert|2|m|abbr=unit}}
+{{convert|2|m|abbr=in}}
+{{convert|2|m|abbr=none}}
+{{convert|2|m|abbr=off}}
+{{convert|2|m|abbr=values}}
+{{convert|2|m|abbr=~}}
+{{convert|3|m|cm|abbr=out}}
+{{convert|3|m|cm|abbr=on}}
+{{convert|3|m|cm|abbr=unit}}
+{{convert|3|m|cm|abbr=in}}
+{{convert|3|m|cm|abbr=none}}
+{{convert|3|m|cm|abbr=off}}
+{{convert|3|m|cm|abbr=values}}
+{{convert|3|m|cm|abbr=~}}
