@@ -85,3 +85,20 @@
 {{convert|2|m|cm|sp=us|abbr=off}}
 {{convert|100|cm|m|abbr=off|sp=us}}
 {{convert|200|cm|m|abbr=off|sp=us}}
+{{convert|1|mg}}
+{{convert|1|short ton}}
+{{convert|1|ST}}
+{{convert|1|long ton}}
+{{convert|1|LT}}
+{{convert|1|long cwt}}
+{{convert|1|short cwt}}
+{{convert|1|long qtr}}
+{{convert|1|short qtr}}
+{{convert|1|st}}
+{{convert|1|dram}}
+{{convert|1|drachm}}
+{{convert|1|gr}}
+{{convert|1|troy pound}}
+{{convert|1|ozt}}
+{{convert|1|dwt}}
+{{convert|1|carat}}

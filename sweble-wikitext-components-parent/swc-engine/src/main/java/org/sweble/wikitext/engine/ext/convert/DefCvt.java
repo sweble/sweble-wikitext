@@ -45,6 +45,10 @@ public enum DefCvt
 	G(Consts.G),
 	KG(Consts.KG),
 	LT_ST(Consts.LT_ST),
+	GR(Consts.GR),
+	T(Consts.T),
+	LB_KG(Consts.LB_KG),
+	OZ_G(Consts.OZ_G),
 	;
 
 	private final String[] units;
@@ -93,11 +97,13 @@ public enum DefCvt
 	 * Gives the limit of the base value where the mixed notation is applied to.
 	 *
 	 * Example with limit 3:
+	 * <pre>
 	 * {{convert|1|m}} -> 1 metre (3 ft 3 in) // mixed units
 	 * {{convert|2|m}} -> 2 metres (6 ft 7 in) // mixed units
 	 * {{convert|3|m}} -> 3 metres (9.8 ft) // only in feet
 	 * {{convert|4|m}} -> 4 metres (13 ft) // only in feet
-	 *
+	 * </pre>
+	 * 
 	 * @return The limit interpreted as an range (+/-) where the mixed notation
 	 * is applied (limit excluded). The default value is Integer.MAX_VALUE.
 	 */
@@ -136,6 +142,10 @@ public enum DefCvt
 		private final static String[] KG = {"kg"};
 		private final static String[] G = {"g"};
 		private final static String[] LT_ST = {"long ton", "short ton"};
+		private final static String[] GR = {"gr"};
+		private final static String[] T = {"t"};
+		private final static String[] LB_KG = {"lb", "kg"};
+		private final static String[] OZ_G = {"oz", "g"};
 
 	}
 }

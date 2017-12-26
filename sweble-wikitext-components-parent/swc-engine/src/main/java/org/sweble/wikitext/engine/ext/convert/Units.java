@@ -72,13 +72,28 @@ public enum Units
 
 	// masses: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/mass
 
-	KILOGRAM	(UnitType.MASS, 1d,		"kg",	"kilogram",		DefCvt.LB),
-	GRAM		(UnitType.MASS, 0.001,	"g",	"gram",			DefCvt.OZ),
-	DECIGRAM	(UnitType.MASS, 0.0001,	"dg",	"decigram",		DefCvt.OZ),
-	POUND		(UnitType.MASS, 0.45359237, "lb",	"pound",	DefCvt.KG),
-	OUNCE		(UnitType.MASS, 0.028349523125, "oz",	"ounce",	DefCvt.G),
-//	TONNE		(UnitType.MASS, 1000d,		"t",	"tonne",		),
-//	METRIC_TON	(UnitType.MASS, 1000d,		"t",	"metric ton",	),
+	KILOGRAM(UnitType.MASS, 1d, "kg", "kilogram", DefCvt.LB),
+	GRAM(UnitType.MASS, 0.001, "g", "gram", DefCvt.OZ),
+	DECIGRAM(UnitType.MASS, 0.0001, "dg", "decigram", DefCvt.OZ),
+	MILLIGRAM(UnitType.MASS, 1e-6, "mg", "milligram", DefCvt.GR),
+	MICROGRAM(UnitType.MASS, 1e-9, "µg", "microgram", DefCvt.GR, UnitCodes.MICROGRAM, null, null),
+	TONNE(UnitType.MASS, 1000d, "t", "tonne", DefCvt.LT_ST),
+	METRIC_TON(UnitType.MASS, 1000d, "t", "metric ton", DefCvt.LT_ST, UnitCodes.METRIC_TON, null, null),
+	LONG_TON(UnitType.MASS, 1016.0469088, "long ton", "long ton", DefCvt.T, UnitCodes.LONG_TON, null, null),
+	SHORT_TON(UnitType.MASS, 907.18474, "short ton", "short ton", DefCvt.T, UnitCodes.SHORT_TON, null, null),
+	LONG_HUNDREDWEIGHT(UnitType.MASS, 50.80234544, "long cwt", "long hundredweight", DefCvt.LB_KG),
+	SHORT_HUNDREDWEIGHT(UnitType.MASS, 45.359237, "short cwt", "short hundredweight", DefCvt.LB_KG),
+	LONG_QUARTER(UnitType.MASS, 12.70058636, "long qtr", "long quarter", DefCvt.LB_KG),
+	SHORT_QUARTER(UnitType.MASS, 11.33980925, "short qtr", "short quarter", DefCvt.LB_KG),
+	STONE(UnitType.MASS, 6.35029318, "st", "stone", DefCvt.LB_KG),
+	POUND(UnitType.MASS, 0.45359237, "lb", "pound", DefCvt.KG),
+	OUNCE(UnitType.MASS, 0.028349523125, "oz", "ounce", DefCvt.G),
+	DRACHM(UnitType.MASS, 0.001771845195, "drachm", "drachm", DefCvt.G, UnitCodes.DRACHM, null, null),
+	GRAIN(UnitType.MASS, 6.479891e-5, "gr", "grain", DefCvt.G),
+	TROY_POUND(UnitType.MASS, 0.3732417216, "troy pound", "troy pound", DefCvt.LB_KG),
+	TROY_OUNCE(UnitType.MASS, 0.0311034768, "ozt", "troy ounce", DefCvt.OZ_G),
+	PENNYWEIGHT(UnitType.MASS, 0.00155517384, "dwt", "pennyweight", DefCvt.OZ_G),
+	CARAT(UnitType.MASS, 0.0002, "carat", "carat", DefCvt.G),
 	;
 
 	private final UnitType type;
@@ -211,6 +226,11 @@ public enum Units
 		private final static String[] MICROINCH = {"uin"};
 		private final static String[] NAUTICAL_MILE_OLD_BRIT = {"oldUKnmi", "admiralty nmi", "Brnmi", "admi"};
 		private final static String[] NAUTICAL_MILE_OLD_US = {"oldUSnmi", "pre1954USnmi", "pre1954U.S.nmi"};
+		private final static String[] MICROGRAM = {"ug", "mcg"};
+		private final static String[] METRIC_TON = {"MT"};
+		private final static String[] LONG_TON = {"LT"};
+		private final static String[] SHORT_TON = {"ST"};
+		private final static String[] DRACHM = {"dram"};
 	}
 	
 	private static enum UnitType {
