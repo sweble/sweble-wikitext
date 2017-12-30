@@ -77,26 +77,27 @@ public class ConvertTest
 	@Test
 	public void testFormatNumberDefault()
 	{
-		assertEquals("1.0", Convert.formatNumberDefault(1));
-		assertEquals("−1.0", Convert.formatNumberDefault(-1));
-		assertEquals("11", Convert.formatNumberDefault(11));
-		assertEquals("110", Convert.formatNumberDefault(111));
-		assertEquals("120", Convert.formatNumberDefault(115));
-		assertEquals("1,100", Convert.formatNumberDefault(1111));
-		assertEquals("0.10", Convert.formatNumberDefault(0.1));
-		assertEquals("0.11", Convert.formatNumberDefault(0.11));
-		assertEquals("0.11", Convert.formatNumberDefault(0.111));
-		assertEquals("0.11", Convert.formatNumberDefault(0.114));
-		assertEquals("0.12", Convert.formatNumberDefault(0.115));
-		assertEquals("−0.11", Convert.formatNumberDefault(-0.114));
-		assertEquals("−0.12", Convert.formatNumberDefault(-0.115));
-		assertEquals("0.0011", Convert.formatNumberDefault(0.0011));
-		assertEquals("0.0000000010", Convert.formatNumberDefault(0.000000001));
-		assertEquals("1.0×10<sup>−10</sup>", Convert.formatNumberDefault(0.0000000001));
-		assertEquals("−1.0×10<sup>−10</sup>", Convert.formatNumberDefault(-0.0000000001));
-		assertEquals("11,000,000", Convert.formatNumberDefault(11000000));
-		assertEquals("−11,000,000", Convert.formatNumberDefault(-11000000));
-		assertEquals("1.1×10<sup>10</sup>", Convert.formatNumberDefault(11000000000d));
+		final int SIG_FIG = 2;
+		assertEquals("1.0", Convert.formatNumberDefault(1, SIG_FIG));
+		assertEquals("−1.0", Convert.formatNumberDefault(-1, SIG_FIG));
+		assertEquals("11", Convert.formatNumberDefault(11, SIG_FIG));
+		assertEquals("110", Convert.formatNumberDefault(111, SIG_FIG));
+		assertEquals("120", Convert.formatNumberDefault(115, SIG_FIG));
+		assertEquals("1,100", Convert.formatNumberDefault(1111, SIG_FIG));
+		assertEquals("0.10", Convert.formatNumberDefault(0.1, SIG_FIG));
+		assertEquals("0.11", Convert.formatNumberDefault(0.11, SIG_FIG));
+		assertEquals("0.11", Convert.formatNumberDefault(0.111, SIG_FIG));
+		assertEquals("0.11", Convert.formatNumberDefault(0.114, SIG_FIG));
+		assertEquals("0.12", Convert.formatNumberDefault(0.115, SIG_FIG));
+		assertEquals("−0.11", Convert.formatNumberDefault(-0.114, SIG_FIG));
+		assertEquals("−0.12", Convert.formatNumberDefault(-0.115, SIG_FIG));
+		assertEquals("0.0011", Convert.formatNumberDefault(0.0011, SIG_FIG));
+		assertEquals("0.0000000010", Convert.formatNumberDefault(0.000000001, SIG_FIG));
+		assertEquals("1.0×10<sup>−10</sup>", Convert.formatNumberDefault(0.0000000001, SIG_FIG));
+		assertEquals("−1.0×10<sup>−10</sup>", Convert.formatNumberDefault(-0.0000000001, SIG_FIG));
+		assertEquals("11,000,000", Convert.formatNumberDefault(11000000, SIG_FIG));
+		assertEquals("−11,000,000", Convert.formatNumberDefault(-11000000, SIG_FIG));
+		assertEquals("1.1×10<sup>10</sup>", Convert.formatNumberDefault(11000000000d, SIG_FIG));
 	}
 
 	@Test
