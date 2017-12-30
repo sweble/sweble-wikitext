@@ -20,57 +20,79 @@ package org.sweble.wikitext.engine.ext.convert;
 
 public enum DefCvt
 {
-	KM(Consts.KM),
-	M(Consts.M),
-	MM(Consts.MM),
-	NM(Consts.NM),
-	MI(Consts.MI),
-	FT(Consts.FT),
-	IN(Consts.IN),
-	FT_AND_IN(Consts.FT_IN, true, 3),
-	FT_M(Consts.FT_M),
-	KM_MI(Consts.KM_MI),
-	IN_CM(Consts.IN_CM),
-	GLY(Consts.GLY),
-	MLY(Consts.MLY),
-	KLY(Consts.KLY),
-	LY(Consts.LY),
-	MPC(Consts.MPC),
-	KPC(Consts.KPC),
-	PC(Consts.PC),
-	AU(Consts.AU),
+	KM("km"),
+	M("m"),
+	MM("mm"),
+	NM("nm"),
+	MI("mi"),
+	FT("ft"),
+	IN("in"),
+	FT_AND_IN(new String[]{"ft", "in"}, true, 3),
+	FT_M(new String[]{"ft", "m"}),
+	KM_MI(new String[]{"km", "mi"}),
+	IN_CM(new String[]{"in", "cm"}),
+	GLY("Gly"),
+	MLY("Mly"),
+	KLY("kly"),
+	LY("ly"),
+	MPC("Mpc"),
+	KPC("kpc"),
+	PC("pc"),
+	AU("AU"),
 
-	OZ(Consts.OZ),
-	LB(Consts.LB),
-	G(Consts.G),
-	KG(Consts.KG),
-	LT_ST(Consts.LT_ST),
-	GR(Consts.GR),
-	T(Consts.T),
-	LB_KG(Consts.LB_KG),
-	OZ_G(Consts.OZ_G),
+	OZ("oz"),
+	LB("lb"),
+	G("g"),
+	KG("kg"),
+	LT_ST(new String[]{"long ton", "short ton"}),
+	GR("gr"),
+	T("t"),
+	LB_KG(new String[]{"lb", "kg"}),
+	OZ_G(new String[]{"oz", "g"}),
+
+	SQMI("sqmi"),
+	ACRE("acre"),
+	SQFT("sqft"),
+	SQIN("sqin"),
+	KM2("km2"),
+	HA("ha"),
+	M2("m2"),
+	CM2("cm2"),
+	HA_ACRE(new String[]{"ha", "acre"}),
+	KM2_SQMI(new String[]{"km2", "sqmi"}),
+	SQFT_M2(new String[]{"sqft", "m2"}),
+	
+	SQFT_PER_ACRE("sqft/acre"),
+	M2_PER_HA("m2/ha"),
 	;
 
 	private final String[] units;
 	private final boolean isMixedNotation;
 	private final int mixedNotationLimit;
 
-	DefCvt(String[] units)
+	private DefCvt(String unit)
+	{
+		this.units = new String[]{unit};
+		this.isMixedNotation = false;
+		this.mixedNotationLimit = Integer.MAX_VALUE;
+	}
+
+	private DefCvt(String[] units)
 	{
 		this(units, false, Integer.MAX_VALUE);
 	}
 
-	DefCvt(String[] units, boolean isMixedNotation)
+	private DefCvt(String[] units, boolean isMixedNotation)
 	{
 		this(units, isMixedNotation, Integer.MAX_VALUE);
 	}
 
-	DefCvt(String[] units, int limit)
+	private DefCvt(String[] units, int limit)
 	{
 		this(units, false, limit);
 	}
 
-	DefCvt(String[] units, boolean isMixedNotation, int limit)
+	private DefCvt(String[] units, boolean isMixedNotation, int limit)
 	{
 		this.units = units;
 		this.isMixedNotation = isMixedNotation;
@@ -81,7 +103,7 @@ public enum DefCvt
 	{
 		return units;
 	}
-	
+
 	/**
 	 * Determines if the result of the conversion is represented in mixed units
 	 * e. g. "1 metre (3 ft 3 in)".
@@ -110,42 +132,5 @@ public enum DefCvt
 	public final int getMixedNotationLimit()
 	{
 		return mixedNotationLimit;
-	}
-
-	/**
-	 * Definitions of default conversions when no explicit target unit is given.
-	 */
-	private static class Consts
-	{
-		private final static String[] KM = {"km"};
-		private final static String[] M = {"m"};
-		private final static String[] MM = {"mm"};
-		private final static String[] MI = {"mi"};
-		private final static String[] FT = {"ft"};
-		private final static String[] IN = {"in"};
-		private final static String[] FT_IN = {"ft", "in"};
-		private final static String[] FT_M = {"ft", "m"};
-		private final static String[] KM_MI = {"km", "mi"};
-		private final static String[] IN_CM = {"in", "cm"};
-		private final static String[] NM = {"nm"};
-		private final static String[] GLY = {"Gly"};
-		private final static String[] MLY = {"Mly"};
-		private final static String[] KLY = {"kly"};
-		private final static String[] LY = {"ly"};
-		private final static String[] MPC = {"Mpc"};
-		private final static String[] KPC = {"kpc"};
-		private final static String[] PC = {"pc"};
-		private final static String[] AU = {"AU"};
-
-		private final static String[] OZ = {"oz"};
-		private final static String[] LB = {"lb"};
-		private final static String[] KG = {"kg"};
-		private final static String[] G = {"g"};
-		private final static String[] LT_ST = {"long ton", "short ton"};
-		private final static String[] GR = {"gr"};
-		private final static String[] T = {"t"};
-		private final static String[] LB_KG = {"lb", "kg"};
-		private final static String[] OZ_G = {"oz", "g"};
-
 	}
 }
