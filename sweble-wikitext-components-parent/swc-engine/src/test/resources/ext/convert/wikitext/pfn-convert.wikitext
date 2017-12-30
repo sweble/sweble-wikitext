@@ -115,3 +115,9 @@
 {{convert|1|sqyd}}
 {{convert|1|sqft}}
 {{convert|1|sqin}}
+{{convert|1|sqyd|sigfig = 3}}
+{{convert|1|sqyd|sigfig = 7}}
+{{convert|1|AU|sigfig = 7}}
+{{convert|1|mm2|sigfig = 4}}
+{{convert|1|sqin|sigfig  =  5}}
+{{convert|1|short qtr| sigfig=3}}

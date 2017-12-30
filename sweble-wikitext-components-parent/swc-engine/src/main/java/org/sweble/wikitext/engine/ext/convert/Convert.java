@@ -50,6 +50,7 @@ public class Convert
 {
 	private static DecimalFormat fmt = createDecimalFormater();
 	private static DecimalFormat sciFmt = createScientificFormater();
+	private static int MIN_ARGS = 2;
 	private static int DEFAULT_SIG_FIG = 2;
 	private int sigFig = DEFAULT_SIG_FIG; // significant figures
 
@@ -112,9 +113,9 @@ public class Convert
 		// Caution: Wikipedia uses '−' (\u2212) as minus sign!
 		String srcValueStr = strArgs.get(0).replaceAll("-", "−");
 
-		if (strArgs.size() <= 2)
+		if (strArgs.size() == MIN_ARGS)
 		{
-			String dest = convertToDefaultUnit(value, srcUnit, abbrMode, isUsNameUsed);
+			String dest = convertToDefaultUnit(value, srcUnit, abbrMode, sigFig, isUsNameUsed);
 			String srcUnitName = getSourceUnitName(
 					srcUnit,
 					abbrMode,
@@ -199,7 +200,7 @@ public class Convert
 			final List<? extends WtNode> args)
 			throws IllegalArgumentException
 	{
-		if (args.size() < 2)
+		if (args.size() < MIN_ARGS)
 		{
 			throw new IllegalArgumentException("Too few arguments!");
 		}
@@ -402,6 +403,7 @@ public class Convert
 	 * @param srcUnit The unit type of the given value.
 	 * @param abbreviationMode Determines the way to describe the unit (symbol
 	 * or name).
+	 * @param sigFig  The count of significant figures to round.
 	 * @param isUsNameUsed
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
@@ -411,6 +413,7 @@ public class Convert
 			double value,
 			Units srcUnit,
 			AbbreviationMode abbreviationMode,
+			int sigFig,
 			boolean isUsNameUsed)
 	{
 		assert (srcUnit != null);
@@ -426,7 +429,7 @@ public class Convert
 
 		if (cvtUnits.length <= 1)
 		{
-			return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, isUsNameUsed);
+			return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, sigFig, isUsNameUsed);
 		} else
 		{
 			if (defCvt.isMixedNotation())
@@ -434,7 +437,7 @@ public class Convert
 				int limit = defCvt.getMixedNotationLimit();
 				if (value >= limit)
 				{
-					return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, isUsNameUsed);
+					return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, sigFig, isUsNameUsed);
 				} else
 				{
 					Units majorUnit = destUnitA;
@@ -493,8 +496,8 @@ public class Convert
 					return null;
 				}
 
-				return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, isUsNameUsed)
-						+ "; " + convertBaseTo(siBasedValue, destUnitB, abbreviationMode, isUsNameUsed);
+				return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, sigFig, isUsNameUsed)
+						+ "; " + convertBaseTo(siBasedValue, destUnitB, abbreviationMode, sigFig, isUsNameUsed);
 			}
 		}
 	}
@@ -507,6 +510,7 @@ public class Convert
 	 * @param destUnit The unit the value gets converted to.
 	 * @param abbreviationMode Determines whether the unit symbol or the entire
 	 * name is used as descriptor.
+	 * @param sigFig  The count of significant figures to round.
 	 * @param isUsNameUsed Determines whether the US name is used or not (e.g.
 	 * "meter" instead of "metre").
 	 * @return The converted and default formated number as String including the
@@ -516,6 +520,7 @@ public class Convert
 			double siBaseValue,
 			Units destUnit,
 			AbbreviationMode abbreviationMode,
+			int sigFig,
 			boolean isUsNameUsed)
 	{
 		assert (destUnit != null);
@@ -531,7 +536,7 @@ public class Convert
 			return null;
 		}
 
-		return formatNumberDefault(convertedValue) + destNameStr;
+		return formatNumberDefault(convertedValue, sigFig) + destNameStr;
 	}
 
 	/**
@@ -555,14 +560,14 @@ public class Convert
 		} else if (absValue < 1d)
 		{
 			BigDecimal bd = new BigDecimal(convertedValue);
-			bd = bd.round(new MathContext(2));
+			bd = bd.round(new MathContext(sigFig));
 			convertedValStr = bd.toPlainString().replace('\u002D', '\u2212');
 		} else if (absValue < 10d)
 		{
-			convertedValStr = formatNumberRounded(convertedValue, 1);
+			convertedValStr = formatNumberRounded(convertedValue, sigFig - 1);
 		} else if (absValue < 100d)
 		{
-			convertedValStr = formatNumberRounded(convertedValue, 0);
+			convertedValStr = formatNumberRounded(convertedValue, sigFig - 2);
 		} else if (absValue < 1e9)
 		{
 			BigDecimal bd = new BigDecimal(convertedValue);
@@ -573,11 +578,6 @@ public class Convert
 		}
 
 		return convertedValStr;
-	}
-
-	protected static String formatNumberDefault(double convertedValue)
-	{
-		return formatNumberDefault(convertedValue, DEFAULT_SIG_FIG);
 	}
 
 	/**
