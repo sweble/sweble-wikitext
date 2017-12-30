@@ -122,7 +122,7 @@ public class Convert
 					isUsNameUsed);
 
 			if (srcUnitName == null) {
-				return error("Connot determinate output format!");
+				return error("Cannot determinate output format!");
 			}
 
 			String result = srcValueStr + " " + srcUnitName + "(" + dest + ")";
@@ -137,7 +137,7 @@ public class Convert
 
 		if (!Units.isSameUnitType(srcUnit, destUnit))
 		{
-			return error("Connot convert units with different types!");
+			return error("Cannot convert units with different types!");
 		}
 
 		double convertedValue = srcUnit.getScale() * value / destUnit.getScale();
@@ -147,7 +147,7 @@ public class Convert
 				isUsNameUsed);
 
 		if (srcUnitName == null) {
-			return error("Connot determinate output format!");
+			return error("Cannot determinate output format!");
 		}
 
 		String destUnitName = getDestUnitName(destUnit,
@@ -225,44 +225,66 @@ public class Convert
 
 		for (int i = 1; i < strArgs.size(); i++)
 		{
-			if (strArgs.get(i).contains("="))
+			final String arg = strArgs.get(i);
+			if (arg.contains("="))
 			{
-				final String[] spl = strArgs.get(i).split("=");
-				final String arg = StringUtils.trim(spl[0]);
-				final String opt = StringUtils.trim(spl[1]);
-				if (arg.equals("abbr"))
+				final String[] spl = arg.split("=");
+				final String opt = StringUtils.trim(spl[0]);
+				final String param = StringUtils.trim(spl[1]);
+				if (opt.equals("abbr"))
 				{
-					if (opt.equals("in")) {
+					if (param.equals("in"))
+					{
 						abbrMode = AbbreviationMode.IN;
-					} else if (opt.equals("off") || opt.equals("none")) {
+					} else if (param.equals("off") || param.equals("none"))
+					{
 						abbrMode = AbbreviationMode.OFF; // same as "none"
-					} else if (opt.equals("on")) {
+					} else if (param.equals("on"))
+					{
 						abbrMode = AbbreviationMode.ON;
-					} else if (opt.equals("out")) {
+					} else if (param.equals("out"))
+					{
 						abbrMode = AbbreviationMode.OUT;
-					} else if (opt.equals("unit")) {
+					} else if (param.equals("unit"))
+					{
 						abbrMode = AbbreviationMode.UNIT;
-					} else if (opt.equals("values")) {
+					} else if (param.equals("values"))
+					{
 						abbrMode = AbbreviationMode.VALUES;
-					} else if (opt.equals("~")) {
+					} else if (param.equals("~"))
+					{
 						abbrMode = AbbreviationMode.TILDE;
-					} else {
-						throw new IllegalArgumentException("Invalid abbreviation option!");
+					} else
+					{
+						throw new IllegalArgumentException("Invalid abbreviation parameter!");
 					}
-				} else if (arg.equals("sigfig"))
+				} else if (opt.equals("sigfig"))
 				{
-					sigFig = Integer.parseInt(opt);
-				} else if (arg.equals("sp"))
+					sigFig = Integer.parseInt(param);
+					if (sigFig <= 0)
+					{
+						throw new IllegalArgumentException("\"sigfig=\" needs a positive integer!");
+					}
+				} else if (opt.equals("sp"))
 				{
-					isUsNameUsed = opt.equals("us");
+					isUsNameUsed = param.equals("us");
 				} else
 				{
 					throw new IllegalArgumentException("Unknow argument!");
 				}
 			} else
 			{
+				// TODO: do something useful with the value of significant digits.
+//				int sigDig;
+//				try {
+//					sigDig = Integer.parseInt(arg);
+//				} catch (NumberFormatException ex) {
+//					// not a proper number, so ignore it and go on
+//					continue;
+//				}
+
 				// TODO: search for other options
-				cleanArgs.add(strArgs.get(i));
+				cleanArgs.add(arg);
 			}
 		}
 
@@ -380,6 +402,7 @@ public class Convert
 	 * @param srcUnit The unit type of the given value.
 	 * @param abbreviationMode Determines the way to describe the unit (symbol
 	 * or name).
+	 * @param isUsNameUsed
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
 	 * @see convertBaseTo()
@@ -436,16 +459,16 @@ public class Convert
 						case UNIT:
 						case VALUES:
 						case TILDE:
-							majorUnitName = majorUnit.getUnitSymbol();
-							minorUnitName = minorUnit.getUnitSymbol();
+							majorUnitName = majorUnit.getSymbol();
+							minorUnitName = minorUnit.getSymbol();
 							break;
 						case IN:
 						case NONE:
 						case OFF:
 							if (value == 1d)
 							{
-								majorUnitName = majorUnit.getUnitName();
-								minorUnitName = minorUnit.getUnitName();
+								majorUnitName = majorUnit.getName();
+								minorUnitName = minorUnit.getName();
 							} else
 							{
 								majorUnitName = majorUnit.getPluralName();
@@ -481,10 +504,11 @@ public class Convert
 	 * default formated Number with unit descriptor.
 	 *
 	 * @param siBaseValue The value given in a SI base unit.
-	 * @param destUnit The Unite the value gets converted to.
+	 * @param destUnit The unit the value gets converted to.
 	 * @param abbreviationMode Determines whether the unit symbol or the entire
 	 * name is used as descriptor.
-	 * @param isUsNameUsed
+	 * @param isUsNameUsed Determines whether the US name is used or not (e.g.
+	 * "meter" instead of "metre").
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
 	 */
@@ -500,7 +524,7 @@ public class Convert
 		String destNameStr = getDestUnitName(
 				destUnit,
 				abbreviationMode,
-				!(Math.abs(siBaseValue) == 1d),
+				!(Math.abs(convertedValue) == 1d),
 				isUsNameUsed);
 		if (destNameStr == null)
 		{
@@ -617,7 +641,7 @@ public class Convert
 					srcUnitName = srcUnit.getUsName() + " ";
 				} else
 				{
-					srcUnitName = srcUnit.getUnitSymbol() + " ";
+					srcUnitName = srcUnit.getSymbol() + " ";
 				}
 				break;
 			case OUT:
@@ -639,7 +663,7 @@ public class Convert
 						srcUnitName = srcUnit.getPluralName() + " ";
 					} else
 					{
-						srcUnitName = srcUnit.getUnitName() + " ";
+						srcUnitName = srcUnit.getName() + " ";
 					}
 				}
 				break;
@@ -652,9 +676,9 @@ public class Convert
 					srcUnitName = srcUnit.getPluralName();
 				} else
 				{
-					srcUnitName = srcUnit.getUnitName();
+					srcUnitName = srcUnit.getName();
 				}
-				srcUnitName += " [" + srcUnit.getUnitSymbol()+ "] ";
+				srcUnitName += " [" + srcUnit.getSymbol()+ "] ";
 				break;
 			default:
 				return null;
@@ -675,7 +699,7 @@ public class Convert
 			case ON:
 			case UNIT:
 			case TILDE:
-				destUnitName = " " + destUnit.getUnitSymbol();
+					destUnitName = " " + destUnit.getSymbol();
 				break;
 			case VALUES:
 				destUnitName = "";
@@ -699,7 +723,7 @@ public class Convert
 						destUnitName = " " + destUnit.getPluralName();
 					} else
 					{
-						destUnitName = " " + destUnit.getUnitName();
+						destUnitName = " " + destUnit.getName();
 					}
 				}
 				break;
@@ -707,5 +731,5 @@ public class Convert
 				return null;
 		}
 		return destUnitName;
-	}	
+	}
 }
