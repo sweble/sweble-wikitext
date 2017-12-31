@@ -121,3 +121,4 @@
 {{convert|1|mm2|sigfig = 4}}
 {{convert|1|sqin|sigfig  =  5}}
 {{convert|1|short qtr| sigfig=3}}
+{{convert|1|short qtr| sigfig=1}}

@@ -98,6 +98,26 @@ public class ConvertTest
 		assertEquals("11,000,000", Convert.formatNumberDefault(11000000, SIG_FIG));
 		assertEquals("−11,000,000", Convert.formatNumberDefault(-11000000, SIG_FIG));
 		assertEquals("1.1×10<sup>10</sup>", Convert.formatNumberDefault(11000000000d, SIG_FIG));
+		assertEquals("1", Convert.formatNumberDefault(1.234, 1));
+		assertEquals("1.2", Convert.formatNumberDefault(1.234, 2));
+		assertEquals("1.23", Convert.formatNumberDefault(1.234, 3));
+		assertEquals("1.234", Convert.formatNumberDefault(1.234, 4));
+		assertEquals("1.2340", Convert.formatNumberDefault(1.234, 5));
+		assertEquals("10", Convert.formatNumberDefault(12.34, 1));
+		assertEquals("12", Convert.formatNumberDefault(12.34, 2));
+		assertEquals("12.3", Convert.formatNumberDefault(12.34, 3));
+		assertEquals("12.34", Convert.formatNumberDefault(12.34, 4));
+		assertEquals("12.340", Convert.formatNumberDefault(12.34, 5));
+		assertEquals("100", Convert.formatNumberDefault(123.4, 1));
+		assertEquals("120", Convert.formatNumberDefault(123.4, 2));
+		assertEquals("123", Convert.formatNumberDefault(123.4, 3));
+		assertEquals("123.4", Convert.formatNumberDefault(123.4, 4));
+		assertEquals("123.40", Convert.formatNumberDefault(123.4, 5));
+		assertEquals("1,000", Convert.formatNumberDefault(1234.5, 1));
+		assertEquals("1,200", Convert.formatNumberDefault(1234.5, 2));
+		assertEquals("1,230", Convert.formatNumberDefault(1234.5, 3));
+		assertEquals("1,235", Convert.formatNumberDefault(1234.5, 4));
+		assertEquals("1,234.5", Convert.formatNumberDefault(1234.5, 5));
 	}
 
 	@Test

@@ -482,7 +482,6 @@ public class Convert
 							return null;
 					}
 
-					DecimalFormat fmt = new DecimalFormat("0;−#");
 					return fmt.format(convertedMajorVal)
 							+ " " + majorUnitName
 							+ " " + fmt.format(convertedMinorVal)
@@ -554,29 +553,22 @@ public class Convert
 	{
 		String convertedValStr;
 		final double absValue = Math.abs(convertedValue);
-		if (absValue < 1e-9)
+		if (absValue < 1e-9 || absValue > 1e9)
 		{
 			convertedValStr = sciFmt.format(convertedValue);
-		} else if (absValue < 1d)
+		} else
 		{
 			BigDecimal bd = new BigDecimal(convertedValue);
-			bd = bd.round(new MathContext(sigFig));
-			convertedValStr = bd.toPlainString().replace('\u002D', '\u2212');
-		} else if (absValue < 10d)
-		{
-			convertedValStr = formatNumberRounded(convertedValue, sigFig - 1);
-		} else if (absValue < 100d)
-		{
-			convertedValStr = formatNumberRounded(convertedValue, sigFig - 2);
-		} else if (absValue < 1e9)
-		{
-			BigDecimal bd = new BigDecimal(convertedValue);
-			bd = bd.round(new MathContext(sigFig));
-			convertedValStr = formatNumberRounded(bd.doubleValue(), 0);
-		} else {
-			convertedValStr = sciFmt.format(convertedValue);
+			int prec = bd.precision() - bd.scale();
+			if (sigFig > prec)
+			{
+				convertedValStr = formatNumberRounded(convertedValue, sigFig - prec);
+			} else
+			{
+				bd = bd.round(new MathContext(sigFig, RoundingMode.HALF_UP));
+				convertedValStr = fmt.format(bd);
+			}
 		}
-
 		return convertedValStr;
 	}
 
@@ -607,7 +599,7 @@ public class Convert
 
 	static private DecimalFormat createDecimalFormater() {
 		// uses '−' (\u2212) as minus
-		DecimalFormat fmt = new DecimalFormat("0.0;−#");
+		DecimalFormat fmt = new DecimalFormat("#0;−#");
 		fmt.setRoundingMode(RoundingMode.HALF_UP);
 		fmt.setGroupingSize(3);
 		fmt.setGroupingUsed(true);
