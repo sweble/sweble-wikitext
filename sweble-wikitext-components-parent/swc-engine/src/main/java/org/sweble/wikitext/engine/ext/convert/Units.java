@@ -209,6 +209,11 @@ public enum Units
 			String plural,
 			String usName)
 	{
+		assert(type != null);
+		assert(symbol != null);
+		assert(name != null);
+		assert(defCvt != null);
+
 		this.type = type;
 		this.scale = scale;
 		this.symbol = symbol;

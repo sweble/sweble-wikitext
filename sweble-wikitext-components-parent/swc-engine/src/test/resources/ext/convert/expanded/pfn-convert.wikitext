@@ -121,3 +121,4 @@
 1 square millimetre (0.001550 sq&nbsp;in)
 1 square inch (6.4516 cm<sup>2</sup>)
 1 short quarter (25.0 lb; 11.3 kg)
+1 short quarter (30 lb; 10 kg)
