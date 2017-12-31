@@ -36,8 +36,77 @@ import java.util.HashMap;
  */
 public enum Units
 {
-	// lengths: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/length
+	// absorbed radiation dose
+	GRAY(UnitType.ABSORBED_RADIATION_DOSE, 1d, "Gy", "gray", DefCvt.RAD, new String[]{"Gy"}),
+	RAD(UnitType.ABSORBED_RADIATION_DOSE, 0.01, "rad", "rad", DefCvt.GY),
 
+	// acceleration
+	CENTIMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 0.01, "cm/s<sup>2</sup>", "centimetre per second squared", DefCvt.FT_PER_S2, new String[]{"cm/s2"}, "centimetres per second squared", "centimeters per second squared"),
+	FOOT_PER_SEC_SQ(UnitType.ACCELERATION, 0.3048, "ft/s<sup>2</sup>", "foot per second squared", DefCvt.M_PER_S2, new String[]{"ft/s2"}, "feet per second squared", null),
+	STANDARD_GRAVITY(UnitType.ACCELERATION, 9.80665, "g<sub>0</sub>", "standard gravity", DefCvt.M_PER_S2, new String[]{"g0", "standard gravity"}, "standard gravities", null),
+	KILOMETRE_PER_H_PER_SEC(UnitType.ACCELERATION, 0.27777777777777779, "km/(h⋅s)", "kilometre per hour per second", DefCvt.MPH_PER_S, new String[]{"km/hs, km/h/s"}, "kilometres per hour per second", "kilometers per hour per second"),
+	KILOMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 1000d, "km/s<sup>2</sup>", "kilometre per second squared", DefCvt.MPH_PER_S, new String[] {"km/s2"}, "kilometres per second squared", "kilometers per second squared"),
+	METRE_PER_SEC_SQ(UnitType.ACCELERATION, 1d, "m/s<sup>2</sup>", "metre per second squared", DefCvt.FT_PER_S2, new String[]{"m/s2"}, "metres per second squared", "meters per second squared"),
+	MILE_PER_H_PER_SEC(UnitType.ACCELERATION, 0.44704, "mph/s", "mile per hour per second", DefCvt.KM_PER_HS, new String[]{"mph/s"}, "miles per hour per second", null),
+
+	// area: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/area
+	SQUARE_KILOMETRE(UnitType.AREA, 1e6, "km<sup>2</sup>", "square kilometre", DefCvt.SQMI, new String[]{"km2", "km²", "sqkm"}, null, "square kilometer"),
+	SQUARE_HECTOMETRE(UnitType.AREA, 1e4, "hm<sup>2</sup>", "square hectometre", DefCvt.ACRE, new String[]{"hm2", "hm²"}, null, "square hectometer"),
+	SQUARE_DECAMETRE(UnitType.AREA, 100d, "dam<sup>2</sup>", "square decametre", DefCvt.SQFT, new String[]{"dam2", "dam²"}, null, "square dekameter"),
+	SQUARE_METRE(UnitType.AREA, 1d, "m<sup>2</sup>", "square metre", DefCvt.SQFT, new String[]{"m2", "m²", "sqm"}, null, "square meter"),
+	SQUARE_DECIMETRE(UnitType.AREA, 0.01, "dm<sup>2</sup>", "square decimetre", DefCvt.SQIN, new String[]{"dm2", "dm²"}, null, "square decimeter"),
+	SQUARE_CENTIMETRE(UnitType.AREA, 0.0001, "cm<sup>2</sup>", "square centimetre", DefCvt.SQIN, new String[]{"cm2", "cm²"} , null, "square centimeter"),
+	SQUARE_MILLIMETRE(UnitType.AREA, 1e-6, "mm<sup>2</sup>", "square millimetre", DefCvt.SQIN, new String[]{"mm2", "mm²"}, null, "square millimeter"),
+
+	THOUSAND_SQFT(UnitType.AREA, 92.90304, "1000&nbsp;sq&nbsp;ft", "thousand square feet", DefCvt.M2, null, "thousand square feet", null),
+	ARE(UnitType.AREA, 100d, "a", "are", DefCvt.SQFT, new String[]{"a"}),
+	ACRE(UnitType.AREA, 4046.8564224, "acres", "acre", DefCvt.HA, new String[]{"acre-sing", "acres"}),
+	ARPENT(UnitType.AREA, 3418.89, "arpent", "arpent", DefCvt.HA, new String[]{"sq arp"}),
+	CUERDA(UnitType.AREA, 3930.395625, "cda", "cuerda", DefCvt.HA_ACRE),
+	DAA(UnitType.AREA, 1000d, "daa", "decare", DefCvt.KM2_SQMI, new String[]{"a"}),
+	DUNAM(UnitType.AREA, 1000d, "dunam", "dunam", DefCvt.KM2_SQMI),
+	DUNUM(UnitType.AREA, 1000d, "dunum", "dunum", DefCvt.KM2_SQMI),
+	HECTARE(UnitType.AREA, 1e4, "ha", "hectare", DefCvt.ACRE),
+	IRISH_ACRE(UnitType.AREA, 6555.2385024, "Irish&nbsp;acres", "Irish acre", DefCvt.HA),
+	PONDEMAAT(UnitType.AREA, 3674.363358816, "pond", "pondemaat", DefCvt.M2, new String[]{"pond"}),
+	PYEONG(UnitType.AREA, 3.3057851239669422, "pyeong", "pyeong", DefCvt.M2),
+	RAI(UnitType.AREA, 1600d, "rai", "rai", DefCvt.M2),
+	ROOD(UnitType.AREA, 1011.7141056, "rood", "rood", DefCvt.SQFT_M2),
+	SQUARE_FOOT(UnitType.AREA, 0.09290304, "sq&nbsp;ft", "square foot", DefCvt.M2, new String[]{"sqft", "ft2"}, "square feet", null),
+	SQUARE_FOOT2(UnitType.AREA, 0.09290304, "sq&nbsp;ft", "square foot", DefCvt.M2, new String[]{"sqfoot", "foot2"}, "square foot", null),
+	SQUARE_INCH(UnitType.AREA, 0.00064516, "sq&nbsp;in", "square inch", DefCvt.CM2, new String[]{"sqin", "in2"}, "square inches", null),
+	SQUARE_NAUTICAL_MILE(UnitType.AREA, 3429904d, "sq&nbsp;nmi", "square nautical mile", DefCvt.KM2_SQMI, new String[]{"nmi2"}),
+	SQUARE_MILE(UnitType.AREA, 2589988.110336, "sq&nbsp;mi", "square mile", DefCvt.KM2, new String[]{"sqmi", "mi2"}),
+	SQUARE_PERCH(UnitType.AREA, 25.29285264, "perch", "perches", DefCvt.M2),
+	SQUARE_VERST(UnitType.AREA, 1138062.24, "square verst", "square verst", DefCvt.KM2_SQMI, new String[]{"sqverst", "verst2"}),
+	SQUARE_YARD(UnitType.AREA, 0.83612736, "sq&nbsp;yd", "square yard", DefCvt.M2, new String[]{"sqyd", "yd2"}),
+	TSUBO(UnitType.AREA, 3.3057851239669422, "tsubo", "tsubo", DefCvt.M2, null, "tsubo", null),
+
+	// area per unit area
+	M2_PER_HA(UnitType.AREA_PER_UNIT_AREA, 0.0001, "m<sup>2</sup>/ha", "square metre per hectare", DefCvt.SQFT_PER_ACRE, new String[]{"m2/ha"}, "square metres per hectare", "square meters per hectare"),
+	SQFT_PER_ACRE(UnitType.AREA_PER_UNIT_AREA, 2.295684113865932e-5, "sq&nbsp;ft/acre", "square foot per acre", DefCvt.M2_PER_HA, null, "square feet per acre", null),
+
+	// cent
+	CENT(UnitType.CENT, 1d, "¢", "cent", DefCvt.CENT, new String[]{"¢"}),
+
+	// charge
+	AMPERE_HOUR(UnitType.CHARGE, 3600d, "A⋅h", "ampere-hour", DefCvt.COULOMB, new String[]{"A.h"}),
+	COULOMB(UnitType.CHARGE, 1d, "C", "coulomb", DefCvt.E),
+	E(UnitType.CHARGE, 1.602176487e-19, "e", "elementary charge", DefCvt.COULOMB, new String[]{"e"}),
+
+	// chemical amount
+	GRAM_MOLE(UnitType.CHEMICAL_AMOUNT, 1d, "g&#8209;mol", "gram-mole", DefCvt.LBMOL, new String[]{"g-mol"}),
+	GRAM_MOLE2(UnitType.CHEMICAL_AMOUNT, 1d, "gmol", "gram-mole", DefCvt.LBMOL, new String[]{"gmol"}),
+	KILOMOLE(UnitType.CHEMICAL_AMOUNT, 1000d, "kmol", "kilomole", DefCvt.LBMOL, new String[]{"kmol"}),
+	POUND_MOLE(UnitType.CHEMICAL_AMOUNT, 453.59237, "lb&#8209;mol", "pound-mole", DefCvt.MOL, new String[]{"lb-mol"}),
+	POUND_MOLE2(UnitType.CHEMICAL_AMOUNT, 453.59237, "lbmol", "pound-mole", DefCvt.MOL, new String[]{"lbmol"}),
+	MOLE(UnitType.CHEMICAL_AMOUNT, 1d, "mol", "mole", DefCvt.LBMOL, new String[]{"mol"}),
+
+	// CO2 per unit volume
+	KILOGRAM_PER_LITRE(UnitType.CO2_PER_UNIT_VOLUME, 1000d, "kg(CO<sub>2</sub>)/L", "kilogram per litre", DefCvt.LB_CO2_PER_US_GAL, new String[]{"kgCO2/L"}, "kilograms per litre", "kilograms per liter"),
+	POUNT_PER_US_GAL(UnitType.CO2_PER_UNIT_VOLUME, 119.82642731689663, "lbCO2/US&nbsp;gal", "pound per US gallon", DefCvt.KG_CO2_PER_L, new String[]{"lbCO2/USgal"}, "pounds per US gallon", null),
+
+	// length: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/length
 	GIGAMETRE(UnitType.LENGTH, 1e9, "Gm", "gigametre", DefCvt.MI, new String[]{"Gm"}, null, "gigameter"),
 	MEAGAMETRE(UnitType.LENGTH, 1e6, "Mm", "megametre", DefCvt.MI, new String[]{"Mm"}, null, "megameter"),
 	KILOMETRE(UnitType.LENGTH, 1000d, "km", "kilometre", DefCvt.MI, new String[]{"km"}, null, "kilometer"),
@@ -58,9 +127,9 @@ public enum Units
 	PERCH(UnitType.LENGTH, 5.0292, "perch", "perch", DefCvt.FT_M),
 	FATHOM(UnitType.LENGTH, 1.8288, "fathom", "fathom", DefCvt.FT_M),
 	YHARD(UnitType.LENGTH, 0.9144, "yd", "yard", DefCvt.M),
-	FOOT(UnitType.LENGTH, 0.3048, "ft", "foot", DefCvt.M, "feet"),
+	FOOT(UnitType.LENGTH, 0.3048, "ft", "foot", DefCvt.M, null, "feet", null),
 	HAND(UnitType.LENGTH, 0.1016, "hand", "hand", DefCvt.IN_CM),
-	INCH(UnitType.LENGTH, 0.0254, "in", "inch", DefCvt.MM, "inches"),
+	INCH(UnitType.LENGTH, 0.0254, "in", "inch", DefCvt.MM, null, "inches", null),
 	MICORINCH(UnitType.LENGTH, 2.54e-8, "µin", "microinch", DefCvt.NM, new String[]{"µin", "uin"}, "microinches", null),
 	BANANA(UnitType.LENGTH, 0.1778, "banana", "banana", DefCvt.IN_CM),
 	NAUTICAL_MILE(UnitType.LENGTH, 1852d, "nmi", "nautical mile", DefCvt.KM_MI),
@@ -100,41 +169,6 @@ public enum Units
 	TROY_OUNCE(UnitType.MASS, 0.0311034768, "ozt", "troy ounce", DefCvt.OZ_G),
 	PENNYWEIGHT(UnitType.MASS, 0.00155517384, "dwt", "pennyweight", DefCvt.OZ_G),
 	CARAT(UnitType.MASS, 0.0002, "carat", "carat", DefCvt.G),
-
-	// areas: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/area
-
-	SQUARE_KILOMETRE(UnitType.AREA, 1e6, "km<sup>2</sup>", "square kilometre", DefCvt.SQMI, new String[]{"km2", "km²", "sqkm"}, null, "square kilometer"),
-	SQUARE_HECTOMETRE(UnitType.AREA, 1e4, "hm<sup>2</sup>", "square hectometre", DefCvt.ACRE, new String[]{"hm2", "hm²"}, null, "square hectometer"),
-	SQUARE_DECAMETRE(UnitType.AREA, 100d, "dam<sup>2</sup>", "square decametre", DefCvt.SQFT, new String[]{"dam2", "dam²"}, null, "square dekameter"),
-	SQUARE_METRE(UnitType.AREA, 1d, "m<sup>2</sup>", "square metre", DefCvt.SQFT, new String[]{"m2", "sqm", "m²"}, null, "square meter"),
-	SQUARE_DECIMETRE(UnitType.AREA, 0.01, "dm<sup>2</sup>", "square decimetre", DefCvt.SQIN, new String[]{"dm2", "dm²"}, null, "square decimeter"),
-	SQUARE_CENTIMETRE(UnitType.AREA, 0.0001, "cm<sup>2</sup>", "square centimetre", DefCvt.SQIN, new String[]{"cm2", "cm²"} , null, "square centimeter"),
-	SQUARE_MILLIMETRE(UnitType.AREA, 1e-6, "mm<sup>2</sup>", "square millimetre", DefCvt.SQIN, new String[]{"mm2", "mm²"}, null, "square millimeter"),
-	THOUSAND_SQFT(UnitType.AREA, 92.90304, "1000&nbsp;sq&nbsp;ft", "thousand square feet", DefCvt.M2, null, "thousand square feet", null),
-	ARE(UnitType.AREA, 100d, "a", "are", DefCvt.SQFT),
-	ACRE(UnitType.AREA, 4046.8564224, "acres", "acre", DefCvt.HA, new String[]{"acre-sing", "acres"}, null, null),
-	ARPENT(UnitType.AREA, 3418.89, "arpent", "arpent", DefCvt.HA, new String[]{"sq arp"}, null, null),
-	CUERDA(UnitType.AREA, 3930.395625, "cda", "cuerda", DefCvt.HA_ACRE),
-	DAA(UnitType.AREA, 1000d, "daa", "decare", DefCvt.KM2_SQMI),
-	DUNAM(UnitType.AREA, 1000d, "dunam", "dunam", DefCvt.KM2_SQMI),
-	DUNUM(UnitType.AREA, 1000d, "dunum", "dunum", DefCvt.KM2_SQMI),
-	HECTARE(UnitType.AREA, 1e4, "ha", "hectare", DefCvt.ACRE),
-	IRISH_ACRE(UnitType.AREA, 6555.2385024, "Irish&nbsp;acres", "Irish acre", DefCvt.HA),
-	PONDEMAAT(UnitType.AREA, 3674.363358816, "pond", "pondemaat", DefCvt.M2),
-	PYEONG(UnitType.AREA, 3.3057851239669422, "pyeong", "pyeong", DefCvt.M2),
-	RAI(UnitType.AREA, 1600d, "rai", "rai", DefCvt.M2),
-	ROOD(UnitType.AREA, 1011.7141056, "rood", "rood", DefCvt.SQFT_M2),
-	SQUARE_FOOT(UnitType.AREA, 0.09290304, "sq&nbsp;ft", "square foot", DefCvt.M2, new String[]{"sqft", "ft2", "sqfoot", "foot2"}, "square foot", null),
-	SQUARE_INCH(UnitType.AREA, 0.00064516, "sq&nbsp;in", "square inch", DefCvt.CM2, new String[]{"sqin", "in2"}, "square inches", null),
-	SQUARE_NAUTICAL_MILE(UnitType.AREA, 3429904d, "sq&nbsp;nmi", "square nautical mile", DefCvt.KM2_SQMI),
-	SQUARE_MILE(UnitType.AREA, 2589988.110336, "sq&nbsp;mi", "square mile", DefCvt.KM2, new String[]{"sqmi", "mi2"}, null, null),
-	SQUARE_PERCH(UnitType.AREA, 25.29285264, "perch", "perches", DefCvt.M2),
-	SQUARE_VERST(UnitType.AREA, 1138062.24, "square verst", "square verst", DefCvt.KM2_SQMI),
-	SQUARE_YARD(UnitType.AREA, 0.83612736, "sq&nbsp;yd", "square yard", DefCvt.M2, new String[]{"sqyd", "yd2"}, null, null),
-	TSUBO(UnitType.AREA, 3.3057851239669422, "tsubo", "tsubo", DefCvt.M2, null, "tsubo", null),
-
-	M2_PER_HA(UnitType.AREA_PER_UNIT_AREA, 0.0001, "m<sup>2</sup>/ha", "square metre per hectare", DefCvt.SQFT_PER_ACRE, null, "square metres per hectare", "square meters per hectare"),
-	SQFT_PER_ACRE(UnitType.AREA_PER_UNIT_AREA, 2.295684113865932e-5, "sq&nbsp;ft/acre", "square foot per acre", DefCvt.M2_PER_HA, null, "square feet per acre", null),
 	;
 
 	private final UnitType type; /// The type of the unit (e.g. length, mass, etc.)
@@ -158,7 +192,10 @@ public enum Units
 	{
 		for (final Units unit : Units.values())
 		{
-			NAME_CODE_MAP.put(unit.getName(), unit);
+			if (!NAME_CODE_MAP.containsKey(unit.getName()))
+			{
+				NAME_CODE_MAP.put(unit.getName(), unit);
+			}
 
 			if (unit.usName != null)
 			{
@@ -191,9 +228,9 @@ public enum Units
 			String symbol,
 			String name,
 			DefCvt defCvt,
-			String plural)
+			String[] altCodes)
 	{
-		this(type, scale, symbol, name, defCvt, null, plural, null);
+		this(type, scale, symbol, name, defCvt, altCodes, null, null);
 	}
 
 	/**
@@ -331,23 +368,8 @@ public enum Units
 		CENT,
 		CHARGE,
 		CHEMICAL_AMOUNT,
+		CO2_PER_UNIT_VOLUME,
 		LENGTH,
 		MASS,
-		TIME,
-		ELECTRIC_CURRENT,
-		TEMPERATURE,
-		AMOUNT_OF_SUBSTANCE,
-		LUMINOUS_INTENSITY,
-		DENSITY,
-		ENERGY,
-		FORCE,
-		SPEED,
-		TORQUE,
-		VOLUME,
-		PRESSURE,
-		FUEL_EFFICIENCY,
-		POWER,
-		POPULATION_DENSITY,
-		COST_PER_UNIT_MASS;
 	}
 }

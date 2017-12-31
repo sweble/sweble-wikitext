@@ -20,6 +20,40 @@ package org.sweble.wikitext.engine.ext.convert;
 
 public enum DefCvt
 {
+	GY("Gy"),
+	RAD("rad"),
+
+	FT_PER_S2("ft/s2"),
+	M_PER_S2("m/s2"),
+	MPH_PER_S("mph/s"),
+	KM_PER_HS("km/hs"),
+
+	SQMI("sqmi"),
+	ACRE("acre"),
+	SQFT("sqft"),
+	SQIN("sqin"),
+	KM2("km2"),
+	HA("ha"),
+	M2("m2"),
+	CM2("cm2"),
+	HA_ACRE(new String[]{"ha", "acre"}),
+	KM2_SQMI(new String[]{"km2", "sqmi"}),
+	SQFT_M2(new String[]{"sqft", "m2"}),
+
+	SQFT_PER_ACRE("sqft/acre"),
+	M2_PER_HA("m2/ha"),
+
+	CENT("cent"),
+
+	COULOMB("coulomb"),
+	E("e"),
+
+	LBMOL("lbmol"),
+	MOL("mol"),
+
+	LB_CO2_PER_US_GAL("lbCO2/USgal"),
+	KG_CO2_PER_L("kgCO2/L"),
+
 	KM("km"),
 	M("m"),
 	MM("mm"),
@@ -49,21 +83,6 @@ public enum DefCvt
 	T("t"),
 	LB_KG(new String[]{"lb", "kg"}),
 	OZ_G(new String[]{"oz", "g"}),
-
-	SQMI("sqmi"),
-	ACRE("acre"),
-	SQFT("sqft"),
-	SQIN("sqin"),
-	KM2("km2"),
-	HA("ha"),
-	M2("m2"),
-	CM2("cm2"),
-	HA_ACRE(new String[]{"ha", "acre"}),
-	KM2_SQMI(new String[]{"km2", "sqmi"}),
-	SQFT_M2(new String[]{"sqft", "m2"}),
-	
-	SQFT_PER_ACRE("sqft/acre"),
-	M2_PER_HA("m2/ha"),
 	;
 
 	private final String[] units;
@@ -125,7 +144,7 @@ public enum DefCvt
 	 * {{convert|3|m}} -> 3 metres (9.8 ft) // only in feet
 	 * {{convert|4|m}} -> 4 metres (13 ft) // only in feet
 	 * </pre>
-	 * 
+	 *
 	 * @return The limit interpreted as an range (+/-) where the mixed notation
 	 * is applied (limit excluded). The default value is Integer.MAX_VALUE.
 	 */
