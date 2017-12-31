@@ -38,16 +38,16 @@ public enum Units
 {
 	// lengths: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/length
 
-	GIGAMETRE(UnitType.LENGTH, 1e9, "Gm", "gigametre", DefCvt.MI, new String[]{"Gm", "gigametre"}, null, "gigameter"),
-	MEAGAMETRE(UnitType.LENGTH, 1e6, "Mm", "megametre", DefCvt.MI, null, null, "megameter"),
-	KILOMETRE(UnitType.LENGTH, 1000d, "km", "kilometre", DefCvt.MI, null, null, "kilometer"),
-	HECTOMETRE(UnitType.LENGTH, 100d, "hm", "hectometre", DefCvt.MI, null, null, "hectometer"),
-	DECAMETRE(UnitType.LENGTH, 10d, "dam", "decametre", DefCvt.MI, null, null, "dekameter"),
-	METRE(UnitType.LENGTH, 1d, "m", "metre", DefCvt.FT_AND_IN, new String[]{"meter", "meters", "metres"}, null, "meter"),
+	GIGAMETRE(UnitType.LENGTH, 1e9, "Gm", "gigametre", DefCvt.MI, new String[]{"Gm"}, null, "gigameter"),
+	MEAGAMETRE(UnitType.LENGTH, 1e6, "Mm", "megametre", DefCvt.MI, new String[]{"Mm"}, null, "megameter"),
+	KILOMETRE(UnitType.LENGTH, 1000d, "km", "kilometre", DefCvt.MI, new String[]{"km"}, null, "kilometer"),
+	HECTOMETRE(UnitType.LENGTH, 100d, "hm", "hectometre", DefCvt.MI, new String[]{"hm"}, null, "hectometer"),
+	DECAMETRE(UnitType.LENGTH, 10d, "dam", "decametre", DefCvt.MI, new String[]{"dam"}, null, "dekameter"),
+	METRE(UnitType.LENGTH, 1d, "m", "metre", DefCvt.FT_AND_IN, new String[]{"m", "meters", "metres"}, null, "meter"),
 	DECIMETRE(UnitType.LENGTH, 0.1, "dm", "decimetre", DefCvt.IN, null, null, "decimeter"),
 	CENTIMETRE(UnitType.LENGTH, 0.01, "cm", "centimetre", DefCvt.IN, null, null, "centimeter"),
 	MILLIMETRE(UnitType.LENGTH, 0.001, "mm", "millimetre", DefCvt.IN, null, null, "millimeter"),
-	MICROMETRE(UnitType.LENGTH, 1e-6, "µm",	"micrometre", DefCvt.IN, new String[]{"µm", "um"}, null, "micrometer"),
+	MICROMETRE(UnitType.LENGTH, 1e-6, "µm", "micrometre", DefCvt.IN, new String[]{"µm", "um"}, null, "micrometer"),
 	NANOMETRE(UnitType.LENGTH, 1e-9, "nm", "nanometre", DefCvt.IN, null, null, "nanometer"),
 	ANGSTROM(UnitType.LENGTH, 1e-10, "Å", "ångström", DefCvt.IN, new String[]{"Å", "angstrom"}, null, null),
 	MILE(UnitType.LENGTH, 1609.344, "mi", "mile", DefCvt.KM),
@@ -61,7 +61,7 @@ public enum Units
 	FOOT(UnitType.LENGTH, 0.3048, "ft", "foot", DefCvt.M, "feet"),
 	HAND(UnitType.LENGTH, 0.1016, "hand", "hand", DefCvt.IN_CM),
 	INCH(UnitType.LENGTH, 0.0254, "in", "inch", DefCvt.MM, "inches"),
-	MICORINCH(UnitType.LENGTH, 2.54e-8, "µin", "microinch", DefCvt.NM, new String[]{"µin", "uin"}, null, "microinches"),
+	MICORINCH(UnitType.LENGTH, 2.54e-8, "µin", "microinch", DefCvt.NM, new String[]{"µin", "uin"}, "microinches", null),
 	BANANA(UnitType.LENGTH, 0.1778, "banana", "banana", DefCvt.IN_CM),
 	NAUTICAL_MILE(UnitType.LENGTH, 1852d, "nmi", "nautical mile", DefCvt.KM_MI),
 	NAUTICAL_MILE_OLD_BRIT(UnitType.LENGTH, 1853.184, "(Brit) nmi","British nautical mile", DefCvt.KM_MI, new String[]{"oldUKnmi", "admiralty nmi", "Brnmi", "admi"}, null, null),
@@ -82,7 +82,7 @@ public enum Units
 	GRAM(UnitType.MASS, 0.001, "g", "gram", DefCvt.OZ),
 	DECIGRAM(UnitType.MASS, 0.0001, "dg", "decigram", DefCvt.OZ),
 	MILLIGRAM(UnitType.MASS, 1e-6, "mg", "milligram", DefCvt.GR),
-	MICROGRAM(UnitType.MASS, 1e-9, "µg", "microgram", DefCvt.GR, new String[]{"ug", "mcg"}, null, null),
+	MICROGRAM(UnitType.MASS, 1e-9, "µg", "microgram", DefCvt.GR, new String[]{"µg", "ug", "mcg"}, null, null),
 	TONNE(UnitType.MASS, 1000d, "t", "tonne", DefCvt.LT_ST),
 	METRIC_TON(UnitType.MASS, 1000d, "t", "metric ton", DefCvt.LT_ST, new String[]{"MT"}, null, null),
 	LONG_TON(UnitType.MASS, 1016.0469088, "long ton", "long ton", DefCvt.T, new String[]{"LT"}, null, null),
@@ -146,12 +146,25 @@ public enum Units
 	private final String plural; /// Plural form of the name (e.g. "feet" instead of "foot") [can be null]
 	private final String usName; /// U.S. spelling of the name (e.g. "meter" instead of "metre") [can be null]
 
-	/** Static Look-Up-Table for covering various unit names and identifiers. */
+	/**
+	 * Static look-up table for fast access on various unit names and
+	 * identifiers. Do NOT use the unit symbol for look-up, since this string
+	 * may contain HTML-tags for the final output. If the symbol should also be
+	 * covered by the HashMap, add another entry in the corresponding altCodes
+	 * array.
+	 */
 	private static final HashMap<String, Units> NAME_CODE_MAP = new HashMap<String, Units>();
 	static
 	{
 		for (final Units unit : Units.values())
 		{
+			NAME_CODE_MAP.put(unit.getName(), unit);
+
+			if (unit.usName != null)
+			{
+				NAME_CODE_MAP.put(unit.usName, unit);
+			}
+
 			if (unit.altCodes != null)
 			{
 				for (final String altCode : unit.altCodes)
@@ -290,7 +303,7 @@ public enum Units
 
 		for (Units ut : Units.values())
 		{
-			if (name.equals(ut.getName()) || name.equals(ut.getSymbol()))
+			if (name.equals(ut.getSymbol()))
 			{
 				return ut;
 			}
@@ -311,6 +324,8 @@ public enum Units
 	}
 
 	private static enum UnitType {
+		ABSORBED_RADIATION_DOSE,
+		ACCELERATION,
 		AREA,
 		AREA_PER_UNIT_AREA,
 		CENT,
