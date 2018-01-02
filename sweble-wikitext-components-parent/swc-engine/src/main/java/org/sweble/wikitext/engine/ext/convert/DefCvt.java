@@ -54,6 +54,14 @@ public enum DefCvt
 	LB_CO2_PER_US_GAL("lbCO2/USgal"),
 	KG_CO2_PER_L("kgCO2/L"),
 
+	KG_PER_M3("kg/m3"),
+	LB_PER_CUIN("lb/cuin"),
+	LB_CUFT("lb/cuft"),
+	LB_PER_US_GAL("lb/USgal"),
+	LB_PER_CUYD("lb/cuyd"),
+	G_PER_CM3("g/cm3"),
+	KG_PER_L("kg/L"),
+
 	KM("km"),
 	M("m"),
 	MM("mm"),
