@@ -43,7 +43,7 @@ public enum Units
 	// acceleration
 	CENTIMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 0.01, "cm/s<sup>2</sup>", "centimetre per second squared", DefCvt.FT_PER_S2, new String[]{"cm/s2"}, "centimetres per second squared", "centimeters per second squared"),
 	FOOT_PER_SEC_SQ(UnitType.ACCELERATION, 0.3048, "ft/s<sup>2</sup>", "foot per second squared", DefCvt.M_PER_S2, new String[]{"ft/s2"}, "feet per second squared", null),
-	STANDARD_GRAVITY(UnitType.ACCELERATION, 9.80665, "g<sub>0</sub>", "standard gravity", DefCvt.M_PER_S2, new String[]{"g0", "standard gravity"}, "standard gravities", null),
+	STANDARD_GRAVITY(UnitType.ACCELERATION, 9.80665, "g<sub>0</sub>", "standard gravity", DefCvt.M_PER_S2, new String[]{"g0"}, "standard gravities", null),
 	KILOMETRE_PER_H_PER_SEC(UnitType.ACCELERATION, 0.27777777777777779, "km/(h⋅s)", "kilometre per hour per second", DefCvt.MPH_PER_S, new String[]{"km/hs, km/h/s"}, "kilometres per hour per second", "kilometers per hour per second"),
 	KILOMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 1000d, "km/s<sup>2</sup>", "kilometre per second squared", DefCvt.MPH_PER_S, new String[] {"km/s2"}, "kilometres per second squared", "kilometers per second squared"),
 	METRE_PER_SEC_SQ(UnitType.ACCELERATION, 1d, "m/s<sup>2</sup>", "metre per second squared", DefCvt.FT_PER_S2, new String[]{"m/s2"}, "metres per second squared", "meters per second squared"),
@@ -63,7 +63,7 @@ public enum Units
 	ACRE(UnitType.AREA, 4046.8564224, "acres", "acre", DefCvt.HA, new String[]{"acre-sing", "acres"}),
 	ARPENT(UnitType.AREA, 3418.89, "arpent", "arpent", DefCvt.HA, new String[]{"sq arp"}),
 	CUERDA(UnitType.AREA, 3930.395625, "cda", "cuerda", DefCvt.HA_ACRE),
-	DAA(UnitType.AREA, 1000d, "daa", "decare", DefCvt.KM2_SQMI, new String[]{"a"}),
+	DAA(UnitType.AREA, 1000d, "daa", "decare", DefCvt.KM2_SQMI, new String[]{"daa"}),
 	DUNAM(UnitType.AREA, 1000d, "dunam", "dunam", DefCvt.KM2_SQMI),
 	DUNUM(UnitType.AREA, 1000d, "dunum", "dunum", DefCvt.KM2_SQMI),
 	HECTARE(UnitType.AREA, 1e4, "ha", "hectare", DefCvt.ACRE),
@@ -106,6 +106,25 @@ public enum Units
 	KILOGRAM_PER_LITRE(UnitType.CO2_PER_UNIT_VOLUME, 1000d, "kg(CO<sub>2</sub>)/L", "kilogram per litre", DefCvt.LB_CO2_PER_US_GAL, new String[]{"kgCO2/L"}, "kilograms per litre", "kilograms per liter"),
 	POUNT_PER_US_GAL(UnitType.CO2_PER_UNIT_VOLUME, 119.82642731689663, "lbCO2/US&nbsp;gal", "pound per US gallon", DefCvt.KG_CO2_PER_L, new String[]{"lbCO2/USgal"}, "pounds per US gallon", null),
 
+	// density
+	GRAMM_PER_CUBIC_DM(UnitType.DENSITY, 1d, "g/dm<sup>3</sup>", "gram per cubic decimetre", DefCvt.KG_PER_M3, new String[]{"g/dm3"}, "grams per cubic decimetre", "grams per cubic decimeter"),
+	GRAM_PER_LITRE(UnitType.DENSITY, 1d, "g/L", "gram per litre", DefCvt.LB_PER_CUIN, new String[]{"g/L"}, "grams per litre", "grams per liter"),
+	GRAM_PER_ML(UnitType.DENSITY, 1000d, "g/mL", "gram per millilitre", DefCvt.LB_PER_CUIN, new String[]{"g/mL", "g/ml"}, "grams per millilitre", "grams per milliliter"),
+	KILOGRAM_PER_DM3(UnitType.DENSITY, 1000d, "kg/dm<sup>3</sup>", "kilogram per cubic decimetre", DefCvt.LB_CUFT, new String[]{"kg/dm3"}, "kilograms per cubic decimetre", "kilograms per cubic decimeter"),
+	KILOGRAMM_PER_LITRE(UnitType.DENSITY, 1000d, "kg/L", "kilogram per litre", DefCvt.LB_PER_US_GAL, new String[]{"kg/L", "kg/l"}, "kilograms per litre", "kilograms per liter"),
+	KILOGRAMM_PER_CUBIC_M(UnitType.DENSITY, 1d, "kg/m<sup>3</sup>", "kilogram per cubic metre", DefCvt.LB_PER_CUYD, new String[]{"kg/m3"}, "kilograms per cubic metre", "kilograms per cubic meter"),
+	POUND_PER_CUBIC_FT(UnitType.DENSITY, 16.018463373960142, "lb/cu&nbsp;ft", "pound per cubic foot", DefCvt.G_PER_CM3, new String[]{"lb/cuft", "lb/ft3"}, "pounds per cubic foot", null),
+	POUND_PER_CUBIC_IN(UnitType.DENSITY, 27679.904710203122, "lb/cu&nbsp;in", "pound per cubic inch", DefCvt.G_PER_CM3, new String[]{"lb/cuin"}, "pounds per cubic inch", null),
+	POUND_PER_CUBIC_IN2(UnitType.DENSITY, 27679.904710203122, "lb/cu&thinsp;in", "pound per cubic inch", DefCvt.G_PER_CM3, new String[]{"lb/in3"}, "pounds per cubic inch", null),
+	POUND_PER_CUBIC_YD(UnitType.DENSITY, 0.5932764212577829, "lb/cu&nbsp;yd", "pound per cubic yard", DefCvt.KG_PER_M3, new String[]{"lb/cuyd", "lb/yd3"}, "pounds per cubic yard", null),
+	POUND_PER_IMP_GAL(UnitType.DENSITY, 99.776372663101697, "lb/imp&nbsp;gal", "pound per imperial gallon", DefCvt.KG_PER_L, new String[]{"lb/impgal"}, "pounds per imperial gallon", null),
+	POUND_PER_US_GAL(UnitType.DENSITY, 119.82642731689663, "lb/U.S.&nbsp;gal", "pound per U.S. gallon", DefCvt.KG_PER_L, new String[]{"lb/U.S.gal"}, "pounds per U.S. gallon", null),
+	POUND_PER_US_GAL2(UnitType.DENSITY, 119.82642731689663, "lb/US&nbsp;gal", "pound per US gallon", DefCvt.KG_PER_L, new String[]{"lb/USgal"}, "pounds per US gallon", null),
+	POUND_PER_US_BUSHEL(UnitType.DENSITY, 12.871859780974471, "lb/US&nbsp;bu", "pound per US bushel", DefCvt.KG_PER_M3, new String[]{"lb/USbu"}, "pounds per US bushel", null),
+	POUND_MASS_PER_CUBIC_IN(UnitType.DENSITY, 27679.904710203122, "lbm/cu&thinsp;in", "pound mass per cubic inch", DefCvt.G_PER_CM3, new String[]{"lbm/cuin"}, "pounds mass per cubic inch", null),
+	MILLIGRAM_PER_LITRE(UnitType.DENSITY, 0.001, "mg/L", "milligram per litre", DefCvt.LB_PER_CUIN, new String[]{"mg/L"}, "milligrams per litre", "milligrams per liter"),
+	OUNCE_PER_CUBIC_IN(UnitType.DENSITY, 1729.9940443876951, "oz/cu&nbsp;in", "ounce per cubic inch", DefCvt.G_PER_CM3, new String[]{"oz/cuin", "oz/in3"}, "ounces per cubic inch", null),
+
 	// length: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/length
 	GIGAMETRE(UnitType.LENGTH, 1e9, "Gm", "gigametre", DefCvt.MI, new String[]{"Gm"}, null, "gigameter"),
 	MEAGAMETRE(UnitType.LENGTH, 1e6, "Mm", "megametre", DefCvt.MI, new String[]{"Mm"}, null, "megameter"),
@@ -146,7 +165,6 @@ public enum Units
 	ASTRONOMICAL_UNIT(UnitType.LENGTH, 149597870691d, "AU", "astronomical unit", DefCvt.KM_MI),
 
 	// masses: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/mass
-
 	KILOGRAM(UnitType.MASS, 1d, "kg", "kilogram", DefCvt.LB),
 	GRAM(UnitType.MASS, 0.001, "g", "gram", DefCvt.OZ),
 	DECIGRAM(UnitType.MASS, 0.0001, "dg", "decigram", DefCvt.OZ),
@@ -206,6 +224,10 @@ public enum Units
 			{
 				for (final String altCode : unit.altCodes)
 				{
+					assert (!NAME_CODE_MAP.containsKey(altCode)) 
+							: "Alternative Name Code \"" + altCode + "\" should "
+							+ "be unique, but was already added in Map before!";
+
 					NAME_CODE_MAP.put(altCode, unit);
 				}
 			}
@@ -369,6 +391,7 @@ public enum Units
 		CHARGE,
 		CHEMICAL_AMOUNT,
 		CO2_PER_UNIT_VOLUME,
+		DENSITY,
 		LENGTH,
 		MASS,
 	}
