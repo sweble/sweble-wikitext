@@ -33,6 +33,14 @@ import java.util.HashMap;
  *
  * The complete and actual data set used from the original template (Lua) can be
  * found here: https://en.wikipedia.org/wiki/Module:Convert/data
+ *
+ * The following HTML chars where substituted with the corresponding Unicode
+ * chars:
+ *
+ * &nbsp;    \u00A0  ' '
+ * &thinsp;  \u2009  ' '
+ * &#8209;   \u8209  '‑'
+ * 
  */
 public enum Units
 {
@@ -41,24 +49,24 @@ public enum Units
 	RAD(UnitType.ABSORBED_RADIATION_DOSE, 0.01, "rad", "rad", DefCvt.GY),
 
 	// acceleration
-	CENTIMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 0.01, "cm/s<sup>2</sup>", "centimetre per second squared", DefCvt.FT_PER_S2, new String[]{"cm/s2"}, "centimetres per second squared", "centimeters per second squared"),
-	FOOT_PER_SEC_SQ(UnitType.ACCELERATION, 0.3048, "ft/s<sup>2</sup>", "foot per second squared", DefCvt.M_PER_S2, new String[]{"ft/s2"}, "feet per second squared", null),
-	STANDARD_GRAVITY(UnitType.ACCELERATION, 9.80665, "g<sub>0</sub>", "standard gravity", DefCvt.M_PER_S2, new String[]{"g0"}, "standard gravities", null),
+	CENTIMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 0.01, "cm/s²", "centimetre per second squared", DefCvt.FT_PER_S2, new String[]{"cm/s2"}, "centimetres per second squared", "centimeters per second squared"),
+	FOOT_PER_SEC_SQ(UnitType.ACCELERATION, 0.3048, "ft/s²", "foot per second squared", DefCvt.M_PER_S2, new String[]{"ft/s2"}, "feet per second squared", null),
+	STANDARD_GRAVITY(UnitType.ACCELERATION, 9.80665, "g₀", "standard gravity", DefCvt.M_PER_S2, new String[]{"g0"}, "standard gravities", null),
 	KILOMETRE_PER_H_PER_SEC(UnitType.ACCELERATION, 0.27777777777777779, "km/(h⋅s)", "kilometre per hour per second", DefCvt.MPH_PER_S, new String[]{"km/hs, km/h/s"}, "kilometres per hour per second", "kilometers per hour per second"),
-	KILOMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 1000d, "km/s<sup>2</sup>", "kilometre per second squared", DefCvt.MPH_PER_S, new String[] {"km/s2"}, "kilometres per second squared", "kilometers per second squared"),
-	METRE_PER_SEC_SQ(UnitType.ACCELERATION, 1d, "m/s<sup>2</sup>", "metre per second squared", DefCvt.FT_PER_S2, new String[]{"m/s2"}, "metres per second squared", "meters per second squared"),
+	KILOMETRE_PER_SEC_SQ(UnitType.ACCELERATION, 1000d, "km/s²", "kilometre per second squared", DefCvt.MPH_PER_S, new String[] {"km/s2"}, "kilometres per second squared", "kilometers per second squared"),
+	METRE_PER_SEC_SQ(UnitType.ACCELERATION, 1d, "m/s²", "metre per second squared", DefCvt.FT_PER_S2, new String[]{"m/s2"}, "metres per second squared", "meters per second squared"),
 	MILE_PER_H_PER_SEC(UnitType.ACCELERATION, 0.44704, "mph/s", "mile per hour per second", DefCvt.KM_PER_HS, new String[]{"mph/s"}, "miles per hour per second", null),
 
 	// area: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/area
-	SQUARE_KILOMETRE(UnitType.AREA, 1e6, "km<sup>2</sup>", "square kilometre", DefCvt.SQMI, new String[]{"km2", "km²", "sqkm"}, null, "square kilometer"),
-	SQUARE_HECTOMETRE(UnitType.AREA, 1e4, "hm<sup>2</sup>", "square hectometre", DefCvt.ACRE, new String[]{"hm2", "hm²"}, null, "square hectometer"),
-	SQUARE_DECAMETRE(UnitType.AREA, 100d, "dam<sup>2</sup>", "square decametre", DefCvt.SQFT, new String[]{"dam2", "dam²"}, null, "square dekameter"),
-	SQUARE_METRE(UnitType.AREA, 1d, "m<sup>2</sup>", "square metre", DefCvt.SQFT, new String[]{"m2", "m²", "sqm"}, null, "square meter"),
-	SQUARE_DECIMETRE(UnitType.AREA, 0.01, "dm<sup>2</sup>", "square decimetre", DefCvt.SQIN, new String[]{"dm2", "dm²"}, null, "square decimeter"),
-	SQUARE_CENTIMETRE(UnitType.AREA, 0.0001, "cm<sup>2</sup>", "square centimetre", DefCvt.SQIN, new String[]{"cm2", "cm²"} , null, "square centimeter"),
-	SQUARE_MILLIMETRE(UnitType.AREA, 1e-6, "mm<sup>2</sup>", "square millimetre", DefCvt.SQIN, new String[]{"mm2", "mm²"}, null, "square millimeter"),
+	SQUARE_KILOMETRE(UnitType.AREA, 1e6, "km²", "square kilometre", DefCvt.SQMI, new String[]{"km2", "km²", "sqkm"}, null, "square kilometer"),
+	SQUARE_HECTOMETRE(UnitType.AREA, 1e4, "hm²", "square hectometre", DefCvt.ACRE, new String[]{"hm2", "hm²"}, null, "square hectometer"),
+	SQUARE_DECAMETRE(UnitType.AREA, 100d, "dam²", "square decametre", DefCvt.SQFT, new String[]{"dam2", "dam²"}, null, "square dekameter"),
+	SQUARE_METRE(UnitType.AREA, 1d, "m²", "square metre", DefCvt.SQFT, new String[]{"m2", "m²", "sqm"}, null, "square meter"),
+	SQUARE_DECIMETRE(UnitType.AREA, 0.01, "dm²", "square decimetre", DefCvt.SQIN, new String[]{"dm2", "dm²"}, null, "square decimeter"),
+	SQUARE_CENTIMETRE(UnitType.AREA, 0.0001, "cm²", "square centimetre", DefCvt.SQIN, new String[]{"cm2", "cm²"} , null, "square centimeter"),
+	SQUARE_MILLIMETRE(UnitType.AREA, 1e-6, "mm²", "square millimetre", DefCvt.SQIN, new String[]{"mm2", "mm²"}, null, "square millimeter"),
 
-	THOUSAND_SQFT(UnitType.AREA, 92.90304, "1000&nbsp;sq&nbsp;ft", "thousand square feet", DefCvt.M2, null, "thousand square feet", null),
+	THOUSAND_SQFT(UnitType.AREA, 92.90304, "1000\u00A0sq\u00A0ft", "thousand square feet", DefCvt.M2, null, "thousand square feet", null),
 	ARE(UnitType.AREA, 100d, "a", "are", DefCvt.SQFT, new String[]{"a"}),
 	ACRE(UnitType.AREA, 4046.8564224, "acres", "acre", DefCvt.HA, new String[]{"acre-sing", "acres"}),
 	ARPENT(UnitType.AREA, 3418.89, "arpent", "arpent", DefCvt.HA, new String[]{"sq arp"}),
@@ -67,24 +75,24 @@ public enum Units
 	DUNAM(UnitType.AREA, 1000d, "dunam", "dunam", DefCvt.KM2_SQMI),
 	DUNUM(UnitType.AREA, 1000d, "dunum", "dunum", DefCvt.KM2_SQMI),
 	HECTARE(UnitType.AREA, 1e4, "ha", "hectare", DefCvt.ACRE),
-	IRISH_ACRE(UnitType.AREA, 6555.2385024, "Irish&nbsp;acres", "Irish acre", DefCvt.HA),
+	IRISH_ACRE(UnitType.AREA, 6555.2385024, "Irish\u00A0acres", "Irish acre", DefCvt.HA),
 	PONDEMAAT(UnitType.AREA, 3674.363358816, "pond", "pondemaat", DefCvt.M2, new String[]{"pond"}),
 	PYEONG(UnitType.AREA, 3.3057851239669422, "pyeong", "pyeong", DefCvt.M2),
 	RAI(UnitType.AREA, 1600d, "rai", "rai", DefCvt.M2),
 	ROOD(UnitType.AREA, 1011.7141056, "rood", "rood", DefCvt.SQFT_M2),
-	SQUARE_FOOT(UnitType.AREA, 0.09290304, "sq&nbsp;ft", "square foot", DefCvt.M2, new String[]{"sqft", "ft2"}, "square feet", null),
-	SQUARE_FOOT2(UnitType.AREA, 0.09290304, "sq&nbsp;ft", "square foot", DefCvt.M2, new String[]{"sqfoot", "foot2"}, "square foot", null),
-	SQUARE_INCH(UnitType.AREA, 0.00064516, "sq&nbsp;in", "square inch", DefCvt.CM2, new String[]{"sqin", "in2"}, "square inches", null),
-	SQUARE_NAUTICAL_MILE(UnitType.AREA, 3429904d, "sq&nbsp;nmi", "square nautical mile", DefCvt.KM2_SQMI, new String[]{"nmi2"}),
-	SQUARE_MILE(UnitType.AREA, 2589988.110336, "sq&nbsp;mi", "square mile", DefCvt.KM2, new String[]{"sqmi", "mi2"}),
+	SQUARE_FOOT(UnitType.AREA, 0.09290304, "sq\u00A0ft", "square foot", DefCvt.M2, new String[]{"sqft", "ft2"}, "square feet", null),
+	SQUARE_FOOT2(UnitType.AREA, 0.09290304, "sq\u00A0ft", "square foot", DefCvt.M2, new String[]{"sqfoot", "foot2"}, "square foot", null),
+	SQUARE_INCH(UnitType.AREA, 0.00064516, "sq\u00A0in", "square inch", DefCvt.CM2, new String[]{"sqin", "in2"}, "square inches", null),
+	SQUARE_NAUTICAL_MILE(UnitType.AREA, 3429904d, "sq\u00A0nmi", "square nautical mile", DefCvt.KM2_SQMI, new String[]{"nmi2"}),
+	SQUARE_MILE(UnitType.AREA, 2589988.110336, "sq\u00A0mi", "square mile", DefCvt.KM2, new String[]{"sqmi", "mi2"}),
 	SQUARE_PERCH(UnitType.AREA, 25.29285264, "perch", "perches", DefCvt.M2),
 	SQUARE_VERST(UnitType.AREA, 1138062.24, "square verst", "square verst", DefCvt.KM2_SQMI, new String[]{"sqverst", "verst2"}),
-	SQUARE_YARD(UnitType.AREA, 0.83612736, "sq&nbsp;yd", "square yard", DefCvt.M2, new String[]{"sqyd", "yd2"}),
+	SQUARE_YARD(UnitType.AREA, 0.83612736, "sq\u00A0yd", "square yard", DefCvt.M2, new String[]{"sqyd", "yd2"}),
 	TSUBO(UnitType.AREA, 3.3057851239669422, "tsubo", "tsubo", DefCvt.M2, null, "tsubo", null),
 
 	// area per unit area
-	M2_PER_HA(UnitType.AREA_PER_UNIT_AREA, 0.0001, "m<sup>2</sup>/ha", "square metre per hectare", DefCvt.SQFT_PER_ACRE, new String[]{"m2/ha"}, "square metres per hectare", "square meters per hectare"),
-	SQFT_PER_ACRE(UnitType.AREA_PER_UNIT_AREA, 2.295684113865932e-5, "sq&nbsp;ft/acre", "square foot per acre", DefCvt.M2_PER_HA, null, "square feet per acre", null),
+	M2_PER_HA(UnitType.AREA_PER_UNIT_AREA, 0.0001, "m²/ha", "square metre per hectare", DefCvt.SQFT_PER_ACRE, new String[]{"m2/ha"}, "square metres per hectare", "square meters per hectare"),
+	SQFT_PER_ACRE(UnitType.AREA_PER_UNIT_AREA, 2.295684113865932e-5, "sq\u00A0ft/acre", "square foot per acre", DefCvt.M2_PER_HA, null, "square feet per acre", null),
 
 	// cent
 	CENT(UnitType.CENT, 1d, "¢", "cent", DefCvt.CENT, new String[]{"¢"}),
@@ -95,35 +103,35 @@ public enum Units
 	E(UnitType.CHARGE, 1.602176487e-19, "e", "elementary charge", DefCvt.COULOMB, new String[]{"e"}),
 
 	// chemical amount
-	GRAM_MOLE(UnitType.CHEMICAL_AMOUNT, 1d, "g&#8209;mol", "gram-mole", DefCvt.LBMOL, new String[]{"g-mol"}),
+	GRAM_MOLE(UnitType.CHEMICAL_AMOUNT, 1d, "g\u8209mol", "gram-mole", DefCvt.LBMOL, new String[]{"g-mol"}),
 	GRAM_MOLE2(UnitType.CHEMICAL_AMOUNT, 1d, "gmol", "gram-mole", DefCvt.LBMOL, new String[]{"gmol"}),
 	KILOMOLE(UnitType.CHEMICAL_AMOUNT, 1000d, "kmol", "kilomole", DefCvt.LBMOL, new String[]{"kmol"}),
-	POUND_MOLE(UnitType.CHEMICAL_AMOUNT, 453.59237, "lb&#8209;mol", "pound-mole", DefCvt.MOL, new String[]{"lb-mol"}),
+	POUND_MOLE(UnitType.CHEMICAL_AMOUNT, 453.59237, "lb\u8209mol", "pound-mole", DefCvt.MOL, new String[]{"lb-mol"}),
 	POUND_MOLE2(UnitType.CHEMICAL_AMOUNT, 453.59237, "lbmol", "pound-mole", DefCvt.MOL, new String[]{"lbmol"}),
 	MOLE(UnitType.CHEMICAL_AMOUNT, 1d, "mol", "mole", DefCvt.LBMOL, new String[]{"mol"}),
 
 	// CO2 per unit volume
-	KILOGRAM_PER_LITRE(UnitType.CO2_PER_UNIT_VOLUME, 1000d, "kg(CO<sub>2</sub>)/L", "kilogram per litre", DefCvt.LB_CO2_PER_US_GAL, new String[]{"kgCO2/L"}, "kilograms per litre", "kilograms per liter"),
-	POUNT_PER_US_GAL(UnitType.CO2_PER_UNIT_VOLUME, 119.82642731689663, "lbCO2/US&nbsp;gal", "pound per US gallon", DefCvt.KG_CO2_PER_L, new String[]{"lbCO2/USgal"}, "pounds per US gallon", null),
+	KILOGRAM_PER_LITRE(UnitType.CO2_PER_UNIT_VOLUME, 1000d, "kg(CO₂)/L", "kilogram per litre", DefCvt.LB_CO2_PER_US_GAL, new String[]{"kgCO2/L"}, "kilograms per litre", "kilograms per liter"),
+	POUNT_PER_US_GAL(UnitType.CO2_PER_UNIT_VOLUME, 119.82642731689663, "lbCO2/US\u00A0gal", "pound per US gallon", DefCvt.KG_CO2_PER_L, new String[]{"lbCO2/USgal"}, "pounds per US gallon", null),
 
 	// density
-	GRAMM_PER_CUBIC_DM(UnitType.DENSITY, 1d, "g/dm<sup>3</sup>", "gram per cubic decimetre", DefCvt.KG_PER_M3, new String[]{"g/dm3"}, "grams per cubic decimetre", "grams per cubic decimeter"),
+	GRAMM_PER_CUBIC_DM(UnitType.DENSITY, 1d, "g/dm³", "gram per cubic decimetre", DefCvt.KG_PER_M3, new String[]{"g/dm3"}, "grams per cubic decimetre", "grams per cubic decimeter"),
 	GRAM_PER_LITRE(UnitType.DENSITY, 1d, "g/L", "gram per litre", DefCvt.LB_PER_CUIN, new String[]{"g/L"}, "grams per litre", "grams per liter"),
 	GRAM_PER_ML(UnitType.DENSITY, 1000d, "g/mL", "gram per millilitre", DefCvt.LB_PER_CUIN, new String[]{"g/mL", "g/ml"}, "grams per millilitre", "grams per milliliter"),
-	KILOGRAM_PER_DM3(UnitType.DENSITY, 1000d, "kg/dm<sup>3</sup>", "kilogram per cubic decimetre", DefCvt.LB_CUFT, new String[]{"kg/dm3"}, "kilograms per cubic decimetre", "kilograms per cubic decimeter"),
+	KILOGRAM_PER_DM3(UnitType.DENSITY, 1000d, "kg/dm³", "kilogram per cubic decimetre", DefCvt.LB_CUFT, new String[]{"kg/dm3"}, "kilograms per cubic decimetre", "kilograms per cubic decimeter"),
 	KILOGRAMM_PER_LITRE(UnitType.DENSITY, 1000d, "kg/L", "kilogram per litre", DefCvt.LB_PER_US_GAL, new String[]{"kg/L", "kg/l"}, "kilograms per litre", "kilograms per liter"),
-	KILOGRAMM_PER_CUBIC_M(UnitType.DENSITY, 1d, "kg/m<sup>3</sup>", "kilogram per cubic metre", DefCvt.LB_PER_CUYD, new String[]{"kg/m3"}, "kilograms per cubic metre", "kilograms per cubic meter"),
-	POUND_PER_CUBIC_FT(UnitType.DENSITY, 16.018463373960142, "lb/cu&nbsp;ft", "pound per cubic foot", DefCvt.G_PER_CM3, new String[]{"lb/cuft", "lb/ft3"}, "pounds per cubic foot", null),
-	POUND_PER_CUBIC_IN(UnitType.DENSITY, 27679.904710203122, "lb/cu&nbsp;in", "pound per cubic inch", DefCvt.G_PER_CM3, new String[]{"lb/cuin"}, "pounds per cubic inch", null),
-	POUND_PER_CUBIC_IN2(UnitType.DENSITY, 27679.904710203122, "lb/cu&thinsp;in", "pound per cubic inch", DefCvt.G_PER_CM3, new String[]{"lb/in3"}, "pounds per cubic inch", null),
-	POUND_PER_CUBIC_YD(UnitType.DENSITY, 0.5932764212577829, "lb/cu&nbsp;yd", "pound per cubic yard", DefCvt.KG_PER_M3, new String[]{"lb/cuyd", "lb/yd3"}, "pounds per cubic yard", null),
-	POUND_PER_IMP_GAL(UnitType.DENSITY, 99.776372663101697, "lb/imp&nbsp;gal", "pound per imperial gallon", DefCvt.KG_PER_L, new String[]{"lb/impgal"}, "pounds per imperial gallon", null),
-	POUND_PER_US_GAL(UnitType.DENSITY, 119.82642731689663, "lb/U.S.&nbsp;gal", "pound per U.S. gallon", DefCvt.KG_PER_L, new String[]{"lb/U.S.gal"}, "pounds per U.S. gallon", null),
-	POUND_PER_US_GAL2(UnitType.DENSITY, 119.82642731689663, "lb/US&nbsp;gal", "pound per US gallon", DefCvt.KG_PER_L, new String[]{"lb/USgal"}, "pounds per US gallon", null),
-	POUND_PER_US_BUSHEL(UnitType.DENSITY, 12.871859780974471, "lb/US&nbsp;bu", "pound per US bushel", DefCvt.KG_PER_M3, new String[]{"lb/USbu"}, "pounds per US bushel", null),
-	POUND_MASS_PER_CUBIC_IN(UnitType.DENSITY, 27679.904710203122, "lbm/cu&thinsp;in", "pound mass per cubic inch", DefCvt.G_PER_CM3, new String[]{"lbm/cuin"}, "pounds mass per cubic inch", null),
+	KILOGRAMM_PER_CUBIC_M(UnitType.DENSITY, 1d, "kg/m³", "kilogram per cubic metre", DefCvt.LB_PER_CUYD, new String[]{"kg/m3"}, "kilograms per cubic metre", "kilograms per cubic meter"),
+	POUND_PER_CUBIC_FT(UnitType.DENSITY, 16.018463373960142, "lb/cu\u00A0ft", "pound per cubic foot", DefCvt.G_PER_CM3, new String[]{"lb/cuft", "lb/ft3"}, "pounds per cubic foot", null),
+	POUND_PER_CUBIC_IN(UnitType.DENSITY, 27679.904710203122, "lb/cu\u00A0in", "pound per cubic inch", DefCvt.G_PER_CM3, new String[]{"lb/cuin"}, "pounds per cubic inch", null),
+	POUND_PER_CUBIC_IN2(UnitType.DENSITY, 27679.904710203122, "lb/cu\u2009in", "pound per cubic inch", DefCvt.G_PER_CM3, new String[]{"lb/in3"}, "pounds per cubic inch", null),
+	POUND_PER_CUBIC_YD(UnitType.DENSITY, 0.5932764212577829, "lb/cu\u00A0yd", "pound per cubic yard", DefCvt.KG_PER_M3, new String[]{"lb/cuyd", "lb/yd3"}, "pounds per cubic yard", null),
+	POUND_PER_IMP_GAL(UnitType.DENSITY, 99.776372663101697, "lb/imp\u00A0gal", "pound per imperial gallon", DefCvt.KG_PER_L, new String[]{"lb/impgal"}, "pounds per imperial gallon", null),
+	POUND_PER_US_GAL(UnitType.DENSITY, 119.82642731689663, "lb/U.S.\u00A0gal", "pound per U.S. gallon", DefCvt.KG_PER_L, new String[]{"lb/U.S.gal"}, "pounds per U.S. gallon", null),
+	POUND_PER_US_GAL2(UnitType.DENSITY, 119.82642731689663, "lb/US\u00A0gal", "pound per US gallon", DefCvt.KG_PER_L, new String[]{"lb/USgal"}, "pounds per US gallon", null),
+	POUND_PER_US_BUSHEL(UnitType.DENSITY, 12.871859780974471, "lb/US\u00A0bu", "pound per US bushel", DefCvt.KG_PER_M3, new String[]{"lb/USbu"}, "pounds per US bushel", null),
+	POUND_MASS_PER_CUBIC_IN(UnitType.DENSITY, 27679.904710203122, "lbm/cu\u2009in", "pound mass per cubic inch", DefCvt.G_PER_CM3, new String[]{"lbm/cuin"}, "pounds mass per cubic inch", null),
 	MILLIGRAM_PER_LITRE(UnitType.DENSITY, 0.001, "mg/L", "milligram per litre", DefCvt.LB_PER_CUIN, new String[]{"mg/L"}, "milligrams per litre", "milligrams per liter"),
-	OUNCE_PER_CUBIC_IN(UnitType.DENSITY, 1729.9940443876951, "oz/cu&nbsp;in", "ounce per cubic inch", DefCvt.G_PER_CM3, new String[]{"oz/cuin", "oz/in3"}, "ounces per cubic inch", null),
+	OUNCE_PER_CUBIC_IN(UnitType.DENSITY, 1729.9940443876951, "oz/cu\u00A0in", "ounce per cubic inch", DefCvt.G_PER_CM3, new String[]{"oz/cuin", "oz/in3"}, "ounces per cubic inch", null),
 
 	// length: https://en.wikipedia.org/wiki/Template:Convert/list_of_units/length
 	GIGAMETRE(UnitType.LENGTH, 1e9, "Gm", "gigametre", DefCvt.MI, new String[]{"Gm"}, null, "gigameter"),
@@ -174,10 +182,10 @@ public enum Units
 	METRIC_TON(UnitType.MASS, 1000d, "t", "metric ton", DefCvt.LT_ST, new String[]{"MT"}, null, null),
 	LONG_TON(UnitType.MASS, 1016.0469088, "long ton", "long ton", DefCvt.T, new String[]{"LT"}, null, null),
 	SHORT_TON(UnitType.MASS, 907.18474, "short ton", "short ton", DefCvt.T, new String[]{"ST"}, null, null),
-	LONG_HUNDREDWEIGHT(UnitType.MASS, 50.80234544, "long&nbsp;cwt", "long hundredweight", DefCvt.LB_KG, new String[]	{"long cwt"}, null, null),
-	SHORT_HUNDREDWEIGHT(UnitType.MASS, 45.359237, "short&nbsp;cwt", "short hundredweight", DefCvt.LB_KG, new String[]	{"short cwt"}, null, null),
-	LONG_QUARTER(UnitType.MASS, 12.70058636, "long&nbsp;qtr", "long quarter", DefCvt.LB_KG, new String[]	{"long qtr"}, null, null),
-	SHORT_QUARTER(UnitType.MASS, 11.33980925, "short&nbsp;qtr", "short quarter", DefCvt.LB_KG, new String[]	{"short qtr"}, null, null),
+	LONG_HUNDREDWEIGHT(UnitType.MASS, 50.80234544, "long\u00A0cwt", "long hundredweight", DefCvt.LB_KG, new String[]{"long cwt"}, null, null),
+	SHORT_HUNDREDWEIGHT(UnitType.MASS, 45.359237, "short\u00A0cwt", "short hundredweight", DefCvt.LB_KG, new String[]{"short cwt"}, null, null),
+	LONG_QUARTER(UnitType.MASS, 12.70058636, "long\u00A0qtr", "long quarter", DefCvt.LB_KG, new String[]	{"long qtr"}, null, null),
+	SHORT_QUARTER(UnitType.MASS, 11.33980925, "short\u00A0qtr", "short quarter", DefCvt.LB_KG, new String[]{"short qtr"}, null, null),
 	STONE(UnitType.MASS, 6.35029318, "st", "stone", DefCvt.LB_KG),
 	POUND(UnitType.MASS, 0.45359237, "lb", "pound", DefCvt.KG),
 	OUNCE(UnitType.MASS, 0.028349523125, "oz", "ounce", DefCvt.G),
@@ -191,7 +199,7 @@ public enum Units
 
 	private final UnitType type; /// The type of the unit (e.g. length, mass, etc.)
 	private final double scale; /// Scale factor based on the underlying SI unit type.
-	private final String symbol; /// The unit symbol which may contain HTML formating (e.g. "m<sup>2</sup>").
+	private final String symbol; /// The unit symbol which may contain special characters (e.g. "m²").
 	private final String name; /// The official name of the unit.
 	private final String[] altCodes; /// Alternating codes and names of the unit. [can be null]
 	private final DefCvt defaultConv; /// Default unit to convert to when no target was explicitly given.
@@ -201,7 +209,7 @@ public enum Units
 	/**
 	 * Static look-up table for fast access on various unit names and
 	 * identifiers. Do NOT use the unit symbol for look-up, since this string
-	 * may contain HTML-tags for the final output. If the symbol should also be
+	 * may contain special Unicode characters. If the symbol should also be
 	 * covered by the HashMap, add another entry in the corresponding altCodes
 	 * array.
 	 */
@@ -260,8 +268,8 @@ public enum Units
 	 *
 	 * @param type The type of the unit (e.g. length, mass, etc.)
 	 * @param scale Scale factor based on the underlying SI unit type.
-	 * @param symbol The unit symbol which may contain HTML formating (e.g.
-	 * "m<sup>2</sup>").
+	 * @param symbol The unit symbol which may contain special characters (e.g.
+	 * "m²").
 	 * @param name The official name of the unit.
 	 * @param defCvt Default unit to convert to when no target was explicitly
 	 * given.

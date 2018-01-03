@@ -18,16 +18,8 @@
 package org.sweble.wikitext.engine.ext.convert;
 
 import de.fau.cs.osr.utils.StringTools;
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
@@ -48,8 +40,6 @@ public class Convert
 		extends
 		ParserFunctionBase
 {
-	private static DecimalFormat fmt = createDecimalFormater();
-	private static DecimalFormat sciFmt = createScientificFormater();
 	private static int MIN_ARGS = 2;
 	private static int DEFAULT_SIG_FIG = 2;
 	private int sigFig = DEFAULT_SIG_FIG; // significant figures
@@ -98,7 +88,7 @@ public class Convert
 		try
 		{
 			strArgs = parseArguments(frame, args);
-			value = parseNumber(strArgs.get(0));
+			value = NumberFormater.parseNumber(strArgs.get(0));
 		} catch (Exception ex)
 		{
 			return error(ex.getMessage());
@@ -157,7 +147,7 @@ public class Convert
 				isUsNameUsed);
 
 		String result = srcValueStr + " " + srcUnitName
-				+ "(" + formatNumberDefault(convertedValue, sigFig)
+				+ "(" + NumberFormater.formatNumberDefault(convertedValue, sigFig)
 				+ destUnitName + ")";
 		return nf().text(result);
 	}
@@ -216,7 +206,7 @@ public class Convert
 			strArgs.add(tmpStr);
 		}
 
-		if (!isNumberValid(strArgs.get(0)))
+		if (!NumberFormater.isNumberValid(strArgs.get(0)))
 		{
 			throw new IllegalArgumentException("The first argument is not a vaild number!");
 		}
@@ -288,111 +278,7 @@ public class Convert
 				cleanArgs.add(arg);
 			}
 		}
-
 		return cleanArgs;
-	}
-
-	/**
-	 * Checks if the given number string is probably a valid value. Since the
-	 * check is only made on appearing characters, there might be the chance,
-	 * that a wrong used number syntax let a conversion with
-	 * {@link parseNumber()} fail anyway.
-	 *
-	 * @param numberStr The number as string to check.
-	 * @return True if the string is most likely a valid value, otherwise false.
-	 * @see parseNumber()
-	 */
-	protected static boolean isNumberValid(final String numberStr)
-	{
-		return numberStr.matches("[0-9,.e/⁄\\-\\+–]+");
-	}
-
-	/**
-	 * Tries to parse a number-string into a valid double value. The following
-	 * notations are supported:
-	 *
-	 * "12"       = 12
-	 * "1,234"    = 1234
-	 * "12.3e-15" = 1.23e-14
-	 *
-	 * Fractions:
-	 * "1/2"    = 0.5
-	 * "1⁄3"    = 0.33333333
-	 * "2+1⁄2"  = 2.5
-	 * "-2-1⁄2" = -2.5
-	 * "1//2"   = 0.5
-	 *
-	 * @param numberStr The number as string to convert.
-	 * @return The parsed number as double value.
-	 * @throws NumberFormatException
-	 * @see https://en.wikipedia.org/wiki/Template:Convert/doc#Numbers
-	 */
-	protected static double parseNumber(final String numberStr)
-			throws NumberFormatException
-	{
-		double value;
-		String number = numberStr.replace(",", ""); // remove thousand separators
-		number = number.replaceAll("–", "-"); // replace all the pesky en dashes
-
-		Matcher fractionMatcher = Pattern.compile("[/⁄]").matcher(number);
-		if (fractionMatcher.find())
-		{
-			String[] fraction = number.split("//|[/⁄]");
-			if (fraction.length != 2)
-			{
-				throw new NumberFormatException("Invalid fraction!");
-			}
-
-			String numerator = fraction[0];
-			String denominator = fraction[1];
-			int idxPlus = numerator.lastIndexOf('+');
-			int idxMinus = numerator.lastIndexOf('-');
-
-			if (idxPlus > idxMinus && idxMinus != -1)
-			{
-				throw new NumberFormatException(
-						"Should be a number, not a expression which requires"
-						+ " calculations!");
-			}
-
-			// whole number part for mixed fractions like 2 ½
-			double wholeNum = 0d;
-
-			int idx = Math.max(idxPlus, idxMinus);
-			if (idx != -1)
-			{
-				String wholeNumStr = numerator.substring(0, idx);
-				numerator = numerator.substring(idx);
-
-				try
-				{
-					wholeNum = Double.parseDouble(wholeNumStr);
-				} catch (NumberFormatException ex)
-				{
-					throw ex;
-				}
-			}
-
-			try
-			{
-				value = wholeNum
-						+ Double.parseDouble(numerator)
-						/ Double.parseDouble(denominator);
-			} catch (NumberFormatException ex)
-			{
-				throw ex;
-			}
-			return value;
-		}
-
-		try
-		{
-			value = Double.parseDouble(number);
-		} catch (NumberFormatException ex)
-		{
-			throw ex;
-		}
-		return value;
 	}
 
 	/**
@@ -482,9 +368,9 @@ public class Convert
 							return null;
 					}
 
-					return fmt.format(convertedMajorVal)
+					return NumberFormater.formatRegular(convertedMajorVal)
 							+ " " + majorUnitName
-							+ " " + fmt.format(convertedMinorVal)
+							+ " " + NumberFormater.formatRegular(convertedMinorVal)
 							+ " " + minorUnitName;
 				}
 			} else
@@ -535,86 +421,7 @@ public class Convert
 			return null;
 		}
 
-		return formatNumberDefault(convertedValue, sigFig) + destNameStr;
-	}
-
-	/**
-	 * Formats the given value like Wikipedia does on default. This includes the
-	 * conversion to scientific notation, adding of thousand separators and
-	 * rounding on various scales (depending on the amount of digits).
-	 *
-	 * @param convertedValue The value to format.
-	 * @param sigFig The count of significant figures to round.
-	 * @return The formated value as string.
-	 */
-	protected static String formatNumberDefault(
-			double convertedValue,
-			int sigFig)
-	{
-		String convertedValStr;
-		final double absValue = Math.abs(convertedValue);
-		if (absValue < 1e-9 || absValue > 1e9)
-		{
-			convertedValStr = sciFmt.format(convertedValue);
-		} else
-		{
-			BigDecimal bd = new BigDecimal(convertedValue);
-			int prec = bd.precision() - bd.scale();
-			if (sigFig > prec)
-			{
-				convertedValStr = formatNumberRounded(convertedValue, sigFig - prec);
-			} else
-			{
-				bd = bd.round(new MathContext(sigFig, RoundingMode.HALF_UP));
-				convertedValStr = fmt.format(bd);
-			}
-		}
-		return convertedValStr;
-	}
-
-	/**
-	 * Rounds and formats a value to the given count of digits after the
-	 * floating point.
-	 * 
-	 * @param convertedValue The value to format.
-	 * @param digitsAfterFloatingPoint Digits behind the floating point [0..16].
-	 * @return The formated value as String.
-	 */
-	protected static String formatNumberRounded(
-			double convertedValue,
-			int digitsAfterFloatingPoint)
-	{
-		final int MAX_DIGITS_AFTER_FLOATING_POINT = 16;
-		if (digitsAfterFloatingPoint > MAX_DIGITS_AFTER_FLOATING_POINT)
-		{
-			digitsAfterFloatingPoint = MAX_DIGITS_AFTER_FLOATING_POINT;
-		}
-
-		DecimalFormat tmpFmt = (DecimalFormat) fmt.clone();
-		tmpFmt.setMinimumFractionDigits(digitsAfterFloatingPoint);
-		tmpFmt.setMaximumFractionDigits(digitsAfterFloatingPoint);
-
-		return tmpFmt.format(convertedValue);
-	}
-
-	static private DecimalFormat createDecimalFormater() {
-		// uses '−' (\u2212) as minus
-		DecimalFormat fmt = new DecimalFormat("#0;−#");
-		fmt.setRoundingMode(RoundingMode.HALF_UP);
-		fmt.setGroupingSize(3);
-		fmt.setGroupingUsed(true);
-		return fmt;
-	}
-
-	static private DecimalFormat createScientificFormater() {
-		DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(Locale.US);
-		symbols.setExponentSeparator("×10<sup>");
-		symbols.setMinusSign('−'); // uses en dash (\u2013)
-
-		DecimalFormat fmt = new DecimalFormat("0.0E0", symbols);
-		fmt.setPositiveSuffix("</sup>");
-		fmt.setNegativeSuffix("</sup>");
-		return fmt;
+		return NumberFormater.formatNumberDefault(convertedValue, sigFig) + destNameStr;
 	}
 
 	static private String getSourceUnitName(Units srcUnit,
