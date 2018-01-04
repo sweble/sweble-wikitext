@@ -122,3 +122,9 @@
 {{convert|1|sqin|sigfig  =  5}}
 {{convert|1|short qtr| sigfig=3}}
 {{convert|1|short qtr| sigfig=1}}
+{{convert|1|C}}
+{{convert|1|K}}
+{{convert|1|F}}
+{{convert|100|C}}
+{{convert|100|K}}
+{{convert|100|F}}

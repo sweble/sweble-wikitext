@@ -304,7 +304,7 @@ public class Convert
 	{
 		assert (srcUnit != null);
 
-		final double siBasedValue = srcUnit.getScale() * value;
+		final double siBasedValue = srcUnit.getScale() * (value - srcUnit.getOffset());
 		final DefCvt defCvt = srcUnit.getDefaultCvt();
 		final String[] cvtUnits = defCvt.getUnits();
 		final Units destUnitA = Units.searchUnitFromName(cvtUnits[0]);
@@ -410,7 +410,7 @@ public class Convert
 	{
 		assert (destUnit != null);
 
-		double convertedValue = siBaseValue / destUnit.getScale();
+		double convertedValue = siBaseValue / destUnit.getScale() + destUnit.getOffset();
 		String destNameStr = getDestUnitName(
 				destUnit,
 				abbreviationMode,
@@ -424,7 +424,8 @@ public class Convert
 		return NumberFormater.formatNumberDefault(convertedValue, sigFig) + destNameStr;
 	}
 
-	static private String getSourceUnitName(Units srcUnit,
+	static private String getSourceUnitName(
+			Units srcUnit,
 			AbbreviationMode abbrMode,
 			boolean isPlural,
 			boolean isUsNameUsed)
