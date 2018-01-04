@@ -91,6 +91,12 @@ public enum DefCvt
 	T("t"),
 	LB_KG(new String[]{"lb", "kg"}),
 	OZ_G(new String[]{"oz", "g"}),
+
+	F("F"),
+	C("C"),
+	C_F(new String[]{"C", "F"}),
+	MK("keVT"),
+	K_F_C(new String[]{"K", "F", "C"}),
 	;
 
 	private final String[] units;

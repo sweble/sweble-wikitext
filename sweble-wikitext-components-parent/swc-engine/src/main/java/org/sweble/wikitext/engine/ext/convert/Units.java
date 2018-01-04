@@ -195,11 +195,20 @@ public enum Units
 	TROY_OUNCE(UnitType.MASS, 0.0311034768, "ozt", "troy ounce", DefCvt.OZ_G),
 	PENNYWEIGHT(UnitType.MASS, 0.00155517384, "dwt", "pennyweight", DefCvt.OZ_G),
 	CARAT(UnitType.MASS, 0.0002, "carat", "carat", DefCvt.G),
+
+	// temperature
+	DEGREE_CELSIUS(UnitType.TEMPERATURE, 1d, -273.15, "°C", true, "degree Celsius", DefCvt.F, new String[]{"C", "Celsius", "°C"}, "degrees Celsius", null),
+	DEGREE_FAHRENHEIT(UnitType.TEMPERATURE, 0.55555555555555558, 32d - 273.15 * (9d / 5d), "°F", true, "degree Fahrenheit", DefCvt.C, new String[]{"F", "°F"}, "degrees Fahrenheit", null),
+	KELVIN(UnitType.TEMPERATURE, 1d, 0d, "K", true, "kelvin", DefCvt.C_F, new String[]{"K"}, null, null),
+	KILOELECTRONVOLT(UnitType.TEMPERATURE, 11.604505e6, "keV", "kiloelectronvolt", DefCvt.MK, new String[]{"keVT"}),
+	DEGREE_RANKINE(UnitType.TEMPERATURE, 0.55555555555555558, 0d, "°R", true, "degree Rankine", DefCvt.K_F_C, new String[]{"R", "°R"}, "degrees Rankine", null),
 	;
 
 	private final UnitType type; /// The type of the unit (e.g. length, mass, etc.)
 	private final double scale; /// Scale factor based on the underlying SI unit type.
+	private final double offset; /// Additional offest (mostly used by temerature conversions)
 	private final String symbol; /// The unit symbol which may contain special characters (e.g. "m²").
+	private final boolean isSymbolDesc; /// Determines whether the Symbol is used as primary descriptor even without the "abbr=on" option.
 	private final String name; /// The official name of the unit.
 	private final String[] altCodes; /// Alternating codes and names of the unit. [can be null]
 	private final DefCvt defaultConv; /// Default unit to convert to when no target was explicitly given.
@@ -218,9 +227,9 @@ public enum Units
 	{
 		for (final Units unit : Units.values())
 		{
-			if (!NAME_CODE_MAP.containsKey(unit.getName()))
+			if (!NAME_CODE_MAP.containsKey(unit.name))
 			{
-				NAME_CODE_MAP.put(unit.getName(), unit);
+				NAME_CODE_MAP.put(unit.name, unit);
 			}
 
 			if (unit.usName != null)
@@ -249,7 +258,7 @@ public enum Units
 			String name,
 			DefCvt defCvt)
 	{
-		this(type, scale, symbol, name, defCvt, null, null, null);
+		this(type, scale, 0d, symbol, false, name, defCvt, null, null, null);
 	}
 
 	private Units(
@@ -260,7 +269,20 @@ public enum Units
 			DefCvt defCvt,
 			String[] altCodes)
 	{
-		this(type, scale, symbol, name, defCvt, altCodes, null, null);
+		this(type, scale, 0d, symbol, false, name, defCvt, altCodes, null, null);
+	}
+
+	private Units(
+			UnitType type,
+			double scale,
+			String symbol,
+			String name,
+			DefCvt defCvt,
+			String[] altCodes,
+			String plural,
+			String usName)
+	{
+		this(type, scale, 0d, symbol, false, name, defCvt, altCodes, plural, usName);
 	}
 
 	/**
@@ -268,8 +290,12 @@ public enum Units
 	 *
 	 * @param type The type of the unit (e.g. length, mass, etc.)
 	 * @param scale Scale factor based on the underlying SI unit type.
+	 * @param offset Offset in addition to the scale (mostly used by temperature
+	 * conversions).
 	 * @param symbol The unit symbol which may contain special characters (e.g.
 	 * "m²").
+	 * @param isSymboldDesc Determines whether the Symbol is used as primary
+	 * descriptor even without the "abbr=on" option.
 	 * @param name The official name of the unit.
 	 * @param defCvt Default unit to convert to when no target was explicitly
 	 * given.
@@ -282,7 +308,9 @@ public enum Units
 	private Units(
 			UnitType type,
 			double scale,
+			double offset,
 			String symbol,
+			boolean isSymbolDesc,
 			String name,
 			DefCvt defCvt,
 			String[] altCodes,
@@ -296,7 +324,9 @@ public enum Units
 
 		this.type = type;
 		this.scale = scale;
+		this.offset = offset;
 		this.symbol = symbol;
+		this.isSymbolDesc = isSymbolDesc;
 		this.name = name;
 		this.altCodes = altCodes;
 		this.defaultConv = defCvt;
@@ -309,6 +339,11 @@ public enum Units
 		return scale;
 	}
 
+	public final double getOffset()
+	{
+		return offset;
+	}
+
 	public final String getSymbol()
 	{
 		return symbol;
@@ -316,6 +351,10 @@ public enum Units
 
 	public final String getName()
 	{
+		if (isSymbolDesc)
+		{
+			return symbol;
+		}
 		return name;
 	}
 
@@ -338,6 +377,11 @@ public enum Units
 	 */
 	public final String getPluralName()
 	{
+		if (isSymbolDesc)
+		{
+			return symbol;
+		}
+
 		if (plural == null)
 		{
 			return name + "s";
@@ -402,5 +446,6 @@ public enum Units
 		DENSITY,
 		LENGTH,
 		MASS,
+		TEMPERATURE,
 	}
 }
