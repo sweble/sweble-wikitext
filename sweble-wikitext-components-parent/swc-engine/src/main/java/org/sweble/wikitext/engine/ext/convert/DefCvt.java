@@ -62,6 +62,13 @@ public enum DefCvt
 	G_PER_CM3("g/cm3"),
 	KG_PER_L("kg/L"),
 
+	GJ("GJ"),
+	MEGAJ("MJ"),
+	KJ("kJ"),
+	J("J"),
+	MILLIJ("mJ"),
+	CAL("cal"),
+
 	KM("km"),
 	M("m"),
 	MM("mm"),
