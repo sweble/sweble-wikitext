@@ -4285,10 +4285,6 @@ public class DefaultConfigEnZhWp
 				Arrays.asList("#titleparts:")));
 		/*
 		c.addI18nAlias(new I18nAliasImpl(
-				"convert",
-				false,
-				Arrays.asList("convert")));
-		c.addI18nAlias(new I18nAliasImpl(
 				"sourceunit",
 				false,
 				Arrays.asList("#sourceunit")));
@@ -5052,6 +5048,10 @@ public class DefaultConfigEnZhWp
 				"convert",
 				false,
 				Arrays.asList("convert")));
+		c.addI18nAlias(new I18nAliasImpl(
+				"cite web",
+				false,
+				Arrays.asList("cite web")));
 	}
 
 	protected void addLctMappings(ParserConfigImpl pc)
