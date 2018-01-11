@@ -31,7 +31,7 @@ public final class NumberFormater
 
 	// uses '−' (\u2212) as minus
 	private static final DecimalFormat sciFmt = new DecimalFormat("0.0E0;−#", symbols);
-	private static final DecimalFormat fmt = new DecimalFormat("#0;−#");
+	private static final DecimalFormat fmt = new DecimalFormat("#0;−#", symbols);
 	static
 	{
 		fmt.setRoundingMode(RoundingMode.HALF_UP);
