@@ -849,6 +849,9 @@
         <i18nAlias id="convert" caseSensitive="false">
             <alias>convert</alias>
         </i18nAlias>
+         <i18nAlias id="cite web" caseSensitive="false">
+            <alias>convert</alias>
+        </i18nAlias>
     </i18nAliases>
     <pfnGroups>
         <pfnGroup name="Built-in Parser Functions">
@@ -902,6 +905,9 @@
         </pfnGroup>
         <pfnGroup name="Extension - Convert">
             <pfn class="org.sweble.wikitext.engine.ext.convert.Convert"/>
+        </pfnGroup>
+        <pfnGroup name="Extension - Cite Web">
+            <pfn class="org.sweble.wikitext.engine.ext.cite_web.CiteWeb"/>
         </pfnGroup>
         <pfnGroup name="Extension - Parser Functions">
             <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionExpr"/>
