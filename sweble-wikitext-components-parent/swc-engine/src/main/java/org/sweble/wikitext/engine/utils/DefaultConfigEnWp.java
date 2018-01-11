@@ -5049,9 +5049,5 @@ public class DefaultConfigEnWp
 				false,
 				Arrays.asList("noreplace")));
 		*/
-		c.addI18nAlias(new I18nAliasImpl(
-				"cite web",
-				false,
-				Arrays.asList("cite web")));
 	}
 }
