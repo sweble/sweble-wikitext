@@ -102,3 +102,29 @@
 {{convert|1|ozt}}
 {{convert|1|dwt}}
 {{convert|1|carat}}
+{{convert|1|km2}}
+{{convert|1|hm2}}
+{{convert|1|dam2}}
+{{convert|1|m2}}
+{{convert|1|dm2}}
+{{convert|1|cm2}}
+{{convert|1|mm2}}
+{{convert|1|ha}}
+{{convert|1|sqmi}}
+{{convert|1|acre}}
+{{convert|1|sqyd}}
+{{convert|1|sqft}}
+{{convert|1|sqin}}
+{{convert|1|sqyd|sigfig = 3}}
+{{convert|1|sqyd|sigfig = 7}}
+{{convert|1|AU|sigfig = 7}}
+{{convert|1|mm2|sigfig = 4}}
+{{convert|1|sqin|sigfig  =  5}}
+{{convert|1|short qtr| sigfig=3}}
+{{convert|1|short qtr| sigfig=1}}
+{{convert|1|C}}
+{{convert|1|K}}
+{{convert|1|F}}
+{{convert|100|C}}
+{{convert|100|K}}
+{{convert|100|F}}

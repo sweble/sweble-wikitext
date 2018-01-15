@@ -18,16 +18,8 @@
 package org.sweble.wikitext.engine.ext.convert;
 
 import de.fau.cs.osr.utils.StringTools;
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
@@ -48,8 +40,7 @@ public class Convert
 		extends
 		ParserFunctionBase
 {
-	private static DecimalFormat fmt = createDecimalFormater();
-	private static DecimalFormat sciFmt = createScientificFormater();
+	private static int MIN_ARGS = 2;
 	private static int DEFAULT_SIG_FIG = 2;
 	private int sigFig = DEFAULT_SIG_FIG; // significant figures
 
@@ -97,7 +88,7 @@ public class Convert
 		try
 		{
 			strArgs = parseArguments(frame, args);
-			value = parseNumber(strArgs.get(0));
+			value = NumberFormater.parseNumber(strArgs.get(0));
 		} catch (Exception ex)
 		{
 			return error(ex.getMessage());
@@ -112,9 +103,9 @@ public class Convert
 		// Caution: Wikipedia uses '−' (\u2212) as minus sign!
 		String srcValueStr = strArgs.get(0).replaceAll("-", "−");
 
-		if (strArgs.size() <= 2)
+		if (strArgs.size() == MIN_ARGS)
 		{
-			String dest = convertToDefaultUnit(value, srcUnit, abbrMode, isUsNameUsed);
+			String dest = convertToDefaultUnit(value, srcUnit, abbrMode, sigFig, isUsNameUsed);
 			String srcUnitName = getSourceUnitName(
 					srcUnit,
 					abbrMode,
@@ -122,7 +113,7 @@ public class Convert
 					isUsNameUsed);
 
 			if (srcUnitName == null) {
-				return error("Connot determinate output format!");
+				return error("Cannot determinate output format!");
 			}
 
 			String result = srcValueStr + " " + srcUnitName + "(" + dest + ")";
@@ -137,7 +128,7 @@ public class Convert
 
 		if (!Units.isSameUnitType(srcUnit, destUnit))
 		{
-			return error("Connot convert units with different types!");
+			return error("Cannot convert units with different types!");
 		}
 
 		double convertedValue = srcUnit.getScale() * value / destUnit.getScale();
@@ -147,7 +138,7 @@ public class Convert
 				isUsNameUsed);
 
 		if (srcUnitName == null) {
-			return error("Connot determinate output format!");
+			return error("Cannot determinate output format!");
 		}
 
 		String destUnitName = getDestUnitName(destUnit,
@@ -156,7 +147,7 @@ public class Convert
 				isUsNameUsed);
 
 		String result = srcValueStr + " " + srcUnitName
-				+ "(" + formatNumberDefault(convertedValue, sigFig)
+				+ "(" + NumberFormater.formatNumberDefault(convertedValue, sigFig)
 				+ destUnitName + ")";
 		return nf().text(result);
 	}
@@ -199,7 +190,7 @@ public class Convert
 			final List<? extends WtNode> args)
 			throws IllegalArgumentException
 	{
-		if (args.size() < 2)
+		if (args.size() < MIN_ARGS)
 		{
 			throw new IllegalArgumentException("Too few arguments!");
 		}
@@ -215,7 +206,7 @@ public class Convert
 			strArgs.add(tmpStr);
 		}
 
-		if (!isNumberValid(strArgs.get(0)))
+		if (!NumberFormater.isNumberValid(strArgs.get(0)))
 		{
 			throw new IllegalArgumentException("The first argument is not a vaild number!");
 		}
@@ -225,151 +216,69 @@ public class Convert
 
 		for (int i = 1; i < strArgs.size(); i++)
 		{
-			if (strArgs.get(i).contains("="))
+			final String arg = strArgs.get(i);
+			if (arg.contains("="))
 			{
-				final String[] spl = strArgs.get(i).split("=");
-				final String arg = StringUtils.trim(spl[0]);
-				final String opt = StringUtils.trim(spl[1]);
-				if (arg.equals("abbr"))
+				final String[] spl = arg.split("=");
+				final String opt = StringUtils.trim(spl[0]);
+				final String param = StringUtils.trim(spl[1]);
+				if (opt.equals("abbr"))
 				{
-					if (opt.equals("in")) {
+					if (param.equals("in"))
+					{
 						abbrMode = AbbreviationMode.IN;
-					} else if (opt.equals("off") || opt.equals("none")) {
+					} else if (param.equals("off") || param.equals("none"))
+					{
 						abbrMode = AbbreviationMode.OFF; // same as "none"
-					} else if (opt.equals("on")) {
+					} else if (param.equals("on"))
+					{
 						abbrMode = AbbreviationMode.ON;
-					} else if (opt.equals("out")) {
+					} else if (param.equals("out"))
+					{
 						abbrMode = AbbreviationMode.OUT;
-					} else if (opt.equals("unit")) {
+					} else if (param.equals("unit"))
+					{
 						abbrMode = AbbreviationMode.UNIT;
-					} else if (opt.equals("values")) {
+					} else if (param.equals("values"))
+					{
 						abbrMode = AbbreviationMode.VALUES;
-					} else if (opt.equals("~")) {
+					} else if (param.equals("~"))
+					{
 						abbrMode = AbbreviationMode.TILDE;
-					} else {
-						throw new IllegalArgumentException("Invalid abbreviation option!");
+					} else
+					{
+						throw new IllegalArgumentException("Invalid abbreviation parameter!");
 					}
-				} else if (arg.equals("sigfig"))
+				} else if (opt.equals("sigfig"))
 				{
-					sigFig = Integer.parseInt(opt);
-				} else if (arg.equals("sp"))
+					sigFig = Integer.parseInt(param);
+					if (sigFig <= 0)
+					{
+						throw new IllegalArgumentException("\"sigfig=\" needs a positive integer!");
+					}
+				} else if (opt.equals("sp"))
 				{
-					isUsNameUsed = opt.equals("us");
+					isUsNameUsed = param.equals("us");
 				} else
 				{
 					throw new IllegalArgumentException("Unknow argument!");
 				}
 			} else
 			{
+				// TODO: do something useful with the value of significant digits.
+//				int sigDig;
+//				try {
+//					sigDig = Integer.parseInt(arg);
+//				} catch (NumberFormatException ex) {
+//					// not a proper number, so ignore it and go on
+//					continue;
+//				}
+
 				// TODO: search for other options
-				cleanArgs.add(strArgs.get(i));
+				cleanArgs.add(arg);
 			}
 		}
-
 		return cleanArgs;
-	}
-
-	/**
-	 * Checks if the given number string is probably a valid value. Since the
-	 * check is only made on appearing characters, there might be the chance,
-	 * that a wrong used number syntax let a conversion with
-	 * {@link parseNumber()} fail anyway.
-	 *
-	 * @param numberStr The number as string to check.
-	 * @return True if the string is most likely a valid value, otherwise false.
-	 * @see parseNumber()
-	 */
-	protected static boolean isNumberValid(final String numberStr)
-	{
-		return numberStr.matches("[0-9,.e/⁄\\-\\+–]+");
-	}
-
-	/**
-	 * Tries to parse a number-string into a valid double value. The following
-	 * notations are supported:
-	 *
-	 * "12"       = 12
-	 * "1,234"    = 1234
-	 * "12.3e-15" = 1.23e-14
-	 *
-	 * Fractions:
-	 * "1/2"    = 0.5
-	 * "1⁄3"    = 0.33333333
-	 * "2+1⁄2"  = 2.5
-	 * "-2-1⁄2" = -2.5
-	 * "1//2"   = 0.5
-	 *
-	 * @param numberStr The number as string to convert.
-	 * @return The parsed number as double value.
-	 * @throws NumberFormatException
-	 * @see https://en.wikipedia.org/wiki/Template:Convert/doc#Numbers
-	 */
-	protected static double parseNumber(final String numberStr)
-			throws NumberFormatException
-	{
-		double value;
-		String number = numberStr.replace(",", ""); // remove thousand separators
-		number = number.replaceAll("–", "-"); // replace all the pesky en dashes
-
-		Matcher fractionMatcher = Pattern.compile("[/⁄]").matcher(number);
-		if (fractionMatcher.find())
-		{
-			String[] fraction = number.split("//|[/⁄]");
-			if (fraction.length != 2)
-			{
-				throw new NumberFormatException("Invalid fraction!");
-			}
-
-			String numerator = fraction[0];
-			String denominator = fraction[1];
-			int idxPlus = numerator.lastIndexOf('+');
-			int idxMinus = numerator.lastIndexOf('-');
-
-			if (idxPlus > idxMinus && idxMinus != -1)
-			{
-				throw new NumberFormatException(
-						"Should be a number, not a expression which requires"
-						+ " calculations!");
-			}
-
-			// whole number part for mixed fractions like 2 ½
-			double wholeNum = 0d;
-
-			int idx = Math.max(idxPlus, idxMinus);
-			if (idx != -1)
-			{
-				String wholeNumStr = numerator.substring(0, idx);
-				numerator = numerator.substring(idx);
-
-				try
-				{
-					wholeNum = Double.parseDouble(wholeNumStr);
-				} catch (NumberFormatException ex)
-				{
-					throw ex;
-				}
-			}
-
-			try
-			{
-				value = wholeNum
-						+ Double.parseDouble(numerator)
-						/ Double.parseDouble(denominator);
-			} catch (NumberFormatException ex)
-			{
-				throw ex;
-			}
-			return value;
-		}
-
-		try
-		{
-			value = Double.parseDouble(number);
-		} catch (NumberFormatException ex)
-		{
-			throw ex;
-		}
-		return value;
 	}
 
 	/**
@@ -380,6 +289,8 @@ public class Convert
 	 * @param srcUnit The unit type of the given value.
 	 * @param abbreviationMode Determines the way to describe the unit (symbol
 	 * or name).
+	 * @param sigFig  The count of significant figures to round.
+	 * @param isUsNameUsed
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
 	 * @see convertBaseTo()
@@ -388,11 +299,12 @@ public class Convert
 			double value,
 			Units srcUnit,
 			AbbreviationMode abbreviationMode,
+			int sigFig,
 			boolean isUsNameUsed)
 	{
 		assert (srcUnit != null);
 
-		final double siBasedValue = srcUnit.getScale() * value;
+		final double siBasedValue = srcUnit.getScale() * (value - srcUnit.getOffset());
 		final DefCvt defCvt = srcUnit.getDefaultCvt();
 		final String[] cvtUnits = defCvt.getUnits();
 		final Units destUnitA = Units.searchUnitFromName(cvtUnits[0]);
@@ -403,7 +315,7 @@ public class Convert
 
 		if (cvtUnits.length <= 1)
 		{
-			return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, isUsNameUsed);
+			return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, sigFig, isUsNameUsed);
 		} else
 		{
 			if (defCvt.isMixedNotation())
@@ -411,7 +323,7 @@ public class Convert
 				int limit = defCvt.getMixedNotationLimit();
 				if (value >= limit)
 				{
-					return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, isUsNameUsed);
+					return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, sigFig, isUsNameUsed);
 				} else
 				{
 					Units majorUnit = destUnitA;
@@ -436,16 +348,16 @@ public class Convert
 						case UNIT:
 						case VALUES:
 						case TILDE:
-							majorUnitName = majorUnit.getUnitSymbol();
-							minorUnitName = minorUnit.getUnitSymbol();
+							majorUnitName = majorUnit.getSymbol();
+							minorUnitName = minorUnit.getSymbol();
 							break;
 						case IN:
 						case NONE:
 						case OFF:
 							if (value == 1d)
 							{
-								majorUnitName = majorUnit.getUnitName();
-								minorUnitName = minorUnit.getUnitName();
+								majorUnitName = majorUnit.getName();
+								minorUnitName = minorUnit.getName();
 							} else
 							{
 								majorUnitName = majorUnit.getPluralName();
@@ -456,10 +368,9 @@ public class Convert
 							return null;
 					}
 
-					DecimalFormat fmt = new DecimalFormat("0;−#");
-					return fmt.format(convertedMajorVal)
+					return NumberFormater.formatRegular(convertedMajorVal)
 							+ " " + majorUnitName
-							+ " " + fmt.format(convertedMinorVal)
+							+ " " + NumberFormater.formatRegular(convertedMinorVal)
 							+ " " + minorUnitName;
 				}
 			} else
@@ -470,8 +381,8 @@ public class Convert
 					return null;
 				}
 
-				return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, isUsNameUsed)
-						+ "; " + convertBaseTo(siBasedValue, destUnitB, abbreviationMode, isUsNameUsed);
+				return convertBaseTo(siBasedValue, destUnitA, abbreviationMode, sigFig, isUsNameUsed)
+						+ "; " + convertBaseTo(siBasedValue, destUnitB, abbreviationMode, sigFig, isUsNameUsed);
 			}
 		}
 	}
@@ -481,10 +392,12 @@ public class Convert
 	 * default formated Number with unit descriptor.
 	 *
 	 * @param siBaseValue The value given in a SI base unit.
-	 * @param destUnit The Unite the value gets converted to.
+	 * @param destUnit The unit the value gets converted to.
 	 * @param abbreviationMode Determines whether the unit symbol or the entire
 	 * name is used as descriptor.
-	 * @param isUsNameUsed
+	 * @param sigFig  The count of significant figures to round.
+	 * @param isUsNameUsed Determines whether the US name is used or not (e.g.
+	 * "meter" instead of "metre").
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
 	 */
@@ -492,116 +405,27 @@ public class Convert
 			double siBaseValue,
 			Units destUnit,
 			AbbreviationMode abbreviationMode,
+			int sigFig,
 			boolean isUsNameUsed)
 	{
 		assert (destUnit != null);
 
-		double convertedValue = siBaseValue / destUnit.getScale();
+		double convertedValue = siBaseValue / destUnit.getScale() + destUnit.getOffset();
 		String destNameStr = getDestUnitName(
 				destUnit,
 				abbreviationMode,
-				!(Math.abs(siBaseValue) == 1d),
+				!(Math.abs(convertedValue) == 1d),
 				isUsNameUsed);
 		if (destNameStr == null)
 		{
 			return null;
 		}
 
-		return formatNumberDefault(convertedValue) + destNameStr;
+		return NumberFormater.formatNumberDefault(convertedValue, sigFig) + destNameStr;
 	}
 
-	/**
-	 * Formats the given value like Wikipedia does on default. This includes the
-	 * conversion to scientific notation, adding of thousand separators and
-	 * rounding on various scales (depending on the amount of digits).
-	 *
-	 * @param convertedValue The value to format.
-	 * @param sigFig The count of significant figures to round.
-	 * @return The formated value as string.
-	 */
-	protected static String formatNumberDefault(
-			double convertedValue,
-			int sigFig)
-	{
-		String convertedValStr;
-		final double absValue = Math.abs(convertedValue);
-		if (absValue < 1e-9)
-		{
-			convertedValStr = sciFmt.format(convertedValue);
-		} else if (absValue < 1d)
-		{
-			BigDecimal bd = new BigDecimal(convertedValue);
-			bd = bd.round(new MathContext(2));
-			convertedValStr = bd.toPlainString().replace('\u002D', '\u2212');
-		} else if (absValue < 10d)
-		{
-			convertedValStr = formatNumberRounded(convertedValue, 1);
-		} else if (absValue < 100d)
-		{
-			convertedValStr = formatNumberRounded(convertedValue, 0);
-		} else if (absValue < 1e9)
-		{
-			BigDecimal bd = new BigDecimal(convertedValue);
-			bd = bd.round(new MathContext(sigFig));
-			convertedValStr = formatNumberRounded(bd.doubleValue(), 0);
-		} else {
-			convertedValStr = sciFmt.format(convertedValue);
-		}
-
-		return convertedValStr;
-	}
-
-	protected static String formatNumberDefault(double convertedValue)
-	{
-		return formatNumberDefault(convertedValue, DEFAULT_SIG_FIG);
-	}
-
-	/**
-	 * Rounds and formats a value to the given count of digits after the
-	 * floating point.
-	 * 
-	 * @param convertedValue The value to format.
-	 * @param digitsAfterFloatingPoint Digits behind the floating point [0..16].
-	 * @return The formated value as String.
-	 */
-	protected static String formatNumberRounded(
-			double convertedValue,
-			int digitsAfterFloatingPoint)
-	{
-		final int MAX_DIGITS_AFTER_FLOATING_POINT = 16;
-		if (digitsAfterFloatingPoint > MAX_DIGITS_AFTER_FLOATING_POINT)
-		{
-			digitsAfterFloatingPoint = MAX_DIGITS_AFTER_FLOATING_POINT;
-		}
-
-		DecimalFormat tmpFmt = (DecimalFormat) fmt.clone();
-		tmpFmt.setMinimumFractionDigits(digitsAfterFloatingPoint);
-		tmpFmt.setMaximumFractionDigits(digitsAfterFloatingPoint);
-
-		return tmpFmt.format(convertedValue);
-	}
-
-	static private DecimalFormat createDecimalFormater() {
-		// uses '−' (\u2212) as minus
-		DecimalFormat fmt = new DecimalFormat("0.0;−#");
-		fmt.setRoundingMode(RoundingMode.HALF_UP);
-		fmt.setGroupingSize(3);
-		fmt.setGroupingUsed(true);
-		return fmt;
-	}
-
-	static private DecimalFormat createScientificFormater() {
-		DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(Locale.US);
-		symbols.setExponentSeparator("×10<sup>");
-		symbols.setMinusSign('−'); // uses en dash (\u2013)
-
-		DecimalFormat fmt = new DecimalFormat("0.0E0", symbols);
-		fmt.setPositiveSuffix("</sup>");
-		fmt.setNegativeSuffix("</sup>");
-		return fmt;
-	}
-
-	static private String getSourceUnitName(Units srcUnit,
+	static private String getSourceUnitName(
+			Units srcUnit,
 			AbbreviationMode abbrMode,
 			boolean isPlural,
 			boolean isUsNameUsed)
@@ -617,7 +441,7 @@ public class Convert
 					srcUnitName = srcUnit.getUsName() + " ";
 				} else
 				{
-					srcUnitName = srcUnit.getUnitSymbol() + " ";
+					srcUnitName = srcUnit.getSymbol() + " ";
 				}
 				break;
 			case OUT:
@@ -639,7 +463,7 @@ public class Convert
 						srcUnitName = srcUnit.getPluralName() + " ";
 					} else
 					{
-						srcUnitName = srcUnit.getUnitName() + " ";
+						srcUnitName = srcUnit.getName() + " ";
 					}
 				}
 				break;
@@ -652,9 +476,9 @@ public class Convert
 					srcUnitName = srcUnit.getPluralName();
 				} else
 				{
-					srcUnitName = srcUnit.getUnitName();
+					srcUnitName = srcUnit.getName();
 				}
-				srcUnitName += " [" + srcUnit.getUnitSymbol()+ "] ";
+				srcUnitName += " [" + srcUnit.getSymbol()+ "] ";
 				break;
 			default:
 				return null;
@@ -675,7 +499,7 @@ public class Convert
 			case ON:
 			case UNIT:
 			case TILDE:
-				destUnitName = " " + destUnit.getUnitSymbol();
+					destUnitName = " " + destUnit.getSymbol();
 				break;
 			case VALUES:
 				destUnitName = "";
@@ -699,7 +523,7 @@ public class Convert
 						destUnitName = " " + destUnit.getPluralName();
 					} else
 					{
-						destUnitName = " " + destUnit.getUnitName();
+						destUnitName = " " + destUnit.getName();
 					}
 				}
 				break;
@@ -707,5 +531,5 @@ public class Convert
 				return null;
 		}
 		return destUnitName;
-	}	
+	}
 }
