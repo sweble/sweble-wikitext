@@ -137,12 +137,8 @@ public class LanguageConfigGenerator
 			NamedNodeMap attributes = apiI18nAlias.getAttributes();
 
 			String name = attributes.getNamedItem("name").getNodeValue();
-			boolean isCaseSensitive = false;
-			Node caseSensitive = attributes.getNamedItem("case-sensitive");
-			if (caseSensitive != null)
-			{
-				isCaseSensitive = true;
-			}
+
+			boolean isCaseSensitive = attributes.getNamedItem("case-sensitive") != null;
 
 			I18nAliasImpl defaultAlias = template.getI18nAliasById(name);
 			String prefix = "";
@@ -203,10 +199,10 @@ public class LanguageConfigGenerator
 			{
 				wikiConfig.addI18nAlias(i18nAlias);
 			}
-			catch (Exception e)
+			catch (IllegalArgumentException e)
 			{
 				// TODO resolve conflicts problem
-				e.printStackTrace();
+				System.out.println(e.getMessage());
 			}
 		}
 	}

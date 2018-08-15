@@ -383,7 +383,7 @@ public class WikiConfigImpl
 				throw new IllegalArgumentException("This alias (`" + alias.getId() + "') registeres the name `" + a + "' twice.");
 
 			if (old2 != null)
-				throw new IllegalArgumentException("The name `" + a + "' was already registered by the alias `" + old2.getId() + "' when trying to register it for alias `" + alias.getId() + "'.");
+				System.out.println("The name `" + a + "' was already registered by the alias `" + old2.getId() + "' but we are also registering it for `" + alias.getId() + "'.");
 
 			nameToAliasMap.put(lcAlias, alias);
 		}
