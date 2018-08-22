@@ -48,6 +48,8 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.util.JAXBSource;
 import javax.xml.transform.Source;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactoryImpl;
@@ -76,6 +78,7 @@ public class WikiConfigImpl
 		implements
 			WikiConfig
 {
+	private static final Logger logger = LoggerFactory.getLogger(WikiConfigImpl.class);
 
 	@XmlElement()
 	private final ParserConfigImpl parserConfig;
@@ -367,7 +370,6 @@ public class WikiConfigImpl
 	public void addI18nAlias(I18nAliasImpl alias)
 	{
 		I18nAliasImpl old = aliasesById.get(alias.getId());
-
 		if (old == alias || (old != null && old.equals(alias)))
 			throw new IllegalArgumentException("This alias is already registered: " + alias.getId());
 
@@ -379,15 +381,15 @@ public class WikiConfigImpl
 			String lcAlias = a.toLowerCase();
 			I18nAliasImpl old2 = nameToAliasMap.get(lcAlias);
 
-			if (old2 == alias)
-				throw new IllegalArgumentException("This alias (`" + alias.getId() + "') registeres the name `" + a + "' twice.");
-
-			if (old2 != null)
-				System.out.println("The name `" + a + "' was already registered by the alias `" + old2.getId() + "' but we are also registering it for `" + alias.getId() + "'.");
-
-			nameToAliasMap.put(lcAlias, alias);
+			if (old2 == alias) {
+				throw new IllegalArgumentException("This alias (`" + alias.getId() + "') registers the name `" + a + "' twice.");
+			} else if (old2 != null) {
+				logger.warn("The name {} has been already registered to an id, so it cannot be registered to {}", lcAlias, alias.getId());
+				continue;
+			} else {
+				nameToAliasMap.put(lcAlias, alias);
+			}
 		}
-
 		aliasesById.put(alias.getId(), alias);
 	}
 

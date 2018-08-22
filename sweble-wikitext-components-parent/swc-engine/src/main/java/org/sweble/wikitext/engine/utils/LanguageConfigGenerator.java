@@ -25,6 +25,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.collections.map.MultiValueMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.InterwikiImpl;
 import org.sweble.wikitext.engine.config.NamespaceImpl;
@@ -41,6 +43,9 @@ import org.xml.sax.SAXException;
  */
 public class LanguageConfigGenerator
 {
+
+	private static final Logger logger = LoggerFactory.getLogger(LanguageConfigGenerator.class);
+
 	public static final String API_ENDPOINT_MAGICWORDS =
 			".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=magicwords&format=xml";
 
@@ -202,7 +207,7 @@ public class LanguageConfigGenerator
 			catch (IllegalArgumentException e)
 			{
 				// TODO resolve conflicts problem
-				System.out.println(e.getMessage());
+				logger.warn(e.getMessage());
 			}
 		}
 	}
