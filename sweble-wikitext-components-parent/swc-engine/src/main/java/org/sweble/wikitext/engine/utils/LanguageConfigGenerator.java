@@ -25,6 +25,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.collections.map.MultiValueMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.InterwikiImpl;
 import org.sweble.wikitext.engine.config.NamespaceImpl;
@@ -41,6 +43,9 @@ import org.xml.sax.SAXException;
  */
 public class LanguageConfigGenerator
 {
+
+	private static final Logger logger = LoggerFactory.getLogger(LanguageConfigGenerator.class);
+
 	public static final String API_ENDPOINT_MAGICWORDS =
 			".wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=magicwords&format=xml";
 
@@ -137,12 +142,8 @@ public class LanguageConfigGenerator
 			NamedNodeMap attributes = apiI18nAlias.getAttributes();
 
 			String name = attributes.getNamedItem("name").getNodeValue();
-			boolean isCaseSensitive = false;
-			Node caseSensitive = attributes.getNamedItem("case-sensitive");
-			if (caseSensitive != null)
-			{
-				isCaseSensitive = true;
-			}
+
+			boolean isCaseSensitive = attributes.getNamedItem("case-sensitive") != null;
 
 			I18nAliasImpl defaultAlias = template.getI18nAliasById(name);
 			String prefix = "";
@@ -203,10 +204,10 @@ public class LanguageConfigGenerator
 			{
 				wikiConfig.addI18nAlias(i18nAlias);
 			}
-			catch (Exception e)
+			catch (IllegalArgumentException e)
 			{
 				// TODO resolve conflicts problem
-				e.printStackTrace();
+				logger.warn(e.getMessage());
 			}
 		}
 	}
