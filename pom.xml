@@ -28,7 +28,7 @@
 
 	<groupId>org.sweble</groupId>
 	<artifactId>sweble-parent</artifactId>
-	<version>3.1.8-SNAPSHOT</version>
+	<version>3.1.9-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Sweble Parent</name>
 	<inceptionYear>2010</inceptionYear>
@@ -57,7 +57,7 @@
 		<!-- Dependencies -->
 		<osr-common.version>3.0.9-SNAPSHOT</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
-		<sweble.version>3.1.8-SNAPSHOT</sweble.version>
+		<sweble.version>3.1.9-SNAPSHOT</sweble.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -75,49 +75,49 @@
 			<dependency>
 				<groupId>de.fau.cs.osr.utils</groupId>
 				<artifactId>utils</artifactId>
-				<version>${osr-common.version}</version>
+				<version>3.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Utils - Testing -->
 			<dependency>
 				<groupId>de.fau.cs.osr.utils</groupId>
 				<artifactId>utils-testing</artifactId>
-				<version>${osr-common.version}</version>
+				<version>3.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Utils - GetOpt -->
 			<dependency>
 				<groupId>de.fau.cs.osr.utils</groupId>
 				<artifactId>utils-getopt</artifactId>
-				<version>${osr-common.version}</version>
+				<version>3.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Parser Toolkit - Common -->
 			<dependency>
 				<groupId>de.fau.cs.osr.ptk</groupId>
 				<artifactId>ptk-common</artifactId>
-				<version>${osr-common.version}</version>
+				<version>3.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Parser Toolkit - XPath -->
 			<dependency>
 				<groupId>de.fau.cs.osr.ptk</groupId>
 				<artifactId>ptk-xpath</artifactId>
-				<version>${osr-common.version}</version>
+				<version>3.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Parser Toolkit - XML Tools -->
 			<dependency>
 				<groupId>de.fau.cs.osr.ptk</groupId>
 				<artifactId>ptk-xml-tools</artifactId>
-				<version>${osr-common.version}</version>
+				<version>3.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Parser Toolkit - JSON Tools -->
 			<dependency>
 				<groupId>de.fau.cs.osr.ptk</groupId>
 				<artifactId>ptk-json-tools</artifactId>
-				<version>${osr-common.version}</version>
+				<version>3.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<!-- =========================================================== -->
