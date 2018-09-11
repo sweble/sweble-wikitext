@@ -1,0 +1,130 @@
+{{convert|1|ft|m}}
+{{convert|2|ft|m}}
+{{convert|1|angstrom|m}}
+{{convert|2|angstrom|m}}
+{{convert|1|km}}
+{{convert|1|in}}
+{{convert|2|in}}
+{{convert|1|m}}
+{{convert|2|m}}
+{{convert|3|m}}
+{{convert|4|m}}
+{{convert|1|mi}}
+{{convert|1|furlong}}
+{{convert|1|chain}}
+{{convert|1|rd}}
+{{convert|1|pole}}
+{{convert|1|perch}}
+{{convert|1|fathom}}
+{{convert|1|yd}}
+{{convert|1|hand}}
+{{convert|-1|m}}
+{{convert|-1|mi}}
+{{convert|-1|furlong}}
+{{convert|-1|chain}}
+{{convert|-1|rd}}
+{{convert|-1|pole}}
+{{convert|-1|perch}}
+{{convert|-1|fathom}}
+{{convert|-1|yd}}
+{{convert|1|uin}}
+{{convert|1|kg}}
+{{convert|1|dg}}
+{{convert|1|g}}
+{{convert|1|lb}}
+{{convert|1|nmi}}
+{{convert|1|oldUKnmi}}
+{{convert|1|admiralty nmi}}
+{{convert|1|Brnmi}}
+{{convert|1|admi}}
+{{convert|1|oldUSnmi}}
+{{convert|1|pre1954USnmi}}
+{{convert|1|pre1954U.S.nmi}}
+{{convert|1|Gpc}}
+{{convert|1|Mpc}}
+{{convert|1|kpc}}
+{{convert|1|pc}}
+{{convert|1|Gly}}
+{{convert|1|Mly}}
+{{convert|1|kly}}
+{{convert|1|ly}}
+{{convert|1|AU}}
+{{convert|1|Gpc|km}}
+{{convert|1|Mpc|km}}
+{{convert|1|kpc|km}}
+{{convert|1|pc|km}}
+{{convert|1|Gly|km}}
+{{convert|1|Mly|km}}
+{{convert|1|kly|km}}
+{{convert|1|ly|km}}
+{{convert|1|AU|km}}
+{{convert|-1|Gly|km}}
+{{convert|2|Gly|nm}}
+{{convert|1|AU|km|sigfig=4}}
+{{convert|1|AU|km|sigfig = 6}}
+{{convert|2|m}}
+{{convert|2|m|abbr=out}}
+{{convert|2|m|abbr=on}}
+{{convert|2|m|abbr=unit}}
+{{convert|2|m|abbr=in}}
+{{convert|2|m|abbr=none}}
+{{convert|2|m|abbr=off}}
+{{convert|2|m|abbr=values}}
+{{convert|2|m|abbr=~}}
+{{convert|3|m|cm|abbr=out}}
+{{convert|3|m|cm|abbr=on}}
+{{convert|3|m|cm|abbr=unit}}
+{{convert|3|m|cm|abbr=in}}
+{{convert|3|m|cm|abbr=none}}
+{{convert|3|m|cm|abbr=off}}
+{{convert|3|m|cm|abbr=values}}
+{{convert|3|m|cm|abbr=~}}
+{{convert|1|m|sp=us}}
+{{convert|2|m|sp=us}}
+{{convert|1|m|cm|sp=us|abbr=off}}
+{{convert|2|m|cm|sp=us|abbr=off}}
+{{convert|100|cm|m|abbr=off|sp=us}}
+{{convert|200|cm|m|abbr=off|sp=us}}
+{{convert|1|mg}}
+{{convert|1|short ton}}
+{{convert|1|ST}}
+{{convert|1|long ton}}
+{{convert|1|LT}}
+{{convert|1|long cwt}}
+{{convert|1|short cwt}}
+{{convert|1|long qtr}}
+{{convert|1|short qtr}}
+{{convert|1|st}}
+{{convert|1|dram}}
+{{convert|1|drachm}}
+{{convert|1|gr}}
+{{convert|1|troy pound}}
+{{convert|1|ozt}}
+{{convert|1|dwt}}
+{{convert|1|carat}}
+{{convert|1|km2}}
+{{convert|1|hm2}}
+{{convert|1|dam2}}
+{{convert|1|m2}}
+{{convert|1|dm2}}
+{{convert|1|cm2}}
+{{convert|1|mm2}}
+{{convert|1|ha}}
+{{convert|1|sqmi}}
+{{convert|1|acre}}
+{{convert|1|sqyd}}
+{{convert|1|sqft}}
+{{convert|1|sqin}}
+{{convert|1|sqyd|sigfig = 3}}
+{{convert|1|sqyd|sigfig = 7}}
+{{convert|1|AU|sigfig = 7}}
+{{convert|1|mm2|sigfig = 4}}
+{{convert|1|sqin|sigfig  =  5}}
+{{convert|1|short qtr| sigfig=3}}
+{{convert|1|short qtr| sigfig=1}}
+{{convert|1|C}}
+{{convert|1|K}}
+{{convert|1|F}}
+{{convert|100|C}}
+{{convert|100|K}}
+{{convert|100|F}}

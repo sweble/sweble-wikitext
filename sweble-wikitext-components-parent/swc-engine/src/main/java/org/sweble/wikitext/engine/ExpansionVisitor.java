@@ -409,7 +409,13 @@ public final class ExpansionVisitor
 				// If not see if it is a magic word
 				// Magic Word calls cannot have arguments!
 				if (args.isEmpty())
+				{
 					result = resolveTemplateAsMagicWord(n, nameConv.getText(), hadNewline);
+				}
+				else
+				{
+					result = resolveTemplateAsPfn(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
+				}
 
 				// If not try to transclude
 				if (result == null)
@@ -478,25 +484,35 @@ public final class ExpansionVisitor
 			boolean hadNewline) throws ExpansionException
 	{
 		int i = title.indexOf(':');
-		if (i == -1)
+		String name;
+		String arg0Prefix = null;
+		if ((i == -1) && tail.isEmpty())
+		{
+			name = title;
+		}
+		else if (i != -1)
+		{
+			/*
+			title = title.trim();
+
+			boolean hash = !title.isEmpty() && title.charAt(0) == '#';
+			String name = hash ?
+					(title.substring(1, i)) :
+					(title.substring(0, i) + ":");
+			*/
+
+			name = title.substring(0, i).trim() + ":";
+
+			arg0Prefix = title.substring(i + 1).trim();
+		}
+		else
+		{
 			return null;
-
-		/*
-		title = title.trim();
-		
-		boolean hash = !title.isEmpty() && title.charAt(0) == '#';
-		String name = hash ?
-				(title.substring(1, i)) :
-				(title.substring(0, i) + ":");
-		*/
-
-		String name = title.substring(0, i).trim() + ":";
+		}
 
 		ParserFunctionBase pfn = getWikiConfig().getParserFunction(name);
 		if (pfn == null)
 			return null;
-
-		String arg0Prefix = title.substring(i + 1).trim();
 
 		List<? extends WtNode> argsValues = preparePfnArguments(
 				pfn.getArgMode(),
@@ -550,12 +566,20 @@ public final class ExpansionVisitor
 		{
 			case EXPANDED_AND_TRIMMED_VALUES:
 			{
-				ArrayList<WtNode> argValues = new ArrayList<WtNode>(args.size() + 1);
+				ArrayList<WtNode> argValues;
+				if (arg0Prefix != null)
+				{
+					argValues = new ArrayList<WtNode>(args.size() + 1);
 
-				WtNode arg0 = nf.list(nf.text(arg0Prefix), tail);
+					WtNode arg0 = nf.list(nf.text(arg0Prefix), tail);
 
-				arg0 = tu.trim((WtNode) dispatch(arg0));
-				argValues.add(arg0);
+					arg0 = tu.trim((WtNode) dispatch(arg0));
+					argValues.add(arg0);
+				}
+				else
+				{
+					argValues = new ArrayList<WtNode>(args.size());
+				}
 
 				for (int j = 0; j < args.size(); ++j)
 				{
@@ -576,12 +600,19 @@ public final class ExpansionVisitor
 			}
 			case TEMPLATE_ARGUMENTS:
 			{
-				ArrayList<WtTemplateArgument> argsWithArg0 =
-						new ArrayList<WtTemplateArgument>(args.size() + 1);
+				ArrayList<WtTemplateArgument> argsWithArg0;
+				if (arg0Prefix != null)
+				{
+					argsWithArg0 = new ArrayList<WtTemplateArgument>(args.size() + 1);
 
-				argsWithArg0.add(
-						nf.tmplArg(nf.value(
-								nf.list(nf.text(arg0Prefix), tail))));
+					argsWithArg0.add(
+							nf.tmplArg(nf.value(
+									nf.list(nf.text(arg0Prefix), tail))));
+				}
+				else
+				{
+					argsWithArg0 = new ArrayList<WtTemplateArgument>(args.size());
+				}
 
 				for (WtTemplateArgument arg : args)
 					argsWithArg0.add(arg);
@@ -590,9 +621,17 @@ public final class ExpansionVisitor
 			}
 			case UNEXPANDED_VALUES:
 			{
-				ArrayList<WtNode> argValues = new ArrayList<WtNode>(args.size() + 1);
+				ArrayList<WtNode> argValues;
+				if (arg0Prefix != null)
+				{
+					argValues = new ArrayList<WtNode>(args.size() + 1);
 
-				argValues.add(nf.list(nf.text(arg0Prefix), tail));
+					argValues.add(nf.list(nf.text(arg0Prefix), tail));
+				}
+				else
+				{
+					argValues = new ArrayList<WtNode>(args.size());
+				}
 
 				for (int j = 0; j < args.size(); ++j)
 				{

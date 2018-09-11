@@ -25,6 +25,7 @@ import java.util.ListIterator;
 import java.util.Map;
 
 import org.joda.time.DateTime;
+import org.sweble.wikitext.engine.nodes.EngNowiki;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
@@ -1843,6 +1844,37 @@ public class AstToWomConverter
 	public Wom3ElementNode visit(WtNewline n)
 	{
 		appendText(n.getContent());
+		return null;
+	}
+
+	public Wom3ElementNode visit(EngNowiki n)
+	{
+		Wom3ElementNode womNode = genWom("nowiki");
+		push(womNode);
+		{
+			WtRtData rtd = n.getRtd();
+			if (rtd != null && rtd.size() == 1) {
+				String rtdStr = rtd.toString(0);
+				int i = rtdStr.indexOf(n.getContent());
+				if (i >= 0)
+				{
+					appendRtd(rtdStr.substring(0, i));
+					appendText(n.getContent());
+					appendRtd(rtdStr.substring(i + n.getContent().length()));
+				}
+				else
+				{
+					appendRtd(womNode, n, 0);
+					appendText(n.getContent());
+				}
+			}
+			else
+			{
+				appendText(n.getContent());
+			}
+		}
+		pop(womNode);
+		getScope().appendChild(womNode);
 		return null;
 	}
 

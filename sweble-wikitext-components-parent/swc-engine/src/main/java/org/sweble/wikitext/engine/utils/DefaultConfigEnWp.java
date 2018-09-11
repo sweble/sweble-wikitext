@@ -4268,7 +4268,6 @@ public class DefaultConfigEnWp
 				"time",
 				false,
 				Arrays.asList("#time:")));
-
 		c.addI18nAlias(new I18nAliasImpl(
 				"timel",
 				false,
@@ -4283,11 +4282,11 @@ public class DefaultConfigEnWp
 				"titleparts",
 				false,
 				Arrays.asList("#titleparts:")));
-		/*
 		c.addI18nAlias(new I18nAliasImpl(
 				"convert",
 				false,
 				Arrays.asList("convert")));
+		/*
 		c.addI18nAlias(new I18nAliasImpl(
 				"sourceunit",
 				false,

@@ -4269,7 +4269,6 @@ public class DefaultConfigEnZhWp
 				"time",
 				false,
 				Arrays.asList("#time:")));
-
 		c.addI18nAlias(new I18nAliasImpl(
 				"timel",
 				false,
@@ -5049,6 +5048,10 @@ public class DefaultConfigEnZhWp
 				false,
 				Arrays.asList("noreplace")));
 		*/
+		c.addI18nAlias(new I18nAliasImpl(
+				"convert",
+				false,
+				Arrays.asList("convert")));
 	}
 
 	protected void addLctMappings(ParserConfigImpl pc)

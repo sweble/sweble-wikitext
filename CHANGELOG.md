@@ -1,7 +1,25 @@
 # Change Log
 [A guide to writing change logs][keepachangelog]
 
-## 3.1.7 - unreleased
+## 3.1.9 - unreleased
+### Changed
+
+### Added
+
+### Fixed
+
+## 3.1.8 - 2018-09-11
+### Changed
+- Transclusion statements without ':' and having arguments can also be parser function calls.
+- Ignoring repeated registration of alias names (not IDs).
+
+### Added
+- Implemented number parser functions.
+
+### Fixed
+- Fixed missing EngNowiki visit method in AstToWomConverter
+
+## 3.1.7 - 2017-12-11
 ### Changed
 - Fixed missing RTD information on tbody element and added it to list of elements that cancel a semipre block
 - *StringConverter classes in AstTextUtilsImpl and EngineAstTextUtilsImpl are now public

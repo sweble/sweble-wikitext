@@ -846,6 +846,9 @@
         <i18nAlias id="urlencode" caseSensitive="false">
             <alias>URLENCODE:</alias>
         </i18nAlias>
+        <i18nAlias id="convert" caseSensitive="false">
+            <alias>convert</alias>
+        </i18nAlias>
     </i18nAliases>
     <pfnGroups>
         <pfnGroup name="Built-in Parser Functions">
@@ -896,6 +899,9 @@
             <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata$DefaultsortPfn"/>
             <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata$ProtectionLevelPfn"/>
             <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata$SitenamePfn"/>
+        </pfnGroup>
+        <pfnGroup name="Extension - Convert">
+            <pfn class="org.sweble.wikitext.engine.ext.convert.Convert"/>
         </pfnGroup>
         <pfnGroup name="Extension - Parser Functions">
             <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionExpr"/>
