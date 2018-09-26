@@ -43,7 +43,6 @@ import org.xml.sax.SAXException;
  */
 public class LanguageConfigGenerator
 {
-
 	private static final Logger logger = LoggerFactory.getLogger(LanguageConfigGenerator.class);
 
 	public static final String API_ENDPOINT_MAGICWORDS =
@@ -116,7 +115,7 @@ public class LanguageConfigGenerator
 		addInterwikis(wikiConfig, apiUrlInterwikimap);
 		addi18NAliases(wikiConfig, apiUrlMagicwords);
 
-		config.addParserFunctions(wikiConfig);
+		config.addParserFunctions(wikiConfig, true);
 		config.addTagExtensions(wikiConfig);
 
 		return wikiConfig;

@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.sweble.wikitext.engine.utils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
+import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.config.EngineConfigImpl;
+import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.NamespaceImpl;
 import org.sweble.wikitext.engine.config.ParserConfigImpl;
+import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.ext.builtin.BuiltInParserFunctions;
 import org.sweble.wikitext.engine.ext.builtin.BuiltInTagExtensions;
+import org.sweble.wikitext.engine.ext.convert.ConvertPnfExt;
 import org.sweble.wikitext.engine.ext.core.CorePfnBehaviorSwitches;
 import org.sweble.wikitext.engine.ext.core.CorePfnFunctionsFormatting;
 import org.sweble.wikitext.engine.ext.core.CorePfnFunctionsLocalization;
@@ -39,9 +39,11 @@ import org.sweble.wikitext.engine.ext.core.CorePfnVariablesStatistics;
 import org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata;
 import org.sweble.wikitext.engine.ext.math.MathTagExt;
 import org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionsPfnExt;
-import org.sweble.wikitext.engine.ext.convert.ConvertPnfExt;
 import org.sweble.wikitext.engine.ext.ref.RefTagExt;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Programmatically generate a default configuration for a Wiki.
@@ -564,24 +566,53 @@ public class DefaultConfig
 
 	protected void addParserFunctions(WikiConfigImpl c)
 	{
-		c.addParserFunctionGroup(BuiltInParserFunctions.group(c));
+		addParserFunctions(c, false);
+	}
 
-		c.addParserFunctionGroup(CorePfnBehaviorSwitches.group(c));
+	protected void addParserFunctions(WikiConfigImpl c, boolean skipGroupsWithMissingAliases)
+	{
+		addParserFunctionGroup(c, BuiltInParserFunctions.group(c), skipGroupsWithMissingAliases);
 
-		c.addParserFunctionGroup(CorePfnFunctionsFormatting.group(c));
-		c.addParserFunctionGroup(CorePfnFunctionsLocalization.group(c));
-		c.addParserFunctionGroup(CorePfnFunctionsMiscellaneous.group(c));
-		c.addParserFunctionGroup(CorePfnFunctionsNamespaces.group(c));
-		c.addParserFunctionGroup(CorePfnFunctionsUrlData.group(c));
+		addParserFunctionGroup(c, CorePfnBehaviorSwitches.group(c), skipGroupsWithMissingAliases);
 
-		c.addParserFunctionGroup(CorePfnVariablesDateAndTime.group(c));
-		c.addParserFunctionGroup(CorePfnVariablesNamespaces.group(c));
-		c.addParserFunctionGroup(CorePfnVariablesPageNames.group(c));
-		c.addParserFunctionGroup(CorePfnVariablesStatistics.group(c));
-		c.addParserFunctionGroup(CorePfnVariablesTechnicalMetadata.group(c));
+		addParserFunctionGroup(c, CorePfnFunctionsFormatting.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnFunctionsLocalization.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnFunctionsMiscellaneous.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnFunctionsNamespaces.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnFunctionsUrlData.group(c), skipGroupsWithMissingAliases);
 
-		c.addParserFunctionGroup(ParserFunctionsPfnExt.group(c));
-		c.addParserFunctionGroup(ConvertPnfExt.group(c));
+		addParserFunctionGroup(c, CorePfnVariablesDateAndTime.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnVariablesNamespaces.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnVariablesPageNames.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnVariablesStatistics.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, CorePfnVariablesTechnicalMetadata.group(c), skipGroupsWithMissingAliases);
+
+		addParserFunctionGroup(c, ParserFunctionsPfnExt.group(c), skipGroupsWithMissingAliases);
+		addParserFunctionGroup(c, ConvertPnfExt.group(c), skipGroupsWithMissingAliases);
+	}
+
+	protected void addParserFunctionGroup(
+			WikiConfigImpl c,
+			ParserFunctionGroup group,
+			boolean skipGroupsWithMissingAliases)
+	{
+		boolean skip = false;
+		if (skipGroupsWithMissingAliases)
+		{
+			for (ParserFunctionBase pfn : group.getParserFunctions())
+			{
+				I18nAliasImpl alias = c.getI18nAliasById(pfn.getId());
+				if (alias == null)
+				{
+					skip = true;
+					break;
+				}
+			}
+		}
+		if (!skip)
+		{
+			c.addParserFunctionGroup(group);
+		}
 	}
 
 	protected void addTagExtensions(WikiConfigImpl c)

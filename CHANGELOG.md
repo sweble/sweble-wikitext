@@ -1,12 +1,17 @@
 # Change Log
 [A guide to writing change logs][keepachangelog]
 
-## 3.1.9 - unreleased
+## 3.1.10 - unreleased
 ### Changed
 
 ### Added
 
 ### Fixed
+- 
+
+## 3.1.9 - 2018-09-26
+### Fixed
+- Parser extension groups are not added if required aliases are missing in LanguageConfigGenerator
 
 ## 3.1.8 - 2018-09-11
 ### Changed
