@@ -32,7 +32,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Install parent repository
+    - name: Install parent repository in Maven cache
       run: mvn install
     
     - name: Build with Maven
