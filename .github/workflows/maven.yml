@@ -19,6 +19,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: sweble/osr-common
+        fetch-depth: 0
 
     - name: Checkout sweble-wikitext repository
       uses: actions/checkout@v2
