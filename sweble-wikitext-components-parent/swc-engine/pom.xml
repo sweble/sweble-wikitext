@@ -70,6 +70,12 @@
 			<artifactId>rats-runtime</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+                        <version>${jaxb-api.version}</version>
+		</dependency>
+
 		<!-- JAXB Reference Implementation -->
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>

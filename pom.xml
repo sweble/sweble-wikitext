@@ -58,6 +58,7 @@
 		<osr-common.version>3.0.9-SNAPSHOT</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
 		<sweble.version>3.1.10-SNAPSHOT</sweble.version>
+                <jaxb-api.version>2.3.1</jaxb-api.version>
 	</properties>
 
 	<!-- =================================================================== -->
