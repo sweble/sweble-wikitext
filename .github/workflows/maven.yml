@@ -25,6 +25,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         path: tooling/sweble-wikitext
+        fetch-depth: 0
     
     - name: Set up JDK 8
       uses: actions/setup-java@v2
