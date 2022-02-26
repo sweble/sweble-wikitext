@@ -95,6 +95,13 @@
 				<version>${xstream.version}</version>
 			</dependency>
 
+			<!-- XML parsing -->
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${jaxb-api.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
