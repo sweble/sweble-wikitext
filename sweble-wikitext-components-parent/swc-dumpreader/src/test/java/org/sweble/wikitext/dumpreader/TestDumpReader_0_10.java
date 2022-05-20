@@ -28,8 +28,8 @@ import java.math.BigInteger;
 import java.net.URL;
 import java.util.List;
 
-import jakarta.xml.bind.ValidationEvent;
-import jakarta.xml.bind.ValidationEventLocator;
+import javax.xml.bind.ValidationEvent;
+import javax.xml.bind.ValidationEventLocator;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.junit.Assert;

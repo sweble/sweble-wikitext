@@ -51,7 +51,6 @@
 
 		<!-- Apache Commons -->
 		<dependency>
-			<!-- Also add signature "commons-io-unsafe-<ver>" to forbiddenapis plugin -->
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>

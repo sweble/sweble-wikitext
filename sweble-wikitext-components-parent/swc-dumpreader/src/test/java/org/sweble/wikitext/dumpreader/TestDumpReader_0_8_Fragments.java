@@ -27,7 +27,7 @@ import java.io.InputStream;
 import java.math.BigInteger;
 import java.util.List;
 
-import jakarta.xml.bind.JAXBException;
+import javax.xml.bind.JAXBException;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 

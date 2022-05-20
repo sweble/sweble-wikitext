@@ -118,7 +118,7 @@ public final class StringToDateTimeConverter
 		 */
 		public DateFormatMatcher(final String dateString)
 		{
-			dateFormat = new SimpleDateFormat(dateString);
+			dateFormat = new SimpleDateFormat(dateString, Locale.ENGLISH);
 			dateFormat.setCalendar(calendar);
 		}
 

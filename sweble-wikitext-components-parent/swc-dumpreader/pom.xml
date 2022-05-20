@@ -63,7 +63,6 @@
 			<artifactId>commons-compress</artifactId>
 		</dependency>
 		<dependency>
-			<!-- Also add signature "commons-io-unsafe-<ver>" to forbiddenapis plugin -->
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
@@ -87,34 +86,21 @@
 		</dependency>
 
 		<!-- XML parsing -->
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-		</dependency>
-                <!-- <dependency>
-                        <groupId>javax.activation</groupId>
-                        <artifactId>activation</artifactId>
-                        <version>1.1</version>
-                </dependency>
-                <dependency>
-                        <groupId>org.glassfish.jaxb</groupId>
-                        <artifactId>jaxb-runtime</artifactId>
-                        <version>3.0.2</version>
-                </dependency> -->
-                <!-- JAXB API only -->
-                <dependency>
-                    <groupId>jakarta.xml.bind</groupId>
-                    <artifactId>jakarta.xml.bind-api</artifactId>
-                    <version>3.0.1</version>
-                </dependency>
 
-                <!-- JAXB Implementation -->
-                <dependency>
-                    <groupId>com.sun.xml.bind</groupId>
-                    <artifactId>jaxb-impl</artifactId>
-                    <version>3.0.1</version>
-                    <scope>runtime</scope>
-                </dependency>
+		<!-- JAXB API only -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>${jaxb-api.version}</version>
+		</dependency>
+
+		<!-- JAXB Implementation -->
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>${jaxb-api.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 
 		<!-- =============================================================== -->
 		<!-- Testing - Testing - Testing - Testing - Testing - Testing - Tes -->
@@ -184,13 +170,16 @@
 			<!-- Compile schema files -->
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb2-plugin</artifactId>
+				<artifactId>maven-jaxb23-plugin</artifactId>
+				<version>0.15.1</version>
 				<configuration>
 					<schemaDirectory>${schema-sources.directory}</schemaDirectory>
 					<generateDirectory>${generated-sources.directory}</generateDirectory>
 					<catalog>${schema-sources.directory}/catalog.xml</catalog>
-					<strict>true</strict>
+					<!-- https://github.com/highsource/maven-jaxb2-plugin/issues/203 -->
 					<forceRegenerate>true</forceRegenerate>
+					<!-- https://github.com/highsource/maven-jaxb2-plugin/wiki/Catalogs-in-Strict-Mode -->
+					<strict>false</strict>
 				</configuration>
 				<executions>
 					<execution>
@@ -272,7 +261,19 @@
 			<plugin>
 				<groupId>dev.aspectj</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>1.13.1</version>
 				<inherited>false</inherited>
+				<configuration>
+					<complianceLevel>1.6</complianceLevel>
+				</configuration>
+				<executions>
+					<execution>
+						<id>compile</id>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<!-- Add the AspectJ nature to the eclipse project -->
@@ -281,17 +282,6 @@
 				<inherited>false</inherited>
 				<configuration>
 					<ajdtVersion>1.5</ajdtVersion>
-				</configuration>
-			</plugin>
-
-			<!-- Forbidden APIs -->
-			<plugin>
-				<groupId>de.thetaphi</groupId>
-				<artifactId>forbiddenapis</artifactId>
-				<configuration>
-					<bundledSignatures combine.children="append">
-						<bundledSignature>commons-io-unsafe-1.4</bundledSignature>
-					</bundledSignatures>
 				</configuration>
 			</plugin>
 
@@ -307,11 +297,11 @@
 						<configuration>
 							<shadedArtifactAttached>true</shadedArtifactAttached>
 							<shadedClassifierName>jar-with-dependencies</shadedClassifierName>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 </project>

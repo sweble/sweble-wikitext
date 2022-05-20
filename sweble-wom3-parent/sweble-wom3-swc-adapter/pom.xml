@@ -51,7 +51,6 @@
 
 		<!-- Apache Commons -->
 		<dependency>
-			<!-- Also add signature "commons-io-unsafe-<ver>" to forbiddenapis plugin -->
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
@@ -116,7 +115,6 @@
 			<artifactId>Saxon-HE</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -154,18 +152,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<!-- Forbidden APIs -->
-			<plugin>
-				<groupId>de.thetaphi</groupId>
-				<artifactId>forbiddenapis</artifactId>
-				<configuration>
-					<bundledSignatures combine.children="append">
-						<bundledSignature>commons-io-unsafe-1.4</bundledSignature>
-					</bundledSignatures>
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>
