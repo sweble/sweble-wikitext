@@ -58,6 +58,7 @@
 		<osr-common.version>3.0.9-SNAPSHOT</osr-common.version>
 		<!-- Should be ${project.version} but that causes trouble with the release plugin -->
 		<sweble.version>3.1.10-SNAPSHOT</sweble.version>
+		<jaxb-api.version>2.3.3</jaxb-api.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -249,23 +250,6 @@
 		<url>https://github.com/sweble/sweble-parent</url>
 		<tag>HEAD</tag>
 	</scm>
-
-	<!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
-	<repositories>
-		<repository>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</snapshots>
-			<id>osr-public-repo</id>
-			<name>OSR Public Repository</name>
-			<url>http://mojo-maven.cs.fau.de/content/repositories/public</url>
-		</repository>
-	</repositories>
 
 	<!-- =================================================================== -->
 	<!-- Profiles - Profiles - Profiles - Profiles - Profiles - Profiles - P -->

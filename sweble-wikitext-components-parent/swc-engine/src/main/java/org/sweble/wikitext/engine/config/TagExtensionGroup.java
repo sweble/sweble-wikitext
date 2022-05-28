@@ -18,7 +18,7 @@
 package org.sweble.wikitext.engine.config;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -135,15 +135,15 @@ public class TagExtensionGroup
 	// =========================================================================
 
 	@XmlElement(name = "tagExt")
-	private ArrayList<TagExtensionBase> getJaxbTagExtensions()
+	private TagExtensionBase[] getJaxbTagExtensions()
 	{
-		ArrayList<TagExtensionBase> sorted = new ArrayList<TagExtensionBase>(tagExtensions);
-		Collections.sort(sorted);
-		return sorted;
+		TagExtensionBase[] tagExtensions = this.tagExtensions.toArray(new TagExtensionBase[0]);
+		Arrays.sort(tagExtensions);
+		return tagExtensions;
 	}
 
 	@SuppressWarnings("unused")
-	private void setJaxbTagExtensions(ArrayList<TagExtensionBase> tagExts)
+	private void setJaxbTagExtensions(TagExtensionBase[] tagExts)
 	{
 		for (TagExtensionBase tagExt : tagExts)
 			addTagExtension(tagExt);

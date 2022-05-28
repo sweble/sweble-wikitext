@@ -30,6 +30,7 @@ import java.util.Collections;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+import com.thoughtworks.xstream.security.AnyTypePermission;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
@@ -494,6 +495,7 @@ public class Serializer
 
 		XStream xstream = new XStream(new DomDriver());
 		xstream.registerConverter(converter);
+		xstream.addPermission(AnyTypePermission.ANY);
 		xstream.setMode(XStream.NO_REFERENCES);
 
 		return xstream;

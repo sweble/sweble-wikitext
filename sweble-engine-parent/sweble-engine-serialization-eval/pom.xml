@@ -61,7 +61,6 @@
 			<artifactId>commons-math3</artifactId>
 		</dependency>
 		<dependency>
-			<!-- Also add signature "commons-io-unsafe-<ver>" to forbiddenapis plugin -->
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
@@ -70,6 +69,7 @@
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- The XSLT and XQuery Processor (Saxon Home Edition) -->
@@ -82,6 +82,7 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- Utils -->
@@ -138,6 +139,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
@@ -179,18 +181,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<!-- Forbidden APIs -->
-			<plugin>
-				<groupId>de.thetaphi</groupId>
-				<artifactId>forbiddenapis</artifactId>
-				<configuration>
-					<bundledSignatures combine.children="append">
-						<bundledSignature>commons-io-unsafe-1.4</bundledSignature>
-					</bundledSignatures>
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>

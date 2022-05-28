@@ -58,13 +58,12 @@
 		<sweble-parent.path>${swc-parent.path}/../</sweble-parent.path>
 
 		<!-- Plugin dependency versions -->
-		<maven-jaxb2-plugin.version>0.8.0</maven-jaxb2-plugin.version>
+		<maven-jaxb2-plugin.version>0.15.1</maven-jaxb2-plugin.version>
 		<maven-jflex-plugin.version>1.4.3</maven-jflex-plugin.version>
 		<maven-rats-plugin.version>1.3.0.1</maven-rats-plugin.version>
 
 		<jopt-simple.version>4.3</jopt-simple.version>
 		<rats-runtime.version>1.15.0</rats-runtime.version>
-		<xstream.version>1.4.8</xstream.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -93,6 +92,13 @@
 				<groupId>com.thoughtworks.xstream</groupId>
 				<artifactId>xstream</artifactId>
 				<version>${xstream.version}</version>
+			</dependency>
+
+			<!-- XML parsing -->
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${jaxb-api.version}</version>
 			</dependency>
 
 		</dependencies>

@@ -51,7 +51,6 @@
 
 		<!-- Apache Commons -->
 		<dependency>
-			<!-- Also add signature "commons-io-unsafe-<ver>" to forbiddenapis plugin -->
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
@@ -64,6 +63,7 @@
 		<dependency>
 			<groupId>de.fau.cs.osr.utils</groupId>
 			<artifactId>utils</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
@@ -112,18 +112,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
-			<!-- Forbidden APIs -->
-			<plugin>
-				<groupId>de.thetaphi</groupId>
-				<artifactId>forbiddenapis</artifactId>
-				<configuration>
-					<bundledSignatures combine.children="append">
-						<bundledSignature>commons-io-unsafe-1.4</bundledSignature>
-					</bundledSignatures>
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>

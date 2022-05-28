@@ -18,7 +18,7 @@
 package org.sweble.wikitext.engine.config;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -135,15 +135,15 @@ public class ParserFunctionGroup
 	// =========================================================================
 
 	@XmlElement(name = "pfn")
-	private ArrayList<ParserFunctionBase> getPfns()
+	private ParserFunctionBase[] getPfns()
 	{
-		ArrayList<ParserFunctionBase> sorted = new ArrayList<ParserFunctionBase>(pfns);
-		Collections.sort(sorted);
-		return sorted;
+		ParserFunctionBase[] pfns = this.pfns.toArray(new ParserFunctionBase[0]);
+		Arrays.sort(pfns);
+		return pfns;
 	}
 
 	@SuppressWarnings("unused")
-	private void setPfns(ArrayList<ParserFunctionBase> pfns)
+	private void setPfns(ParserFunctionBase[] pfns)
 	{
 		for (ParserFunctionBase pfn : pfns)
 			addParserFunction(pfn);

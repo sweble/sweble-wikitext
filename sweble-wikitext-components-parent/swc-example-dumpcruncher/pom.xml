@@ -92,5 +92,11 @@
 			<artifactId>swc-engine</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>${jaxb-api.version}</version>
+		</dependency>
+
 	</dependencies>
 </project>
