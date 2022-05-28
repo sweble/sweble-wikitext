@@ -12,10 +12,12 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         java: [ 8, 11 ]
 
     runs-on: ubuntu-latest
+
 
     steps:
     - name: Checkout parent repository
@@ -29,17 +31,17 @@ jobs:
       with:
         path: tooling/sweble-wikitext
         fetch-depth: 0
-    
+
     - name: Set up Java ${{ matrix.java }}
       uses: actions/setup-java@v2
       with:
         java-version: ${{ matrix.java }}
         distribution: 'temurin'
         cache: maven
-        
+
     - name: Install parent repository in Maven cache
       run: mvn install
-    
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       working-directory: tooling/sweble-wikitext
