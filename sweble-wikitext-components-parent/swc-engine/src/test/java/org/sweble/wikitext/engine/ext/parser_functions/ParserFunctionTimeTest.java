@@ -66,8 +66,8 @@ public class ParserFunctionTimeTest
 		format = "M";
 		expResult = "Mar";
 		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, locale));
-		expResult = "März";
-		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, Locale.GERMAN));
+		expResult = "Mär"; // "Mär" in JRE 8, "März" in JRE 11
+		assertEquals(expResult, ParserFunctionTime.format(format, timestamp, Locale.GERMAN).substring(0, 3));
 
 		// check full month name
 		format = "F";
