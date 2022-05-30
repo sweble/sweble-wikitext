@@ -46,5 +46,9 @@
   <system
     systemId="http://www.mediawiki.org/xml/export-0.10.xsd"
     uri="export-0.10.xsd" />
+
+  <system
+    systemId="http://www.mediawiki.org/xml/export-0.11.xsd"
+    uri="export-0.11.xsd" />
  
 </catalog>
