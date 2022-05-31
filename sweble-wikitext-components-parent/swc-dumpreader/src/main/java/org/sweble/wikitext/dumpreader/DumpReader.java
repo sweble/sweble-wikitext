@@ -311,6 +311,10 @@ public abstract class DumpReader
 		{
 			return ExportSchemaVersion.V0_10;
 		}
+		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.11/\""))
+		{
+			return ExportSchemaVersion.V0_11;
+		}
 		else
 		{
 			throw new IllegalArgumentException("Unknown xmlns");

@@ -1,0 +1,39 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+    <siteinfo>
+    </siteinfo>
+    <page>
+        <title>Main Page</title>
+        <ns>0</ns>
+        <id>1</id>
+        <revision>
+            <id>1</id>
+            <timestamp>2021-10-26T00:25:37Z</timestamp>
+            <contributor>
+                <username>MediaWiki default</username>
+                <id>2</id>
+            </contributor>
+            <origin>1</origin>
+            <comment>foo</comment>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+            <text bytes="755" sha1="22vz5zlxa2zctewimaum2bf1due8hkl" location="tt:1" id="1" />
+            <sha1>22vz5zlxa2zctewimaum2bf1due8hkl</sha1>
+        </revision>
+        <revision>
+            <id>118</id>
+            <parentid>1</parentid>
+            <timestamp>2021-10-26T12:23:48Z</timestamp>
+            <contributor>
+                <username>Jay</username>
+                <id>1</id>
+            </contributor>
+            <minor/>
+            <comment>Protected "[[Main Page]]" ([Edit=Allow only administrators] (indefinite))</comment>
+            <origin>1</origin>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+            <text bytes="755" sha1="22vz5zlxa2zctewimaum2bf1due8hkl" location="tt:1" id="1" />
+            <sha1>22vz5zlxa2zctewimaum2bf1due8hkl</sha1>
+        </revision>
+    </page>
+</mediawiki>
