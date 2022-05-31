@@ -12,8 +12,8 @@
                 <username>MediaWiki default</username>
                 <id>2</id>
             </contributor>
-            <origin>1</origin>
             <comment>foo</comment>
+            <origin>1</origin>
             <model>wikitext</model>
             <format>text/x-wiki</format>
             <text bytes="755" sha1="22vz5zlxa2zctewimaum2bf1due8hkl" location="tt:1" id="1" />

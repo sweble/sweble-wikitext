@@ -51,7 +51,7 @@ public class TestDumpReader_0_11 {
         try
         {
             is = new FileInputStream(file);
-            dr = new TestDumpReader_0_11.DumpReaderExtension(file, is, logger, file);
+            dr = new DumpReaderExtension(file, is, logger, file);
             dr.unmarshal();
         }
         finally
@@ -69,7 +69,7 @@ public class TestDumpReader_0_11 {
         }
     }
 
-    private final class DumpReaderExtension
+    private static final class DumpReaderExtension
             extends
             DumpReader
     {
