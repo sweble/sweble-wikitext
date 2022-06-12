@@ -40,7 +40,7 @@ import de.fau.cs.osr.utils.StringTools;
  * on the time base of UTC+0 (GMT). For functions depending on the local
  * time of the client, or a predefined time zone, see <code>#timel</code>.
  *
- * @see {@link ParserFunctionTimeLocal}
+ * @see ParserFunctionTimeLocal
  */
 public class ParserFunctionTime
 		extends
@@ -143,7 +143,7 @@ public class ParserFunctionTime
 	 * @param locale
 	 *            The locale for i18n.
 	 * @return The formated string with substituted symbols.
-	 * @see https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions##time
+	 * @see <a href="https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#time">Help:Extension:ParserFunctions#time</a>
 	 */
 	protected static String format(final String format,
 			final Calendar timestamp,

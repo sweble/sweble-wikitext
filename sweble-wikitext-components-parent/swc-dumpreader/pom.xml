@@ -277,15 +277,6 @@
 				</executions>
 			</plugin>
 
-			<!-- Add the AspectJ nature to the eclipse project -->
-			<plugin>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<inherited>false</inherited>
-				<configuration>
-					<ajdtVersion>1.5</ajdtVersion>
-				</configuration>
-			</plugin>
-
 			<!-- Maven Shade Plugin -->
 			<plugin>
 				<artifactId>maven-shade-plugin</artifactId>

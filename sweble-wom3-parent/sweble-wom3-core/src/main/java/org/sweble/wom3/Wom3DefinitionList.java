@@ -123,7 +123,7 @@ public interface Wom3DefinitionList
 	 *            The term to insert. The term will have the given index
 	 *            <code>beforeIndex</code> after insertion.
 	 * @throws IndexOutOfBoundsException
-	 *             Thrown if <code>0 <= beforeIndex <= getItemNum()</code> does
+	 *             Thrown if <code>0 &lt;= beforeIndex &lt;= getItemNum()</code> does
 	 *             not hold.
 	 */
 	public void insertTerm(int beforeIndex, Wom3DefinitionListTerm term) throws IndexOutOfBoundsException;
@@ -215,7 +215,7 @@ public interface Wom3DefinitionList
 	 *            The item to insert. The item will have the given index
 	 *            <code>beforeIndex</code> after insertion.
 	 * @throws IndexOutOfBoundsException
-	 *             Thrown if <code>0 <= beforeIndex <= getItemNum()</code> does
+	 *             Thrown if <code>0 &lt;= beforeIndex &lt;= getItemNum()</code> does
 	 *             not hold.
 	 */
 	public void insertItem(int beforeIndex, Wom3DefinitionListItem item) throws IndexOutOfBoundsException;

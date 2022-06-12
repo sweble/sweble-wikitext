@@ -59,8 +59,8 @@
 
 		<!-- Plugin dependency versions -->
 		<maven-jaxb2-plugin.version>0.15.1</maven-jaxb2-plugin.version>
-		<maven-jflex-plugin.version>1.4.3</maven-jflex-plugin.version>
-		<maven-rats-plugin.version>1.3.0.1</maven-rats-plugin.version>
+		<maven-jflex-plugin.version>1.8.2</maven-jflex-plugin.version>
+		<maven-rats-plugin.version>1.3.3</maven-rats-plugin.version>
 
 		<jopt-simple.version>4.3</jopt-simple.version>
 		<rats-runtime.version>1.15.0</rats-runtime.version>
@@ -136,7 +136,7 @@
 				<!-- Maven JFlex Plugin -->
 				<plugin>
 					<groupId>de.jflex</groupId>
-					<artifactId>maven-jflex-plugin</artifactId>
+					<artifactId>jflex-maven-plugin</artifactId>
 					<version>${maven-jflex-plugin.version}</version>
 					<executions>
 						<execution>
@@ -164,63 +164,6 @@
 						</execution>
 					</executions>
 				</plugin>
-
-				<!--
-					This plugin's configuration is used to store Eclipse m2e 
-					settings only. It has no influence on the Maven build 
-					itself.
-				-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.google.code.maven-replacer-plugin</groupId>
-										<artifactId>maven-replacer-plugin</artifactId>
-										<versionRange>[1.0.0,)</versionRange>
-										<goals>
-											<goal>replace</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute />
-									</action>
-								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>de.fau.cs.osr.maven.plugins</groupId>
-										<artifactId>maven-rats-plugin</artifactId>
-										<versionRange>[1.0.0,)</versionRange>
-										<goals>
-											<goal>generate</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute />
-									</action>
-								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>de.jflex</groupId>
-										<artifactId>maven-jflex-plugin</artifactId>
-										<versionRange>[1.0.0,)</versionRange>
-										<goals>
-											<goal>generate</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-
 			</plugins>
 		</pluginManagement>
 	</build>

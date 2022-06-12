@@ -55,8 +55,8 @@ public interface Wom3Node
 	/**
 	 * The name of this node, depending on its type; see the following table:
 	 * 
-	 * <pre>
-	 * <table border="1" cellspacing="0" style="width: 60em;">
+	 * <table border="1" style="width: 60em; border-spacing: 0;">
+	 *	 <caption></caption>
 	 *   <tr><th>Interface</th><th>nodeName</th></tr>
 	 *   <tr><td>Attr</td><td>same as Attr.name</td></tr>
 	 *   <tr><td>CDATASection</td><td>#cdata-section</td></tr>
@@ -71,8 +71,7 @@ public interface Wom3Node
 	 *   <tr><td>ProcessingInstruction</td><td>same as ProcessingInstruction.target</td></tr>
 	 *   <tr><td>Text</td><td>#text</td></tr>
 	 * </table>
-	 * </pre>
-	 * 
+	 *
 	 * @since DOM Level 1
 	 * @since WOM Version 3
 	 */
@@ -84,8 +83,8 @@ public interface Wom3Node
 	 * When it is defined to be null, setting it has no effect, including if the
 	 * node is read-only.
 	 * 
-	 * <pre>
-	 * <table border="1" cellspacing="0" style="width: 60em;">
+	 * <table border="1" style="width: 60em; border-spacing: 0;">
+	 *   <caption></caption>
 	 *   <tr><th>Interface</th><th>nodeValue</th></tr>
 	 *   <tr><td>Attr</td><td>same as Attr.value</td></tr>
 	 *   <tr><td>CDATASection</td><td>same as CharacterData.data, the content of the CDATA Section</td></tr>
@@ -100,8 +99,7 @@ public interface Wom3Node
 	 *   <tr><td>ProcessingInstruction</td><td>same as ProcessingInstruction.data</td></tr>
 	 *   <tr><td>Text</td><td>same as CharacterData.data, the content of the text node</td></tr>
 	 * </table>
-	 * </pre>
-	 * 
+	 *
 	 * @throws DOMException
 	 *             <dl>
 	 *             <dt>DOMSTRING_SIZE_ERR</dt>
@@ -120,8 +118,8 @@ public interface Wom3Node
 	 * When it is defined to be null, setting it has no effect, including if the
 	 * node is read-only.
 	 * 
-	 * <pre>
-	 * <table border="1" cellspacing="0" style="width: 60em;">
+	 * <table border="1" style="width: 60em; border-spacing: 0;">
+	 *   <caption></caption>
 	 *   <tr><th>Interface</th><th>nodeValue</th></tr>
 	 *   <tr><td>Attr</td><td>same as Attr.value</td></tr>
 	 *   <tr><td>CDATASection</td><td>same as CharacterData.data, the content of the CDATA Section</td></tr>
@@ -136,8 +134,7 @@ public interface Wom3Node
 	 *   <tr><td>ProcessingInstruction</td><td>same as ProcessingInstruction.data</td></tr>
 	 *   <tr><td>Text</td><td>same as CharacterData.data, the content of the text node</td></tr>
 	 * </table>
-	 * </pre>
-	 * 
+	 *
 	 * @throws DOMException
 	 *             <dl>
 	 *             <dt>NO_MODIFICATION_ALLOWED_ERR</dt>
@@ -177,8 +174,8 @@ public interface Wom3Node
 	 * node has just been created and not yet added to the tree, or if it has
 	 * been removed from the tree, this is null.
 	 * 
-	 * <pre>
-	 * <table border="1" cellspacing="0" style="width: 60em;">
+	 * <table border="1" style="width: 60em; border-spacing: 0;">
+	 *   <caption></caption>
 	 *   <tr><th>Interface</th><th>parent</th></tr>
 	 *   <tr><td>Attr</td><td>no</td></tr>
 	 *   <tr><td>CDATASection</td><td><b>yes</b></td></tr>
@@ -193,8 +190,7 @@ public interface Wom3Node
 	 *   <tr><td>ProcessingInstruction</td><td><b>yes</b></td></tr>
 	 *   <tr><td>Text</td><td><b>yes</b></td></tr>
 	 * </table>
-	 * </pre>
-	 * 
+	 *
 	 * @since DOM Level 1
 	 * @since WOM Version 3
 	 */
@@ -389,8 +385,8 @@ public interface Wom3Node
 	 * The string returned is made of the text content of this node depending on
 	 * its type, as defined below:
 	 * 
-	 * <pre>
-	 * <table border="1" cellspacing="0" style="width: 60em;">
+	 * <table border="1" style="width: 60em; border-spacing: 0">
+	 *   <caption></caption>
 	 *   <tr>
 	 *     <th>Node type</th>
 	 *     <th>Content</th>
@@ -408,8 +404,7 @@ public interface Wom3Node
 	 *     <td>null</td>
 	 *   </tr>
 	 * </table>
-	 * </pre>
-	 * 
+	 *
 	 * @throws DOMException
 	 *             <dl>
 	 *             <dt>DOMSTRING_SIZE_ERR</dt><dd>Raised when it would return

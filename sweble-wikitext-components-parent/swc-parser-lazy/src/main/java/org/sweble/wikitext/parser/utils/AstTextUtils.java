@@ -20,6 +20,9 @@ package org.sweble.wikitext.parser.utils;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 
+/**
+ * Utility methods for AST text conversion.
+ */
 public interface AstTextUtils
 {
 
@@ -45,15 +48,18 @@ public interface AstTextUtils
 
 	// =========================================================================
 
+	/**
+	 * A partially converted text.
+	 */
 	public interface PartialConversion
 	{
 		/**
-		 * Concatenated text of the first nodes which could be converted.
+		 * @return concatenated text of the first nodes which could be converted.
 		 */
 		public String getText();
 
 		/**
-		 * The remaining nodes, the first of which stopped the conversion.
+		 * @return the remaining nodes, the first of which stopped the conversion.
 		 */
 		public WtNodeList getTail();
 	}

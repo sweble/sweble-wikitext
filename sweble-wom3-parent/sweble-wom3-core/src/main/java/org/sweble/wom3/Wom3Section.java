@@ -42,7 +42,7 @@ public interface Wom3Section
 	 * Set the level of the section. Ranges from 1 (most important) to 6 (least
 	 * important). A section with level <code>x</code> cannot be contained in a
 	 * section with level <code>y</code> or any of its children if
-	 * <code>x <= y</code>.
+	 * <code>x &lt;= y</code>.
 	 * 
 	 * Corresponds to the XWML 1.0 attribute "level".
 	 * 
@@ -52,7 +52,7 @@ public interface Wom3Section
 	 * @throws IllegalArgumentException
 	 *             Thrown if this section is contained in a section with level
 	 *             <code>y</code> or any of its children and
-	 *             <code>level <= y</code> or if the given level does not lie in
+	 *             <code>level &lt;= y</code> or if the given level does not lie in
 	 *             the range [1,6].
 	 */
 	public int setLevel(int level) throws IllegalArgumentException;

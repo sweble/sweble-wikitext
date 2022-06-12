@@ -106,7 +106,7 @@ public interface Wom3List
 	 *            The item to insert. The item will have the given index
 	 *            <code>beforeIndex</code> after insertion.
 	 * @throws IndexOutOfBoundsException
-	 *             Thrown if <code>0 <= beforeIndex <= getItemNum()</code> does
+	 *             Thrown if <code>0 &lt;= beforeIndex &lt;= getItemNum()</code> does
 	 *             not hold.
 	 */
 	public void insertItem(int beforeIndex, Wom3ListItem item) throws IndexOutOfBoundsException;

@@ -23,13 +23,12 @@ package org.sweble.wom3;
 public enum Wom3ImageFormat
 {
 	/**
-	 * <h2>Intended use:</h2>
+	 * <h4>Intended use:</h4>
 	 * <p>
 	 * Custom image formatting by the author.
 	 * </p>
 	 * 
-	 * <h2>Should render as follows:</h2>
-	 * <p>
+	 * <h4>Should render as follows:</h4>
 	 * <ul>
 	 * <li>Framed: no.</li>
 	 * <li>Caption: no.</li>
@@ -43,12 +42,11 @@ public enum Wom3ImageFormat
 	 * </ul>
 	 * </li>
 	 * </ul>
-	 * </p>
 	 */
 	UNRESTRAINED,
 
 	/**
-	 * <h2>Intended use:</h2>
+	 * <h4>Intended use:</h4>
 	 * <p>
 	 * A plain, frameless, possibly reduced image that serves as preview to the
 	 * full image.
@@ -57,8 +55,7 @@ public enum Wom3ImageFormat
 	 * FRAMELESS and THUMBNAIL have the same sizing behavior.
 	 * </p>
 	 * 
-	 * <h2>Should render as follows:</h2>
-	 * <p>
+	 * <h4>Should render as follows:</h4>
 	 * <ul>
 	 * <li>Framed: no.</li>
 	 * <li>Caption: no.</li>
@@ -74,12 +71,11 @@ public enum Wom3ImageFormat
 	 * </ul>
 	 * </li>
 	 * </ul>
-	 * </p>
 	 */
 	FRAMELESS,
 
 	/**
-	 * <h2>Intended use:</h2>
+	 * <h4>Intended use:</h4>
 	 * <p>
 	 * A framed, possibly reduced image that serves as preview to the full
 	 * image.
@@ -88,8 +84,7 @@ public enum Wom3ImageFormat
 	 * FRAMELESS and THUMBNAIL have the same sizing behavior.
 	 * </p>
 	 * 
-	 * <h2>Should render as follows:</h2>
-	 * <p>
+	 * <h4>Should render as follows:</h4>
 	 * <ul>
 	 * <li>Framed: yes (appearance according to wiki or user preferences).</li>
 	 * <li>Caption: yes (placement according to wiki or user preferences).</li>
@@ -105,18 +100,16 @@ public enum Wom3ImageFormat
 	 * </ul>
 	 * </li>
 	 * </ul>
-	 * </p>
 	 */
 	THUMBNAIL,
 
 	/**
-	 * <h2>Intended use:</h2>
+	 * <h4>Intended use:</h4>
 	 * <p>
 	 * A framed image with the original image size.
 	 * </p>
 	 * 
-	 * <h2>Should render as follows:</h2>
-	 * <p>
+	 * <h4>Should render as follows:</h4>
 	 * <ul>
 	 * <li>Framed: yes (appearance according to wiki or user preferences).</li>
 	 * <li>Caption: yes (placement according to wiki or user preferences).</li>
@@ -131,7 +124,6 @@ public enum Wom3ImageFormat
 	 * </ul>
 	 * </li>
 	 * </ul>
-	 * </p>
 	 */
 	FRAME
 }

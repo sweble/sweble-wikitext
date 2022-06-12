@@ -145,11 +145,6 @@ public abstract class BackboneWithChildren
 	 *            The node after which the child was previously located.
 	 * @param removed
 	 *            The child node that was removed.
-	 * @return Return the element preceding the removed element (usually the one
-	 *         given as the "prev" parameter). This allows this method to
-	 *         further alter the sequence of children as long as the correct
-	 *         previous element is returned. This is only important when a child
-	 *         is replaced.
 	 */
 	protected void childRemoved(
 			Backbone prev,
