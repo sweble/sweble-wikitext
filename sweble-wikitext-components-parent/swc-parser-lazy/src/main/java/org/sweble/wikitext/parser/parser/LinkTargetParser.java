@@ -30,7 +30,7 @@ import de.fau.cs.osr.utils.XmlGrammar;
  * Expects the string to contain only valid Unicode characters. It must not
  * contain invalid, non- or private use characters. It further expects the
  * string to not contain the following characters:
- * [\u0000-\u001F\u007F\uFFFD<>{}|[\]].
+ * [\u0000-\u001F\u007F\uFFFD&lt;&gt;{}|[\]].
  * 
  * The parser checks if the link target contains any of the following entites,
  * which are not allowed in link targets:
@@ -53,7 +53,7 @@ import de.fau.cs.osr.utils.XmlGrammar;
  * <li>XML char references:
  * 
  * <pre>
- * (&#[0-9]+;)|(&#x[0-9A-Fa-f]+;)
+ * (&amp;#[0-9]+;)|(&amp;#x[0-9A-Fa-f]+;)
  * </pre>
  * 
  * </li>

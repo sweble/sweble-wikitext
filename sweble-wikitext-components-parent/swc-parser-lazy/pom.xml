@@ -173,7 +173,7 @@
 			<!-- Generate JFlex lexers -->
 			<plugin>
 				<groupId>de.jflex</groupId>
-				<artifactId>maven-jflex-plugin</artifactId>
+				<artifactId>jflex-maven-plugin</artifactId>
 				<configuration>
 					<outputDirectory>${generated-sources.directory}</outputDirectory>
 					<lexDefinitions>
@@ -225,6 +225,11 @@
 						<replacement>
 							<token>^(@SuppressWarnings\(.*?\)\s+)?(((public|final)\s+)*)class</token>
 							<value>@SuppressWarnings("all") $2class</value>
+						</replacement>
+
+						<replacement>
+							<token>&lt;p /&gt;</token>
+							<value></value>
 						</replacement>
 					</replacements>
 				</configuration>

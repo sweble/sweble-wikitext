@@ -190,7 +190,7 @@ CONTROL_CHAR        = [\u0000-\u0008\u000B\u000C\u000E-\u0019\u007F]
 
 /* Everything else
  */
-.                     |
+[^\n]                 |
 \n                    {
                         text.append(yytext());
                       }

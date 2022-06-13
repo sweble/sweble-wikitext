@@ -57,7 +57,7 @@ public interface Wom3HorizontalRule
 	 * 
 	 * Corresponds to the XHTML 1.0 Transitional attribute "noshade".
 	 * 
-	 * @return <code>True</true> for no 3-D effect, <code>false</code> for a 3-D
+	 * @return <code>True</code> for no 3-D effect, <code>false</code> for a 3-D
 	 *         effect.
 	 */
 	public boolean isNoshade();

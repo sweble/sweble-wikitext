@@ -33,8 +33,8 @@ import org.sweble.wikitext.parser.utils.StringConversionException;
  * Template which converts a measurement unit into another. (e.g.
  * {{convert|1|m}} -> "1 metre (3 ft 3 in)")
  *
- * @see https://en.wikipedia.org/wiki/Template:Convert/doc
- * @see https://en.wikipedia.org/wiki/Help:Convert
+ * @see <a href="https://en.wikipedia.org/wiki/Template:Convert/doc">Template:Convert/doc</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Help:Convert">Help:Convert</a>
  */
 public class Convert
 		extends
@@ -293,7 +293,7 @@ public class Convert
 	 * @param isUsNameUsed
 	 * @return The converted and default formated number as String including the
 	 * unit descriptor (symbol or name), or null on error.
-	 * @see convertBaseTo()
+	 * @see #convertBaseTo(double, Units, AbbreviationMode, int, boolean)
 	 */
 	protected static String convertToDefaultUnit(
 			double value,

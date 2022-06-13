@@ -70,7 +70,6 @@ public interface Wom3Attribute
 	 * 
 	 * @param value
 	 *            The new value of the attribute.
-	 * @return The old value of the attribute.
 	 * @throws NullPointerException
 	 *             Thrown if <code>null</code> was specified as value.
 	 */

@@ -177,11 +177,11 @@
 				<artifactId>sweble-wom3-swc-adapter</artifactId>
 				<version>${sweble.version}</version>
 			</dependency>
-			
+
 			<!-- =========================================================== -->
 			<!-- Engine - Engine - Engine - Engine - Engine - Engine - Engin -->
 			<!-- =========================================================== -->
-			
+
 			<!-- Sweble Engine - Serialization -->
 			<dependency>
 				<groupId>org.sweble.engine</groupId>
@@ -296,4 +296,21 @@
 		</profile>
 
     </profiles>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

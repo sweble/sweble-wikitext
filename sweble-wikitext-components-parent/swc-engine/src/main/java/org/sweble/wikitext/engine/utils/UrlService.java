@@ -46,8 +46,7 @@ public class UrlService
 	/**
 	 * Appends (possibly additional) query parameter to a URL.
 	 * 
-	 * @param urlEncodedQuery
-	 *            A URL-encoded query string, e.g.: "key=value&key2=value2&...".
+	 * @param urlEncodedQuery A URL-encoded query string, e.g.: "key=value&amp;key2=value2&amp;...".
 	 */
 	public static URL appendQuery(URL url, String urlEncodedQuery) throws MalformedURLException
 	{

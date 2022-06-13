@@ -124,11 +124,11 @@ public final class NumberFormater
 	 * Checks if the given number string is probably a valid value. Since the
 	 * check is only made on appearing characters, there might be the chance,
 	 * that a wrong used number syntax let a conversion with
-	 * {@link parseNumber()} fail anyway.
+	 * {@link #parseNumber(String)} fail anyway.
 	 *
 	 * @param numberStr The number as string to check.
 	 * @return True if the string is most likely a valid value, otherwise false.
-	 * @see parseNumber()
+	 * @see #parseNumber(String)
 	 */
 	protected static boolean isNumberValid(final String numberStr)
 	{
@@ -153,7 +153,7 @@ public final class NumberFormater
 	 * @param numberStr The number as string to convert.
 	 * @return The parsed number as double value.
 	 * @throws NumberFormatException
-	 * @see https://en.wikipedia.org/wiki/Template:Convert/doc#Numbers
+	 * @see <a href="https://en.wikipedia.org/wiki/Template:Convert/doc#Numbers">Template:Convert/doc#Numbers</a>
 	 */
 	protected static double parseNumber(final String numberStr)
 			throws NumberFormatException

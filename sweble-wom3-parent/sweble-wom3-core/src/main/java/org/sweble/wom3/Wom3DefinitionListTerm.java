@@ -121,7 +121,7 @@ public interface Wom3DefinitionListTerm
 	 *            The definition to insert. The definition will have the given
 	 *            index <code>beforeIndex</code> after insertion.
 	 * @throws IndexOutOfBoundsException
-	 *             Thrown if <code>0 <= beforeIndex <= getDefNum()</code> does
+	 *             Thrown if <code>0 &lt;= beforeIndex &lt;= getDefNum()</code> does
 	 *             not hold.
 	 */
 	public void insertDef(int beforeIndex, Wom3DefinitionListDef def) throws IndexOutOfBoundsException;
