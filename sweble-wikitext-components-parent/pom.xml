@@ -62,8 +62,9 @@
 		<maven-jflex-plugin.version>1.8.2</maven-jflex-plugin.version>
 		<maven-rats-plugin.version>1.3.3</maven-rats-plugin.version>
 
-		<jopt-simple.version>4.3</jopt-simple.version>
-		<rats-runtime.version>1.15.0</rats-runtime.version>
+		<jopt-simple.version>5.0.4</jopt-simple.version>
+		<rats-runtime.version>2.4.0</rats-runtime.version>
+		<xstream.version>1.4.20</xstream.version>
 	</properties>
 
 	<!-- =================================================================== -->
@@ -96,8 +97,8 @@
 
 			<!-- XML parsing -->
 			<dependency>
-				<groupId>javax.xml.bind</groupId>
-				<artifactId>jaxb-api</artifactId>
+				<groupId>jakarta.xml.bind</groupId>
+				<artifactId>jakarta.xml.bind-api</artifactId>
 				<version>${jaxb-api.version}</version>
 			</dependency>
 

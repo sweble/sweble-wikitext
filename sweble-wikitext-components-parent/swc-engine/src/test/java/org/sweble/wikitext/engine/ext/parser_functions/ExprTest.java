@@ -20,6 +20,7 @@ package org.sweble.wikitext.engine.ext.parser_functions;
 import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -163,8 +164,7 @@ public class ExprTest
 
 	private static double round(double value, int digits)
 	{
-		return new BigDecimal(value)
-				.setScale(digits, BigDecimal.ROUND_HALF_UP)
+		return new BigDecimal(value).setScale(digits, RoundingMode.HALF_UP)
 				.doubleValue();
 	}
 }
