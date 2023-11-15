@@ -258,7 +258,7 @@ public class LanguageConfigGenerator
 			Node apiNamespace = apiNamespaces.item(i);
 			String name = apiNamespace.getTextContent();
 			NamedNodeMap attributes = apiNamespace.getAttributes();
-			Integer id = new Integer(attributes.getNamedItem("id").getNodeValue());
+			Integer id = Integer.parseInt(attributes.getNamedItem("id").getNodeValue());
 			String canonical = "";
 			if (attributes.getNamedItem("canonical") != null)
 			{
@@ -322,7 +322,7 @@ public class LanguageConfigGenerator
 			Node aliasNode = namespaceAliasess.item(i);
 			NamedNodeMap attributes = aliasNode.getAttributes();
 
-			Integer id = new Integer(attributes.getNamedItem("id").getNodeValue());
+			Integer id = Integer.parseInt(attributes.getNamedItem("id").getNodeValue());
 			String aliasString = aliasNode.getTextContent();
 			namespaces.put(id, aliasString);
 		}

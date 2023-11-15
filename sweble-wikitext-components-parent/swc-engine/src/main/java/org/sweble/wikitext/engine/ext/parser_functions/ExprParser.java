@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine.ext.parser_functions;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -904,8 +905,7 @@ public class ExprParser
 
 		private static double round(double value, int digits)
 		{
-			return new BigDecimal(value)
-					.setScale(digits, BigDecimal.ROUND_HALF_UP)
+			return new BigDecimal(value).setScale(digits, RoundingMode.HALF_UP)
 					.doubleValue();
 		}
 	}

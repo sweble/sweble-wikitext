@@ -75,14 +75,12 @@
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>
 			<artifactId>jakarta.xml.bind-api</artifactId>
-			<version>${jaxb-api.version}</version>
 		</dependency>
 
 		<!-- JAXB Reference Implementation -->
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
-			<version>${jaxb-api.version}</version>
 		</dependency>
 
 		<!-- SLF4J -->

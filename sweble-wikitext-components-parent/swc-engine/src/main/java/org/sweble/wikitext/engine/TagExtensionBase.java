@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -184,15 +185,14 @@ public abstract class TagExtensionBase
 		}
 
 		@Override
-		public TagExtensionBase unmarshal(TagExtensionRef v) throws ClassNotFoundException, InstantiationException, IllegalAccessException
-		{
+		public TagExtensionBase unmarshal(TagExtensionRef v) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 			Class<?> clazz = Class.forName(v.className);
 			/*
 			Constructor<?> ctor = clazz.getDeclaredConstructor(WikiConfig.class);
 			// We don't have a wiki config object yet :(
 			return (TagExtensionBase) ctor.newInstance((WikiConfig) null);
 			*/
-			return (TagExtensionBase) clazz.newInstance();
+			return (TagExtensionBase) clazz.getDeclaredConstructor().newInstance();
 		}
 	}
 }

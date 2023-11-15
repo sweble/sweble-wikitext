@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -236,15 +237,14 @@ public abstract class ParserFunctionBase
 		}
 
 		@Override
-		public ParserFunctionBase unmarshal(ParserFunctionRef v) throws ClassNotFoundException, InstantiationException, IllegalAccessException
-		{
+		public ParserFunctionBase unmarshal(ParserFunctionRef v) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 			Class<?> clazz = Class.forName(v.className);
 			/*
 			Constructor<?> ctor = clazz.getDeclaredConstructor(WikiConfig.class);
 			// We don't have a wiki config object yet :(
 			return (ParserFunctionBase) ctor.newInstance((WikiConfig) null);
 			*/
-			return (ParserFunctionBase) clazz.newInstance();
+			return (ParserFunctionBase) clazz.getDeclaredConstructor().newInstance();
 		}
 	}
 }

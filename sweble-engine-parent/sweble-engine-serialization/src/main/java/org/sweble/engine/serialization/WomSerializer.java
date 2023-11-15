@@ -26,6 +26,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 
 import javax.xml.transform.Transformer;
@@ -501,37 +502,23 @@ public class WomSerializer
 	{
 		try
 		{
-			return (Document) Class.forName(documentImplClassName).newInstance();
+			return (Document) Class.forName(documentImplClassName).getDeclaredConstructor().newInstance();
 		}
-		catch (InstantiationException e)
+		catch (InstantiationException | InvocationTargetException | ClassNotFoundException | IllegalAccessException |
+               NoSuchMethodException e)
 		{
 			throw new DeserializationException(e);
 		}
-		catch (IllegalAccessException e)
-		{
-			throw new DeserializationException(e);
-		}
-		catch (ClassNotFoundException e)
-		{
-			throw new DeserializationException(e);
-		}
-	}
+    }
 
 	private Document createDocumentForSerialization() throws SerializationException
 	{
 		try
 		{
-			return (Document) Class.forName(documentImplClassName).newInstance();
+			return (Document) Class.forName(documentImplClassName).getDeclaredConstructor().newInstance();
 		}
-		catch (InstantiationException e)
-		{
-			throw new SerializationException(e);
-		}
-		catch (IllegalAccessException e)
-		{
-			throw new SerializationException(e);
-		}
-		catch (ClassNotFoundException e)
+		catch (InstantiationException | InvocationTargetException | ClassNotFoundException | IllegalAccessException |
+			   NoSuchMethodException e)
 		{
 			throw new SerializationException(e);
 		}
