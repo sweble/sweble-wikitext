@@ -254,6 +254,18 @@
 							<generatePackage>org.sweble.wikitext.dumpreader.export_0_10</generatePackage>
 						</configuration>
 					</execution>
+					<execution>
+						<id>compile-mw-schema-0.11</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaIncludes>
+								<include>export-0.11.xsd</include>
+							</schemaIncludes>
+							<generatePackage>org.sweble.wikitext.dumpreader.export_0_11</generatePackage>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 
